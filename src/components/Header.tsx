@@ -9,11 +9,7 @@ import { Link } from '@tanstack/react-router';
 export default function HeaderEl() {
   return (
     <Header>
-      <HeaderLogoUnit
-        hyperlink='/'
-        siteName='Site name'
-        siteSubName='Sub-site name'
-      />
+      <HeaderLogoUnit hyperlink='/' siteName='SDG 16 Report' />
       <HeaderMainNavUnit>
         <HeaderMenuUnit>
           <Link to='/'>Home</Link>
