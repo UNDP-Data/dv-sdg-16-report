@@ -1,7 +1,7 @@
-import { P } from '@undp/design-system-react/Typography';
 import { Button } from '@undp/design-system-react/Button';
+import { P } from '@undp/design-system-react/Typography';
 
-import { useCounterActions, useCounter } from './stores/counter';
+import { useCounter, useCounterActions } from './stores/counter';
 
 function App() {
   const count = useCounter();
@@ -45,8 +45,7 @@ function App() {
         />
       </div>
       <P marginBottom='xl' className='text-center'>
-        To get started, edit the App.tsx file.{' '}
-        <span className='font-bold'>Count: {count}</span>
+        To get started, edit the App.tsx file. <span className='font-bold'>Count: {count}</span>
       </P>
       <div className='mb-8 flex justify-center gap-4'>
         <Button
