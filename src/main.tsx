@@ -1,42 +1,42 @@
-import {
-  createRootRoute,
-  createRoute,
-  createRouter,
-  Outlet,
-  RouterProvider,
-} from '@tanstack/react-router';
+import { createRootRoute, createRouter, Outlet, RouterProvider } from '@tanstack/react-router';
+import { ConfigProvider } from '@undp/design-system-react/ConfigProvider';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import createHomeRoute from './App';
 import FooterEl from './components/Footer';
+import GenderLensNav from './components/GenderLensNav';
 import HeaderEl from './components/Header';
 import * as TanStackQueryProvider from './integration/tanstack-query';
-import createTanStackQueryDemoRoute from './routes/queryDemo';
+import createInclusionRoute from './routes/chapters/inclusion';
+import createJusticeRoute from './routes/chapters/justice';
+import createPeaceRoute from './routes/chapters/peace';
 
 import './styles/fonts.css';
 import './styles/style.css';
 
 const rootRoute = createRootRoute({
   component: () => (
-    <div className='flex min-h-screen flex-col gap-0'>
+    <div className='flex min-h-screen flex-col gap-0 antialiased'>
+      <div
+        className="mix-blend-multiply! pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture.png')] bg-repeat opacity-[0.05]"
+        style={{ backgroundSize: '120px 120px' }}
+      />
       <HeaderEl />
       <main className='flex grow-1 flex-col justify-center'>
-        <div className='flex flex-col justify-center'>
-          <Outlet />
-        </div>
+        <Outlet />
       </main>
       <FooterEl />
+      <GenderLensNav />
     </div>
   ),
 });
 
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: App,
-});
-
-const routeTree = rootRoute.addChildren([indexRoute, createTanStackQueryDemoRoute(rootRoute)]);
+const routeTree = rootRoute.addChildren([
+  createHomeRoute(rootRoute),
+  createPeaceRoute(rootRoute),
+  createJusticeRoute(rootRoute),
+  createInclusionRoute(rootRoute),
+]);
 
 const TanStackQueryProviderContext = TanStackQueryProvider.getContext();
 const router = createRouter({
@@ -61,9 +61,11 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
-        <RouterProvider router={router} />
-      </TanStackQueryProvider.Provider>
+      <ConfigProvider config={{ fonts: { heading: 'Newsreader', body: 'Hanken Grotesk' } }}>
+        <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
+          <RouterProvider router={router} />
+        </TanStackQueryProvider.Provider>
+      </ConfigProvider>
     </StrictMode>,
   );
 }
