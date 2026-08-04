@@ -20,7 +20,7 @@ export const chapters: Record<'peace' | 'justice' | 'inclusion', ChapterMeta> = 
     color: '#42A1D8',
     bg: '/imgs/chapters/peace-hero.webp',
     description:
-      'Peace is often associated with the absence of war. Under Goal 16 of the Agenda 2030, however, peace is measured more broadly through a set of complementary indicators that capture different manifestations of violence and insecurity.',
+      'Peace is a fundamental condition of thriving societies, as peace indicates the absence of violence and fear. The indicators under Goal 16 measure the different ways violence and insecurity affect people, providing a multidimensional picture of peace.',
   },
   justice: {
     number: '2',
@@ -28,7 +28,7 @@ export const chapters: Record<'peace' | 'justice' | 'inclusion', ChapterMeta> = 
     color: '#E2501F',
     bg: '/imgs/chapters/justice-hero.webp',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Access to justice remains uneven across income levels and regions, with case backlogs and pre-trial detention rates that undermine trust in formal institutions.',
+      'Justice enables societies to progress by ensuring that institutional mechanisms are accessible, promote accountability and operate fairly for all people. The indicators under Goal 16 measure institutional capacity, fairness and accountability.',
   },
   inclusion: {
     number: '3',
@@ -36,7 +36,7 @@ export const chapters: Record<'peace' | 'justice' | 'inclusion', ChapterMeta> = 
     color: '#05AA8E',
     bg: '/imgs/chapters/inclusion-hero.webp',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Inclusive institutions recognize, represent, and treat all people fairly — but participation gaps by gender, disability, and minority status persist across most public institutions.',
+      'Inclusion is central to societal progress, as inclusive societies enable everyone to participate meaningfully in public life. Under Goal 16, inclusion is measured through indicators that assess whether institutions represent and serve all people equally and effectively. Together, these indicators provide insight into the broader dimensions of social cohesion and institutional legitimacy.',
   },
 };
 
