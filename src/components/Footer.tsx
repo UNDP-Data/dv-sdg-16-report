@@ -5,7 +5,10 @@ const footerLinkClass = 'text-sm text-gray-300 transition-colors hover:text-whit
 
 export default function FooterEl() {
   return (
-    <footer style={{ backgroundColor: DARK_BLUE }} className='px-6 py-10 md:px-12'>
+    <footer
+      style={{ backgroundColor: DARK_BLUE }}
+      className='border-gray-800 border-t px-6 py-4 md:px-12'
+    >
       <div className='mx-auto flex flex-col items-start justify-between gap-8 md:flex-row md:items-center'>
         <div className='flex items-center gap-6'>
           <div className='flex h-10 w-24 items-center justify-center rounded border border-white/15 text-white/40 text-xs'>
