@@ -41,7 +41,10 @@ export default function ChapterHero({
   }, [genderLensActive, subsections]);
 
   return (
-    <section className='relative bg-center bg-cover' style={{ backgroundImage: `url('${bg}')` }}>
+    <section
+      className='relative h-[calc(100vh-102px)] bg-center bg-cover'
+      style={{ backgroundImage: `url('${bg}')` }}
+    >
       <div className='mx-auto flex w-full max-w-[1200px] flex-col items-start gap-4 px-12 py-20 md:py-28'>
         <div className='flex items-center gap-3 text-gray-300'>
           <P
