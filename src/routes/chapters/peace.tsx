@@ -1,9 +1,10 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
 import ChapterHero from '../../components/chapter/ChapterHero';
-import ChapterSubNav, { type ChapterSection } from '../../components/chapter/ChapterSubNav';
+import ChapterSubNav from '../../components/chapter/ChapterSubNav';
 import SectionHeading from '../../components/chapter/SectionHeading';
-import { peaceMeta } from '../../content/chapters';
+import { peaceMeta, ROUTES } from '../../constants';
+import type { ChapterSection } from '../../types';
 
 const peaceSections: ChapterSection[] = [
   {
@@ -156,7 +157,7 @@ export function Peace() {
 
 export default function createPeaceRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/chapters/peace',
+    path: ROUTES.peace,
     component: Peace,
     getParentRoute: () => parentRoute,
   });

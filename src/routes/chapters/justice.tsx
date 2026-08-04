@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { ROUTES } from '../../constants';
 
 export function Justice() {
   return (
@@ -14,7 +15,7 @@ export function Justice() {
 
 export default function createJusticeRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/chapters/justice',
+    path: ROUTES.justice,
     component: Justice,
     getParentRoute: () => parentRoute,
   });

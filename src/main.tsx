@@ -6,6 +6,7 @@ import createHomeRoute from './App';
 import FooterEl from './components/Footer';
 import GenderLensNav from './components/GenderLensNav';
 import HeaderEl from './components/Header';
+import { FONT_BODY, FONT_HEADING } from './constants';
 import * as TanStackQueryProvider from './integration/tanstack-query';
 import createInclusionRoute from './routes/chapters/inclusion';
 import createJusticeRoute from './routes/chapters/justice';
@@ -61,7 +62,7 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <ConfigProvider config={{ fonts: { heading: 'Newsreader', body: 'Hanken Grotesk' } }}>
+      <ConfigProvider config={{ fonts: { heading: FONT_HEADING, body: FONT_BODY } }}>
         <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
           <RouterProvider router={router} />
         </TanStackQueryProvider.Provider>

@@ -12,24 +12,10 @@ import {
   TooltipTrigger,
 } from '@undp/design-system-react/Tooltip';
 import { P } from '@undp/design-system-react/Typography';
-import type { LucideIcon } from 'lucide-react';
 import { ChevronDown, Info } from 'lucide-react';
-import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { useGenderLensStore } from '../../stores/genderLens';
-
-// One record per chapter subsection — drives the subnav dropdown, the hero's
-// indicator-card grid, and the in-page content, so nothing is defined twice.
-export interface ChapterSection {
-  number: string;
-  title: string;
-  indicatorCode?: string;
-  heading: string;
-  anchor: string;
-  image?: string;
-  icon?: LucideIcon;
-  content?: ReactNode;
-}
+import type { ChapterSection } from '../../types';
 
 interface ChapterSubNavProps {
   chapterNumber: string;

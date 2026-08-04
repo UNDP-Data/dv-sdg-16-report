@@ -1,6 +1,7 @@
 import { type AnyRootRoute, createRoute } from '@tanstack/react-router';
 import { Container } from '@undp/design-system-react/Container';
 import { H2, P } from '@undp/design-system-react/Typography';
+import { ROUTES } from './constants';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
 
 export default function createHomeRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/',
+    path: ROUTES.home,
     component: App,
     getParentRoute: () => parentRoute,
   });

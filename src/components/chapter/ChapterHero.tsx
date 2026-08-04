@@ -1,7 +1,8 @@
 import { H1, P } from '@undp/design-system-react/Typography';
 import { useEffect, useState } from 'react';
+import { GENDER_LENS_COLOR } from '../../constants';
 import { useGenderLensStore } from '../../stores/genderLens';
-import type { ChapterSection } from './ChapterSubNav';
+import type { ChapterSection } from '../../types';
 
 interface ChapterHeroProps {
   chapterNumber: string;
@@ -56,7 +57,7 @@ export default function ChapterHero({
         {genderLensActive ? (
           <span
             className='rounded-full border px-2 font-semibold text-xs uppercase tracking-wide'
-            style={{ color: 'rgb(123, 111, 232)', borderColor: 'rgb(123, 111, 232)' }}
+            style={{ color: GENDER_LENS_COLOR, borderColor: GENDER_LENS_COLOR }}
           >
             With a gender lens
           </span>

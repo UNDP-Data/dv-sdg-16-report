@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { ROUTES } from '../../constants';
 
 export function Inclusion() {
   return (
@@ -14,7 +15,7 @@ export function Inclusion() {
 
 export default function createInclusionRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/chapters/inclusion',
+    path: ROUTES.inclusion,
     component: Inclusion,
     getParentRoute: () => parentRoute,
   });
