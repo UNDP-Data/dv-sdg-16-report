@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import ChapterEndNav from '../../components/chapter/ChapterEndNav';
 import ChapterHero from '../../components/chapter/ChapterHero';
 import ChapterSubNav from '../../components/chapter/ChapterSubNav';
 import Footnote from '../../components/chapter/Footnote';
@@ -361,6 +362,13 @@ export function Peace() {
           </SectionHeading>
         ))}
       </div>
+
+      <ChapterEndNav
+        label='Next chapter'
+        title='Justice'
+        to={ROUTES.justice}
+        color={peaceMeta.color}
+      />
     </>
   );
 }

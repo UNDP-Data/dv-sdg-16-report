@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import ChapterEndNav from '../../components/chapter/ChapterEndNav';
 import ChapterHero from '../../components/chapter/ChapterHero';
 import ChapterSubNav from '../../components/chapter/ChapterSubNav';
 import Footnote from '../../components/chapter/Footnote';
@@ -449,6 +450,8 @@ export function Inclusion() {
           </SectionHeading>
         ))}
       </div>
+
+      <ChapterEndNav label='Back to' title='Home' to={ROUTES.home} color={inclusionMeta.color} />
     </>
   );
 }
