@@ -40,7 +40,7 @@ const peaceSections: ChapterSection[] = [
           </p>
         </div>
         <PlaceholderBlock label='Scrollytelling' />
-        <p>
+        <p className='gender-lens'>
           Violence remains unevenly distributed, where patterns of exposure and risk differ across
           conflict settings. In Myanmar, for example, women and girls accounted for 43 per cent of
           documented civilian deaths, compared with a global average of 25 per cent. And, while a
@@ -67,7 +67,7 @@ const peaceSections: ChapterSection[] = [
     image: '/imgs/icons/16-1-1.webp',
     content: (
       <>
-        <p>
+        <p className='gender-lens'>
           Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9 to 5.1
           victims per 100,000 population. Nevertheless, progress remains highly uneven across
           regions, with Latin America and the Caribbean, and Sub-Saharan Africa recording the
@@ -132,7 +132,7 @@ const peaceSections: ChapterSection[] = [
           Over the same time period, Northern Africa and Western Sahara have experienced a rapid
           escalation, with their share of global killings nearly doubling to 27 per cent in 2025.
         </p>
-        <p>
+        <p className='gender-lens'>
           Across 2023 - 2025, one in ten defenders killed or disappeared worldwide was a woman.
           Defenders working on environmental and land issues accounted for nearly three in ten
           recorded cases, while one in five victims belonged to indigenous or minority groups. These
@@ -170,12 +170,12 @@ const peaceSections: ChapterSection[] = [
           3.1 per cent in Latin America and the Caribbean, compared with less than 1 per cent in
           other regions.
         </p>
-        <p>
+        <p className='gender-lens'>
           Patterns of victimization differ markedly between women and men. Women face higher risk of
           sexual violence than men. The median prevalence of sexual violence among women was 3.0 per
           cent, compared with 0.4 per cent among men.
         </p>
-        <p>
+        <p className='gender-lens'>
           By contrast, men experienced slightly higher levels of physical violence, with a median
           prevalence of 4.2 per cent compared with 3.2 per cent among women.
         </p>
@@ -206,14 +206,14 @@ const peaceSections: ChapterSection[] = [
     image: '/imgs/icons/16-2-1.png',
     content: (
       <>
-        <p>
+        <p className='gender-lens'>
           Violence remains a pervasive reality for millions of children around the world, cutting
           across geographical, cultural and economic boundaries. An estimated 1.6 billion children
           globally experience violent punishment by caregivers at home. In most countries, boys and
           girls are equally likely to experience violent discipline at home.
         </p>
         <PlaceholderBlock label='Figure' />
-        <p>
+        <p className='gender-lens'>
           Violence experienced during childhood extends far beyond violent discipline in the home.
           Globally it’s estimated that more than 370 million women and girls experienced rape or
           sexual assault as children. Among men and boys, an estimated 240 to 310 million
@@ -241,7 +241,7 @@ const peaceSections: ChapterSection[] = [
           official statistics capture only detected cases. As a result, the figures presented here
           are only the minimum estimate of the true scale of trafficking.
         </p>
-        <p>
+        <p className='gender-lens'>
           Children accounted for 37 per cent of all detected victims in 2024, nearly three times the
           share recorded two decades earlier. Women and girls accounted for a larger share of
           detected trafficking victims than men and boys, with the gender gap particularly
@@ -280,10 +280,10 @@ const peaceSections: ChapterSection[] = [
           since 2017. Perceptions of safety were lowest in Latin America and the Caribbean, where
           more than half of the population reported feeling unsafe walking alone after dark.
         </p>
-        <Highlight color={peaceMeta.color}>
+        <Highlight color={peaceMeta.color} className='gender-lens'>
           Women consistently reported feeling less safe than men.
         </Highlight>
-        <p>
+        <p className='gender-lens'>
           Across{' '}
           <Footnote
             note='The number of countries with sex-disaggregated data on perception of safety is different to the sample of countries with data on the overall perception of safety in the population.'
@@ -296,7 +296,7 @@ const peaceSections: ChapterSection[] = [
           pronounced in Northern Africa and Western Asia.
         </p>
         <PlaceholderBlock label='Figure' />
-        <p>
+        <p className='gender-lens'>
           These findings suggest that perceptions of safety reflect more than exposure to lethal
           violence. Experiences and risks of non-lethal violence, including sexual violence,
           harassment and robbery, as well as broader social and environmental factors, may influence

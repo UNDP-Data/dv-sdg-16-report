@@ -31,7 +31,7 @@ const inclusionSections: ChapterSection[] = [
           essential services such as health care, education and social protection.
         </p>
         <PlaceholderBlock label='Scrollytelling' />
-        <p>
+        <p className='gender-lens'>
           There is little evidence of gender inequality in birth registration. Across almost all
           countries with available data, boys and girls are registered at similar rates. This
           suggests that the remaining gaps primarily reflect inequalities in access to registration
@@ -49,7 +49,7 @@ const inclusionSections: ChapterSection[] = [
     anchor: 'representation-in-the-legislature',
     content: (
       <>
-        <p>
+        <p className='gender-lens'>
           As societies confront increasingly complex challenges from climate change and conflict to
           economic insecurity and technological change, it is important that political decision
           making reflects the diversity{' '}
@@ -69,7 +69,7 @@ const inclusionSections: ChapterSection[] = [
           helping to broaden parliamentary debate and strengthen the responsiveness of public
           policy.
         </p>
-        <p>
+        <p className='gender-lens'>
           As of 2026, women held 27.5 per cent of parliamentary seats globally, a modest increase
           from 27.2 per cent in 2025. Representation remains even lower in parliamentary leadership,
           where women accounted for 19.9 per cent of Speakers of Parliament in 2026, a decline of
@@ -93,7 +93,7 @@ const inclusionSections: ChapterSection[] = [
         <Highlight color={inclusionMeta.color}>
           Progress among younger generations offers some grounds for optimism
         </Highlight>
-        <p>
+        <p className='gender-lens'>
           Younger generations of parliamentarians are, however, considerably more gender balanced
           than older ones. Women account for 43.5 per cent of all MPs aged 30 years or younger and
           36.2 per cent of those aged 40 years or younger. These patterns suggest that gender
@@ -101,7 +101,7 @@ const inclusionSections: ChapterSection[] = [
         </p>
         <PlaceholderBlock label='Figure' />
         <Highlight color={inclusionMeta.color}>Progress remains uneven across regions</Highlight>
-        <p>
+        <p className='gender-lens'>
           The Americas lead in both women's and youth representation, with women holding 35.6 per
           cent of parliamentary seats and MPs aged 40 or younger accounting for 23.5 per cent of
           members. By contrast, women hold only 16.2 per cent of seats in the Middle East and North
@@ -124,7 +124,7 @@ const inclusionSections: ChapterSection[] = [
     anchor: 'representation-in-public-service-and-judiciary',
     content: (
       <>
-        <p>
+        <p className='gender-lens'>
           Women's representation in public service and the judiciary has improved across many
           countries, yet this progress has not consistently translated into equal presence in
           decision-making roles. Globally, women remain underrepresented, with representation ratios
@@ -147,7 +147,7 @@ const inclusionSections: ChapterSection[] = [
           distributed within institutions.
         </p>
         <PlaceholderBlock label='Scrollytelling' />
-        <p>
+        <p className='gender-lens'>
           The evidence suggests that achieving inclusive governance requires more than improving
           overall representation. It requires ensuring that women have equal opportunities to
           advance into leadership and decision-making roles across public institutions.
@@ -180,17 +180,17 @@ const inclusionSections: ChapterSection[] = [
           affect millions of people worldwide, limiting access to opportunities, services and
           participation in public life.
         </p>
-        <p>
+        <p className='gender-lens'>
           Globally, nearly one in five people report having personally experienced discrimination
           during the previous 12 months. Women and men report similar overall levels of
           discrimination. However, women are more likely to report discrimination based on gender,
           reflecting persistent inequalities that often intersect with disability, income, education
           and minority status.
         </p>
-        <Highlight color={inclusionMeta.color}>
+        <Highlight color={inclusionMeta.color} className='gender-lens'>
           Transgender and gender-diverse people report the highest discrimination rates
         </Highlight>
-        <p>
+        <p className='gender-lens'>
           Transgender and gender-diverse individuals frequently report levels of discrimination
           often exceeding 60 per cent, while people identifying as sexual minorities report
           discrimination rates 2.2 times higher than the population average.
@@ -321,7 +321,7 @@ const inclusionSections: ChapterSection[] = [
           percentage points.
         </p>
         <PlaceholderBlock label='Figure' />
-        <p>
+        <p className='gender-lens'>
           Women report lower levels of political influence than men. Across 37 high-income countries
           with sex-disaggregated data, 27.3 per cent of women believe they have a say in government
           decisions, compared with 32.6 per cent of men.

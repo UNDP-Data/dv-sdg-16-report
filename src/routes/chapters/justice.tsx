@@ -93,7 +93,7 @@ const justiceSections: ChapterSection[] = [
           The share of unsentenced detainees has remained virtually unchanged over the past decade,
           at around 30 per cent, equivalent to approximately 3.6 million people.
         </p>
-        <p>
+        <p className='gender-lens'>
           Regional and gendered patterns, however, have varied considerably. While men make up the
           majority of the global prison population, women account for a higher share of unsentenced
           prisoners in several regions.
@@ -252,7 +252,7 @@ const justiceSections: ChapterSection[] = [
           effectiveness of anti-corruption measures also play an important role.
         </p>
         <PlaceholderBlock label='Figure' />
-        <p>
+        <p className='gender-lens'>
           Data collection on SDG Indicator 16.5.1 – Bribery among the population is measured through
           household surveys, where survey frequency remains uneven. For this reason,
           sex-disaggregated data are only available for 23 countries between 2010 and 2024. Among

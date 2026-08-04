@@ -48,8 +48,9 @@ h3 {
 }
 
 body.gender-lens-mode .gender-lens {
-  background-color: rgba(var(--gender-lens-rgb), 0.35);
+  background-color: rgba(var(--gender-lens-rgb), 0.15);
   box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.35);
+  padding: 1rem;
 }
 
 body.gender-lens-mode .gender-lens-current {
