@@ -1,72 +1,39 @@
-import { Button } from '@undp/design-system-react/Button';
-import { P } from '@undp/design-system-react/Typography';
-
-import { useCounter, useCounterActions } from './stores/counter';
+import { type AnyRootRoute, createRoute } from '@tanstack/react-router';
+import { Container } from '@undp/design-system-react/Container';
+import { H2, P } from '@undp/design-system-react/Typography';
 
 function App() {
-  const count = useCounter();
-  const { increment, decrement } = useCounterActions();
   return (
-    <>
-      <div className='mx-auto my-8 flex items-center justify-center gap-4'>
-        <img
-          src='./imgs/Vitejs-logo.svg'
-          alt='vite logo'
-          width='72px'
-          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-        />
-        <P marginBottom='none'>&</P>
-        <img
-          src='./imgs/Tailwind_CSS_Logo.svg'
-          alt='tailwind logo'
-          width='72px'
-          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-        />
-        <P marginBottom='none'>&</P>
-        <img
-          src='./imgs/Tanstack-logo.png'
-          alt='tanstack logo'
-          width='72px'
-          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-        />
-        <P marginBottom='none'>&</P>
-        <img
-          src='./imgs/Zustand-logo.svg'
-          alt='Zustand logo'
-          width='72px'
-          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-        />
-        <P marginBottom='none'>&</P>
-        <img
-          src='./imgs/undp-logo-blue.svg'
-          alt='UNDP logo'
-          width='72px'
-          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-        />
-      </div>
-      <P marginBottom='xl' className='text-center'>
-        To get started, edit the App.tsx file. <span className='font-bold'>Count: {count}</span>
-      </P>
-      <div className='mb-8 flex justify-center gap-4'>
-        <Button
-          variant='tertiary'
-          onClick={() => {
-            increment();
-          }}
+    <Container
+      backgroundColor='custom'
+      width='full'
+      padding='none'
+      className='flex h-[100vh] items-center bg-center bg-cover px-20'
+      style={{ backgroundImage: `url('imgs/hero-bg.webp')` }}
+    >
+      <Container width='sm'>
+        <P size='sm' className='text-gray-300 uppercase tracking-widest'>
+          SDG 16 Report 2026
+        </P>
+        <H2
+          marginBottom='sm'
+          className="justify-start font-['Newsreader'] font-medium text-8xl! text-slate-200 normal-case leading-[93.50px]"
         >
-          Increase counter
-        </Button>
-        <Button
-          variant='tertiary'
-          onClick={() => {
-            decrement();
-          }}
-        >
-          Decrease counter
-        </Button>
-      </div>
-    </>
+          Peace, Justice, Inclusivity
+        </H2>
+        <P size='lg' className='max-w-xl text-gray-300'>
+          A global look at where the world stands on building peaceful, just, and inclusive
+          societies — and how far there is left to go.
+        </P>
+      </Container>
+    </Container>
   );
 }
 
-export default App;
+export default function createHomeRoute(parentRoute: AnyRootRoute) {
+  return createRoute({
+    path: '/',
+    component: App,
+    getParentRoute: () => parentRoute,
+  });
+}
