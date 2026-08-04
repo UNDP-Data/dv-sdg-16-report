@@ -24,7 +24,8 @@ const peaceSections: ChapterSection[] = [
     number: '02',
     title: 'Homicide',
     indicatorCode: '16.1.1',
-    heading: 'Homicide rates continue to decline, but too slowly to reach the 2030 target',
+    heading:
+      'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
     anchor: 'homicide',
     image: '/imgs/icons/16-1-1.webp',
     content: (
@@ -38,7 +39,7 @@ const peaceSections: ChapterSection[] = [
     title: 'Attacks on defenders',
     indicatorCode: '16.10.1',
     heading:
-      'One human rights defender, journalist, or civil society member is killed or disappears every 30 hours',
+      'One human rights defender, journalist or trade unionist is killed or disappeared every 10 hours',
     anchor: 'attacks-on-defenders',
     image: '/imgs/icons/16-10-1.png',
     content: (
@@ -51,7 +52,8 @@ const peaceSections: ChapterSection[] = [
     number: '04',
     title: 'Physical, sexual and psychological violence',
     indicatorCode: '16.1.3',
-    heading: 'Non-lethal violence affects millions, with distinct patterns across regions',
+    heading:
+      'Millions of people experience non-lethal violence, with distinct regional and gendered patterns of victimization',
     anchor: 'non-lethal-violence',
     image: '/imgs/icons/16-1-3.png',
     content: (
@@ -64,7 +66,8 @@ const peaceSections: ChapterSection[] = [
     number: '05',
     title: 'Violence against children',
     indicatorCode: '16.2.1 & 16.2.3',
-    heading: 'Violence begins early in life, affecting children worldwide',
+    heading:
+      'Violence begins early in life, with two in three children experiencing violent discipline at home',
     anchor: 'violence-against-children',
     image: '/imgs/icons/16-2-1.png',
     content: (
@@ -102,9 +105,9 @@ const peaceSections: ChapterSection[] = [
   {
     number: '08',
     title: 'Role of Institutions',
-    heading: 'Strong institutions turn commitments into protection',
+    heading: 'Achieving peace through capable, trustworthy and responsive institutions',
     anchor: 'role-of-institutions',
-    image: '/imgs/icons/16-1-5.png',
+    image: '/imgs/icons/the-role-of-institutions.png',
     content: (
       <>
         <p>Content goes here</p>
