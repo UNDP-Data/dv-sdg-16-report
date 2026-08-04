@@ -66,19 +66,26 @@ export default function ChapterSubNav({
           <span className='text-white'>{chapterTitle}</span>
           <ChevronDown size={14} className='text-gray-400' />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align='start' className='w-80 border-white/10 bg-[#010C19] text-white'>
+        <DropdownMenuContent
+          align='start'
+          className='w-100 border-white/10 bg-[#010C19] text-white'
+        >
           {subsections.map((subsection) => {
             const isActive = subsection.anchor === activeAnchor;
             return (
-              <DropdownMenuItem key={subsection.anchor} asChild>
+              <DropdownMenuItem
+                key={subsection.anchor}
+                asChild
+                className='focus:bg-white/10 focus:font-normal'
+              >
                 <a
                   href={`#${subsection.anchor}`}
-                  className={`flex items-baseline gap-3 border-l-2 py-1 pl-2 ${
+                  className={`flex items-baseline gap-3 border-l-2 py-3 pl-2 ${
                     isActive ? 'text-white' : 'text-gray-300'
                   }`}
                   style={{ borderColor: isActive ? color : 'transparent' }}
                 >
-                  <span className='text-gray-500 text-xs'>{subsection.number}</span>
+                  <span className='pr-1 pl-2 text-gray-500 text-xs'>{subsection.number}</span>
                   <span className='text-sm'>{subsection.title}</span>
                 </a>
               </DropdownMenuItem>

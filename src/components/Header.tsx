@@ -34,14 +34,14 @@ export default function HeaderEl() {
               Chapters
               <ChevronDown size={14} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem asChild>
+            <DropdownMenuContent className='border-white/10 bg-[#010C19] text-white'>
+              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
                 <Link to={ROUTES.peace}>Peace</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
                 <Link to={ROUTES.justice}>Justice</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
                 <Link to={ROUTES.inclusion}>Inclusion</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>

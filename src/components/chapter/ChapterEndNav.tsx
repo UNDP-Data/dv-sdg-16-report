@@ -13,7 +13,7 @@ export default function ChapterEndNav({ label, title, to, color }: ChapterEndNav
   return (
     <Link
       to={to}
-      className='group flex items-center justify-between px-6 py-16 md:px-12 md:py-20'
+      className='group flex items-center justify-between px-6 py-8 md:px-12 md:py-16'
       style={{ backgroundColor: DARK_BLUE }}
     >
       <div>
