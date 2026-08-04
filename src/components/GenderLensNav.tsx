@@ -53,7 +53,7 @@ export default function GenderLensNav() {
   };
 
   return (
-    <div className='fixed bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-4 rounded-full border border-white/20 bg-[#0b1830] px-3 py-2 text-white shadow-lg'>
+    <div className='fixed bottom-8 left-1/2 z-20 flex animate-[gender-nav-in_350ms_cubic-bezier(0.16,1,0.3,1)_forwards] items-center gap-4 rounded-full border border-white/20 bg-[#0b1830] px-3 py-2 text-white shadow-lg'>
       <button
         type='button'
         onClick={goPrev}
