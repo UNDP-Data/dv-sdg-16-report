@@ -13,6 +13,8 @@ export const FONT_BODY = 'Hanken Grotesk';
 // Keep in sync with --gender-lens-rgb in style.css
 export const GENDER_LENS_COLOR = 'rgb(123, 111, 232)';
 
+export const DARK_BLUE = '#010C19';
+
 export const chapters: Record<'peace' | 'justice' | 'inclusion', ChapterMeta> = {
   peace: {
     number: '1',

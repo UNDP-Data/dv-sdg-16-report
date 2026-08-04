@@ -13,7 +13,9 @@ import {
 } from '@undp/design-system-react/Tooltip';
 import { P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Info } from 'lucide-react';
+import type { CSSProperties } from 'react';
 import { useEffect, useState } from 'react';
+import { DARK_BLUE, GENDER_LENS_COLOR } from '../../constants';
 import { useGenderLensStore } from '../../stores/genderLens';
 import type { ChapterSection } from '../../types';
 
@@ -52,7 +54,10 @@ export default function ChapterSubNav({
   }, [subsections]);
 
   return (
-    <div className='sticky top-0 z-30 flex items-center justify-between border-gray-800 border-b bg-black px-6 py-3 md:px-12'>
+    <div
+      className='sticky top-0 z-30 flex items-center justify-between border-gray-800 border-b px-6 py-3 md:px-12'
+      style={{ backgroundColor: DARK_BLUE }}
+    >
       <DropdownMenu>
         <DropdownMenuTrigger className='flex items-center gap-2 text-sm'>
           <span className='font-semibold' style={{ color }}>
@@ -61,7 +66,7 @@ export default function ChapterSubNav({
           <span className='text-white'>{chapterTitle}</span>
           <ChevronDown size={14} className='text-gray-400' />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align='start' className='w-80'>
+        <DropdownMenuContent align='start' className='w-80 border-white/10 bg-[#010C19] text-white'>
           {subsections.map((subsection) => {
             const isActive = subsection.anchor === activeAnchor;
             return (
@@ -99,6 +104,8 @@ export default function ChapterSubNav({
             onCheckedChange={toggleGenderLens}
             size='small'
             showIcon={false}
+            color='custom'
+            style={{ '--custom-color-600': GENDER_LENS_COLOR } as CSSProperties}
           />
         </div>
       </TooltipProvider>

@@ -5,19 +5,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@undp/design-system-react/DropdownMenu';
-import { ChevronDown } from 'lucide-react';
-import { ROUTES } from '../constants';
+import { ChevronDown, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { DARK_BLUE, ROUTES } from '../constants';
 
 const navLinkClass = 'text-sm text-gray-300 transition-colors hover:text-white';
+const mobileNavLinkClass = 'block py-3 text-base text-gray-300 transition-colors hover:text-white';
 
 export default function HeaderEl() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className='bg-black px-6 py-4 md:px-12'>
+    <header
+      className='relative border-gray-800 border-b px-6 py-4 md:px-12'
+      style={{ backgroundColor: DARK_BLUE }}
+    >
       <div className='mx-auto flex items-center justify-between'>
         <Link to={ROUTES.home} className='font-bold text-white'>
           SDG16 Report
         </Link>
-        <nav className='flex items-center gap-8'>
+
+        <nav className='hidden items-center gap-8 md:flex'>
           <Link to={ROUTES.home} className={navLinkClass}>
             Home
           </Link>
@@ -42,7 +50,56 @@ export default function HeaderEl() {
           <span className={navLinkClass}>Materials</span>
           <span className={navLinkClass}>About</span>
         </nav>
+
+        <button
+          type='button'
+          className='text-white md:hidden'
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {mobileOpen ? (
+        <nav
+          className='absolute inset-x-0 top-full z-40 border-gray-800 border-t px-6 py-4 md:hidden'
+          style={{ backgroundColor: DARK_BLUE }}
+        >
+          <Link
+            to={ROUTES.home}
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to={ROUTES.peace}
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            Peace
+          </Link>
+          <Link
+            to={ROUTES.justice}
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            Justice
+          </Link>
+          <Link
+            to={ROUTES.inclusion}
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            Inclusion
+          </Link>
+          <span className={mobileNavLinkClass}>Impact stories</span>
+          <span className={mobileNavLinkClass}>Materials</span>
+          <span className={mobileNavLinkClass}>About</span>
+        </nav>
+      ) : null}
     </header>
   );
 }

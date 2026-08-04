@@ -12,10 +12,6 @@ html {
   --gender-lens-rgb: 123, 111, 232;
 }
 
-body,
-p {
-  font-family: "Hanken Grotesk", sans-serif;
-}
 
 h1,
 h2,
@@ -35,7 +31,7 @@ h3 {
 
 .tag {
   font-family: "Hanken Grotesk", sans-serif;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5rem;
   letter-spacing: 0.025em;
@@ -62,4 +58,15 @@ body.gender-lens-mode .gender-lens-current {
   border-color: rgba(var(--gender-lens-rgb), 0.5);
   background-color: rgba(var(--gender-lens-rgb), 0.2);
   box-shadow: 0 0 0 1px rgba(var(--gender-lens-rgb), 0.5);
+}
+
+@keyframes gender-nav-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 24px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
 }
