@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import TargetsDrawer from '../../components/chapter/TargetsDrawer';
 import { peaceMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -340,6 +341,12 @@ export function Peace() {
         intro={peaceMeta.description}
         color={peaceMeta.color}
         subsections={peaceSections}
+      />
+
+      <TargetsDrawer
+        chapterTitle={peaceMeta.title}
+        color={peaceMeta.color}
+        targets={peaceMeta.targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>

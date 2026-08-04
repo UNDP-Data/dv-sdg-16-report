@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import TargetsDrawer from '../../components/chapter/TargetsDrawer';
 import { inclusionMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -426,6 +427,12 @@ export function Inclusion() {
         intro={inclusionMeta.description}
         color={inclusionMeta.color}
         subsections={inclusionSections}
+      />
+
+      <TargetsDrawer
+        chapterTitle={inclusionMeta.title}
+        color={inclusionMeta.color}
+        targets={inclusionMeta.targets}
       />
 
       <div className='mx-auto flex max-w-2xl flex-col gap-4 px-4 py-12 md:px-8 lg:px-16'>

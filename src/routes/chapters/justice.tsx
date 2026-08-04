@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import TargetsDrawer from '../../components/chapter/TargetsDrawer';
 import { justiceMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -395,6 +396,12 @@ export function Justice() {
         intro={justiceMeta.description}
         color={justiceMeta.color}
         subsections={justiceSections}
+      />
+
+      <TargetsDrawer
+        chapterTitle={justiceMeta.title}
+        color={justiceMeta.color}
+        targets={justiceMeta.targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
