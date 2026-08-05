@@ -1,6 +1,6 @@
 import { Drawer, DrawerContent, DrawerTrigger } from '@undp/design-system-react/Drawer';
 import { InfoIcon } from 'lucide-react';
-import { DARK_BLUE, FONT_HEADING } from '../../constants';
+import { FONT_HEADING } from '../../constants';
 import type { ChapterTarget } from '../../types';
 
 interface TargetsDrawerProps {
@@ -15,13 +15,20 @@ export default function TargetsDrawer({ chapterTitle, color, targets }: TargetsD
       <DrawerTrigger asChild>
         <button
           type='button'
-          className='fixed right-0 bottom-8 z-20 flex items-center gap-2 whitespace-nowrap rounded-l-full border border-white/15 border-r-0 py-3 pr-6 pl-5 text-sm text-white shadow-lg transition-[padding-right] duration-300 ease-out hover:pr-12'
-          style={{ backgroundColor: DARK_BLUE }}
+          className='fixed right-0 bottom-8 z-20 flex items-center gap-2 rounded-l-[8px] py-3 pr-6 pl-5 text-left text-sm text-white leading-snug shadow-lg transition-[padding-right] duration-300 ease-out hover:pr-12'
+          style={{
+            backgroundImage: "url('/imgs/chapters/texture-peace.png')",
+            backgroundSize: 'cover',
+          }}
         >
-          <span className='h-2 w-2 shrink-0 rounded-full' style={{ backgroundColor: color }} />
-          Discover targets behind this chapter
+          Discover targets
+          <br />
+          behind this
+          <br />
+          chapter
         </button>
       </DrawerTrigger>
+
       <DrawerContent
         className='w-full max-w-xl border-white/10 bg-[#010C19] text-white'
         closeButtonClassName='!bg-white/10 !text-white hover:!bg-white/20'
