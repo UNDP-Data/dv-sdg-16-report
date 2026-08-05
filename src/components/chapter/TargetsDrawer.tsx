@@ -17,7 +17,7 @@ export default function TargetsDrawer({ chapterTitle, color, targets }: TargetsD
           type='button'
           className='fixed right-0 bottom-8 z-20 flex items-center gap-2 rounded-l-[8px] py-3 pr-6 pl-5 text-left text-sm text-white leading-snug shadow-lg transition-[padding-right] duration-300 ease-out hover:pr-12'
           style={{
-            backgroundImage: "url('/imgs/chapters/texture-peace.png')",
+            backgroundImage: `url('/imgs/chapters/${chapterTitle.toLowerCase()}-texture.webp')`,
             backgroundSize: 'cover',
           }}
         >
