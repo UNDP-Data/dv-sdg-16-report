@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import ImpactStory from '../../components/impact-stories/ImpactStory';
 import { peaceMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -142,10 +143,7 @@ const peaceSections: ChapterSection[] = [
           groups defending fundamental freedoms.
         </P>
         <PlaceholderBlock label='Figure' />
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='Data on detained human rights defenders drives action that may help secure earlier release'
-        />
+        <ImpactStory id='peace-detained-hrd-release' />
       </>
     ),
   },
@@ -191,10 +189,7 @@ const peaceSections: ChapterSection[] = [
           data on psychological violence for at least one year, providing insufficient evidence to
           identify a clear global pattern.
         </P>
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='How Victimization Surveys Are Shaping Citizen Security Policies in Panama'
-        />
+        <ImpactStory id='peace-panama-victimization-surveys' />
       </>
     ),
   },

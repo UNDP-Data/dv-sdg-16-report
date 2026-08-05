@@ -11,6 +11,7 @@ import * as TanStackQueryProvider from './integration/tanstack-query';
 import createInclusionRoute from './routes/chapters/inclusion';
 import createJusticeRoute from './routes/chapters/justice';
 import createPeaceRoute from './routes/chapters/peace';
+import createImpactStoriesRoute from './routes/impactStories';
 
 import './styles/fonts.css';
 import './styles/style.css';
@@ -37,6 +38,7 @@ const routeTree = rootRoute.addChildren([
   createPeaceRoute(rootRoute),
   createJusticeRoute(rootRoute),
   createInclusionRoute(rootRoute),
+  createImpactStoriesRoute(rootRoute),
 ]);
 
 const TanStackQueryProviderContext = TanStackQueryProvider.getContext();

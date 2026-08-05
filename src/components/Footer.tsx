@@ -31,7 +31,9 @@ export default function FooterEl() {
           <Link to={ROUTES.inclusion} className={footerLinkClass}>
             Inclusion
           </Link>
-          <span className={footerLinkClass}>Impact stories</span>
+          <Link to={ROUTES.impactStories} className={footerLinkClass}>
+            Impact stories
+          </Link>
           <span className={footerLinkClass}>Materials</span>
           <span className={footerLinkClass}>About</span>
         </nav>

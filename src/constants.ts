@@ -1,10 +1,11 @@
-import type { ChapterMeta } from './types';
+import type { ChapterKey, ChapterMeta } from './types';
 
 export const ROUTES = {
   home: '/',
   peace: '/chapters/peace',
   justice: '/chapters/justice',
   inclusion: '/chapters/inclusion',
+  impactStories: '/impact-stories',
 } as const;
 
 export const FONT_HEADING = 'Newsreader';
@@ -15,7 +16,7 @@ export const GENDER_LENS_COLOR = 'rgb(123, 111, 232)';
 
 export const DARK_BLUE = '#010C19';
 
-export const chapters: Record<'peace' | 'justice' | 'inclusion', ChapterMeta> = {
+export const chapters: Record<ChapterKey, ChapterMeta> = {
   peace: {
     number: '1',
     title: 'Peace',

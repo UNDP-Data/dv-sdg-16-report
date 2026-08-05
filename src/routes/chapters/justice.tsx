@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import ImpactStory from '../../components/impact-stories/ImpactStory';
 import { justiceMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -168,10 +169,7 @@ const justiceSections: ChapterSection[] = [
           Equally important is enhanced cooperation and information exchange among domestic agencies
           as well as across borders through international frameworks.
         </P>
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='Ghana Turns Illicit Financial Flows Data into Policy Action'
-        />
+        <ImpactStory id='justice-ghana-iffs' />
       </>
     ),
   },

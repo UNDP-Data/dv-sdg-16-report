@@ -1,6 +1,8 @@
 import type { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+export type ChapterKey = 'peace' | 'justice' | 'inclusion';
+
 export interface ChapterMeta {
   number: string;
   title: string;

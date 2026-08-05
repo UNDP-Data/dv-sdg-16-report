@@ -46,7 +46,9 @@ export default function HeaderEl() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <span className={navLinkClass}>Impact stories</span>
+          <Link to={ROUTES.impactStories} className={navLinkClass}>
+            Impact stories
+          </Link>
           <span className={navLinkClass}>Materials</span>
           <span className={navLinkClass}>About</span>
         </nav>
@@ -95,7 +97,13 @@ export default function HeaderEl() {
           >
             Inclusion
           </Link>
-          <span className={mobileNavLinkClass}>Impact stories</span>
+          <Link
+            to={ROUTES.impactStories}
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            Impact stories
+          </Link>
           <span className={mobileNavLinkClass}>Materials</span>
           <span className={mobileNavLinkClass}>About</span>
         </nav>

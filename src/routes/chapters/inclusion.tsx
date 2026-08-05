@@ -8,6 +8,7 @@ import Footnote from '../../components/chapter/Footnote';
 import Highlight from '../../components/chapter/Highlight';
 import PlaceholderBlock from '../../components/chapter/PlaceholderBlock';
 import SectionHeading from '../../components/chapter/SectionHeading';
+import ImpactStory from '../../components/impact-stories/ImpactStory';
 import { inclusionMeta, ROUTES } from '../../constants';
 import type { ChapterSection } from '../../types';
 
@@ -111,10 +112,7 @@ const inclusionSections: ChapterSection[] = [
           30 or younger accounting for just 2.0 per cent of parliamentarians and those aged 40 or
           younger only 12.0 per cent.
         </P>
-        <PlaceholderBlock
-          label='Data to impact story'
-          title="Advancing Women's Representation in Benin's National Assembly"
-        />
+        <ImpactStory id='inclusion-benin-womens-representation' />
       </>
     ),
   },
@@ -154,18 +152,9 @@ const inclusionSections: ChapterSection[] = [
           overall representation. It requires ensuring that women have equal opportunities to
           advance into leadership and decision-making roles across public institutions.
         </P>
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='Using representation data to inform more inclusive public institutions in Armenia'
-        />
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='Turning Representation Data into Institutional Change in Bosnia and Herzegovina'
-        />
-        <PlaceholderBlock
-          label='Data to impact story'
-          title="Advancing Women's Judicial Leadership in Bangladesh"
-        />
+        <ImpactStory id='inclusion-armenia-representation-data' />
+        <ImpactStory id='inclusion-bosnia-herzegovina-institutional-change' />
+        <ImpactStory id='inclusion-bangladesh-judicial-leadership' />
       </>
     ),
   },
@@ -206,10 +195,7 @@ const inclusionSections: ChapterSection[] = [
           gender identity. As a result, some of the most severe forms of exclusion remain
           insufficiently documented, hindering assessments for effective policy initiatives.
         </P>
-        <PlaceholderBlock
-          label='Data to impact story'
-          title='Using Data to Strengthen Institutional Responses to Discrimination in Mexico'
-        />
+        <ImpactStory id='inclusion-mexico-discrimination-data' />
       </>
     ),
   },
