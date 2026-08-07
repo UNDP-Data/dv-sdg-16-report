@@ -1,3 +1,4 @@
+import { H4 } from '@undp/design-system-react/Typography';
 import { useInView } from 'motion/react';
 import { type ReactNode, useEffect, useRef } from 'react';
 import Tag from '@/components/Tag';
@@ -40,7 +41,7 @@ export default function Section({
     <section id={id} ref={containerRef} className='flex flex-col gap-4 px-4 py-12 md:px-8 lg:px-16'>
       {image && <img src={image} alt={imageAlt} width={100} />}
       <Tag color={color} content={tag} />
-      <h3>{heading}</h3>
+      <H4>{heading}</H4>
       {children}
     </section>
   );

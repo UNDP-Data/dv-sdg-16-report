@@ -96,7 +96,7 @@ export default function HeroBanner({
                   {subsection.indicatorCode}
                 </P>
               ) : null}
-              <P marginBottom='none' size='sm' className='text-content-secondary'>
+              <P marginBottom='none' size='sm' className='text-content-reverse'>
                 {subsection.heading}
               </P>
             </a>

@@ -13,21 +13,23 @@ export default function InfoTooltip({
   color = 'primary',
 }: {
   content: ReactNode;
-  trigger?: ReactNode;
+  trigger?: string;
   color?: 'primary' | 'secondary' | 'tertiary';
 }) {
   return (
     <TooltipProvider delayDuration={100} skipDelayDuration={0}>
       <Tooltip>
-        <TooltipTrigger
-          className={cn(
-            'cursor-help border-none bg-transparent p-0 underline decoration-dotted underline-offset-4',
-            color === 'primary' && 'text-primary decoration-primary',
-            color === 'secondary' && 'text-secondary decoration-secondary',
-            color === 'tertiary' && 'text-tertiary decoration-tertiary',
-          )}
-        >
-          {trigger}
+        <TooltipTrigger asChild>
+          <span
+            className={cn(
+              'cursor-help border-none bg-transparent p-0 underline decoration-dotted underline-offset-4',
+              color === 'primary' && 'text-primary decoration-primary',
+              color === 'secondary' && 'text-secondary decoration-secondary',
+              color === 'tertiary' && 'text-tertiary decoration-tertiary',
+            )}
+          >
+            {trigger}
+          </span>
         </TooltipTrigger>
         <TooltipContent className='max-w-xs text-left'>{content}</TooltipContent>
       </Tooltip>
