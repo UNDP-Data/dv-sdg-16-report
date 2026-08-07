@@ -8,56 +8,21 @@ html {
 }
 
 :root {
-  /* Keep in sync with GENDER_LENS_COLOR in constants.ts */
   --gender-lens-rgb: 123, 111, 232;
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Newsreader", serif;
-}
-
-h3 {
-  font-weight: 600;
-  font-size: 2.25rem;
-  line-height: 3rem;
-  color: #1e293b;
-}
-
-.tag {
-  font-family: "Hanken Grotesk", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-}
-
 .gender-lens {
-  border-radius: 2px;
   transition: background-color 0.2s ease;
-}
-
-body.gender-lens-mode .gender-lens {
   background-color: rgba(var(--gender-lens-rgb), 0.15);
   box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.35);
   padding: 1rem;
 }
 
-body.gender-lens-mode .gender-lens-current {
+.gender-lens-current {
+  transition: background-color 0.2s ease;
   background-color: rgba(var(--gender-lens-rgb), 0.2);
   box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.65);
-}
-
-.gender-lens-match {
-  border-color: rgba(var(--gender-lens-rgb), 0.5);
-  background-color: rgba(var(--gender-lens-rgb), 0.2);
-  box-shadow: 0 0 0 1px rgba(var(--gender-lens-rgb), 0.5);
 }
 
 @keyframes gender-nav-in {

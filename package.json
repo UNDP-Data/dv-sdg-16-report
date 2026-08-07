@@ -5,9 +5,7 @@
   "type": "module",
   "keywords": [],
   "author": "",
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": ["*.css"],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -23,8 +21,8 @@
     "@dnd-kit/modifiers": "^9.0.0",
     "@tanstack/react-query": "^5.90.12",
     "@tanstack/react-router": "^1.141.1",
-    "@undp/data-viz": "^2.6.14",
-    "@undp/design-system-react": "^2.4.4",
+    "@undp/data-viz": "^3.0.3",
+    "@undp/design-system-react": "^3.0.6",
     "ajv": "^8.17.1",
     "dom-to-svg": "^0.12.2",
     "file-saver": "^2.0.5",
@@ -33,6 +31,7 @@
     "maplibre-gl": "^5.12.0",
     "marked": "^16.4.1",
     "math-expression-evaluator": "^2.0.7",
+    "motion": "^13.0.0",
     "pmtiles": "^4.3.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

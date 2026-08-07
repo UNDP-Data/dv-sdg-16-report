@@ -12,7 +12,7 @@ export interface ChapterMeta {
 }
 
 export interface ChapterSection {
-  number: string;
+  id: string;
   title: string;
   indicatorCode?: string;
   heading: string;
@@ -20,4 +20,5 @@ export interface ChapterSection {
   image?: string;
   icon?: LucideIcon;
   content?: ReactNode;
+  isGenderLens?: boolean;
 }

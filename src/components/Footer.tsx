@@ -1,41 +1,41 @@
 import { Link } from '@tanstack/react-router';
-import { DARK_BLUE, ROUTES } from '../constants';
 
-const footerLinkClass = 'text-sm text-gray-300 transition-colors hover:text-white';
+const footerLinkClass = 'text-sm text-surface-sm transition-colors hover:text-foreground';
 
 export default function FooterEl() {
   return (
-    <footer
-      style={{ backgroundColor: DARK_BLUE }}
-      className='border-gray-800 border-t px-6 py-4 md:px-12'
-    >
+    <footer className='background-soft border-background/30 border-t bg-foreground-soft px-6 py-4 md:px-12'>
       <div className='mx-auto flex flex-col items-start justify-between gap-8 md:flex-row md:items-center'>
         <div className='flex items-center gap-6'>
-          <div className='flex h-10 w-24 items-center justify-center rounded border border-white/15 text-white/40 text-xs'>
+          <div className='flex h-10 w-24 items-center justify-center rounded border border-background/30 text-content-reverse text-xs'>
             Logo
           </div>
-          <div className='flex h-10 w-24 items-center justify-center rounded border border-white/15 text-white/40 text-xs'>
+          <div className='flex h-10 w-24 items-center justify-center rounded border border-background/30 text-content-reverse text-xs'>
             Logo
           </div>
         </div>
         <nav className='flex flex-wrap items-center gap-x-6 gap-y-2'>
-          <Link to={ROUTES.home} className={footerLinkClass}>
+          <Link to='/' className={footerLinkClass}>
             Home
           </Link>
-          <Link to={ROUTES.peace} className={footerLinkClass}>
+          <Link to='/chapters/peace' className={footerLinkClass}>
             Peace
           </Link>
-          <Link to={ROUTES.justice} className={footerLinkClass}>
+          <Link to='/chapters/justice' className={footerLinkClass}>
             Justice
           </Link>
-          <Link to={ROUTES.inclusion} className={footerLinkClass}>
+          <Link to='/chapters/inclusion' className={footerLinkClass}>
             Inclusion
           </Link>
-          <Link to={ROUTES.impactStories} className={footerLinkClass}>
+          <Link to='/impact-stories' className={footerLinkClass}>
             Impact stories
           </Link>
-          <span className={footerLinkClass}>Materials</span>
-          <span className={footerLinkClass}>About</span>
+          <Link to='/' className={footerLinkClass}>
+            Materials
+          </Link>
+          <Link to='/' className={footerLinkClass}>
+            About
+          </Link>
         </nav>
       </div>
     </footer>

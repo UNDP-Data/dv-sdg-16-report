@@ -1,9 +1,9 @@
-import path from 'path';
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { visualizer } from 'rollup-plugin-visualizer';
-import postcssNested from 'postcss-nested';
+import path from 'node:path';
 import tailwindcss from '@tailwindcss/postcss';
+import react from '@vitejs/plugin-react';
+import postcssNested from 'postcss-nested';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
@@ -37,7 +37,7 @@ export default defineConfig({
               return unit === 'rem' ? value * 16 : value;
             }
 
-            root.walkAtRules(rule => {
+            root.walkAtRules((rule) => {
               if (rule.name !== 'media' && rule.name !== 'container') return;
 
               const pxValue = extractMinWidth(rule.params);

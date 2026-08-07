@@ -7,26 +7,23 @@ import {
 } from '@undp/design-system-react/DropdownMenu';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { DARK_BLUE, ROUTES } from '../constants';
 
-const navLinkClass = 'text-sm text-gray-300 transition-colors hover:text-white';
-const mobileNavLinkClass = 'block py-3 text-base text-gray-300 transition-colors hover:text-white';
+const navLinkClass = 'text-sm text-surface-md transition-colors hover:text-content-reverse';
+const mobileNavLinkClass =
+  'block py-3 text-base text-surface-md transition-colors hover:text-content-reverse';
 
 export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header
-      className='relative border-gray-800 border-b px-6 py-4 md:px-12'
-      style={{ backgroundColor: DARK_BLUE }}
-    >
+    <header className='relative border-background/30 border-b bg-foreground-soft px-6 py-4 md:px-12'>
       <div className='mx-auto flex items-center justify-between'>
-        <Link to={ROUTES.home} className='font-bold text-white'>
+        <Link to='/' className='font-bold text-content-reverse'>
           SDG16 Report
         </Link>
 
         <nav className='hidden items-center gap-8 md:flex'>
-          <Link to={ROUTES.home} className={navLinkClass}>
+          <Link to='/' className={navLinkClass}>
             Home
           </Link>
           <DropdownMenu>
@@ -34,28 +31,32 @@ export default function HeaderEl() {
               Chapters
               <ChevronDown size={14} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='border-white/10 bg-[#010C19] text-white'>
+            <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
               <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to={ROUTES.peace}>Peace</Link>
+                <Link to='/chapters/peace'>Peace</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to={ROUTES.justice}>Justice</Link>
+                <Link to='/chapters/justice'>Justice</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to={ROUTES.inclusion}>Inclusion</Link>
+                <Link to='/chapters/inclusion'>Inclusion</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to={ROUTES.impactStories} className={navLinkClass}>
+          <Link to='/impact-stories' className={navLinkClass}>
             Impact stories
           </Link>
-          <span className={navLinkClass}>Materials</span>
-          <span className={navLinkClass}>About</span>
+          <Link to='/' className={navLinkClass}>
+            Materials
+          </Link>
+          <Link to='/' className={navLinkClass}>
+            About
+          </Link>
         </nav>
 
         <button
           type='button'
-          className='text-white md:hidden'
+          className='text-content-reverse md:hidden'
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((open) => !open)}
@@ -65,47 +66,44 @@ export default function HeaderEl() {
       </div>
 
       {mobileOpen ? (
-        <nav
-          className='absolute inset-x-0 top-full z-40 border-gray-800 border-t px-6 py-4 md:hidden'
-          style={{ backgroundColor: DARK_BLUE }}
-        >
-          <Link
-            to={ROUTES.home}
-            className={mobileNavLinkClass}
-            onClick={() => setMobileOpen(false)}
-          >
+        <nav className='absolute inset-x-0 top-full z-40 border-foreground border-t bg-foreground-soft px-6 py-4 md:hidden'>
+          <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Home
           </Link>
           <Link
-            to={ROUTES.peace}
+            to='/chapters/peace'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Peace
           </Link>
           <Link
-            to={ROUTES.justice}
+            to='/chapters/justice'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Justice
           </Link>
           <Link
-            to={ROUTES.inclusion}
+            to='/chapters/inclusion'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Inclusion
           </Link>
           <Link
-            to={ROUTES.impactStories}
+            to='/impact-stories'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Impact stories
           </Link>
-          <span className={mobileNavLinkClass}>Materials</span>
-          <span className={mobileNavLinkClass}>About</span>
+          <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            Materials
+          </Link>
+          <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            About
+          </Link>
         </nav>
       ) : null}
     </header>
