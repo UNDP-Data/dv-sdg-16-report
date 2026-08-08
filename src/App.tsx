@@ -8,10 +8,10 @@ function App() {
       backgroundColor='foreground'
       width='full'
       padding='none'
-      className='flex h-screen items-center bg-center bg-cover px-20'
+      className='flex h-auto min-h-screen items-center bg-center bg-cover px-6 md:h-screen md:px-20'
       style={{ backgroundImage: `url('imgs/hero-bg.webp')` }}
     >
-      <Container width='sm'>
+      <Container className='md:w-1/2 lg:w-1/3'>
         <P size='sm' className='text-surface-sm uppercase tracking-widest'>
           SDG 16 Report 2026
         </P>
