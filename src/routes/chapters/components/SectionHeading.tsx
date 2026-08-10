@@ -6,23 +6,13 @@ import { useActions } from '@/stores/chapterStore';
 
 interface SectionHeadingProps {
   id?: string;
-  image?: string;
-  imageAlt?: string;
   tag: string;
   heading: string;
   color: 'primary' | 'secondary' | 'tertiary';
   children?: ReactNode;
 }
 
-export default function Section({
-  id,
-  image,
-  imageAlt = '',
-  tag,
-  heading,
-  color,
-  children,
-}: SectionHeadingProps) {
+export default function Section({ id, tag, heading, color, children }: SectionHeadingProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { setActiveSection } = useActions();
@@ -39,7 +29,6 @@ export default function Section({
 
   return (
     <section id={id} ref={containerRef} className='flex flex-col gap-4 px-4 py-12 md:px-8 lg:px-16'>
-      {image && <img src={image} alt={imageAlt} width={100} />}
       <Tag color={color} content={tag} />
       <H4>{heading}</H4>
       {children}

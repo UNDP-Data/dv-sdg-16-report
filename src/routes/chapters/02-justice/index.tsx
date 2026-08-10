@@ -22,7 +22,6 @@ export function Justice() {
         indicatorCode: '16.3.1',
         heading: 'More than half of violent crimes remain hidden from the justice system',
         anchor: 'access-to-criminal-justice',
-        image: '/imgs/icons/16-3-1.png',
         content: (
           <>
             <PlaceholderBlock label='Scrollytelling' />
@@ -76,7 +75,6 @@ export function Justice() {
         heading:
           'One in three prisoners globally is held in detention without a sentence, with little progress over the past decade',
         anchor: 'unsentenced-detention',
-        image: '/imgs/icons/16-3-2.png',
         isGenderLens: true,
         content: (
           <>
@@ -106,7 +104,6 @@ export function Justice() {
               the majority of the global prison population, women account for a higher share of
               unsentenced prisoners in several regions.
             </P>
-            <PlaceholderBlock label='Figure' />
             <P marginBottom='none' size='lg'>
               The global prevalence of overcrowding undermines human rights, restricts access to
               health care and legal services, and has well-documented consequences for health and
@@ -134,7 +131,6 @@ export function Justice() {
         heading:
           'Corruption and illicit financial flows continue to erode the rule of law and divert billions of dollars away from sustainable development',
         anchor: 'illicit-financial-flows',
-        image: '/imgs/icons/16-4-1.png',
         content: (
           <>
             <P marginBottom='none' size='lg'>
@@ -235,7 +231,6 @@ export function Justice() {
         indicatorCode: '16.5.1',
         heading: 'Bribery remains widespread, with large differences across regions',
         anchor: 'bribery-among-the-population',
-        image: '/imgs/icons/16-5-1.png',
         isGenderLens: true,
         content: (
           <>
@@ -386,7 +381,6 @@ export function Justice() {
         title: 'The role of Institutions',
         heading: 'Building just societies through accessible, fair and accountable institutions',
         anchor: 'role-of-institutions',
-        image: '/imgs/icons/the-role-of-institutions.png',
         content: (
           <>
             <P marginBottom='none' size='lg'>
@@ -438,7 +432,6 @@ export function Justice() {
           <SectionHeading
             key={section.anchor}
             id={section.anchor}
-            image={section.image}
             tag={
               section.indicatorCode
                 ? `SDG Indicator ${section.indicatorCode} – ${section.title}`

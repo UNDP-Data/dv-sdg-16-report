@@ -23,7 +23,6 @@ export function Inclusion() {
         heading:
           'Birth registration continues to expand, but 150 million children remain without a legal identity',
         anchor: 'legal-identity',
-        image: '/imgs/icons/16-9-1.png',
         isGenderLens: true,
         content: (
           <>
@@ -417,7 +416,6 @@ export function Inclusion() {
         indicatorCode: '16.8.1',
         heading: 'Global economic governance has not kept pace with a changing world',
         anchor: 'global-governance',
-        image: '/imgs/icons/16-8-1.png',
         content: (
           <>
             <P marginBottom='none' size='lg'>
@@ -434,7 +432,6 @@ export function Inclusion() {
         heading:
           'Inclusive societies are ensured through substantive representation and transparency',
         anchor: 'role-of-institutions',
-        image: '/imgs/icons/the-role-of-institutions.png',
         content: (
           <>
             <P marginBottom='none' size='lg'>
@@ -496,7 +493,6 @@ export function Inclusion() {
           <SectionHeading
             key={section.anchor}
             id={section.anchor}
-            image={section.image}
             tag={
               section.indicatorCode
                 ? `SDG Indicator ${section.indicatorCode} – ${section.title}`

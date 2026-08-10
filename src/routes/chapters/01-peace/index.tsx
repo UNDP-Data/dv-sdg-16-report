@@ -22,7 +22,6 @@ export function Peace() {
         indicatorCode: '16.1.2',
         heading: 'A civilian dies every 14 minutes in armed conflict',
         anchor: 'conflict-related-deaths',
-        image: '/imgs/icons/16-1-2.png',
         isGenderLens: true,
         content: (
           <>
@@ -74,7 +73,6 @@ export function Peace() {
         heading:
           'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
         anchor: 'homicide',
-        image: '/imgs/icons/16-1-1.webp',
         isGenderLens: true,
         content: (
           <>
@@ -117,7 +115,6 @@ export function Peace() {
         heading:
           'One human rights defender, journalist or trade unionist is killed or disappeared every 10 hours',
         anchor: 'attacks-on-defenders',
-        image: '/imgs/icons/16-10-1.png',
         isGenderLens: true,
         content: (
           <>
@@ -173,7 +170,6 @@ export function Peace() {
         heading:
           'Millions of people experience non-lethal violence, with distinct regional and gendered patterns of victimization',
         anchor: 'non-lethal-violence',
-        image: '/imgs/icons/16-1-3.png',
         isGenderLens: true,
         content: (
           <>
@@ -228,7 +224,6 @@ export function Peace() {
         heading:
           'Violence begins early in life, with two in three children experiencing violent discipline at home',
         anchor: 'violence-against-children',
-        image: '/imgs/icons/16-2-1.png',
         isGenderLens: true,
         content: (
           <>
@@ -265,7 +260,6 @@ export function Peace() {
         indicatorCode: '16.2.2',
         heading: 'More than one in three detected victims of human trafficking is a child',
         anchor: 'trafficking-in-persons',
-        image: '/imgs/icons/16-2-2.png',
         isGenderLens: true,
         content: (
           <>
@@ -309,7 +303,6 @@ export function Peace() {
         indicatorCode: '16.1.4',
         heading: 'One in three people globally do not feel safe walking alone at night',
         anchor: 'perception-of-safety',
-        image: '/imgs/icons/16-1-4.png',
         isGenderLens: true,
         content: (
           <>
@@ -360,7 +353,6 @@ export function Peace() {
         title: 'The role of Institutions',
         heading: 'Achieving peace through capable, trustworthy and responsive institutions',
         anchor: 'role-of-institutions',
-        image: '/imgs/icons/the-role-of-institutions.png',
         content: (
           <>
             <P marginBottom='none' size='lg'>
@@ -413,7 +405,6 @@ export function Peace() {
           <SectionHeading
             key={section.anchor}
             id={section.anchor}
-            image={section.image}
             tag={
               section.indicatorCode
                 ? `SDG Indicator ${section.indicatorCode} – ${section.title}`
