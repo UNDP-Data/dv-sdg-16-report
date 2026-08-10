@@ -46,10 +46,10 @@ export default function HeaderEl() {
           <Link to='/impact-stories' className={navLinkClass}>
             Impact stories
           </Link>
-          <Link to='/' className={navLinkClass}>
+          <Link to='/materials' className={navLinkClass}>
             Materials
           </Link>
-          <Link to='/' className={navLinkClass}>
+          <Link to='/about' className={navLinkClass}>
             About
           </Link>
         </nav>
@@ -98,10 +98,10 @@ export default function HeaderEl() {
           >
             Impact stories
           </Link>
-          <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+          <Link to='/materials' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Materials
           </Link>
-          <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+          <Link to='/about' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             About
           </Link>
         </nav>
