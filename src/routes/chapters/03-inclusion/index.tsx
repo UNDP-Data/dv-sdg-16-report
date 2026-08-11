@@ -473,6 +473,7 @@ export function Inclusion() {
     {
       id: '10',
       title: 'The role of Institutions',
+      indicatorCode: 'The role of Institutions',
       heading:
         'Inclusive societies are ensured through substantive representation and transparency',
       anchor: 'role-of-institutions',
