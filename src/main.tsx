@@ -91,7 +91,7 @@ if (rootElement) {
             hover: '#7b6fe8',
             light: '#7b6fe8',
           },
-          foregroundSoft: '#061932',
+          foregroundSoft: '#142338',
         }}
       >
         <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
