@@ -1,6 +1,8 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
 import { P } from '@undp/design-system-react/Typography';
+import { useState } from 'react';
+import Tag from '@/components/Tag';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import type { ChapterTarget } from '@/types';
@@ -15,6 +17,7 @@ import TargetsDrawer from '../components/TargetsDrawer';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
+  const [isDataConsiderationExpanded, setIsDataConsiderationExpanded] = useState(false);
   const targets: ChapterTarget[] = [
     {
       code: '16.1',
@@ -56,10 +59,15 @@ export function Peace() {
             After three consecutive years of rising conflict-related deaths, documented civilian
             deaths declined by 23 per cent. Nonetheless, the overall situation remains alarming.
           </P>
-          <div className='rounded-md border border-stroke-xs bg-background-soft p-4'>
-            <P marginBottom='none' size='lg'>
-              For the 2015-2025 period, UN Human Rights could document conflict-related deaths, with
-              a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso,
+          <div className='-mx-8 flex flex-col gap-3 rounded-md bg-[#EFF5F9] p-8'>
+            <Tag color='primary' content='Data consideration' />
+            <P
+              marginBottom='none'
+              size='lg'
+              className={isDataConsiderationExpanded ? undefined : 'line-clamp-5'}
+            >
+              For the 2015-2025 period, UN Human Rights could document conflict-related deaths,
+              with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso,
               Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo,
               Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian
               Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and
@@ -68,6 +76,13 @@ export function Peace() {
               for other purposes, including in relation to the question of applicability of
               international humanitarian law.
             </P>
+            <button
+              type='button'
+              onClick={() => setIsDataConsiderationExpanded((prev) => !prev)}
+              className='w-fit cursor-pointer text-primary text-sm underline underline-offset-2'
+            >
+              {isDataConsiderationExpanded ? 'Read less' : 'Read more'}
+            </button>
           </div>
           <PlaceholderBlock label='Scrollytelling' />
           <P
