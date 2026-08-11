@@ -41,7 +41,7 @@ export default function HeroBanner({
   return (
     <section
       ref={containerRef}
-      className='relative h-auto bg-center bg-cover md:h-[calc(100vh-102px)]'
+      className='relative h-auto bg-center bg-cover md:min-h-[calc(100vh-102px)]'
       style={{ backgroundImage: `url('${bg}')` }}
     >
       <div className='mx-auto flex w-full max-w-300 flex-col items-start gap-4 px-6 py-20 md:px-12 md:py-28'>
@@ -64,11 +64,17 @@ export default function HeroBanner({
             </span>
           ) : null}
         </div>
-        <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
+        <H1
+          marginBottom='none'
+          className='font-normal text-content-reverse text-slate-200 normal-case'
+        >
           {title}
         </H1>
-        <P size='lg' className='max-w-3xl text-surface-sm'>
+        <P size='xl' className='max-w-3xl text-surface-sm'>
           {intro}
+        </P>
+        <P marginBottom='none' size='sm' className='text-[#99B0BD] uppercase tracking-widest'>
+          Chapter at a glance
         </P>
         <Grid noOfCol={{ base: 1, sm: 2, md: 3, lg: 4 }} gap='12px'>
           {subsections.map((subsection) => (
@@ -76,10 +82,10 @@ export default function HeroBanner({
               key={subsection.anchor}
               href={`#${subsection.anchor}`}
               className={cn(
-                'rounded-lg border p-4 backdrop-blur-sm transition-colors',
+                'rounded-[4px] border p-4 backdrop-blur-lg transition-colors',
                 isGenderLensActive && subsection.isGenderLens
                   ? 'border-quaternary/50 bg-quaternary/20 hover:bg-quaternary/30'
-                  : 'border-background/10 bg-background/5 hover:bg-background/10',
+                  : 'border-background/10 bg-background/1 hover:bg-background/5',
               )}
             >
               {subsection.indicatorCode ? (
@@ -88,15 +94,16 @@ export default function HeroBanner({
                   size='sm'
                   weight='semibold'
                   className={cn(
+                    'line-clamp-1',
                     color === 'primary' && 'text-primary',
                     color === 'secondary' && 'text-secondary',
                     color === 'tertiary' && 'text-tertiary',
                   )}
                 >
-                  {subsection.indicatorCode}
+                  {subsection.title}
                 </P>
               ) : null}
-              <P marginBottom='none' size='sm' className='text-content-reverse'>
+              <P marginBottom='none' size='base' className='line-clamp-3 text-content-reverse'>
                 {subsection.heading}
               </P>
             </a>
