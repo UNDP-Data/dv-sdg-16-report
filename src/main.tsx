@@ -92,6 +92,9 @@ if (rootElement) {
             light: '#7b6fe8',
           },
           foregroundSoft: '#142338',
+          content: {
+            reverse: '#DCE6F0',
+          },
         }}
       >
         <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
