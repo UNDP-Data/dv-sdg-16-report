@@ -12,6 +12,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetsDrawer';
+import WaveDivider from '../components/WaveDivider';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -100,6 +101,7 @@ export function Justice() {
             civil justice differs substantially across national contexts and underscores the need
             for more systematic measurement and internationally comparable data.
           </P>
+          <WaveDivider src='/imgs/dividers/justice-wave.webp' flip />
         </>
       ),
     },
@@ -207,7 +209,7 @@ export function Justice() {
             Equally important is enhanced cooperation and information exchange among domestic
             agencies as well as across borders through international frameworks.
           </P>
-          <ImpactStory id='justice-ghana-iffs' />
+          <ImpactStory id='justice-ghana-iffs' color='secondary' />
         </>
       ),
     },
