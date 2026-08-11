@@ -28,7 +28,7 @@ export default function Section({ id, tag, heading, color, children }: SectionHe
   }, [isInView, id, setActiveSection]);
 
   return (
-    <section id={id} ref={containerRef} className='flex flex-col gap-4 px-4 py-12 md:px-8 lg:px-16'>
+    <section id={id} ref={containerRef} className='flex flex-col gap-4 px-4 md:px-8 lg:px-16'>
       <Tag color={color} content={tag} />
       <H4 marginBottom='none' className='font-heading font-semibold text-foreground'>
         {heading}
