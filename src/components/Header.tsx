@@ -16,7 +16,10 @@ export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className='relative border-background/30 border-b bg-foreground-soft px-6 py-4 md:px-12'>
+    <header
+      className='relative border-background/30 border-b bg-foreground-soft bg-repeat px-6 py-4 md:px-12'
+      style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
+    >
       <div className='mx-auto flex items-center justify-between'>
         <Link to='/' className='font-bold text-content-reverse'>
           SDG16 Report

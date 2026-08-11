@@ -35,7 +35,10 @@ export default function SubNav({
   const activeSection = useActiveSection();
 
   return (
-    <div className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-foreground-soft px-6 py-3 md:px-12'>
+    <div
+      className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-foreground-soft bg-repeat px-6 py-3 md:px-12'
+      style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
+    >
       <DropdownMenu>
         <DropdownMenuTrigger className='flex items-center gap-2 text-content-reverse text-sm'>
           <span
