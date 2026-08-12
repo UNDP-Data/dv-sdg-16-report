@@ -14,6 +14,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetsDrawer';
+import WaveDivider from '../components/WaveDivider';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -66,8 +67,8 @@ export function Peace() {
               size='lg'
               className={isDataConsiderationExpanded ? undefined : 'line-clamp-5'}
             >
-              For the 2015-2025 period, UN Human Rights could document conflict-related deaths,
-              with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso,
+              For the 2015-2025 period, UN Human Rights could document conflict-related deaths, with
+              a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso,
               Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo,
               Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian
               Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and
@@ -104,6 +105,7 @@ export function Peace() {
             result, the figures presented should be interpreted as a minimum count of civilian
             deaths.
           </P>
+          <WaveDivider src='/imgs/dividers/peace-01.png' />
         </>
       ),
     },
@@ -145,6 +147,7 @@ export function Peace() {
             require the global homicide rate to fall below 3 victims per 100,000 population by 2030.
           </P>
           <PlaceholderBlock label='Figure' />
+          <WaveDivider src='/imgs/dividers/peace-02.png' align='right' />
         </>
       ),
     },
@@ -291,6 +294,7 @@ export function Peace() {
             childhood.
           </P>
           <PlaceholderBlock label='Big numbers' />
+          <WaveDivider src='/imgs/dividers/peace-03.png' />
         </>
       ),
     },
@@ -334,6 +338,7 @@ export function Peace() {
             statistical methods and victims’ surveys is critical to better understand its scale,
             identify those at greatest risk and strengthen evidence-based responses.
           </P>
+          <WaveDivider src='/imgs/dividers/peace-04.png' align='right' />
         </>
       ),
     },
@@ -385,6 +390,7 @@ export function Peace() {
             harassment and robbery, as well as broader social and environmental factors, may
             influence the gendered difference in perceived safety.
           </P>
+          <WaveDivider src='/imgs/dividers/peace-02.png' />
         </>
       ),
     },

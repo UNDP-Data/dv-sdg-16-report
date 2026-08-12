@@ -12,6 +12,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetsDrawer';
+import WaveDivider from '../components/WaveDivider';
 
 export function Inclusion() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -88,6 +89,7 @@ export function Inclusion() {
             suggests that the remaining gaps primarily reflect inequalities in access to
             registration systems rather than differences between girls and boys.
           </P>
+          <WaveDivider src='/imgs/dividers/inclusion-04.webp' align='right' />
         </>
       ),
     },
@@ -318,6 +320,7 @@ export function Inclusion() {
             contrast, most high-income and upper-middle-income countries generally maintained
             deviations below 7 per cent.
           </P>
+          <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
         </>
       ),
     },
@@ -359,6 +362,7 @@ export function Inclusion() {
             services remains highly unequal across countries.
           </P>
           <PlaceholderBlock label='Figure' />
+          <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
         </>
       ),
     },
@@ -405,6 +409,7 @@ export function Inclusion() {
             countries with sex-disaggregated data, 27.3 per cent of women believe they have a say in
             government decisions, compared with 32.6 per cent of men.
           </P>
+          <WaveDivider src='/imgs/dividers/inclusion-03.webp' />
         </>
       ),
     },
@@ -451,6 +456,7 @@ export function Inclusion() {
             become widespread, ensuring that this right can be effectively exercised remains a
             significant challenge.
           </P>
+          <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
         </>
       ),
     },
@@ -467,6 +473,7 @@ export function Inclusion() {
             institutions reflect the voices and interests of all countries.
           </P>
           <PlaceholderBlock label='Figure' />
+          <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
         </>
       ),
     },

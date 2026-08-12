@@ -62,7 +62,7 @@ export function Justice() {
       content: (
         <>
           <PlaceholderBlock label='Scrollytelling' />
-          <WaveDivider src='/imgs/dividers/justice-wave-1.png' />
+          <WaveDivider src='/imgs/dividers/justice-01.webp' />
         </>
       ),
     },
@@ -103,7 +103,7 @@ export function Justice() {
             civil justice differs substantially across national contexts and underscores the need
             for more systematic measurement and internationally comparable data.
           </P>
-          <WaveDivider src='/imgs/dividers/justice-wave-2.png' align='right' />
+          <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
         </>
       ),
     },
@@ -160,7 +160,7 @@ export function Justice() {
             measures to reduce unnecessary pre-trial detention and expand alternatives to
             imprisonment.
           </P>
-          <WaveDivider src='/imgs/dividers/justice-wave-3.png' />
+          <WaveDivider src='/imgs/dividers/justice-03.webp' />
         </>
       ),
     },
@@ -261,7 +261,7 @@ export function Justice() {
             Northern America and Latin America and the Caribbean, more than half of reporting
             countries recorded tracing rates below the global average of 46 per cent.
           </P>
-          <WaveDivider src='/imgs/dividers/justice-wave-4.png' align='right' />
+          <WaveDivider src='/imgs/dividers/justice-04.webp' align='right' />
         </>
       ),
     },
@@ -322,7 +322,7 @@ export function Justice() {
             available data point in the period 2018–2025 shows a slight increase from 12.1 per cent
             to 14 per cent.
           </P>
-          <WaveDivider src='/imgs/dividers/justice-wave-1.png' />
+          <WaveDivider src='/imgs/dividers/justice-01.webp' />
         </>
       ),
     },
@@ -372,7 +372,7 @@ export function Justice() {
             continues to affect businesses in many countries.
           </P>
           <PlaceholderBlock label='Figure' />
-          <WaveDivider src='/imgs/dividers/justice-wave-2.png' align='right' />
+          <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
         </>
       ),
     },
@@ -415,7 +415,7 @@ export function Justice() {
             way, one can ensure that full compliance translates into meaningful protection of human
             rights.
           </P>
-          <WaveDivider src='/imgs/dividers/justice-wave-3.png' />
+          <WaveDivider src='/imgs/dividers/justice-03.webp' />
         </>
       ),
     },
