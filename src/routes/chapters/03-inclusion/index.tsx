@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -180,7 +181,8 @@ export function Inclusion() {
             MPs aged 30 or younger accounting for just 2.0 per cent of parliamentarians and those
             aged 40 or younger only 12.0 per cent.
           </P>
-          <ImpactStory id='inclusion-benin-womens-representation' />
+          <ImpactStory id='inclusion-benin-womens-representation' color='tertiary' />
+          <Spacer size='6xl' />
         </>
       ),
     },
@@ -229,9 +231,10 @@ export function Inclusion() {
             overall representation. It requires ensuring that women have equal opportunities to
             advance into leadership and decision-making roles across public institutions.
           </P>
-          <ImpactStory id='inclusion-armenia-representation-data' />
-          <ImpactStory id='inclusion-bosnia-herzegovina-institutional-change' />
-          <ImpactStory id='inclusion-bangladesh-judicial-leadership' />
+          <ImpactStory id='inclusion-armenia-representation-data' color='tertiary' />
+          <ImpactStory id='inclusion-bosnia-herzegovina-institutional-change' color='tertiary' />
+          <ImpactStory id='inclusion-bangladesh-judicial-leadership' color='tertiary' />
+          <Spacer size='6xl' />
         </>
       ),
     },
@@ -284,7 +287,8 @@ export function Inclusion() {
             remain insufficiently documented, hindering assessments for effective policy
             initiatives.
           </P>
-          <ImpactStory id='inclusion-mexico-discrimination-data' />
+          <ImpactStory id='inclusion-mexico-discrimination-data' color='tertiary' />
+          <Spacer size='6xl' />
         </>
       ),
     },
@@ -489,6 +493,7 @@ export function Inclusion() {
           <P marginBottom='none' size='lg'>
             Content goes here
           </P>
+          <Spacer size='6xl' />
         </>
       ),
     },
