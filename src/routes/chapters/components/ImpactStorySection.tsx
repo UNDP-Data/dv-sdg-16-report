@@ -27,7 +27,7 @@ export default function ImpactStorySection({
   return (
     <>
       <div
-        className={`relative isolate mx-[calc(50%-50vw+1.5rem)] w-[calc(100vw-3rem)] overflow-hidden rounded-lg bg-cover bg-foreground bg-right md:mx-[calc(50%-50vw+3rem)] md:w-[calc(100vw-6rem)] ${className}`}
+        className={`relative isolate mx-[calc(50%-50vw+1.5rem)] w-[calc(100vw-3rem)] overflow-hidden rounded-lg bg-cover bg-foreground bg-right-bottom md:mx-[calc(50%-50vw+3rem)] md:w-[calc(100vw-6rem)] ${className}`}
         style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
       >
         <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
