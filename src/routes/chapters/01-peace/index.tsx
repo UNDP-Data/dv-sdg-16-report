@@ -11,7 +11,7 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
-import ArmedConflictScrollytelling from './ArmedConflictScrollytelling';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -398,7 +398,7 @@ export function Peace() {
           people’s lives to a detrimental effect on progress.
         </P>
       </div>
-      <ArmedConflictScrollytelling />
+      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading
