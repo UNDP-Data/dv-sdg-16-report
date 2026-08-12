@@ -4,7 +4,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -12,46 +11,10 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
-import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
-  const targets: ChapterTarget[] = [
-    {
-      code: '16.3',
-      description:
-        'Promote the rule of law at the national and international levels and ensure equal access to justice for all',
-      indicators: [
-        { code: '16.3.1', label: 'Access to criminal justice' },
-        { code: '16.3.2', label: 'Unsentenced detention' },
-        { code: '16.3.3', label: 'Access to civil justice' },
-      ],
-    },
-    {
-      code: '16.4',
-      description:
-        'By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime',
-      indicators: [
-        { code: '16.4.1', label: 'Illicit financial flows' },
-        { code: '16.4.2', label: 'Illicit firearms flows' },
-      ],
-    },
-    {
-      code: '16.5',
-      description: 'Substantially reduce corruption and bribery in all their forms',
-      indicators: [
-        { code: '16.5.1', label: 'Bribery among the population' },
-        { code: '16.5.2', label: 'Bribery of businesses' },
-      ],
-    },
-    {
-      code: '16.a',
-      description:
-        'Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime',
-      indicators: [{ code: '16.a.1', label: 'National human rights institutions' }],
-    },
-  ];
   const sections = [
     {
       id: '01',
@@ -458,13 +421,6 @@ export function Justice() {
         }
         color='secondary'
         subsections={sections}
-      />
-
-      <TargetsDrawer
-        chapterTitle='Justice'
-        bg='/imgs/chapters/justice-texture.webp'
-        color='secondary'
-        targets={targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>

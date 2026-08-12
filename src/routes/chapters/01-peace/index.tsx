@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Tag from '@/components/Tag';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -14,39 +13,11 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
-import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
   const [isDataConsiderationExpanded, setIsDataConsiderationExpanded] = useState(false);
-  const targets: ChapterTarget[] = [
-    {
-      code: '16.1',
-      description: 'Significantly reduce all forms of violence and related death rates everywhere',
-      indicators: [
-        { code: '16.1.1', label: 'Homicide' },
-        { code: '16.1.2', label: 'Conflict-related deaths' },
-        { code: '16.1.3', label: 'Physical, sexual and psychological violence' },
-        { code: '16.1.4', label: 'Perception of safety' },
-      ],
-    },
-    {
-      code: '16.2',
-      description:
-        'End abuse, exploitation, trafficking and all forms of violence against and torture of children',
-      indicators: [
-        { code: '16.2.1 & 16.2.3', label: 'Violence against children' },
-        { code: '16.2.2', label: 'Human trafficking victims' },
-      ],
-    },
-    {
-      code: '16.10',
-      description:
-        'Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements',
-      indicators: [{ code: '16.10.1', label: 'Attacks on defenders' }],
-    },
-  ];
   const sections = [
     {
       id: '01',
@@ -437,13 +408,6 @@ export function Peace() {
         }
         color='primary'
         subsections={sections}
-      />
-
-      <TargetsDrawer
-        chapterTitle='Peace'
-        bg='/imgs/chapters/peace-texture.webp'
-        color='primary'
-        targets={targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>

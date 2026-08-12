@@ -4,7 +4,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -12,57 +11,10 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
-import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 
 export function Inclusion() {
   const isGenderLensActive = useIsGenderLensActive();
-  const targets: ChapterTarget[] = [
-    {
-      code: '16.6',
-      description: 'Develop effective, accountable and transparent institutions at all levels',
-      indicators: [
-        { code: '16.6.1', label: 'Government expenditures' },
-        { code: '16.6.2', label: 'Satisfaction with public services' },
-      ],
-    },
-    {
-      code: '16.7',
-      description:
-        'Ensure responsive, inclusive, participatory and representative decision-making at all levels',
-      indicators: [
-        { code: '16.7.1 (a)', label: 'Representation in the legislature' },
-        {
-          code: '16.7.1 (b) & (c)',
-          label: 'Representation in public service institutions and the judiciary',
-        },
-        { code: '16.7.2', label: 'Political efficacy' },
-      ],
-    },
-    {
-      code: '16.8',
-      description:
-        'Broaden and strengthen the participation of developing countries in the institutions of global governance',
-      indicators: [{ code: '16.8.1', label: 'Global governance' }],
-    },
-    {
-      code: '16.9',
-      description: 'By 2030, provide legal identity for all, including birth registration',
-      indicators: [{ code: '16.9.1', label: 'Legal identity' }],
-    },
-    {
-      code: '16.10',
-      description:
-        'Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements',
-      indicators: [{ code: '16.10.2', label: 'Access to information' }],
-    },
-    {
-      code: '16.b',
-      description:
-        'Promote and enforce non-discriminatory laws and policies for sustainable development',
-      indicators: [{ code: '16.b.1', label: 'Experience of Discrimination' }],
-    },
-  ];
   const sections = [
     {
       id: '01',
@@ -528,13 +480,6 @@ export function Inclusion() {
         }
         color='tertiary'
         subsections={sections}
-      />
-
-      <TargetsDrawer
-        chapterTitle='Inclusion'
-        bg='/imgs/chapters/inclusion-texture.webp'
-        color='tertiary'
-        targets={targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
