@@ -11,6 +11,7 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -139,7 +140,9 @@ export function Peace() {
               number of documented cases for 2025 is expected to reach an estimated 743 killings and
               202 disappearances.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div className='-mx-18 my-4'>
+              <DefenderKillingsLineChart />
+            </div>
             <P marginBottom='none' size='lg'>
               The burden remains highly concentrated within Latin America and the Caribbean. The
               region accounts for roughly 60 per cent of all verified killings recorded over the
