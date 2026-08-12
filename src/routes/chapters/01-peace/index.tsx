@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import Tag from '@/components/Tag';
@@ -105,7 +106,7 @@ export function Peace() {
             result, the figures presented should be interpreted as a minimum count of civilian
             deaths.
           </P>
-          <WaveDivider src='/imgs/dividers/peace-01.png' />
+          <WaveDivider src='/imgs/dividers/peace-01.webp' />
         </>
       ),
     },
@@ -147,7 +148,7 @@ export function Peace() {
             require the global homicide rate to fall below 3 victims per 100,000 population by 2030.
           </P>
           <PlaceholderBlock label='Figure' />
-          <WaveDivider src='/imgs/dividers/peace-02.png' align='right' />
+          <WaveDivider src='/imgs/dividers/peace-02.webp' align='right' />
         </>
       ),
     },
@@ -203,6 +204,7 @@ export function Peace() {
           </P>
           <PlaceholderBlock label='Figure' />
           <ImpactStory id='peace-detained-hrd-release' />
+          <Spacer size='6xl' />
         </>
       ),
     },
@@ -257,6 +259,7 @@ export function Peace() {
             providing insufficient evidence to identify a clear global pattern.
           </P>
           <ImpactStory id='peace-panama-victimization-surveys' />
+          <Spacer size='6xl' />
         </>
       ),
     },
@@ -294,7 +297,7 @@ export function Peace() {
             childhood.
           </P>
           <PlaceholderBlock label='Big numbers' />
-          <WaveDivider src='/imgs/dividers/peace-03.png' />
+          <WaveDivider src='/imgs/dividers/peace-03.webp' />
         </>
       ),
     },
@@ -338,7 +341,7 @@ export function Peace() {
             statistical methods and victims’ surveys is critical to better understand its scale,
             identify those at greatest risk and strengthen evidence-based responses.
           </P>
-          <WaveDivider src='/imgs/dividers/peace-04.png' align='right' />
+          <WaveDivider src='/imgs/dividers/peace-04.webp' align='right' />
         </>
       ),
     },
@@ -390,7 +393,7 @@ export function Peace() {
             harassment and robbery, as well as broader social and environmental factors, may
             influence the gendered difference in perceived safety.
           </P>
-          <WaveDivider src='/imgs/dividers/peace-02.png' />
+          <WaveDivider src='/imgs/dividers/peace-02.webp' />
         </>
       ),
     },
@@ -405,6 +408,7 @@ export function Peace() {
           <P marginBottom='none' size='lg'>
             Content goes here
           </P>
+          <Spacer size='6xl' />
         </>
       ),
     },
