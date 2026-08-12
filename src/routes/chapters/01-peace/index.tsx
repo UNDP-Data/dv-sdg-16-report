@@ -203,6 +203,7 @@ export function Peace() {
             marginalised groups defending fundamental freedoms.
           </P>
           <PlaceholderBlock label='Figure' />
+          <Spacer size='2xl' />
           <ImpactStory id='peace-detained-hrd-release' />
           <Spacer size='6xl' />
         </>
@@ -258,6 +259,7 @@ export function Peace() {
             only 18 countries have reported data on psychological violence for at least one year,
             providing insufficient evidence to identify a clear global pattern.
           </P>
+          <Spacer size='2xl' />
           <ImpactStory id='peace-panama-victimization-surveys' />
           <Spacer size='6xl' />
         </>

@@ -181,6 +181,7 @@ export function Inclusion() {
             MPs aged 30 or younger accounting for just 2.0 per cent of parliamentarians and those
             aged 40 or younger only 12.0 per cent.
           </P>
+          <Spacer size='2xl' />
           <ImpactStory id='inclusion-benin-womens-representation' color='tertiary' />
           <Spacer size='6xl' />
         </>
@@ -231,8 +232,11 @@ export function Inclusion() {
             overall representation. It requires ensuring that women have equal opportunities to
             advance into leadership and decision-making roles across public institutions.
           </P>
+          <Spacer size='2xl' />
           <ImpactStory id='inclusion-armenia-representation-data' color='tertiary' />
+          <Spacer size='2xl' />
           <ImpactStory id='inclusion-bosnia-herzegovina-institutional-change' color='tertiary' />
+          <Spacer size='2xl' />
           <ImpactStory id='inclusion-bangladesh-judicial-leadership' color='tertiary' />
           <Spacer size='6xl' />
         </>
@@ -287,6 +291,7 @@ export function Inclusion() {
             remain insufficiently documented, hindering assessments for effective policy
             initiatives.
           </P>
+          <Spacer size='2xl' />
           <ImpactStory id='inclusion-mexico-discrimination-data' color='tertiary' />
           <Spacer size='6xl' />
         </>

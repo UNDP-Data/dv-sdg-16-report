@@ -212,6 +212,7 @@ export function Justice() {
             Equally important is enhanced cooperation and information exchange among domestic
             agencies as well as across borders through international frameworks.
           </P>
+          <Spacer size='2xl' />
           <ImpactStory id='justice-ghana-iffs' color='secondary' />
           <Spacer size='6xl' />
         </>
