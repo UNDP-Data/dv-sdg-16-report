@@ -8,7 +8,8 @@ import {
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
-const navLinkClass = 'text-sm text-surface-md transition-colors hover:text-content-reverse';
+const navLinkClass =
+  'text-sm font-medium uppercase tracking-wide text-surface-md transition-colors hover:text-content-reverse';
 const mobileNavLinkClass =
   'block py-3 text-base text-surface-md transition-colors hover:text-content-reverse';
 
@@ -17,15 +18,20 @@ export default function HeaderEl() {
 
   return (
     <header
-      className='relative border-background/30 border-b bg-foreground-soft bg-repeat px-6 py-4 md:px-12'
+      className='relative border-background/30 border-b bg-cover bg-foreground-soft px-6 py-4 md:px-12'
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <div className='mx-auto flex items-center justify-between'>
-        <Link to='/' className='font-bold text-content-reverse'>
-          SDG16 Report
+        <Link to='/' className='flex items-center gap-3'>
+          <span className='font-bold text-2xl text-content-reverse'>SDG 16</span>
+          <span className='border-background/30 border-l pl-3 font-medium text-[11px] text-surface-md uppercase leading-tight tracking-wider'>
+            Peace, Justice
+            <br />
+            and Inclusivity
+          </span>
         </Link>
 
-        <nav className='hidden items-center gap-8 md:flex'>
+        <nav className='hidden items-center gap-10 md:flex'>
           <Link to='/' className={navLinkClass}>
             Home
           </Link>

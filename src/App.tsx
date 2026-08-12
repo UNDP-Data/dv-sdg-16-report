@@ -12,13 +12,16 @@ function App() {
       style={{ backgroundImage: `url('imgs/hero-bg.webp')` }}
     >
       <Container className='md:w-1/2 lg:w-1/3'>
-        <P size='sm' className='text-surface-sm uppercase tracking-widest'>
+        <P size='sm' marginBottom='lg' className='text-[#A0B1C1]! uppercase tracking-wider'>
           SDG 16 Report 2026
         </P>
-        <H1 marginBottom='sm' className='justify-start text-surface-xs normal-case' weight='medium'>
+        <H1
+          marginBottom='sm'
+          className='justify-start font-medium! text-content-reverse normal-case'
+        >
           Peace, Justice, Inclusivity
         </H1>
-        <P size='lg' className='max-w-xl text-surface-sm'>
+        <P size='xl' className='text-content-reverse'>
           A global look at where the world stands on building peaceful, just, and inclusive
           societies — and how far there is left to go.
         </P>

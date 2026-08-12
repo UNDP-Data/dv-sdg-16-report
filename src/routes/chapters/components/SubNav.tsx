@@ -36,7 +36,7 @@ export default function SubNav({
 
   return (
     <div
-      className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-foreground-soft bg-repeat px-6 py-3 md:px-12'
+      className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-cover bg-foreground-soft px-6 py-3 md:px-12'
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <DropdownMenu>
