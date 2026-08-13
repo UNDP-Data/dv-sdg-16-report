@@ -1,3 +1,4 @@
+import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
 import {
   DropdownMenu,
@@ -41,18 +42,20 @@ export default function SubNav({
     >
       <DropdownMenu>
         <DropdownMenuTrigger className='flex items-center gap-2 text-content-reverse text-sm'>
-          <span
+          <P
+            weight='semibold'
+            size='xs'
+            marginBottom='none'
             className={cn(
-              'font-semibold',
               color === 'primary' && 'text-primary',
               color === 'secondary' && 'text-secondary',
               color === 'tertiary' && 'text-tertiary',
             )}
           >
             {chapterNumber}
-          </span>
+          </P>
           {chapterTitle}
-          <ChevronDown size={14} className='text-content-secondary' />
+          <ChevronDown size={14} className='text-content-reverse' />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align='start'
@@ -82,14 +85,14 @@ export default function SubNav({
       </DropdownMenu>
       <TooltipProvider delayDuration={100} skipDelayDuration={0}>
         <div className='flex items-center gap-2'>
-          <P marginBottom='none' size='sm' className='text-surface-sm'>
+          <P marginBottom='none' size='sm' className='text-content-reverse'>
             Gender-lens
           </P>
           <Tooltip>
             <TooltipTrigger asChild>
-              <button type='button' className='text-surface-sm'>
+              <Button variant='icon' type='button' className='p-0 text-content-reverse'>
                 <Info size={14} />
-              </button>
+              </Button>
             </TooltipTrigger>
             <TooltipContent>Highlights gender-disaggregated data where available.</TooltipContent>
           </Tooltip>

@@ -1,17 +1,19 @@
 import { Link } from '@tanstack/react-router';
+import { Button } from '@undp/design-system-react/Button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@undp/design-system-react/DropdownMenu';
+import { H5, P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinkClass =
-  'text-sm font-medium uppercase tracking-wide text-surface-md transition-colors hover:text-content-reverse';
+  'text-sm font-medium uppercase tracking-wider text-content-reverse transition-colors hover:text-content-secondary';
 const mobileNavLinkClass =
-  'block py-3 text-base text-surface-md transition-colors hover:text-content-reverse';
+  'block py-3 text-base text-content-reverse transition-colors hover:text-content-reverse';
 
 export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,12 +25,19 @@ export default function HeaderEl() {
     >
       <div className='mx-auto flex items-center justify-between'>
         <Link to='/' className='flex items-center gap-3'>
-          <span className='font-bold text-2xl text-content-reverse'>SDG 16</span>
-          <span className='border-background/30 border-l pl-3 font-medium text-[11px] text-surface-md uppercase leading-tight tracking-wider'>
+          <H5 weight='semibold' marginBottom='none' className='text-content-reverse'>
+            SDG 16
+          </H5>
+          <P
+            weight='medium'
+            size='xs'
+            marginBottom='none'
+            className='border-background/30 border-l pl-3 text-content-reverse uppercase leading-tight tracking-widest'
+          >
             Peace, Justice
             <br />
             and Inclusivity
-          </span>
+          </P>
         </Link>
 
         <nav className='hidden items-center gap-10 md:flex'>
@@ -63,15 +72,16 @@ export default function HeaderEl() {
           </Link>
         </nav>
 
-        <button
+        <Button
           type='button'
-          className='text-content-reverse md:hidden'
+          variant='icon'
+          className='p-0 text-content-reverse md:hidden'
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((open) => !open)}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {mobileOpen ? <X size={32} /> : <Menu size={32} />}
+        </Button>
       </div>
 
       {mobileOpen ? (

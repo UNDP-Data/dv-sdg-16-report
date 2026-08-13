@@ -11,14 +11,15 @@ export function Materials() {
           <P
             marginBottom='none'
             size='sm'
-            className='font-semibold text-surface-sm uppercase tracking-widest'
+            weight='semibold'
+            className='text-content-reverse uppercase tracking-widest'
           >
             SDG 16 Report
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             Materials
           </H1>
-          <P size='lg' className='max-w-2xl text-surface-sm'>
+          <P size='lg' className='max-w-2xl text-content-reverse'>
             Downloadable data, methodology notes and supporting resources behind the report.
           </P>
         </div>

@@ -11,14 +11,14 @@ export function About() {
           <P
             marginBottom='none'
             size='sm'
-            className='font-semibold text-surface-sm uppercase tracking-widest'
+            className='font-semibold text-content-reverse uppercase tracking-widest'
           >
             SDG 16 Report
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             About
           </H1>
-          <P size='lg' className='max-w-2xl text-surface-sm'>
+          <P size='lg' className='max-w-2xl text-content-reverse'>
             The story behind this report — who produced it, and why it matters.
           </P>
         </div>

@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { Button } from '@undp/design-system-react/Button';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
@@ -49,13 +50,14 @@ export function Peace() {
               for other purposes, including in relation to the question of applicability of
               international humanitarian law.
             </P>
-            <button
+            <Button
               type='button'
+              variant='icon'
               onClick={() => setIsDataConsiderationExpanded((prev) => !prev)}
-              className='w-fit cursor-pointer text-primary text-sm underline underline-offset-2'
+              className='w-fit cursor-pointer p-0 font-normal text-primary text-sm normal-case underline underline-offset-2'
             >
               {isDataConsiderationExpanded ? 'Read less' : 'Read more'}
-            </button>
+            </Button>
           </div>
           <PlaceholderBlock label='Scrollytelling' />
           <P

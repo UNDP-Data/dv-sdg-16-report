@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router';
 
-const footerLinkClass = 'text-sm text-surface-sm transition-colors hover:text-foreground';
+const footerLinkClass = 'text-sm text-content-reverse transition-colors hover:text-foreground';
 
 export default function FooterEl() {
   return (

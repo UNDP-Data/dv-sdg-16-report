@@ -34,8 +34,9 @@ export default function ImpactStorySection({
           <div className='flex max-w-xl flex-col gap-6'>
             <Tag color={color} content='Data impact story' />
             <H3
+              weight='semibold'
               marginBottom='none'
-              className='font-heading font-medium font-normal text-[40px]! text-content-reverse'
+              className='font-heading text-[40px]! text-content-reverse'
             >
               {title}
             </H3>
@@ -46,7 +47,7 @@ export default function ImpactStorySection({
               variant='outline'
               arrow={false}
               className={cn(
-                'inline-flex w-fit items-center gap-1.5 px-5 py-3 font-medium text-content-reverse text-sm transition-colors hover:bg-foreground/30',
+                'inline-flex w-fit items-center gap-1.5 px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-foreground/30',
                 color === 'primary' && 'border-primary',
                 color === 'secondary' && 'border-secondary',
                 color === 'tertiary' && 'border-tertiary',

@@ -71,6 +71,10 @@ if (rootElement) {
             heading: 'Newsreader',
             body: 'Hanken Grotesk',
           },
+          typography: {
+            h4: { base: '2.5rem' },
+            h5: { base: '1.75rem' },
+          },
           primary: {
             base: '#42A1D8',
             hover: '#42A1D8',
@@ -94,6 +98,7 @@ if (rootElement) {
           foregroundSoft: '#142338',
           content: {
             reverse: '#DCE6F0',
+            secondary: '#99B0BD',
           },
         }}
       >
