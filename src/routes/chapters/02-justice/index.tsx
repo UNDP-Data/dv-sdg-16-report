@@ -1,5 +1,6 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
@@ -11,6 +12,7 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import WaveDivider from '../components/WaveDivider';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -25,6 +27,7 @@ export function Justice() {
         content: (
           <>
             <PlaceholderBlock label='Scrollytelling' />
+            <WaveDivider src='/imgs/dividers/justice-01.webp' />
           </>
         ),
       },
@@ -65,6 +68,7 @@ export function Justice() {
               civil justice differs substantially across national contexts and underscores the need
               for more systematic measurement and internationally comparable data.
             </P>
+            <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
           </>
         ),
       },
@@ -121,6 +125,7 @@ export function Justice() {
               measures to reduce unnecessary pre-trial detention and expand alternatives to
               imprisonment.
             </P>
+            <WaveDivider src='/imgs/dividers/justice-03.webp' />
           </>
         ),
       },
@@ -173,7 +178,9 @@ export function Justice() {
               mechanisms. Equally important is enhanced cooperation and information exchange among
               domestic agencies as well as across borders through international frameworks.
             </P>
-            <ImpactStory id='justice-ghana-iffs' />
+            <Spacer size='2xl' />
+            <ImpactStory id='justice-ghana-iffs' color='secondary' />
+            <Spacer size='6xl' />
           </>
         ),
       },
@@ -222,6 +229,7 @@ export function Justice() {
               Northern America and Latin America and the Caribbean, more than half of reporting
               countries recorded tracing rates below the global average of 46 per cent.
             </P>
+            <WaveDivider src='/imgs/dividers/justice-04.webp' align='right' />
           </>
         ),
       },
@@ -282,6 +290,7 @@ export function Justice() {
               available data point in the period 2018–2025 shows a slight increase from 12.1 per
               cent to 14 per cent.
             </P>
+            <WaveDivider src='/imgs/dividers/justice-01.webp' />
           </>
         ),
       },
@@ -331,6 +340,7 @@ export function Justice() {
               bribery continues to affect businesses in many countries.
             </P>
             <PlaceholderBlock label='Figure' />
+            <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
           </>
         ),
       },
@@ -373,12 +383,14 @@ export function Justice() {
               institutional performance. In this way, one can ensure that full compliance translates
               into meaningful protection of human rights.
             </P>
+            <WaveDivider src='/imgs/dividers/justice-03.webp' />
           </>
         ),
       },
       {
         id: '09',
         title: 'The role of Institutions',
+        indicatorCode: 'The role of Institutions',
         heading: 'Building just societies through accessible, fair and accountable institutions',
         anchor: 'role-of-institutions',
         content: (
@@ -386,6 +398,7 @@ export function Justice() {
             <P marginBottom='none' size='lg'>
               Content goes here
             </P>
+            <Spacer size='6xl' />
           </>
         ),
       },

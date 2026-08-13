@@ -1,6 +1,7 @@
 import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
 import { Modal } from '@undp/design-system-react/Modal';
+import { H3, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import Tag from '@/components/Tag';
 import { IMPACT_STORIES } from '@/data/impactStories';
@@ -26,20 +27,27 @@ export default function ImpactStorySection({
   return (
     <>
       <div
-        className={`relative isolate mx-[calc(50%-50vw+1.5rem)] w-[calc(100vw-3rem)] overflow-hidden rounded-lg bg-[#010C19] bg-cover bg-right md:mx-[calc(50%-50vw+3rem)] md:w-[calc(100vw-6rem)] ${className}`}
+        className={`relative isolate mx-[calc(50%-50vw+1.5rem)] w-[calc(100vw-3rem)] overflow-hidden rounded-lg bg-cover bg-foreground bg-right-bottom md:mx-[calc(50%-50vw+3rem)] md:w-[calc(100vw-6rem)] ${className}`}
         style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
       >
         <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
-          <div className='flex max-w-xl flex-col gap-4'>
+          <div className='flex max-w-xl flex-col gap-6'>
             <Tag color={color} content='Data impact story' />
-            <h3 className='font-normal text-content-reverse'>{title}</h3>
-            <div className='line-clamp-3 font-light text-content-reverse'>{story}</div>
+            <H3
+              weight='semibold'
+              marginBottom='none'
+              className='font-heading text-[40px]! text-content-reverse'
+            >
+              {title}
+            </H3>
+            <P className='line-clamp-3 font-light text-content-reverse'>{story}</P>
             <Button
               type='button'
               onClick={() => setOpen(true)}
               variant='outline'
+              arrow={false}
               className={cn(
-                'inline-flex w-fit items-center gap-1.5 px-5 py-3 font-medium text-content-reverse text-sm transition-colors hover:bg-foreground/30',
+                'inline-flex w-fit items-center gap-1.5 px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-foreground/30',
                 color === 'primary' && 'border-primary',
                 color === 'secondary' && 'border-secondary',
                 color === 'tertiary' && 'border-tertiary',

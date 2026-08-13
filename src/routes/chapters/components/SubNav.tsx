@@ -1,3 +1,4 @@
+import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
 import {
   DropdownMenu,
@@ -35,12 +36,26 @@ export default function SubNav({
   const activeSection = useActiveSection();
 
   return (
-    <div className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-foreground-soft px-6 py-3 md:px-12'>
+    <div
+      className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-cover bg-foreground-soft px-6 py-3 md:px-12'
+      style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
+    >
       <DropdownMenu>
         <DropdownMenuTrigger className='flex items-center gap-2 text-content-reverse text-sm'>
-          <span className='font-semibold text-content-reverse'>{chapterNumber}</span>
+          <P
+            weight='semibold'
+            size='xs'
+            marginBottom='none'
+            className={cn(
+              color === 'primary' && 'text-primary',
+              color === 'secondary' && 'text-secondary',
+              color === 'tertiary' && 'text-tertiary',
+            )}
+          >
+            {chapterNumber}
+          </P>
           {chapterTitle}
-          <ChevronDown size={14} className='text-content-secondary' />
+          <ChevronDown size={14} className='text-content-reverse' />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align='start'
@@ -70,14 +85,14 @@ export default function SubNav({
       </DropdownMenu>
       <TooltipProvider delayDuration={100} skipDelayDuration={0}>
         <div className='flex items-center gap-2'>
-          <P marginBottom='none' size='sm' className='text-surface-sm'>
+          <P marginBottom='none' size='sm' className='text-content-reverse'>
             Gender-lens
           </P>
           <Tooltip>
             <TooltipTrigger asChild>
-              <button type='button' className='text-surface-sm'>
+              <Button variant='icon' type='button' className='p-0 text-content-reverse'>
                 <Info size={14} />
-              </button>
+              </Button>
             </TooltipTrigger>
             <TooltipContent>Highlights gender-disaggregated data where available.</TooltipContent>
           </Tooltip>

@@ -6,10 +6,12 @@ import createHomeRoute from './App';
 import FooterEl from './components/Footer';
 import HeaderEl from './components/Header';
 import * as TanStackQueryProvider from './integration/tanstack-query';
+import createAboutRoute from './routes/about';
 import createPeaceRoute from './routes/chapters/01-peace';
 import createJusticeRoute from './routes/chapters/02-justice';
 import createInclusionRoute from './routes/chapters/03-inclusion';
 import createImpactStoriesRoute from './routes/impact-stories';
+import createMaterialsRoute from './routes/materials';
 
 import './styles/fonts.css';
 import './styles/style.css';
@@ -22,7 +24,7 @@ const rootRoute = createRootRoute({
         style={{ backgroundSize: '120px 120px' }}
       />
       <HeaderEl />
-      <main className='flex grow flex-col justify-center'>
+      <main className='flex grow flex-col justify-start'>
         <Outlet />
       </main>
       <FooterEl />
@@ -36,6 +38,8 @@ const routeTree = rootRoute.addChildren([
   createJusticeRoute(rootRoute),
   createInclusionRoute(rootRoute),
   createImpactStoriesRoute(rootRoute),
+  createMaterialsRoute(rootRoute),
+  createAboutRoute(rootRoute),
 ]);
 
 const TanStackQueryProviderContext = TanStackQueryProvider.getContext();
@@ -67,6 +71,10 @@ if (rootElement) {
             heading: 'Newsreader',
             body: 'Hanken Grotesk',
           },
+          typography: {
+            h4: { base: '2.5rem' },
+            h5: { base: '1.75rem' },
+          },
           primary: {
             base: '#42A1D8',
             hover: '#42A1D8',
@@ -87,7 +95,11 @@ if (rootElement) {
             hover: '#7b6fe8',
             light: '#7b6fe8',
           },
-          foregroundSoft: '#010C19',
+          foregroundSoft: '#142338',
+          content: {
+            reverse: '#DCE6F0',
+            secondary: '#99B0BD',
+          },
         }}
       >
         <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>

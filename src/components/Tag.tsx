@@ -13,7 +13,7 @@ export default function Tag({
       size='sm'
       weight='semibold'
       className={cn(
-        'uppercase tracking-widest',
+        'uppercase tracking-wider',
         color === 'primary' && 'text-primary',
         color === 'secondary' && 'text-secondary',
         color === 'tertiary' && 'text-tertiary',
