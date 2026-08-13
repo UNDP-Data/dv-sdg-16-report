@@ -1,9 +1,15 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardTag,
+  CardTitle,
+} from '@undp/design-system-react/Card';
 import { cn } from '@undp/design-system-react/cn';
 import { Grid } from '@undp/design-system-react/Grid';
 import { Modal } from '@undp/design-system-react/Modal';
-import { Spacer } from '@undp/design-system-react/Spacer';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import Tag from '@/components/Tag';
@@ -20,14 +26,15 @@ export function ImpactStories() {
           <P
             marginBottom='none'
             size='sm'
-            className='font-semibold text-surface-sm uppercase tracking-widest'
+            weight='semibold'
+            className='text-content-reverse uppercase tracking-widest'
           >
             SDG 16 Report
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             Impact stories
           </H1>
-          <P size='lg' className='max-w-2xl text-surface-sm'>
+          <P size='lg' className='max-w-2xl text-content-reverse'>
             How data on peace, justice and inclusion is translating into real institutional and
             policy change around the world.
           </P>
@@ -45,13 +52,22 @@ export function ImpactStories() {
             }}
           >
             {IMPACT_STORIES.map((entry) => (
-              <button
-                type='button'
+              <Card
                 key={entry.id}
+                variant='without-image'
+                backgroundColor='background'
+                role='button'
+                tabIndex={0}
                 onClick={() => setModalData({ title: entry.title, story: entry.story })}
-                className='group flex h-full flex-col items-start gap-3 rounded-lg border border-stroke-sm p-6 text-left transition-shadow hover:shadow-md'
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setModalData({ title: entry.title, story: entry.story });
+                  }
+                }}
+                className='h-full cursor-pointer text-left'
               >
-                <div className='grow'>
+                <CardTag>
                   <Tag
                     color={
                       entry.chapter === 'peace'
@@ -62,28 +78,27 @@ export function ImpactStories() {
                     }
                     content={entry.chapter}
                   />
-                  <Spacer size='base' />
-                  <P size='lg' marginBottom='sm'>
-                    {entry.title}
+                </CardTag>
+                <CardTitle className='font-heading font-semibold text-2xl!'>
+                  {entry.title}
+                </CardTitle>
+                <CardDescription className='line-clamp-3'>{entry.story}</CardDescription>
+                <CardFooter>
+                  <P
+                    weight='semibold'
+                    size='sm'
+                    marginBottom='none'
+                    className={cn(
+                      'group-hover:underline',
+                      entry.chapter === 'peace' && 'text-primary',
+                      entry.chapter === 'justice' && 'text-secondary',
+                      entry.chapter === 'inclusion' && 'text-tertiary',
+                    )}
+                  >
+                    Read full story
                   </P>
-                  <P size='sm' marginBottom='none' className='line-clamp-3 text-content-secondary'>
-                    {entry.story}
-                  </P>
-                </div>
-                <P
-                  weight='semibold'
-                  size='sm'
-                  marginBottom='none'
-                  className={cn(
-                    'group-hover:underline',
-                    entry.chapter === 'peace' && 'text-primary',
-                    entry.chapter === 'justice' && 'text-secondary',
-                    entry.chapter === 'inclusion' && 'text-tertiary',
-                  )}
-                >
-                  Read full story
-                </P>
-              </button>
+                </CardFooter>
+              </Card>
             ))}
           </Grid>
         </div>
