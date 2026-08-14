@@ -2,6 +2,8 @@ interface CoordinatesProps {
   id: number;
   x: number;
   y: number;
+  regionX: number;
+  regionY: number;
   color: string;
   distanceFromCenter: number;
   registered: boolean;
@@ -31,10 +33,42 @@ const checkCollision = (
   return false;
 };
 
+const findRegionCoordinate = (
+  regionList: { region: string; unregisteredBirths: number }[],
+  dotId: number,
+  height: number,
+  pointRadius: number,
+) => {
+  let start = 0;
+  const y = regionList.findIndex(({ unregisteredBirths }) => {
+    const end = start + unregisteredBirths;
+    const found = dotId >= start && dotId < end;
+
+    if (!found) start = end;
+
+    return found;
+  });
+
+  if (y === -1) return [0, 0];
+
+  const x = dotId - start;
+
+  return [
+    pointRadius + (pointRadius * 2 + 5) * (x % 20),
+    (y * height) / regionList.length +
+      40 +
+      pointRadius +
+      (pointRadius * 2 + 5) * Math.floor(x / 20),
+  ];
+};
+
 export const generateUniqueRandomPointsArray = (
   noOfPoints: number,
   areaRadius: number,
+  width: number,
+  height: number,
   threshold: number,
+  regionList: { region: string; unregisteredBirths: number }[],
   pointRadius = 7.5,
 ) => {
   const points: CoordinatesProps[] = [];
@@ -44,8 +78,16 @@ export const generateUniqueRandomPointsArray = (
     if (!checkCollision(newPoint, pointRadius, points) || counter > 10) {
       points.push({
         id: points.length,
-        x: newPoint.x,
-        y: newPoint.y,
+        x: newPoint.x + width / 2,
+        y: newPoint.y + height / 2,
+        regionX:
+          points.length < threshold
+            ? findRegionCoordinate(regionList, points.length, height, pointRadius)[0]
+            : newPoint.x + width / 2,
+        regionY:
+          points.length < threshold
+            ? findRegionCoordinate(regionList, points.length, height, pointRadius)[1]
+            : newPoint.y + height / 2,
         registered: points.length >= threshold,
         color: points.length >= threshold ? 'var(--tertiary)' : 'var(--error)',
         distanceFromCenter: newPoint.distanceFromCenter,

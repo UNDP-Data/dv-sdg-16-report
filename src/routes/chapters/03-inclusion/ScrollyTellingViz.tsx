@@ -2,38 +2,42 @@ import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { generateUniqueRandomPointsArray } from './generateUniqueRandomPointsArray';
 
-const NO_OF_BIRTHS = 652;
-const NO_OF_UNREGISTERED_BIRTHS = 150;
-const DOT_RADIUS = 7.5;
-const NO_OF_REGISTERED_BIRTHS = NO_OF_BIRTHS - NO_OF_UNREGISTERED_BIRTHS;
-const CIRCLE_PADDING = 50;
-
 const REGIONS = [
   {
     region: 'Sub-Saharan Africa',
-    number: 90,
+    unregisteredBirths: 90,
   },
   {
     region: 'Central and South Asia',
-    number: 42,
-  },
-  {
-    region: 'Eastern and South-Eastern Asia',
-    number: 7,
+    unregisteredBirths: 42,
   },
   {
     region: 'North Africa and West Asia',
-    number: 8,
+    unregisteredBirths: 8,
+  },
+  {
+    region: 'Eastern and South-Eastern Asia',
+    unregisteredBirths: 7,
   },
   {
     region: 'Latin America and the Caribbean',
-    number: 2,
+    unregisteredBirths: 2,
   },
   {
-    region: 'Oceania (excluding Australia and New Zealand)',
-    number: 1,
+    region: 'Oceania (excld. Australia and New Zealand)',
+    unregisteredBirths: 1,
   },
 ];
+
+const NO_OF_BIRTHS = 652;
+const NO_OF_UNREGISTERED_BIRTHS = REGIONS.reduce(
+  (sum, { unregisteredBirths }) => sum + unregisteredBirths,
+  0,
+);
+const NO_OF_REGISTERED_BIRTHS = NO_OF_BIRTHS - NO_OF_UNREGISTERED_BIRTHS;
+
+const DOT_RADIUS = 7.5;
+const CIRCLE_PADDING = 50;
 
 const SLIDES = [
   {
@@ -44,6 +48,10 @@ const SLIDES = [
       unRegisteredCircleColor: 'var(--surface-lg)',
       keyNumber: NO_OF_BIRTHS,
       category: 'total children under the age of 5',
+      xCoordinateSuffix: 'x',
+      yCoordinateSuffix: 'y',
+      keyTextOpacity: 1,
+      regionLabelOpacity: 0,
     },
     slideContent: (
       <>
@@ -61,6 +69,10 @@ const SLIDES = [
       unRegisteredCircleColor: 'var(--surface-lg)',
       keyNumber: NO_OF_REGISTERED_BIRTHS,
       category: 'total registered children under the age of 5',
+      xCoordinateSuffix: 'x',
+      yCoordinateSuffix: 'y',
+      keyTextOpacity: 1,
+      regionLabelOpacity: 0,
     },
     slideContent: (
       <>
@@ -79,6 +91,10 @@ const SLIDES = [
       unRegisteredCircleColor: 'var(--error)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: 'total unregistered children under the age of 5',
+      xCoordinateSuffix: 'x',
+      yCoordinateSuffix: 'y',
+      keyTextOpacity: 1,
+      regionLabelOpacity: 0,
     },
     slideContent: (
       <>
@@ -96,6 +112,10 @@ const SLIDES = [
       unRegisteredCircleColor: 'var(--error)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: '',
+      xCoordinateSuffix: 'regionX',
+      yCoordinateSuffix: 'regionY',
+      keyTextOpacity: 0,
+      regionLabelOpacity: 1,
     },
     slideContent: (
       <>More than half of the world’s unregistered children live in Sub-Saharan Africa</>
@@ -103,12 +123,6 @@ const SLIDES = [
     color: 'surface-lg',
   },
 ];
-
-const findIndex = (arr: number[][], dotId: number) => {
-  const y = arr.findIndex((group) => dotId >= group[0] && dotId <= group[group.length - 1]);
-  const x = arr[y].indexOf(dotId);
-  return [x, y];
-};
 
 export default function ScrollyTellingViz() {
   const [graphRadius, setGraphRadius] = useState(0);
@@ -122,13 +136,6 @@ export default function ScrollyTellingViz() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(-1);
 
   const graphDiv = useRef<HTMLDivElement>(null);
-
-  const regionSizes = REGIONS.map((r) => r.number);
-
-  const regionIds = regionSizes.map((size, index) => {
-    const start = regionSizes.slice(0, index).reduce((sum, n) => sum + n, 0);
-    return Array.from({ length: size }, (_, i) => start + i);
-  });
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
@@ -150,22 +157,27 @@ export default function ScrollyTellingViz() {
 
   const dotsList = useMemo(
     () =>
-      graphRadius
+      graphRadius && graphWidth && graphHeight
         ? generateUniqueRandomPointsArray(
             NO_OF_BIRTHS,
             graphRadius,
+            graphWidth,
+            graphHeight,
             NO_OF_UNREGISTERED_BIRTHS,
+            REGIONS,
             DOT_RADIUS,
           )
         : [...Array(NO_OF_BIRTHS).keys()].map((i) => ({
             id: i,
             x: 0,
             y: 0,
+            regionX: 0,
+            regionY: 0,
             registered: i >= NO_OF_UNREGISTERED_BIRTHS,
             color: i >= NO_OF_UNREGISTERED_BIRTHS ? 'var(--tertiary)' : 'var(--error)',
             distanceFromCenter: 0,
           })),
-    [graphRadius],
+    [graphRadius, graphHeight, graphWidth],
   );
 
   useEffect(() => {
@@ -206,21 +218,8 @@ export default function ScrollyTellingViz() {
                   opacity: 0,
                 }}
                 animate={{
-                  cx:
-                    activeSlideIndex === 3
-                      ? !dot.registered
-                        ? DOT_RADIUS + (DOT_RADIUS * 2 + 5) * (findIndex(regionIds, dot.id)[0] % 20)
-                        : dot.x + graphWidth / 2
-                      : dot.x + graphWidth / 2,
-                  cy:
-                    activeSlideIndex === 3
-                      ? !dot.registered
-                        ? (findIndex(regionIds, dot.id)[1] * graphHeight) / REGIONS.length +
-                          40 +
-                          DOT_RADIUS +
-                          (DOT_RADIUS * 2 + 5) * Math.floor(findIndex(regionIds, dot.id)[0] / 20)
-                        : dot.y + graphHeight / 2
-                      : dot.y + graphHeight / 2,
+                  cx: dot[`${activeSlide.vizContent.xCoordinateSuffix as 'x' | 'regionX'}`],
+                  cy: dot[`${activeSlide.vizContent.yCoordinateSuffix as 'y' | 'regionY'}`],
                   fill: dot.registered
                     ? activeSlide.vizContent.registeredCircleColor
                     : activeSlide.vizContent.unRegisteredCircleColor,
@@ -246,10 +245,10 @@ export default function ScrollyTellingViz() {
             x={graphWidth / 2}
             y={graphHeight / 2 + graphRadius + CIRCLE_PADDING}
             dy={20}
-            initial={{ fill: 'var(--surface-lg)', opacity: 1 }}
+            initial={{ fill: 'var(--surface-lg)', opacity: 0 }}
             animate={{
               fill: `var(--${activeSlide.color})`,
-              opacity: activeSlideIndex === 3 ? 0 : 1,
+              opacity: activeSlide.vizContent.keyTextOpacity,
             }}
             exit={{ fill: 'var(--surface-lg)', opacity: 0 }}
             transition={{
@@ -263,7 +262,7 @@ export default function ScrollyTellingViz() {
           </motion.text>
           <motion.g
             animate={{
-              opacity: activeSlideIndex === 3 ? 1 : 0,
+              opacity: activeSlide.vizContent.regionLabelOpacity,
             }}
             exit={{ opacity: 0 }}
             transition={{
@@ -280,7 +279,7 @@ export default function ScrollyTellingViz() {
               >
                 <div className='font-foreground text-2xl'>
                   {region.region}:{' '}
-                  <span className='font-bold text-error'>~{region.number} mil</span>
+                  <span className='font-bold text-error'>~{region.unregisteredBirths} mil</span>
                 </div>
               </foreignObject>
             ))}

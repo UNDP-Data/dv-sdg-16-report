@@ -46,11 +46,13 @@ export default function SubNav({
             weight='semibold'
             size='xs'
             marginBottom='none'
-            className={cn(
-              color === 'primary' && 'text-primary',
-              color === 'secondary' && 'text-secondary',
-              color === 'tertiary' && 'text-tertiary',
-            )}
+            className={
+              color === 'primary'
+                ? 'text-primary'
+                : color === 'secondary'
+                  ? 'text-secondary'
+                  : 'text-tertiary'
+            }
           >
             {chapterNumber}
           </P>

@@ -10,14 +10,14 @@ export default function WaveDivider({ src, align = 'left' }: WaveDividerProps) {
     <div
       aria-hidden='true'
       className={cn(
-        'relative left-1/2 flex h-[220px] w-screen -translate-x-1/2 overflow-hidden',
+        'relative left-1/2 flex h-55 w-screen -translate-x-1/2 overflow-hidden',
         align === 'right' ? 'justify-end' : 'justify-start',
       )}
     >
       <img
         src={src}
-        alt=''
-        className='h-full w-[50rem] max-w-full object-cover object-center'
+        alt='section divider'
+        className='h-full w-full max-w-200 object-cover object-center'
       />
     </div>
   );
