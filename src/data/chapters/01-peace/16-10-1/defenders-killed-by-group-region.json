@@ -1,0 +1,56 @@
+[
+  {
+    "region": "World",
+    "values": {
+      "Women": 14,
+      "Youth": 12,
+      "Indigenous & minority": 22,
+      "Environmental": 25
+    }
+  },
+  {
+    "region": "Central Asia and Southern Asia",
+    "values": {
+      "Women": 11,
+      "Youth": 14,
+      "Indigenous & minority": 27,
+      "Environmental": 7
+    }
+  },
+  {
+    "region": "Eastern Asia and South-Eastern Asia",
+    "values": {
+      "Women": 18,
+      "Youth": 13,
+      "Indigenous & minority": 10,
+      "Environmental": 13
+    }
+  },
+  {
+    "region": "Latin America and the Caribbean",
+    "values": {
+      "Women": 16,
+      "Youth": 9,
+      "Indigenous & minority": 36,
+      "Environmental": 48
+    }
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "values": {
+      "Women": 8,
+      "Youth": 7,
+      "Indigenous & minority": 8,
+      "Environmental": 12
+    }
+  },
+  {
+    "region": "Northern Africa and Western Asia",
+    "values": {
+      "Women": 11,
+      "Youth": 16,
+      "Indigenous & minority": 6,
+      "Environmental": 2
+    }
+  }
+]

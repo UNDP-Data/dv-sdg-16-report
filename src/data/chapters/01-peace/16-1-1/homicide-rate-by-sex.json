@@ -1,0 +1,281 @@
+[
+  {
+    "year": 2000,
+    "both": 6.898529741,
+    "male": 11.01273609,
+    "female": 2.739958065,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2001,
+    "both": 7.013195698,
+    "male": 11.19626168,
+    "female": 2.783713942,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2002,
+    "both": 6.960059401,
+    "male": 11.15215375,
+    "female": 2.720637876,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2003,
+    "both": 6.783518635,
+    "male": 10.87851251,
+    "female": 2.641418235,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2004,
+    "both": 6.560601609,
+    "male": 10.46812623,
+    "female": 2.607080719,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2005,
+    "both": 6.35974042,
+    "male": 10.18027386,
+    "female": 2.493401095,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2006,
+    "both": 6.245568089,
+    "male": 10.03564328,
+    "female": 2.40911772,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2007,
+    "both": 6.078354535,
+    "male": 9.755704153,
+    "female": 2.35502525,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2008,
+    "both": 6.077526354,
+    "male": 9.809813466,
+    "female": 2.297923204,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2009,
+    "both": 6.125843181,
+    "male": 9.822581194,
+    "female": 2.382087046,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2010,
+    "both": 6.107939923,
+    "male": 9.820849716,
+    "female": 2.347536793,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2011,
+    "both": 6.172489509,
+    "male": 9.929391196,
+    "female": 2.366592659,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2012,
+    "both": 6.197790591,
+    "male": 9.981337392,
+    "female": 2.363670302,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2013,
+    "both": 6.097269065,
+    "male": 9.821135368,
+    "female": 2.322542491,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2014,
+    "both": 6.087943764,
+    "male": 9.808771657,
+    "female": 2.315544614,
+    "bothTarget": null,
+    "maleTarget": null,
+    "femaleTarget": null
+  },
+  {
+    "year": 2015,
+    "both": 5.922251183,
+    "male": 9.572630457,
+    "female": 2.220063771,
+    "bothTarget": 5.922251183,
+    "maleTarget": 9.572630457,
+    "femaleTarget": 2.220063771
+  },
+  {
+    "year": 2016,
+    "both": 5.965690562,
+    "male": 9.638537656,
+    "female": 2.24038591,
+    "bothTarget": 5.724842811,
+    "maleTarget": 9.253542775,
+    "femaleTarget": 2.146061645
+  },
+  {
+    "year": 2017,
+    "both": 5.893654064,
+    "male": 9.530107664,
+    "female": 2.205832587,
+    "bothTarget": 5.527434438,
+    "maleTarget": 8.934455093,
+    "femaleTarget": 2.072059519
+  },
+  {
+    "year": 2018,
+    "both": 5.652210273,
+    "male": 9.118025619,
+    "female": 2.138294113,
+    "bothTarget": 5.330026065,
+    "maleTarget": 8.615367411,
+    "femaleTarget": 1.998057394
+  },
+  {
+    "year": 2019,
+    "both": 5.396850958,
+    "male": 8.674301062,
+    "female": 2.074669847,
+    "bothTarget": 5.132617692,
+    "maleTarget": 8.296279729,
+    "femaleTarget": 1.924055268
+  },
+  {
+    "year": 2020,
+    "both": 5.30633169,
+    "male": 8.507938474,
+    "female": 2.062328365,
+    "bothTarget": 4.93520932,
+    "maleTarget": 7.977192047,
+    "femaleTarget": 1.850053142
+  },
+  {
+    "year": 2021,
+    "both": 5.527501934,
+    "male": 8.868911833,
+    "female": 2.144149631,
+    "bothTarget": 4.737800947,
+    "maleTarget": 7.658104365,
+    "femaleTarget": 1.776051017
+  },
+  {
+    "year": 2022,
+    "both": 5.296335704,
+    "male": 8.455095447,
+    "female": 2.099563754,
+    "bothTarget": 4.540392574,
+    "maleTarget": 7.339016683,
+    "femaleTarget": 1.702048891
+  },
+  {
+    "year": 2023,
+    "both": 5.228878911,
+    "male": 8.332036618,
+    "female": 2.09025308,
+    "bothTarget": 4.342984201,
+    "maleTarget": 7.019929001,
+    "femaleTarget": 1.628046765
+  },
+  {
+    "year": 2024,
+    "both": 5.143461951,
+    "male": 8.206761831,
+    "female": 2.046753167,
+    "bothTarget": 4.145575828,
+    "maleTarget": 6.70084132,
+    "femaleTarget": 1.554044639
+  },
+  {
+    "year": 2025,
+    "both": 5.012716032,
+    "male": 7.966198336,
+    "female": 2.027667945,
+    "bothTarget": 3.948167456,
+    "maleTarget": 6.381753638,
+    "femaleTarget": 1.480042514
+  },
+  {
+    "year": 2026,
+    "both": 4.918061361,
+    "male": 7.798155366,
+    "female": 2.008656767,
+    "bothTarget": 3.750759083,
+    "maleTarget": 6.062665956,
+    "femaleTarget": 1.406040388
+  },
+  {
+    "year": 2027,
+    "both": 4.823406689,
+    "male": 7.630112397,
+    "female": 1.989645589,
+    "bothTarget": 3.55335071,
+    "maleTarget": 5.743578274,
+    "femaleTarget": 1.332038262
+  },
+  {
+    "year": 2028,
+    "both": 4.728752018,
+    "male": 7.462069428,
+    "female": 1.970634411,
+    "bothTarget": 3.355942337,
+    "maleTarget": 5.424490592,
+    "femaleTarget": 1.258036137
+  },
+  {
+    "year": 2029,
+    "both": 4.634097347,
+    "male": 7.294026459,
+    "female": 1.951623234,
+    "bothTarget": 3.158533964,
+    "maleTarget": 5.10540291,
+    "femaleTarget": 1.184034011
+  },
+  {
+    "year": 2030,
+    "both": 4.539442676,
+    "male": 7.12598349,
+    "female": 1.932612056,
+    "bothTarget": 2.961125592,
+    "maleTarget": 4.786315228,
+    "femaleTarget": 1.110031885
+  }
+]

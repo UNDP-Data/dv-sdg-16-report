@@ -1,0 +1,6 @@
+[
+  { "group": "Girls", "ageGroup": "Children", "value": 20 },
+  { "group": "Boys", "ageGroup": "Children", "value": 17 },
+  { "group": "Women", "ageGroup": "Adults", "value": 36 },
+  { "group": "Men", "ageGroup": "Adults", "value": 27 }
+]

@@ -1,0 +1,9 @@
+[
+  { "region": "World", "female": 59, "male": 72, "countries": 74 },
+  { "region": "Central and Southern Asia", "female": 59, "male": 72, "countries": 5 },
+  { "region": "Eastern Asia and South-eastern Asia", "female": 63, "male": 79, "countries": 8 },
+  { "region": "Europe and Northern America", "female": 74, "male": 85, "countries": 22 },
+  { "region": "Latin America and the Caribbean", "female": 38, "male": 51, "countries": 11 },
+  { "region": "Sub-Saharan Africa", "female": 57, "male": 66, "countries": 18 },
+  { "region": "Northern Africa and Western Asia", "female": 72, "male": 88, "countries": 9 }
+]
