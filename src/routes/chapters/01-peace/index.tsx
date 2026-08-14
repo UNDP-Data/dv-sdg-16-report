@@ -1,5 +1,7 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { cn } from '@undp/design-system-react/cn';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
@@ -12,6 +14,16 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
+import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
+import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
+import HomicideGenderedPatternsBigNumbers from './charts/HomicideGenderedPatternsBigNumbers';
+import HomicideRateByRegionBarChart from './charts/HomicideRateByRegionBarChart';
+import HomicideRateBySexLineChart from './charts/HomicideRateBySexLineChart';
+import NonLethalViolenceByTypeSexStripChart from './charts/NonLethalViolenceByTypeSexStripChart';
+import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildhoodUnitChart';
+import TraffickingByExploitationFormBigNumbers from './charts/TraffickingByExploitationFormBigNumbers';
+import TraffickingVictimsBySexAgeTreeMap from './charts/TraffickingVictimsBySexAgeTreeMap';
+import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegionBarChart';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -90,8 +102,16 @@ export function Peace() {
               settings, women continue to face the greatest risk of lethal violence within their own
               homes.
             </P>
-            <PlaceholderBlock label='Big numbers' />
-            <PlaceholderBlock label='Big numbers' />
+            <div
+              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <HomicideRateByRegionBarChart />
+            </div>
+            <div
+              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <HomicideGenderedPatternsBigNumbers />
+            </div>
             <P marginBottom='none' size='lg'>
               If current trends of homicide continue, the rate is projected to fall to around 4.5
               victims per 100,000 population by 2030. While this would represent important progress,
@@ -105,7 +125,11 @@ export function Peace() {
               require the global homicide rate to fall below 3 victims per 100,000 population by
               2030.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div
+              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <HomicideRateBySexLineChart />
+            </div>
           </>
         ),
       },
@@ -140,7 +164,7 @@ export function Peace() {
               number of documented cases for 2025 is expected to reach an estimated 743 killings and
               202 disappearances.
             </P>
-            <div className='-mx-18 my-4'>
+            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
               <DefenderKillingsLineChart />
             </div>
             <P marginBottom='none' size='lg'>
@@ -161,7 +185,9 @@ export function Peace() {
               These patterns highlight how structural inequalities intersect with risks faced by
               marginalised groups defending fundamental freedoms.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
+              <DefendersKilledByGroupRegionWaffle />
+            </div>
             <ImpactStory id='peace-detained-hrd-release' />
           </>
         ),
@@ -206,7 +232,11 @@ export function Peace() {
               By contrast, men experienced slightly higher levels of physical violence, with a
               median prevalence of 4.2 per cent compared with 3.2 per cent among women.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div
+              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <NonLethalViolenceByTypeSexStripChart />
+            </div>
             <P marginBottom='none' size='lg'>
               Country coverage of non-lethal violence remains uneven across regions and across
               different forms of violence. Since 2015, 95 countries have reported data for at least
@@ -216,6 +246,7 @@ export function Peace() {
               only 18 countries have reported data on psychological violence for at least one year,
               providing insufficient evidence to identify a clear global pattern.
             </P>
+            <Spacer size='4xl' />
             <ImpactStory id='peace-panama-victimization-surveys' />
           </>
         ),
@@ -240,20 +271,35 @@ export function Peace() {
               billion children globally experience violent punishment by caregivers at home. In most
               countries, boys and girls are equally likely to experience violent discipline at home.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div
+              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <ViolentDisciplineByRegionBarChart />
+            </div>
+            <P marginBottom='none' size='lg'>
+              Violence experienced during childhood extends far beyond violent discipline in the
+              home.
+            </P>
+            <Highlight
+              color='primary'
+              className={isGenderLensActive ? 'gender-lens' : undefined}
+              content='Globally it’s estimated that more than 370 million women and girls experienced
+              rape or sexual assault as children.'
+            />
             <P
               marginBottom='none'
               size='lg'
               className={isGenderLensActive ? 'gender-lens' : undefined}
             >
-              Violence experienced during childhood extends far beyond violent discipline in the
-              home. Globally it’s estimated that more than 370 million women and girls experienced
-              rape or sexual assault as children. Among men and boys, an estimated 240 to 310
-              million experienced rape or sexual assault in childhood. The risks are even greater in
-              fragile settings, where more than one in four girls has experienced rape or sexual
-              assault in childhood.
+              Among men and boys, an estimated 240 to 310 million experienced rape or sexual assault
+              in childhood. The risks are even greater in fragile settings, where more than one in
+              four girls has experienced rape or sexual assault in childhood.
             </P>
-            <PlaceholderBlock label='Big numbers' />
+            <div
+              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <SexualViolenceInChildhoodUnitChart />
+            </div>
           </>
         ),
       },
@@ -283,12 +329,18 @@ export function Peace() {
               of detected trafficking victims than men and boys, with the gender gap particularly
               pronounced among adults.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div
+              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <TraffickingVictimsBySexAgeTreeMap />
+            </div>
             <P marginBottom='none' size='lg'>
               Sexual exploitation and forced labour remained the two most commonly detected forms of
               trafficking.
             </P>
-            <PlaceholderBlock label='Big numbers' />
+            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
+              <TraffickingByExploitationFormBigNumbers />
+            </div>
             <P marginBottom='none' size='lg'>
               Human trafficking is a clear example of a challenge that no institution can address
               alone. Effective responses require international cooperation and cross-border data
@@ -337,7 +389,11 @@ export function Peace() {
               28 per cent of men. The gender gap was evident in every region and was particularly
               pronounced in Northern Africa and Western Asia.
             </P>
-            <PlaceholderBlock label='Figure' />
+            <div
+              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            >
+              <FeelSafeWalkingAloneBySexDumbbellChart />
+            </div>
             <P
               marginBottom='none'
               size='lg'
