@@ -15,6 +15,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import WaveDivider from '../components/WaveDivider';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -401,7 +402,6 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-
       <ChapterHero
         chapterNumber={1}
         bg='/imgs/chapters/peace-hero.webp'
@@ -416,7 +416,6 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
         <P marginBottom='none' size='lg'>
           At its most visible, the lack of peace appears in lives lost in conflicts and intentional
@@ -428,7 +427,7 @@ export function Peace() {
           people’s lives to a detrimental effect on progress.
         </P>
       </div>
-
+      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading
@@ -446,7 +445,6 @@ export function Peace() {
           </SectionHeading>
         ))}
       </div>
-
       <ChapterEndNav label='Next chapter' title='Justice' to='/chapters/justice' color='primary' />
     </>
   );

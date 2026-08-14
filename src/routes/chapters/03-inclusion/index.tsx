@@ -13,6 +13,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import WaveDivider from '../components/WaveDivider';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -505,7 +506,7 @@ export function Inclusion() {
           but also ensure that everyone has a place, a voice and an equal opportunity to contribute.
         </P>
       </div>
-
+      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading
