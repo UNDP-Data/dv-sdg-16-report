@@ -7,6 +7,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 :root {
   --gender-lens-rgb: 123, 111, 232;
   --background-soft: #F5F9FC;

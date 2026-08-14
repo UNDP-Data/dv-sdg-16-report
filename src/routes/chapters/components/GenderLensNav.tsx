@@ -1,3 +1,4 @@
+import { Button } from '@undp/design-system-react/Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -51,29 +52,31 @@ export default function GenderLensNav() {
 
   return (
     <div className='fixed bottom-8 left-1/2 z-20 flex items-center gap-4 rounded-full border border-background/20 bg-foreground-soft px-3 py-2 text-foreground'>
-      <button
+      <Button
         type='button'
+        variant='icon'
         onClick={goPrev}
         disabled={isFirst}
         aria-label='Previous gender insight'
-        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
+        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 p-0 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
       >
         <ChevronLeft size={16} />
-      </button>
+      </Button>
       <span className='text-content-reverse text-sm'>
         {hasStarted
           ? `Gender insight ${index + 1} of ${elements.length}`
           : `${elements.length} gender insight${elements.length === 1 ? '' : 's'} available`}
       </span>
-      <button
+      <Button
         type='button'
+        variant='icon'
         onClick={goNext}
         disabled={isLast}
         aria-label='Next gender insight'
-        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
+        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 p-0 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
       >
         <ChevronRight size={16} />
-      </button>
+      </Button>
     </div>
   );
 }

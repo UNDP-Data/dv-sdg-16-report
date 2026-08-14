@@ -1,9 +1,11 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
+import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import Tag from '@/components/Tag';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
@@ -13,6 +15,7 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
 import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
@@ -24,9 +27,11 @@ import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildho
 import TraffickingByExploitationFormBigNumbers from './charts/TraffickingByExploitationFormBigNumbers';
 import TraffickingVictimsBySexAgeTreeMap from './charts/TraffickingVictimsBySexAgeTreeMap';
 import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegionBarChart';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
+  const [isDataConsiderationExpanded, setIsDataConsiderationExpanded] = useState(false);
   const sections = useMemo(
     () => [
       {
@@ -42,8 +47,13 @@ export function Peace() {
               After three consecutive years of rising conflict-related deaths, documented civilian
               deaths declined by 23 per cent. Nonetheless, the overall situation remains alarming.
             </P>
-            <div className='rounded-md border border-stroke-xs bg-background-soft p-4'>
-              <P marginBottom='none' size='lg'>
+            <div className='-mx-8 flex flex-col gap-3 rounded-md bg-[#EFF5F9] p-8'>
+              <Tag color='primary' content='Data consideration' />
+              <P
+                marginBottom='none'
+                size='lg'
+                className={isDataConsiderationExpanded ? undefined : 'line-clamp-5'}
+              >
                 For the 2015-2025 period, UN Human Rights could document conflict-related deaths,
                 with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso,
                 Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo,
@@ -54,6 +64,14 @@ export function Peace() {
                 for other purposes, including in relation to the question of applicability of
                 international humanitarian law.
               </P>
+              <Button
+                type='button'
+                variant='icon'
+                onClick={() => setIsDataConsiderationExpanded((prev) => !prev)}
+                className='w-fit cursor-pointer p-0 font-normal text-primary text-sm normal-case underline underline-offset-2'
+              >
+                {isDataConsiderationExpanded ? 'Read less' : 'Read more'}
+              </Button>
             </div>
             <PlaceholderBlock label='Scrollytelling' />
             <P
@@ -76,6 +94,7 @@ export function Peace() {
               As a result, the figures presented should be interpreted as a minimum count of
               civilian deaths.
             </P>
+            <WaveDivider src='/imgs/dividers/peace-01.webp' />
           </>
         ),
       },
@@ -130,6 +149,7 @@ export function Peace() {
             >
               <HomicideRateBySexLineChart />
             </div>
+            <WaveDivider src='/imgs/dividers/peace-02.webp' align='right' />
           </>
         ),
       },
@@ -188,7 +208,10 @@ export function Peace() {
             <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
               <DefendersKilledByGroupRegionWaffle />
             </div>
+            <PlaceholderBlock label='Figure' />
+            <Spacer size='2xl' />
             <ImpactStory id='peace-detained-hrd-release' />
+            <Spacer size='6xl' />
           </>
         ),
       },
@@ -246,8 +269,9 @@ export function Peace() {
               only 18 countries have reported data on psychological violence for at least one year,
               providing insufficient evidence to identify a clear global pattern.
             </P>
-            <Spacer size='4xl' />
+            <Spacer size='2xl' />
             <ImpactStory id='peace-panama-victimization-surveys' />
+            <Spacer size='6xl' />
           </>
         ),
       },
@@ -300,6 +324,7 @@ export function Peace() {
             >
               <SexualViolenceInChildhoodUnitChart />
             </div>
+            <WaveDivider src='/imgs/dividers/peace-03.webp' />
           </>
         ),
       },
@@ -349,6 +374,7 @@ export function Peace() {
               systems, statistical methods and victims’ surveys is critical to better understand its
               scale, identify those at greatest risk and strengthen evidence-based responses.
             </P>
+            <WaveDivider src='/imgs/dividers/peace-04.webp' align='right' />
           </>
         ),
       },
@@ -404,12 +430,14 @@ export function Peace() {
               harassment and robbery, as well as broader social and environmental factors, may
               influence the gendered difference in perceived safety.
             </P>
+            <WaveDivider src='/imgs/dividers/peace-02.webp' />
           </>
         ),
       },
       {
         id: '08',
         title: 'The role of Institutions',
+        indicatorCode: 'The role of Institutions',
         heading: 'Achieving peace through capable, trustworthy and responsive institutions',
         anchor: 'role-of-institutions',
         content: (
@@ -417,11 +445,12 @@ export function Peace() {
             <P marginBottom='none' size='lg'>
               Content goes here
             </P>
+            <Spacer size='6xl' />
           </>
         ),
       },
     ],
-    [isGenderLensActive],
+    [isGenderLensActive, isDataConsiderationExpanded],
   );
   return (
     <>
@@ -431,7 +460,6 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-
       <ChapterHero
         chapterNumber={1}
         bg='/imgs/chapters/peace-hero.webp'
@@ -446,7 +474,6 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
         <P marginBottom='none' size='lg'>
           At its most visible, the lack of peace appears in lives lost in conflicts and intentional
@@ -458,7 +485,7 @@ export function Peace() {
           people’s lives to a detrimental effect on progress.
         </P>
       </div>
-
+      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading
@@ -476,7 +503,6 @@ export function Peace() {
           </SectionHeading>
         ))}
       </div>
-
       <ChapterEndNav label='Next chapter' title='Justice' to='/chapters/justice' color='primary' />
     </>
   );

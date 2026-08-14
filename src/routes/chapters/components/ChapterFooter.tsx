@@ -21,7 +21,8 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
         <P
           marginBottom='none'
           size='xs'
-          className='font-semibold text-primary uppercase tracking-widest'
+          weight='semibold'
+          className='text-primary uppercase tracking-widest'
         >
           {label}
         </P>
