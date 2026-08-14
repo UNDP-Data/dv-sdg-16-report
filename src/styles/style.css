@@ -10,6 +10,9 @@ html {
 :root {
   --gender-lens-rgb: 123, 111, 232;
   --background-soft: #F5F9FC;
+  --chart-highlight: #E6F0F7;
+  --chart-highlight-label: #36566F;
+  --text-muted: #A60758A;
 }
 
 
