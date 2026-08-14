@@ -1,0 +1,35 @@
+import { SimpleBarGraph } from '@undp/data-viz/BarGraph';
+import { P } from '@undp/design-system-react/Typography';
+import { CHART_PADDING } from '@/constants';
+import homicideRateByRegion from '@/data/chapters/01-peace/16-1-1/homicide-rate-by-region.json';
+
+export default function HomicideRateByRegionBarChart() {
+  return (
+    <SimpleBarGraph
+      data={homicideRateByRegion.map((d) => ({ label: d.region, size: d.value }))}
+      orientation='horizontal'
+      colors='var(--primary)'
+      minValue={0}
+      maxValue={20}
+      showValues
+      highlightedDataPoints={['World', 'Latin America and the Caribbean', 'Sub-Saharan Africa']}
+      valueColor='var(--content-primary)'
+      showTicks={false}
+      numberDisplayOptions={{ precision: 1 }}
+      barPadding={0.4}
+      height={450}
+      leftMargin={200}
+      dimmedOpacity={0.4}
+      padding={CHART_PADDING}
+      backgroundColor='var(--background-soft)'
+      graphTitle={
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Disproportionate regional gaps in homicide rates
+        </P>
+      }
+      graphDescription='Victims of intentional homicide per 100,000 population'
+      sources={[{ source: 'UNODC' }]}
+      ariaLabel='Horizontal bar chart showing the rate of intentional homicide per 100,000 population, by region, with the global estimate shown first. Latin America and the Caribbean and Sub-Saharan Africa have the highest rates.'
+    />
+  );
+}

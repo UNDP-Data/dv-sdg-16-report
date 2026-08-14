@@ -1,0 +1,11 @@
+[
+  { "region": "World", "share": 67 },
+  { "region": "Australia and New Zealand", "share": 41 },
+  { "region": "Europe and Northern America", "share": 41 },
+  { "region": "Latin America and the Caribbean", "share": 51 },
+  { "region": "Eastern and South-Eastern Asia", "share": 62 },
+  { "region": "Northern Africa and Western Asia", "share": 70 },
+  { "region": "Central and Southern Asia", "share": 73 },
+  { "region": "Sub-Saharan Africa", "share": 77 },
+  { "region": "Oceania", "share": 78 }
+]

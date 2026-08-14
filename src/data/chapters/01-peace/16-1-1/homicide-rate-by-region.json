@@ -1,0 +1,10 @@
+[
+  { "region": "World", "value": 5.1 },
+  { "region": "Central and Southern Asia", "value": 2.8 },
+  { "region": "Eastern and South-Eastern Asia", "value": 0.9 },
+  { "region": "Europe and Northern America", "value": 3.2 },
+  { "region": "Latin America and the Caribbean", "value": 19.3 },
+  { "region": "Northern Africa and Western Asia", "value": 4.9 },
+  { "region": "Oceania", "value": 3.0 },
+  { "region": "Sub-Saharan Africa", "value": 11.7 }
+]

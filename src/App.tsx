@@ -12,12 +12,13 @@ function App() {
       style={{ backgroundImage: `url('imgs/hero-bg.webp')` }}
     >
       <Container className='md:w-1/2 lg:w-1/3'>
-        <P size='sm' marginBottom='lg' className='text-[#A0B1C1]! uppercase tracking-wider'>
+        <P size='sm' marginBottom='lg' className='text-content-quaternary uppercase tracking-wider'>
           SDG 16 Report 2026
         </P>
         <H1
           marginBottom='sm'
-          className='justify-start font-normal! text-content-reverse normal-case'
+          weight='normal'
+          className='justify-start text-content-reverse normal-case'
         >
           Peace, Justice, Inclusivity
         </H1>
