@@ -99,6 +99,7 @@ if (rootElement) {
           content: {
             reverse: '#DCE6F0',
             secondary: '#99B0BD',
+            quaternary: '#A0B1C1',
           },
         }}
       >

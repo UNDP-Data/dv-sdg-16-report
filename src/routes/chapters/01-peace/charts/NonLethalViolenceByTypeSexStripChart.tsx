@@ -8,7 +8,6 @@ import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import { CHART_PADDING } from '@/constants';
-import nonLethalViolenceCsvUrl from '@/data/chapters/01-peace/16-1-3/16-1-3.csv?url';
 import ChartNote from '../../components/ChartNote';
 
 interface NonLethalViolenceRow {
@@ -35,7 +34,10 @@ const SEXES = [
 function useNonLethalViolenceData() {
   return useQuery({
     queryKey: ['non-lethal-violence-16-1-3'],
-    queryFn: () => fetchAndParseCSV(nonLethalViolenceCsvUrl) as Promise<NonLethalViolenceRow[]>,
+    queryFn: () =>
+      fetchAndParseCSV('/data/chapters/01-peace/16-1-3/16-1-3.csv') as Promise<
+        NonLethalViolenceRow[]
+      >,
   });
 }
 
