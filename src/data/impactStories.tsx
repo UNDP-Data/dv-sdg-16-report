@@ -1,10 +1,52 @@
-export const IMPACT_STORIES = [
+import type { ReactNode } from 'react';
+
+export type ImpactStoryChapter = 'peace' | 'justice' | 'inclusion';
+export type ImpactStoryColor = 'primary' | 'secondary' | 'tertiary';
+
+export interface ImpactStoryStat {
+  value: string;
+  suffix?: string;
+  label: string;
+}
+
+export interface ImpactStory {
+  id: string;
+  chapter: ImpactStoryChapter;
+  anchor: string;
+  indicatorCode: string;
+  indicatorTitle: string;
+  title: string;
+  stats?: ImpactStoryStat[];
+  story: ReactNode;
+}
+
+export const IMPACT_STORY_COLOR: Record<ImpactStoryChapter, ImpactStoryColor> = {
+  peace: 'primary',
+  justice: 'secondary',
+  inclusion: 'tertiary',
+};
+
+export function getImpactStoryColor(chapter: ImpactStoryChapter): ImpactStoryColor {
+  return IMPACT_STORY_COLOR[chapter];
+}
+
+export const IMPACT_STORIES: ImpactStory[] = [
   {
     id: 'peace-detained-hrd-release',
     chapter: 'peace',
     anchor: 'attacks-on-defenders',
+    indicatorCode: '16.10.1',
+    indicatorTitle: 'Attacks on defenders',
     title:
       'Data on arbitrarily detained human rights defenders drives action that may help secure earlier release',
+    stats: [
+      { value: '92', suffix: ' days', label: 'Median time to release after a UN Communication' },
+      {
+        value: '35',
+        suffix: '%',
+        label: 'Defenders acquitted and released, not just conditionally freed',
+      },
+    ],
     story: (
       <>
         A pilot analysis of cases recorded under SDG indicator 16.10.1, which tracks the number of
@@ -55,7 +97,16 @@ export const IMPACT_STORIES = [
     id: 'peace-panama-victimization-surveys',
     chapter: 'peace',
     anchor: 'non-lethal-violence',
-    title: 'How Victimization Surveys Are Shaping Citizen Security Policies in Panama',
+    indicatorCode: '16.1.3',
+    indicatorTitle: 'Physical, sexual and psychological violence',
+    title: 'How victimization surveys are shaping citizen security policies in Panama',
+    stats: [
+      { value: '2017', label: "Year of Panama's first National Victimization Survey (ENVIP)" },
+      {
+        value: '14',
+        label: 'Countries in Latin America and the Caribbean with a victimization survey',
+      },
+    ],
     story: (
       <>
         Nearly a decade after implementing its first official National Victimization Survey (ENVIP),
@@ -105,7 +156,10 @@ export const IMPACT_STORIES = [
     id: 'justice-ghana-iffs',
     chapter: 'justice',
     anchor: 'illicit-financial-flows',
-    title: 'Ghana Turns Illicit Financial Flows Data into Policy Action',
+    indicatorCode: '16.4.1',
+    indicatorTitle: 'Illicit financial flows',
+    title: 'Ghana turns illicit financial flows data into policy action',
+    stats: [{ value: '78', suffix: '%', label: 'Reduction in illicit financial flows, 2019–2023' }],
     story: (
       <>
         The first measurement studies on IFFs are now being translated directly into informed policy
@@ -126,7 +180,13 @@ export const IMPACT_STORIES = [
     id: 'inclusion-benin-womens-representation',
     chapter: 'inclusion',
     anchor: 'representation-in-the-legislature',
-    title: "Advancing Women's Representation in Benin's National Assembly",
+    indicatorCode: '16.7.1 (a)',
+    indicatorTitle: 'Representation in the legislature',
+    title: "Advancing women's representation in Benin's National Assembly",
+    stats: [
+      { value: '7.2', suffix: '%', label: 'Women in parliament in 2015' },
+      { value: '25.7', suffix: '%', label: 'Women in parliament in 2026' },
+    ],
     story: (
       <>
         Over the past decade, data on the composition of Benin's National Assembly provided a
@@ -163,7 +223,13 @@ export const IMPACT_STORIES = [
     id: 'inclusion-armenia-representation-data',
     chapter: 'inclusion',
     anchor: 'representation-in-public-service-and-judiciary',
+    indicatorCode: '16.7.1 (b)',
+    indicatorTitle: 'Representation in public service institutions and the judiciary',
     title: 'Using representation data to inform more inclusive public institutions in Armenia',
+    stats: [
+      { value: '25', suffix: '%', label: 'Women in Top Public Management roles, 2020–2024' },
+      { value: '74', suffix: '%', label: 'Women in professional-level civil service roles' },
+    ],
     story: (
       <>
         In Armenia, data on women's representation in public administration (SDG indicator 16.7.1b)
@@ -216,7 +282,9 @@ export const IMPACT_STORIES = [
     id: 'inclusion-bosnia-herzegovina-institutional-change',
     chapter: 'inclusion',
     anchor: 'representation-in-public-service-and-judiciary',
-    title: 'Turning Representation Data into Institutional Change in Bosnia and Herzegovina',
+    indicatorCode: '16.7.1 (b)',
+    indicatorTitle: 'Representation in public service institutions and the judiciary',
+    title: 'Turning representation data into institutional change in Bosnia and Herzegovina',
     story: (
       <>
         In Bosnia and Herzegovina, data on representation in public institutions became a catalyst
@@ -255,7 +323,17 @@ export const IMPACT_STORIES = [
     id: 'inclusion-bangladesh-judicial-leadership',
     chapter: 'inclusion',
     anchor: 'representation-in-public-service-and-judiciary',
-    title: "Advancing Women's Judicial Leadership in Bangladesh",
+    indicatorCode: '16.7.1 (c)',
+    indicatorTitle: 'Representation in public service institutions and the judiciary',
+    title: "Advancing women's judicial leadership in Bangladesh",
+    stats: [
+      {
+        value: '30.3',
+        suffix: '%',
+        label: 'Lower-level court judges who are women (677 of 2,233)',
+      },
+      { value: '9.3', suffix: '%', label: 'Supreme Court judges who are women (11 of 118)' },
+    ],
     story: (
       <>
         In Bangladesh, data on women's representation in the judiciary under SDG indicator 16.7.1c
@@ -292,7 +370,9 @@ export const IMPACT_STORIES = [
     id: 'inclusion-mexico-discrimination-data',
     chapter: 'inclusion',
     anchor: 'experience-of-discrimination',
-    title: 'Using Data to Strengthen Institutional Responses to Discrimination in Mexico',
+    indicatorCode: '16.b.1',
+    indicatorTitle: 'Experience of discrimination',
+    title: 'Using data to strengthen institutional responses to discrimination in Mexico',
     story: (
       <>
         Mexico demonstrates how regular data collection on people's experiences of discrimination
