@@ -12,12 +12,11 @@ import { Grid } from '@undp/design-system-react/Grid';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import Tag from '@/components/Tag';
-import { getImpactStoryColor, IMPACT_STORIES } from '@/data/impactStories';
+import { getImpactStoryColor, IMPACT_STORIES, type ImpactStory } from '@/data/impactStories';
 import ImpactStoryModal from '@/routes/chapters/components/ImpactStoryModal';
 
 export function ImpactStories() {
-  const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
-  const selectedStory = IMPACT_STORIES.find((d) => d.id === selectedId);
+  const [selectedStory, setSelectedStory] = useState<ImpactStory | undefined>(undefined);
   return (
     <>
       <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
@@ -57,11 +56,11 @@ export function ImpactStories() {
                 backgroundColor='background'
                 role='button'
                 tabIndex={0}
-                onClick={() => setSelectedId(entry.id)}
+                onClick={() => setSelectedStory(entry)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    setSelectedId(entry.id);
+                    setSelectedStory(entry);
                   }
                 }}
                 className='h-full cursor-pointer text-left'
@@ -93,7 +92,7 @@ export function ImpactStories() {
           </Grid>
         </div>
       </section>
-      <ImpactStoryModal story={selectedStory} onClose={() => setSelectedId(undefined)} />
+      <ImpactStoryModal story={selectedStory} onClose={() => setSelectedStory(undefined)} />
     </>
   );
 }
