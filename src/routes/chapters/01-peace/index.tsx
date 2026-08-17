@@ -12,7 +12,6 @@ import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
-import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
 import WaveDivider from '../components/WaveDivider';
@@ -73,7 +72,7 @@ export function Peace() {
                 {isDataConsiderationExpanded ? 'Read less' : 'Read more'}
               </Button>
             </div>
-            <PlaceholderBlock label='Scrollytelling' />
+            <ScrollyTellingViz />
             <P
               marginBottom='none'
               size='lg'
@@ -208,7 +207,6 @@ export function Peace() {
             <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
               <DefendersKilledByGroupRegionWaffle />
             </div>
-            <PlaceholderBlock label='Figure' />
             <Spacer size='2xl' />
             <ImpactStory id='peace-detained-hrd-release' />
             <Spacer size='6xl' />
@@ -485,7 +483,6 @@ export function Peace() {
           people’s lives to a detrimental effect on progress.
         </P>
       </div>
-      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading

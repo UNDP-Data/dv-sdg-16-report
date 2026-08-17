@@ -34,7 +34,7 @@ export function Inclusion() {
               child's legal identity, it helps protect fundamental rights and enables access to
               essential services such as health care, education and social protection.
             </P>
-            <PlaceholderBlock label='Scrollytelling' />
+            <ScrollyTellingViz />
             <P
               marginBottom='none'
               size='lg'
@@ -506,7 +506,6 @@ export function Inclusion() {
           but also ensure that everyone has a place, a voice and an equal opportunity to contribute.
         </P>
       </div>
-      <ScrollyTellingViz />
       <div className='mx-auto flex max-w-2xl flex-col'>
         {sections.map((section) => (
           <SectionHeading
