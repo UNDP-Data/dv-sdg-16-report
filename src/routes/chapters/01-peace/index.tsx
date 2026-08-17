@@ -115,19 +115,23 @@ export function Peace() {
               Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9 to
               5.1 victims per 100,000 population. Nevertheless, progress remains highly uneven
               across regions, with Latin America and the Caribbean, and Sub-Saharan Africa recording
-              the highest rates of intentional homicide globally. There are also distinct gendered
-              patterns. While men are disproportionately affected by lethal violence in public
-              settings, women continue to face the greatest risk of lethal violence within their own
-              homes.
+              the highest rates of intentional homicide globally.
             </P>
             <div
               className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
             >
               <HomicideRateByRegionBarChart />
             </div>
-            <div
-              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
+            <P
+              marginBottom='none'
+              size='lg'
+              className={isGenderLensActive ? 'gender-lens' : undefined}
             >
+              There are also distinct gendered patterns. While men are disproportionately affected
+              by lethal violence in public settings, women continue to face the greatest risk of
+              lethal violence within their own homes.
+            </P>
+            <div className={cn('my-8', isGenderLensActive && 'gender-lens')}>
               <HomicideGenderedPatternsBigNumbers />
             </div>
             <P marginBottom='none' size='lg'>
