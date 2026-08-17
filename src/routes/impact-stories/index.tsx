@@ -9,16 +9,14 @@ import {
 } from '@undp/design-system-react/Card';
 import { cn } from '@undp/design-system-react/cn';
 import { Grid } from '@undp/design-system-react/Grid';
-import { Modal } from '@undp/design-system-react/Modal';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import Tag from '@/components/Tag';
-import { IMPACT_STORIES } from '@/data/impactStories';
+import { getImpactStoryColor, IMPACT_STORIES, type ImpactStory } from '@/data/impactStories';
+import ImpactStoryModal from '@/routes/chapters/components/ImpactStoryModal';
 
 export function ImpactStories() {
-  const [modalData, setModalData] = useState<undefined | { title: string; story: React.ReactNode }>(
-    undefined,
-  );
+  const [selectedStory, setSelectedStory] = useState<ImpactStory | undefined>(undefined);
   return (
     <>
       <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
@@ -58,26 +56,17 @@ export function ImpactStories() {
                 backgroundColor='background'
                 role='button'
                 tabIndex={0}
-                onClick={() => setModalData({ title: entry.title, story: entry.story })}
+                onClick={() => setSelectedStory(entry)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    setModalData({ title: entry.title, story: entry.story });
+                    setSelectedStory(entry);
                   }
                 }}
                 className='h-full cursor-pointer text-left'
               >
                 <CardTag>
-                  <Tag
-                    color={
-                      entry.chapter === 'peace'
-                        ? 'primary'
-                        : entry.chapter === 'justice'
-                          ? 'secondary'
-                          : 'tertiary'
-                    }
-                    content={entry.chapter}
-                  />
+                  <Tag color={getImpactStoryColor(entry.chapter)} content={entry.chapter} />
                 </CardTag>
                 <CardTitle className='font-heading font-semibold text-2xl!'>
                   {entry.title}
@@ -103,13 +92,7 @@ export function ImpactStories() {
           </Grid>
         </div>
       </section>
-      <Modal
-        title={modalData?.title}
-        open={!!modalData?.story}
-        onClose={() => setModalData(undefined)}
-      >
-        <div className='text-base text-foreground'>{modalData?.story}</div>
-      </Modal>
+      <ImpactStoryModal story={selectedStory} onClose={() => setSelectedStory(undefined)} />
     </>
   );
 }

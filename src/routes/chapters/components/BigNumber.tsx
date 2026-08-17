@@ -22,7 +22,7 @@ export default function BigNumber({
   const percent = barPercent ?? (suffix === '%' && typeof value === 'number' ? value : undefined);
 
   return (
-    <div className={cn('flex flex-col gap-1', className)}>
+    <div className={cn('flex flex-col gap-2', className)}>
       {percent !== undefined ? (
         <div className='h-[0.2rem] w-full overflow-hidden bg-stroke-sm'>
           <div
@@ -41,7 +41,7 @@ export default function BigNumber({
         weight='medium'
         marginBottom='none'
         className={cn(
-          'pt-12 font-heading leading-none',
+          'pt-12 pb-4 font-heading leading-none',
           color === 'primary' && 'text-primary',
           color === 'secondary' && 'text-secondary',
           color === 'tertiary' && 'text-tertiary',
