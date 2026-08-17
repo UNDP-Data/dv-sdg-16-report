@@ -2,6 +2,7 @@ import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
+import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -189,11 +190,36 @@ export function Inclusion() {
               advance into leadership and decision-making roles across public institutions.
             </P>
             <Spacer size='2xl' />
-            <ImpactStory id='inclusion-armenia-representation-data' color='tertiary' />
-            <Spacer size='2xl' />
-            <ImpactStory id='inclusion-bosnia-herzegovina-institutional-change' color='tertiary' />
-            <Spacer size='2xl' />
-            <ImpactStory id='inclusion-bangladesh-judicial-leadership' color='tertiary' />
+            <div className='relative isolate mx-[calc(50%-50vw+1.5rem)] w-[calc(100vw-3rem)] md:mx-[calc(50%-50vw+3rem)] md:w-[calc(100vw-6rem)]'>
+              <VizCarousel
+                vizWidth='full'
+                classNames={{
+                  arrowButton:
+                    'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:pointer-events-none [&.opacity-disabled]:bg-transparent [&.opacity-disabled]:opacity-30',
+                  arrows: 'text-foreground',
+                  content: '[&_p]:hidden!',
+                }}
+                styles={{ arrows: { strokeWidth: 1.5 } }}
+                slides={[
+                  { id: 'inclusion-armenia-representation-data', color: 'tertiary' as const },
+                  {
+                    id: 'inclusion-bosnia-herzegovina-institutional-change',
+                    color: 'tertiary' as const,
+                  },
+                  { id: 'inclusion-bangladesh-judicial-leadership', color: 'tertiary' as const },
+                ].map((story) => ({
+                  content: null,
+                  viz: (
+                    <ImpactStory
+                      key={story.id}
+                      id={story.id}
+                      color={story.color}
+                      fullWidth={false}
+                    />
+                  ),
+                }))}
+              />
+            </div>
             <Spacer size='6xl' />
           </>
         ),
