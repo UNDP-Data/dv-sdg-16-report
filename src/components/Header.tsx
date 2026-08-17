@@ -34,9 +34,9 @@ export default function HeaderEl() {
             marginBottom='none'
             className='border-background/30 border-l pl-3 text-content-reverse uppercase leading-tight tracking-widest'
           >
-            Peace, Justice
+            Global Progress Report
             <br />
-            and Inclusivity
+            2026
           </P>
         </Link>
 

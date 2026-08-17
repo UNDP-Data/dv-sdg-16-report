@@ -20,7 +20,7 @@ function App() {
           weight='normal'
           className='justify-start font-medium! text-content-reverse normal-case'
         >
-          Peace, Justice, Inclusivity
+          Peace, Justice, Inclusion
         </H1>
         <P size='xl' className='text-content-reverse'>
           A global look at where the world stands on building peaceful, just, and inclusive
