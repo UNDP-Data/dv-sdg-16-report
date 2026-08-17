@@ -435,7 +435,7 @@ export function Peace() {
       {
         id: '08',
         title: 'The role of Institutions',
-        indicatorCode: 'The role of Institutions',
+        indicatorCode: '',
         heading: 'Achieving peace through capable, trustworthy and responsive institutions',
         anchor: 'role-of-institutions',
         content: (
