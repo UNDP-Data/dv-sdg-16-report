@@ -24,7 +24,7 @@ export default function HomicideRateByRegionBarChart() {
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
-      refValues={[{ value: WORLD_HOMICIDE_RATE, text: 'World' }]}
+      refValues={[{ value: WORLD_HOMICIDE_RATE, text: `World ${WORLD_HOMICIDE_RATE}` }]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Disproportionate regional gaps in homicide rates
