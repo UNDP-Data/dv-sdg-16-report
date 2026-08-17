@@ -1,13 +1,13 @@
 [
-  { "year": 2015, "value": 426, "projectedValue": null },
-  { "year": 2016, "value": 423, "projectedValue": null },
-  { "year": 2017, "value": 416, "projectedValue": null },
-  { "year": 2018, "value": 487, "projectedValue": null },
-  { "year": 2019, "value": 437, "projectedValue": null },
-  { "year": 2020, "value": 387, "projectedValue": null },
-  { "year": 2021, "value": 401, "projectedValue": null },
-  { "year": 2022, "value": 500, "projectedValue": null },
-  { "year": 2023, "value": 622, "projectedValue": null },
-  { "year": 2024, "value": 686, "projectedValue": 686 },
-  { "year": 2025, "value": null, "projectedValue": 743 }
+  { "year": 2015, "value": 426 },
+  { "year": 2016, "value": 423 },
+  { "year": 2017, "value": 416 },
+  { "year": 2018, "value": 487 },
+  { "year": 2019, "value": 437 },
+  { "year": 2020, "value": 387 },
+  { "year": 2021, "value": 401 },
+  { "year": 2022, "value": 500 },
+  { "year": 2023, "value": 622 },
+  { "year": 2024, "value": 686 },
+  { "year": 2025, "value": 743 }
 ]
