@@ -191,9 +191,9 @@ export default function ScrollyTellingViz() {
   const activeSlide = SLIDES[activeSlideIndex] ?? SLIDES[0];
 
   return (
-    <div className='relative w-full'>
+    <div className='relative left-1/2 mx-auto flex w-screen max-w-320 -translate-x-1/2 items-start justify-center gap-16 px-6'>
       <div
-        className='sticky top-11 mx-auto flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-10'
+        className='sticky top-11 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-10'
         ref={graphDiv}
       >
         <motion.svg
@@ -306,7 +306,7 @@ export default function ScrollyTellingViz() {
           </text>
         </motion.svg>
       </div>
-      <div className='relative -mt-[calc(100vh-2.75rem)] mr-20 ml-auto w-1/4'>
+      <div className='w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center' key={index}>
