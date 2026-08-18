@@ -26,7 +26,7 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
       titleClassName='sr-only'
       open={!!story}
       onClose={onClose}
-      overlayClassName='bg-surface/90'
+      overlayClassName='bg-surface/95 backdrop-blur-[32px]'
     >
       {story ? (
         <div className='flex flex-col gap-6'>
