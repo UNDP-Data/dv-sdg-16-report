@@ -4,6 +4,7 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import PlaceholderBlock from '@/components/PlaceholderBlock';
+import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
@@ -13,6 +14,7 @@ import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
 import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 
 export function Justice() {
@@ -451,6 +453,12 @@ export function Justice() {
         }
         color='secondary'
         subsections={sections}
+      />
+      <TargetsDrawer
+        chapterTitle='Justice'
+        bg='/imgs/chapters/justice-texture.webp'
+        color='secondary'
+        targets={chaptersTargetList.justice}
       />
       <Spacer size='8xl' />
       <TextContainer>

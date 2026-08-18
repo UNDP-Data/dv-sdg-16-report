@@ -5,6 +5,7 @@ import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
 import PlaceholderBlock from '@/components/PlaceholderBlock';
+import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
@@ -14,6 +15,7 @@ import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
 import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -513,6 +515,12 @@ export function Inclusion() {
         }
         color='tertiary'
         subsections={sections}
+      />
+      <TargetsDrawer
+        chapterTitle='Inclusion'
+        bg='/imgs/chapters/inclusion-texture.webp'
+        color='tertiary'
+        targets={chaptersTargetList.inclusion}
       />
       <Spacer size='8xl' />
       <TextContainer>

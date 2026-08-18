@@ -5,6 +5,7 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo, useState } from 'react';
 import Tag from '@/components/Tag';
+import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
@@ -14,6 +15,7 @@ import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
 import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
@@ -477,6 +479,12 @@ export function Peace() {
         }
         color='primary'
         subsections={sections}
+      />
+      <TargetsDrawer
+        chapterTitle='Peace'
+        bg='/imgs/chapters/peace-texture.webp'
+        color='primary'
+        targets={chaptersTargetList.peace}
       />
       <Spacer size='8xl' />
       <TextContainer>

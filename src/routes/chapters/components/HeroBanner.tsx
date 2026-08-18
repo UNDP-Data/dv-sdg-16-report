@@ -4,7 +4,7 @@ import { H1, P } from '@undp/design-system-react/Typography';
 import { useInView } from 'motion/react';
 import { useEffect, useRef } from 'react';
 import { useActions, useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterSection } from '@/types';
+import type { ChapterSectionDataType } from '@/types';
 
 interface HeroBannerProps {
   chapterNumber: number;
@@ -12,7 +12,7 @@ interface HeroBannerProps {
   intro: React.ReactNode;
   bg: string;
   color?: 'primary' | 'secondary' | 'tertiary';
-  subsections: ChapterSection[];
+  subsections: ChapterSectionDataType[];
 }
 
 export default function HeroBanner({

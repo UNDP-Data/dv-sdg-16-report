@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 export type ChapterKey = 'peace' | 'justice' | 'inclusion';
 
-export interface ChapterMeta {
+export interface ChapterMetaDataType {
   number: string;
   title: string;
   color: string;
@@ -11,7 +11,7 @@ export interface ChapterMeta {
   description: string;
 }
 
-export interface ChapterSection {
+export interface ChapterSectionDataType {
   id: string;
   title: string;
   indicatorCode?: string;
@@ -23,7 +23,7 @@ export interface ChapterSection {
   isGenderLens?: boolean;
 }
 
-export interface ImpactStoryType {
+export interface ImpactStoryDataType {
   id: string;
   chapter: ChapterKey;
   anchor: string;
@@ -36,4 +36,22 @@ export interface ImpactStoryType {
     label: string;
   }[];
   story: string;
+}
+
+export interface ChapterOfficialIndicatorType {
+  code: string;
+  description: string;
+}
+
+export interface ChapterTargetIndicatorType {
+  code: string;
+  label: string;
+  officialIndicators: ChapterOfficialIndicatorType[];
+  dataReporter: string;
+}
+
+export interface ChapterTargetDataType {
+  code: string;
+  description: string;
+  indicators: ChapterTargetIndicatorType[];
 }

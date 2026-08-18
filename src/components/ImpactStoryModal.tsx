@@ -2,12 +2,12 @@ import { MarkdownRenderer } from '@undp/design-system-react/MarkdownRenderer';
 import { Modal } from '@undp/design-system-react/Modal';
 import { H3 } from '@undp/design-system-react/Typography';
 import Tag from '@/components/Tag';
-import type { ChapterKey, ImpactStoryType } from '@/types';
+import type { ChapterKey, ImpactStoryDataType } from '@/types';
 import { getChapterColor } from '@/Utils/getChapterColor';
 import BigNumber from './BigNumber';
 
 interface ImpactStoryModalProps {
-  story: ImpactStoryType | undefined;
+  story: ImpactStoryDataType | undefined;
   onClose: () => void;
 }
 
@@ -26,7 +26,7 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
       titleClassName='sr-only'
       open={!!story}
       onClose={onClose}
-      overlayClassName='bg-surface/90'
+      overlayClassName='bg-surface/95 backdrop-blur-[32px]'
     >
       {story ? (
         <div className='flex flex-col gap-6'>

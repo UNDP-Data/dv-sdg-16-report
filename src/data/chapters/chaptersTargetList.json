@@ -1,0 +1,377 @@
+{
+    "peace":[
+    {
+      "code": "16.1",
+      "description": "Significantly reduce all forms of violence and related death rates everywhere",
+      "indicators": [
+        {
+          "code": "16.1.1",
+          "label": "Homicide",
+          "officialIndicators": [
+            {
+              "code": "16.1.1",
+              "description": "Number of victims of intentional homicide per 100,000 population, by sex and age"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        },
+        {
+          "code": "16.1.2",
+          "label": "Conflict-related deaths",
+          "officialIndicators": [
+            {
+              "code": "16.1.2",
+              "description": "Conflict-related deaths per 100,000 population, by sex, age and cause"
+            }
+          ],
+          "dataReporter": "Office of the United Nations High Commissioner for Human Rights (OHCHR)"
+        },
+        {
+          "code": "16.1.3",
+          "label": "Physical, sexual and psychological violence",
+          "officialIndicators": [
+            {
+              "code": "16.1.3",
+              "description": "Proportion of population subjected to (a) physical violence, (b) psychological violence and (c) sexual violence in the previous 12 months"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        },
+        {
+          "code": "16.1.4",
+          "label": "Perception of safety",
+          "officialIndicators": [
+            {
+              "code": "16.1.4",
+              "description": "The proportion of the population that feel safe walking alone around the area they live"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        }
+      ]
+    },
+    {
+      "code": "16.2",
+      "description":
+        "End abuse, exploitation, trafficking and all forms of violence against and torture of children",
+      "indicators": [
+        {
+          "code": "16.2.1, 16.2.3",
+          "label": "Violence against children",
+          "officialIndicators": [
+            {
+              "code": "16.2.1",
+              "description": "Proportion of children aged 1–17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month"
+            },
+            {
+              "code": "16.2.3",
+              "description": "Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18"
+            }
+          ],
+          "dataReporter": "United Nations Children's Fund (UNICEF)"
+        },
+        {
+          "code": "16.2.2",
+          "label": "Human trafficking victims",
+          "officialIndicators": [
+            {
+              "code": "16.2.2",
+              "description": "Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        }
+      ]
+    },
+    {
+      "code": "16.10",
+      "description":
+        "Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements",
+      "indicators": [
+        {
+          "code": "16.10.1",
+          "label": "Attacks on defenders",
+          "officialIndicators": [
+            {
+              "code": "16.10.1",
+              "description": "Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months"
+            }
+          ],
+          "dataReporter": "Office of the United Nations High Commissioner for Human Rights (OHCHR), United Nations Educational, Scientific and Cultural Organization (UNESCO), and International Labour Organization"
+        }
+      ]
+    }
+  ],
+  "justice":[
+    {
+      "code": "16.3",
+      "description":
+        "Promote the rule of law at the national and international levels and ensure equal access to justice for all",
+      "indicators": [
+        {
+          "code": "16.3.1",
+          "label": "Access to criminal justice",
+          "officialIndicators": [
+            {
+              "code": "16.3.1",
+              "description":
+                "Proportion of victims of violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        },
+        {
+          "code": "16.3.2",
+          "label": "Unsentenced detention",
+          "officialIndicators": [
+            {
+              "code": "16.3.2",
+              "description": "Unsentenced detainees as a proportion of overall prison population"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        },
+        {
+          "code": "16.3.3",
+          "label": "Access to civil justice",
+          "officialIndicators": [
+            {
+              "code": "16.3.3",
+              "description":
+                "Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism"
+            }
+          ],
+          "dataReporter": "United Nations Development Programme (UNDP), United Nations Office on Drugs and Crime (UNODC) and Organization for Economic Cooperation and Development (OECD)"
+        }
+      ]
+    },
+    {
+      "code": "16.4",
+      "description": "By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime",
+      "indicators": [
+        {
+          "code": "16.4.1",
+          "label": "Illicit financial flows",
+          "officialIndicators": [
+            {
+              "code": "16.4.1",
+              "description": "Total value of inward and outward illicit financial flows (in current United States dollars)"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC) and United Nations Conference on Trade and Development (UNCTAD)"
+        },
+        {
+          "code": "16.4.2",
+          "label": "Illicit firearms flows",
+          "officialIndicators": [
+            {
+              "code": "16.4.2",
+              "description": "Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC) and United Nations Office for Disarmament Affairs (UNODA)"
+        }
+      ]
+    },
+    {
+      "code": "16.5",
+      "description": "Substantially reduce corruption and bribery in all their forms",
+      "indicators": [
+        {
+          "code": "16.5.1",
+          "label": "Bribery among the population",
+          "officialIndicators": [
+            {
+              "code": "16.5.1",
+              "description": "Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months"
+            }
+          ],
+          "dataReporter": "United Nations Office on Drugs and Crime (UNODC)"
+        },
+        {
+          "code": "16.5.2",
+          "label": "Bribery of businesses",
+          "officialIndicators": [
+            {
+              "code": "16.5.2",
+              "description":
+                "Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months"
+            }
+          ],
+          "dataReporter": "World Bank (WB)"
+        }
+      ]
+    },
+    {
+      "code": "16.a",
+      "description":
+        "Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime",
+      "indicators": [
+        {
+          "code": "16.a.1",
+          "label": "National human rights institutions",
+          "officialIndicators": [
+            {
+              "code": "16.a.1",
+              "description":
+                "Existence of independent national human rights institutions in compliance with the Paris Principles"
+            }
+          ],
+          "dataReporter": "Office of the United Nations High Commissioner for Human Rights (OHCHR)"
+        }
+      ]
+    }
+  ],
+  "inclusion": [
+    {
+      "code": "16.6",
+      "description": "Develop effective, accountable and transparent institutions at all levels",
+      "indicators": [
+        {
+          "code": "16.6.1",
+          "label": "Government expenditures",
+          "officialIndicators": [
+            {
+              "code": "16.6.1",
+              "description":
+                "Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)"
+            }
+          ],
+          "dataReporter": "World Bank (WB)"
+        },
+        {
+          "code": "16.6.2",
+          "label": "Satisfaction with public services",
+          "officialIndicators": [
+            {
+              "code": "16.6.2",
+              "description":
+                "Proportion of population satisfied with their last experience of public services"
+            }
+          ],
+          "dataReporter": "United Nations Development Programme (UNDP)"
+        }
+      ]
+    },
+    {
+      "code": "16.7",
+      "description":
+        "Ensure responsive, inclusive, participatory and representative decision-making at all levels",
+      "indicators": [
+        {
+          "code": "16.7.1 (a)",
+          "label": "Representation in the legislature",
+          "officialIndicators": [
+            {
+              "code": "16.7.1 (a)",
+              "description":
+                "Proportions of positions in national and local institutions, including the legislatures"
+            }
+          ],
+          "dataReporter": "Inter-Parliamentary Union (IPU)"
+        },
+        {
+          "code": "16.7.1 (b) & (c)",
+          "label": "Representation in public service institutions and the judiciary",
+          "officialIndicators": [
+            {
+              "code": "16.7.1 (b) & (c)",
+              "description":
+                "Proportions of positions in national and local institutions including the public service; and the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups"
+            }
+          ],
+          "dataReporter": "UNDP GPCG"
+        },
+        {
+          "code": "16.7.2",
+          "label": "Political efficacy",
+          "officialIndicators": [
+            {
+              "code": "16.7.2",
+              "description":
+                "Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group"
+            }
+          ],
+          "dataReporter": "UNDP GPCG"
+        }
+      ]
+    },
+    {
+      "code": "16.8",
+      "description":
+        "Broaden and strengthen the participation of developing countries in the institutions of global governance",
+      "indicators": [
+        {
+          "code": "16.8.1",
+          "label": "Global governance",
+          "officialIndicators": [
+            {
+              "code": "16.8.1",
+              "description":
+                "Proportion of members and voting rights of developing countries in international organizations"
+            }
+          ],
+          "dataReporter":
+            "Financing for Sustainable Development Office (FSDO), United Nations Department of Economic and Social Affairs (UN-DESA)"
+        }
+      ]
+    },
+    {
+      "code": "16.9",
+      "description": "By 2030, provide legal identity for all, including birth registration",
+      "indicators": [
+        {
+          "code": "16.9.1",
+          "label": "Legal identity",
+          "officialIndicators": [
+            {
+              "code": "16.9.1",
+              "description":
+                "Proportion of children under 5 years of age whose births have been registered with a civil authority, by age"
+            }
+          ],
+          "dataReporter": "United Nations Children's Fund (UNICEF)"
+        }
+      ]
+    },
+    {
+      
+      "code": "16.10",
+      "description":
+        "Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements",
+      "indicators": [
+        {
+          "code": "16.10.2",
+          "label": "Access to information",
+          "officialIndicators": [
+            {
+              "code": "16.10.2",
+              "description":
+                "Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information"
+            }   
+          ],
+          "dataReporter": "United Nations Educational, Scientific and Cultural Organization (UNESCO)"
+        }
+      ]
+    },
+    {
+      "code": "16.b",
+      "description":
+        "Promote and enforce non-discriminatory laws and policies for sustainable development",
+      "indicators": [
+        {
+          "code": "16.b.1",
+          "label": "Experience of Discrimination",
+          "officialIndicators": [
+            {
+              "code": "16.b.1",
+              "description":
+                "Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law"
+            }
+          ],
+          "dataReporter": "Office of the United Nations High Commissioner for Human Rights (OHCHR)"
+        }
+      ]
+    }
+  ]
+}

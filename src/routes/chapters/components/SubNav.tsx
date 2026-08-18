@@ -16,13 +16,13 @@ import {
 import { P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Info } from 'lucide-react';
 import { useActions, useActiveSection, useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterSection } from '@/types';
+import type { ChapterSectionDataType } from '@/types';
 
 interface SubNavProps {
   chapterNumber: number;
   chapterTitle: string;
   color?: 'primary' | 'secondary' | 'tertiary';
-  subsections: ChapterSection[];
+  subsections: ChapterSectionDataType[];
 }
 
 export default function SubNav({

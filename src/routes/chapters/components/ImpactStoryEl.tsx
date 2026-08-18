@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
 import Tag from '@/components/Tag';
 import impactStories from '@/data/impactStories.json';
-import type { ImpactStoryType } from '@/types';
+import type { ImpactStoryDataType } from '@/types';
 import { ImpactStoriesContainer } from './Containers';
 
 interface ImpactStoryProps {
@@ -57,7 +57,7 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
         </div>
       </Comp>
       <ImpactStoryModal
-        story={open ? (impactStory as ImpactStoryType) : undefined}
+        story={open ? (impactStory as ImpactStoryDataType) : undefined}
         onClose={() => setOpen(false)}
       />
     </>

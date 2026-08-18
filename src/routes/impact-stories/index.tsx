@@ -14,11 +14,11 @@ import { useState } from 'react';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
 import Tag from '@/components/Tag';
 import impactStories from '@/data/impactStories.json';
-import type { ImpactStoryType } from '@/types';
+import type { ImpactStoryDataType } from '@/types';
 import { getChapterColor } from '@/Utils/getChapterColor';
 
 export function ImpactStories() {
-  const [selectedStory, setSelectedStory] = useState<ImpactStoryType | undefined>(undefined);
+  const [selectedStory, setSelectedStory] = useState<ImpactStoryDataType | undefined>(undefined);
   return (
     <>
       <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
@@ -51,7 +51,7 @@ export function ImpactStories() {
               lg: 3,
             }}
           >
-            {(impactStories as ImpactStoryType[]).map((entry) => (
+            {(impactStories as ImpactStoryDataType[]).map((entry) => (
               <Card
                 key={entry.id}
                 variant='without-image'
@@ -97,7 +97,7 @@ export function ImpactStories() {
         </div>
       </section>
       <ImpactStoryModal
-        story={selectedStory as ImpactStoryType}
+        story={selectedStory as ImpactStoryDataType}
         onClose={() => setSelectedStory(undefined)}
       />
     </>
