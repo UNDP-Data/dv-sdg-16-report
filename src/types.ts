@@ -22,3 +22,21 @@ export interface ChapterSection {
   content?: ReactNode;
   isGenderLens?: boolean;
 }
+
+export interface ChapterOfficialIndicator {
+  code: string;
+  description: string;
+}
+
+export interface ChapterTargetIndicator {
+  code: string;
+  label: string;
+  officialIndicators: ChapterOfficialIndicator[];
+  dataReporter: string;
+}
+
+export interface ChapterTarget {
+  code: string;
+  description: string;
+  indicators: ChapterTargetIndicator[];
+}
