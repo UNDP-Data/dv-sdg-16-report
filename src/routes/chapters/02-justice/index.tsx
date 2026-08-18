@@ -5,6 +5,7 @@ import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
+import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -12,10 +13,138 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
+  const targets: ChapterTarget[] = [
+    {
+      code: '16.3',
+      description:
+        'Promote the rule of law at the national and international levels and ensure equal access to justice for all',
+      indicators: [
+        {
+          code: '16.3.1',
+          label: 'Access to criminal justice',
+          officialIndicators: [
+            {
+              code: '16.3.1',
+              description:
+                'Proportion of victims of violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+        {
+          code: '16.3.2',
+          label: 'Unsentenced detention',
+          officialIndicators: [
+            {
+              code: '16.3.2',
+              description: 'Unsentenced detainees as a proportion of overall prison population',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+        {
+          code: '16.3.3',
+          label: 'Access to civil justice',
+          officialIndicators: [
+            {
+              code: '16.3.3',
+              description:
+                'Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism',
+            },
+          ],
+          dataReporter:
+            'United Nations Development Programme (UNDP), United Nations Office on Drugs and Crime (UNODC) and Organization for Economic Cooperation and Development (OECD)',
+        },
+      ],
+    },
+    {
+      code: '16.4',
+      description:
+        'By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime',
+      indicators: [
+        {
+          code: '16.4.1',
+          label: 'Illicit financial flows',
+          officialIndicators: [
+            {
+              code: '16.4.1',
+              description:
+                'Total value of inward and outward illicit financial flows (in current United States dollars)',
+            },
+          ],
+          dataReporter:
+            'United Nations Office on Drugs and Crime (UNODC) and United Nations Conference on Trade and Development (UNCTAD)',
+        },
+        {
+          code: '16.4.2',
+          label: 'Illicit firearms flows',
+          officialIndicators: [
+            {
+              code: '16.4.2',
+              description:
+                'Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments',
+            },
+          ],
+          dataReporter:
+            'United Nations Office on Drugs and Crime (UNODC) and United Nations Office for Disarmament Affairs (UNODA)',
+        },
+      ],
+    },
+    {
+      code: '16.5',
+      description: 'Substantially reduce corruption and bribery in all their forms',
+      indicators: [
+        {
+          code: '16.5.1',
+          label: 'Bribery among the population',
+          officialIndicators: [
+            {
+              code: '16.5.1',
+              description:
+                'Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+        {
+          code: '16.5.2',
+          label: 'Bribery of businesses',
+          officialIndicators: [
+            {
+              code: '16.5.2',
+              description:
+                'Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months',
+            },
+          ],
+          dataReporter: 'World Bank (WB)',
+        },
+      ],
+    },
+    {
+      code: '16.a',
+      description:
+        'Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime',
+      indicators: [
+        {
+          code: '16.a.1',
+          label: 'National human rights institutions',
+          officialIndicators: [
+            {
+              code: '16.a.1',
+              description:
+                'Existence of independent national human rights institutions in compliance with the Paris Principles',
+            },
+          ],
+          dataReporter: 'Office of the United Nations High Commissioner for Human Rights (OHCHR)',
+        },
+      ],
+    },
+  ];
   const sections = useMemo(
     () => [
       {
@@ -427,6 +556,13 @@ export function Justice() {
         }
         color='secondary'
         subsections={sections}
+      />
+
+      <TargetsDrawer
+        chapterTitle='Justice'
+        bg='/imgs/chapters/justice-texture.webp'
+        color='secondary'
+        targets={targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>

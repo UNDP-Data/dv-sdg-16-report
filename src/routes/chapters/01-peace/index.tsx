@@ -8,6 +8,7 @@ import { useMemo, useState } from 'react';
 import Tag from '@/components/Tag';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
+import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -15,6 +16,7 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
@@ -32,6 +34,117 @@ import ScrollyTellingViz from './ScrollyTellingViz';
 export function Peace() {
   const isGenderLensActive = useIsGenderLensActive();
   const [isDataConsiderationExpanded, setIsDataConsiderationExpanded] = useState(false);
+  const targets: ChapterTarget[] = [
+    {
+      code: '16.1',
+      description: 'Significantly reduce all forms of violence and related death rates everywhere',
+      indicators: [
+        {
+          code: '16.1.1',
+          label: 'Homicide',
+          officialIndicators: [
+            {
+              code: '16.1.1',
+              description:
+                'Number of victims of intentional homicide per 100,000 population, by sex and age',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+        {
+          code: '16.1.2',
+          label: 'Conflict-related deaths',
+          officialIndicators: [
+            {
+              code: '16.1.2',
+              description: 'Conflict-related deaths per 100,000 population, by sex, age and cause',
+            },
+          ],
+          dataReporter: 'Office of the United Nations High Commissioner for Human Rights (OHCHR)',
+        },
+        {
+          code: '16.1.3',
+          label: 'Physical, sexual and psychological violence',
+          officialIndicators: [
+            {
+              code: '16.1.3',
+              description:
+                'Proportion of population subjected to (a) physical violence, (b) psychological violence and (c) sexual violence in the previous 12 months',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+        {
+          code: '16.1.4',
+          label: 'Perception of safety',
+          officialIndicators: [
+            {
+              code: '16.1.4',
+              description:
+                'The proportion of the population that feel safe walking alone around the area they live',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+      ],
+    },
+    {
+      code: '16.2',
+      description:
+        'End abuse, exploitation, trafficking and all forms of violence against and torture of children',
+      indicators: [
+        {
+          code: '16.2.1, 16.2.3',
+          label: 'Violence against children',
+          officialIndicators: [
+            {
+              code: '16.2.1',
+              description:
+                'Proportion of children aged 1–17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month',
+            },
+            {
+              code: '16.2.3',
+              description:
+                'Proportion of young women and men aged 18–29 years who experienced sexual violence by age 18',
+            },
+          ],
+          dataReporter: "United Nations Children's Fund (UNICEF)",
+        },
+        {
+          code: '16.2.2',
+          label: 'Human trafficking victims',
+          officialIndicators: [
+            {
+              code: '16.2.2',
+              description:
+                'Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation',
+            },
+          ],
+          dataReporter: 'United Nations Office on Drugs and Crime (UNODC)',
+        },
+      ],
+    },
+    {
+      code: '16.10',
+      description:
+        'Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements',
+      indicators: [
+        {
+          code: '16.10.1',
+          label: 'Attacks on defenders',
+          officialIndicators: [
+            {
+              code: '16.10.1',
+              description:
+                'Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months',
+            },
+          ],
+          dataReporter:
+            'Office of the United Nations High Commissioner for Human Rights (OHCHR), United Nations Educational, Scientific and Cultural Organization (UNESCO), and International Labour Organization',
+        },
+      ],
+    },
+  ];
   const sections = useMemo(
     () => [
       {
@@ -474,6 +587,14 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
+
+      <TargetsDrawer
+        chapterTitle='Peace'
+        bg='/imgs/chapters/peace-texture.webp'
+        color='primary'
+        targets={targets}
+      />
+
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
         <P marginBottom='none' size='lg'>
           At its most visible, the lack of peace appears in lives lost in conflicts and intentional

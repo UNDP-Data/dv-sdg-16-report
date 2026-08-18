@@ -6,6 +6,7 @@ import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
 import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
+import type { ChapterTarget } from '@/types';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
@@ -13,11 +14,163 @@ import InfoTooltip from '../components/InfoTooltip';
 import PlaceholderBlock from '../components/PlaceholderBlock';
 import SectionHeading from '../components/SectionHeading';
 import ChapterSubNav from '../components/SubNav';
+import TargetsDrawer from '../components/TargetsDrawer';
 import WaveDivider from '../components/WaveDivider';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
   const isGenderLensActive = useIsGenderLensActive();
+  const targets: ChapterTarget[] = [
+    {
+      code: '16.6',
+      description: 'Develop effective, accountable and transparent institutions at all levels',
+      indicators: [
+        {
+          code: '16.6.1',
+          label: 'Government expenditures',
+          officialIndicators: [
+            {
+              code: '16.6.1',
+              description:
+                'Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)',
+            },
+          ],
+          dataReporter: 'World Bank (WB)',
+        },
+        {
+          code: '16.6.2',
+          label: 'Satisfaction with public services',
+          officialIndicators: [
+            {
+              code: '16.6.2',
+              description:
+                'Proportion of population satisfied with their last experience of public services',
+            },
+          ],
+          dataReporter: 'United Nations Development Programme (UNDP)',
+        },
+      ],
+    },
+    {
+      code: '16.7',
+      description:
+        'Ensure responsive, inclusive, participatory and representative decision-making at all levels',
+      indicators: [
+        {
+          code: '16.7.1 (a)',
+          label: 'Representation in the legislature',
+          officialIndicators: [
+            {
+              code: '16.7.1 (a)',
+              description:
+                'Proportions of positions in national and local institutions, including the legislatures',
+            },
+          ],
+          dataReporter: 'Inter-Parliamentary Union (IPU)',
+        },
+        {
+          code: '16.7.1 (b) & (c)',
+          label: 'Representation in public service institutions and the judiciary',
+          officialIndicators: [
+            {
+              code: '16.7.1 (b) & (c)',
+              description:
+                'Proportions of positions in national and local institutions including the public service; and the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups',
+            },
+          ],
+          dataReporter: 'UNDP GPCG',
+        },
+        {
+          code: '16.7.2',
+          label: 'Political efficacy',
+          officialIndicators: [
+            {
+              code: '16.7.2',
+              description:
+                'Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group',
+            },
+          ],
+          dataReporter: 'UNDP GPCG',
+        },
+      ],
+    },
+    {
+      code: '16.8',
+      description:
+        'Broaden and strengthen the participation of developing countries in the institutions of global governance',
+      indicators: [
+        {
+          code: '16.8.1',
+          label: 'Global governance',
+          officialIndicators: [
+            {
+              code: '16.8.1',
+              description:
+                'Proportion of members and voting rights of developing countries in international organizations',
+            },
+          ],
+          dataReporter:
+            'Financing for Sustainable Development Office (FSDO), United Nations Department of Economic and Social Affairs (UN-DESA)',
+        },
+      ],
+    },
+    {
+      code: '16.9',
+      description: 'By 2030, provide legal identity for all, including birth registration',
+      indicators: [
+        {
+          code: '16.9.1',
+          label: 'Legal identity',
+          officialIndicators: [
+            {
+              code: '16.9.1',
+              description:
+                'Proportion of children under 5 years of age whose births have been registered with a civil authority, by age',
+            },
+          ],
+          dataReporter: "United Nations Children's Fund (UNICEF)",
+        },
+      ],
+    },
+    {
+      code: '16.10',
+      description:
+        'Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements',
+      indicators: [
+        {
+          code: '16.10.2',
+          label: 'Access to information',
+          officialIndicators: [
+            {
+              code: '16.10.2',
+              description:
+                'Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information',
+            },
+          ],
+          dataReporter: 'United Nations Educational, Scientific and Cultural Organization (UNESCO)',
+        },
+      ],
+    },
+    {
+      code: '16.b',
+      description:
+        'Promote and enforce non-discriminatory laws and policies for sustainable development',
+      indicators: [
+        {
+          code: '16.b.1',
+          label: 'Experience of Discrimination',
+          officialIndicators: [
+            {
+              code: '16.b.1',
+              description:
+                'Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law',
+            },
+          ],
+          dataReporter: 'Office of the United Nations High Commissioner for Human Rights (OHCHR)',
+        },
+      ],
+    },
+  ];
   const sections = useMemo(
     () => [
       {
@@ -513,6 +666,13 @@ export function Inclusion() {
         }
         color='tertiary'
         subsections={sections}
+      />
+
+      <TargetsDrawer
+        chapterTitle='Inclusion'
+        bg='/imgs/chapters/inclusion-texture.webp'
+        color='tertiary'
+        targets={targets}
       />
 
       <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
