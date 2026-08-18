@@ -390,7 +390,7 @@ export function Justice() {
       {
         id: '09',
         title: 'The role of Institutions',
-        indicatorCode: 'The role of Institutions',
+        indicatorCode: '',
         heading: 'Building just societies through accessible, fair and accountable institutions',
         anchor: 'role-of-institutions',
         content: (

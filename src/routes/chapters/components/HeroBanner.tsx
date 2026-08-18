@@ -107,7 +107,7 @@ export default function HeroBanner({
                     color === 'tertiary' && 'text-tertiary',
                   )}
                 >
-                  {subsection.indicatorCode ? `${subsection.indicatorCode} –` : null}{' '}
+                  {subsection.indicatorCode ? `${subsection.indicatorCode} – ` : null}
                   {subsection.title}
                 </P>
               ) : null}
