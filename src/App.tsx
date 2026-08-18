@@ -17,8 +17,8 @@ function App() {
         </P>
         <H1
           marginBottom='sm'
-          weight='normal'
-          className='justify-start font-medium! text-content-reverse normal-case'
+          weight='medium'
+          className='justify-start text-content-reverse normal-case'
         >
           Peace, Justice, Inclusion
         </H1>
