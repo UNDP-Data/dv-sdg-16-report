@@ -1,6 +1,6 @@
 import { P } from '@undp/design-system-react/Typography';
+import BigNumber from '@/components/BigNumber';
 import { CHART_PADDING } from '@/constants';
-import BigNumber from '../../components/BigNumber';
 
 export default function HomicideGenderedPatternsBigNumbers() {
   return (

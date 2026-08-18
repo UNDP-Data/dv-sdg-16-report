@@ -11,12 +11,14 @@ import { cn } from '@undp/design-system-react/cn';
 import { Grid } from '@undp/design-system-react/Grid';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
+import ImpactStoryModal from '@/components/ImpactStoryModal';
 import Tag from '@/components/Tag';
-import { getImpactStoryColor, IMPACT_STORIES, type ImpactStory } from '@/data/impactStories';
-import ImpactStoryModal from '@/routes/chapters/components/ImpactStoryModal';
+import impactStories from '@/data/impactStories.json';
+import type { ImpactStoryType } from '@/types';
+import { getChapterColor } from '@/Utils/getChapterColor';
 
 export function ImpactStories() {
-  const [selectedStory, setSelectedStory] = useState<ImpactStory | undefined>(undefined);
+  const [selectedStory, setSelectedStory] = useState<ImpactStoryType | undefined>(undefined);
   return (
     <>
       <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
@@ -49,7 +51,7 @@ export function ImpactStories() {
               lg: 3,
             }}
           >
-            {IMPACT_STORIES.map((entry) => (
+            {(impactStories as ImpactStoryType[]).map((entry) => (
               <Card
                 key={entry.id}
                 variant='without-image'
@@ -66,12 +68,14 @@ export function ImpactStories() {
                 className='h-full cursor-pointer text-left'
               >
                 <CardTag>
-                  <Tag color={getImpactStoryColor(entry.chapter)} content={entry.chapter} />
+                  <Tag color={getChapterColor(entry.chapter)} content={entry.chapter} />
                 </CardTag>
                 <CardTitle className='font-heading font-semibold text-2xl!'>
                   {entry.title}
                 </CardTitle>
-                <CardDescription className='line-clamp-3'>{entry.story}</CardDescription>
+                <CardDescription>
+                  <div className='line-clamp-3'>{entry.story}</div>
+                </CardDescription>
                 <CardFooter>
                   <P
                     weight='semibold'
@@ -92,7 +96,10 @@ export function ImpactStories() {
           </Grid>
         </div>
       </section>
-      <ImpactStoryModal story={selectedStory} onClose={() => setSelectedStory(undefined)} />
+      <ImpactStoryModal
+        story={selectedStory as ImpactStoryType}
+        onClose={() => setSelectedStory(undefined)}
+      />
     </>
   );
 }

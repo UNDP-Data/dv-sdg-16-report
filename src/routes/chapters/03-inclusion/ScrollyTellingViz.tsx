@@ -191,9 +191,9 @@ export default function ScrollyTellingViz() {
   const activeSlide = SLIDES[activeSlideIndex] ?? SLIDES[0];
 
   return (
-    <div className='relative w-full'>
+    <div className='relative mx-auto flex w-screen max-w-7xl flex-col px-4 lg:flex-row'>
       <div
-        className='sticky top-11 mx-auto flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-10'
+        className='sticky top-11 -z-10 mx-auto flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
       >
         <motion.svg
@@ -256,7 +256,7 @@ export default function ScrollyTellingViz() {
             }}
             dominantBaseline='central'
             textAnchor='middle'
-            className='font-bold font-heading text-[56px] leading-0'
+            className='font-bold font-heading text-[32px] leading-0 md:text-[56px]'
           >
             {rounded}
           </motion.text>
@@ -277,7 +277,7 @@ export default function ScrollyTellingViz() {
                 width={graphWidth}
                 height={40}
               >
-                <div className='font-foreground text-2xl'>
+                <div className='font-foreground text-base md:text-lg lg:text-2xl'>
                   {region.region}:{' '}
                   <span className='font-bold text-error'>~{region.unregisteredBirths} mil</span>
                 </div>
@@ -289,7 +289,7 @@ export default function ScrollyTellingViz() {
             y={graphHeight / 2 + graphRadius + CIRCLE_PADDING}
             dominantBaseline='central'
             textAnchor='middle'
-            className='fill-content-placeholder text-xl leading-0'
+            className='fill-content-placeholder text-xl leading-0 md:text-lg'
             dy={62}
           >
             {activeSlide.vizContent.category}
@@ -306,12 +306,12 @@ export default function ScrollyTellingViz() {
           </text>
         </motion.svg>
       </div>
-      <div className='relative -mt-[calc(100vh-2.75rem)] mr-20 ml-auto w-1/4'>
+      <div className='w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
-          <div className='flex min-h-screen items-center' key={index}>
+          <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 box-border w-full border-tertiary border-l-6 bg-background/80 py-4 pl-6 text-3xl'
+              className='my-6 box-border w-full border-tertiary border-l-6 bg-background/80 py-4 pl-6 text-xl md:text-3xl'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >

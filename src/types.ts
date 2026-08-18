@@ -22,3 +22,18 @@ export interface ChapterSection {
   content?: ReactNode;
   isGenderLens?: boolean;
 }
+
+export interface ImpactStoryType {
+  id: string;
+  chapter: ChapterKey;
+  anchor: string;
+  indicatorCode: string;
+  indicatorTitle: string;
+  title: string;
+  stats?: {
+    value: string;
+    suffix?: string;
+    label: string;
+  }[];
+  story: string;
+}

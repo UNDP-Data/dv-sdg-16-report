@@ -34,13 +34,13 @@ export default function HeaderEl() {
             marginBottom='none'
             className='border-background/30 border-l pl-3 text-content-reverse uppercase leading-tight tracking-widest'
           >
-            Peace, Justice
+            Global Progress Report
             <br />
-            and Inclusivity
+            2026
           </P>
         </Link>
 
-        <nav className='hidden items-center gap-10 md:flex'>
+        <nav className='hidden items-center gap-10 lg:flex'>
           <Link to='/' className={navLinkClass}>
             Home
           </Link>
@@ -75,7 +75,7 @@ export default function HeaderEl() {
         <Button
           type='button'
           variant='icon'
-          className='p-0 text-content-reverse md:hidden'
+          className='p-0 text-content-reverse lg:hidden'
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((open) => !open)}
@@ -85,7 +85,7 @@ export default function HeaderEl() {
       </div>
 
       {mobileOpen ? (
-        <nav className='absolute inset-x-0 top-full z-40 border-foreground border-t bg-foreground-soft px-6 py-4 md:hidden'>
+        <nav className='absolute inset-x-0 top-full z-40 border-foreground border-t bg-foreground-soft px-6 py-4 lg:hidden'>
           <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Home
           </Link>

@@ -48,7 +48,7 @@ export default function HomicideRateBySexLineChart() {
         {
           text: 'period',
           xCoordinate: 2022,
-          yCoordinate: 11,
+          yCoordinate: 10.8,
           align: 'center',
           fontWeight: 'medium',
           showConnector: false,
@@ -58,6 +58,7 @@ export default function HomicideRateBySexLineChart() {
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
       yAxisTitle='Rate per 100,000 population'
+      relativeHeight={0.85}
       numberDisplayOptions={{ precision: 1 }}
       graphTitle={
         <div className='flex flex-col items-start gap-2'>

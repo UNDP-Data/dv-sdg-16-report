@@ -8,7 +8,7 @@ export default function WaveDivider({
   return (
     <div
       aria-hidden='true'
-      className={`relative left-1/2 flex h-55 w-screen -translate-x-1/2 overflow-hidden ${align === 'right' ? 'justify-end' : 'justify-start'}`}
+      className={`flex h-55 w-full overflow-hidden ${align === 'right' ? 'justify-end' : 'justify-start'}`}
     >
       <img
         src={src}

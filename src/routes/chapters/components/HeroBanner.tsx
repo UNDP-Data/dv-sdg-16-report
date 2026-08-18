@@ -95,7 +95,7 @@ export default function HeroBanner({
                   : 'border-background/10 bg-background/1 hover:bg-background/5',
               )}
             >
-              {subsection.indicatorCode ? (
+              {subsection.title ? (
                 <P
                   marginBottom='2xs'
                   size='sm'
@@ -107,6 +107,7 @@ export default function HeroBanner({
                     color === 'tertiary' && 'text-tertiary',
                   )}
                 >
+                  {subsection.indicatorCode ? `${subsection.indicatorCode} – ` : null}
                   {subsection.title}
                 </P>
               ) : null}

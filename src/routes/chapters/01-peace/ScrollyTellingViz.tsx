@@ -221,9 +221,9 @@ export default function ScrollyTellingViz() {
   }, [graphRadius]);
 
   return (
-    <div className='relative w-full'>
+    <div className='relative mx-auto flex w-screen max-w-7xl flex-col gap-x-10 gap-y-0 px-4 lg:flex-row'>
       <div
-        className='sticky top-11 mx-auto flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
+        className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
       >
         <motion.svg
@@ -321,64 +321,60 @@ export default function ScrollyTellingViz() {
                 fill: 'none',
               }}
             />
-            <motion.g transform='translate(0,30)' id='center-text'>
-              <AnimatePresence mode='wait'>
-                {activeSlide.vizContent.time && (
-                  <motion.text
-                    key={activeSlide.vizContent.time}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    x='0'
-                    y='0'
-                    dominantBaseline='central'
-                    textAnchor='middle'
-                    className='fill-content-placeholder text-[32px] leading-0'
-                    dy={-82}
-                  >
-                    {activeSlide.vizContent.time}
-                  </motion.text>
-                )}
-              </AnimatePresence>
-              <motion.text
-                x='0'
-                y='0'
-                initial={{ fill: 'var(--primary)' }}
-                animate={{
-                  fill: `var(--${activeSlide.color})`,
-                }}
-                exit={{ fill: 'var(--primary)' }}
-                transition={{
-                  duration: 1,
-                }}
-                dominantBaseline='central'
-                textAnchor='middle'
-                className='font-bold font-heading text-[104px] leading-0'
+            <motion.g
+              transform={`translate(-${graphRadius - TRACK_GAP},-${graphRadius - TRACK_GAP})`}
+              id='center-text'
+            >
+              <foreignObject
+                x={0}
+                y={0}
+                width={(graphRadius - TRACK_GAP) * 2}
+                height={(graphRadius - TRACK_GAP) * 2}
               >
-                {rounded}
-              </motion.text>
-              {activeSlide.vizContent.category && (
-                <text
-                  x='0'
-                  y='0'
-                  dominantBaseline='central'
-                  textAnchor='middle'
-                  className='fill-content-placeholder text-xl leading-0'
-                  dy={62}
-                >
-                  {activeSlide.vizContent.category}
-                </text>
-              )}
+                <div className='flex h-full w-full flex-col justify-center gap-1'>
+                  <AnimatePresence mode='wait'>
+                    {activeSlide.vizContent.time && (
+                      <motion.div
+                        key={activeSlide.vizContent.time}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className='fill-content-placeholder text-center text-[18px] leading-sm md:text-[24px] lg:text-[32px]'
+                      >
+                        {activeSlide.vizContent.time}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  <motion.div
+                    initial={{ color: 'var(--primary)' }}
+                    animate={{
+                      color: `var(--${activeSlide.color})`,
+                    }}
+                    exit={{ color: 'var(--primary)' }}
+                    transition={{
+                      duration: 1,
+                    }}
+                    className='mt-1 text-center font-bold font-heading text-[32px] leading-sm md:text-[64px] lg:text-[104px]'
+                  >
+                    {rounded}
+                  </motion.div>
+                  {activeSlide.vizContent.category && (
+                    <div className='fill-content-placeholder text-center text-base leading-sm md:text-2xl'>
+                      {activeSlide.vizContent.category}
+                    </div>
+                  )}
+                </div>
+              </foreignObject>
             </motion.g>
           </motion.g>
         </motion.svg>
       </div>
-      <div className='relative -mt-[calc(100vh-2.75rem)] mr-20 ml-auto w-1/4'>
+      <div className='w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
-          <div className='flex min-h-screen items-center' key={index}>
+          <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 box-border w-full border-primary border-l-6 bg-background/80 py-4 pl-6 text-3xl'
+              className='my-6 box-border w-full border-primary border-l-6 bg-background/80 py-4 pl-6 text-xl md:text-3xl'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >

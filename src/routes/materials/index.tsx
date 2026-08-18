@@ -1,7 +1,7 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
-import PlaceholderBlock from '@/routes/chapters/components/PlaceholderBlock';
+import PlaceholderBlock from '@/components/PlaceholderBlock';
 
 export function Materials() {
   return (
