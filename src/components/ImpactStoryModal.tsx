@@ -1,24 +1,24 @@
+import { MarkdownRenderer } from '@undp/design-system-react/MarkdownRenderer';
 import { Modal } from '@undp/design-system-react/Modal';
-import { H3, P } from '@undp/design-system-react/Typography';
+import { H3 } from '@undp/design-system-react/Typography';
 import Tag from '@/components/Tag';
-import type { ImpactStory, ImpactStoryChapter } from '@/data/impactStories';
-import { getImpactStoryColor } from '@/data/impactStories';
+import type { ChapterKey, ImpactStoryType } from '@/types';
+import { getChapterColor } from '@/Utils/getChapterColor';
 import BigNumber from './BigNumber';
 
 interface ImpactStoryModalProps {
-  story: ImpactStory | undefined;
+  story: ImpactStoryType | undefined;
   onClose: () => void;
 }
 
-const CHAPTER_WAVE_IMAGE: Record<ImpactStoryChapter, string> = {
+const CHAPTER_WAVE_IMAGE: Record<ChapterKey, string> = {
   peace: '/imgs/dividers/peace-02.webp',
   justice: '/imgs/dividers/justice-01.webp',
   inclusion: '/imgs/dividers/inclusion-01.webp',
 };
 
 export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalProps) {
-  const color = story ? getImpactStoryColor(story.chapter) : 'primary';
-  const stats = story?.stats ?? [];
+  const color = getChapterColor(story?.chapter);
 
   return (
     <Modal
@@ -39,15 +39,13 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
           </H3>
           <div className='flex flex-col gap-10 md:flex-row md:items-start md:gap-14'>
             <div className='flex min-w-0 flex-1 flex-col gap-6'>
-              <P className='flex flex-col gap-4 text-base text-foreground leading-relaxed'>
-                {story.story}
-              </P>
+              <MarkdownRenderer text={story.story} />
             </div>
-            {stats.length > 0 ? (
+            {story.stats && (
               <div className='flex w-full shrink-0 flex-col gap-8 bg-background-soft p-8 md:w-72'>
                 <Tag color={color} content='Key numbers' />
                 <div className='flex flex-col gap-8'>
-                  {stats.map((stat) => (
+                  {story.stats.map((stat) => (
                     <BigNumber
                       key={stat.label}
                       value={stat.value}
@@ -58,11 +56,11 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
                   ))}
                 </div>
               </div>
-            ) : null}
+            )}
           </div>
           <img
             src={CHAPTER_WAVE_IMAGE[story.chapter]}
-            alt=''
+            alt={`${story.chapter} divider`}
             aria-hidden='true'
             className='pointer-events-none h-24 w-full object-cover object-center opacity-90 md:h-32'
           />

@@ -1,18 +1,18 @@
 import type { AnyRootRoute } from '@tanstack/react-router';
 import { createRoute } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
-import { cn } from '@undp/design-system-react/cn';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo, useState } from 'react';
 import Tag from '@/components/Tag';
-import ImpactStory from '@/routes/chapters/components/ImpactStorySection';
+import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
+import { GraphContainer, TextContainer } from '../components/Containers';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
-import SectionHeading from '../components/SectionHeading';
+import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
@@ -42,11 +42,13 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              After three consecutive years of rising conflict-related deaths, documented civilian
-              deaths declined by 23 per cent. Nonetheless, the overall situation remains alarming.
-            </P>
-            <div className='-mx-8 flex flex-col gap-3 rounded-md bg-[#EFF5F9] p-8'>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                After three consecutive years of rising conflict-related deaths, documented civilian
+                deaths declined by 23 per cent. Nonetheless, the overall situation remains alarming.
+              </P>
+            </TextContainer>
+            <GraphContainer className='flex flex-col gap-3 rounded-md bg-[#EFF5F9] p-8'>
               <Tag color='primary' content='Data consideration' />
               <P
                 marginBottom='none'
@@ -71,28 +73,28 @@ export function Peace() {
               >
                 {isDataConsiderationExpanded ? 'Read less' : 'Read more'}
               </Button>
-            </div>
+            </GraphContainer>
             <ScrollyTellingViz />
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Violence remains unevenly distributed, where patterns of exposure and risk differ
-              across conflict settings. In Myanmar, for example, women and girls accounted for 43
-              per cent of documented civilian deaths, compared with a global average of 25 per cent.
-              And, while a downward trend was recorded in most covered conflicts, hostilities in
-              Sudan and the Democratic Republic of the Congo saw significant increases in civilian
-              deaths.
-            </P>
-            <P marginBottom='none' size='lg'>
-              Documentation of conflict-related deaths has improved significantly over the past
-              decade, but important challenges remain. Accurately identifying whether the victims
-              are civilians or not, especially during intense hostilities, is often difficult. In
-              2025, the status of more than 13,000 conflict-related deaths could not be established.
-              As a result, the figures presented should be interpreted as a minimum count of
-              civilian deaths.
-            </P>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Violence remains unevenly distributed, where patterns of exposure and risk differ
+                across conflict settings. In Myanmar, for example, women and girls accounted for 43
+                per cent of documented civilian deaths, compared with a global average of 25 per
+                cent. And, while a downward trend was recorded in most covered conflicts,
+                hostilities in Sudan and the Democratic Republic of the Congo saw significant
+                increases in civilian deaths.
+              </P>
+            </TextContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Documentation of conflict-related deaths has improved significantly over the past
+                decade, but important challenges remain. Accurately identifying whether the victims
+                are civilians or not, especially during intense hostilities, is often difficult. In
+                2025, the status of more than 13,000 conflict-related deaths could not be
+                established. As a result, the figures presented should be interpreted as a minimum
+                count of civilian deaths.
+              </P>
+            </TextContainer>
             <WaveDivider src='/imgs/dividers/peace-01.webp' />
           </>
         ),
@@ -107,51 +109,45 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9 to
-              5.1 victims per 100,000 population. Nevertheless, progress remains highly uneven
-              across regions, with Latin America and the Caribbean, and Sub-Saharan Africa recording
-              the highest rates of intentional homicide globally.
-            </P>
-            <div
-              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9
+                to 5.1 victims per 100,000 population. Nevertheless, progress remains highly uneven
+                across regions, with Latin America and the Caribbean, and Sub-Saharan Africa
+                recording the highest rates of intentional homicide globally.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <HomicideRateByRegionBarChart />
-            </div>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              There are also distinct gendered patterns. While men are disproportionately affected
-              by lethal violence in public settings, women continue to face the greatest risk of
-              lethal violence within their own homes.
-            </P>
-            <div className={cn('my-8', isGenderLensActive && 'gender-lens')}>
+            </GraphContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                There are also distinct gendered patterns. While men are disproportionately affected
+                by lethal violence in public settings, women continue to face the greatest risk of
+                lethal violence within their own homes.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <HomicideGenderedPatternsBigNumbers />
-            </div>
-            <P marginBottom='none' size='lg'>
-              If current trends of homicide continue, the rate is projected to fall to around 4.5
-              victims per 100,000 population by 2030. While this would represent important progress,
-              it would fall short of the ambition of SDG 16 to{' '}
-              <InfoTooltip
-                trigger='significantly reduce'
-                content='For SDG goals, a significant reduction is defined as a 50 per cent reduction from the 2015 baseline by 2030.'
-                color='primary'
-              />{' '}
-              all forms of violence and related deaths everywhere. Achieving that ambition would
-              require the global homicide rate to fall below 3 victims per 100,000 population by
-              2030.
-            </P>
-            <div
-              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                If current trends of homicide continue, the rate is projected to fall to around 4.5
+                victims per 100,000 population by 2030. While this would represent important
+                progress, it would fall short of the ambition of SDG 16 to{' '}
+                <InfoTooltip
+                  trigger='significantly reduce'
+                  content='For SDG goals, a significant reduction is defined as a 50 per cent reduction from the 2015 baseline by 2030.'
+                  color='primary'
+                />{' '}
+                all forms of violence and related deaths everywhere. Achieving that ambition would
+                require the global homicide rate to fall below 3 victims per 100,000 population by
+                2030.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <HomicideRateBySexLineChart />
-            </div>
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-02.webp' align='right' />
           </>
         ),
@@ -166,53 +162,56 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              Novel evidence indicates that{' '}
-              <InfoTooltip
-                trigger='verified killings'
-                content='Underreporting, due to significant risk of retaliation and/or human capacity, remains a challenge for the documentation of attacks against human rights defenders. Verified counts, therefore, reflect institutional capacity, which can often signal a stronger civil society, independent media, and national human rights institutions, while low or absent data frequently indicate restricted civic space rather than an absence of violations. The numbers presented are, therefore, likely to underestimate the true scale of attacks.'
-                color='primary'
-              />{' '}
-              of human rights defenders, journalists, and trade unionists have increased globally
-              since 2015, where annual verified numbers of killings are now at least 61 per cent
-              higher than a decade ago. This signals that the world is moving further away from the
-              target under Goal 16 - to protect those who defend and promote fundamental freedoms.
-            </P>
-            <P marginBottom='none' size='lg'>
-              Since 2015, at least 5,995 defenders have been killed, where 115 countries have
-              recorded at least one killing. In 2024, a record 686 defenders were killed and 202
-              disappeared, this is equivalent to one defender, journalist or trade unionist being
-              killed or disappeared every 10 hours, compared with every 19 hours in 2015. Based on
-              historical patterns in human rights violation discovery and recording, the final
-              number of documented cases for 2025 is expected to reach an estimated 743 killings and
-              202 disappearances.
-            </P>
-            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Novel evidence indicates that{' '}
+                <InfoTooltip
+                  trigger='verified killings'
+                  content='Underreporting, due to significant risk of retaliation and/or human capacity, remains a challenge for the documentation of attacks against human rights defenders. Verified counts, therefore, reflect institutional capacity, which can often signal a stronger civil society, independent media, and national human rights institutions, while low or absent data frequently indicate restricted civic space rather than an absence of violations. The numbers presented are, therefore, likely to underestimate the true scale of attacks.'
+                  color='primary'
+                />{' '}
+                of human rights defenders, journalists, and trade unionists have increased globally
+                since 2015, where annual verified numbers of killings are now at least 61 per cent
+                higher than a decade ago. This signals that the world is moving further away from
+                the target under Goal 16 - to protect those who defend and promote fundamental
+                freedoms.
+              </P>
+              <P marginBottom='none' size='lg'>
+                Since 2015, at least 5,995 defenders have been killed, where 115 countries have
+                recorded at least one killing. In 2024, a record 686 defenders were killed and 202
+                disappeared, this is equivalent to one defender, journalist or trade unionist being
+                killed or disappeared every 10 hours, compared with every 19 hours in 2015. Based on
+                historical patterns in human rights violation discovery and recording, the final
+                number of documented cases for 2025 is expected to reach an estimated 743 killings
+                and 202 disappearances.
+              </P>
+            </TextContainer>
+            <GraphContainer>
               <DefenderKillingsLineChart />
-            </div>
-            <P marginBottom='none' size='lg'>
-              The burden remains highly concentrated within Latin America and the Caribbean. The
-              region accounts for roughly 60 per cent of all verified killings recorded over the
-              past decade. Over the same time period, Northern Africa and Western Sahara have
-              experienced a rapid escalation, with their share of global killings nearly doubling to
-              27 per cent in 2025.
-            </P>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Across 2023 - 2025, one in ten defenders killed or disappeared worldwide was a woman.
-              Defenders working on environmental and land issues accounted for nearly three in ten
-              recorded cases, while one in five victims belonged to indigenous or minority groups.
-              These patterns highlight how structural inequalities intersect with risks faced by
-              marginalised groups defending fundamental freedoms.
-            </P>
-            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                The burden remains highly concentrated within Latin America and the Caribbean. The
+                region accounts for roughly 60 per cent of all verified killings recorded over the
+                past decade. Over the same time period, Northern Africa and Western Sahara have
+                experienced a rapid escalation, with their share of global killings nearly doubling
+                to 27 per cent in 2025.
+              </P>
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Across 2023 - 2025, one in ten defenders killed or disappeared worldwide was a
+                woman. Defenders working on environmental and land issues accounted for nearly three
+                in ten recorded cases, while one in five victims belonged to indigenous or minority
+                groups. These patterns highlight how structural inequalities intersect with risks
+                faced by marginalised groups defending fundamental freedoms.
+              </P>
+            </TextContainer>
+            <GraphContainer>
               <DefendersKilledByGroupRegionWaffle />
-            </div>
+            </GraphContainer>
             <Spacer size='2xl' />
-            <ImpactStory id='peace-detained-hrd-release' />
+            <ImpactStoryEl id='peace-detained-hrd-release' />
             <Spacer size='6xl' />
           </>
         ),
@@ -227,52 +226,51 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              Experiences of violence can have lasting effects on people’s physical and mental
-              health, lower educational outcomes or increased poverty, and limit victims’ social
-              participation and economic life. Most experiences of non-lethal violence are never
-              reported to the police or other authorities. Household victimization surveys therefore
-              play a critical role in revealing experiences of violence that remain largely
-              invisible in official administrative records.
-            </P>
-            <P marginBottom='none' size='lg'>
-              Regional differences were most pronounced for robbery, where the median prevalence
-              reached 3.1 per cent in Latin America and the Caribbean, compared with less than 1 per
-              cent in other regions.
-            </P>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Patterns of victimization differ markedly between women and men. Women face higher
-              risk of sexual violence than men. The median prevalence of sexual violence among women
-              was 3.0 per cent, compared with 0.4 per cent among men.
-            </P>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              By contrast, men experienced slightly higher levels of physical violence, with a
-              median prevalence of 4.2 per cent compared with 3.2 per cent among women.
-            </P>
-            <div
-              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Experiences of violence can have lasting effects on people’s physical and mental
+                health, lower educational outcomes or increased poverty, and limit victims’ social
+                participation and economic life. Most experiences of non-lethal violence are never
+                reported to the police or other authorities. Household victimization surveys
+                therefore play a critical role in revealing experiences of violence that remain
+                largely invisible in official administrative records.
+              </P>
+              <P marginBottom='none' size='lg'>
+                Regional differences were most pronounced for robbery, where the median prevalence
+                reached 3.1 per cent in Latin America and the Caribbean, compared with less than 1
+                per cent in other regions.
+              </P>
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Patterns of victimization differ markedly between women and men. Women face higher
+                risk of sexual violence than men. The median prevalence of sexual violence among
+                women was 3.0 per cent, compared with 0.4 per cent among men.
+              </P>
+            </TextContainer>
+
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                By contrast, men experienced slightly higher levels of physical violence, with a
+                median prevalence of 4.2 per cent compared with 3.2 per cent among women.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <NonLethalViolenceByTypeSexStripChart />
-            </div>
-            <P marginBottom='none' size='lg'>
-              Country coverage of non-lethal violence remains uneven across regions and across
-              different forms of violence. Since 2015, 95 countries have reported data for at least
-              one form of non-lethal violence. Robbery and physical assault are available for the
-              largest number of countries, with 80 countries having reported data. However,
-              sex-disaggregated data are available for only 51 countries. By contrast, since 2015,
-              only 18 countries have reported data on psychological violence for at least one year,
-              providing insufficient evidence to identify a clear global pattern.
-            </P>
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Country coverage of non-lethal violence remains uneven across regions and across
+                different forms of violence. Since 2015, 95 countries have reported data for at
+                least one form of non-lethal violence. Robbery and physical assault are available
+                for the largest number of countries, with 80 countries having reported data.
+                However, sex-disaggregated data are available for only 51 countries. By contrast,
+                since 2015, only 18 countries have reported data on psychological violence for at
+                least one year, providing insufficient evidence to identify a clear global pattern.
+              </P>
+            </TextContainer>
             <Spacer size='2xl' />
-            <ImpactStory id='peace-panama-victimization-surveys' />
+            <ImpactStoryEl id='peace-panama-victimization-surveys' />
             <Spacer size='6xl' />
           </>
         ),
@@ -287,45 +285,42 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Violence remains a pervasive reality for millions of children around the world,
-              cutting across geographical, cultural and economic boundaries. An estimated 1.6
-              billion children globally experience violent punishment by caregivers at home. In most
-              countries, boys and girls are equally likely to experience violent discipline at home.
-            </P>
-            <div
-              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Violence remains a pervasive reality for millions of children around the world,
+                cutting across geographical, cultural and economic boundaries. An estimated 1.6
+                billion children globally experience violent punishment by caregivers at home. In
+                most countries, boys and girls are equally likely to experience violent discipline
+                at home.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <ViolentDisciplineByRegionBarChart />
-            </div>
-            <P marginBottom='none' size='lg'>
-              Violence experienced during childhood extends far beyond violent discipline in the
-              home.
-            </P>
-            <Highlight
-              color='primary'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-              content='Globally it’s estimated that more than 370 million women and girls experienced
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Violence experienced during childhood extends far beyond violent discipline in the
+                home.
+              </P>
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <Highlight
+                color='primary'
+                content='Globally it’s estimated that more than 370 million women and girls experienced
               rape or sexual assault as children.'
-            />
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Among men and boys, an estimated 240 to 310 million experienced rape or sexual assault
-              in childhood. The risks are even greater in fragile settings, where more than one in
-              four girls has experienced rape or sexual assault in childhood.
-            </P>
-            <div
-              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+              />
+            </TextContainer>
+
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Among men and boys, an estimated 240 to 310 million experienced rape or sexual
+                assault in childhood. The risks are even greater in fragile settings, where more
+                than one in four girls has experienced rape or sexual assault in childhood.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <SexualViolenceInChildhoodUnitChart />
-            </div>
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-03.webp' />
           </>
         ),
@@ -339,43 +334,46 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              Human trafficking continues to affect women, men and children in every region of the
-              world. Yet it remains one of the most hidden forms of crime, making it inherently
-              difficult to measure. Many victims never come to the attention of authorities, and
-              official statistics capture only detected cases. As a result, the figures presented
-              here are only the minimum estimate of the true scale of trafficking.
-            </P>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Children accounted for 37 per cent of all detected victims in 2024, nearly three times
-              the share recorded two decades earlier. Women and girls accounted for a larger share
-              of detected trafficking victims than men and boys, with the gender gap particularly
-              pronounced among adults.
-            </P>
-            <div
-              className={cn('-mx-4 my-4 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Human trafficking continues to affect women, men and children in every region of the
+                world. Yet it remains one of the most hidden forms of crime, making it inherently
+                difficult to measure. Many victims never come to the attention of authorities, and
+                official statistics capture only detected cases. As a result, the figures presented
+                here are only the minimum estimate of the true scale of trafficking.
+              </P>
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                Children accounted for 37 per cent of all detected victims in 2024, nearly three
+                times the share recorded two decades earlier. Women and girls accounted for a larger
+                share of detected trafficking victims than men and boys, with the gender gap
+                particularly pronounced among adults.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <TraffickingVictimsBySexAgeTreeMap />
-            </div>
-            <P marginBottom='none' size='lg'>
-              Sexual exploitation and forced labour remained the two most commonly detected forms of
-              trafficking.
-            </P>
-            <div className='-mx-4 my-4 md:-mx-8 lg:-mx-16'>
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Sexual exploitation and forced labour remained the two most commonly detected forms
+                of trafficking.
+              </P>
+            </TextContainer>
+            <GraphContainer>
               <TraffickingByExploitationFormBigNumbers />
-            </div>
-            <P marginBottom='none' size='lg'>
-              Human trafficking is a clear example of a challenge that no institution can address
-              alone. Effective responses require international cooperation and cross-border data
-              sharing, as trafficking networks often operate across jurisdictions. At the same time,
-              because trafficking remains hidden, continued investment in administrative data
-              systems, statistical methods and victims’ surveys is critical to better understand its
-              scale, identify those at greatest risk and strengthen evidence-based responses.
-            </P>
+            </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Human trafficking is a clear example of a challenge that no institution can address
+                alone. Effective responses require international cooperation and cross-border data
+                sharing, as trafficking networks often operate across jurisdictions. At the same
+                time, because trafficking remains hidden, continued investment in administrative
+                data systems, statistical methods and victims’ surveys is critical to better
+                understand its scale, identify those at greatest risk and strengthen evidence-based
+                responses.
+              </P>
+            </TextContainer>
             <WaveDivider src='/imgs/dividers/peace-04.webp' align='right' />
           </>
         ),
@@ -389,49 +387,51 @@ export function Peace() {
         isGenderLens: true,
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              Peace is measured not only by the absence of violence, but also by whether people feel
-              safe in their daily lives. Around one in three people globally do not feel safe
-              walking alone in their neighbourhood after dark, a proportion that has remained
-              broadly unchanged since 2017. Perceptions of safety were lowest in Latin America and
-              the Caribbean, where more than half of the population reported feeling unsafe walking
-              alone after dark.
-            </P>
-            <Highlight
-              color='primary'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-              content='Women consistently reported feeling less safe than men.'
-            />
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              Across{' '}
-              <InfoTooltip
-                trigger='74 countries with sex-disaggregated data'
-                content='The number of countries with sex-disaggregated data on perception of safety is different to the sample of countries with data on the overall perception of safety in the population.'
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Peace is measured not only by the absence of violence, but also by whether people
+                feel safe in their daily lives. Around one in three people globally do not feel safe
+                walking alone in their neighbourhood after dark, a proportion that has remained
+                broadly unchanged since 2017. Perceptions of safety were lowest in Latin America and
+                the Caribbean, where more than half of the population reported feeling unsafe
+                walking alone after dark.
+              </P>
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <Highlight
                 color='primary'
+                className={isGenderLensActive ? 'gender-lens' : undefined}
+                content='Women consistently reported feeling less safe than men.'
               />
-              , 41 per cent of women reported feeling unsafe walking alone after dark, compared with
-              28 per cent of men. The gender gap was evident in every region and was particularly
-              pronounced in Northern Africa and Western Asia.
-            </P>
-            <div
-              className={cn('-mx-4 my-8 md:-mx-8 lg:-mx-16', isGenderLensActive && 'gender-lens')}
-            >
+            </TextContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P
+                marginBottom='none'
+                size='lg'
+                className={isGenderLensActive ? 'gender-lens' : undefined}
+              >
+                Across{' '}
+                <InfoTooltip
+                  trigger='74 countries with sex-disaggregated data'
+                  content='The number of countries with sex-disaggregated data on perception of safety is different to the sample of countries with data on the overall perception of safety in the population.'
+                  color='primary'
+                />
+                , 41 per cent of women reported feeling unsafe walking alone after dark, compared
+                with 28 per cent of men. The gender gap was evident in every region and was
+                particularly pronounced in Northern Africa and Western Asia.
+              </P>
+            </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
               <FeelSafeWalkingAloneBySexDumbbellChart />
-            </div>
-            <P
-              marginBottom='none'
-              size='lg'
-              className={isGenderLensActive ? 'gender-lens' : undefined}
-            >
-              These findings suggest that perceptions of safety reflect more than exposure to lethal
-              violence. Experiences and risks of non-lethal violence, including sexual violence,
-              harassment and robbery, as well as broader social and environmental factors, may
-              influence the gendered difference in perceived safety.
-            </P>
+            </GraphContainer>
+            <TextContainer isGenderLensActive={isGenderLensActive}>
+              <P marginBottom='none' size='lg'>
+                These findings suggest that perceptions of safety reflect more than exposure to
+                lethal violence. Experiences and risks of non-lethal violence, including sexual
+                violence, harassment and robbery, as well as broader social and environmental
+                factors, may influence the gendered difference in perceived safety.
+              </P>
+            </TextContainer>
             <WaveDivider src='/imgs/dividers/peace-02.webp' />
           </>
         ),
@@ -444,9 +444,11 @@ export function Peace() {
         anchor: 'role-of-institutions',
         content: (
           <>
-            <P marginBottom='none' size='lg'>
-              Content goes here
-            </P>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Content goes here
+              </P>
+            </TextContainer>
             <Spacer size='6xl' />
           </>
         ),
@@ -476,7 +478,8 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-      <div className='mx-auto max-w-2xl px-4 py-12 md:px-8 lg:px-16'>
+      <Spacer size='8xl' />
+      <TextContainer>
         <P marginBottom='none' size='lg'>
           At its most visible, the lack of peace appears in lives lost in conflicts and intentional
           homicides. Yet, peace, or the absence of it, emerges when looking at people’s everyday
@@ -486,10 +489,11 @@ export function Peace() {
           suppressing economic activity. Thus, the absence of peace gives fear authority over
           people’s lives to a detrimental effect on progress.
         </P>
-      </div>
-      <div className='mx-auto flex max-w-2xl flex-col'>
+      </TextContainer>
+      <Spacer size='8xl' />
+      <div className='flex flex-col'>
         {sections.map((section) => (
-          <SectionHeading
+          <Section
             key={section.anchor}
             id={section.anchor}
             tag={
@@ -501,7 +505,7 @@ export function Peace() {
             color='primary'
           >
             {section.content}
-          </SectionHeading>
+          </Section>
         ))}
       </div>
       <ChapterEndNav label='Next chapter' title='Justice' to='/chapters/justice' color='primary' />

@@ -35,7 +35,7 @@ export default function DefendersKilledByGroupRegionWaffle() {
         {defendersKilledByGroupRegion.map((d) => {
           const share = d.values[selectedGroup];
           return (
-            <div key={d.region} className='flex max-h-max flex-col gap-1'>
+            <div key={d.region} className='col-span-2 flex max-h-max flex-col gap-1 sm:col-span-1'>
               <P marginBottom='none' size='sm' className='text-content-secondary'>
                 {d.region}
               </P>
