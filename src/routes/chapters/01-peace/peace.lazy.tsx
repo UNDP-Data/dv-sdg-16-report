@@ -16,6 +16,7 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
+import FeelSafeWalkingAloneByPeriodDumbbellChart from './charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
 import HomicideGenderedPatternsBigNumbers from './charts/HomicideGenderedPatternsBigNumbers';
 import HomicideRateByRegionBarChart from './charts/HomicideRateByRegionBarChart';
@@ -255,19 +256,6 @@ export function Peace() {
             <GraphContainer isGenderLensActive={isGenderLensActive}>
               <NonLethalViolenceByTypeSexStripChart />
             </GraphContainer>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                Since 2015, 95 countries have reported data for at least one form of non-lethal
-                violence, although country coverage remains uneven across regions and across
-                different forms of violence. Robbery and physical assault are available for the
-                largest number of countries, with 80 countries having reported data for at least one
-                year since 2015. However, sex-disaggregated data are available for only 51
-                countries. By contrast, only 18 countries reported data for psychological violence
-                for at least one year since 2015. Continued investment in standardized victimization
-                surveys is essential to improve the availability, comparability and quality of data
-                on non-lethal violence.
-              </P>
-            </TextContainer>
             <Spacer size='2xl' />
             <ImpactStoryEl id='peace-panama-victimization-surveys' />
             <Spacer size='6xl' />
@@ -409,6 +397,9 @@ export function Peace() {
                 walking alone after dark.
               </P>
             </TextContainer>
+            <GraphContainer>
+              <FeelSafeWalkingAloneByPeriodDumbbellChart />
+            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='primary'
