@@ -14,7 +14,6 @@ export default function HomicideRateByRegionBarChart() {
       minValue={0}
       maxValue={20}
       showValues
-      highlightedDataPoints={['Latin America and the Caribbean', 'Sub-Saharan Africa']}
       valueColor='var(--content-primary)'
       showTicks={false}
       numberDisplayOptions={{ precision: 1 }}
