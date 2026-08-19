@@ -13,13 +13,15 @@ html {
 
 :root {
   --gender-lens-rgb: 123, 111, 232;
-  --background-soft: #F5F9FC;
-  --chart-highlight: #E6F0F7;
-  --chart-highlight-label: #36566F;
-  --text-muted: #60758A;
-  --light-blue: #C4DAEF;
+  --background-soft: #f5f9fc;
+  --chart-highlight: #e6f0f7;
+  --chart-highlight-label: #36566f;
+  --text-muted: #60758a;
+  --light-blue: #c4daef;
+  --women: #7b6fe8;
+  --children: #e86d62;
+  --region: #59ba47;
 }
-
 
 .gender-lens {
   transition: background-color 0.2s ease;
@@ -41,7 +43,6 @@ html {
 #TraffickingVictimsBySexAgeStackedBar .graph-value-total {
   display: block;
 }
-
 
 @keyframes gender-nav-in {
   from {
