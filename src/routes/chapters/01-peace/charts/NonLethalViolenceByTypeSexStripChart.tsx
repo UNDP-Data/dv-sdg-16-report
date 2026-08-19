@@ -3,6 +3,7 @@ import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { cn } from '@undp/design-system-react/cn';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
@@ -123,7 +124,25 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                     backgroundColor={false}
                     padding='0'
                     classNames={isLastRowOverall ? undefined : { xAxis: { labels: 'hidden' } }}
-                    tooltip='{{label}} ({{data.year}}): {{position}}%'
+                    tooltip={(d) => (
+                      <div className='flex flex-col gap-1 bg-white px-2 py-1'>
+                        <div className='flex gap-1'>
+                          <P
+                            size='sm'
+                            marginBottom='none'
+                            className='mr-1 border-content-reverse border-r pr-2'
+                          >
+                            {d.label}
+                          </P>
+                          <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
+                            <span className='font-bold' style={{ color: sex.color }}>
+                              {numberFormattingFunction(d.position)}
+                            </span>
+                            <span className='text-content-secondary text-xs'>({d.data.year})</span>
+                          </P>
+                        </div>
+                      </div>
+                    )}
                     ariaLabel={`Strip chart showing ${type.label.toLowerCase()} prevalence among ${sex.label.toLowerCase()} respondents, by country.`}
                   />
                 </div>
