@@ -1,83 +1,97 @@
-import { StackedBarGraph } from '@undp/data-viz/BarGraph';
-import { P } from '@undp/design-system-react/Typography';
+import { UnitChart } from '@undp/data-viz/UnitChart';
+import { H2, P } from '@undp/design-system-react/Typography';
 import { CHART_PADDING } from '@/constants';
 import traffickingVictimsBySexAge from '@/data/chapters/01-peace/16-2-2/trafficking-victims-by-sex-age.json';
+import ChartNote from '../../components/ChartNote';
 
-const SEX_BY_GROUP: Record<string, 'Female' | 'Male'> = {
-  Women: 'Female',
-  Girls: 'Female',
-  Men: 'Male',
-  Boys: 'Male',
-};
+const valueFor = (group: string) =>
+  traffickingVictimsBySexAge.find((d) => d.group === group)?.value ?? 0;
 
-const AGE_GROUPS = ['Adults', 'Children'] as const;
-const SEXES = ['Female', 'Male'] as const;
+const WOMEN = valueFor('Women');
+const GIRLS = valueFor('Girls');
+const MEN = valueFor('Men');
+const BOYS = valueFor('Boys');
 
-const valueFor = (sex: 'Female' | 'Male', ageGroup: 'Adults' | 'Children') =>
-  traffickingVictimsBySexAge.find((d) => SEX_BY_GROUP[d.group] === sex && d.ageGroup === ageGroup)
-    ?.value ?? null;
+const FEMALE_TOTAL = WOMEN + GIRLS;
+const MALE_TOTAL = MEN + BOYS;
 
-const data = SEXES.map((sex) => ({
-  label: sex,
-  size: AGE_GROUPS.map((ageGroup) => valueFor(sex, ageGroup)),
-}));
-
-const AGE_GROUP_LABEL: Record<'Female' | 'Male', Record<'Adults' | 'Children', string>> = {
-  Female: { Adults: 'Women', Children: 'Girls' },
-  Male: { Adults: 'Men', Children: 'Boys' },
-};
-
-function TraffickingTooltip({ label, sizeIndex }: { label: 'Female' | 'Male'; sizeIndex: number }) {
-  const ageGroup = AGE_GROUPS[sizeIndex];
-  const groupLabel = AGE_GROUP_LABEL[label][ageGroup];
-  const value = valueFor(label, ageGroup);
-
-  return (
-    <div className='flex min-w-[140px] flex-col gap-1 border-primary border-t-3 bg-white p-4'>
-      <P size='sm' weight='semibold' marginBottom='2xs' className='flex justify-between gap-4'>
-        <span>{groupLabel}</span>
-        <span>{value}%</span>
-      </P>
-      <hr className='text-content-reverse' />
-      <P size='sm' marginBottom='none' className='pt-2 text-content-secondary'>
-        Share of all detected victims
-      </P>
-    </div>
-  );
-}
+// Each sex gets its own color; the child sub-group is a lighter tint of it.
+const FEMALE_COLORS = ['var(--women)', 'color-mix(in srgb, var(--women) 45%, white)'];
+const MALE_COLORS = ['var(--male)', 'color-mix(in srgb, var(--male) 45%, white)'];
 
 export default function TraffickingVictimsBySexAgeStackedBar() {
   return (
-    <StackedBarGraph
-      data={data}
-      graphID='TraffickingVictimsBySexAgeStackedBar'
-      orientation='horizontal'
-      colorDomain={['Adults', 'Children']}
-      colors={['var(--primary)', 'var(--light-blue)']}
-      showColorScale
-      showTicks={false}
-      showValues
-      showTotalValue
-      maxValue={60}
-      styles={{
-        tooltip: {
-          padding: 0,
-        },
-      }}
-      minHeight={350}
-      numberDisplayOptions={{ suffix: '%' }}
-      relativeHeight={0.5}
-      sources={[{ source: 'UNODC' }]}
-      tooltip={TraffickingTooltip}
-      graphTitle={
-        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+    <div className='flex flex-col gap-6 bg-background-soft' style={{ padding: CHART_PADDING }}>
+      <div className='flex flex-col gap-1'>
+        <P size='xl' marginBottom='none' className='font-heading font-semibold leading-sm'>
           Share of detected victims of trafficking, by victim sex and age
         </P>
-      }
-      ariaLabel='Horizontal stacked bar chart showing detected trafficking victims by sex and age. Female victims account for 56 per cent of the total, made up of 36 per cent women and 20 per cent girls. Male victims account for 44 per cent, made up of 27 per cent men and 17 per cent boys.'
-      padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
-      graphDescription='2024 or most recent year available'
-    />
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          2024 or most recent year available
+        </P>
+      </div>
+
+      <div className='flex flex-col gap-10'>
+        <div className='flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-5'>
+          <UnitChart
+            data={[
+              { label: 'Women', value: WOMEN },
+              { label: 'Girls', value: GIRLS },
+            ]}
+            colors={FEMALE_COLORS}
+            size={500}
+            gridSize={25}
+            numberDisplayOptions={{ suffix: '%' }}
+            ariaLabel={`Unit chart showing the age breakdown of female trafficking victims. Women make up ${WOMEN} per cent and girls ${GIRLS} per cent, together ${FEMALE_TOTAL} per cent of all detected victims.`}
+          />
+          <div className='w-full shrink-0 sm:w-32'>
+            <H2
+              weight='medium'
+              marginBottom='sm'
+              className='m-0 pt-12 font-heading text-[var(--women)] leading-none'
+            >
+              {FEMALE_TOTAL}
+              <span className='ml-0.5 text-2xl md:text-3xl'>%</span>
+            </H2>
+            <P marginBottom='none' size='base' className='text-foreground'>
+              female victims
+            </P>
+          </div>
+        </div>
+        <div className='flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-5'>
+          <UnitChart
+            data={[
+              { label: 'Men', value: MEN },
+              { label: 'Boys', value: BOYS },
+            ]}
+            colors={MALE_COLORS}
+            size={500}
+            gridSize={25}
+            numberDisplayOptions={{ suffix: '%' }}
+            ariaLabel={`Unit chart showing the age breakdown of male trafficking victims. Men make up ${MEN} per cent and boys ${BOYS} per cent, together ${MALE_TOTAL} per cent of all detected victims.`}
+          />
+          <div className='w-full shrink-0 sm:w-32'>
+            <H2
+              weight='medium'
+              marginBottom='sm'
+              className='m-0 pt-12 font-heading text-[var(--male)] leading-none'
+            >
+              {MALE_TOTAL}
+              <span className='ml-0.5 text-2xl md:text-3xl'>%</span>
+            </H2>
+            <P marginBottom='none' size='base' className='text-foreground'>
+              male victims
+            </P>
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Source: UNODC
+        </P>
+        <ChartNote content='Female victims account for 56 per cent of the total, made up of 36 per cent women and 20 per cent girls. Male victims account for 44 per cent, made up of 27 per cent men and 17 per cent boys.' />
+      </div>
+    </div>
   );
 }
