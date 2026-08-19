@@ -17,7 +17,7 @@ export default function HomicideRateBySexLineChart() {
         { columnId: 'year', chartConfigId: 'date' },
       ])}
       lineColors={[
-        'var(--primary)',
+        'var(--secondary)',
         Colors.genderColors.male,
         Colors.genderColors.female,
         '#000000',
@@ -70,17 +70,17 @@ export default function HomicideRateBySexLineChart() {
           </P>
           <div className='flex flex-wrap gap-4'>
             <div className='flex items-center gap-1'>
-              <div className='h-px w-5 bg-primary' />
+              <div className='h-[3px] w-5 bg-secondary' />
               <p className='m-0 text-sm'>Both sexes</p>
             </div>
 
             <div className='flex items-center gap-1'>
-              <div className='h-px w-5' style={{ backgroundColor: '#02a38a' }} />
+              <div className='h-[3px] w-5' style={{ backgroundColor: '#02a38a' }} />
               <p className='m-0 text-sm'>Male</p>
             </div>
 
             <div className='flex items-center gap-1'>
-              <div className='h-px w-5' style={{ backgroundColor: '#757af0' }} />
+              <div className='h-[3px] w-5' style={{ backgroundColor: '#757af0' }} />
               <p className='m-0 text-sm'>Female</p>
             </div>
 
@@ -91,6 +91,56 @@ export default function HomicideRateBySexLineChart() {
           </div>
         </div>
       }
+      tooltip={(d) => {
+        const year = d.date.getFullYear();
+        const [both, male, female, bothTarget, maleTarget, femaleTarget] = d.y as (number | null)[];
+        const rows = [
+          { label: 'Both sexes', value: both, target: bothTarget, color: 'var(--secondary)' },
+          { label: 'Male', value: male, target: maleTarget, color: Colors.genderColors.male },
+          {
+            label: 'Female',
+            value: female,
+            target: femaleTarget,
+            color: Colors.genderColors.female,
+          },
+        ];
+        return (
+          <div className='flex min-w-[220px] flex-col gap-1 border-primary border-t-3 bg-white p-4'>
+            <P size='sm' weight='semibold' marginBottom='none'>
+              {year}
+            </P>
+            {rows.map((row) => (
+              <P
+                key={row.label}
+                size='sm'
+                marginBottom='none'
+                className='flex items-center justify-between gap-4'
+              >
+                <span className='flex items-center gap-1.5'>
+                  <span className='h-[3px] w-3' style={{ backgroundColor: row.color }} />
+                  {row.label}
+                </span>
+                <span className='flex items-baseline gap-1.5'>
+                  <span>{row.value?.toFixed(1)}</span>
+                  {row.target !== null && (
+                    <span className='text-content-secondary text-xs'>
+                      (target {row.target.toFixed(1)})
+                    </span>
+                  )}
+                </span>
+              </P>
+            ))}
+            {year >= 2025 && (
+              <>
+                <div className='my-1 border-stroke-xs border-t' />
+                <P size='sm' marginBottom='none' className='text-content-secondary italic'>
+                  Values are projected
+                </P>
+              </>
+            )}
+          </div>
+        );
+      }}
       sources={[
         {
           source:
