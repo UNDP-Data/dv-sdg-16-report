@@ -91,6 +91,7 @@ export default function HomicideRateBySexLineChart() {
           </div>
         </div>
       }
+      minHeight={700}
       tooltip={(d) => {
         const year = d.date.getFullYear();
         const [both, male, female, bothTarget, maleTarget, femaleTarget] = d.y as (number | null)[];

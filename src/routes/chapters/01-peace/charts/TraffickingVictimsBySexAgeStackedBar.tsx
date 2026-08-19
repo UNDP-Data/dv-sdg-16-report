@@ -64,7 +64,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
           padding: 0,
         },
       }}
-      leftMargin={64}
+      minHeight={350}
       numberDisplayOptions={{ suffix: '%' }}
       relativeHeight={0.5}
       sources={[{ source: 'UNODC' }]}

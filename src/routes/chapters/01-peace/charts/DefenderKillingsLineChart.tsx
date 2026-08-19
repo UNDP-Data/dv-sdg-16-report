@@ -20,7 +20,7 @@ export default function DefenderKillingsLineChart() {
         {
           text: 'Projected',
           xCoordinate: 2023,
-          yCoordinate: 100,
+          yCoordinate: 140,
           xOffset: 20,
           align: 'center',
           fontWeight: 'medium',
@@ -38,6 +38,7 @@ export default function DefenderKillingsLineChart() {
           color: 'var(--chart-highlight-label)',
         },
       ]}
+      minHeight={400}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Number of verified killings of human rights defenders, journalists and trade unionists
