@@ -52,22 +52,27 @@ export default function DefenderKillingsLineChart() {
         },
       }}
       tooltip={(d) => (
-        <div className='flex gap-1 bg-white px-2 py-1'>
-          <P
-            size='sm'
-            weight='semibold'
-            marginBottom='none'
-            className='mr-1 border-content-reverse border-r pr-2'
-          >
-            {d.date.getFullYear()}
-          </P>
-          <P size='sm' marginBottom='none' className='flex justify-between gap-4 text-primary'>
-            <span className='font-bold'>{Math.round(d.y)}</span>
-          </P>
-          {d.date.getFullYear() === 2025 && (
-            <P size='sm' marginBottom='none' className='text-content-secondary italic'>
-              Projected
+        <div className='flex flex-col gap-1 bg-white px-2 py-1'>
+          <div className='flex gap-1'>
+            <P
+              size='sm'
+              weight='semibold'
+              marginBottom='none'
+              className='mr-1 border-content-reverse border-r pr-2'
+            >
+              {d.date.getFullYear()}
             </P>
+            <P size='sm' marginBottom='none' className='flex justify-between gap-4 text-primary'>
+              <span className='font-bold'>{Math.round(d.y)}</span>
+            </P>
+          </div>
+          {d.date.getFullYear() === 2025 && (
+            <>
+              <div className='border-stroke-xs border-t' />
+              <P size='sm' marginBottom='none' className='text-content-secondary italic'>
+                Values are projected
+              </P>
+            </>
           )}
         </div>
       )}
