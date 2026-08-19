@@ -19,7 +19,8 @@ export default function HomicideRateByRegionBarChart() {
       numberDisplayOptions={{ precision: 1 }}
       barPadding={0.4}
       height={450}
-      leftMargin={200}
+      leftMargin={innerWidth < 720 ? 100 : 220}
+      minHeight={700}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'

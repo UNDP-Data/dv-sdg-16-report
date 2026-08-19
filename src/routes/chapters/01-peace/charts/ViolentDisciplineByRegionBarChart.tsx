@@ -20,17 +20,17 @@ export default function ViolentDisciplineByRegionBarChart() {
       numberDisplayOptions={{ suffix: '%' }}
       barPadding={0.4}
       height={500}
-      leftMargin={200}
       dimmedOpacity={1}
       padding={CHART_PADDING}
+      leftMargin={innerWidth < 720 ? 80 : 220}
+      truncateBy={innerWidth < 720 ? 8 : undefined}
       backgroundColor='var(--background-soft)'
       refValues={[
         { value: WORLD_VIOLENT_DISCIPLINE_SHARE, text: `World ${WORLD_VIOLENT_DISCIPLINE_SHARE}%` },
       ]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Percentage (bar) and global share (pie) of children experiencing violent discipline in the
-          past month, by region
+          Percentage of children experiencing violent discipline in the past month, by region
         </P>
       }
       graphDescription='2010–2024'
