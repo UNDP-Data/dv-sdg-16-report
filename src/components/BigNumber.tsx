@@ -41,7 +41,7 @@ export default function BigNumber({
         weight='medium'
         marginBottom='none'
         className={cn(
-          'pt-12 pb-4 font-heading leading-none',
+          'pt-12 font-heading leading-none',
           color === 'primary' && 'text-primary',
           color === 'secondary' && 'text-secondary',
           color === 'tertiary' && 'text-tertiary',
@@ -51,7 +51,7 @@ export default function BigNumber({
         {value}
         {suffix ? <span className='ml-0.5 text-2xl md:text-3xl'>{suffix}</span> : null}
       </H2>
-      <P marginBottom='none' className='text-foreground'>
+      <P marginBottom='none' size='base' className='text-foreground'>
         {label}
       </P>
     </div>
