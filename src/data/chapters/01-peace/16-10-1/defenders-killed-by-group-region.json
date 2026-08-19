@@ -5,7 +5,7 @@
       "Women": 14,
       "Youth": 12,
       "Indigenous & minority": 22,
-      "Environmental": 25
+      "Environmental & Land": 25
     }
   },
   {
@@ -14,7 +14,7 @@
       "Women": 11,
       "Youth": 14,
       "Indigenous & minority": 27,
-      "Environmental": 7
+      "Environmental & Land": 7
     }
   },
   {
@@ -23,7 +23,7 @@
       "Women": 18,
       "Youth": 13,
       "Indigenous & minority": 10,
-      "Environmental": 13
+      "Environmental & Land": 13
     }
   },
   {
@@ -32,7 +32,7 @@
       "Women": 16,
       "Youth": 9,
       "Indigenous & minority": 36,
-      "Environmental": 48
+      "Environmental & Land": 48
     }
   },
   {
@@ -41,7 +41,7 @@
       "Women": 8,
       "Youth": 7,
       "Indigenous & minority": 8,
-      "Environmental": 12
+      "Environmental & Land": 12
     }
   },
   {
@@ -50,7 +50,7 @@
       "Women": 11,
       "Youth": 16,
       "Indigenous & minority": 6,
-      "Environmental": 2
+      "Environmental & Land": 2
     }
   }
 ]

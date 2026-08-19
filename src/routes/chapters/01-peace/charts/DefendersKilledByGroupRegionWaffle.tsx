@@ -4,8 +4,9 @@ import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
 import defendersKilledByGroupRegion from '@/data/chapters/01-peace/16-10-1/defenders-killed-by-group-region.json';
+import ChartNote from '../../components/ChartNote';
 
-const GROUPS = ['Women', 'Youth', 'Indigenous & minority', 'Environmental'] as const;
+const GROUPS = ['Women', 'Youth', 'Indigenous & minority', 'Environmental & Land'] as const;
 type GroupKey = (typeof GROUPS)[number];
 
 export default function DefendersKilledByGroupRegionWaffle() {
@@ -13,9 +14,15 @@ export default function DefendersKilledByGroupRegionWaffle() {
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
-      <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-        Percentage of Killed or Disappeared Defenders (2025)
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Share of Killed or Disappeared Human Rights Defenders Belonging to Selected Group, by
+          region
+        </P>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          2025
+        </P>
+      </div>
       <div>
         <P size='sm' marginBottom='2xs'>
           Select defender group
@@ -62,9 +69,12 @@ export default function DefendersKilledByGroupRegionWaffle() {
         })}
       </div>
 
-      <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: TBA
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Source: OHCHR
+        </P>
+        <ChartNote content='Each dot represents the share of defenders killed or disappeared in that region who belonged to the specified group. Categories are not mutually exclusive; an individual may be included in more than one group. Europe and Northern America are excluded due to small case numbers, and Oceania due to insufficient data availability.' />
+      </div>
     </div>
   );
 }
