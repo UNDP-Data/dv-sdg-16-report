@@ -1,13 +1,19 @@
 import { P } from '@undp/design-system-react/Typography';
 import BigNumber from '@/components/BigNumber';
 import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 export default function HomicideGenderedPatternsBigNumbers() {
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
-      <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-        Gendered patterns of homicide
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Gendered patterns of homicide
+        </P>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          2024
+        </P>
+      </div>
       <div className='flex gap-4'>
         <BigNumber
           className='w-full'
@@ -33,9 +39,14 @@ export default function HomicideGenderedPatternsBigNumbers() {
           </div>
         </div>
       </div>
-      <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: TBA
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Source: UNODC estimates based on responses to the United Nations Survey of Crime Trends
+          and Operations of Criminal Justice Systems and data from other sources reviewed by Member
+          States.
+        </P>
+        <ChartNote content='Data on the share of intimate partner/family member homicide out of all homicides is not available for SDG regions.' />
+      </div>
     </div>
   );
 }

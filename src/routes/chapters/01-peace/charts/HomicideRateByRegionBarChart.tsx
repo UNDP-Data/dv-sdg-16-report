@@ -27,11 +27,16 @@ export default function HomicideRateByRegionBarChart() {
       refValues={[{ value: WORLD_HOMICIDE_RATE, text: `World ${WORLD_HOMICIDE_RATE}` }]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Disproportionate regional gaps in homicide rates
+          Rate of intentional homicide per 100,000 population, by region
         </P>
       }
-      graphDescription='Victims of intentional homicide per 100,000 population'
-      sources={[{ source: 'UNODC' }]}
+      graphDescription='2024'
+      sources={[
+        {
+          source:
+            'UNODC estimates based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems and data from other sources reviewed by Member States.',
+        },
+      ]}
       ariaLabel='Horizontal bar chart showing the rate of intentional homicide per 100,000 population, by region, with a reference line for the global estimate. Latin America and the Caribbean and Sub-Saharan Africa have the highest rates.'
     />
   );

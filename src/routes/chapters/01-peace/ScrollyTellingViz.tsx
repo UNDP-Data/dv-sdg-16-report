@@ -13,10 +13,10 @@ const NUM_OF_VICTIMS_ONE_DAY = 102;
 const NUM_OF_VICTIMS_ONE_YEAR = 37163;
 const NUM_OF_CHILDREN_VICTIMS_ONE_YEAR = 7377;
 const NUM_OF_FEMALE_VICTIMS_ONE_YEAR = 6657;
-const NUM_OF_MALE_VICTIMS_ONE_YEAR = 23129;
+const _NUM_OF_MALE_VICTIMS_ONE_YEAR = 23129;
 
 const NUM_OF_VICTIMS_WA_NA = 24156;
-const NUM_OF_VICTIMS_SSA = 8919;
+const _NUM_OF_VICTIMS_SSA = 8919;
 
 const SLIDES = [
   {
@@ -29,11 +29,7 @@ const SLIDES = [
       showFirstDot: true,
       showIndividualDots: false,
     },
-    slideContent: (
-      <>
-        A civilian was killed every <strong>14 minutes</strong> in monitored armed conflicts in 2025
-      </>
-    ),
+    slideContent: <>In 2025, a civilian was killed every 14 minutes</>,
     color: 'primary',
   },
   {
@@ -48,8 +44,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In one day, this adds up to around{' '}
-        <span className='font-bold text-primary'>102 documented civilian deaths</span>
+        Over the course of a single day, this amounted to around{' '}
+        <span className='font-bold text-primary'>102 documented civilian deaths</span>, underscoring
+        the staggering human toll of violence.
       </>
     ),
     color: 'primary',
@@ -66,8 +63,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In 2025, at least <span className='font-bold text-primary'>37,163 civilian deaths</span>{' '}
-        were documented across 20 monitored armed conflicts.
+        In 2025, a total of <span className='font-bold text-primary'>37,163 civilian deaths</span>{' '}
+        were documented. The status of more than 13,000 deaths in 2025 remained unverified.
       </>
     ),
     color: 'primary',
@@ -84,9 +81,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Of those, <span className='font-bold text-primary'>one in five</span> recorded civilian
-        death was a child (<span className='font-bold text-primary'>20%</span>). Three boys were
-        killed for every two girls.
+        Children accounted for{' '}
+        <span className='font-bold text-primary'>one in five recorded civilian deaths (20%).</span>{' '}
+        Among child victims, three boys were killed for every two girls.
       </>
     ),
     color: 'primary',
@@ -103,25 +100,11 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Females accounted for <span className='font-bold text-primary'>18%</span> of those killed.
-      </>
-    ),
-    color: 'primary',
-  },
-  {
-    vizContent: {
-      keyNumber: NUM_OF_MALE_VICTIMS_ONE_YEAR,
-      time: '2025',
-      category: 'male victims',
-      backgroundTrackPathLength: 1,
-      animatedTrackPathLength: NUM_OF_MALE_VICTIMS_ONE_YEAR / NUM_OF_VICTIMS_ONE_YEAR,
-      showFirstDot: false,
-      showIndividualDots: false,
-    },
-    slideContent: (
-      <>
-        And adult males and unknown age and sex accounted for the{' '}
-        <span className='font-bold text-primary'>62%</span>.
+        <span className='font-bold text-primary'>
+          Women made up 18% of documented civilian deaths.
+        </span>{' '}
+        Combined, women and children accounted for more than a third (38%) of all civilian
+        fatalities.
       </>
     ),
     color: 'primary',
@@ -138,27 +121,10 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Regionally, <strong>Northern Africa and Western Asia</strong> was the worst affected region,
-        accounting for <span className='font-bold text-secondary'>65%</span> of all documented
-        civilian deaths
-      </>
-    ),
-    color: 'secondary',
-  },
-  {
-    vizContent: {
-      keyNumber: NUM_OF_VICTIMS_SSA,
-      time: '2025',
-      category: 'victims in Sub-Saharan Africa',
-      backgroundTrackPathLength: 1,
-      animatedTrackPathLength: NUM_OF_VICTIMS_SSA / NUM_OF_VICTIMS_ONE_YEAR,
-      showFirstDot: false,
-      showIndividualDots: false,
-    },
-    slideContent: (
-      <>
-        While <strong>Sub-Saharan Africa</strong> accounted for{' '}
-        <span className='font-bold text-secondary'>24%</span>
+        <span className='font-bold text-secondary'>
+          Northern Africa and Western Asia accounted for 65% of all documented civilian deaths
+        </span>
+        , while Sub-Saharan Africa accounted for a further 24%.
       </>
     ),
     color: 'secondary',

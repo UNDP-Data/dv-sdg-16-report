@@ -7,15 +7,16 @@ export default function TraffickingVictimsBySexAgeTreeMap() {
   return (
     <TreeMapGraph
       data={traffickingVictimsBySexAge.map((d) => ({ label: d.group, size: d.value }))}
-      sources={[{ source: 'TBA' }]}
+      sources={[{ source: 'UNODC' }]}
       showLabels
       colors='var(--primary)'
       numberDisplayOptions={{ suffix: '%' }}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Detected victims of trafficking, by sex and age (2024 or most recent year available)
+          Share of detected victims of trafficking, by victim sex and age
         </P>
       }
+      graphDescription='2024 or most recent year available'
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
     />
