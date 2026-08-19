@@ -1,0 +1,61 @@
+import { Colors } from '@undp/data-viz/Colors';
+import { DumbbellChart } from '@undp/data-viz/DumbbellChart';
+import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { P } from '@undp/design-system-react/Typography';
+import { CHART_PADDING } from '@/constants';
+import feelSafeWalkingAloneByRegionPeriod from '@/data/chapters/01-peace/16-1-4/feel-safe-walking-alone-by-region-period.json';
+import ChartNote from '../../components/ChartNote';
+
+export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
+  return (
+    <DumbbellChart
+      data={transformDataForGraph(feelSafeWalkingAloneByRegionPeriod, 'dumbbellChart', [
+        { columnId: 'region', chartConfigId: 'label' },
+        { columnId: ['period_2016_2020', 'period_2021_2025'], chartConfigId: 'x' },
+      ])}
+      orientation='horizontal'
+      colorDomain={['2016–2020', '2021–2025']}
+      colors={[Colors.gray, 'var(--primary)']}
+      minValue={0}
+      showTicks={false}
+      leftMargin={innerWidth < 720 ? 100 : 220}
+      minHeight={550}
+      truncateBy={innerWidth < 720 ? 12 : undefined}
+      relativeHeight={0.85}
+      maxValue={100}
+      numberDisplayOptions={{ suffix: '%' }}
+      padding={CHART_PADDING}
+      backgroundColor='var(--background-soft)'
+      graphTitle={
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Proportion of the population that feel safe walking alone at night around the area they
+          live in, by region and period (2016–2020 and 2021–2025)
+        </P>
+      }
+      sources={[
+        {
+          source:
+            'UNODC, based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems, Multiple Indicator Cluster Surveys, and the Gallup World Poll.',
+        },
+      ]}
+      footNote={
+        <ChartNote
+          content={
+            <div className='flex flex-col gap-2'>
+              <p>
+                Regional aggregates refer to 3-year averages weighted by countries’ population
+                size. Most surveys include the qualifications “after dark” or “at night” in the
+                question wording.
+              </p>
+              <p>
+                Data coverage: Averages for Oceania were removed, as only data for one country
+                were available.
+              </p>
+            </div>
+          }
+        />
+      }
+      ariaLabel='Dumbbell chart showing the share of the population that feels safe walking alone at night, by region, comparing 2016–2020 and 2021–2025. Latin America and the Caribbean has the lowest share feeling safe in both periods.'
+    />
+  );
+}
