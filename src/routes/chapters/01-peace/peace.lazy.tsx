@@ -23,7 +23,7 @@ import HomicideRateBySexLineChart from './charts/HomicideRateBySexLineChart';
 import NonLethalViolenceByTypeSexStripChart from './charts/NonLethalViolenceByTypeSexStripChart';
 import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildhoodUnitChart';
 import TraffickingByExploitationFormBigNumbers from './charts/TraffickingByExploitationFormBigNumbers';
-import TraffickingVictimsBySexAgeTreeMap from './charts/TraffickingVictimsBySexAgeTreeMap';
+import TraffickingVictimsBySexAgeStackedBar from './charts/TraffickingVictimsBySexAgeStackedBar';
 import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegionBarChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -75,7 +75,7 @@ export function Peace() {
                 livelihoods.
               </P>
             </TextContainer>
-            <WaveDivider src='/imgs/dividers/peace-01.webp' />
+            <WaveDivider src='/imgs/dividers/peace-01.webp' align='right' />
           </>
         ),
       },
@@ -140,7 +140,7 @@ export function Peace() {
             <GraphContainer isGenderLensActive={isGenderLensActive}>
               <HomicideGenderedPatternsBigNumbers />
             </GraphContainer>
-            <WaveDivider src='/imgs/dividers/peace-02.webp' align='right' />
+            <WaveDivider src='/imgs/dividers/peace-02.webp' />
           </>
         ),
       },
@@ -357,8 +357,11 @@ export function Peace() {
                 continued to account for a significantly larger share of victims than men.
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
-              <TraffickingVictimsBySexAgeTreeMap />
+            <GraphContainer
+              isGenderLensActive={isGenderLensActive}
+              id='TraffickingVictimsBySexAgeStackedBar'
+            >
+              <TraffickingVictimsBySexAgeStackedBar />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
@@ -517,7 +520,8 @@ export function Peace() {
           their human toll continues to be staggering.
         </P>
       </TextContainer>
-      <Spacer size='8xl' />
+      <WaveDivider src='/imgs/dividers/peace-02.webp' />
+      <Spacer size='2xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section
