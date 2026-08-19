@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { getArc } from '@/Utils/getArc';
 
 const DOT_RADIUS = 10;
-const TRACK_GAP = 30;
+const TRACK_GAP = 24;
 const TRACK_THICKNESS_SCALING_FACTOR = 1;
 const CIRCLE_PADDING = 5;
 
@@ -13,10 +13,10 @@ const NUM_OF_VICTIMS_ONE_DAY = 102;
 const NUM_OF_VICTIMS_ONE_YEAR = 37163;
 const NUM_OF_CHILDREN_VICTIMS_ONE_YEAR = 7377;
 const NUM_OF_FEMALE_VICTIMS_ONE_YEAR = 6657;
-const _NUM_OF_MALE_VICTIMS_ONE_YEAR = 23129;
 
 const NUM_OF_VICTIMS_WA_NA = 24156;
-const _NUM_OF_VICTIMS_SSA = 8919;
+const NUM_OF_VICTIMS_SSA = 8919;
+const NUM_OF_VICTIMS_WA_NA_SSA = NUM_OF_VICTIMS_WA_NA + NUM_OF_VICTIMS_SSA;
 
 const SLIDES = [
   {
@@ -29,7 +29,12 @@ const SLIDES = [
       showFirstDot: true,
       showIndividualDots: false,
     },
-    slideContent: <>In 2025, a civilian was killed every 14 minutes</>,
+    slideContent: (
+      <>
+        In 2025, a civilian was killed{' '}
+        <span className='font-bold text-primary'>every 14 minutes</span>
+      </>
+    ),
     color: 'primary',
   },
   {
@@ -82,11 +87,13 @@ const SLIDES = [
     slideContent: (
       <>
         Children accounted for{' '}
-        <span className='font-bold text-primary'>one in five recorded civilian deaths (20%).</span>{' '}
+        <span className='py-3 font-bold text-[var(--children)] leading-none'>
+          1 in 5 recorded civilian deaths (20%).
+        </span>
         Among child victims, three boys were killed for every two girls.
       </>
     ),
-    color: 'primary',
+    color: 'children',
   },
   {
     vizContent: {
@@ -100,34 +107,34 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        <span className='font-bold text-primary'>
-          Women made up 18% of documented civilian deaths.
-        </span>{' '}
+        Women made up{' '}
+        <span className='font-bold text-[var(--women)]'>18% of documented civilian deaths.</span>{' '}
         Combined, women and children accounted for more than a third (38%) of all civilian
         fatalities.
       </>
     ),
-    color: 'primary',
+    color: 'women',
   },
   {
     vizContent: {
-      keyNumber: NUM_OF_VICTIMS_WA_NA,
+      keyNumber: NUM_OF_VICTIMS_WA_NA_SSA,
       time: '2025',
-      category: 'victims in West Asia and North Africa',
+      category: 'victims in Northern Africa and Western Asia, and in Sub-Saharan Africa',
       backgroundTrackPathLength: 1,
-      animatedTrackPathLength: NUM_OF_VICTIMS_WA_NA / NUM_OF_VICTIMS_ONE_YEAR,
+      animatedTrackPathLength: NUM_OF_VICTIMS_WA_NA_SSA / NUM_OF_VICTIMS_ONE_YEAR,
       showFirstDot: false,
       showIndividualDots: false,
     },
     slideContent: (
       <>
-        <span className='font-bold text-secondary'>
-          Northern Africa and Western Asia accounted for 65% of all documented civilian deaths
-        </span>
-        , while Sub-Saharan Africa accounted for a further 24%.
+        Northern Africa and Western Asia accounted for{' '}
+        <span className='font-bold text-tertiary'>65% of all documented civilian deaths</span>,
+        while Sub-Saharan Africa accounted for a{' '}
+        <span className='font-bold text-tertiary'>further 24%</span> — together, almost 9 in 10
+        documented civilian deaths.
       </>
     ),
-    color: 'secondary',
+    color: 'tertiary',
   },
 ];
 
@@ -206,15 +213,26 @@ export default function ScrollyTellingViz() {
                 cx={0}
                 cy={0}
                 r={graphRadius}
-                className='fill-none stroke-[1px] stroke-surface-xl'
+                className='fill-none stroke-[1px] stroke-gray-400'
               />
               <circle
                 cx={0}
                 cy={0}
                 r={graphRadius - TRACK_GAP}
-                className='fill-none stroke-[1px] stroke-surface-xl'
+                className='fill-none stroke-[1px] stroke-gray-400'
               />
             </g>
+            <motion.circle
+              id='light-track'
+              cx={0}
+              cy={0}
+              r={graphRadius - TRACK_GAP / 2}
+              className='fill-none stroke-gray-200'
+              strokeWidth={TRACK_GAP}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: activeSlide.vizContent.backgroundTrackPathLength }}
+              transition={{ duration: 1 }}
+            />
             <g id='individual-dots'>
               {individualCircleDefinition.map((dot) => (
                 <motion.circle
@@ -238,39 +256,16 @@ export default function ScrollyTellingViz() {
               ))}
             </g>
             <motion.path
-              id='background-track'
-              opacity={0.2}
-              initial={{
-                pathLength: 0,
-                stroke: 'var(--primary)',
-              }}
-              animate={{
-                pathLength: activeSlide.vizContent.backgroundTrackPathLength,
-                stroke: `var(--${activeSlide.color})`,
-              }}
-              transition={{
-                pathLength: {
-                  duration: 1,
-                },
-                stroke: {
-                  duration: 1,
-                },
-              }}
-              strokeWidth={TRACK_GAP}
-              d={arcDefinition}
-              style={{
-                fill: 'none',
-              }}
-            />
-            <motion.path
               id='animated-track'
               initial={{
                 pathLength: 0,
                 stroke: 'var(--primary)',
+                opacity: 0,
               }}
               animate={{
                 pathLength: activeSlide.vizContent.animatedTrackPathLength,
                 stroke: `var(--${activeSlide.color})`,
+                opacity: activeSlide.vizContent.animatedTrackPathLength > 0 ? 1 : 0,
               }}
               transition={{
                 pathLength: {
@@ -279,9 +274,12 @@ export default function ScrollyTellingViz() {
                 stroke: {
                   duration: 1,
                 },
+                opacity: {
+                  duration: 0.3,
+                },
               }}
-              opacity={1}
               strokeWidth={TRACK_GAP * TRACK_THICKNESS_SCALING_FACTOR}
+              strokeLinecap='round'
               d={arcDefinition}
               style={{
                 fill: 'none',
@@ -305,7 +303,7 @@ export default function ScrollyTellingViz() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className='fill-content-placeholder text-center text-[18px] leading-sm md:text-[24px] lg:text-[32px]'
+                        className='mb-2 fill-content-placeholder text-center text-[16px] text-foreground leading-sm md:text-[20px] lg:text-[24px]'
                       >
                         {activeSlide.vizContent.time}
                       </motion.div>
@@ -320,12 +318,12 @@ export default function ScrollyTellingViz() {
                     transition={{
                       duration: 1,
                     }}
-                    className='mt-1 text-center font-bold font-heading text-[32px] leading-sm md:text-[64px] lg:text-[104px]'
+                    className='mt-1 text-center font-heading font-semibold text-[32px] leading-sm md:text-[64px] lg:text-[104px]'
                   >
                     {rounded}
                   </motion.div>
                   {activeSlide.vizContent.category && (
-                    <div className='fill-content-placeholder text-center text-base leading-sm md:text-2xl'>
+                    <div className='mx-auto flex min-h-[2lh] w-[50%] items-center justify-center fill-content-placeholder text-center text-base text-foreground leading-sm md:text-2xl'>
                       {activeSlide.vizContent.category}
                     </div>
                   )}
@@ -340,7 +338,7 @@ export default function ScrollyTellingViz() {
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 box-border w-full border-primary border-l-6 bg-background/80 py-4 pl-6 text-xl md:text-3xl'
+              className='my-6 w-full bg-white py-4 pl-6 text-xl md:text-3xl'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >
