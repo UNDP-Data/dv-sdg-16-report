@@ -24,7 +24,7 @@ import HomicideRateBySexLineChart from './charts/HomicideRateBySexLineChart';
 import NonLethalViolenceByTypeSexStripChart from './charts/NonLethalViolenceByTypeSexStripChart';
 import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildhoodUnitChart';
 import TraffickingByExploitationFormBigNumbers from './charts/TraffickingByExploitationFormBigNumbers';
-import TraffickingVictimsBySexAgeStackedBar from './charts/TraffickingVictimsBySexAgeStackedBar';
+import TraffickingVictimsBySexAgeUnitChart from './charts/TraffickingVictimsBySexAgeUnitChart';
 import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegionBarChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -347,9 +347,9 @@ export function Peace() {
             </TextContainer>
             <GraphContainer
               isGenderLensActive={isGenderLensActive}
-              id='TraffickingVictimsBySexAgeStackedBar'
+              id='TraffickingVictimsBySexAgeUnitChart'
             >
-              <TraffickingVictimsBySexAgeStackedBar />
+              <TraffickingVictimsBySexAgeUnitChart />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
