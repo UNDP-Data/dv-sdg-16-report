@@ -6,12 +6,12 @@ import createHomeRoute from './App';
 import FooterEl from './components/Footer';
 import HeaderEl from './components/Header';
 import * as TanStackQueryProvider from './integration/tanstack-query';
-import createAboutRoute from './routes/about';
-import createPeaceRoute from './routes/chapters/01-peace';
-import createJusticeRoute from './routes/chapters/02-justice';
-import createInclusionRoute from './routes/chapters/03-inclusion';
-import createImpactStoriesRoute from './routes/impact-stories';
-import createMaterialsRoute from './routes/materials';
+import createAboutRoute from './routes/about/about.route';
+import createPeaceRoute from './routes/chapters/01-peace/peace.route';
+import createJusticeRoute from './routes/chapters/02-justice/justice.route';
+import createInclusionRoute from './routes/chapters/03-inclusion/inclusion.route';
+import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
+import createMaterialsRoute from './routes/materials/material.route';
 
 import './styles/fonts.css';
 import './styles/style.css';

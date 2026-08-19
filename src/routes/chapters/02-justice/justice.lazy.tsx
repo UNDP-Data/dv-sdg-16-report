@@ -1,5 +1,4 @@
-import type { AnyRootRoute } from '@tanstack/react-router';
-import { createRoute } from '@tanstack/react-router';
+import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
@@ -500,10 +499,6 @@ export function Justice() {
   );
 }
 
-export default function createJusticeRoute(parentRoute: AnyRootRoute) {
-  return createRoute({
-    path: '/chapters/justice',
-    component: Justice,
-    getParentRoute: () => parentRoute,
-  });
-}
+export const Route = createLazyRoute('/chapters/justice')({
+  component: Justice,
+});

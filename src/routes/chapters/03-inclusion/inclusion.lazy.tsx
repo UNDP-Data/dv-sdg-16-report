@@ -1,5 +1,4 @@
-import type { AnyRootRoute } from '@tanstack/react-router';
-import { createRoute } from '@tanstack/react-router';
+import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
@@ -564,10 +563,6 @@ export function Inclusion() {
   );
 }
 
-export default function createInclusionRoute(parentRoute: AnyRootRoute) {
-  return createRoute({
-    path: '/chapters/inclusion',
-    component: Inclusion,
-    getParentRoute: () => parentRoute,
-  });
-}
+export const Route = createLazyRoute('/chapters/inclusion')({
+  component: Inclusion,
+});

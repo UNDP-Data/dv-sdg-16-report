@@ -1,5 +1,4 @@
-import type { AnyRootRoute } from '@tanstack/react-router';
-import { createRoute } from '@tanstack/react-router';
+import { createLazyRoute } from '@tanstack/react-router';
 import {
   Card,
   CardDescription,
@@ -104,10 +103,6 @@ export function ImpactStories() {
   );
 }
 
-export default function createImpactStoriesRoute(parentRoute: AnyRootRoute) {
-  return createRoute({
-    path: '/impact-stories',
-    component: ImpactStories,
-    getParentRoute: () => parentRoute,
-  });
-}
+export const Route = createLazyRoute('/impact-stories')({
+  component: ImpactStories,
+});
