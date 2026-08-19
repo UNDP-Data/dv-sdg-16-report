@@ -13,7 +13,7 @@ export default function DefenderKillingsLineChart() {
       ])}
       padding={CHART_PADDING}
       minValue={0}
-      relativeHeight={0.85}
+      relativeHeight={0.7}
       maxValue={800}
       highlightAreaSettings={[{ coordinates: [2024, 2025], color: 'var(--chart-highlight)' }]}
       annotations={[
