@@ -158,7 +158,20 @@ export default function NonLethalViolenceByTypeSexStripChart() {
           Operations of Criminal Justice Systems and data from other sources reviewed by Member
           States.
         </P>
-        <ChartNote content='Data based on the latest available year of survey data between 2016 and 2024 for 51 countries (physical violence), 18 countries (sexual violence), 12 countries (psychological violence). Each dot represents a country. The horizontal black bars show the median prevalence, or the midpoint across countries: half of countries with available data have a higher prevalence and half have a lower prevalence.' />
+        <ChartNote
+          content={
+            <div className='flex flex-col gap-2'>
+              <P size='sm' marginBottom='none'>
+                18 countries (sexual violence male and female), 12 countries (psychological violence
+                male and female). Each dot represents a country.
+              </P>
+              <P size='sm' marginBottom='none'>
+                The horizontal black bars show the median prevalence. The median represents the
+                middle value, with half of observations above and half below it.
+              </P>
+            </div>
+          }
+        />
       </div>
     </div>
   );
