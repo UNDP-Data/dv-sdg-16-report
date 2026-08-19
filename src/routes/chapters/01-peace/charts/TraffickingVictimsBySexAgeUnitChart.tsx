@@ -15,7 +15,6 @@ const BOYS = valueFor('Boys');
 const FEMALE_TOTAL = WOMEN + GIRLS;
 const MALE_TOTAL = MEN + BOYS;
 
-// Each sex gets its own color; the child sub-group is a lighter tint of it.
 const FEMALE_COLORS = ['var(--women)', 'color-mix(in srgb, var(--women) 45%, white)'];
 const MALE_COLORS = ['var(--male)', 'color-mix(in srgb, var(--male) 45%, white)'];
 

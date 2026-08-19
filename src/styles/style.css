@@ -37,14 +37,6 @@ html {
   box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.65);
 }
 
-#TraffickingVictimsBySexAgeStackedBar .graph-value {
-  display: none;
-}
-
-#TraffickingVictimsBySexAgeStackedBar .graph-value-total {
-  display: block;
-}
-
 @keyframes gender-nav-in {
   from {
     opacity: 0;
