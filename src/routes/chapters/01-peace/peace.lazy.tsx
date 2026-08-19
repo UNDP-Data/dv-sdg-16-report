@@ -159,7 +159,7 @@ export function Peace() {
                 New evidence shows that{' '}
                 <InfoTooltip
                   trigger='verified killings'
-                  content='Underreporting, due to significant risk of retaliation and/or human capacity, remains a challenge for the documentation of attacks against human rights defenders. Verified counts, therefore, reflect institutional capacity, which can often signal a stronger civil society, independent media, and national human rights institutions, while low or absent data frequently indicate restricted civic space rather than an absence of violations. The numbers presented are, therefore, likely to underestimate the true scale of attacks.'
+                  content='The term “verified” refers to a reported case that contains a minimum set of relevant information on a person, which have been reviewed by mandated bodies, mechanisms, and institutions and provided them with reasonable grounds to believe that that person was a victim of human rights violations or abuses. The verified counts captured by this indicator should therefore be distinguished from true incidence of attacks, which remains unobserved and is likely higher than documented figures.'
                   color='primary'
                 />{' '}
                 of human rights defenders, journalists, and trade unionists have increased globally
