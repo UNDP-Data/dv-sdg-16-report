@@ -2,6 +2,7 @@ import { SimpleBarGraph } from '@undp/data-viz/BarGraph';
 import { P } from '@undp/design-system-react/Typography';
 import { CHART_PADDING } from '@/constants';
 import violentDisciplineByRegion from '@/data/chapters/01-peace/16-2-1-16-2-3/violent-discipline-by-region.json';
+import ChartNote from '../../components/ChartNote';
 
 const WORLD_VIOLENT_DISCIPLINE_SHARE = 67;
 
@@ -28,11 +29,15 @@ export default function ViolentDisciplineByRegionBarChart() {
       ]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Percentage of children experiencing violent discipline in the past month, by region
-          (2010–2024)
+          Percentage (bar) and global share (pie) of children experiencing violent discipline in the
+          past month, by region
         </P>
       }
-      sources={[{ source: 'TBA' }]}
+      graphDescription='2010–2024'
+      sources={[{ source: 'UNICEF' }]}
+      footNote={
+        <ChartNote content='Data are drawn from the UNICEF global databases, 2025, based on Multiple Indicator Cluster Surveys, Demographic and Health Surveys, and other nationally representative surveys that use a comparable methodology. These national data are also included in the official global database for SDG indicator 16.2.1. See the source publication for other technical notes on data sources, coverage and methods.' />
+      }
       ariaLabel='Horizontal bar chart showing the share of children experiencing violent discipline in the past month, by region, with a reference line for the global estimate.'
     />
   );

@@ -61,9 +61,14 @@ export default function NonLethalViolenceByTypeSexStripChart() {
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
-      <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-        Prevalence of physical, sexual and psychological violence, by sex (2016–2024)
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Proportion of the population subjected to violence in the previous twelve months, by sex
+        </P>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Latest available year between 2016–2024
+        </P>
+      </div>
 
       <ColorLegend
         colors={SEXES.map((s) => s.color)}
@@ -130,9 +135,11 @@ export default function NonLethalViolenceByTypeSexStripChart() {
 
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
-          Source: UNODC
+          Source: UNODC based on responses to the United Nations Survey of Crime Trends and
+          Operations of Criminal Justice Systems and data from other sources reviewed by Member
+          States.
         </P>
-        <ChartNote content='Each dot represents a country-level survey estimate of the share of the population that experienced the given form of violence in the past 12 months. Data are based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems (CTS), Multiple Indicator Cluster Surveys (MICS) and SDG national reporting.' />
+        <ChartNote content='Data based on the latest available year of survey data between 2016 and 2024 for 51 countries (physical violence), 18 countries (sexual violence), 12 countries (psychological violence). Each dot represents a country. The horizontal black bars show the median prevalence, or the midpoint across countries: half of countries with available data have a higher prevalence and half have a lower prevalence.' />
       </div>
     </div>
   );

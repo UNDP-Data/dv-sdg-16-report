@@ -40,10 +40,11 @@ export default function DefenderKillingsLineChart() {
       ]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Number verified killings of human rights defenders, journalists and trade unionists
-          worldwide, 2015–2025
+          Number of verified killings of human rights defenders, journalists and trade unionists
+          worldwide
         </P>
       }
+      graphDescription='2015 – 2025 (2025 figures projected)'
       sources={[{ source: 'OHCHR' }]}
       ariaLabel='Line chart showing the number of verified killings of human rights defenders, journalists and trade unionists worldwide from 2015 to 2025, rising from 426 in 2015 to a projected 743 in 2025. 2024 and 2025 figures are projected, highlighted as a shaded area.'
       strokeWidth={2}
