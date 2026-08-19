@@ -16,7 +16,8 @@ html {
   --background-soft: #F5F9FC;
   --chart-highlight: #E6F0F7;
   --chart-highlight-label: #36566F;
-  --text-muted: #A60758A;
+  --text-muted: #60758A;
+  --light-blue: #C4DAEF;
 }
 
 
@@ -32,6 +33,15 @@ html {
   background-color: rgba(var(--gender-lens-rgb), 0.2);
   box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.65);
 }
+
+#TraffickingVictimsBySexAgeStackedBar .graph-value {
+  display: none;
+}
+
+#TraffickingVictimsBySexAgeStackedBar .graph-value-total {
+  display: block;
+}
+
 
 @keyframes gender-nav-in {
   from {
