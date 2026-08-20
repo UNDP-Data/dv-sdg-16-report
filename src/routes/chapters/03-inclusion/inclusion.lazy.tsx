@@ -18,6 +18,7 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
+import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -389,8 +390,10 @@ export function Inclusion() {
                 influence government decisions. Across regions, perceptions of influence differ by
                 as much as 40 percentage points.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <PoliticalEfficacyByRegionBarChart />
+            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Women report lower levels of political influence than men. Across 37 high-income
