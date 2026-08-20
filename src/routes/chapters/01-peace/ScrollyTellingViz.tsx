@@ -194,7 +194,7 @@ export default function ScrollyTellingViz() {
   }, [graphRadius]);
 
   return (
-    <div className='relative mx-auto flex w-screen max-w-7xl flex-col gap-x-10 gap-y-0 px-4 lg:flex-row'>
+    <div className='relative mx-auto flex w-screen max-w-7xl flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
       <div
         className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
