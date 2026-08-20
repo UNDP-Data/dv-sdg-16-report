@@ -7,7 +7,7 @@ interface BigNumberProps {
   suffix?: string;
   label: ReactNode;
   barPercent?: number;
-  color?: 'primary' | 'secondary' | 'tertiary' | 'foreground';
+  color?: string;
   className?: string;
 }
 
@@ -20,33 +20,26 @@ export default function BigNumber({
   className,
 }: BigNumberProps) {
   const percent = barPercent ?? (suffix === '%' && typeof value === 'number' ? value : undefined);
+  const resolvedColor = `var(--${color})`;
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
       {percent !== undefined ? (
         <div className='h-[0.2rem] w-full overflow-hidden bg-stroke-sm'>
           <div
-            className={cn(
-              'h-full',
-              color === 'primary' && 'bg-primary',
-              color === 'secondary' && 'bg-secondary',
-              color === 'tertiary' && 'bg-tertiary',
-              color === 'foreground' && 'bg-foreground',
-            )}
-            style={{ width: `${Math.min(100, Math.max(0, percent))}%` }}
+            className='h-full'
+            style={{
+              width: `${Math.min(100, Math.max(0, percent))}%`,
+              backgroundColor: resolvedColor,
+            }}
           />
         </div>
       ) : null}
       <H2
         weight='medium'
         marginBottom='none'
-        className={cn(
-          'pt-12 font-heading leading-none',
-          color === 'primary' && 'text-primary',
-          color === 'secondary' && 'text-secondary',
-          color === 'tertiary' && 'text-tertiary',
-          color === 'foreground' && 'text-foreground',
-        )}
+        className='pt-12 font-heading leading-none'
+        style={{ color: resolvedColor }}
       >
         {value}
         {suffix ? <span className='ml-0.5 text-2xl md:text-3xl'>{suffix}</span> : null}
