@@ -3,10 +3,18 @@ import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
+import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
+import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
 import { Spinner } from '@undp/design-system-react/Spinner';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@undp/design-system-react/Tooltip';
 import { P } from '@undp/design-system-react/Typography';
+import { Info } from 'lucide-react';
 import { useMemo } from 'react';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
@@ -71,11 +79,42 @@ export default function NonLethalViolenceByTypeSexStripChart() {
         </P>
       </div>
 
-      <ColorLegend
-        colors={SEXES.map((s) => s.color)}
-        colorDomain={SEXES.map((s) => s.label)}
-        showNAColor={false}
-      />
+      <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
+        <ColorLegend
+          colors={SEXES.map((s) => s.color)}
+          colorDomain={SEXES.map((s) => s.label)}
+          showNAColor={false}
+          className='pb-0'
+        />
+        <div className='flex items-center gap-1.5'>
+          <span
+            aria-hidden='true'
+            className='h-3 w-0.5 shrink-0 rounded-full'
+            style={{ backgroundColor: 'black' }}
+          />
+          <P marginBottom='none' size='sm'>
+            Median
+          </P>
+          <TooltipProvider delayDuration={100} skipDelayDuration={0}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant='icon'
+                  type='button'
+                  className='p-0 text-content-secondary'
+                  aria-label='What does the median line show?'
+                >
+                  <Info size={14} />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent className='max-w-xs text-left'>
+                The line marks the median prevalence across countries — the middle value, with half
+                of observations above and half below it.
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      </div>
 
       <div className='flex flex-col'>
         {VIOLENCE_TYPES.map((type, typeIndex) => (
@@ -92,6 +131,31 @@ export default function NonLethalViolenceByTypeSexStripChart() {
               const rows = data.filter(
                 (d) => d.sex === sex.key && d.variable.includes(`${type.key} violence`),
               );
+              const bottomMargin = isLastRowOverall ? 10 : 4;
+              const median = getMedian(rows.map((d) => d.count));
+              const medianPercent =
+                maxValue && Number.isFinite(median)
+                  ? `${Math.min(Math.max(median / maxValue, 0), 1) * 100}%`
+                  : undefined;
+              const customLayers = medianPercent
+                ? [
+                    {
+                      position: 'before' as const,
+                      layer: (
+                        <line
+                          key='median-line'
+                          x1={medianPercent}
+                          x2={medianPercent}
+                          y1={0}
+                          y2={40}
+                          stroke='black'
+                          strokeWidth={1.5}
+                        />
+                      ),
+                    },
+                  ]
+                : [];
+
               return (
                 <div
                   key={sex.key}
@@ -100,54 +164,59 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                   <P marginBottom='none' size='sm' className='text-content-secondary'>
                     {sex.label}
                   </P>
-                  <StripChart
-                    data={rows.map((d) => ({
-                      label: d.country,
-                      position: d.count,
-                      data: d,
-                    }))}
-                    orientation='horizontal'
-                    stripType='dot'
-                    colors={[sex.color]}
-                    radius={5}
-                    dotOpacity={0.55}
-                    minValue={0}
-                    maxValue={maxValue}
-                    noOfTicks={6}
-                    height={40}
-                    leftMargin={4}
-                    rightMargin={4}
-                    topMargin={4}
-                    styles={{
-                      xAxis: { labels: { transform: 'translateY(6px)' } },
-                      tooltip: { padding: 0 },
-                    }}
-                    bottomMargin={isLastRowOverall ? 10 : 4}
-                    numberDisplayOptions={{ suffix: '%' }}
-                    backgroundColor={false}
-                    padding='0'
-                    classNames={isLastRowOverall ? undefined : { xAxis: { labels: 'hidden' } }}
-                    tooltip={(d) => (
-                      <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-                        <div className='flex gap-1'>
-                          <P
-                            size='sm'
-                            marginBottom='none'
-                            className='mr-1 border-content-reverse border-r pr-2'
-                          >
-                            {d.label}
-                          </P>
-                          <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
-                            <span className='font-bold' style={{ color: sex.color }}>
-                              {numberFormattingFunction(d.position)}
-                            </span>
-                            <span className='text-content-secondary text-xs'>({d.data.year})</span>
-                          </P>
+                  <div>
+                    <StripChart
+                      data={rows.map((d) => ({
+                        label: d.country,
+                        position: d.count,
+                        data: d,
+                      }))}
+                      orientation='horizontal'
+                      stripType='dot'
+                      colors={[sex.color]}
+                      radius={5}
+                      dotOpacity={0.55}
+                      minValue={0}
+                      maxValue={maxValue}
+                      noOfTicks={6}
+                      height={40}
+                      leftMargin={4}
+                      rightMargin={4}
+                      topMargin={4}
+                      styles={{
+                        xAxis: { labels: { transform: 'translateY(6px)' } },
+                        tooltip: { padding: 0 },
+                      }}
+                      bottomMargin={bottomMargin}
+                      numberDisplayOptions={{ suffix: '%' }}
+                      backgroundColor={false}
+                      padding='0'
+                      classNames={isLastRowOverall ? undefined : { xAxis: { labels: 'hidden' } }}
+                      customLayers={customLayers}
+                      tooltip={(d) => (
+                        <div className='flex flex-col gap-1 bg-white px-2 py-1'>
+                          <div className='flex gap-1'>
+                            <P
+                              size='sm'
+                              marginBottom='none'
+                              className='mr-1 border-content-reverse border-r pr-2'
+                            >
+                              {d.label}
+                            </P>
+                            <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
+                              <span className='font-bold' style={{ color: sex.color }}>
+                                {numberFormattingFunction(d.position)}
+                              </span>
+                              <span className='text-content-secondary text-xs'>
+                                ({d.data.year})
+                              </span>
+                            </P>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    ariaLabel={`Strip chart showing ${type.label.toLowerCase()} prevalence among ${sex.label.toLowerCase()} respondents, by country.`}
-                  />
+                      )}
+                      ariaLabel={`Strip chart showing ${type.label.toLowerCase()} prevalence among ${sex.label.toLowerCase()} respondents, by country. The median is ${numberFormattingFunction(median)}%.`}
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -163,16 +232,10 @@ export default function NonLethalViolenceByTypeSexStripChart() {
         </P>
         <ChartNote
           content={
-            <div className='flex flex-col gap-2'>
-              <P size='sm' marginBottom='none'>
-                18 countries (sexual violence men and women), 12 countries (psychological violence
-                men and women). Each dot represents a country.
-              </P>
-              <P size='sm' marginBottom='none'>
-                The horizontal black bars show the median prevalence. The median represents the
-                middle value, with half of observations above and half below it.
-              </P>
-            </div>
+            <P size='sm' marginBottom='none'>
+              18 countries (sexual violence men and women), 12 countries (psychological violence men
+              and women). Each dot represents a country.
+            </P>
           }
         />
       </div>
