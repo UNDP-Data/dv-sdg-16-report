@@ -241,16 +241,18 @@ export function Peace() {
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
-              <P marginBottom='none' size='lg'>
-                Patterns of victimization differ markedly between women and men. Across 18 countries
+              <Highlight
+                content='Patterns of victimization differ markedly between women and men. Across 18 countries
                 with available data, women were consistently more likely than men to experience
-                sexual violence. The median prevalence of sexual violence among women was 2.9 per
-                cent, compared with 0.4 per cent among men. By contrast, men experienced slightly
-                higher levels of physical violence, with a median prevalence of 4.2 per cent
-                compared with 3.2 per cent among women in the 51 countries with data globally. Data
-                on psychological violence remain too limited for global analysis. Available
-                evidence, however, suggests relatively similar prevalence levels among women and
-                men.
+                sexual violence.'
+              />
+              <P marginBottom='none' size='lg'>
+                The median prevalence of sexual violence among women was 2.9 per cent, compared with
+                0.4 per cent among men. By contrast, men experienced slightly higher levels of
+                physical violence, with a median prevalence of 4.2 per cent compared with 3.2 per
+                cent among women in the 51 countries with data globally. Data on psychological
+                violence remain too limited for global analysis. Available evidence, however,
+                suggests relatively similar prevalence levels among women and men.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -405,11 +407,7 @@ export function Peace() {
                 color='primary'
                 content='Women consistently indicate feeling less safe than men'
               />
-              <P
-                marginBottom='none'
-                size='lg'
-                className={isGenderLensActive ? 'gender-lens' : undefined}
-              >
+              <P marginBottom='none' size='lg'>
                 Across{' '}
                 <InfoTooltip
                   trigger='74 countries with sex-disaggregated data'
