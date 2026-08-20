@@ -9,8 +9,6 @@ export default function VoteSharesByInstitutionDumbbellChart() {
     { columnId: 'institution', chartConfigId: 'label' },
     { columnId: ['voteShare', 'memberShare'], chartConfigId: 'x' },
   ]);
-  // eslint-disable-next-line no-console
-  console.log('DEBUG chartData', chartData);
   return (
     <DumbbellChart
       data={chartData}
@@ -21,11 +19,47 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       maxValue={100}
       showTicks={false}
       connectorStrokeWidth={1}
-      leftMargin={180}
+      leftMargin={130}
       relativeHeight={0.85}
       numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
+      styles={{
+        tooltip: {
+          padding: 0,
+        },
+      }}
+      tooltip={(d) => {
+        const [voteShare, memberShare] = d.x as (number | null)[];
+        const rows = [
+          { label: 'Vote or seat share', value: voteShare, color: 'var(--secondary)' },
+          { label: 'Member share', value: memberShare, color: 'var(--tertiary)' },
+        ];
+        return (
+          <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+            <P size='sm' weight='semibold' marginBottom='none'>
+              {(d.data as { fullName?: string })?.fullName ?? d.label}
+            </P>
+            {rows.map((row) => (
+              <P
+                key={row.label}
+                size='sm'
+                marginBottom='none'
+                className='flex items-center justify-between gap-4'
+              >
+                <span className='flex items-center gap-1.5'>
+                  <span
+                    className='h-2.5 w-2.5 rounded-full'
+                    style={{ backgroundColor: row.color }}
+                  />
+                  {row.label}
+                </span>
+                <span>{row.value !== null ? `${row.value}%` : 'N/A'}</span>
+              </P>
+            ))}
+          </div>
+        );
+      }}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Vote shares of developing countries in some of the main international financial and
