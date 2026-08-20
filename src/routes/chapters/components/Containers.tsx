@@ -1,14 +1,23 @@
 import { cn } from '@undp/design-system-react/cn';
 import React from 'react';
 
+const GRAPH_CONTAINER_MAX_WIDTH = {
+  base: 'max-w-2xl md:max-w-176 lg:max-w-180',
+  lg: 'max-w-2xl md:max-w-240 lg:max-w-320',
+} as const;
+
 export const GraphContainer = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { isGenderLensActive?: boolean }
->(({ className, isGenderLensActive = false, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & {
+    isGenderLensActive?: boolean;
+    size?: keyof typeof GRAPH_CONTAINER_MAX_WIDTH;
+  }
+>(({ className, isGenderLensActive = false, size = 'base', ...props }, ref) => {
   return (
     <div
       className={cn(
-        'mx-auto my-4 w-full max-w-2xl md:max-w-176 lg:max-w-180',
+        'mx-auto my-4 w-full',
+        GRAPH_CONTAINER_MAX_WIDTH[size],
         isGenderLensActive && 'gender-lens',
         className,
       )}
