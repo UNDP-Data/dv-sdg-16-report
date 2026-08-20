@@ -128,13 +128,13 @@ const SLIDES = [
     slideContent: (
       <>
         Northern Africa and Western Asia accounted for{' '}
-        <span className='font-bold text-tertiary'>65% of all documented civilian deaths</span>,
+        <span className='font-bold text-[var(--teal)]'>65% of all documented civilian deaths</span>,
         while Sub-Saharan Africa accounted for a{' '}
-        <span className='font-bold text-tertiary'>further 24%</span> — together, almost 9 in 10
+        <span className='font-bold text-[var(--teal)]'>further 24%</span> — together, almost 9 in 10
         documented civilian deaths.
       </>
     ),
-    color: 'tertiary',
+    color: 'teal',
   },
 ];
 
