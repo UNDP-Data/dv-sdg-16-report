@@ -1,0 +1,13 @@
+[
+  { "institution": "WTO", "voteShare": 72.9, "memberShare": 72.9 },
+  { "institution": "UN Security Council", "voteShare": 53.3, "memberShare": 53.3 },
+  { "institution": "UN General Assembly", "voteShare": 74.1, "memberShare": 74.1 },
+  { "institution": "UN ECOSOC", "voteShare": 69.8, "memberShare": 69.8 },
+  { "institution": "FSB", "voteShare": 43.9, "memberShare": 50.0 },
+  { "institution": "IaDB", "voteShare": 50.0, "memberShare": 58.3 },
+  { "institution": "AfDB", "voteShare": 61.8, "memberShare": 76.5 },
+  { "institution": "ADB", "voteShare": 46.3, "memberShare": 68.1 },
+  { "institution": "IBRD", "voteShare": 39.6, "memberShare": 75.1 },
+  { "institution": "IMF", "voteShare": 37.1, "memberShare": 74.3 },
+  { "institution": "IFC", "voteShare": 33.4, "memberShare": 75.3 }
+]

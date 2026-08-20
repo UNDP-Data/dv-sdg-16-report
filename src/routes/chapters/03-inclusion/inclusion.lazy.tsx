@@ -18,6 +18,7 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
+import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
@@ -472,8 +473,10 @@ export function Inclusion() {
                 Inclusive and effective global governance also depends on whether international
                 institutions reflect the voices and interests of all countries.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <VoteSharesByInstitutionDumbbellChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
           </>
         ),
