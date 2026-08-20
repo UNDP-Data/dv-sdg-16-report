@@ -17,6 +17,7 @@ import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
+import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
@@ -443,7 +444,11 @@ export function Inclusion() {
                 information requests were submitted across 76 countries, where less than half
                 received full disclosure.
               </P>
-              <PlaceholderBlock label='Big numbers' />
+            </TextContainer>
+            <GraphContainer>
+              <AccessToInformationDisclosureBigNumbers />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 These findings demonstrate that, while legal recognition of the right to information
                 has become widespread, ensuring that this right can be effectively exercised remains
