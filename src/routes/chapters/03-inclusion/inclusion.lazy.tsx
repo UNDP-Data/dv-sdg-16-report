@@ -18,6 +18,7 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
+import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
@@ -126,8 +127,10 @@ export function Inclusion() {
                 cohorts enter political office.
               </P>
             </TextContainer>
+            <GraphContainer>
+              <ParliamentaryLeadershipByCategoryBarChart />
+            </GraphContainer>
             <TextContainer>
-              <PlaceholderBlock label='Figure' />
               <Highlight color='tertiary' content='Progress remains uneven across regions' />
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>

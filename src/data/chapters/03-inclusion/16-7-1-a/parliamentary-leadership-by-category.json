@@ -1,0 +1,10 @@
+[
+  { "category": "Members", "youngMPs": 19.0, "womenMPs": 27.5 },
+  { "category": "Speakers", "youngMPs": 4.1, "womenMPs": 19.9 },
+  { "category": "Defence chairs", "youngMPs": 3.8, "womenMPs": 18.4 },
+  { "category": "Finance chairs", "youngMPs": 7.0, "womenMPs": 17.2 },
+  { "category": "Foreign Affairs chairs", "youngMPs": 6.7, "womenMPs": 24.8 },
+  { "category": "Human rights chairs", "youngMPs": 9.5, "womenMPs": 29.2 },
+  { "category": "Youth chairs", "youngMPs": 18.3, "womenMPs": 46.6 },
+  { "category": "Gender equality chairs", "youngMPs": 12.7, "womenMPs": 68.5 }
+]
