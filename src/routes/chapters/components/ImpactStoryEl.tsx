@@ -24,7 +24,7 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
     <>
       <Comp className='w-full'>
         <div
-          className='h-full w-full rounded-lg bg-bottom-right bg-cover'
+          className='h-full w-full bg-bottom-right bg-cover'
           style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
         >
           <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
