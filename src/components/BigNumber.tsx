@@ -7,7 +7,7 @@ interface BigNumberProps {
   suffix?: string;
   label: ReactNode;
   barPercent?: number;
-  color?: string;
+  color?: 'primary' | 'secondary' | 'tertiary' | 'foreground';
   className?: string;
 }
 
@@ -20,31 +20,38 @@ export default function BigNumber({
   className,
 }: BigNumberProps) {
   const percent = barPercent ?? (suffix === '%' && typeof value === 'number' ? value : undefined);
-  const resolvedColor = `var(--${color})`;
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
       {percent !== undefined ? (
         <div className='h-[0.2rem] w-full overflow-hidden bg-stroke-sm'>
           <div
-            className='h-full'
-            style={{
-              width: `${Math.min(100, Math.max(0, percent))}%`,
-              backgroundColor: resolvedColor,
-            }}
+            className={cn(
+              'h-full',
+              color === 'primary' && 'bg-primary',
+              color === 'secondary' && 'bg-secondary',
+              color === 'tertiary' && 'bg-tertiary',
+              color === 'foreground' && 'bg-foreground',
+            )}
+            style={{ width: `${Math.min(100, Math.max(0, percent))}%` }}
           />
         </div>
       ) : null}
       <H2
         weight='medium'
         marginBottom='none'
-        className='pt-12 font-heading leading-none'
-        style={{ color: resolvedColor }}
+        className={cn(
+          'pt-12 pb-4 font-heading leading-none',
+          color === 'primary' && 'text-primary',
+          color === 'secondary' && 'text-secondary',
+          color === 'tertiary' && 'text-tertiary',
+          color === 'foreground' && 'text-foreground',
+        )}
       >
         {value}
         {suffix ? <span className='ml-0.5 text-2xl md:text-3xl'>{suffix}</span> : null}
       </H2>
-      <P marginBottom='xs' size='xl' className={cn(suffix ? 'mt-0.5' : 'mt-5', 'text-foreground')}>
+      <P marginBottom='none' className='text-foreground'>
         {label}
       </P>
     </div>

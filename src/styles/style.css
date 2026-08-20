@@ -13,19 +13,12 @@ html {
 
 :root {
   --gender-lens-rgb: 123, 111, 232;
-  --background-soft: #f5f9fc;
-  --chart-highlight: #e6f0f7;
-  --chart-highlight-label: #36566f;
-  --text-muted: #60758a;
-  --light-blue: #c4daef;
-  --women: #7b6fe8;
-  --children: #e86d62;
-  --region: #05AA8E;
-  --male: #05AA8E;
-  --light-grey: #C5D9E4;
-  --deep-blue: #3563A1;
-  --teal: #5BB5B4;
+  --background-soft: #F5F9FC;
+  --chart-highlight: #E6F0F7;
+  --chart-highlight-label: #36566F;
+  --text-muted: #A60758A;
 }
+
 
 .gender-lens {
   transition: background-color 0.2s ease;

@@ -1,21 +1,15 @@
 import { SimpleBarGraph } from '@undp/data-viz/BarGraph';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { P } from '@undp/design-system-react/Typography';
 import { CHART_PADDING } from '@/constants';
 import violentDisciplineByRegion from '@/data/chapters/01-peace/16-2-1-16-2-3/violent-discipline-by-region.json';
 import ChartNote from '../../components/ChartNote';
 
 const WORLD_VIOLENT_DISCIPLINE_SHARE = 67;
-const WORLD_CHILDREN_MILLIONS = 1600;
 
 export default function ViolentDisciplineByRegionBarChart() {
   return (
     <SimpleBarGraph
-      data={violentDisciplineByRegion.map((d) => ({
-        label: d.region,
-        size: d.share,
-        data: { childrenMillions: d.childrenMillions },
-      }))}
+      data={violentDisciplineByRegion.map((d) => ({ label: d.region, size: d.share }))}
       orientation='horizontal'
       colors='var(--primary)'
       minValue={0}
@@ -26,48 +20,17 @@ export default function ViolentDisciplineByRegionBarChart() {
       numberDisplayOptions={{ suffix: '%' }}
       barPadding={0.4}
       height={500}
+      leftMargin={200}
       dimmedOpacity={1}
       padding={CHART_PADDING}
-      leftMargin={innerWidth < 720 ? 80 : 220}
-      truncateBy={innerWidth < 720 ? 8 : undefined}
       backgroundColor='var(--background-soft)'
       refValues={[
-        {
-          value: WORLD_VIOLENT_DISCIPLINE_SHARE,
-          text: `World ${WORLD_VIOLENT_DISCIPLINE_SHARE}% (${numberFormattingFunction(WORLD_CHILDREN_MILLIONS / 1000, undefined, 1)}B children)`,
-        },
+        { value: WORLD_VIOLENT_DISCIPLINE_SHARE, text: `World ${WORLD_VIOLENT_DISCIPLINE_SHARE}%` },
       ]}
-      styles={{
-        tooltip: {
-          padding: 0,
-        },
-      }}
-      tooltip={(d) => (
-        <div className='flex flex-col gap-1 bg-white px-3 py-2'>
-          <P size='sm' weight='semibold' marginBottom='none'>
-            {d.label}
-          </P>
-          <div className='flex items-center justify-between gap-4'>
-            <P size='sm' marginBottom='none' className='text-content-secondary'>
-              Share of children
-            </P>
-            <P size='sm' weight='bold' marginBottom='none' className='text-content-secondary'>
-              {numberFormattingFunction(d.size, undefined, 0, undefined, '%')}
-            </P>
-          </div>
-          <div className='flex items-center justify-between gap-4'>
-            <P size='sm' marginBottom='none' className='text-content-secondary'>
-              Children affected
-            </P>
-            <P size='sm' weight='bold' marginBottom='none' className='text-content-secondary'>
-              {numberFormattingFunction(d.data.childrenMillions, undefined, 0, undefined, 'M')}
-            </P>
-          </div>
-        </div>
-      )}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Percentage of children experiencing violent discipline in the past month, by region
+          Percentage (bar) and global share (pie) of children experiencing violent discipline in the
+          past month, by region
         </P>
       }
       graphDescription='2010–2024'

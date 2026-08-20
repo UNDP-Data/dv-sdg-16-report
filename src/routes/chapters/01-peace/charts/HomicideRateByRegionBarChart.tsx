@@ -14,13 +14,13 @@ export default function HomicideRateByRegionBarChart() {
       minValue={0}
       maxValue={20}
       showValues
+      highlightedDataPoints={['Latin America and the Caribbean', 'Sub-Saharan Africa']}
       valueColor='var(--content-primary)'
       showTicks={false}
       numberDisplayOptions={{ precision: 1 }}
       barPadding={0.4}
-      height={500}
-      truncateBy={innerWidth < 720 ? 10 : undefined}
-      leftMargin={innerWidth < 720 ? 100 : 220}
+      height={450}
+      leftMargin={200}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'

@@ -3,7 +3,6 @@ import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { cn } from '@undp/design-system-react/cn';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
@@ -28,8 +27,8 @@ const VIOLENCE_TYPES = [
 ] as const;
 
 const SEXES = [
-  { key: 'male', label: 'Men', color: Colors.genderColors.male },
-  { key: 'female', label: 'Women', color: Colors.genderColors.female },
+  { key: 'male', label: 'Male', color: Colors.genderColors.male },
+  { key: 'female', label: 'Female', color: Colors.genderColors.female },
 ] as const;
 
 function useNonLethalViolenceData() {
@@ -118,34 +117,13 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                     leftMargin={4}
                     rightMargin={4}
                     topMargin={4}
-                    styles={{
-                      xAxis: { labels: { transform: 'translateY(6px)' } },
-                      tooltip: { padding: 0 },
-                    }}
+                    styles={{ xAxis: { labels: { transform: 'translateY(6px)' } } }}
                     bottomMargin={isLastRowOverall ? 10 : 4}
                     numberDisplayOptions={{ suffix: '%' }}
                     backgroundColor={false}
                     padding='0'
                     classNames={isLastRowOverall ? undefined : { xAxis: { labels: 'hidden' } }}
-                    tooltip={(d) => (
-                      <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-                        <div className='flex gap-1'>
-                          <P
-                            size='sm'
-                            marginBottom='none'
-                            className='mr-1 border-content-reverse border-r pr-2'
-                          >
-                            {d.label}
-                          </P>
-                          <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
-                            <span className='font-bold' style={{ color: sex.color }}>
-                              {numberFormattingFunction(d.position)}
-                            </span>
-                            <span className='text-content-secondary text-xs'>({d.data.year})</span>
-                          </P>
-                        </div>
-                      </div>
-                    )}
+                    tooltip='{{label}} ({{data.year}}): {{position}}%'
                     ariaLabel={`Strip chart showing ${type.label.toLowerCase()} prevalence among ${sex.label.toLowerCase()} respondents, by country.`}
                   />
                 </div>
@@ -161,20 +139,7 @@ export default function NonLethalViolenceByTypeSexStripChart() {
           Operations of Criminal Justice Systems and data from other sources reviewed by Member
           States.
         </P>
-        <ChartNote
-          content={
-            <div className='flex flex-col gap-2'>
-              <P size='sm' marginBottom='none'>
-                18 countries (sexual violence men and women), 12 countries (psychological violence
-                men and women). Each dot represents a country.
-              </P>
-              <P size='sm' marginBottom='none'>
-                The horizontal black bars show the median prevalence. The median represents the
-                middle value, with half of observations above and half below it.
-              </P>
-            </div>
-          }
-        />
+        <ChartNote content='Data based on the latest available year of survey data between 2016 and 2024 for 51 countries (physical violence), 18 countries (sexual violence), 12 countries (psychological violence). Each dot represents a country. The horizontal black bars show the median prevalence, or the midpoint across countries: half of countries with available data have a higher prevalence and half have a lower prevalence.' />
       </div>
     </div>
   );

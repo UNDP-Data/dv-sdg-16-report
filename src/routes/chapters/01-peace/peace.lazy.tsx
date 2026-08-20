@@ -16,15 +16,14 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
-import FeelSafeWalkingAloneByPeriodDumbbellChart from './charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
+import HomicideGenderedPatternsBigNumbers from './charts/HomicideGenderedPatternsBigNumbers';
 import HomicideRateByRegionBarChart from './charts/HomicideRateByRegionBarChart';
 import HomicideRateBySexLineChart from './charts/HomicideRateBySexLineChart';
-import IntimatePartnerHomicideByRegionSexBarChart from './charts/IntimatePartnerHomicideByRegionSexBarChart';
 import NonLethalViolenceByTypeSexStripChart from './charts/NonLethalViolenceByTypeSexStripChart';
 import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildhoodUnitChart';
-import TraffickingByExploitationFormDonutChart from './charts/TraffickingByExploitationFormDonutChart';
-import TraffickingVictimsBySexAgeUnitChart from './charts/TraffickingVictimsBySexAgeUnitChart';
+import TraffickingByExploitationFormBigNumbers from './charts/TraffickingByExploitationFormBigNumbers';
+import TraffickingVictimsBySexAgeTreeMap from './charts/TraffickingVictimsBySexAgeTreeMap';
 import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegionBarChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -76,7 +75,7 @@ export function Peace() {
                 livelihoods.
               </P>
             </TextContainer>
-            <WaveDivider src='/imgs/dividers/peace-01.webp' align='right' />
+            <WaveDivider src='/imgs/dividers/peace-01.webp' />
           </>
         ),
       },
@@ -132,16 +131,16 @@ export function Peace() {
                 content='Nearly 60 per cent of all women killed in 2024 were victims of an intimate partner or family member'
               />
               <P marginBottom='none' size='lg'>
-                Although men accounted for an estimated 80 per cent of homicide victims in 2024,
+                While men are disproportionately affected by lethal violence in public settings,
                 women continue to face the greatest risk of lethal violence within their own homes.
                 The share of women victims of an intimate partner or family member was highest in
                 Africa, followed by Oceania, and lowest in the Americas.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
-              <IntimatePartnerHomicideByRegionSexBarChart />
+              <HomicideGenderedPatternsBigNumbers />
             </GraphContainer>
-            <WaveDivider src='/imgs/dividers/peace-02.webp' />
+            <WaveDivider src='/imgs/dividers/peace-02.webp' align='right' />
           </>
         ),
       },
@@ -160,7 +159,7 @@ export function Peace() {
                 New evidence shows that{' '}
                 <InfoTooltip
                   trigger='verified killings'
-                  content='The term “verified” refers to a reported case that contains a minimum set of relevant information on a person, which have been reviewed by mandated bodies, mechanisms, and institutions and provided them with reasonable grounds to believe that that person was a victim of human rights violations or abuses. The verified counts captured by this indicator should therefore be distinguished from true incidence of attacks, which remains unobserved and is likely higher than documented figures.'
+                  content='Underreporting, due to significant risk of retaliation and/or human capacity, remains a challenge for the documentation of attacks against human rights defenders. Verified counts, therefore, reflect institutional capacity, which can often signal a stronger civil society, independent media, and national human rights institutions, while low or absent data frequently indicate restricted civic space rather than an absence of violations. The numbers presented are, therefore, likely to underestimate the true scale of attacks.'
                   color='primary'
                 />{' '}
                 of human rights defenders, journalists, and trade unionists have increased globally
@@ -256,6 +255,19 @@ export function Peace() {
             <GraphContainer isGenderLensActive={isGenderLensActive}>
               <NonLethalViolenceByTypeSexStripChart />
             </GraphContainer>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                Since 2015, 95 countries have reported data for at least one form of non-lethal
+                violence, although country coverage remains uneven across regions and across
+                different forms of violence. Robbery and physical assault are available for the
+                largest number of countries, with 80 countries having reported data for at least one
+                year since 2015. However, sex-disaggregated data are available for only 51
+                countries. By contrast, only 18 countries reported data for psychological violence
+                for at least one year since 2015. Continued investment in standardized victimization
+                surveys is essential to improve the availability, comparability and quality of data
+                on non-lethal violence.
+              </P>
+            </TextContainer>
             <Spacer size='2xl' />
             <ImpactStoryEl id='peace-panama-victimization-surveys' />
             <Spacer size='6xl' />
@@ -345,11 +357,8 @@ export function Peace() {
                 continued to account for a significantly larger share of victims than men.
               </P>
             </TextContainer>
-            <GraphContainer
-              isGenderLensActive={isGenderLensActive}
-              id='TraffickingVictimsBySexAgeUnitChart'
-            >
-              <TraffickingVictimsBySexAgeUnitChart />
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
+              <TraffickingVictimsBySexAgeTreeMap />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
@@ -361,7 +370,7 @@ export function Peace() {
               </P>
             </TextContainer>
             <GraphContainer>
-              <TraffickingByExploitationFormDonutChart />
+              <TraffickingByExploitationFormBigNumbers />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
@@ -397,9 +406,6 @@ export function Peace() {
                 walking alone after dark.
               </P>
             </TextContainer>
-            <GraphContainer>
-              <FeelSafeWalkingAloneByPeriodDumbbellChart />
-            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='primary'
@@ -511,8 +517,7 @@ export function Peace() {
           their human toll continues to be staggering.
         </P>
       </TextContainer>
-      <WaveDivider src='/imgs/dividers/peace-02.webp' />
-      <Spacer size='2xl' />
+      <Spacer size='8xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section
