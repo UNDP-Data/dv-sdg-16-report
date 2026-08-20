@@ -51,7 +51,7 @@ export default function BigNumber({
         {value}
         {suffix ? <span className='ml-0.5 text-2xl md:text-3xl'>{suffix}</span> : null}
       </H2>
-      <P marginBottom='none' size='base' className='text-foreground'>
+      <P marginBottom='xs' size='xl' className={cn(suffix ? 'mt-0.5' : 'mt-5', 'text-foreground')}>
         {label}
       </P>
     </div>
