@@ -172,6 +172,7 @@ export default function ScrollyTellingViz() {
     }
     return () => resizeObserver.disconnect();
   }, []);
+
   const activeSlide = SLIDES[activeSlideIndex] ?? SLIDES[0];
 
   const arcDefinition = useMemo(() => {
@@ -195,6 +196,21 @@ export default function ScrollyTellingViz() {
 
   return (
     <div className='relative mx-auto flex w-screen max-w-7xl flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
+      <div
+        aria-hidden
+        className='-translate-x-1/2 pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen'
+      >
+        <div
+          className='sticky top-0 h-screen w-full bg-cover bg-right-top bg-no-repeat'
+          style={{
+            backgroundImage: "url('/imgs/scrolly-bg.webp')",
+            maskImage:
+              'linear-gradient(to bottom, transparent 0, black 25vh, black 75vh, transparent 100vh)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, transparent 0, black 25vh, black 75vh, transparent 100vh)',
+          }}
+        />
+      </div>
       <div
         className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
