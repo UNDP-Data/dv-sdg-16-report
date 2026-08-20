@@ -28,8 +28,8 @@ const VIOLENCE_TYPES = [
 ] as const;
 
 const SEXES = [
-  { key: 'male', label: 'Male', color: Colors.genderColors.male },
-  { key: 'female', label: 'Female', color: Colors.genderColors.female },
+  { key: 'male', label: 'Men', color: Colors.genderColors.male },
+  { key: 'female', label: 'Women', color: Colors.genderColors.female },
 ] as const;
 
 function useNonLethalViolenceData() {
@@ -165,8 +165,8 @@ export default function NonLethalViolenceByTypeSexStripChart() {
           content={
             <div className='flex flex-col gap-2'>
               <P size='sm' marginBottom='none'>
-                18 countries (sexual violence male and female), 12 countries (psychological violence
-                male and female). Each dot represents a country.
+                18 countries (sexual violence men and women), 12 countries (psychological violence
+                men and women). Each dot represents a country.
               </P>
               <P size='sm' marginBottom='none'>
                 The horizontal black bars show the median prevalence. The median represents the

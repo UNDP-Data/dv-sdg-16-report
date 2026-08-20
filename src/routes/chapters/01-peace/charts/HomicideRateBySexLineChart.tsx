@@ -24,8 +24,8 @@ export default function HomicideRateBySexLineChart() {
         '#000000',
         '#000000',
       ]}
-      labels={['Both sexes', 'Male', 'Female', 'Target', 'Target Male', 'Target Female']}
-      dashedLines={['Target', 'Target Male', 'Target Female']}
+      labels={['Both sexes', 'Men', 'Women', 'Target', 'Target Men', 'Target Women']}
+      dashedLines={['Target', 'Target Men', 'Target Women']}
       dashSettings={['1 3']}
       showColorScale={false}
       showDots={false}
@@ -76,12 +76,12 @@ export default function HomicideRateBySexLineChart() {
 
             <div className='flex items-center gap-1'>
               <div className='h-[3px] w-5' style={{ backgroundColor: '#02a38a' }} />
-              <p className='m-0 text-sm'>Male</p>
+              <p className='m-0 text-sm'>Men</p>
             </div>
 
             <div className='flex items-center gap-1'>
               <div className='h-[3px] w-5' style={{ backgroundColor: '#757af0' }} />
-              <p className='m-0 text-sm'>Female</p>
+              <p className='m-0 text-sm'>Women</p>
             </div>
 
             <div className='flex items-center gap-1'>
@@ -102,9 +102,9 @@ export default function HomicideRateBySexLineChart() {
         const [both, male, female, bothTarget, maleTarget, femaleTarget] = d.y as (number | null)[];
         const rows = [
           { label: 'Both sexes', value: both, target: bothTarget, color: 'var(--secondary)' },
-          { label: 'Male', value: male, target: maleTarget, color: Colors.genderColors.male },
+          { label: 'Men', value: male, target: maleTarget, color: Colors.genderColors.male },
           {
-            label: 'Female',
+            label: 'Women',
             value: female,
             target: femaleTarget,
             color: Colors.genderColors.female,
