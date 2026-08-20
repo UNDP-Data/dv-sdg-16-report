@@ -26,6 +26,42 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       numberDisplayOptions={{ suffix: '%' }}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
+      styles={{
+        tooltip: {
+          padding: 0,
+        },
+      }}
+      tooltip={(d) => {
+        const [period20162020, period20212025] = d.x as (number | null)[];
+        const rows = [
+          { label: '2016–2020', value: period20162020, color: Colors.gray },
+          { label: '2021–2025', value: period20212025, color: 'var(--primary)' },
+        ];
+        return (
+          <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+            <P size='sm' weight='semibold' marginBottom='none'>
+              {d.label}
+            </P>
+            {rows.map((row) => (
+              <P
+                key={row.label}
+                size='sm'
+                marginBottom='none'
+                className='flex items-center justify-between gap-4'
+              >
+                <span className='flex items-center gap-1.5'>
+                  <span
+                    className='h-2.5 w-2.5 rounded-full'
+                    style={{ backgroundColor: row.color }}
+                  />
+                  {row.label}
+                </span>
+                <span>{row.value !== null ? `${row.value}%` : 'N/A'}</span>
+              </P>
+            ))}
+          </div>
+        );
+      }}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Proportion of the population that feel safe walking alone at night around the area they

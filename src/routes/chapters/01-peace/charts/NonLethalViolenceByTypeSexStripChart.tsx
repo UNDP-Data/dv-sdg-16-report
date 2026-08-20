@@ -118,7 +118,10 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                     leftMargin={4}
                     rightMargin={4}
                     topMargin={4}
-                    styles={{ xAxis: { labels: { transform: 'translateY(6px)' } } }}
+                    styles={{
+                      xAxis: { labels: { transform: 'translateY(6px)' } },
+                      tooltip: { padding: 0 },
+                    }}
                     bottomMargin={isLastRowOverall ? 10 : 4}
                     numberDisplayOptions={{ suffix: '%' }}
                     backgroundColor={false}
