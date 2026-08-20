@@ -18,9 +18,9 @@ import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
 import FeelSafeWalkingAloneByPeriodDumbbellChart from './charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
-import HomicideGenderedPatternsBigNumbers from './charts/HomicideGenderedPatternsBigNumbers';
 import HomicideRateByRegionBarChart from './charts/HomicideRateByRegionBarChart';
 import HomicideRateBySexLineChart from './charts/HomicideRateBySexLineChart';
+import IntimatePartnerHomicideByRegionSexBarChart from './charts/IntimatePartnerHomicideByRegionSexBarChart';
 import NonLethalViolenceByTypeSexStripChart from './charts/NonLethalViolenceByTypeSexStripChart';
 import SexualViolenceInChildhoodUnitChart from './charts/SexualViolenceInChildhoodUnitChart';
 import TraffickingByExploitationFormDonutChart from './charts/TraffickingByExploitationFormDonutChart';
@@ -132,14 +132,14 @@ export function Peace() {
                 content='Nearly 60 per cent of all women killed in 2024 were victims of an intimate partner or family member'
               />
               <P marginBottom='none' size='lg'>
-                While men are disproportionately affected by lethal violence in public settings,
+                Although men accounted for an estimated 80 per cent of homicide victims in 2024,
                 women continue to face the greatest risk of lethal violence within their own homes.
                 The share of women victims of an intimate partner or family member was highest in
                 Africa, followed by Oceania, and lowest in the Americas.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
-              <HomicideGenderedPatternsBigNumbers />
+              <IntimatePartnerHomicideByRegionSexBarChart />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-02.webp' />
           </>
