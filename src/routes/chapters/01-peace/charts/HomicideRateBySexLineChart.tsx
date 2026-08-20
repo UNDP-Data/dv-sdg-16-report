@@ -92,6 +92,11 @@ export default function HomicideRateBySexLineChart() {
         </div>
       }
       minHeight={600}
+      styles={{
+        tooltip: {
+          padding: 0,
+        },
+      }}
       tooltip={(d) => {
         const year = d.date.getFullYear();
         const [both, male, female, bothTarget, maleTarget, femaleTarget] = d.y as (number | null)[];
@@ -106,7 +111,7 @@ export default function HomicideRateBySexLineChart() {
           },
         ];
         return (
-          <div className='flex min-w-[220px] flex-col gap-1 border-primary border-t-3 bg-white p-4'>
+          <div className='flex flex-col gap-1 bg-white px-3 py-2'>
             <P size='sm' weight='semibold' marginBottom='none'>
               {year}
             </P>
