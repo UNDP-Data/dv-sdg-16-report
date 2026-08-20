@@ -19,9 +19,9 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
       minValue={0}
       showTicks={false}
       leftMargin={innerWidth < 720 ? 100 : 220}
-      minHeight={600}
+      minHeight={500}
       truncateBy={innerWidth < 720 ? 12 : undefined}
-      relativeHeight={0.85}
+      relativeHeight={0.8}
       maxValue={100}
       numberDisplayOptions={{ suffix: '%' }}
       padding={CHART_PADDING}

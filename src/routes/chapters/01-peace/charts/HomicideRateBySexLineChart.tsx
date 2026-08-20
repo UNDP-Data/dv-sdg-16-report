@@ -58,7 +58,7 @@ export default function HomicideRateBySexLineChart() {
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'
       yAxisTitle='Rate per 100,000 population'
-      relativeHeight={0.85}
+      relativeHeight={0.75}
       numberDisplayOptions={{ precision: 1 }}
       graphTitle={
         <div className='flex flex-col items-start gap-2'>
@@ -91,7 +91,7 @@ export default function HomicideRateBySexLineChart() {
           </div>
         </div>
       }
-      minHeight={700}
+      minHeight={600}
       tooltip={(d) => {
         const year = d.date.getFullYear();
         const [both, male, female, bothTarget, maleTarget, femaleTarget] = d.y as (number | null)[];
