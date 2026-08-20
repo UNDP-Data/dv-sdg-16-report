@@ -8,7 +8,7 @@ import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
-import { ImpactStoriesContainer, TextContainer } from '../components/Containers';
+import { GraphContainer, ImpactStoriesContainer, TextContainer } from '../components/Containers';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
@@ -16,6 +16,7 @@ import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
+import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
@@ -420,7 +421,11 @@ export function Inclusion() {
                 increase in the right to information. The most recent adopters include Cuba and
                 Senegal.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer size='lg'>
+              <AccessToInformationChoroplethMap />
+            </GraphContainer>
+            <TextContainer>
               <Highlight
                 color='tertiary'
                 content='Legal guarantees, however, do not always translate into effective access in practice.'
