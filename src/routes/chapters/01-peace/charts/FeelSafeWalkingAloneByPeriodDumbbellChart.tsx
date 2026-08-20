@@ -19,9 +19,9 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       minValue={0}
       showTicks={false}
       leftMargin={innerWidth < 720 ? 100 : 220}
-      minHeight={550}
+      minHeight={500}
       truncateBy={innerWidth < 720 ? 12 : undefined}
-      relativeHeight={0.85}
+      relativeHeight={0.8}
       maxValue={100}
       numberDisplayOptions={{ suffix: '%' }}
       padding={CHART_PADDING}
@@ -43,13 +43,13 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
           content={
             <div className='flex flex-col gap-2'>
               <p>
-                Regional aggregates refer to 3-year averages weighted by countries’ population
-                size. Most surveys include the qualifications “after dark” or “at night” in the
-                question wording.
+                Regional aggregates refer to 3-year averages weighted by countries’ population size.
+                Most surveys include the qualifications “after dark” or “at night” in the question
+                wording.
               </p>
               <p>
-                Data coverage: Averages for Oceania were removed, as only data for one country
-                were available.
+                Data coverage: Averages for Oceania were removed, as only data for one country were
+                available.
               </p>
             </div>
           }
