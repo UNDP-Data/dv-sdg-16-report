@@ -98,7 +98,7 @@ if (rootElement) {
           foregroundSoft: '#142338',
           content: {
             reverse: '#DCE6F0',
-            secondary: '#99B0BD',
+            secondary: '#61778b',
             quaternary: '#A0B1C1',
           },
         }}

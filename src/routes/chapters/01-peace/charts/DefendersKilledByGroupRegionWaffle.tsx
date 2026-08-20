@@ -29,6 +29,7 @@ export default function DefendersKilledByGroupRegionWaffle() {
         </P>
         <RadioGroup
           value={selectedGroup}
+          className='pb-3'
           onValueChange={(value) => setSelectedGroup(value as GroupKey)}
           color='primary'
         >
@@ -43,7 +44,7 @@ export default function DefendersKilledByGroupRegionWaffle() {
           const share = d.values[selectedGroup];
           return (
             <div key={d.region} className='col-span-2 flex max-h-max flex-col gap-1 sm:col-span-1'>
-              <P marginBottom='none' size='sm' className='text-content-secondary'>
+              <P marginBottom='none' size='base' className='text-foreground'>
                 {d.region}
               </P>
               <P marginBottom='none' className='font-heading font-semibold text-2xl text-primary'>

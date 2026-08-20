@@ -1,10 +1,10 @@
 [
-  { "region": "Australia and New Zealand", "share": 41 },
-  { "region": "Europe and Northern America", "share": 41 },
-  { "region": "Latin America and the Caribbean", "share": 51 },
-  { "region": "Eastern and South-Eastern Asia", "share": 62 },
-  { "region": "Northern Africa and Western Asia", "share": 70 },
-  { "region": "Central and Southern Asia", "share": 73 },
-  { "region": "Sub-Saharan Africa", "share": 77 },
-  { "region": "Oceania", "share": 78 }
+  { "region": "Australia and New Zealand", "share": 41, "childrenMillions": 3 },
+  { "region": "Europe and Northern America", "share": 41, "childrenMillions": 91 },
+  { "region": "Latin America and the Caribbean", "share": 51, "childrenMillions": 92 },
+  { "region": "Eastern and South-Eastern Asia", "share": 62, "childrenMillions": 314 },
+  { "region": "Northern Africa and Western Asia", "share": 70, "childrenMillions": 142 },
+  { "region": "Central and Southern Asia", "share": 73, "childrenMillions": 505 },
+  { "region": "Sub-Saharan Africa", "share": 77, "childrenMillions": 456 },
+  { "region": "Oceania", "share": 78, "childrenMillions": 5 }
 ]

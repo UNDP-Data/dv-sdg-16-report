@@ -34,6 +34,7 @@ export default function SubNav({
   const { setIsGenderLensActive } = useActions();
   const isGenderLensActive = useIsGenderLensActive();
   const activeSection = useActiveSection();
+  const activeSubsection = subsections.find((subsection) => subsection.anchor === activeSection);
 
   return (
     <div
@@ -57,6 +58,12 @@ export default function SubNav({
             {chapterNumber}
           </P>
           {chapterTitle}
+          {activeSubsection ? (
+            <>
+              <span className='text-content-tertiary'>–</span>
+              <span className='text-content-tertiary'>{activeSubsection.title}</span>
+            </>
+          ) : null}
           <ChevronDown size={14} className='text-content-reverse' />
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -70,8 +77,8 @@ export default function SubNav({
                 <a
                   href={`#${subsection.anchor}`}
                   className={cn(
-                    'flex cursor-pointer items-baseline gap-3 border-transparent border-l-2 py-3 pl-2 text-sm hover:bg-background/30!',
-                    isActive ? 'text-content-reverse' : 'text-content-tertiary',
+                    'flex cursor-pointer items-baseline gap-3 border-transparent border-l-2 py-3 pl-2 text-sm transition-colors hover:bg-background/5!',
+                    isActive ? 'text-content-reverse' : 'text-content-reverse/80',
                     color === 'primary' && isActive && 'border-primary',
                     color === 'secondary' && isActive && 'border-secondary',
                     color === 'tertiary' && isActive && 'border-tertiary',

@@ -1,0 +1,39 @@
+[
+  { "region": "World", "period_2016_2020": 66, "period_2021_2025": 67, "countries": 84 },
+  {
+    "region": "Central and Southern Asia",
+    "period_2016_2020": 68,
+    "period_2021_2025": 67,
+    "countries": 7
+  },
+  {
+    "region": "Eastern and South-Eastern Asia",
+    "period_2016_2020": 70,
+    "period_2021_2025": 72,
+    "countries": 10
+  },
+  {
+    "region": "Europe and Northern America",
+    "period_2016_2020": 74,
+    "period_2021_2025": 73,
+    "countries": 25
+  },
+  {
+    "region": "Latin America and the Caribbean",
+    "period_2016_2020": 40,
+    "period_2021_2025": 44,
+    "countries": 12
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "period_2016_2020": 63,
+    "period_2021_2025": 63,
+    "countries": 20
+  },
+  {
+    "region": "Northern Africa and Western Asia",
+    "period_2016_2020": 76,
+    "period_2021_2025": 80,
+    "countries": 9
+  }
+]

@@ -1,0 +1,8 @@
+[
+  { "region": "Africa", "male": 8, "female": 74 },
+  { "region": "Americas", "male": 13, "female": 45 },
+  { "region": "Asia", "male": 14, "female": 55 },
+  { "region": "Europe", "male": 10, "female": 52 },
+  { "region": "Oceania", "male": 26, "female": 67 },
+  { "region": "World", "male": 11, "female": 60 }
+]
