@@ -198,7 +198,7 @@ export default function ScrollyTellingViz() {
     <div className='relative mx-auto flex w-screen max-w-7xl flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
       <div
         aria-hidden
-        className='-translate-x-1/2 pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen'
+        className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen -translate-x-1/2'
       >
         <div
           className='sticky top-0 h-screen w-full bg-cover bg-right-top bg-no-repeat'
@@ -354,7 +354,7 @@ export default function ScrollyTellingViz() {
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 w-full bg-white py-4 pl-6 text-xl md:text-3xl'
+              className='my-6 w-full py-4 pl-6 text-xl md:text-3xl'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >
