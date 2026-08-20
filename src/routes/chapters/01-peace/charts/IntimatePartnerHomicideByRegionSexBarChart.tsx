@@ -16,7 +16,7 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
         size: [d.male, d.female],
       }))}
       orientation='vertical'
-      colorDomain={['Male', 'Female']}
+      colorDomain={['Men', 'Women']}
       colors={[Colors.genderColors.male, Colors.genderColors.female]}
       minValue={0}
       maxValue={80}
@@ -34,12 +34,12 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
           ? [
               {
                 value: worldData.male,
-                text: `World (male) ${worldData.male}%`,
+                text: `World (men) ${worldData.male}%`,
                 color: Colors.genderColors.male,
               },
               {
                 value: worldData.female,
-                text: `World (female) ${worldData.female}%`,
+                text: `World (women) ${worldData.female}%`,
                 color: Colors.genderColors.female,
               },
             ]
@@ -55,14 +55,14 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
           <P size='sm' weight='semibold' marginBottom='none'>
             {d.label}
           </P>
-          {(['Male', 'Female'] as const).map((sex, i) => (
+          {(['Men', 'Women'] as const).map((sex, i) => (
             <div key={sex} className='flex items-center justify-between gap-4'>
               <P size='sm' marginBottom='none' className='flex items-center gap-1.5'>
                 <span
                   className='h-[3px] w-3'
                   style={{
                     backgroundColor:
-                      sex === 'Male' ? Colors.genderColors.male : Colors.genderColors.female,
+                      sex === 'Men' ? Colors.genderColors.male : Colors.genderColors.female,
                   }}
                 />
                 {sex}
