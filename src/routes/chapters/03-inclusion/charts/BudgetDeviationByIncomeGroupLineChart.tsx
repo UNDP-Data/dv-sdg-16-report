@@ -17,6 +17,7 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
       labels={['Low-Income', 'Lower-Middle Income', 'Upper-Middle Income', 'High-Income']}
       lineColors={['var(--secondary)', 'var(--quaternary)', 'var(--tertiary)', 'var(--primary)']}
       showColorScale
+      animate
       showDots={false}
       strokeWidth={2}
       curveType='linear'

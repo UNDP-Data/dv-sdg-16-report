@@ -173,6 +173,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
                 orientation='horizontal'
                 stripType='dot'
                 colors={[category.color]}
+                animate
                 radius={5}
                 dotOpacity={0.4}
                 minValue={0}
