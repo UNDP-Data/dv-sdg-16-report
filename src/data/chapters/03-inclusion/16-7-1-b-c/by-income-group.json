@@ -1,0 +1,7 @@
+[
+  { "group": "World", "publicService": 0.80, "judiciary": 0.88 },
+  { "group": "High income", "publicService": 1.07, "judiciary": 1.07 },
+  { "group": "Upper-middle income", "publicService": 0.88, "judiciary": 0.85 },
+  { "group": "Lower-middle income", "publicService": 0.55, "judiciary": 0.66 },
+  { "group": "Low income", "publicService": 0.36, "judiciary": 0.42 }
+]
