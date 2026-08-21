@@ -585,7 +585,8 @@ export function Inclusion() {
           education, health care, social protection, financial services and legal protection.
         </P>
       </TextContainer>
-      <Spacer size='8xl' />
+      <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
+      <Spacer size='2xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section
