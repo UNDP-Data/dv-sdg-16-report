@@ -70,8 +70,10 @@ export const generateUniqueRandomPointsArray = (
   threshold: number,
   regionList: { region: string; unregisteredBirths: number }[],
   pointRadius = 7.5,
+  circleOffsetY = 0,
 ) => {
   const points: CoordinatesProps[] = [];
+  const circleCenterY = height / 2 - circleOffsetY;
   let counter = 0;
   while (points.length < noOfPoints) {
     const newPoint = generateRandomPoint(areaRadius);
@@ -79,7 +81,7 @@ export const generateUniqueRandomPointsArray = (
       points.push({
         id: points.length,
         x: newPoint.x + width / 2,
-        y: newPoint.y + height / 2,
+        y: newPoint.y + circleCenterY,
         regionX:
           points.length < threshold
             ? findRegionCoordinate(regionList, points.length, height, pointRadius)[0]
@@ -87,7 +89,7 @@ export const generateUniqueRandomPointsArray = (
         regionY:
           points.length < threshold
             ? findRegionCoordinate(regionList, points.length, height, pointRadius)[1]
-            : newPoint.y + height / 2,
+            : newPoint.y + circleCenterY,
         registered: points.length >= threshold,
         color: points.length >= threshold ? 'var(--tertiary)' : 'var(--error)',
         distanceFromCenter: newPoint.distanceFromCenter,
