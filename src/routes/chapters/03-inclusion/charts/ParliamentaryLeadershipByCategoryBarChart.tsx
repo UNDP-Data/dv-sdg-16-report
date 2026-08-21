@@ -1,5 +1,5 @@
 import { SimpleBarGraph } from '@undp/data-viz/BarGraph';
-import { SegmentedControl } from '@undp/design-system-react/SegmentedControl';
+import { RadioGroup, RadioGroupItem } from '@undp/design-system-react/RadioGroup';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
@@ -30,26 +30,28 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
-      <div className='flex flex-wrap items-start justify-between gap-4'>
-        <div className='flex flex-col gap-1'>
-          <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Women and young MPs remain underrepresented in parliamentary leadership
-          </P>
-          <P marginBottom='none' size='sm' className='text-content-secondary'>
-            As of 1 January 2026
-          </P>
-        </div>
-        <SegmentedControl
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+          Women and young MPs remain underrepresented in parliamentary leadership
+        </P>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          As of 1 January 2026
+        </P>
+      </div>
+
+      <div>
+        <P size='sm' marginBottom='2xs'>
+          Select group
+        </P>
+        <RadioGroup
           value={view}
           onValueChange={(value) => setView(value as ViewKey)}
-          options={Object.entries(VIEWS).map(([value, config]) => ({
-            value,
-            label: config.label,
-          }))}
-          size='sm'
-          variant='light'
-          color='foreground'
-        />
+          color='tertiary'
+        >
+          {Object.entries(VIEWS).map(([value, config]) => (
+            <RadioGroupItem key={value} value={value} label={config.label} />
+          ))}
+        </RadioGroup>
       </div>
 
       <SimpleBarGraph
