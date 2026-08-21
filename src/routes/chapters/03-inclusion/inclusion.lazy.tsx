@@ -19,6 +19,7 @@ import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
+import DiscriminationRatesByGroupBarChart from './charts/DiscriminationRatesByGroupBarChart';
 import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
@@ -264,7 +265,9 @@ export function Inclusion() {
               </P>
             </TextContainer>
             <TextContainer>
-              <PlaceholderBlock label='Figure' />
+              <GraphContainer>
+                <DiscriminationRatesByGroupBarChart />
+              </GraphContainer>
               <P marginBottom='none' size='lg'>
                 The availability of data on discrimination has improved considerably in recent
                 years, enabling more detailed analysis across population groups. However, important
