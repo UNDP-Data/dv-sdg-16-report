@@ -62,7 +62,7 @@ export function Inclusion() {
         title: 'Representation in the legislature',
         indicatorCode: '16.7.1 (a)',
         heading:
-          'Women hold only one in four parliamentary seats and face persistent barriers accessing the highest level of political leadership',
+          'Women hold only one in four parliamentary seats, and continue to face persistent barriers in accessing the highest levels of political leadership',
         anchor: 'representation-in-the-legislature',
         isGenderLens: true,
         content: (
@@ -74,7 +74,7 @@ export function Inclusion() {
                 political decision making reflects the diversity{' '}
                 <InfoTooltip
                   trigger='of the populations it serves'
-                  content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect the diversity of persons with disabilities, indigenous peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
+                  content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect the diversity of persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
                   color='tertiary'
                 />
                 . Women and younger representatives, bring{' '}
@@ -154,23 +154,21 @@ export function Inclusion() {
         title: 'Representation in public service institutions and the judiciary',
         indicatorCode: '16.7.1 (b) & (c)',
         heading:
-          'Women remain underrepresented in leadership despite broader gains in representation',
+          'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
         anchor: 'representation-in-public-service-and-judiciary',
         isGenderLens: true,
         content: (
           <>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                Women's representation in public service and the judiciary has improved across many
-                countries, yet this progress has not consistently translated into equal presence in
-                decision-making roles. Globally, women remain underrepresented, with representation
-                ratios of 0.80 in public service and 0.88 in the judiciary,{' '}
-                <InfoTooltip
-                  trigger='well below parity'
-                  content="Gender parity rate equals 1. The gender parity is the ratio of women's representation relative to their share of the working age population (assumed to be 0.5)."
-                  color='tertiary'
-                />
-                .
+                Women's representation in the public service and the judiciary has improved across
+                many countries, yet this progress has not consistently translated into equal
+                representation. Globally, women remain underrepresented relative to their share of
+                the population in both the public service and the judiciary, with representation
+                ratios of 0.80 and 0.88, respectively, compared with parity at 1.00. Put simply, a
+                ratio of 0.80 means that women have achieved only 80 per cent of the representation
+                they would have if their share in public institutions matched their share of the
+                population.
               </P>
             </TextContainer>
             <TextContainer>
@@ -254,8 +252,11 @@ export function Inclusion() {
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                Transgender and gender-diverse individuals frequently report levels of
-                discrimination often exceeding 60 per cent, while people identifying as sexual
+                For the first time, newly collected data on sexual orientation and gender identity
+                provide additional insights into forms of exclusion that have historically been
+                difficult to measure. Across countries where such data are available, transgender
+                and gender-diverse individuals frequently report the highest levels of
+                discrimination, often exceeding 60 per cent, while people identifying as sexual
                 minorities report discrimination rates 2.2 times higher than the population average.
               </P>
             </TextContainer>
@@ -294,21 +295,20 @@ export function Inclusion() {
               </P>
               <P marginBottom='none' size='lg'>
                 Following the disruptions caused by the COVID-19 pandemic, governments have made
-                steady progress in improving budget reliability and expenditure forecasts. Global
-                average deviations between approved and actual government expenditure declined from
-                12.6 per cent in 2020 to 10.2 per cent in 2024.
+                steady progress in improving budget reliability and expenditure forecasts. The
+                global average absolute deviation between approved and actual government
+                expenditure, which captures both overspending and underspending relative to the
+                approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
               </P>
               <PlaceholderBlock label='Figure' />
-              <Highlight
-                color='tertiary'
-                content='Data suggests that stronger public financial management systems and institutional capacity are associated with more reliable budget execution.'
-              />
               <P marginBottom='none' size='lg'>
                 Despite overall progress, important differences persist across income groups.
                 Between 2021 and 2024, low-income countries recorded the largest budget deviations
                 between approved and actual expenditure, with median deviations of around 11.8 per
                 cent. By contrast, most high-income and upper-middle-income countries generally
-                maintained deviations below 7 per cent.
+                maintained deviations below 7 per cent. These differences suggest that stronger
+                public financial management systems and institutional capacity are associated with
+                more reliable budget execution.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
@@ -336,7 +336,9 @@ export function Inclusion() {
               </P>
               <P marginBottom='none' size='lg'>
                 Among countries with available data, satisfaction ranges from less than 10 per cent
-                in some countries to over 90 per cent in others.
+                in some countries to over 90 per cent in others. These wide gaps suggest that access
+                to quality public services remains highly uneven and that many people continue to
+                face barriers to services that are essential for well-being and inclusion.
               </P>
               <PlaceholderBlock label='Figure' />
               <P marginBottom='none' size='lg'>
@@ -524,11 +526,11 @@ export function Inclusion() {
         title='Inclusion'
         intro={
           <>
-            Inclusion is central to societal progress, as inclusive societies enable everyone to
-            participate meaningfully in public life. Under Goal 16, inclusion is measured through
-            indicators that assess whether institutions represent and serve all people equally and
-            effectively. Together, these indicators provide insight into the broader dimensions of
-            social cohesion and institutional legitimacy.
+            Inclusive societies are built on institutions that recognize, represent and serve all
+            people equally, and that enable everyone to participate meaningfully in public life.
+            Such institutions strengthen trust, social cohesion and the legitimacy of governance.
+            While inclusion is a broad concept that cannot be fully captured by a single set of
+            indicators, Goal 16 measures several of its most fundamental dimensions.
           </>
         }
         color='tertiary'
@@ -543,19 +545,9 @@ export function Inclusion() {
       <Spacer size='8xl' />
       <TextContainer>
         <P marginBottom='base' size='lg'>
-          Inclusion begins at birth. Without proof of legal identity, people may be excluded from
-          essential services that ensures meaningful participation and contributions to society.
-          Inclusion also requires that public institutions reflect the diversity of the populations
-          they serve. Equal participation is closely linked to equal treatment. Today, women remain
-          underrepresented in many leadership and decision-making positions, while many population
-          groups continue to face barriers to equal representation and opportunity.
-        </P>
-        <P marginBottom='none' size='lg'>
-          Finally, inclusion depends also on how people experience them. Governments must deliver
-          accessible, high-quality public services, manage public resources fairly and effectively
-          and provide meaningful opportunities for people to participate in public decision-making.
-          Building inclusive societies therefore requires institutions that not only serve people,
-          but also ensure that everyone has a place, a voice and an equal opportunity to contribute.
+          Inclusion begins at birth, when a child's birth is registered, providing a foundation for
+          legal identity. Without proof of legal identity, people may face barriers to accessing
+          education, health care, social protection, financial services and legal protection.
         </P>
       </TextContainer>
       <Spacer size='8xl' />

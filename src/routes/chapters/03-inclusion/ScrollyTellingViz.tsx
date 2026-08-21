@@ -55,8 +55,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Around <span className='font-bold text-surface-lg'>652 million</span> children under the age
-        of 5 are part of the global population.
+        There are an estimated{' '}
+        <span className='font-bold'>652.5 million children under the age of 5</span> across the
+        globe
       </>
     ),
     color: 'surface-lg',
@@ -76,7 +77,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Today, nearly <span className='font-bold'>8 in 10 children</span>, more than{' '}
+        Today, nearly <span className='font-bold text-tertiary'>eight in ten children</span> under
+        the age of five, more than{' '}
         <span className='font-bold text-tertiary'>500 million children</span>, have had their births
         registered. This represents significant global progress and an important achievement.
       </>
@@ -88,7 +90,7 @@ const SLIDES = [
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--error)',
+      unRegisteredCircleColor: 'var(--children)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: 'total unregistered children under the age of 5',
       xCoordinateSuffix: 'x',
@@ -99,17 +101,18 @@ const SLIDES = [
     slideContent: (
       <>
         Yet, progress has slowed over the past decade, and an estimated{' '}
-        <span className='font-bold text-error'>150 million children</span> remain unregistered.
+        <span className='font-bold text-[var(--children)]'>150 million children</span> remain
+        unregistered.
       </>
     ),
-    color: 'error',
+    color: 'children',
   },
   {
     vizContent: {
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--error)',
+      unRegisteredCircleColor: 'var(--children)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: '',
       xCoordinateSuffix: 'regionX',
@@ -118,7 +121,12 @@ const SLIDES = [
       regionLabelOpacity: 1,
     },
     slideContent: (
-      <>More than half of the world’s unregistered children live in Sub-Saharan Africa</>
+      <>
+        {' '}
+        <span className='font-bold text-[var(--children)]'>More than half</span> of the world’s
+        unregistered children live{' '}
+        <span className='font-bold text-[var(--children)]'>in Sub-Saharan Africa</span>
+      </>
     ),
     color: 'surface-lg',
   },
@@ -174,7 +182,7 @@ export default function ScrollyTellingViz() {
             regionX: 0,
             regionY: 0,
             registered: i >= NO_OF_UNREGISTERED_BIRTHS,
-            color: i >= NO_OF_UNREGISTERED_BIRTHS ? 'var(--tertiary)' : 'var(--error)',
+            color: i >= NO_OF_UNREGISTERED_BIRTHS ? 'var(--tertiary)' : 'var(--children)',
             distanceFromCenter: 0,
           })),
     [graphRadius, graphHeight, graphWidth],
