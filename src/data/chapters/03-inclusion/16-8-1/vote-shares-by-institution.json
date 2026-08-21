@@ -1,0 +1,68 @@
+[
+  {
+    "institution": "WTO",
+    "fullName": "World Trade Organization",
+    "voteShare": 72.9,
+    "memberShare": 72.9
+  },
+  {
+    "institution": "UN Security Council",
+    "fullName": "United Nations Security Council",
+    "voteShare": 53.3,
+    "memberShare": 53.3
+  },
+  {
+    "institution": "UN General Assembly",
+    "fullName": "United Nations General Assembly",
+    "voteShare": 74.1,
+    "memberShare": 74.1
+  },
+  {
+    "institution": "UN ECOSOC",
+    "fullName": "United Nations Economic and Social Council",
+    "voteShare": 69.8,
+    "memberShare": 69.8
+  },
+  {
+    "institution": "FSB",
+    "fullName": "Financial Stability Board",
+    "voteShare": 43.9,
+    "memberShare": 50.0
+  },
+  {
+    "institution": "IaDB",
+    "fullName": "Inter-American Development Bank",
+    "voteShare": 50.0,
+    "memberShare": 58.3
+  },
+  {
+    "institution": "AfDB",
+    "fullName": "African Development Bank",
+    "voteShare": 61.8,
+    "memberShare": 76.5
+  },
+  {
+    "institution": "ADB",
+    "fullName": "Asian Development Bank",
+    "voteShare": 46.3,
+    "memberShare": 68.1
+  },
+  {
+    "institution": "IBRD",
+    "fullName": "International Bank for Reconstruction and Development",
+    "voteShare": 39.6,
+    "memberShare": 75.1
+  },
+  {
+    "institution": "IMF",
+    "fullName": "International Monetary Fund",
+    "voteShare": 37.1,
+    "memberShare": 74.3
+  },
+  {
+    "institution": "IFC",
+    "fullName": "International Finance Corporation",
+    "voteShare": 33.4,
+    "memberShare": 75.3
+  }
+]
