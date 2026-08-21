@@ -19,6 +19,7 @@ import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
+import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
@@ -365,8 +366,10 @@ export function Inclusion() {
                 These persistent differences show that, while progress has been made, access to
                 quality public services remains highly unequal across countries.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <HealthcareSatisfactionByRegionBarChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
           </>
         ),
