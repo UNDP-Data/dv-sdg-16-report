@@ -3,7 +3,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
-import PlaceholderBlock from '@/components/PlaceholderBlock';
 import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -20,9 +19,11 @@ import AccessToInformationChoroplethMap from './charts/AccessToInformationChorop
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
 import DiscriminationRatesByGroupBarChart from './charts/DiscriminationRatesByGroupBarChart';
+import GapToParityBarChart from './charts/GapToParityBarChart';
 import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
+import RepresentationByInstitutionalLevelBarChart from './charts/RepresentationByInstitutionalLevelBarChart';
 import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
@@ -181,12 +182,30 @@ export function Inclusion() {
                 achieved or approached parity are concentrated primarily among high-income
                 countries, while many middle- and low-income countries continue to lag behind.
               </P>
+            </TextContainer>
+            <GraphContainer>
+              <GapToParityBarChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Recent advances in data collection provide new evidence on how representation is
                 distributed within institutions.
               </P>
+              <Highlight
+                color='tertiary'
+                className={isGenderLensActive ? 'gender-lens' : undefined}
+                content='Women are often well represented, and in some cases
+                overrepresented, in entry-level and administrative roles within the public service
+                Their representation, however, declines at higher level of decision making. '
+              />
+              <P marginBottom='none' size='lg'>
+                Similar patterns are observed across judicial systems, where women tend to be better
+                represented in lower courts, than in supreme or constitutional courts.
+              </P>
             </TextContainer>
-            <PlaceholderBlock label='Scrollytelling' />
+            <GraphContainer>
+              <RepresentationByInstitutionalLevelBarChart />
+            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 The evidence suggests that achieving inclusive governance requires more than
