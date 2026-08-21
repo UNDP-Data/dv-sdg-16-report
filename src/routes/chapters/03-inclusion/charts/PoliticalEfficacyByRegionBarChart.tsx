@@ -12,12 +12,13 @@ export default function PoliticalEfficacyByRegionBarChart() {
       data={politicalEfficacyByRegion.map((d) => ({ label: d.region, size: d.value }))}
       orientation='horizontal'
       colors='var(--tertiary)'
+      animate
       showValues
       valueColor='var(--content-primary)'
       showTicks={false}
       numberDisplayOptions={{ precision: 1, suffix: '%' }}
-      barPadding={0.4}
       height={450}
+      maxBarThickness={32}
       leftMargin={200}
       truncateBy={innerWidth < 720 ? 10 : undefined}
       dimmedOpacity={0.4}

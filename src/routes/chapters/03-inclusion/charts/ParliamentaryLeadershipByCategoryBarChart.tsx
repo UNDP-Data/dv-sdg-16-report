@@ -63,6 +63,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
         colors={color}
         minValue={0}
         maxValue={70}
+        animate
         showValues
         valueColor='var(--content-primary)'
         showTicks={false}
