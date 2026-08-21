@@ -21,6 +21,7 @@ import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformatio
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
+import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -345,7 +346,11 @@ export function Inclusion() {
                 to quality public services remains highly uneven and that many people continue to
                 face barriers to services that are essential for well-being and inclusion.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <SatisfactionWithPublicServicesStripChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Healthcare provides the most comprehensive basis for global trend analysis, with
                 trend data available for a subset of 95 countries.
