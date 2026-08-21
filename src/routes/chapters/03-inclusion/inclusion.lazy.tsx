@@ -18,6 +18,7 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
+import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
@@ -300,7 +301,11 @@ export function Inclusion() {
                 expenditure, which captures both overspending and underspending relative to the
                 approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <BudgetDeviationByIncomeGroupLineChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Despite overall progress, important differences persist across income groups.
                 Between 2021 and 2024, low-income countries recorded the largest budget deviations
