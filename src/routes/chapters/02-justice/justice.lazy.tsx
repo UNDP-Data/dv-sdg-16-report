@@ -7,7 +7,7 @@ import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import ChapterEndNav from '../components/ChapterFooter';
-import { TextContainer } from '../components/Containers';
+import { GraphContainer, TextContainer } from '../components/Containers';
 import ChapterHero from '../components/HeroBanner';
 import Highlight from '../components/Highlight';
 import InfoTooltip from '../components/InfoTooltip';
@@ -16,6 +16,7 @@ import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import ScrollyTellingViz from './ScrollyTellingViz';
+import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -386,7 +387,11 @@ export function Justice() {
                 However, there was no net increase between 2024 and 2025, indicating that progress
                 has stalled, as gains in some countries were offset by setbacks in others.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer size='lg'>
+              <NHRIComplianceChoroplethMap />
+            </GraphContainer>
+            <TextContainer>
               <Highlight
                 color='secondary'
                 content='Current progress is too slow to achieve universal coverage'
