@@ -15,6 +15,7 @@ import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -28,9 +29,7 @@ export function Justice() {
         anchor: 'access-to-criminal-justice',
         content: (
           <>
-            <TextContainer>
-              <PlaceholderBlock label='Scrollytelling' />
-            </TextContainer>
+            <ScrollyTellingViz />
             <WaveDivider src='/imgs/dividers/justice-01.webp' />
           </>
         ),
