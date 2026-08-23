@@ -30,7 +30,6 @@ export default function ViolentDisciplineByRegionBarChart() {
       padding={CHART_PADDING}
       leftMargin={innerWidth < 720 ? 80 : 220}
       truncateBy={innerWidth < 720 ? 8 : undefined}
-      backgroundColor='var(--background-soft)'
       refValues={[
         {
           value: WORLD_VIOLENT_DISCIPLINE_SHARE,

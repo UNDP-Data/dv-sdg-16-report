@@ -18,7 +18,7 @@ export const GraphContainer = React.forwardRef<
       className={cn(
         'mx-auto my-4 w-full',
         GRAPH_CONTAINER_MAX_WIDTH[size],
-        isGenderLensActive && 'gender-lens',
+        isGenderLensActive ? 'gender-lens' : 'bg-background-soft',
         className,
       )}
       ref={ref}
@@ -36,7 +36,7 @@ export const TextContainer = React.forwardRef<
       <div
         className={cn(
           'mx-4 flex flex-col gap-4 md:mx-8 lg:mx-16',
-          isGenderLensActive && 'gender-lens',
+          isGenderLensActive ? 'gender-lens' : '',
           className,
         )}
         ref={ref}

@@ -71,7 +71,7 @@ if (rootElement) {
             heading: 'Newsreader',
             body: 'Hanken Grotesk',
           },
-          typography: {
+          fontSize: {
             h4: { base: '2.5rem' },
             h5: { base: '1.75rem' },
           },
@@ -96,10 +96,21 @@ if (rootElement) {
             light: '#7b6fe8',
           },
           foregroundSoft: '#142338',
+          backgroundSoft: '#f5f9fc',
           content: {
             reverse: '#DCE6F0',
-            secondary: '#61778b',
+            secondary: '#60758a',
             quaternary: '#A0B1C1',
+          },
+          teal: {
+            200: '#AED1D0',
+            400: '#5BB5B4',
+            600: '#05AA8E',
+          },
+          violet: {
+            200: '#C4DAEF',
+            400: '#316DA8',
+            600: '#316DA8',
           },
         }}
       >

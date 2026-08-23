@@ -1,3 +1,4 @@
+import { Colors } from '@undp/data-viz/Colors';
 import { UnitChart } from '@undp/data-viz/UnitChart';
 import { H2, P } from '@undp/design-system-react/Typography';
 import { CHART_PADDING } from '@/constants';
@@ -15,8 +16,14 @@ const BOYS = valueFor('Boys');
 const FEMALE_TOTAL = WOMEN + GIRLS;
 const MALE_TOTAL = MEN + BOYS;
 
-const FEMALE_COLORS = ['var(--women)', 'color-mix(in srgb, var(--women) 45%, white)'];
-const MALE_COLORS = ['var(--male)', 'color-mix(in srgb, var(--male) 45%, white)'];
+const FEMALE_COLORS = [
+  Colors.genderColors.female,
+  `color-mix(in srgb, ${Colors.genderColors.female} 45%, white)`,
+];
+const MALE_COLORS = [
+  Colors.genderColors.male,
+  `color-mix(in srgb, ${Colors.genderColors.male} 45%, white)`,
+];
 
 export default function TraffickingVictimsBySexAgeStackedBar() {
   return (
@@ -47,7 +54,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             <H2
               weight='medium'
               marginBottom='sm'
-              className='m-0 pt-12 font-heading text-[var(--women)] leading-none'
+              className='m-0 pt-12 font-heading text-categorical-female leading-none'
             >
               {FEMALE_TOTAL}
               <span className='ml-0.5 text-2xl md:text-3xl'>%</span>
@@ -73,7 +80,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             <H2
               weight='medium'
               marginBottom='sm'
-              className='m-0 pt-12 font-heading text-[var(--male)] leading-none'
+              className='m-0 pt-12 font-heading text-categorical-male leading-none'
             >
               {MALE_TOTAL}
               <span className='ml-0.5 text-2xl md:text-3xl'>%</span>

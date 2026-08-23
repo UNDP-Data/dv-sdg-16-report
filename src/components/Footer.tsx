@@ -5,7 +5,7 @@ const footerLinkClass = 'text-sm text-content-reverse transition-colors hover:te
 export default function FooterEl() {
   return (
     <footer
-      className='background-soft border-background/30 border-t bg-cover bg-foreground-soft px-6 py-4 md:px-12'
+      className='border-background/30 border-t bg-cover bg-foreground-soft px-6 py-4 md:px-12'
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <div className='mx-auto flex flex-col items-start justify-between gap-8 md:flex-row md:items-center'>

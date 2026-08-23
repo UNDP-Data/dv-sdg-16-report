@@ -28,7 +28,6 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
       barPadding={0.3}
       height={500}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       refValues={
         worldData
           ? [
@@ -59,7 +58,7 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
             <div key={sex} className='flex items-center justify-between gap-4'>
               <P size='sm' marginBottom='none' className='flex items-center gap-1.5'>
                 <span
-                  className='h-[3px] w-3'
+                  className='h-0.75 w-3'
                   style={{
                     backgroundColor:
                       sex === 'Men' ? Colors.genderColors.male : Colors.genderColors.female,

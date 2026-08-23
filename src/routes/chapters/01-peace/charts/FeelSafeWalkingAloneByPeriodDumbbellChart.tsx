@@ -25,7 +25,6 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       maxValue={100}
       numberDisplayOptions={{ suffix: '%' }}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       styles={{
         tooltip: {
           padding: 0,

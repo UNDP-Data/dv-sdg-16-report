@@ -23,7 +23,6 @@ export default function HomicideRateByRegionBarChart() {
       leftMargin={innerWidth < 720 ? 100 : 220}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       refValues={[{ value: WORLD_HOMICIDE_RATE, text: `World ${WORLD_HOMICIDE_RATE}` }]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
