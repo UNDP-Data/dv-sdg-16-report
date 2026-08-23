@@ -2,7 +2,7 @@ import { Colors } from '@undp/data-viz/Colors';
 import { MultiLineChart } from '@undp/data-viz/MultiLineChart';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { P } from '@undp/design-system-react/Typography';
-import { CHART_PADDING } from '@/constants';
+import { CHART_HIGHLIGHT_AREA_BG, CHART_HIGHLIGHT_LABEL_COLOR, CHART_PADDING } from '@/constants';
 import homicideRateBySex from '@/data/chapters/01-peace/16-1-1/homicide-rate-by-sex.json';
 import ChartNote from '../../components/ChartNote';
 
@@ -34,7 +34,7 @@ export default function HomicideRateBySexLineChart() {
       minValue={0}
       maxValue={12}
       noOfXTicks={5}
-      highlightAreaSettings={[{ coordinates: [2025, 2030], color: 'var(--chart-highlight)' }]}
+      highlightAreaSettings={[{ coordinates: [2025, 2030], color: CHART_HIGHLIGHT_AREA_BG }]}
       annotations={[
         {
           text: 'Projected',
@@ -43,7 +43,7 @@ export default function HomicideRateBySexLineChart() {
           align: 'center',
           fontWeight: 'medium',
           showConnector: false,
-          color: 'var(--chart-highlight-label)',
+          color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
         {
           text: 'period',
@@ -52,11 +52,10 @@ export default function HomicideRateBySexLineChart() {
           align: 'center',
           fontWeight: 'medium',
           showConnector: false,
-          color: 'var(--chart-highlight-label)',
+          color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
       ]}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       yAxisTitle='Rate per 100,000 population'
       relativeHeight={0.75}
       numberDisplayOptions={{ precision: 1 }}
@@ -70,17 +69,17 @@ export default function HomicideRateBySexLineChart() {
           </P>
           <div className='flex flex-wrap gap-4'>
             <div className='flex items-center gap-1'>
-              <div className='h-[3px] w-5 bg-secondary' />
+              <div className='h-0.75 w-5 bg-secondary' />
               <p className='m-0 text-sm'>Both sexes</p>
             </div>
 
             <div className='flex items-center gap-1'>
-              <div className='h-[3px] w-5' style={{ backgroundColor: '#02a38a' }} />
+              <div className='h-0.75 w-5' style={{ backgroundColor: '#02a38a' }} />
               <p className='m-0 text-sm'>Men</p>
             </div>
 
             <div className='flex items-center gap-1'>
-              <div className='h-[3px] w-5' style={{ backgroundColor: '#757af0' }} />
+              <div className='h-0.75 w-5' style={{ backgroundColor: '#757af0' }} />
               <p className='m-0 text-sm'>Women</p>
             </div>
 
@@ -107,7 +106,7 @@ export default function HomicideRateBySexLineChart() {
             label: 'Women',
             value: female,
             target: femaleTarget,
-            color: Colors.genderColors.female,
+            className: Colors.genderColors.female,
           },
         ];
         return (
@@ -123,7 +122,7 @@ export default function HomicideRateBySexLineChart() {
                 className='flex items-center justify-between gap-4'
               >
                 <span className='flex items-center gap-1.5'>
-                  <span className='h-[3px] w-3' style={{ backgroundColor: row.color }} />
+                  <span className='h-0.75 w-3' style={{ backgroundColor: row.color }} />
                   {row.label}
                 </span>
                 <span className='flex items-baseline gap-1.5'>

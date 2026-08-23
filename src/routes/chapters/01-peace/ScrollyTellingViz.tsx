@@ -87,13 +87,13 @@ const SLIDES = [
     slideContent: (
       <>
         Children accounted for{' '}
-        <span className='py-3 font-bold text-[var(--children)] leading-none'>
+        <span className='py-3 font-bold text-categorical-child leading-none'>
           1 in 5 recorded civilian deaths (20%).
         </span>
         Among child victims, three boys were killed for every two girls.
       </>
     ),
-    color: 'children',
+    color: 'categorical-child',
   },
   {
     vizContent: {
@@ -108,12 +108,14 @@ const SLIDES = [
     slideContent: (
       <>
         Women made up{' '}
-        <span className='font-bold text-[var(--women)]'>18% of documented civilian deaths.</span>{' '}
+        <span className='font-bold text-categorical-female'>
+          18% of documented civilian deaths.
+        </span>{' '}
         Combined, women and children accounted for more than a third (38%) of all civilian
         fatalities.
       </>
     ),
-    color: 'women',
+    color: 'categorical-female',
   },
   {
     vizContent: {
@@ -128,13 +130,15 @@ const SLIDES = [
     slideContent: (
       <>
         Northern Africa and Western Asia accounted for{' '}
-        <span className='font-bold text-[var(--teal)]'>65% of all documented civilian deaths</span>,
-        while Sub-Saharan Africa accounted for a{' '}
-        <span className='font-bold text-[var(--teal)]'>further 24%</span> — together, almost 9 in 10
-        documented civilian deaths.
+        <span className='font-bold text-accent-teal-hover'>
+          65% of all documented civilian deaths
+        </span>
+        , while Sub-Saharan Africa accounted for a{' '}
+        <span className='font-bold text-accent-teal-hover'>further 24%</span> — together, almost 9
+        in 10 documented civilian deaths.
       </>
     ),
-    color: 'teal',
+    color: 'accent-teal',
   },
 ];
 
@@ -201,7 +205,7 @@ export default function ScrollyTellingViz() {
         className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen -translate-x-1/2'
       >
         <div
-          className='sticky top-0 h-screen w-full bg-cover bg-right-top bg-no-repeat'
+          className='sticky top-0 h-screen w-full bg-cover bg-top-right bg-no-repeat'
           style={{
             backgroundImage: "url('/imgs/scrolly-bg.webp')",
             maskImage:
@@ -319,7 +323,7 @@ export default function ScrollyTellingViz() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className='mb-2 fill-content-placeholder text-center text-[16px] text-foreground leading-sm md:text-[20px] lg:text-[24px]'
+                        className='mb-2 fill-content-placeholder text-center text-base text-foreground leading-sm md:text-xl lg:text-2xl'
                       >
                         {activeSlide.vizContent.time}
                       </motion.div>
@@ -349,12 +353,12 @@ export default function ScrollyTellingViz() {
           </motion.g>
         </motion.svg>
       </div>
-      <div className='w-full max-w-100 shrink-0'>
+      <div className='mx-auto w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 w-full py-4 pl-6 text-xl md:text-3xl'
+              className='my-6 w-full bg-background py-4 pl-6 text-xl md:text-3xl'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >

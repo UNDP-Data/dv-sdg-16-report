@@ -1,8 +1,7 @@
 @import "@undp/design-system-react/style.css";
+@import "@undp/design-system-react/theme.css";
 @import "@undp/data-viz/style.css";
 @import "tailwindcss";
-@config '../../tailwind.config.js';
-
 html {
   scroll-behavior: smooth;
 }
@@ -13,18 +12,6 @@ html {
 
 :root {
   --gender-lens-rgb: 123, 111, 232;
-  --background-soft: #f5f9fc;
-  --chart-highlight: #e6f0f7;
-  --chart-highlight-label: #36566f;
-  --text-muted: #60758a;
-  --light-blue: #c4daef;
-  --women: #7b6fe8;
-  --children: #e86d62;
-  --region: #05AA8E;
-  --male: #05AA8E;
-  --light-grey: #C5D9E4;
-  --deep-blue: #316DA8;
-  --teal: #5BB5B4;
 }
 
 .gender-lens {

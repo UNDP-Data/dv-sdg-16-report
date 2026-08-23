@@ -1,6 +1,6 @@
 import { Button } from '@undp/design-system-react/Button';
 import { cn } from '@undp/design-system-react/cn';
-import { H3, P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
 import Tag from '@/components/Tag';
@@ -30,13 +30,13 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
           <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
             <div className='flex max-w-xl flex-col gap-6'>
               <Tag color={color} content='Data to impact story' />
-              <H3
+              <H4
                 weight='semibold'
                 marginBottom='none'
-                className='font-heading text-[40px]! text-content-reverse'
+                className='font-heading text-content-reverse'
               >
                 {impactStory?.title}
-              </H3>
+              </H4>
               <P className='line-clamp-3 font-light text-content-reverse'>{impactStory?.story}</P>
               <Button
                 type='button'

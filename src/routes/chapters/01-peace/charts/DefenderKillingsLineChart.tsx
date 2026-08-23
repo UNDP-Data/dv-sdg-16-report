@@ -1,7 +1,7 @@
 import { SimpleLineChart } from '@undp/data-viz/SimpleLineChart';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { P } from '@undp/design-system-react/Typography';
-import { CHART_PADDING } from '@/constants';
+import { CHART_HIGHLIGHT_AREA_BG, CHART_HIGHLIGHT_LABEL_COLOR, CHART_PADDING } from '@/constants';
 import defendersKillings from '@/data/chapters/01-peace/16-10-1/defender-killings-by-year.json';
 
 export default function DefenderKillingsLineChart() {
@@ -15,7 +15,7 @@ export default function DefenderKillingsLineChart() {
       minValue={0}
       relativeHeight={0.7}
       maxValue={800}
-      highlightAreaSettings={[{ coordinates: [2024, 2025], color: 'var(--chart-highlight)' }]}
+      highlightAreaSettings={[{ coordinates: [2024, 2025], color: CHART_HIGHLIGHT_AREA_BG }]}
       annotations={[
         {
           text: 'Projected',
@@ -25,7 +25,7 @@ export default function DefenderKillingsLineChart() {
           align: 'center',
           fontWeight: 'medium',
           showConnector: false,
-          color: 'var(--chart-highlight-label)',
+          color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
         {
           text: 'period',
@@ -35,7 +35,7 @@ export default function DefenderKillingsLineChart() {
           align: 'center',
           fontWeight: 'medium',
           showConnector: false,
-          color: 'var(--chart-highlight-label)',
+          color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
       ]}
       minHeight={400}
@@ -81,7 +81,6 @@ export default function DefenderKillingsLineChart() {
       strokeWidth={2}
       lineColor='var(--primary)'
       showDots={false}
-      backgroundColor='var(--background-soft)'
       curveType='linear'
       noOfXTicks='showAvailableOnly'
     />

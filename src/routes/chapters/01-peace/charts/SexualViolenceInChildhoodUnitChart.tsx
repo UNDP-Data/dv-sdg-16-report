@@ -1,3 +1,4 @@
+import { Colors } from '@undp/data-viz/Colors';
 import { UnitChart } from '@undp/data-viz/UnitChart';
 import { P } from '@undp/design-system-react/Typography';
 import BigNumber from '@/components/BigNumber';
@@ -23,7 +24,7 @@ export default function SexualViolenceInChildhoodUnitChart() {
               { label: 'Affected', value: 1 },
               { label: 'Remaining', value: 7 },
             ]}
-            colors={['var(--women)', '#ffffff']}
+            colors={[Colors.genderColors.female, '#ffffff']}
             totalNoOfDots={8}
             gridSize={8}
             unitPadding={3}
@@ -42,7 +43,7 @@ export default function SexualViolenceInChildhoodUnitChart() {
               { label: 'Affected', value: 1 },
               { label: 'Remaining', value: 10 },
             ]}
-            colors={['var(--male)', '#ffffff']}
+            colors={[Colors.genderColors.male, '#ffffff']}
             totalNoOfDots={11}
             gridSize={11}
             unitPadding={3}

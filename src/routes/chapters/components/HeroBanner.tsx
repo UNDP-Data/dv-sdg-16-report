@@ -89,7 +89,7 @@ export default function HeroBanner({
               key={subsection.anchor}
               href={`#${subsection.anchor}`}
               className={cn(
-                'rounded-[4px] border p-4 backdrop-blur-lg transition-colors',
+                'rounded-sm border p-4 backdrop-blur-lg transition-colors',
                 isGenderLensActive && subsection.isGenderLens
                   ? 'border-quaternary/50 bg-quaternary/20 hover:bg-quaternary/30'
                   : 'border-background/10 bg-background/1 hover:bg-background/5',
