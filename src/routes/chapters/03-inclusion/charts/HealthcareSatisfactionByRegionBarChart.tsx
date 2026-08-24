@@ -5,9 +5,6 @@ import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
-const YEARS = ['2025', '2015'] as const;
-type Year = (typeof YEARS)[number];
-
 const REGIONS = [
   { label: 'Eastern Asia and South-Eastern Asia', y2025: 82.8, y2015: 75.2 },
   { label: 'Central Asia and Southern Asia', y2025: 63.3, y2015: 58.7 },
@@ -15,10 +12,10 @@ const REGIONS = [
   { label: 'Western Asia and Northern Africa', y2025: 57.1, y2015: 57.1 },
   { label: 'Latin America and the Caribbean', y2025: 52.8, y2015: 51.6 },
   { label: 'Sub-Saharan Africa', y2025: 46.4, y2015: 42.5 },
-] as const;
+];
 
 export default function HealthcareSatisfactionByRegionBarChart() {
-  const [year, setYear] = useState<Year>('2025');
+  const [year, setYear] = useState('2025');
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
@@ -36,8 +33,12 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         <P size='sm' marginBottom='none'>
           Select year
         </P>
-        <RadioGroup value={year} onValueChange={(value) => setYear(value as Year)} color='tertiary'>
-          {YEARS.map((y) => (
+        <RadioGroup
+          value={year}
+          onValueChange={(value) => setYear(value)}
+          color='tertiary'
+        >
+          {['2025', '2015'].map((y) => (
             <RadioGroupItem key={y} value={y} label={y} />
           ))}
         </RadioGroup>

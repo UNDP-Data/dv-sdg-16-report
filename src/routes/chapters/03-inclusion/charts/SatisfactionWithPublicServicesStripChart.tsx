@@ -33,7 +33,7 @@ const CATEGORIES = [
     key: 'primary',
     label: 'Primary education',
     file: 'primary.csv',
-    color: 'var(--deep-blue)',
+    color: 'var(--violet-600)',
   },
   {
     key: 'secondary',
@@ -41,10 +41,10 @@ const CATEGORIES = [
     file: 'secondary.csv',
     color: 'var(--quaternary)',
   },
-] as const;
+];
 
-export default function SatisfactionWithPublicServicesStripChart() {
-  const queries = useQueries({
+function useSatisfactionWithPublicServicesData() {
+  return useQueries({
     queries: CATEGORIES.map((category) => ({
       queryKey: ['satisfaction-public-services-16-6-2', category.file],
       queryFn: () =>
@@ -53,9 +53,13 @@ export default function SatisfactionWithPublicServicesStripChart() {
         >,
     })),
   });
+}
+
+export default function SatisfactionWithPublicServicesStripChart() {
+  const queries = useSatisfactionWithPublicServicesData();
 
   const isLoading = queries.some((q) => q.isLoading);
-  const isError = queries.some((q) => q.isError) || queries.some((q) => !q.data);
+  const isError = queries.some((q) => q.isError);
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError) {

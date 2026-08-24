@@ -28,7 +28,7 @@ export default function DiscriminationRatesByGroupBarChart() {
               },
             ]}
             orientation='horizontal'
-            colors={['var(--text-muted)', 'var(--children)']}
+            colors={['var(--content-quaternary)', 'var(--categorical-child)']}
             showColorScale={false}
             animate
             minValue={0}
@@ -57,7 +57,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--text-muted)' }}
+                      style={{ backgroundColor: 'var(--content-quaternary)' }}
                     />
                     Heterosexual
                   </span>
@@ -71,7 +71,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--children)' }}
+                      style={{ backgroundColor: 'var(--categorical-child)' }}
                     />
                     Sexual minority
                   </span>
@@ -97,7 +97,7 @@ export default function DiscriminationRatesByGroupBarChart() {
             ]}
             orientation='horizontal'
             colorDomain={['Reference group', 'Group reporting higher discrimination']}
-            colors={['var(--text-muted)', 'var(--children)']}
+            colors={['var(--content-quaternary)', 'var(--categorical-child)']}
             showColorScale={false}
             animate
             minValue={0}
@@ -126,7 +126,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--text-muted)' }}
+                      style={{ backgroundColor: 'var(--content-quaternary)' }}
                     />
                     Total population
                   </span>
@@ -140,7 +140,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--children)' }}
+                      style={{ backgroundColor: 'var(--categorical-child)' }}
                     />
                     Transgender
                   </span>

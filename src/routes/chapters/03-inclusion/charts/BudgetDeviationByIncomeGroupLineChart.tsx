@@ -63,7 +63,7 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
                 className='flex items-center justify-between gap-4'
               >
                 <span className='flex items-center gap-1.5'>
-                  <span className='h-[3px] w-3' style={{ backgroundColor: row.color }} />
+                  <span className='h-0.75 w-3' style={{ backgroundColor: row.color }} />
                   {row.label}
                 </span>
                 <span>{row.value?.toFixed(1)}%</span>

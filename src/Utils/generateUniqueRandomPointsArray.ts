@@ -70,10 +70,9 @@ export const generateUniqueRandomPointsArray = (
   threshold: number,
   regionList: { region: string; unregisteredBirths: number }[],
   pointRadius = 7.5,
-  circleOffsetY = 0,
 ) => {
   const points: CoordinatesProps[] = [];
-  const circleCenterY = height / 2 - circleOffsetY;
+  const circleCenterY = height / 2;
   let counter = 0;
   while (points.length < noOfPoints) {
     const newPoint = generateRandomPoint(areaRadius);

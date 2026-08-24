@@ -5,28 +5,27 @@ import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
 import parliamentaryLeadershipByCategory from '@/data/chapters/03-inclusion/16-7-1-a/parliamentary-leadership-by-category.json';
 
-const VIEWS = {
-  women: {
+const CATEGORY_SETTINGS = [
+  {
     label: 'Women',
-    valueKey: 'womenMPs',
+    id: 'womenMPs',
     color: 'var(--quaternary)',
     refValue: 50,
     refText: "50% of the world's population is female",
   },
-  youth: {
+  {
     label: 'Youth',
-    valueKey: 'youngMPs',
+    id: 'youngMPs',
     color: 'var(--primary)',
     refValue: 34,
     refText: "34% of the world's population is aged between 18 and 40",
   },
-} as const;
-
-type ViewKey = keyof typeof VIEWS;
+];
 
 export default function ParliamentaryLeadershipByCategoryBarChart() {
-  const [view, setView] = useState<ViewKey>('women');
-  const { valueKey, color, refValue, refText } = VIEWS[view];
+  const [selectedCategory, setSelectedCategory] = useState<'Women' | 'Youth'>('Women');
+  const { id, color, refValue, refText } =
+    CATEGORY_SETTINGS.find((d) => d.label === selectedCategory) || CATEGORY_SETTINGS[0];
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
@@ -44,12 +43,12 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
           Select group
         </P>
         <RadioGroup
-          value={view}
-          onValueChange={(value) => setView(value as ViewKey)}
+          value={selectedCategory}
+          onValueChange={(value: 'Women' | 'Youth') => setSelectedCategory(value)}
           color='tertiary'
         >
-          {Object.entries(VIEWS).map(([value, config]) => (
-            <RadioGroupItem key={value} value={value} label={config.label} />
+          {CATEGORY_SETTINGS.map((config) => (
+            <RadioGroupItem key={config.label} value={config.label} label={config.label} />
           ))}
         </RadioGroup>
       </div>
@@ -57,7 +56,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
       <SimpleBarGraph
         data={parliamentaryLeadershipByCategory.map((d) => ({
           label: d.category,
-          size: d[valueKey],
+          size: d[id as 'womenMPs' | 'youngMPs'],
         }))}
         orientation='vertical'
         colors={color}
@@ -75,7 +74,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
         padding='0'
         refValues={[{ value: refValue, text: refText }]}
         sources={[{ source: 'Inter-Parliamentary Union (IPU)' }]}
-        ariaLabel={`Vertical bar chart showing the share of ${view === 'youth' ? 'young MPs aged 40 or younger' : 'women MPs'} across parliamentary positions, with a reference line at ${refValue}% for the share of the world's population that is ${view === 'youth' ? 'aged between 18 and 40' : 'female'}. Representation is lowest among Speakers and highest among Gender equality chairs.`}
+        ariaLabel={`Vertical bar chart showing the share of ${selectedCategory === 'Youth' ? 'young MPs aged 40 or younger' : 'women MPs'} across parliamentary positions, with a reference line at ${refValue}% for the share of the world's population that is ${selectedCategory === 'Youth' ? 'aged between 18 and 40' : 'female'}. Representation is lowest among Speakers and highest among Gender equality chairs.`}
       />
     </div>
   );

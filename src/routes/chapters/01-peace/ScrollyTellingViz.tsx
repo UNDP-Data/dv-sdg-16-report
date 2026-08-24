@@ -358,7 +358,7 @@ export default function ScrollyTellingViz() {
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 w-full bg-background py-4 pl-6 text-xl md:text-3xl'
+              className='my-6 w-full bg-background/80 px-6 py-4 text-xl md:text-3xl lg:bg-transparent'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >

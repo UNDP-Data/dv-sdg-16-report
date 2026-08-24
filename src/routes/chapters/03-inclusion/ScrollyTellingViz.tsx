@@ -1,6 +1,6 @@
 import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { generateUniqueRandomPointsArray } from './generateUniqueRandomPointsArray';
+import { generateUniqueRandomPointsArray } from '../../../Utils/generateUniqueRandomPointsArray';
 
 const REGIONS = [
   {
@@ -37,12 +37,8 @@ const NO_OF_UNREGISTERED_BIRTHS = REGIONS.reduce(
 const NO_OF_REGISTERED_BIRTHS = NO_OF_BIRTHS - NO_OF_UNREGISTERED_BIRTHS;
 
 const DOT_RADIUS = 7.5;
-const CIRCLE_PADDING = 50;
-const CIRCLE_INSET = 24;
-const CIRCLE_VERTICAL_OFFSET = 60;
-// Vertical room the circle must leave below itself for the key number, the category line and the
-// footnote. Caps the radius on short viewports so the caption can't be pushed out of the SVG.
-const VERTICAL_CLEARANCE = 110;
+const CIRCLE_PADDING = 36;
+const CIRCLE_OFFSET_Y = 60;
 
 const SLIDES = [
   {
@@ -57,6 +53,7 @@ const SLIDES = [
       yCoordinateSuffix: 'y',
       keyTextOpacity: 1,
       regionLabelOpacity: 0,
+      circleOffsetY: CIRCLE_OFFSET_Y,
     },
     slideContent: (
       <>
@@ -79,6 +76,7 @@ const SLIDES = [
       yCoordinateSuffix: 'y',
       keyTextOpacity: 1,
       regionLabelOpacity: 0,
+      circleOffsetY: CIRCLE_OFFSET_Y,
     },
     slideContent: (
       <>
@@ -95,42 +93,44 @@ const SLIDES = [
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--children)',
+      unRegisteredCircleColor: 'var(--categorical-child)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: 'total unregistered children under the age of 5',
       xCoordinateSuffix: 'x',
       yCoordinateSuffix: 'y',
       keyTextOpacity: 1,
       regionLabelOpacity: 0,
+      circleOffsetY: CIRCLE_OFFSET_Y,
     },
     slideContent: (
       <>
         Yet, progress has slowed over the past decade, and an estimated{' '}
-        <span className='font-bold text-[var(--children)]'>150 million children</span> remain
+        <span className='font-bold text-categorical-child'>150 million children</span> remain
         unregistered.
       </>
     ),
-    color: 'children',
+    color: 'categorical-child',
   },
   {
     vizContent: {
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--children)',
+      unRegisteredCircleColor: 'var(--categorical-child)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: '',
       xCoordinateSuffix: 'regionX',
       yCoordinateSuffix: 'regionY',
       keyTextOpacity: 0,
       regionLabelOpacity: 1,
+      circleOffsetY: 0,
     },
     slideContent: (
       <>
         {' '}
-        <span className='font-bold text-[var(--children)]'>More than half</span> of the world’s
+        <span className='font-bold text-categorical-child'>More than half</span> of the world’s
         unregistered children live{' '}
-        <span className='font-bold text-[var(--children)]'>in Sub-Saharan Africa</span>
+        <span className='font-bold text-categorical-child'>in Sub-Saharan Africa</span>
       </>
     ),
     color: 'surface-lg',
@@ -155,7 +155,7 @@ export default function ScrollyTellingViz() {
       const width = entries[0].target.clientWidth || 620;
       const height = entries[0].target.clientHeight || 480;
       setGraphRadius(
-        Math.max(0, Math.min(width / 2 - CIRCLE_INSET, height / 2 - VERTICAL_CLEARANCE)),
+        Math.max(0, Math.min(width / 2 - CIRCLE_PADDING, height / 2 - CIRCLE_PADDING)),
       );
       setGraphWidth(width);
       setGraphHeight(height);
@@ -177,7 +177,6 @@ export default function ScrollyTellingViz() {
             NO_OF_UNREGISTERED_BIRTHS,
             REGIONS,
             DOT_RADIUS,
-            CIRCLE_VERTICAL_OFFSET,
           )
         : [...Array(NO_OF_BIRTHS).keys()].map((i) => ({
             id: i,
@@ -209,7 +208,7 @@ export default function ScrollyTellingViz() {
         className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen -translate-x-1/2'
       >
         <div
-          className='sticky top-0 h-screen w-full bg-cover bg-right-top bg-no-repeat'
+          className='sticky top-0 h-screen w-full bg-cover bg-top-right bg-no-repeat'
           style={{
             backgroundImage: "url('/imgs/scrolly-bg-03.webp')",
             maskImage:
@@ -219,128 +218,136 @@ export default function ScrollyTellingViz() {
           }}
         />
       </div>
-      <div className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-12 md:py-20'>
-        <div className='flex h-full w-full flex-col items-center justify-center' ref={graphDiv}>
-          <motion.svg
-            width={`${graphWidth}px`}
-            height={`${graphHeight}px`}
-            viewBox={`0 0 ${graphWidth} ${graphHeight}`}
-            className='mx-auto'
+      <div
+        className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-14'
+        ref={graphDiv}
+      >
+        <motion.svg
+          width={`${graphWidth}px`}
+          height={`${graphHeight}px`}
+          viewBox={`0 0 ${graphWidth} ${graphHeight}`}
+          className='mx-auto'
+        >
+          <g
+            id='individual-dots'
+            transform={`translate(0, ${0 - activeSlide.vizContent.circleOffsetY})`}
           >
-            <g id='individual-dots'>
-              {dotsList.map((dot) => (
-                <motion.circle
-                  key={dot.id}
-                  id={`dot-${dot.id}`}
-                  r={DOT_RADIUS}
-                  strokeWidth={1}
-                  fillOpacity={0.5}
-                  initial={{
-                    cx: 0,
-                    cy: 0,
-                    fill: 'var(--surface-lg)',
-                    stroke: 'var(--surface-lg)',
-                    opacity: 0,
-                  }}
-                  animate={{
-                    cx: dot[`${activeSlide.vizContent.xCoordinateSuffix as 'x' | 'regionX'}`],
-                    cy: dot[`${activeSlide.vizContent.yCoordinateSuffix as 'y' | 'regionY'}`],
-                    fill: dot.registered
-                      ? activeSlide.vizContent.registeredCircleColor
-                      : activeSlide.vizContent.unRegisteredCircleColor,
-                    stroke: dot.registered
-                      ? activeSlide.vizContent.registeredCircleColor
-                      : activeSlide.vizContent.unRegisteredCircleColor,
-                    opacity:
-                      activeSlideIndex === 3
-                        ? dot.registered
-                          ? 0
-                          : 1
-                        : dot.registered
-                          ? activeSlide.vizContent.registeredCircleOpacity
-                          : activeSlide.vizContent.unRegisteredCircleOpacity,
-                  }}
-                  transition={{
-                    duration: 0.5,
-                  }}
-                />
-              ))}
-            </g>
-            <motion.text
-              x={graphWidth / 2}
-              y={graphHeight / 2 + graphRadius + CIRCLE_PADDING - CIRCLE_VERTICAL_OFFSET}
-              dy={20}
-              initial={{ fill: 'var(--surface-lg)', opacity: 0 }}
-              animate={{
-                fill: `var(--${activeSlide.color})`,
-                opacity: activeSlide.vizContent.keyTextOpacity,
-              }}
-              exit={{ fill: 'var(--surface-lg)', opacity: 0 }}
-              transition={{
-                duration: 0.5,
-              }}
-              dominantBaseline='central'
-              textAnchor='middle'
-              // Shift left by half the leading "~" so the numeral itself reads as centred on the
-              // circle. Em-based so it tracks the responsive font size.
-              style={{ transform: 'translateX(-0.27em)' }}
-              className='font-bold font-heading text-[32px] leading-0 md:text-[56px]'
-            >
-              {rounded}
-            </motion.text>
-            <motion.g
-              animate={{
-                opacity: activeSlide.vizContent.regionLabelOpacity,
-              }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 0.5,
-              }}
-            >
-              {REGIONS.map((region, i) => (
-                <foreignObject
-                  key={region.region}
-                  x={0}
-                  y={(i * graphHeight) / REGIONS.length}
-                  width={graphWidth}
-                  height={40}
-                >
-                  <div className='font-foreground text-base md:text-lg lg:text-2xl'>
-                    {region.region}:{' '}
-                    <span className='font-bold text-error'>~{region.unregisteredBirths} mil</span>
-                  </div>
-                </foreignObject>
-              ))}
-            </motion.g>
-            <text
-              x={graphWidth / 2}
-              y={graphHeight / 2 + graphRadius + CIRCLE_PADDING - CIRCLE_VERTICAL_OFFSET}
-              dominantBaseline='central'
-              textAnchor='middle'
-              className='fill-foreground text-2xl leading-0 md:text-lg'
-              dy={62}
-            >
-              {activeSlide.vizContent.category}
-            </text>
-            <text
-              x={graphWidth / 2}
-              y={graphHeight}
-              dominantBaseline='central'
-              textAnchor='middle'
-              className='fill-content-placeholder text-sm italic leading-0'
-              dy={-20}
-            >
-              1 dot represents 1 million children
-            </text>
-          </motion.svg>
-        </div>
+            {dotsList.map((dot) => (
+              <motion.circle
+                key={dot.id}
+                id={`dot-${dot.id}`}
+                r={DOT_RADIUS}
+                strokeWidth={1}
+                fillOpacity={0.5}
+                initial={{
+                  cx: 0,
+                  cy: 0,
+                  fill: 'var(--surface-lg)',
+                  stroke: 'var(--surface-lg)',
+                  opacity: 0,
+                }}
+                animate={{
+                  cx: dot[`${activeSlide.vizContent.xCoordinateSuffix as 'x' | 'regionX'}`],
+                  cy: dot[`${activeSlide.vizContent.yCoordinateSuffix as 'y' | 'regionY'}`],
+                  fill: dot.registered
+                    ? activeSlide.vizContent.registeredCircleColor
+                    : activeSlide.vizContent.unRegisteredCircleColor,
+                  stroke: dot.registered
+                    ? activeSlide.vizContent.registeredCircleColor
+                    : activeSlide.vizContent.unRegisteredCircleColor,
+                  opacity:
+                    activeSlideIndex === 3
+                      ? dot.registered
+                        ? 0
+                        : 1
+                      : dot.registered
+                        ? activeSlide.vizContent.registeredCircleOpacity
+                        : activeSlide.vizContent.unRegisteredCircleOpacity,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+              />
+            ))}
+          </g>
+          <motion.text
+            x={graphWidth / 2}
+            y={
+              graphHeight / 2 + graphRadius + CIRCLE_PADDING - activeSlide.vizContent.circleOffsetY
+            }
+            dy={20}
+            initial={{ fill: 'var(--surface-lg)', opacity: 0 }}
+            animate={{
+              fill: `var(--${activeSlide.color})`,
+              opacity: activeSlide.vizContent.keyTextOpacity,
+            }}
+            exit={{ fill: 'var(--surface-lg)', opacity: 0 }}
+            transition={{
+              duration: 0.5,
+            }}
+            dominantBaseline='central'
+            textAnchor='middle'
+            // Shift left by half the leading "~" so the numeral itself reads as centred on the
+            // circle. Em-based so it tracks the responsive font size.
+            style={{ transform: 'translateX(-0.27em)' }}
+            className='font-bold font-heading text-[32px] leading-0 md:text-[56px]'
+          >
+            {rounded}
+          </motion.text>
+          <motion.g
+            animate={{
+              opacity: activeSlide.vizContent.regionLabelOpacity,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            {REGIONS.map((region, i) => (
+              <foreignObject
+                key={region.region}
+                x={0}
+                y={(i * graphHeight) / REGIONS.length}
+                width={graphWidth}
+                height={40}
+              >
+                <div className='font-foreground text-base md:text-lg lg:text-2xl'>
+                  {region.region}:{' '}
+                  <span className='font-bold text-error'>~{region.unregisteredBirths} mil</span>
+                </div>
+              </foreignObject>
+            ))}
+          </motion.g>
+          <text
+            x={graphWidth / 2}
+            y={
+              graphHeight / 2 + graphRadius + CIRCLE_PADDING - activeSlide.vizContent.circleOffsetY
+            }
+            dominantBaseline='central'
+            textAnchor='middle'
+            className='fill-foreground text-2xl leading-0 md:text-lg'
+            dy={62}
+          >
+            {activeSlide.vizContent.category}
+          </text>
+          <text
+            x={graphWidth / 2}
+            y={graphHeight}
+            dominantBaseline='central'
+            textAnchor='middle'
+            className='fill-content-placeholder text-sm italic leading-0'
+            dy={-20}
+          >
+            1 dot represents 1 million children
+          </text>
+        </motion.svg>
       </div>
-      <div className='w-full max-w-100 shrink-0'>
+      <div className='mx-auto w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
           <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
             <motion.div
-              className='my-6 w-full py-4 pl-6 text-xl md:text-3xl'
+              className='my-6 w-full bg-background/80 px-6 py-4 text-xl md:text-3xl lg:bg-transparent'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >

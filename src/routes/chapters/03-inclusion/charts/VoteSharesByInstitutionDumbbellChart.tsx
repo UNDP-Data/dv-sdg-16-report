@@ -5,13 +5,12 @@ import { CHART_PADDING } from '@/constants';
 import voteSharesByInstitution from '@/data/chapters/03-inclusion/16-8-1/vote-shares-by-institution.json';
 
 export default function VoteSharesByInstitutionDumbbellChart() {
-  const chartData = transformDataForGraph(voteSharesByInstitution, 'dumbbellChart', [
-    { columnId: 'institution', chartConfigId: 'label' },
-    { columnId: ['voteShare', 'memberShare'], chartConfigId: 'x' },
-  ]);
   return (
     <DumbbellChart
-      data={chartData}
+      data={transformDataForGraph(voteSharesByInstitution, 'dumbbellChart', [
+        { columnId: 'institution', chartConfigId: 'label' },
+        { columnId: ['voteShare', 'memberShare'], chartConfigId: 'x' },
+      ])}
       orientation='horizontal'
       colorDomain={['Vote or seat share', 'Member share']}
       colors={['var(--secondary)', 'var(--tertiary)']}
