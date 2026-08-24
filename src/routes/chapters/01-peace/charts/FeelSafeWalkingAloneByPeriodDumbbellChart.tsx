@@ -18,6 +18,7 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       colors={[Colors.gray, 'var(--primary)']}
       minValue={0}
       showTicks={false}
+      backgroundColor='soft'
       leftMargin={innerWidth < 720 ? 100 : 220}
       minHeight={500}
       truncateBy={innerWidth < 720 ? 12 : undefined}

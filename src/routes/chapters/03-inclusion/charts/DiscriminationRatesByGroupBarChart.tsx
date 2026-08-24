@@ -28,7 +28,7 @@ export default function DiscriminationRatesByGroupBarChart() {
               },
             ]}
             orientation='horizontal'
-            colors={['var(--text-muted)', 'var(--children)']}
+            colors={['#60758a', 'var(--categorical-child)']}
             showColorScale={false}
             animate
             minValue={0}
@@ -97,7 +97,7 @@ export default function DiscriminationRatesByGroupBarChart() {
             ]}
             orientation='horizontal'
             colorDomain={['Reference group', 'Group reporting higher discrimination']}
-            colors={['var(--text-muted)', 'var(--children)']}
+            colors={['#60758a', 'var(--categorical-child)']}
             showColorScale={false}
             animate
             minValue={0}

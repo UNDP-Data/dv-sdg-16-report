@@ -12,14 +12,14 @@ const SECTORS = {
   publicService: {
     label: 'Public service',
     categoryNoun: 'occupational level',
-    color: 'var(--region)',
+    color: 'var(--tertiary)',
     height: 260,
     rows: publicServiceByOccupation,
   },
   judiciary: {
     label: 'Judiciary',
     categoryNoun: 'court level',
-    color: 'var(--deep-blue)',
+    color: '#316DA8',
     height: 180,
     rows: judiciaryByCourtLevel,
   },

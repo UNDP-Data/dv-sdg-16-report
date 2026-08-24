@@ -95,7 +95,7 @@ const SLIDES = [
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--children)',
+      unRegisteredCircleColor: 'var(--categorical-child)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: 'total unregistered children under the age of 5',
       xCoordinateSuffix: 'x',
@@ -106,18 +106,18 @@ const SLIDES = [
     slideContent: (
       <>
         Yet, progress has slowed over the past decade, and an estimated{' '}
-        <span className='font-bold text-[var(--children)]'>150 million children</span> remain
+        <span className='font-bold text-categorical-child'>150 million children</span> remain
         unregistered.
       </>
     ),
-    color: 'children',
+    color: 'categorical-child',
   },
   {
     vizContent: {
       registeredCircleOpacity: 0.5,
       unRegisteredCircleOpacity: 1,
       registeredCircleColor: 'var(--surface-lg)',
-      unRegisteredCircleColor: 'var(--children)',
+      unRegisteredCircleColor: 'var(--categorical-child)',
       keyNumber: NO_OF_UNREGISTERED_BIRTHS,
       category: '',
       xCoordinateSuffix: 'regionX',
@@ -128,9 +128,9 @@ const SLIDES = [
     slideContent: (
       <>
         {' '}
-        <span className='font-bold text-[var(--children)]'>More than half</span> of the world’s
-        unregistered children live{' '}
-        <span className='font-bold text-[var(--children)]'>in Sub-Saharan Africa</span>
+        <span className='font-bold text-[var(--categorical-child)]'>More than half</span> of the
+        world’s unregistered children live{' '}
+        <span className='font-bold text-[var(--categorical-child)]'>in Sub-Saharan Africa</span>
       </>
     ),
     color: 'surface-lg',

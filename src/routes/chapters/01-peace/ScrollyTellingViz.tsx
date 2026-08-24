@@ -138,7 +138,7 @@ const SLIDES = [
         in 10 documented civilian deaths.
       </>
     ),
-    color: 'accent-teal',
+    color: 'accent-teal-hover',
   },
 ];
 

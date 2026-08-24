@@ -14,14 +14,14 @@ const SECTORS = {
   publicService: {
     label: 'Public service',
     valueKey: 'publicService',
-    color: 'var(--region)',
-    worldColor: 'color-mix(in srgb, var(--region) 70%, black)',
+    color: 'var(--tertiary)',
+    worldColor: 'color-mix(in srgb, var(--tertiary) 70%, black)',
   },
   judiciary: {
     label: 'Judiciary',
     valueKey: 'judiciary',
-    color: 'var(--deep-blue)',
-    worldColor: 'color-mix(in srgb, var(--deep-blue) 70%, black)',
+    color: '#316DA8',
+    worldColor: 'color-mix(in srgb, #316DA8 70%, black)',
   },
 } as const;
 
@@ -71,7 +71,7 @@ export default function GapToParityBarChart() {
   }));
 
   return (
-    <div className='flex flex-col items-center gap-4'>
+    <div className='flex flex-col items-center gap-4 bg-white'>
       <SegmentedControl
         className='w-fit'
         value={breakdown}
