@@ -1,0 +1,8 @@
+[
+  { "year": 2019, "lowIncome": 13.6, "lowerMiddleIncome": 12.8, "upperMiddleIncome": 8.5, "highIncome": 5.6 },
+  { "year": 2020, "lowIncome": 12.9, "lowerMiddleIncome": 15.5, "upperMiddleIncome": 10.0, "highIncome": 12.6 },
+  { "year": 2021, "lowIncome": 17.3, "lowerMiddleIncome": 14.2, "upperMiddleIncome": 11.2, "highIncome": 10.0 },
+  { "year": 2022, "lowIncome": 16.6, "lowerMiddleIncome": 15.4, "upperMiddleIncome": 8.9, "highIncome": 9.0 },
+  { "year": 2023, "lowIncome": 12.2, "lowerMiddleIncome": 10.2, "upperMiddleIncome": 9.9, "highIncome": 5.2 },
+  { "year": 2024, "lowIncome": 13.1, "lowerMiddleIncome": 13.7, "upperMiddleIncome": 5.0, "highIncome": 6.8 }
+]

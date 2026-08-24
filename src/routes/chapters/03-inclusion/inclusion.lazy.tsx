@@ -3,7 +3,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
-import PlaceholderBlock from '@/components/PlaceholderBlock';
 import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -18,8 +17,14 @@ import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import AccessToInformationChoroplethMap from './charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
+import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
+import DiscriminationRatesByGroupBarChart from './charts/DiscriminationRatesByGroupBarChart';
+import GapToParityBarChart from './charts/GapToParityBarChart';
+import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
+import RepresentationByInstitutionalLevelBarChart from './charts/RepresentationByInstitutionalLevelBarChart';
+import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -177,12 +182,30 @@ export function Inclusion() {
                 achieved or approached parity are concentrated primarily among high-income
                 countries, while many middle- and low-income countries continue to lag behind.
               </P>
+            </TextContainer>
+            <GraphContainer>
+              <GapToParityBarChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Recent advances in data collection provide new evidence on how representation is
                 distributed within institutions.
               </P>
+              <Highlight
+                color='tertiary'
+                className={isGenderLensActive ? 'gender-lens' : undefined}
+                content='Women are often well represented, and in some cases
+                overrepresented, in entry-level and administrative roles within the public service
+                Their representation, however, declines at higher level of decision making. '
+              />
+              <P marginBottom='none' size='lg'>
+                Similar patterns are observed across judicial systems, where women tend to be better
+                represented in lower courts, than in supreme or constitutional courts.
+              </P>
             </TextContainer>
-            <PlaceholderBlock label='Scrollytelling' />
+            <GraphContainer>
+              <RepresentationByInstitutionalLevelBarChart />
+            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 The evidence suggests that achieving inclusive governance requires more than
@@ -261,7 +284,9 @@ export function Inclusion() {
               </P>
             </TextContainer>
             <TextContainer>
-              <PlaceholderBlock label='Figure' />
+              <GraphContainer>
+                <DiscriminationRatesByGroupBarChart />
+              </GraphContainer>
               <P marginBottom='none' size='lg'>
                 The availability of data on discrimination has improved considerably in recent
                 years, enabling more detailed analysis across population groups. However, important
@@ -300,7 +325,11 @@ export function Inclusion() {
                 expenditure, which captures both overspending and underspending relative to the
                 approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <BudgetDeviationByIncomeGroupLineChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Despite overall progress, important differences persist across income groups.
                 Between 2021 and 2024, low-income countries recorded the largest budget deviations
@@ -340,7 +369,11 @@ export function Inclusion() {
                 to quality public services remains highly uneven and that many people continue to
                 face barriers to services that are essential for well-being and inclusion.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <SatisfactionWithPublicServicesStripChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Healthcare provides the most comprehensive basis for global trend analysis, with
                 trend data available for a subset of 95 countries.
@@ -355,8 +388,10 @@ export function Inclusion() {
                 These persistent differences show that, while progress has been made, access to
                 quality public services remains highly unequal across countries.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <HealthcareSatisfactionByRegionBarChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
           </>
         ),
@@ -550,7 +585,8 @@ export function Inclusion() {
           education, health care, social protection, financial services and legal protection.
         </P>
       </TextContainer>
-      <Spacer size='8xl' />
+      <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
+      <Spacer size='2xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section
