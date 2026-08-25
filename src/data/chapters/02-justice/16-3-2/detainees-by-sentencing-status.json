@@ -1,0 +1,98 @@
+[
+  {
+    "region": "World",
+    "year": 2024,
+    "unsentenced": 3597038,
+    "sentenced": 8049720
+  },
+  {
+    "region": "Eastern and South-Eastern Asia",
+    "year": 2024,
+    "unsentenced": 1002295,
+    "sentenced": 2706465
+  },
+  {
+    "region": "Europe and Northern America",
+    "year": 2024,
+    "unsentenced": 712171,
+    "sentenced": 2183954
+  },
+  {
+    "region": "Latin America and the Caribbean",
+    "year": 2024,
+    "unsentenced": 572668,
+    "sentenced": 1291859
+  },
+  {
+    "region": "Central and Southern Asia",
+    "year": 2024,
+    "unsentenced": 627417,
+    "sentenced": 458824
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2024,
+    "unsentenced": 416990,
+    "sentenced": 600259
+  },
+  {
+    "region": "Northern Africa and Western Asia",
+    "year": 2024,
+    "unsentenced": 239006,
+    "sentenced": 767125
+  },
+  {
+    "region": "Oceania",
+    "year": 2024,
+    "unsentenced": 26494,
+    "sentenced": 41231
+  },
+  {
+    "region": "World",
+    "year": 2015,
+    "unsentenced": 3280005,
+    "sentenced": 7862804
+  },
+  {
+    "region": "Eastern and South-Eastern Asia",
+    "year": 2015,
+    "unsentenced": 943849,
+    "sentenced": 2448786
+  },
+  {
+    "region": "Europe and Northern America",
+    "year": 2015,
+    "unsentenced": 675425,
+    "sentenced": 2919930
+  },
+  {
+    "region": "Latin America and the Caribbean",
+    "year": 2015,
+    "unsentenced": 658625,
+    "sentenced": 948955
+  },
+  {
+    "region": "Central and Southern Asia",
+    "year": 2015,
+    "unsentenced": 502568,
+    "sentenced": 493675
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "year": 2015,
+    "unsentenced": 314551,
+    "sentenced": 507889
+  },
+  {
+    "region": "Northern Africa and Western Asia",
+    "year": 2015,
+    "unsentenced": 169593,
+    "sentenced": 502830
+  },
+  {
+    "region": "Oceania",
+    "year": 2015,
+    "unsentenced": 15394,
+    "sentenced": 40738
+  }
+]

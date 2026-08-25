@@ -15,6 +15,7 @@ import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
+import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
 import ScrollyTellingViz from './ScrollyTellingViz';
@@ -128,8 +129,10 @@ export function Justice() {
                 the Caribbean reduced the proportion of prisoners awaiting trial or sentencing,
                 while the situation deteriorated in Central and Southern Asia.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <DetaineesBySentencingStatusBarChart />
+            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='secondary'
