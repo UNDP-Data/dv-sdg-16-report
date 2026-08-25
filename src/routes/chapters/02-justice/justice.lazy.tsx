@@ -15,8 +15,9 @@ import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
-import ScrollyTellingViz from './ScrollyTellingViz';
+import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
+import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Justice() {
   const isGenderLensActive = useIsGenderLensActive();
@@ -87,8 +88,10 @@ export function Justice() {
                 and underscores the need for more systematic measurement and internationally
                 comparable data.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <DisputeResolutionAccessStripChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
           </>
         ),
