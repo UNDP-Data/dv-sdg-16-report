@@ -1,4 +1,5 @@
 import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
+import { Colors } from '@undp/data-viz/Colors';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import { CHART_PADDING } from '@/constants';
@@ -58,7 +59,11 @@ export default function NHRIComplianceChoroplethMap() {
 
       <ChoroplethMap
         data={data}
-        colors={['var(--light-blue)', 'var(--primary)', 'var(--deep-blue)']}
+        colors={[
+          Colors.primaryColors['blue-100'],
+          Colors.primaryColors['blue-300'],
+          Colors.sdgColors.sdg16,
+        ]}
         colorDomain={['No status', 'Partially compliant', 'Fully compliant']}
         scaleType='categorical'
         colorLegendTitle='Accreditation status'
