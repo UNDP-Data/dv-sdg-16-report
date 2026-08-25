@@ -9,9 +9,9 @@ interface CoordinatesProps {
   registered: boolean;
 }
 
-const generateRandomPoint = (circleRadius: number) => {
+const generateRandomPoint = (circleRadius: number, innerRadius: number) => {
   const angle = Math.random() * Math.PI * 2;
-  const distanceFromCenter = Math.sqrt(Math.random()) * circleRadius;
+  const distanceFromCenter = Math.sqrt(Math.random()) * (circleRadius - innerRadius) + innerRadius;
   const x = distanceFromCenter * Math.cos(angle);
   const y = distanceFromCenter * Math.sin(angle);
   return { x, y, distanceFromCenter };
@@ -26,7 +26,7 @@ const checkCollision = (
     const dx = newPoint.x - point.x;
     const dy = newPoint.y - point.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance < pointRadius * 2) {
+    if (distance < pointRadius * 4) {
       return true;
     }
   }
@@ -69,26 +69,25 @@ export const generateUniqueRandomPointsArray = (
   height: number,
   threshold: number,
   regionList: { region: string; unregisteredBirths: number }[],
-  pointRadius = 7.5,
+  pointRadius = 6,
 ) => {
   const points: CoordinatesProps[] = [];
-  const circleCenterY = height / 2;
   let counter = 0;
   while (points.length < noOfPoints) {
-    const newPoint = generateRandomPoint(areaRadius);
-    if (!checkCollision(newPoint, pointRadius, points) || counter > 10) {
+    const newPoint = generateRandomPoint(areaRadius, 0);
+    if (!checkCollision(newPoint, pointRadius, points) || counter > 1000) {
       points.push({
         id: points.length,
-        x: newPoint.x + width / 2,
-        y: newPoint.y + circleCenterY,
+        x: newPoint.x,
+        y: newPoint.y,
         regionX:
           points.length < threshold
             ? findRegionCoordinate(regionList, points.length, height, pointRadius)[0]
-            : newPoint.x + width / 2,
+            : newPoint.x,
         regionY:
           points.length < threshold
             ? findRegionCoordinate(regionList, points.length, height, pointRadius)[1]
-            : newPoint.y + circleCenterY,
+            : newPoint.y,
         registered: points.length >= threshold,
         color: points.length >= threshold ? 'var(--tertiary)' : 'var(--error)',
         distanceFromCenter: newPoint.distanceFromCenter,
@@ -98,5 +97,11 @@ export const generateUniqueRandomPointsArray = (
       counter += 1;
     }
   }
-  return points;
+  return points.map((d, i) => ({
+    ...d,
+    x: d.x + width / 2,
+    y: d.y + height / 2,
+    regionX: i < threshold ? d.regionX : d.regionX + width / 2,
+    regionY: i < threshold ? d.regionY : d.regionY + height / 2,
+  }));
 };

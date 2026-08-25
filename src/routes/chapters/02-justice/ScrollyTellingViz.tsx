@@ -165,7 +165,7 @@ export default function ScrollyTellingViz() {
         className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen -translate-x-1/2'
       >
         <div
-          className='sticky top-0 h-screen w-full bg-cover bg-right-top bg-no-repeat'
+          className='sticky top-0 h-screen w-full bg-cover bg-top-right bg-no-repeat'
           style={{
             backgroundImage: "url('/imgs/scrolly-bg.webp')",
             maskImage:
@@ -272,7 +272,7 @@ export default function ScrollyTellingViz() {
           ) : null}
         </motion.svg>
       </div>
-      <div className='w-full max-w-100 shrink-0'>
+      <div className='mx-auto w-full max-w-100 shrink-0'>
         {SLIDES.map((slide, index) => (
           <div
             className='flex min-h-screen items-center px-4 md:px-0'
@@ -280,7 +280,7 @@ export default function ScrollyTellingViz() {
             key={index}
           >
             <motion.div
-              className='my-6 box-border w-full bg-background/80 py-4 pl-6 text-xl md:text-3xl lg:mix-blend-multiply'
+              className='my-6 w-full bg-background/80 px-6 py-4 text-xl md:text-3xl lg:bg-transparent'
               onViewportEnter={() => setActiveSlideIndex(index)}
               viewport={{ amount: 0.5 }}
             >
