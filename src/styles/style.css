@@ -12,11 +12,6 @@ html {
 
 :root {
   --gender-lens-rgb: 123, 111, 232;
-
-  /* Accreditation-status colours for the 16.a.1 choropleth. Kept here because the
-     ConfigProvider palette has no equivalent for either shade. */
-  --light-blue: #DCE6EE;
-  --light-orange: #F39D7A;
 }
 
 .gender-lens {
