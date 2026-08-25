@@ -18,6 +18,7 @@ import WaveDivider from '../components/WaveDivider';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
+import UnsentencedShareBySexDumbbellChart from './charts/UnsentencedShareBySexDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Justice() {
@@ -119,7 +120,11 @@ export function Justice() {
                 prisoners per 100,000 population in Central and Southern Asia to 281 in Latin
                 America and the Caribbean, the highest rate globally.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <DetaineesBySentencingStatusBarChart />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Despite efforts to strengthen access to justice and improve the efficiency of
                 criminal justice systems, little progress has been made in reducing pre-trial
@@ -130,9 +135,6 @@ export function Justice() {
                 while the situation deteriorated in Central and Southern Asia.
               </P>
             </TextContainer>
-            <GraphContainer>
-              <DetaineesBySentencingStatusBarChart />
-            </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='secondary'
@@ -147,8 +149,10 @@ export function Justice() {
                 men. A similar pattern was observed in Oceania, where nearly half of women detainees
                 (49 per cent) were unsentenced, compared with 38 per cent of men.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer isGenderLensActive={isGenderLensActive}>
+              <UnsentencedShareBySexDumbbellChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/justice-03.webp' />
           </>
         ),
