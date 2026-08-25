@@ -15,6 +15,7 @@ import Section from '../components/Section';
 import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
+import BriberyPrevalenceStripChart from './charts/BriberyPrevalenceStripChart';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
@@ -168,10 +169,15 @@ export function Justice() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Illicit financial flows (IFFs) are a global phenomenon that drain national resources
-                that could otherwise be invested in public services, institutions and development.
-                They deplete critical resources both when they exit a country (outflows) and when
-                they enter (inflows), fuelling corruption, organized crime and terrorism.
+                <InfoTooltip
+                  content='Flows that are illicit in origin, transfer or use, that reflect an exchange of value and that cross country borders.'
+                  trigger='Illicit financial flows (IFFs)'
+                  color='secondary'
+                />{' '}
+                are a global phenomenon that drain national resources that could otherwise be
+                invested in public services, institutions and development. They deplete critical
+                resources both when they exit a country (outflows) and when they enter (inflows),
+                fuelling corruption, organized crime and terrorism.
               </P>
               <Highlight
                 color='secondary'
@@ -304,8 +310,10 @@ export function Justice() {
                 governance, institutional integrity and the effectiveness of anti-corruption
                 measures also play an important role.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <BriberyPrevalenceStripChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/justice-01.webp' />
           </>
         ),
