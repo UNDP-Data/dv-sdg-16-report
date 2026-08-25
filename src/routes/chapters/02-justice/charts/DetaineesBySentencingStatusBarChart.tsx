@@ -6,7 +6,6 @@ import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
 import detaineesBySentencingStatus from '@/data/chapters/02-justice/16-3-2/detainees-by-sentencing-status.json';
-import ChartNote from '../../components/ChartNote';
 
 export default function DetaineesBySentencingStatusBarChart() {
   const [selectedYear, setSelectedYear] = useState('2024');
@@ -93,9 +92,6 @@ export default function DetaineesBySentencingStatusBarChart() {
               'UNODC estimates, based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems, data from the World Prison Brief (Institute for Crime & Justice Policy Research) and national sources reviewed by Member States.',
           },
         ]}
-        footNote={
-          <ChartNote content='Detainees are shown as absolute numbers, not as a rate per 100,000 population. The total for each region is the sum of sentenced and unsentenced detainees; for Northern Africa and Western Asia this differs by one person from the published total because of rounding in the source data.' />
-        }
         ariaLabel={`Horizontal stacked bar chart showing the number of unsentenced and sentenced detainees by region in ${selectedYear}. Worldwide, around three in ten detainees were held without a sentence.`}
       />
     </div>
