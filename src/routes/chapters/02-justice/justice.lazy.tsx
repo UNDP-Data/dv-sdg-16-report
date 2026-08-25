@@ -16,6 +16,8 @@ import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import BriberyPrevalenceStripChart from './charts/BriberyPrevalenceStripChart';
+import BusinessBriberyStripChart from './charts/BusinessBriberyStripChart';
+import BusinessBriberyTrendStripChart from './charts/BusinessBriberyTrendStripChart';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
@@ -343,6 +345,11 @@ export function Justice() {
                 highest median prevalence of bribery at 18.6 per cent, compared with 2.4 per cent in
                 high-income countries.
               </P>
+            </TextContainer>
+            <GraphContainer>
+              <BusinessBriberyStripChart />
+            </GraphContainer>
+            <TextContainer>
               <Highlight color='secondary' content='Business bribery has declined over time' />
               <P marginBottom='none' size='lg'>
                 Available trend data in a more limited set of countries suggest a moderate decline
@@ -351,8 +358,10 @@ export function Justice() {
                 prevalence fell from 21.0 per cent to 12.3 per cent, and in lower-middle-income
                 countries, where it declined from 25.6 per cent to 16.8 per cent.
               </P>
-              <PlaceholderBlock label='Figure' />
             </TextContainer>
+            <GraphContainer>
+              <BusinessBriberyTrendStripChart />
+            </GraphContainer>
             <WaveDivider src='/imgs/dividers/justice-03.webp' align='right' />
           </>
         ),
