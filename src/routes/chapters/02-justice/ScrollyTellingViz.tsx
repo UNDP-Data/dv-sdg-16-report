@@ -36,7 +36,7 @@ const SLIDES: Slide[] = [
   {
     reportedCount: 43,
     caption: 'of robbery is reported',
-    color: 'women',
+    color: 'categorical-female',
     slideContent: (
       <>
         <p className='mb-4 last:mb-0'>
@@ -44,7 +44,7 @@ const SLIDES: Slide[] = [
           experience.
         </p>
         <p className='mb-4 last:mb-0'>
-          <span className='font-bold text-[var(--women)]'>
+          <span className='font-bold text-categorical-female'>
             Robbery has the highest reporting rate.
           </span>{' '}
           Even so, fewer than half of victims report the crime to the authorities.
@@ -55,11 +55,11 @@ const SLIDES: Slide[] = [
   {
     reportedCount: 39,
     caption: 'of physical assault is reported',
-    color: 'teal',
+    color: 'accent-teal-hover',
     slideContent: (
       <>
-        <span className='font-bold text-[var(--teal)]'>Fewer than four in ten victims</span> report
-        physical assault to the police or another competent authority.
+        <span className='font-bold text-accent-teal-hover'>Fewer than four in ten victims</span>{' '}
+        report physical assault to the police or another competent authority.
       </>
     ),
   },
