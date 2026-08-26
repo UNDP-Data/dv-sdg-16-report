@@ -10,6 +10,7 @@ import createAboutRoute from './routes/about/about.route';
 import createPeaceRoute from './routes/chapters/01-peace/peace.route';
 import createJusticeRoute from './routes/chapters/02-justice/justice.route';
 import createInclusionRoute from './routes/chapters/03-inclusion/inclusion.route';
+import createForewordRoute from './routes/foreword/foreword.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
 import createMaterialsRoute from './routes/materials/material.route';
 
@@ -34,6 +35,7 @@ const rootRoute = createRootRoute({
 
 const routeTree = rootRoute.addChildren([
   createHomeRoute(rootRoute),
+  createForewordRoute(rootRoute),
   createPeaceRoute(rootRoute),
   createJusticeRoute(rootRoute),
   createInclusionRoute(rootRoute),
