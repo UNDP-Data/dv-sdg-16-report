@@ -3,7 +3,7 @@ import { P } from '@undp/design-system-react/Typography';
 
 export default function TradeRelatedIFFsCards() {
   return (
-    <div className='grid auto-rows-fr gap-4 md:grid-cols-2'>
+    <div className='grid auto-rows-fr gap-4 bg-white md:grid-cols-2'>
       <div className='flex flex-col gap-3 bg-background-soft p-6'>
         <P marginBottom='none' size='xl' weight='semibold' className='font-heading leading-sm'>
           Burkina Faso

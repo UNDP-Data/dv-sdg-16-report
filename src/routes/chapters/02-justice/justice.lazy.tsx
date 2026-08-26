@@ -209,7 +209,11 @@ export function Justice() {
                 indicate that trade-related IFFs account for between 5 and 30 per cent of the
                 official value of goods trade.
               </P>
+            </TextContainer>
+            <GraphContainer>
               <TradeRelatedIFFsCards />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 Effective responses require a whole-of-government approach that combines stronger
                 legal and regulatory frameworks, enhanced tax transparency, and robust enforcement
