@@ -1,0 +1,42 @@
+[
+  {
+    "region": "World",
+    "female": 31,
+    "male": 31
+  },
+  {
+    "region": "Northern Africa and Western Asia",
+    "female": 35,
+    "male": 23
+  },
+  {
+    "region": "Oceania",
+    "female": 49,
+    "male": 38
+  },
+  {
+    "region": "Sub-Saharan Africa",
+    "female": 49,
+    "male": 41
+  },
+  {
+    "region": "Latin America and the Caribbean",
+    "female": 37,
+    "male": 30
+  },
+  {
+    "region": "Europe and Northern America",
+    "female": 29,
+    "male": 24
+  },
+  {
+    "region": "Eastern and South-Eastern Asia",
+    "female": 24,
+    "male": 27
+  },
+  {
+    "region": "Central and Southern Asia",
+    "female": 54,
+    "male": 58
+  }
+]

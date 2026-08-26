@@ -1,9 +1,9 @@
 import { H2, P } from '@undp/design-system-react/Typography';
 import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import InfoTooltip from '../components/InfoTooltip';
 import { generateDotPositionsArray } from './generateDotPositionsArray';
 
-const TOTAL_DOTS = 100;
 const DOT_RADIUS = 6;
 const PADDING = 24;
 const BOTTOM_PADDING = 20;
@@ -15,6 +15,7 @@ interface Slide {
   reportedCount: number;
   caption: string | null;
   color: string;
+  cloudOpacity?: number;
   slideContent: React.ReactNode;
 }
 
@@ -22,58 +23,75 @@ const SLIDES: Slide[] = [
   {
     reportedCount: 0,
     caption: null,
-    color: 'secondary',
+    color: 'gray-400',
+    cloudOpacity: 1,
     slideContent: (
       <>
-        <p className='mb-4 last:mb-0'>Violence does not automatically enter the justice system.</p>
-        <p className='mb-4 last:mb-0'>
-          Whether it is reported determines whether it becomes visible to authorities and can be
-          investigated.
-        </p>
+        Violence does not automatically enter the justice system.
+        <br />
+        <br />
+        Whether it is reported determines whether it becomes visible to authorities and can be
+        investigated.
+      </>
+    ),
+  },
+  {
+    reportedCount: 46,
+    caption: null,
+    color: 'gray-500',
+    cloudOpacity: 0.4,
+    slideContent: (
+      <>
+        Across countries with{' '}
+        <InfoTooltip
+          trigger='available data'
+          content='As of early 2026, 81 countries had produced at least one data point on reporting of physical, sexual or psychological violence since 2015. Data availability remains uneven across forms of violence. Comparable information is available for 39 countries for robbery and 36 countries for physical assault. Only 19 countries have collected comparable data on sexual assault.'
+          color='secondary'
+        />
+        , <span className='font-bold'>fewer than half of victims of violence report</span> their
+        experiences to the police or other competent authorities.
       </>
     ),
   },
   {
     reportedCount: 43,
-    caption: 'of robbery is reported',
+    caption: 'of robberies are reported',
     color: 'categorical-female',
     slideContent: (
       <>
-        <p className='mb-4 last:mb-0'>
-          Victims’ decisions to report vary considerably depending on the type of violence they
-          experience.
-        </p>
-        <p className='mb-4 last:mb-0'>
-          <span className='font-bold text-categorical-female'>
-            Robbery has the highest reporting rate.
-          </span>{' '}
-          Even so, fewer than half of victims report the crime to the authorities.
-        </p>
+        Victims’ decisions to report vary considerably depending on the type of violence they
+        experience.
+        <span className='font-bold text-categorical-female'>
+          Robbery has the highest median reporting rate.
+        </span>
       </>
     ),
   },
   {
     reportedCount: 39,
-    caption: 'of physical assault is reported',
+    caption: 'of physical assaults are reported',
     color: 'accent-teal-hover',
     slideContent: (
       <>
-        <span className='font-bold text-accent-teal-hover'>Fewer than four in ten victims</span>{' '}
-        report physical assault to the police or another competent authority.
+        <span className='font-bold text-accent-teal-hover'>
+          Fewer than four in ten victims report physical assault
+        </span>{' '}
+        to the police or another competent authority.
       </>
     ),
   },
   {
     reportedCount: 17,
-    caption: 'of sexual violence is reported',
+    caption: 'of sexual assaults are reported',
     color: 'secondary',
     slideContent: (
       <>
         <span className='font-bold text-secondary'>
-          Sexual violence is far less likely to be reported
+          Sexual assault has the lowest reporting rate
         </span>{' '}
-        than physical assault or robbery. Stigma, fear of retaliation and lack of trust can prevent
-        victims from coming forward.
+        among forms of violence, consistent with the evidence pointing to multiple deterrents to
+        reporting, including stigma, fear of retaliation, lack of confidence in the justice system,
+        and previous negative experiences with authorities.
       </>
     ),
   },
@@ -128,29 +146,20 @@ export default function ScrollyTellingViz() {
     () =>
       graphWidth && graphHeight
         ? generateDotPositionsArray(
-            TOTAL_DOTS,
-            {
-              centerX: layout.centerX,
-              centerY: layout.centerY,
-              innerRadius: layout.cloudInnerRadius,
-              outerRadius: layout.cloudRadius,
-            },
-            {
-              centerX: layout.centerX,
-              centerY: layout.centerY,
-              radius: layout.packRadius,
-              capacity: MAX_REPORTED,
-            },
+            { x: layout.centerX, y: layout.centerY },
+            { innerRadius: layout.cloudInnerRadius, outerRadius: layout.cloudRadius },
+            { radius: layout.packRadius, capacity: MAX_REPORTED },
             layout.dotRadius,
+            {
+              x: layout.centerX,
+              y: layout.centerY - layout.cloudRadius + layout.dotRadius,
+            },
           )
         : [],
     [graphWidth, graphHeight, layout],
   );
 
-  const annotatedDot = useMemo(
-    () => dotsList.filter((dot) => dot.id >= MAX_REPORTED).sort((a, b) => a.cloudY - b.cloudY)[0],
-    [dotsList],
-  );
+  const annotatedDot = dotsList[dotsList.length - 1];
 
   const activeSlide = SLIDES[activeSlideIndex] ?? SLIDES[0];
 
@@ -193,11 +202,17 @@ export default function ScrollyTellingViz() {
                 <motion.circle
                   key={dot.id}
                   r={layout.dotRadius}
-                  initial={{ cx: dot.cloudX, cy: dot.cloudY, fill: 'var(--gray-400)' }}
+                  initial={{
+                    cx: dot.cloud.x,
+                    cy: dot.cloud.y,
+                    fill: `var(--${activeSlide.color})`,
+                    fillOpacity: activeSlide.cloudOpacity ?? 0.25,
+                  }}
                   animate={{
-                    cx: isReported ? dot.reportedX : dot.cloudX,
-                    cy: isReported ? dot.reportedY : dot.cloudY,
-                    fill: isReported ? `var(--${activeSlide.color})` : 'var(--gray-400)',
+                    cx: isReported ? dot.reported.x : dot.cloud.x,
+                    cy: isReported ? dot.reported.y : dot.cloud.y,
+                    fill: `var(--${activeSlide.color})`,
+                    fillOpacity: isReported ? 1 : (activeSlide.cloudOpacity ?? 0.25),
                   }}
                   transition={{ duration: 0.5 }}
                 />
@@ -214,7 +229,7 @@ export default function ScrollyTellingViz() {
             strokeLinecap='round'
           />
           <motion.g
-            animate={{ opacity: activeSlide.caption ? 0 : 1 }}
+            animate={{ opacity: activeSlideIndex === 0 ? 1 : 0 }}
             transition={{ duration: 0.4 }}
           >
             <foreignObject
@@ -224,7 +239,9 @@ export default function ScrollyTellingViz() {
               height={layout.targetRadius * 2}
             >
               <div className='flex h-full w-full items-center justify-center text-center text-gray-500 text-sm leading-sm'>
-                only reported cases enter here
+                only reported cases
+                <br />
+                enter here
               </div>
             </foreignObject>
           </motion.g>
@@ -247,6 +264,9 @@ export default function ScrollyTellingViz() {
                 <P marginBottom='none' size='xl' className='mt-0.5 text-center text-foreground'>
                   {activeSlide.caption}
                 </P>
+                <P marginBottom='none' size='sm' className='text-center text-gray-500'>
+                  median across countries with data
+                </P>
               </div>
             </foreignObject>
           </motion.g>
@@ -254,19 +274,24 @@ export default function ScrollyTellingViz() {
           {annotatedDot ? (
             <g id='dot-annotation'>
               <line
-                x1={annotatedDot.cloudX}
-                y1={annotatedDot.cloudY - layout.dotRadius - 2}
-                x2={annotatedDot.cloudX}
-                y2={annotatedDot.cloudY - layout.dotRadius - LINE_LENGTH}
+                x1={annotatedDot.cloud.x}
+                y1={annotatedDot.cloud.y - layout.dotRadius - 2}
+                x2={annotatedDot.cloud.x}
+                y2={annotatedDot.cloud.y - layout.dotRadius - LINE_LENGTH}
                 className='stroke-[1px] stroke-gray-400'
               />
               <text
-                x={annotatedDot.cloudX}
-                y={annotatedDot.cloudY - layout.dotRadius - LINE_LENGTH - 8}
+                x={annotatedDot.cloud.x}
+                y={annotatedDot.cloud.y - layout.dotRadius - LINE_LENGTH - 8}
                 textAnchor='middle'
                 className='fill-gray-500 text-sm italic'
               >
-                1 dot represents 1% of victims
+                <tspan x={annotatedDot.cloud.x} dy='-1em'>
+                  1 dot represents 1% of cases
+                </tspan>
+                <tspan x={annotatedDot.cloud.x} dy='1.3em'>
+                  not a fixed number of victims
+                </tspan>
               </text>
             </g>
           ) : null}

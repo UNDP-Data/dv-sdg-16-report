@@ -1,0 +1,57 @@
+[
+  {
+    "country": "South Africa*",
+    "value": 21,
+    "year": 2021
+  },
+  {
+    "country": "Colombia",
+    "value": 46.57,
+    "year": 2020
+  },
+  {
+    "country": "El Salvador",
+    "value": 51,
+    "year": 2022
+  },
+  {
+    "country": "Canada",
+    "value": 65.89,
+    "year": 2021
+  },
+  {
+    "country": "Gambia",
+    "value": 66,
+    "year": 2025
+  },
+  {
+    "country": "Peru",
+    "value": 67.5,
+    "year": 2023
+  },
+  {
+    "country": "Ghana",
+    "value": 72.36,
+    "year": 2021
+  },
+  {
+    "country": "Nigeria*",
+    "value": 75.65,
+    "year": 2023
+  },
+  {
+    "country": "Lesotho",
+    "value": 93.37,
+    "year": 2025
+  },
+  {
+    "country": "State of Palestine",
+    "value": 93.43,
+    "year": 2023
+  },
+  {
+    "country": "Tunisia",
+    "value": 94.2,
+    "year": 2021
+  }
+]
