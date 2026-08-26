@@ -27,11 +27,11 @@ const SLIDES: Slide[] = [
     cloudOpacity: 1,
     slideContent: (
       <>
-        <p className='mb-4 last:mb-0'>Violence does not automatically enter the justice system.</p>
-        <p className='mb-4 last:mb-0'>
-          Whether it is reported determines whether it becomes visible to authorities and can be
-          investigated.
-        </p>
+        Violence does not automatically enter the justice system.
+        <br />
+        <br />
+        Whether it is reported determines whether it becomes visible to authorities and can be
+        investigated.
       </>
     ),
   },
@@ -41,7 +41,7 @@ const SLIDES: Slide[] = [
     color: 'gray-500',
     cloudOpacity: 0.4,
     slideContent: (
-      <p className='mb-4 last:mb-0'>
+      <>
         Across countries with{' '}
         <InfoTooltip
           trigger='available data'
@@ -50,7 +50,7 @@ const SLIDES: Slide[] = [
         />
         , <span className='font-bold'>fewer than half of victims of violence report</span> their
         experiences to the police or other competent authorities.
-      </p>
+      </>
     ),
   },
   {
@@ -59,15 +59,11 @@ const SLIDES: Slide[] = [
     color: 'categorical-female',
     slideContent: (
       <>
-        <p className='mb-4 last:mb-0'>
-          Victims’ decisions to report vary considerably depending on the type of violence they
-          experience.
-        </p>
-        <p className='mb-4 last:mb-0'>
-          <span className='font-bold text-categorical-female'>
-            Robbery has the highest median reporting rate.
-          </span>{' '}
-        </p>
+        Victims’ decisions to report vary considerably depending on the type of violence they
+        experience.
+        <span className='font-bold text-categorical-female'>
+          Robbery has the highest median reporting rate.
+        </span>
       </>
     ),
   },
