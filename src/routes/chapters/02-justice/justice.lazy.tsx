@@ -2,7 +2,6 @@ import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
-import PlaceholderBlock from '@/components/PlaceholderBlock';
 import chaptersTargetList from '@/data/chapters/chaptersTargetList.json';
 import ImpactStoryEl from '@/routes/chapters/components/ImpactStoryEl';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -20,6 +19,7 @@ import BusinessBriberyStripChart from './charts/BusinessBriberyStripChart';
 import BusinessBriberyTrendStripChart from './charts/BusinessBriberyTrendStripChart';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
+import FirearmsTracingBeeSwarmChart from './charts/FirearmsTracingBeeSwarmChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
 import TradeRelatedIFFsCards from './charts/TradeRelatedIFFsCards';
 import UnsentencedShareBySexDumbbellChart from './charts/UnsentencedShareBySexDumbbellChart';
@@ -250,7 +250,11 @@ export function Justice() {
                 seized, and the complexity of establishing the illicit origin of individual
                 firearms.
               </P>
-              <PlaceholderBlock label='Figure' />
+            </TextContainer>
+            <GraphContainer>
+              <FirearmsTracingBeeSwarmChart />
+            </GraphContainer>
+            <TextContainer>
               <Highlight color='secondary' content='Tracing has become increasingly challenging' />
               <P marginBottom='none' size='lg'>
                 To conceal the origin of firearms, criminal groups increasingly rely on illicit

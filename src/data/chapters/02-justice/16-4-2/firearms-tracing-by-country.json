@@ -1,0 +1,282 @@
+[
+  {
+    "iso3": "HUN",
+    "country": "Hungary",
+    "region": "Europe and Northern America",
+    "traced": 100.0,
+    "seizures": 109
+  },
+  {
+    "iso3": "LVA",
+    "country": "Latvia",
+    "region": "Europe and Northern America",
+    "traced": 100.0,
+    "seizures": 250
+  },
+  {
+    "iso3": "EST",
+    "country": "Estonia",
+    "region": "Europe and Northern America",
+    "traced": 74.29,
+    "seizures": 28
+  },
+  {
+    "iso3": "POL",
+    "country": "Poland",
+    "region": "Europe and Northern America",
+    "traced": 71.76,
+    "seizures": 1266
+  },
+  {
+    "iso3": "BGR",
+    "country": "Bulgaria",
+    "region": "Europe and Northern America",
+    "traced": 67.19,
+    "seizures": 56
+  },
+  {
+    "iso3": "ESP",
+    "country": "Spain",
+    "region": "Europe and Northern America",
+    "traced": 60.13,
+    "seizures": 8107
+  },
+  {
+    "iso3": "LUX",
+    "country": "Luxembourg",
+    "region": "Europe and Northern America",
+    "traced": 57.25,
+    "seizures": 399
+  },
+  {
+    "iso3": "BEL",
+    "country": "Belgium",
+    "region": "Europe and Northern America",
+    "traced": 34.22,
+    "seizures": 6811
+  },
+  {
+    "iso3": "AND",
+    "country": "Andorra",
+    "region": "Europe and Northern America",
+    "traced": 33.33,
+    "seizures": 14
+  },
+  {
+    "iso3": "GBR",
+    "country": "United Kingdom of Great Britain and Northern Ireland",
+    "region": "Europe and Northern America",
+    "traced": 17.48,
+    "seizures": 870
+  },
+  {
+    "iso3": "MDA",
+    "country": "Republic of Moldova",
+    "region": "Europe and Northern America",
+    "traced": 13.68,
+    "seizures": 172
+  },
+  {
+    "iso3": "GRC",
+    "country": "Greece",
+    "region": "Europe and Northern America",
+    "traced": 13.3,
+    "seizures": 3234
+  },
+  {
+    "iso3": "ALB",
+    "country": "Albania",
+    "region": "Europe and Northern America",
+    "traced": 5.36,
+    "seizures": 540
+  },
+  {
+    "iso3": "ROU",
+    "country": "Romania",
+    "region": "Europe and Northern America",
+    "traced": 3.91,
+    "seizures": 1319
+  },
+  {
+    "iso3": "LTU",
+    "country": "Lithuania",
+    "region": "Europe and Northern America",
+    "traced": 1.41,
+    "seizures": 208
+  },
+  {
+    "iso3": "NIC",
+    "country": "Nicaragua",
+    "region": "Latin America and the Caribbean",
+    "traced": 100.0,
+    "seizures": 8433
+  },
+  {
+    "iso3": "BHS",
+    "country": "Bahamas",
+    "region": "Latin America and the Caribbean",
+    "traced": 98.22,
+    "seizures": 375
+  },
+  {
+    "iso3": "MEX",
+    "country": "Mexico",
+    "region": "Latin America and the Caribbean",
+    "traced": 83.27,
+    "seizures": 22061
+  },
+  {
+    "iso3": "JAM",
+    "country": "Jamaica",
+    "region": "Latin America and the Caribbean",
+    "traced": 75.31,
+    "seizures": 772
+  },
+  {
+    "iso3": "PER",
+    "country": "Peru",
+    "region": "Latin America and the Caribbean",
+    "traced": 69.75,
+    "seizures": 4282
+  },
+  {
+    "iso3": "GRD",
+    "country": "Grenada",
+    "region": "Latin America and the Caribbean",
+    "traced": 64.71,
+    "seizures": 8
+  },
+  {
+    "iso3": "SLV",
+    "country": "El Salvador",
+    "region": "Latin America and the Caribbean",
+    "traced": 42.03,
+    "seizures": 1908
+  },
+  {
+    "iso3": "COL",
+    "country": "Colombia",
+    "region": "Latin America and the Caribbean",
+    "traced": 24.01,
+    "seizures": 19761
+  },
+  {
+    "iso3": "BOL",
+    "country": "Bolivia (Plurinational State of)",
+    "region": "Latin America and the Caribbean",
+    "traced": 20.98,
+    "seizures": 314
+  },
+  {
+    "iso3": "ARG",
+    "country": "Argentina",
+    "region": "Latin America and the Caribbean",
+    "traced": 18.31,
+    "seizures": 21660
+  },
+  {
+    "iso3": "GUY",
+    "country": "Guyana",
+    "region": "Latin America and the Caribbean",
+    "traced": 15.24,
+    "seizures": 124
+  },
+  {
+    "iso3": "ATG",
+    "country": "Antigua and Barbuda",
+    "region": "Latin America and the Caribbean",
+    "traced": 7.69,
+    "seizures": 14
+  },
+  {
+    "iso3": "BRA",
+    "country": "Brazil",
+    "region": "Latin America and the Caribbean",
+    "traced": 5.26,
+    "seizures": 53798
+  },
+  {
+    "iso3": "LCA",
+    "country": "Saint Lucia",
+    "region": "Latin America and the Caribbean",
+    "traced": 0.0,
+    "seizures": 35
+  },
+  {
+    "iso3": "ARM",
+    "country": "Armenia",
+    "region": "Northern Africa and Western Asia",
+    "traced": 100.0,
+    "seizures": 3
+  },
+  {
+    "iso3": "QAT",
+    "country": "Qatar",
+    "region": "Northern Africa and Western Asia",
+    "traced": 100.0,
+    "seizures": 28
+  },
+  {
+    "iso3": "AZE",
+    "country": "Azerbaijan",
+    "region": "Northern Africa and Western Asia",
+    "traced": 67.43,
+    "seizures": 410
+  },
+  {
+    "iso3": "CYP",
+    "country": "Cyprus",
+    "region": "Northern Africa and Western Asia",
+    "traced": 53.16,
+    "seizures": 15
+  },
+  {
+    "iso3": "MAR",
+    "country": "Morocco",
+    "region": "Northern Africa and Western Asia",
+    "traced": 4.13,
+    "seizures": 611
+  },
+  {
+    "iso3": "TUN",
+    "country": "Tunisia",
+    "region": "Northern Africa and Western Asia",
+    "traced": 0.0,
+    "seizures": 785
+  },
+  {
+    "iso3": "AUS",
+    "country": "Australia",
+    "region": "Oceania",
+    "traced": 0.96,
+    "seizures": 26660
+  },
+  {
+    "iso3": "MUS",
+    "country": "Mauritius",
+    "region": "Sub-Saharan Africa",
+    "traced": 100.0,
+    "seizures": 11
+  },
+  {
+    "iso3": "ZWE",
+    "country": "Zimbabwe",
+    "region": "Sub-Saharan Africa",
+    "traced": 79.25,
+    "seizures": 76
+  },
+  {
+    "iso3": "KEN",
+    "country": "Kenya",
+    "region": "Sub-Saharan Africa",
+    "traced": 50.33,
+    "seizures": 3269
+  },
+  {
+    "iso3": "TGO",
+    "country": "Togo",
+    "region": "Sub-Saharan Africa",
+    "traced": 0.0,
+    "seizures": 83
+  }
+]
