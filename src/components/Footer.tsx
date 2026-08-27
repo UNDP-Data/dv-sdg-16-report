@@ -33,8 +33,8 @@ export default function FooterEl() {
           <Link to='/impact-stories' className={footerLinkClass}>
             Impact stories
           </Link>
-          <Link to='/' className={footerLinkClass}>
-            Materials
+          <Link to='/resources' className={footerLinkClass}>
+            Resources
           </Link>
           <Link to='/' className={footerLinkClass}>
             About
