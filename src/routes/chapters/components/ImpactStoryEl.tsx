@@ -29,7 +29,7 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
         >
           <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
             <div className='flex max-w-xl flex-col gap-6'>
-              <Tag color={color} content='Data to impact story' />
+              <Tag color={color} content='Data to impact stories' />
               <H4
                 weight='semibold'
                 marginBottom='none'

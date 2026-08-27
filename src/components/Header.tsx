@@ -62,7 +62,7 @@ export default function HeaderEl() {
             </DropdownMenuContent>
           </DropdownMenu>
           <Link to='/impact-stories' className={navLinkClass}>
-            Impact stories
+            Data to impact stories
           </Link>
           <Link to='/resources' className={navLinkClass}>
             Resources
@@ -115,7 +115,7 @@ export default function HeaderEl() {
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
-            Impact stories
+            Data to impact stories
           </Link>
           <Link to='/resources' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Resources

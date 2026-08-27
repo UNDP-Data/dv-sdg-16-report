@@ -31,7 +31,7 @@ export default function FooterEl() {
             Inclusion
           </Link>
           <Link to='/impact-stories' className={footerLinkClass}>
-            Impact stories
+            Data to impact stories
           </Link>
           <Link to='/resources' className={footerLinkClass}>
             Resources
