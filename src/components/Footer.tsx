@@ -4,6 +4,8 @@ import { showNavigation } from '@/Utils/showNavigation';
 const footerLinkClass = 'text-sm text-content-reverse transition-colors hover:text-foreground';
 
 export default function FooterEl() {
+  if (!showNavigation()) return null;
+
   return (
     <footer
       className='border-background/30 border-t bg-cover bg-foreground-soft px-6 py-4 md:px-12'
@@ -18,7 +20,7 @@ export default function FooterEl() {
             Logo
           </div>
         </div>
-        {showNavigation() && (
+        {
           <nav className='flex flex-wrap items-center gap-x-6 gap-y-2'>
             <Link to='/' className={footerLinkClass}>
               Home
@@ -45,7 +47,7 @@ export default function FooterEl() {
               About
             </Link>
           </nav>
-        )}
+        }
       </div>
     </footer>
   );
