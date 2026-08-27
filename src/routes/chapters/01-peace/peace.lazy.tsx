@@ -49,14 +49,14 @@ export function Peace() {
                 across{' '}
                 <InfoTooltip
                   trigger='20 situations of armed conflict'
-                  content='For the 2015-2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 internationally recognized armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
+                  content='For the 2015-2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
                   color='primary'
                 />
                 , equivalent to one civilian killed every 14 minutes. While documentation of
                 conflict-related deaths has improved significantly over the past decade, important
                 challenges remain, particularly in determining civilian status during active
                 hostilities. In 2025, the status of more than 13,000 conflict-related deaths could
-                not be established, meaning the reported figures should be interpreted as a minimum
+                not be established, so the reported figures should be interpreted as a minimum
                 estimate of civilian deaths.
               </P>
             </TextContainer>
@@ -98,11 +98,11 @@ export function Peace() {
                 would represent important progress, it would fall short of the ambition of SDG 16 to{' '}
                 <InfoTooltip
                   trigger='significantly reduce'
-                  content='For SDG goals, a significant reduction is defined as a 50 per cent reduction from the 2015 baseline by 2030.'
+                  content='For SDG target 16.1, significant reduction is interpreted as 50% reduction in the intentional homicide rate from its 2015 baseline by 2030.'
                   color='primary'
                 />{' '}
                 all forms of violence and related deaths everywhere, which would require the global
-                homicide rate to fall below 3 victims per 100,000 population by 2030.
+                homicide rate to fall below 3 victims per 100,000 population.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -172,10 +172,13 @@ export function Peace() {
                 Member States (115 countries) have recorded at least one killing. In 2024, a record
                 686 defenders were killed and 202 disappeared, the equivalent to one defender,
                 journalist or trade unionist being killed or disappeared every 10 hours, compared
-                with every 19 hours in 2015. Based on historical patterns in the discovery and
-                recording of human rights violations, the final number of documented cases for 2025
-                is expected to reach an estimated 743 killings and 202 disappearances.
+                with every 19 hours in 2015.
               </P>
+              <Highlight
+                content='Based on historical patterns in the discovery and
+                recording of human rights violations, the final number of documented cases for 2025
+                is expected to reach estimated 743 killings and 202 disappearances.'
+              />
             </TextContainer>
             <GraphContainer>
               <DefenderKillingsLineChart />
@@ -232,12 +235,12 @@ export function Peace() {
                 remain largely invisible in official administrative records.
               </P>
               <P marginBottom='none' size='lg'>
-                The available evidence suggests that levels of experience of physical assault are
-                relatively similar across regions, with median prevalence rates ranging from 0.9 to
-                1.5 per cent of the population. Robbery shows a different pattern. In Latin America
-                and the Caribbean, the median prevalence rate reached 3.1 per cent, more than three
-                times the levels recorded in other regions, where median prevalence rates remained
-                below 1 per cent.
+                The available evidence suggest that levels of experience of physical assault are
+                relatively similar across regions, with the median prevalence rates ranging from 0.9
+                to 1.5 per cent of the population. Robbery shows a different pattern. In Latin
+                America and the Caribbean, the median prevalence rate reached 3.1 per cent, more
+                than three times the levels recorded in other regions, where median prevalence rates
+                remained below 1 per cent.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -306,7 +309,7 @@ export function Peace() {
               experienced rape or sexual assault as children.'
               />
               <P marginBottom='none' size='lg'>
-                Among men and boys, an estimated 240 to 310 million, or around one in eleven,
+                Among men and boys, an estimated 240 to 310 million (or around one in eleven)
                 experienced rape or sexual assault in childhood. The risks are even greater in
                 fragile settings, where more than one in four girls has experienced rape or sexual
                 assault in childhood.
@@ -358,8 +361,8 @@ export function Peace() {
                 Sexual exploitation and forced labour remained the two most commonly detected forms
                 of trafficking, accounting for roughly 39 per cent and 38 per cent of detected
                 victims, respectively. The remaining victims were trafficked for other forms of
-                exploitation, including organ removal, forced criminality, forced marriage and
-                forced begging.
+                exploitation, including organ removal, forced criminality, forced marriage, forced
+                begging, etc.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -408,15 +411,10 @@ export function Peace() {
                 content='Women consistently indicate feeling less safe than men'
               />
               <P marginBottom='none' size='lg'>
-                Across{' '}
-                <InfoTooltip
-                  trigger='74 countries with sex-disaggregated data'
-                  content='The number of countries with sex-disaggregated data on perception of safety is different to the sample of countries with data on the overall perception of safety in the population.'
-                  color='primary'
-                />
-                , 59 per cent of women reported feeling safe walking alone after dark, compared with
-                72 per cent of men. The gender gap was evident in every region and was particularly
-                pronounced in Northern Africa and Western Asia.
+                Across 74 countries with sex-disaggregated data, 59 per cent of women reported
+                feeling safe walking alone after dark, compared with 72 per cent of men. The gender
+                gap was evident in every region and was particularly pronounced in Northern Africa
+                and Western Asia.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -438,13 +436,13 @@ export function Peace() {
         id: '08',
         title: 'The role of Institutions',
         indicatorCode: '',
-        heading: 'Achieving peace through capable, trustworthy and responsive institutions',
+        heading: 'The role of institutions in promoting peace',
         anchor: 'role-of-institutions',
         content: (
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                The evidence presented across these indicators underscores the important role of
+                The evidence presented across these indicators underscore the important role of
                 institutions in preventing conflict and violence. While the forms of violence
                 differ, from conflict-related deaths and homicide to violence against children,
                 human trafficking and attacks on those defending human rights, outcomes are shaped
@@ -486,7 +484,7 @@ export function Peace() {
           <>
             Peace is at the heart of SDG 16 and a fundamental condition for sustainable development.
             While peace is often understood as the absence of war, it extends far beyond conflict
-            and lethal violence to encompass people’s everyday experiences of safety, security, and
+            and lethal violence to encompass people's everyday experiences of safety, security, and
             freedom from violence. The indicators under Goal 16 capture the different ways violence
             and insecurity affect individuals and communities, providing a multidimensional picture
             of peace.
