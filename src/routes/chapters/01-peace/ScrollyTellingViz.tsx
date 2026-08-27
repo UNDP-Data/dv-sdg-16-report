@@ -89,7 +89,7 @@ const SLIDES = [
         Children accounted for{' '}
         <span className='py-3 font-bold text-categorical-child leading-none'>
           1 in 5 recorded civilian deaths (20%).
-        </span>
+        </span>{' '}
         Among child victims, three boys were killed for every two girls.
       </>
     ),
