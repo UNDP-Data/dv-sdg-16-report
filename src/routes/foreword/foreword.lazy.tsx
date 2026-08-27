@@ -70,28 +70,16 @@ export function Foreword() {
       </section>
 
       <section className='px-6 pb-16 md:px-12 md:pb-24'>
-        <div className='mx-auto flex max-w-300 flex-col gap-16'>
-          <div className='flex flex-wrap items-center justify-center gap-12 lg:justify-between'>
-            <img
-              src='/imgs/logos/ohchr.svg'
-              alt='United Nations Human Rights, Office of the High Commissioner'
-              className='h-30'
-            />
-            <img
-              src='/imgs/logos/undp.svg'
-              alt='United Nations Development Programme'
-              className='h-35'
-            />
-            <img src='/imgs/logos/unicef.svg' alt='UNICEF, for every child' className='h-33' />
-            <img
-              src='/imgs/logos/unodc.svg'
-              alt='United Nations Office on Drugs and Crime'
-              className='h-30'
-            />
-          </div>
-
+        <div className='mx-auto max-w-300'>
           <div className='grid lg:grid-cols-4'>
-            <div className='flex flex-col gap-4 border-stroke-sm border-b pb-6 lg:border-r lg:border-b-0 lg:py-0 lg:pr-6'>
+            <div className='flex flex-col gap-4 border-stroke-sm border-b pb-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div className='flex h-36 items-center justify-center'>
+                <img
+                  src='/imgs/logos/ohchr.svg'
+                  alt='United Nations Human Rights, Office of the High Commissioner'
+                  className='h-30'
+                />
+              </div>
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
@@ -104,6 +92,13 @@ export function Foreword() {
               </div>
             </div>
             <div className='flex flex-col gap-4 border-stroke-sm border-b py-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div className='flex h-36 items-center justify-center'>
+                <img
+                  src='/imgs/logos/undp.svg'
+                  alt='United Nations Development Programme'
+                  className='h-35'
+                />
+              </div>
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
@@ -116,6 +111,9 @@ export function Foreword() {
               </div>
             </div>
             <div className='flex flex-col gap-4 border-stroke-sm border-b py-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div className='flex h-36 items-center justify-center'>
+                <img src='/imgs/logos/unicef.svg' alt='UNICEF, for every child' className='h-33' />
+              </div>
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
@@ -127,7 +125,14 @@ export function Foreword() {
                 </P>
               </div>
             </div>
-            <div className='flex flex-col gap-4 pt-6 lg:py-0 lg:pl-6'>
+            <div className='flex flex-col gap-4 pt-6 lg:px-6 lg:py-0'>
+              <div className='flex h-36 items-center justify-center'>
+                <img
+                  src='/imgs/logos/unodc.svg'
+                  alt='United Nations Office on Drugs and Crime'
+                  className='h-30'
+                />
+              </div>
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
