@@ -1,11 +1,10 @@
-import { type AnyRootRoute, createRoute, useSearch } from '@tanstack/react-router';
+import { type AnyRootRoute, createRoute } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
 import { Container } from '@undp/design-system-react/Container';
 import { H1, P } from '@undp/design-system-react/Typography';
-import { isAfterReleaseDate } from './Utils/isAfterReleasefDate';
+import { showNavigation } from './Utils/showNavigation';
 
 function App() {
-  const { bypassCounter } = useSearch({ from: '/' });
   return (
     <Container
       backgroundColor='foreground'
@@ -30,7 +29,7 @@ function App() {
           >
             Peace, Justice, Inclusion
           </H1>
-          {bypassCounter || isAfterReleaseDate() ? (
+          {showNavigation() ? (
             <P size='xl' className='text-content-reverse'>
               A global look at where the world stands on building peaceful, just, and inclusive
               societies — and how far there is left to go.

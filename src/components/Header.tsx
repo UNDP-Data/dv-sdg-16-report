@@ -1,4 +1,4 @@
-import { Link, useLocation, useSearch } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
 import {
   DropdownMenu,
@@ -9,7 +9,7 @@ import {
 import { H5, P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { isAfterReleaseDate } from '@/Utils/isAfterReleasefDate';
+import { showNavigation } from '@/Utils/showNavigation';
 
 const navLinkClass =
   'text-sm font-medium uppercase tracking-wider text-content-reverse transition-colors hover:text-content-secondary';
@@ -18,10 +18,6 @@ const mobileNavLinkClass =
 
 export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { pathname } = useLocation();
-  const { bypassCounter } = useSearch({ from: '/' });
-
-  const showNav = pathname !== '/' || isAfterReleaseDate() || bypassCounter;
 
   return (
     <header
@@ -45,7 +41,7 @@ export default function HeaderEl() {
           </P>
         </Link>
 
-        {showNav && (
+        {showNavigation() && (
           <>
             <nav className='hidden items-center gap-10 lg:flex'>
               <Link to='/' className={navLinkClass}>
