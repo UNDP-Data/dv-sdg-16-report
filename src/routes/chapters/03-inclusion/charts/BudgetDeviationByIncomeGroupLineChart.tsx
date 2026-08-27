@@ -3,6 +3,7 @@ import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { P } from '@undp/design-system-react/Typography';
 import { CHART_PADDING } from '@/constants';
 import budgetDeviationByIncomeGroup from '@/data/chapters/03-inclusion/16-6-1/budget-deviation-by-income-group.json';
+import ChartNote from '../../components/ChartNote';
 
 export default function BudgetDeviationByIncomeGroupLineChart() {
   return (
@@ -74,12 +75,14 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
       }}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Average absolute deviation between approved and actual government expenditure, by income
-          group
+          Change in absolute deviation in government expenditures, by income group
         </P>
       }
-      graphDescription='2019–2024'
+      graphDescription='2020 and 2024'
       sources={[{ source: 'PEFA' }]}
+      footNote={
+        <ChartNote content='Absolute deviation measures the percentage difference between approved and actual government expenditure, regardless of whether actual spending is higher or lower than planned. ' />
+      }
       ariaLabel='Line chart showing the average absolute deviation between approved and actual government expenditure, by income group, from 2019 to 2024. Low-Income and Lower-Middle Income countries show the highest and most volatile deviations throughout the period, while High-Income countries generally maintain the lowest deviations.'
     />
   );

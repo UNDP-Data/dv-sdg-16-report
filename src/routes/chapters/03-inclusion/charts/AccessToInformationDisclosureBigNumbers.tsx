@@ -7,7 +7,7 @@ export default function AccessToInformationDisclosureBigNumbers() {
     <div className='flex flex-col gap-6 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          How does access to information laws function in practice?
+          How do access to information laws function in practice?
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           Across 76 countries

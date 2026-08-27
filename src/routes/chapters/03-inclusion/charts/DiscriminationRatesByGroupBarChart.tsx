@@ -157,7 +157,7 @@ export default function DiscriminationRatesByGroupBarChart() {
       </div>
 
       <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: Office of the United Nations High Commissioner for Human Rights (OHCHR)
+        Source: OHCHR
       </P>
     </div>
   );

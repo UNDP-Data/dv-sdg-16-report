@@ -153,7 +153,7 @@ export default function HomicideRateBySexLineChart() {
         },
       ]}
       footNote={
-        <ChartNote content='Projections for years 2025-2030 represent a linear extrapolation of trends observed between 2015 and 2024. The black dotted line indicates the trend required to achieve the SDG Target 16.1 objective of halving the global homicide rate by 2030.' />
+        <ChartNote content='Projections for years 2025–2030 represent a linear extrapolation of trends observed between 2015 and 2024. The black dotted line indicates the trend required to achieve the SDG Target 16.1 objective of halving the global homicide rate by 2030.' />
       }
     />
   );

@@ -74,8 +74,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Distribution of satisfaction with public services across countries for quality of
-          healthcare, primary education, secondary education and government services
+          Distribution of satisfaction with public services across countries
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           2025 or latest year available
@@ -223,7 +222,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           Source: UNDP, Gallup World Poll
         </P>
-        <ChartNote content='Estimates are based on the latest available survey data between 2015 and 2025 for 148 countries (health services), 12 countries (primary education services), 44 countries (secondary education services) and 46 countries (government services). Education and government services are primarily based on data from high and middle-income countries.' />
+        <ChartNote content='Estimates are based on the latest available survey data between 2015 and 2025 for 148 countries (health services), 12 countries (primary education services), 44 countries (secondary education services) and 46 countries (government services). Education and government services are primarily based on data from high and middle-income countries. The line within each box indicates the median level of satisfaction, the X indicates the average, while the box shows the values for the middle 50 per cent of countries. Whiskers extend to the lowest and highest values observed with circles showing outliers. The spread of each boxplot highlights the extent of variation across countries, with wider ranges reflecting more uneven service delivery outcomes.' />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { SegmentedControl } from '@undp/design-system-react/SegmentedControl';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 const DATA = [
   {
@@ -138,8 +139,7 @@ export default function GapToParityBarChart() {
       <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            The gap to parity in women's representation in public institutions, by 
-            {selectedGrouping === 'region' ? 'region' : 'income group'}
+            The gap to parity in women's representation in public institutions
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2025 or latest year available
@@ -237,7 +237,35 @@ export default function GapToParityBarChart() {
               </P>
             </div>
           )}
-          sources={[{ source: 'UNDP SDG 16 Data Hub' }]}
+          sources={[
+            {
+              source: 'UNDP, Women in the Judiciary Global Dashboard',
+            },
+          ]}
+          footNote={
+            <ChartNote
+              content={
+                <>
+                  Regions: Estimates are derived based on 155 countries and territories for the
+                  public service institutions and 131 countries and territories for the judiciary
+                  using the latest available data in the period 2015–2025. Previously published
+                  estimates were based on 155 countries for public service and 106 countries for the
+                  judiciary. Regional estimates for 16.7.1b and 16.7.1c are based on the following
+                  number of countries respectively: Europe and Northern America (43 and 45), Latin
+                  America and the Caribbean (19 and 19), Eastern and South-Eastern Asia (15 and 5),
+                  Sub-Saharan Africa (36 and 24), Oceania including Australia and New Zealand (14
+                  and 10), Northern Africa and Western Asia (16 and 20), Central and Southern Asia
+                  (12 and 7).
+                  <br />
+                  <br />
+                  Income: Estimates by countries income level for 16.7.1b and 16.7.1c are based on
+                  the following number of countries respectively: High income (54 and 61), Upper
+                  middle income (39 and 34), Lower middle income (40 and 25), Low income (26 and
+                  11).
+                </>
+              }
+            />
+          }
           ariaLabel={`Diverging bar chart showing women's representation ratio in the ${selectedSector === 'publicService' ? 'public service' : 'judiciary'} by ${selectedGrouping === 'region' ? 'region' : 'income group'}, measured as the distance from parity at 1.00. Bars extending left indicate underrepresentation and bars extending right indicate overrepresentation. The world average is shown as the first bar in a darker shade.`}
         />
       </div>
