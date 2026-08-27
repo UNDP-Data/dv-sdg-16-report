@@ -1,8 +1,13 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation, useSearch } from '@tanstack/react-router';
+import { isAfterReleaseDate } from '@/Utils/isAfterReleasefDate';
 
 const footerLinkClass = 'text-sm text-content-reverse transition-colors hover:text-foreground';
 
 export default function FooterEl() {
+  const { pathname } = useLocation();
+  const { bypassCounter } = useSearch({ from: '/' });
+
+  const showNav = pathname !== '/' || isAfterReleaseDate() || bypassCounter;
   return (
     <footer
       className='border-background/30 border-t bg-cover bg-foreground-soft px-6 py-4 md:px-12'
@@ -17,32 +22,34 @@ export default function FooterEl() {
             Logo
           </div>
         </div>
-        <nav className='flex flex-wrap items-center gap-x-6 gap-y-2'>
-          <Link to='/' className={footerLinkClass}>
-            Home
-          </Link>
-          <Link to='/foreword' className={footerLinkClass}>
-            Foreword
-          </Link>
-          <Link to='/chapters/peace' className={footerLinkClass}>
-            Peace
-          </Link>
-          <Link to='/chapters/justice' className={footerLinkClass}>
-            Justice
-          </Link>
-          <Link to='/chapters/inclusion' className={footerLinkClass}>
-            Inclusion
-          </Link>
-          <Link to='/impact-stories' className={footerLinkClass}>
-            Impact stories
-          </Link>
-          <Link to='/' className={footerLinkClass}>
-            Materials
-          </Link>
-          <Link to='/' className={footerLinkClass}>
-            About
-          </Link>
-        </nav>
+        {showNav && (
+          <nav className='flex flex-wrap items-center gap-x-6 gap-y-2'>
+            <Link to='/' className={footerLinkClass}>
+              Home
+            </Link>
+            <Link to='/foreword' className={footerLinkClass}>
+              Foreword
+            </Link>
+            <Link to='/chapters/peace' className={footerLinkClass}>
+              Peace
+            </Link>
+            <Link to='/chapters/justice' className={footerLinkClass}>
+              Justice
+            </Link>
+            <Link to='/chapters/inclusion' className={footerLinkClass}>
+              Inclusion
+            </Link>
+            <Link to='/impact-stories' className={footerLinkClass}>
+              Impact stories
+            </Link>
+            <Link to='/' className={footerLinkClass}>
+              Materials
+            </Link>
+            <Link to='/' className={footerLinkClass}>
+              About
+            </Link>
+          </nav>
+        )}
       </div>
     </footer>
   );
