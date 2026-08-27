@@ -3,6 +3,7 @@ import { RadioGroup, RadioGroupItem } from '@undp/design-system-react/RadioGroup
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 const SECTORS = [
   {
@@ -125,7 +126,31 @@ export default function RepresentationByInstitutionalLevelBarChart() {
             </P>
           </div>
         )}
-        sources={[{ source: 'UNDP SDG 16 Data Hub' }]}
+        sources={[
+          {
+            source: 'UNDP, Women in the Judiciary Global Dashboard',
+          },
+        ]}
+        footNote={
+          <ChartNote
+            content={
+              <>
+                Public service: Estimates are derived based on the following number of countries:
+                General and Keyboard Clerks (31 countries), Administration Professionals (31
+                countries), Business, Administration, Associate Professionals (30 countries), Other
+                Managers (36 countries), Senior Government Officials (39 countries) using the latest
+                available data in the period 2015–2025.
+                <br />
+                <br />
+                Judiciary: Global estimates are based on 117 countries and territories for
+                constitutional and supreme courts and 96 countries and territories for high-level and 83
+                countries and territories for low-level courts using the latest available data in
+                the period 2015–2025. The vast majority of data are from high and upper-middle
+                income countries.
+              </>
+            }
+          />
+        }
         ariaLabel={`Diverging bar chart showing women's representation ratio within the ${label.toLowerCase()} by ${categoryNoun}, measured as the distance from parity at 1.00. Levels run from the most junior to the most senior, and representation falls as seniority rises.`}
       />
     </div>

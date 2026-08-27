@@ -58,8 +58,8 @@ const SLIDES = [
     slideContent: (
       <>
         There are an estimated{' '}
-        <span className='font-bold'>652.5 million children under the age of 5</span> across the
-        globe
+        <span className='font-bold'>652.5 million children under the age of five</span> across the
+        globe.
       </>
     ),
     color: 'surface-lg',
@@ -83,7 +83,8 @@ const SLIDES = [
         Today, nearly <span className='font-bold text-tertiary'>eight in ten children</span> under
         the age of five, more than{' '}
         <span className='font-bold text-tertiary'>500 million children</span>, have had their births
-        registered. This represents significant global progress and an important achievement.
+        registered. This represents significant global progress since 2008, when only six in ten
+        children under five had their births registered.
       </>
     ),
     color: 'tertiary',
@@ -130,7 +131,7 @@ const SLIDES = [
         {' '}
         <span className='font-bold text-categorical-child'>More than half</span> of the world’s
         unregistered children live{' '}
-        <span className='font-bold text-categorical-child'>in Sub-Saharan Africa</span>
+        <span className='font-bold text-categorical-child'>in Sub-Saharan Africa.</span>
       </>
     ),
     color: 'surface-lg',

@@ -76,7 +76,21 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
         },
       ]}
       footNote={
-        <ChartNote content='Regional aggregates refer to 3-year averages weighted by countries’ population size. Most surveys include the qualifications “after dark” or “at night” in the question wording. Averages for Oceania were removed, as only data for one country was available.' />
+        <ChartNote
+          content={
+            <>
+              Regional aggregates refer to 3-year averages weighted by countries’ population size.
+              Most surveys include the qualifications “after dark” or “at night” in the question
+              wording. Averages for Oceania were removed, as only data for one country was
+              available.
+              <br />
+              <br />
+              The number of countries with sex-disaggregated data on perception of safety is
+              different to the sample of countries with data on the overall perception of safety in
+              the population.
+            </>
+          }
+        />
       }
       ariaLabel='Dumbbell chart showing the share of the population that feels safe walking alone at night, by region and sex, from 2021 to 2025. Women report feeling less safe than men in every region, with the widest gap in Northern Africa and Western Asia.'
     />

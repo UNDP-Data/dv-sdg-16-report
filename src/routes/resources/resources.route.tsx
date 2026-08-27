@@ -3,7 +3,7 @@ import { createRoute } from '@tanstack/react-router';
 
 export default function createImpactStoriesRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/materials',
+    path: '/resources',
     getParentRoute: () => parentRoute,
-  }).lazy(() => import('./materials.lazy').then((d) => d.Route));
+  }).lazy(() => import('./resources.lazy').then((d) => d.Route));
 }

@@ -69,7 +69,8 @@ const SLIDES = [
     slideContent: (
       <>
         In 2025, a total of <span className='font-bold text-primary'>37,163 civilian deaths</span>{' '}
-        were documented. The status of more than 13,000 deaths in 2025 remained unverified.
+        were documented. The status of <strong>more than 13,000 deaths</strong> in 2025 remained
+        unverified.
       </>
     ),
     color: 'primary',
@@ -88,9 +89,9 @@ const SLIDES = [
       <>
         Children accounted for{' '}
         <span className='py-3 font-bold text-categorical-child leading-none'>
-          1 in 5 recorded civilian deaths (20%).
-        </span>
-        Among child victims, three boys were killed for every two girls.
+          1 in 5 recorded civilian deaths (20%).
+        </span>{' '}
+        Among child victims, <strong>three boys were killed for every two girls</strong>.
       </>
     ),
     color: 'categorical-child',
@@ -109,10 +110,12 @@ const SLIDES = [
       <>
         Women made up{' '}
         <span className='font-bold text-categorical-female'>
-          18% of documented civilian deaths.
+          18% of documented civilian deaths.
         </span>{' '}
-        Combined, women and children accounted for more than a third (38%) of all civilian
-        fatalities.
+        <br />
+        <br />
+        Combined, <strong>women and children accounted for more than a third (38%)</strong> of all
+        civilian fatalities.
       </>
     ),
     color: 'categorical-female',
