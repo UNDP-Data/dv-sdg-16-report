@@ -1,8 +1,11 @@
-import { type AnyRootRoute, createRoute } from '@tanstack/react-router';
+import { type AnyRootRoute, createRoute, useSearch } from '@tanstack/react-router';
+import { Button } from '@undp/design-system-react/Button';
 import { Container } from '@undp/design-system-react/Container';
 import { H1, P } from '@undp/design-system-react/Typography';
+import { isAfterReleaseDate } from './Utils/isAfterReleasefDate';
 
 function App() {
+  const { bypassCounter } = useSearch({ from: '/' });
   return (
     <Container
       backgroundColor='foreground'
@@ -27,10 +30,37 @@ function App() {
           >
             Peace, Justice, Inclusion
           </H1>
-          <P size='xl' className='text-content-reverse'>
-            A global look at where the world stands on building peaceful, just, and inclusive
-            societies — and how far there is left to go.
-          </P>
+          {bypassCounter || isAfterReleaseDate() ? (
+            <P size='xl' className='text-content-reverse'>
+              A global look at where the world stands on building peaceful, just, and inclusive
+              societies — and how far there is left to go.
+            </P>
+          ) : (
+            <>
+              <P size='xl' className='text-content-reverse'>
+                This is the official page for the 2026 Global Progress Report on SDG 16, jointly
+                produced by OHCHR, UNDP, UNICEF, and UNODC.
+                <br />
+                <br />
+                Discover what the latest data reveal about global progress toward peace, justice,
+                and inclusion, and the role of effective institutions in driving sustained change.
+              </P>
+              <a
+                target='_blank'
+                rel='noreferrer'
+                href='https://forms.cloud.microsoft/pages/responsepage.aspx?id=Xtvls0QpN0iZ9XSIrOVDGU0hVM8DDcBGn_INVU5ric1UMEM0VUpJOVpSSzM4NlZVTjJQWlZDMVAzUy4u&route=shorturl'
+              >
+                <Button
+                  type='button'
+                  variant='outline'
+                  arrow={false}
+                  className='w-fit gap-1.5 border border-primary px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-background/10'
+                >
+                  Sign up here to attend the report launch
+                </Button>
+              </a>
+            </>
+          )}
         </Container>
       </div>
 

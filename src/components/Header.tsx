@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useLocation, useSearch } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
 import {
   DropdownMenu,
@@ -9,6 +9,7 @@ import {
 import { H5, P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { isAfterReleaseDate } from '@/Utils/isAfterReleasefDate';
 
 const navLinkClass =
   'text-sm font-medium uppercase tracking-wider text-content-reverse transition-colors hover:text-content-secondary';
@@ -17,6 +18,10 @@ const mobileNavLinkClass =
 
 export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
+  const { bypassCounter } = useSearch({ from: '/' });
+
+  const showNav = pathname !== '/' || isAfterReleaseDate() || bypassCounter;
 
   return (
     <header
@@ -40,51 +45,55 @@ export default function HeaderEl() {
           </P>
         </Link>
 
-        <nav className='hidden items-center gap-10 lg:flex'>
-          <Link to='/' className={navLinkClass}>
-            Home
-          </Link>
-          <Link to='/foreword' className={navLinkClass}>
-            Foreword
-          </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center gap-1 ${navLinkClass}`}>
-              Chapters
-              <ChevronDown size={14} />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
-              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to='/chapters/peace'>Peace</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to='/chapters/justice'>Justice</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                <Link to='/chapters/inclusion'>Inclusion</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Link to='/impact-stories' className={navLinkClass}>
-            Data to impact stories
-          </Link>
-          <Link to='/resources' className={navLinkClass}>
-            Resources
-          </Link>
-          <Link to='/about' className={navLinkClass}>
-            About
-          </Link>
-        </nav>
+        {showNav && (
+          <>
+            <nav className='hidden items-center gap-10 lg:flex'>
+              <Link to='/' className={navLinkClass}>
+                Home
+              </Link>
+              <Link to='/foreword' className={navLinkClass}>
+                Foreword
+              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger className={`flex items-center gap-1 ${navLinkClass}`}>
+                  Chapters
+                  <ChevronDown size={14} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
+                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                    <Link to='/chapters/peace'>Peace</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                    <Link to='/chapters/justice'>Justice</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                    <Link to='/chapters/inclusion'>Inclusion</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Link to='/impact-stories' className={navLinkClass}>
+                Data to impact stories
+              </Link>
+              <Link to='/resources' className={navLinkClass}>
+                Resources
+              </Link>
+              <Link to='/about' className={navLinkClass}>
+                About
+              </Link>
+            </nav>
 
-        <Button
-          type='button'
-          variant='icon'
-          className='p-0 text-content-reverse lg:hidden'
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((open) => !open)}
-        >
-          {mobileOpen ? <X size={32} /> : <Menu size={32} />}
-        </Button>
+            <Button
+              type='button'
+              variant='icon'
+              className='p-0 text-content-reverse lg:hidden'
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              {mobileOpen ? <X size={32} /> : <Menu size={32} />}
+            </Button>
+          </>
+        )}
       </div>
 
       {mobileOpen ? (
