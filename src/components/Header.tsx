@@ -67,6 +67,9 @@ export default function HeaderEl() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
+              <Link to='/sdg16-progress' className={navLinkClass}>
+                SDG 16 Progress
+              </Link>
               <Link to='/impact-stories' className={navLinkClass}>
                 Data to impact stories
               </Link>
@@ -120,6 +123,13 @@ export default function HeaderEl() {
             onClick={() => setMobileOpen(false)}
           >
             Inclusion
+          </Link>
+          <Link
+            to='/sdg16-progress'
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
+            SDG 16 Progress
           </Link>
           <Link
             to='/impact-stories'

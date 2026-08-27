@@ -663,7 +663,7 @@ export function Inclusion() {
         ))}
       </div>
 
-      <ChapterEndNav label='Back to' title='Home' to='/' color='tertiary' />
+      <ChapterEndNav label='Next' title='SDG 16 Progress' to='/sdg16-progress' color='tertiary' />
     </>
   );
 }
