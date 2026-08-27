@@ -21,6 +21,9 @@ export default function FooterEl() {
           <Link to='/' className={footerLinkClass}>
             Home
           </Link>
+          <Link to='/foreword' className={footerLinkClass}>
+            Foreword
+          </Link>
           <Link to='/chapters/peace' className={footerLinkClass}>
             Peace
           </Link>

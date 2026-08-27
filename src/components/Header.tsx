@@ -44,6 +44,9 @@ export default function HeaderEl() {
           <Link to='/' className={navLinkClass}>
             Home
           </Link>
+          <Link to='/foreword' className={navLinkClass}>
+            Foreword
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger className={`flex items-center gap-1 ${navLinkClass}`}>
               Chapters
@@ -88,6 +91,9 @@ export default function HeaderEl() {
         <nav className='absolute inset-x-0 top-full z-40 border-foreground border-t bg-foreground-soft px-6 py-4 lg:hidden'>
           <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Home
+          </Link>
+          <Link to='/foreword' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+            Foreword
           </Link>
           <Link
             to='/chapters/peace'
