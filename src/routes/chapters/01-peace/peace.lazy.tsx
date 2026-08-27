@@ -49,7 +49,7 @@ export function Peace() {
                 across{' '}
                 <InfoTooltip
                   trigger='20 situations of armed conflict'
-                  content='For the 2015-2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
+                  content='For the 2015–2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
                   color='primary'
                 />
                 , equivalent to one civilian killed every 14 minutes. While documentation of
@@ -484,7 +484,7 @@ export function Peace() {
           <>
             Peace is at the heart of SDG 16 and a fundamental condition for sustainable development.
             While peace is often understood as the absence of war, it extends far beyond conflict
-            and lethal violence to encompass people's everyday experiences of safety, security, and
+            and lethal violence to encompass people's everyday experiences of safety, security and
             freedom from violence. The indicators under Goal 16 capture the different ways violence
             and insecurity affect individuals and communities, providing a multidimensional picture
             of peace.
