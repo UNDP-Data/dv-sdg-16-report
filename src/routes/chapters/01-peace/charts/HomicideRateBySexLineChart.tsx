@@ -62,7 +62,7 @@ export default function HomicideRateBySexLineChart() {
       graphTitle={
         <div className='flex flex-col items-start gap-2'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Trends in and projections of the global homicide rate (per 100,000 population), by sex
+            The global homicide rate per 100,000, by sex
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2000–2030
@@ -153,7 +153,7 @@ export default function HomicideRateBySexLineChart() {
         },
       ]}
       footNote={
-        <ChartNote content='Projections for years 2025-2030 represent a linear extrapolation of trends observed between 2015 and 2024. The black dotted line indicates the trend required to achieve the SDG Target 16.1 objective of halving the global homicide rate by 2030.' />
+        <ChartNote content='Projections for years 2025–2030 represent a linear extrapolation of trends observed between 2015 and 2024. The black dotted line indicates the trend required to achieve the SDG Target 16.1 objective of halving the global homicide rate by 2030.' />
       }
     />
   );

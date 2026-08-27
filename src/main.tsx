@@ -12,7 +12,7 @@ import createJusticeRoute from './routes/chapters/02-justice/justice.route';
 import createInclusionRoute from './routes/chapters/03-inclusion/inclusion.route';
 import createForewordRoute from './routes/foreword/foreword.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
-import createMaterialsRoute from './routes/materials/material.route';
+import createResourcesRoute from './routes/resources/resources.route';
 
 import './styles/fonts.css';
 import './styles/style.css';
@@ -40,7 +40,7 @@ const routeTree = rootRoute.addChildren([
   createJusticeRoute(rootRoute),
   createInclusionRoute(rootRoute),
   createImpactStoriesRoute(rootRoute),
-  createMaterialsRoute(rootRoute),
+  createResourcesRoute(rootRoute),
   createAboutRoute(rootRoute),
 ]);
 

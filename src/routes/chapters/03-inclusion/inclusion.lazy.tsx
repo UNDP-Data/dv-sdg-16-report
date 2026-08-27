@@ -46,7 +46,7 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 Birth registration is the first step towards inclusion in society. By establishing a
                 child's legal identity, it helps protect fundamental rights and enables access to
-                essential services such as health care, education and social protection.
+                essential services such as healthcare, education and social protection.
               </P>
             </TextContainer>
             <ScrollyTellingViz />
@@ -76,47 +76,53 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 As societies confront increasingly complex challenges from climate change and
                 conflict to economic insecurity and technological change, it is important that
-                political decision making reflects the diversity{' '}
+                political decision-making reflects the diversity{' '}
                 <InfoTooltip
                   trigger='of the populations it serves'
-                  content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect the diversity of persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
+                  content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect other diversity including persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
                   color='tertiary'
                 />
-                . Women and younger representatives, bring{' '}
+                . Women and younger representatives bring{' '}
                 <InfoTooltip
                   trigger='different lived experiences and policy priorities'
-                  content="Young leaders tend to have different priorities from their counterparts, typically leaning towards social spending related to their cohort's long-term future, such as climate change, and women leaders often favour investments on education, childcare, and influence gender-sensitive policy discussions in Parliaments."
+                  content="Young leaders tend to have different priorities from their counterparts, typically leaning towards social spending related to their cohort's long-term future, such as climate change, and women leaders often favour investments in education and childcare, and influence gender-sensitive policy discussions in parliaments."
                   color='tertiary'
-                />{' '}
-                helping to broaden parliamentary debate and strengthen the responsiveness of public
-                policy.
+                />
+                , helping to broaden parliamentary debate and strengthen the responsiveness of
+                public policy.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                As of 2026, women held 27.5 per cent of parliamentary seats globally, a modest
-                increase from 27.2 per cent in 2025. Representation remains even lower in
-                parliamentary leadership, where women accounted for 19.9 per cent of Speakers of
-                Parliament in 2026, a decline of 3.8 percentage points from the previous year.
-                However, the proportion of women in the leadership of core policy committees has
-                shown signs of progress, with the share of parliamentary chair positions held by
-                women rising by 4.1, 3.6 and 2.7 percentage points for foreign affairs, defence and
-                finance committees, respectively.
+                Despite steady progress over the past decade, parliaments remain far from reflecting
+                the populations they represent. As of 2026, women held 27.5 per cent of
+                parliamentary seats globally, a modest increase from 27.2 per cent in 2025.
+                Representation remains even lower in parliamentary leadership, where women accounted
+                for 19.9 per cent of Speakers of Parliament in 2026, a decline of 3.8 percentage
+                points from the previous year. There are pronounced regional differences. Women's
+                representation is highest in the Americas, where women hold 35.6 per cent of
+                parliamentary seats. By contrast, women hold only 16.2 per cent of seats in the
+                Middle East and North Africa.
               </P>
             </TextContainer>
+            <GraphContainer>
+              <ParliamentaryLeadershipByCategoryBarChart />
+            </GraphContainer>
             <TextContainer>
               <Highlight
                 color='tertiary'
                 content='Young people remain underrepresented in political decision-making'
               />
               <P marginBottom='none' size='lg'>
-                While people aged 18 to 40 account for around one third of the world's adult
-                population, they represent only 19 per cent of parliamentarians globally. Although
-                this is an important improvement from 12.9 per cent in 2014, progress has slowed
-                considerably in recent years, with only minimal gains since 2023. Representation
-                among the youngest parliamentarians has stagnated entirely. In 2026, just 2.8 per
-                cent of Members of Parliament were aged 30 years or younger, unchanged since 2023,
-                although twice the level observed in 2014, when it was 1.4 per cent.
+                Age gaps in representation are even more pronounced. While people aged 18 to 40
+                account for around one third of the world's adult population, they represent only 19
+                per cent of parliamentarians globally. Although this is an important improvement from
+                12.9 per cent in 2014, progress has slowed considerably in recent years, with only
+                minimal gains since 2023. Youth representation is also highest in the Americas, with
+                MPs aged 40 or younger accounting for 23.5 per cent of parliamentarians. The Pacific
+                records the lowest levels of youth representation, with MPs aged 30 or younger
+                accounting for just 2.0 per cent of parliamentarians and those aged 40 or younger
+                only 12.0 per cent.
               </P>
               <Highlight
                 color='tertiary'
@@ -132,22 +138,6 @@ export function Inclusion() {
                 cohorts enter political office.
               </P>
             </TextContainer>
-            <GraphContainer>
-              <ParliamentaryLeadershipByCategoryBarChart />
-            </GraphContainer>
-            <TextContainer>
-              <Highlight color='tertiary' content='Progress remains uneven across regions' />
-            </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
-              <P marginBottom='none' size='lg'>
-                The Americas lead in both women's and youth representation, with women holding 35.6
-                per cent of parliamentary seats and MPs aged 40 or younger accounting for 23.5 per
-                cent of members. By contrast, women hold only 16.2 per cent of seats in the Middle
-                East and North Africa, while the Pacific records the lowest levels of youth
-                representation, with MPs aged 30 or younger accounting for just 2.0 per cent of
-                parliamentarians and those aged 40 or younger only 12.0 per cent.
-              </P>
-            </TextContainer>
             <Spacer size='2xl' />
             <ImpactStoryEl id='inclusion-benin-womens-representation' color='tertiary' />
             <Spacer size='6xl' />
@@ -157,7 +147,7 @@ export function Inclusion() {
       {
         id: '03',
         title: 'Representation in public service institutions and the judiciary',
-        indicatorCode: '16.7.1 (b) & (c)',
+        indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
         anchor: 'representation-in-public-service-and-judiciary',
@@ -170,10 +160,15 @@ export function Inclusion() {
                 many countries, yet this progress has not consistently translated into equal
                 representation. Globally, women remain underrepresented relative to their share of
                 the population in both the public service and the judiciary, with representation
-                ratios of 0.80 and 0.88, respectively, compared with parity at 1.00. Put simply, a
-                ratio of 0.80 means that women have achieved only 80 per cent of the representation
-                they would have if their share in public institutions matched their share of the
-                population.
+                ratios of 0.80 and 0.88, respectively, compared with{' '}
+                <InfoTooltip
+                  trigger='parity at 1.00'
+                  content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
+                  color='tertiary'
+                />
+                . Put simply, a ratio of 0.80 means that women have achieved only 80 per cent of the
+                representation they would have if their share in public institutions matched their
+                share of the population.
               </P>
             </TextContainer>
             <TextContainer>
@@ -195,12 +190,12 @@ export function Inclusion() {
                 color='tertiary'
                 className={isGenderLensActive ? 'gender-lens' : undefined}
                 content='Women are often well represented, and in some cases
-                overrepresented, in entry-level and administrative roles within the public service
-                Their representation, however, declines at higher level of decision making. '
+                overrepresented, in entry-level and administrative roles within the public service.
+                Their representation, however, declines at higher levels of decision-making.'
               />
               <P marginBottom='none' size='lg'>
                 Similar patterns are observed across judicial systems, where women tend to be better
-                represented in lower courts, than in supreme or constitutional courts.
+                represented in lower courts than in constitutional and supreme courts.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -252,35 +247,43 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Discrimination remains a barrier to inclusive societies. Yet discrimination
-                continues to affect millions of people worldwide, limiting access to opportunities,
-                services and participation in public life.
+                Discrimination remains a significant barrier to inclusive societies. It continues to
+                affect millions of people worldwide, limiting access to opportunities, services and
+                participation in public life. Globally, nearly one in five people report having
+                personally experienced discrimination during the previous 12 months.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                Globally, nearly one in five people report having personally experienced
-                discrimination during the previous 12 months. Women and men report similar overall
-                levels of discrimination. However, women are more likely to report discrimination
-                based on gender, reflecting persistent inequalities that often intersect with
-                disability, income, education and minority status.
+                Women and men self-report similar overall levels of discrimination. However, women
+                are more likely to report discrimination based on gender, reflecting persistent
+                inequalities that often intersect with disability, income, education and minority
+                status.
+              </P>
+            </TextContainer>
+            <TextContainer>
+              <Highlight
+                color='tertiary'
+                content='Discrimination is concentrated among already vulnerable groups'
+              />
+              <P marginBottom='none' size='lg'>
+                Persons with disabilities experience some of the highest levels of discrimination,
+                with nearly one in three reporting discrimination during the previous 12 months.
+                Available evidence also suggests that levels of discrimination are consistently
+                higher among people with lower levels of income and education.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='tertiary'
                 className={isGenderLensActive ? 'gender-lens' : undefined}
-                content='Transgender and gender-diverse people report the highest discrimination rates'
+                content='Newly collected data on sexual orientation and gender identity provide additional insights into forms of exclusion that have historically been difficult to measure'
               />
-            </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                For the first time, newly collected data on sexual orientation and gender identity
-                provide additional insights into forms of exclusion that have historically been
-                difficult to measure. Across countries where such data are available, transgender
-                and gender-diverse individuals frequently report the highest levels of
-                discrimination, often exceeding 60 per cent, while people identifying as sexual
-                minorities report discrimination rates 2.2 times higher than the population average.
+                Across countries where such data are available, transgender and gender-diverse
+                individuals frequently report the highest levels of discrimination, often exceeding
+                60 per cent, while people identifying as sexual minorities report discrimination
+                rates 2.2 times higher than the population average.
               </P>
             </TextContainer>
             <TextContainer>
@@ -291,10 +294,9 @@ export function Inclusion() {
                 The availability of data on discrimination has improved considerably in recent
                 years, enabling more detailed analysis across population groups. However, important
                 gaps remain. Fewer than half of reporting countries provide data disaggregated by
-                income, education, or migration status, and only a limited number collect
-                information on sexual orientation and gender identity. As a result, some of the most
-                severe forms of exclusion remain insufficiently documented, hindering assessments
-                for effective policy initiatives.
+                income, education or migration status, and only a limited number collect information
+                on sexual orientation and gender identity. As a result, some of the most severe
+                forms of exclusion remain insufficiently documented.
               </P>
             </TextContainer>
             <Spacer size='2xl' />
@@ -324,6 +326,11 @@ export function Inclusion() {
                 global average absolute deviation between approved and actual government
                 expenditure, which captures both overspending and underspending relative to the
                 approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
+                Moreover, budget reliability remains weaker in lower-income countries. Between 2021
+                and 2024, low-income countries recorded the largest budget deviations between
+                approved and actual expenditure, with median deviations of around 11.8 per cent. By
+                contrast, most high-income and upper-middle-income countries generally maintained
+                deviations below 7 per cent.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -331,13 +338,9 @@ export function Inclusion() {
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Despite overall progress, important differences persist across income groups.
-                Between 2021 and 2024, low-income countries recorded the largest budget deviations
-                between approved and actual expenditure, with median deviations of around 11.8 per
-                cent. By contrast, most high-income and upper-middle-income countries generally
-                maintained deviations below 7 per cent. These differences suggest that stronger
-                public financial management systems and institutional capacity are associated with
-                more reliable budget execution.
+                Implementing approved budgets is only one part of effective governance. Ultimately,
+                effective governance is reflected in whether people can access high-quality public
+                services and whether those services meet their needs.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
@@ -354,7 +357,7 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Across healthcare, education, and{' '}
+                Across healthcare, education and{' '}
                 <InfoTooltip
                   trigger='government services'
                   content="These include services to obtain government-issued identification documents such as national identity cards, passports, driver's licenses and voter's cards, and services for the civil registration of life events such as births, marriages and deaths."
@@ -398,7 +401,7 @@ export function Inclusion() {
       },
       {
         id: '07',
-        title: 'Political efficacy',
+        title: 'Political voice and responsiveness',
         indicatorCode: '16.7.2',
         heading: 'Fewer than half of people feel they have a say in government decisions',
         anchor: 'political-efficacy',
@@ -408,27 +411,28 @@ export function Inclusion() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Inclusive governance is not only about who institutions represent or the services
-                they deliver. Inclusive governance is also about{' '}
+                they deliver. It is also about whether people feel they have a say in public
+                decision-making and whether political systems allow them to have an{' '}
                 <InfoTooltip
-                  trigger='whether people believe their voices influence public decisions'
-                  content="This is known as “external political efficacy”. It refers to people's feeling of having a say in what their government does. This concept is used to measure beliefs regarding system's responsiveness to people's demands. Internal political efficacy instead refers to confidence of the individual in his or her own abilities to understand politics and to act politically."
+                  trigger='influence on politics'
+                  content="The extent to which people feel they have a say in what their government does and influence politics is known as “external political efficacy” and reflects perceptions of how inclusive and responsive the political system is to people’s views and demands."
                   color='tertiary'
                 />
                 .
               </P>
               <P marginBottom='none' size='lg'>
-                Globally, less than half of people believe they have a meaningful say in what their
-                government does, revealing a persistent gap between participation in public life and
-                perceived influence over decision-making.
+                Globally, less than half of people believe they have a say in what their government
+                does, revealing a persistent gap between participation in public life and people's
+                perception of inclusion in decision-making.
               </P>
               <Highlight
                 color='tertiary'
-                content='Some of the lowest levels of perceived influence are found in Europe and Northern America'
+                content='Some of the lowest levels are found in Europe and Northern America, where only around one in three people believe they have a say in government decisions'
               />
               <P marginBottom='none' size='lg'>
-                In Europe and Northern America only around one in three people believe they can
-                influence government decisions. Across regions, perceptions of influence differ by
-                as much as 40 percentage points.
+                Across regions, these perceptions differ by as much as 40 percentage points,
+                demonstrating that inclusive decision-making remains an important challenge in many
+                countries across the world.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -436,9 +440,10 @@ export function Inclusion() {
             </GraphContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
-                Women report lower levels of political influence than men. Across 37 high-income
-                countries with sex-disaggregated data, 27.3 per cent of women believe they have a
-                say in government decisions, compared with 32.6 per cent of men.
+                Women are less likely than men to feel that they have a say in government decisions.
+                Across 37 high-income countries with sex-disaggregated data, 27.3 per cent of women
+                believe they have a say in what their government does, compared with 32.6 per cent
+                of men.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-03.webp' />
@@ -463,8 +468,8 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 As of 2026, 141 UN Member States have adopted statutory guarantees for public access
                 to information, compared with just 14 countries in 1990, reflecting a remarkable
-                increase in the right to information. The most recent adopters include Cuba and
-                Senegal.
+                increase in the right to information. The most recent adopters include Senegal and
+                Cuba adopting access to information laws in 2005 and in 2006, respectively.
               </P>
             </TextContainer>
             <GraphContainer size='lg'>
@@ -483,10 +488,24 @@ export function Inclusion() {
                 bodies and designated institutional roles.
               </P>
               <P marginBottom='none' size='lg'>
-                These implementation gaps are also reflected in the first large-scale global
-                assessment into the effectiveness of access to information laws. Identical access to
-                information requests were submitted across 76 countries, where less than half
-                received full disclosure.
+                These implementation gaps are also reflected in the{' '}
+                <InfoTooltip
+                  trigger='first large-scale global assessment'
+                  content={
+                    <span>
+                      Mendel, T. and Vagliano, R. (2025) Global Comparative Testing of Responses to
+                      Requests for Information. Halifax, NS: Centre for Law and Democracy. Available
+                      at:{' '}
+                      <span className='break-all'>
+                        https://www.law-democracy.org/wp-content/uploads/2025/09/IDUAI.report.25-09-26.pdf
+                      </span>
+                    </span>
+                  }
+                  color='tertiary'
+                />{' '}
+                into the effectiveness of access to information laws. Identical access to information
+                requests were submitted across 76 countries, and fewer than half received full
+                disclosure.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -513,8 +532,19 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Inclusive and effective global governance also depends on whether international
-                institutions reflect the voices and interests of all countries.
+                Goal 16 extends beyond national institutions. Inclusive and effective global
+                governance also depends on whether international institutions reflect the voices and
+                interests of all countries. Despite repeated commitments to strengthen the
+                participation of developing countries in international decision-making, progress has
+                been limited.
+              </P>
+              <P marginBottom='none' size='lg'>
+                Today, developing countries hold 37 per cent of the voting rights in the
+                International Monetary Fund and 39 per cent in the World Bank, despite accounting
+                for 75 per cent of the membership of both institutions. Recent reviews of voting
+                rights at both organizations concluded without agreement on further realignment,
+                highlighting the growing difficulty of reforming global governance in an
+                increasingly fragmented geopolitical environment.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -526,7 +556,7 @@ export function Inclusion() {
       },
       {
         id: '10',
-        title: 'The role of Institutions',
+        title: 'The role of institutions',
         indicatorCode: '',
         heading:
           'Inclusive societies are ensured through substantive representation and transparency',
@@ -535,7 +565,44 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Content goes here
+                Institutions play a crucial role in ensuring that all people are recognized,
+                represented and able to participate meaningfully in public life. The evidence
+                presented across these indicators highlights the many ways in which institutions
+                shape inclusion, equal participation and equitable access to opportunities and
+                services. Whether people feel included depends heavily on the ability of
+                institutions to recognize individuals, protect their rights and respond to their
+                needs.
+              </P>
+              <P marginBottom='none' size='lg'>
+                Inclusive institutions ensure that every person is legally recognized through a
+                legal identity, protected from discrimination, represented in public
+                decision-making, able to access information and public services on equal terms, and
+                empowered to participate in decisions that shape their lives. They also ensure that
+                governments respond fairly and effectively to the needs of all people by delivering
+                quality public services that are accessible, responsive and equitable, regardless of
+                gender, age, disability, ethnicity, income or other characteristics. In doing so,
+                inclusive institutions strengthen the relationship between people and the state by
+                demonstrating that public institutions serve everyone fairly rather than a
+                privileged few.
+              </P>
+              <P marginBottom='none' size='lg'>
+                The indicators presented in this chapter illustrate both areas of progress and
+                persistent gaps in achieving these objectives. They show the extent to which people
+                are legally recognized, represented in public institutions, protected from
+                discrimination and able to access public services and information. Together, they
+                provide a picture of how effectively institutions promote inclusion and support
+                meaningful participation in society.
+              </P>
+              <P marginBottom='none' size='lg'>
+                When institutions function effectively, they help reduce barriers, expand
+                opportunities and strengthen social cohesion. When institutions fail to share power
+                equitably, exclusion deepens, discrimination persists, public services become less
+                responsive, and decisions become less representative of the societies they serve.
+                Trust in public institutions erodes as people lose confidence that they are
+                recognized, treated equally and able to influence public decisions. Building
+                inclusive societies therefore requires institutions that not only serve people, but
+                also ensure that everyone has a place, a voice and an equal opportunity to
+                participate in shaping their future.
               </P>
             </TextContainer>
             <Spacer size='6xl' />
@@ -578,15 +645,6 @@ export function Inclusion() {
         targets={chaptersTargetList.inclusion}
       />
       <Spacer size='8xl' />
-      <TextContainer>
-        <P marginBottom='base' size='lg'>
-          Inclusion begins at birth, when a child's birth is registered, providing a foundation for
-          legal identity. Without proof of legal identity, people may face barriers to accessing
-          education, health care, social protection, financial services and legal protection.
-        </P>
-      </TextContainer>
-      <WaveDivider src='/imgs/dividers/inclusion-01.webp' />
-      <Spacer size='2xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section

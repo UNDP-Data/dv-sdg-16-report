@@ -114,7 +114,7 @@ export default function TargetsDrawer({ chapterTitle, bg, color, targets }: Targ
                             weight='medium'
                             className='text-content-secondary uppercase tracking-wide'
                           >
-                            Data reporter
+                            Custodian Agency
                           </P>
                           <P marginBottom='none' size='base' className='mt-1 text-foreground'>
                             {indicator.dataReporter}

@@ -31,7 +31,7 @@ export function ImpactStories() {
             SDG 16 Report
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
-            Impact stories
+            Data to impact stories
           </H1>
           <P size='lg' className='max-w-2xl text-content-reverse'>
             How data on peace, justice and inclusion is translating into real institutional and

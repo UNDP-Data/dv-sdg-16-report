@@ -2,7 +2,7 @@ import { createLazyRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
 import PlaceholderBlock from '@/components/PlaceholderBlock';
 
-export function Materials() {
+export function Resources() {
   return (
     <>
       <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
@@ -16,23 +16,20 @@ export function Materials() {
             SDG 16 Report
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
-            Materials
+            Resources
           </H1>
-          <P size='lg' className='max-w-2xl text-content-reverse'>
-            Downloadable data, methodology notes and supporting resources behind the report.
-          </P>
         </div>
       </section>
 
       <section className='mx-auto px-6 py-12 md:px-12 md:py-16'>
         <div className='mx-auto max-w-300'>
-          <PlaceholderBlock label='Materials' title='Content coming soon' />
+          <PlaceholderBlock label='Resources' title='Content coming soon' />
         </div>
       </section>
     </>
   );
 }
 
-export const Route = createLazyRoute('/materials')({
-  component: Materials,
+export const Route = createLazyRoute('/resources')({
+  component: Resources,
 });

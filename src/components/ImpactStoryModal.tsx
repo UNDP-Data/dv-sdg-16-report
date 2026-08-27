@@ -22,7 +22,7 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
 
   return (
     <Modal
-      title={story?.title || 'Data to impact story'}
+      title={story?.title || 'Data to impact stories'}
       titleClassName='sr-only'
       open={!!story}
       onClose={onClose}
@@ -32,7 +32,7 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
         <div className='flex flex-col gap-6'>
           <Tag
             color={color}
-            content={`Data to impact story · SDG ${story.indicatorCode} · ${story.indicatorTitle}`}
+            content={`Data to impact stories · SDG ${story.indicatorCode} · ${story.indicatorTitle}`}
           />
           <H3 weight='semibold' marginBottom='none' className='w-[75%] font-heading leading-tight'>
             {story.title}

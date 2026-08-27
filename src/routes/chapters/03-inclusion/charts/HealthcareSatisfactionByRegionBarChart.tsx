@@ -25,7 +25,7 @@ export default function HealthcareSatisfactionByRegionBarChart() {
           quality healthcare, by region
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
-          {year} or latest year available
+          2015 and 2025 or latest year available
         </P>
       </div>
 
@@ -33,11 +33,7 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         <P size='sm' marginBottom='none'>
           Select year
         </P>
-        <RadioGroup
-          value={year}
-          onValueChange={(value) => setYear(value)}
-          color='tertiary'
-        >
+        <RadioGroup value={year} onValueChange={(value) => setYear(value)} color='tertiary'>
           {['2025', '2015'].map((y) => (
             <RadioGroupItem key={y} value={y} label={y} />
           ))}
@@ -65,7 +61,7 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         topMargin={0}
         sources={[{ source: 'UNDP, Gallup World Poll' }]}
         footNote={
-          <ChartNote content='Regional estimates are based on the following number of countries respectively: Europe and Northern America (18), Latin America and the Caribbean (11), Eastern Asia and South-Eastern Asia (9), Sub-Saharan Africa (31), Western Asia and Northern Africa (15), Central Asia and Southern Asia (11).' />
+          <ChartNote content='Estimates are based on the earliest available year of survey data between 2015 and 2019 and latest available year of survey data between 2020 and 2025 for 95 countries (health services). Regional estimates are based on the following number of countries respectively: Europe and Northern America (18), Latin America and the Caribbean (11), Eastern and South-Eastern Asia (9), Sub-Saharan Africa (31), Northern Africa and Western Asia (15), Central and Southern Asia (11). Gallup World Poll asks the question: “In the city or area where you live, are you satisfied or dissatisfied with the availability of quality healthcare?”' />
         }
         ariaLabel={`Horizontal bar chart showing the proportion of the population satisfied with the availability of quality healthcare, by region, in ${year}. Eastern Asia and South-Eastern Asia has the highest satisfaction and Sub-Saharan Africa has the lowest.`}
       />
