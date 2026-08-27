@@ -62,7 +62,7 @@ export default function HomicideRateBySexLineChart() {
       graphTitle={
         <div className='flex flex-col items-start gap-2'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Trends in and projections of the global homicide rate (per 100,000 population), by sex
+            The global homicide rate per 100,000, by sex
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2000–2030
