@@ -1,7 +1,7 @@
 import { Badge } from '@undp/design-system-react/Badge';
 import { P } from '@undp/design-system-react/Typography';
 
-export default function TradeRelatedIFFsCards() {
+export default function TaxCommercialIFFsCards() {
   return (
     <div className='grid auto-rows-fr gap-4 bg-white md:grid-cols-2'>
       <div className='flex flex-col gap-3 bg-background-soft p-6'>
@@ -9,8 +9,8 @@ export default function TradeRelatedIFFsCards() {
           Burkina Faso
         </P>
         <P marginBottom='none' size='sm'>
-          <span className='font-bold text-secondary'>US$319 million</span> in estimated outflows
-          linked to selected exports.
+          <span className='text-secondary'>US$319 million</span> in estimated outflows linked to
+          selected exports.
         </P>
         <div className='mt-auto flex flex-col gap-2'>
           <P
@@ -46,8 +46,7 @@ export default function TradeRelatedIFFsCards() {
           Ghana
         </P>
         <P marginBottom='none' size='sm'>
-          <span className='font-bold text-secondary'>Several billions</span> of IFFs linked to
-          exports.
+          <span className='text-secondary'>Several billions</span> of IFFs linked to exports.
         </P>
         <div className='mt-auto flex flex-col gap-2'>
           <P

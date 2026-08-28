@@ -434,7 +434,7 @@ export function Peace() {
       },
       {
         id: '08',
-        title: 'The role of Institutions',
+        title: 'The role of institutions',
         indicatorCode: '',
         heading: 'The role of institutions in promoting peace',
         anchor: 'role-of-institutions',

@@ -143,10 +143,10 @@ export default function RepresentationByInstitutionalLevelBarChart() {
                 <br />
                 <br />
                 Judiciary: Global estimates are based on 117 countries and territories for
-                constitutional and supreme courts and 96 countries and territories for high-level and 83
-                countries and territories for low-level courts using the latest available data in
-                the period 2015–2025. The vast majority of data are from high and upper-middle
-                income countries.
+                constitutional and supreme courts and 96 countries and territories for high-level
+                and 83 countries and territories for low-level courts using the latest available
+                data in the period 2015–2025. The vast majority of data are from high and
+                upper-middle income countries.
               </>
             }
           />

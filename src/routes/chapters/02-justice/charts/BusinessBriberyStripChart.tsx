@@ -139,7 +139,7 @@ export default function BusinessBriberyStripChart() {
               </div>
             </div>
           )}
-          sources={[{ source: 'World Development Indicators (WDI)' }]}
+          sources={[{ source: 'World Bank Enterprise Surveys' }]}
           ariaLabel='Strip chart showing the proportion of firms experiencing at least one bribe payment request, with each dot representing a country and a black bar marking the median. Sub-Saharan Africa and Eastern and South-Eastern Asia record the highest median levels and Europe and Northern America the lowest.'
         />
       </div>

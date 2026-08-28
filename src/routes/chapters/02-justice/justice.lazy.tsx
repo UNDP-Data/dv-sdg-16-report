@@ -17,11 +17,12 @@ import WaveDivider from '../components/WaveDivider';
 import BriberyPrevalenceStripChart from './charts/BriberyPrevalenceStripChart';
 import BusinessBriberyStripChart from './charts/BusinessBriberyStripChart';
 import BusinessBriberyTrendStripChart from './charts/BusinessBriberyTrendStripChart';
+import CrimeRelatedIFFsCards from './charts/CrimeRelatedIFFsCards';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
 import FirearmsTracingBeeSwarmChart from './charts/FirearmsTracingBeeSwarmChart';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
-import TradeRelatedIFFsCards from './charts/TradeRelatedIFFsCards';
+import TaxCommercialIFFsCards from './charts/TaxCommercialIFFsCards';
 import UnsentencedShareBySexDumbbellChart from './charts/UnsentencedShareBySexDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
 
@@ -38,6 +39,18 @@ export function Justice() {
         isGenderLens: true,
         content: (
           <>
+            <TextContainer>
+              <P marginBottom='none' size='lg'>
+                At its core, justice is about whether people can obtain fair and just outcomes when
+                their rights are violated. Yet for millions, justice remains beyond reach.
+              </P>
+              <P marginBottom='none' size='lg'>
+                Reporting violence to the police or other competent authorities is the first step
+                towards justice. When victims do not report their experiences of violence,
+                perpetrators are less likely to be investigated or held accountable, and violence
+                remains largely invisible to the justice system.
+              </P>
+            </TextContainer>
             <ScrollyTellingViz />
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
@@ -63,15 +76,16 @@ export function Justice() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                This means{' '}
+                Civil justice affects people's everyday lives. Disputes over housing, employment,
+                land, inheritance, or family matters can have profound consequences for{' '}
                 <InfoTooltip
-                  trigger='1.5 billion people'
-                  content='Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
+                  trigger='millions of people every day'
+                  content='1.5 billion people cannot obtain justice for everyday civil, administrative, or criminal justice problems, cannot access the opportunities and protections provided by the law, or live in extreme conditions of injustice. Source: Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
                   color='secondary'
-                />{' '}
-                cannot obtain justice for everyday civil, administrative, or criminal justice
-                problems, cannot access the opportunities and protections provided by the law, or
-                live in extreme conditions of injustice.
+                />
+                . Whether these disputes can be resolved fairly and effectively is fundamental to
+                protecting rights, preventing conflicts from escalating, and promoting social and
+                economic well-being.
               </P>
               <P marginBottom='none' size='lg'>
                 Recent progress in measuring access to criminal justice has helped shed light on
@@ -115,7 +129,7 @@ export function Justice() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 The right to a fair and timely trial is a fundamental component of justice and
-                enshrined in international human rights law. Yet, in 2024 an estimated 11.6 million
+                enshrined in international human rights law. In 2024, an estimated 11.6 million
                 people were held in detention worldwide, corresponding to a prison population rate
                 of 143 prisoners per 100,000 population.
               </P>
@@ -134,9 +148,12 @@ export function Justice() {
                 criminal justice systems, little progress has been made in reducing pre-trial
                 detention globally. The share of unsentenced detainees has remained virtually
                 unchanged over the past decade, at around 30 per cent, equivalent to approximately
-                3.6 million people. Regional trends, however, varied considerably. Latin America and
-                the Caribbean reduced the proportion of prisoners awaiting trial or sentencing,
-                while the situation deteriorated in Central and Southern Asia.
+                3.6 million people, with an estimated 3.4 million men and 0.2 million women.
+                Regional trends, however, varied considerably. Latin America and the Caribbean
+                reduced the proportion of prisoners awaiting trial or sentencing from 41 per cent in
+                2015 to 31 per cent in 2024. By contrast, the situation deteriorated in Central and
+                Southern Asia, where almost six in ten prisoners were unsentenced in 2024, up from
+                five in ten in 2015.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -145,10 +162,10 @@ export function Justice() {
                 content='Gender gaps in pre-trial detention are regional rather than global'
               />
               <P marginBottom='none' size='lg'>
-                Globally, women and men were equally likely to be held in pre-trial detention, at
+                Globally, women and men were equally likely to be held in pre-trial detention, with
                 around one third of detainees in both groups awaiting trial or sentencing. This
-                share has remained largely unchanged since 2015. Beneath this global average,
-                however, important regional differences emerge. In Northern Africa and Western Asia,
+                share has remained largely unchanged since 2015. However, beneath this global
+                average, important regional differences emerge. In Northern Africa and Western Asia,
                 35 per cent of women detainees were held unsentenced, compared with 23 per cent of
                 men. A similar pattern was observed in Oceania, where nearly half of women detainees
                 (49 per cent) were unsentenced, compared with 38 per cent of men.
@@ -173,7 +190,7 @@ export function Justice() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 <InfoTooltip
-                  content='Flows that are illicit in origin, transfer or use, that reflect an exchange of value and that cross country borders.'
+                  content='Illicit financial flows (IFFs) are defined as “flows that are illicit in origin, transfer or use, that reflect an exchange of value and that cross country borders.”'
                   trigger='Illicit financial flows (IFFs)'
                   color='secondary'
                 />{' '}
@@ -184,20 +201,44 @@ export function Justice() {
               </P>
               <Highlight
                 color='secondary'
-                content='If redirected to the formal economy, illicit flows could serve as a vital source of
-          funding for sustainable development initiatives and help bridge the financing gap.'
+                content={
+                  <>
+                    If redirected to the formal economy, illicit flows could serve as a vital source
+                    of funding for sustainable development initiatives and help bridge the financing
+                    gap.{' '}
+                    <span className='align-middle text-sm'>
+                      <InfoTooltip
+                        trigger='Source'
+                        content='Financing for Sustainable Development Report 2021, Inter-agency Task Force on Financing for Development (United Nations publication, 2021).'
+                        color='secondary'
+                      />
+                    </span>
+                  </>
+                }
               />
               <P marginBottom='none' size='lg'>
-                To date, official estimates of crime-related IFFs have been produced for nine
-                countries.
+                To date,{' '}
+                <InfoTooltip
+                  trigger='official estimates'
+                  content={
+                    <span>
+                      UNODC, Crime-related illicit financial flows: latest progress (United Nations
+                      publication, 2023). Available at:{' '}
+                      <span className='break-all'>
+                        https://www.unodc.org/documents/data-and-analysis/IFF/2023/IFFs_Estimates_Report_2023-final-11dec2023.pdf
+                      </span>
+                    </span>
+                  }
+                  color='secondary'
+                />{' '}
+                of crime-related IFFs have been produced for nine countries. Examples of
+                crime-related IFFs:
               </P>
-              <P marginBottom='none' size='lg'>
-                For example, in Myanmar, the opiates economy generated an estimated US$564 million
-                to US$974 million in potential inward IFFs in 2025, equivalent to 0.8 to 1.3 per
-                cent of GDP. Along the Balkan drug trafficking route, proceeds from trafficking in
-                opiates and methamphetamine were estimated to generate between US$3.4 billion and
-                US$6.9 billion annually between 2019 and 2022.
-              </P>
+            </TextContainer>
+            <GraphContainer>
+              <CrimeRelatedIFFsCards />
+            </GraphContainer>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
                 The first official estimates of tax and commercial IFFs also point to substantial
                 losses. Pilot studies in{' '}
@@ -207,11 +248,11 @@ export function Justice() {
                   color='secondary'
                 />{' '}
                 indicate that trade-related IFFs account for between 5 and 30 per cent of the
-                official value of goods trade.
+                official value of goods trade. Examples of tax and commercial IFFs:
               </P>
             </TextContainer>
             <GraphContainer>
-              <TradeRelatedIFFsCards />
+              <TaxCommercialIFFsCards />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
@@ -246,7 +287,7 @@ export function Justice() {
               </P>
               <Highlight
                 color='secondary'
-                content='Only 46% of seized firearms were successfully traced between 2016 and 2024'
+                content='Only 46 per cent of seized firearms were successfully traced between 2016 and 2024'
               />
               <P marginBottom='none' size='lg'>
                 Tracing rates varied considerably across countries, regions and reporting years,
@@ -365,7 +406,7 @@ export function Justice() {
                 in business bribery across all income groups between 2010–2016 and 2017–2024. The
                 largest improvements were observed in low-income countries, where the median
                 prevalence fell from 21.0 per cent to 12.3 per cent, and in lower-middle-income
-                countries, where it declined from 25.6 per cent to 16.8 per cent.
+                countries, where it declined from 21.8 per cent to 13.9 per cent.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -389,14 +430,12 @@ export function Justice() {
                 In 2025, 89 countries had National Human Rights Institutions that were fully
                 compliant (A status) with the{' '}
                 <InfoTooltip
-                  trigger=' Paris Principles'
+                  trigger='Paris Principles'
                   content='The Paris Principles are a set of core minimum recommendations adopted by the United Nations General Assembly relating to the status and functioning of national institutions for the protection and promotion of human rights.'
                   color='secondary'
                 />
-                , representing 46 per cent of UN Member States and observers that are home to 55 per
-                cent of the world's population. The number of fully compliant institutions has
-                increased from 70 countries in 2015. A further 26 countries had institutions with
-                partial compliance (B status).
+                . The number of fully compliant institutions has increased from 70 countries in
+                2015. A further 26 countries had institutions with partial compliance (B status).
               </P>
             </TextContainer>
             <GraphContainer size='lg'>
@@ -409,8 +448,8 @@ export function Justice() {
               />
               <P marginBottom='none' size='lg'>
                 Despite steady long-term gains, progress remains too slow to achieve universal
-                coverage of fully compliant (A status) national human rights institutions. Since
-                2015, the number of A status institutions has increased by an average of only two
+                coverage of NHRIs that are fully compliant with the Paris Principles (A status).
+                Since 2015, the number of A status NHRIs has increased by an average of only two
                 countries per year. At this pace, many countries will still lack fully compliant
                 institutions by 2030. Accelerating progress will require not only establishing NHRIs
                 where they do not yet exist, but also strengthening the independence, effectiveness,
@@ -423,9 +462,9 @@ export function Justice() {
       },
       {
         id: '09',
-        title: 'The role of Institutions',
+        title: 'The role of institutions',
         indicatorCode: '',
-        heading: 'The role of Institutions in ensuring access to justice for all',
+        heading: 'The role of institutions in ensuring access to justice for all',
         anchor: 'role-of-institutions',
         content: (
           <>
@@ -502,14 +541,6 @@ export function Justice() {
         targets={chaptersTargetList.justice}
       />
       <Spacer size='8xl' />
-      <TextContainer>
-        <P marginBottom='none' size='lg'>
-          At its core, justice is about whether people can obtain fair and just outcomes when their
-          rights are violated. Yet for millions, justice remains beyond reach.
-        </P>
-      </TextContainer>
-      <WaveDivider src='/imgs/dividers/justice-02.webp' align='right' />
-      <Spacer size='2xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
           <Section

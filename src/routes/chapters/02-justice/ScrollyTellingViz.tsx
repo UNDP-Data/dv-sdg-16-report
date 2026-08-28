@@ -27,11 +27,8 @@ const SLIDES: Slide[] = [
     cloudOpacity: 1,
     slideContent: (
       <>
-        Violence does not automatically enter the justice system.
-        <br />
-        <br />
-        Whether it is reported determines whether it becomes visible to authorities and can be
-        investigated.
+        Violence is often vastly underreported, with many victims never coming forward and their
+        experiences remaining invisible to the authorities.
       </>
     ),
   },
@@ -59,10 +56,8 @@ const SLIDES: Slide[] = [
     color: 'categorical-female',
     slideContent: (
       <>
-        Victims’ decisions to report vary considerably depending on the type of violence they
-        experience.
         <span className='font-bold text-categorical-female'>
-          Robbery has the highest median reporting rate.
+          Robbery has the highest median reporting rate
         </span>
       </>
     ),
@@ -74,9 +69,9 @@ const SLIDES: Slide[] = [
     slideContent: (
       <>
         <span className='font-bold text-accent-teal-hover'>
-          Fewer than four in ten victims report physical assault
+          Four in ten victims of physical assault
         </span>{' '}
-        to the police or another competent authority.
+        report their experience to the police or other competent authority
       </>
     ),
   },
@@ -87,11 +82,10 @@ const SLIDES: Slide[] = [
     slideContent: (
       <>
         <span className='font-bold text-secondary'>
-          Sexual assault has the lowest reporting rate
+          Sexual assault is the most underreported form of violence.
         </span>{' '}
-        among forms of violence, consistent with the evidence pointing to multiple deterrents to
-        reporting, including stigma, fear of retaliation, lack of confidence in the justice system,
-        and previous negative experiences with authorities.
+        Stigma, fear of retaliation, and limited trust in the justice system continue to prevent
+        many victims from coming forward.
       </>
     ),
   },
