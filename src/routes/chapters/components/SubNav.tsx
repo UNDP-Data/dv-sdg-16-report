@@ -40,7 +40,7 @@ export default function SubNav({
 
   return (
     <div
-      className='sticky top-0 z-30 flex items-center justify-between border-background/30 border-b bg-cover bg-foreground-soft px-6 py-3 md:px-12'
+      className='sticky top-0 z-30 flex h-11 items-center justify-between border-background/30 border-b bg-cover bg-foreground-soft px-6 py-3 md:px-12'
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <DropdownMenu>
@@ -54,7 +54,7 @@ export default function SubNav({
                 color === 'primary' && 'text-primary',
                 color === 'secondary' && 'text-secondary',
                 color === 'tertiary' && 'text-tertiary',
-                color === 'default' && 'text-accent-teal',
+                color === 'default' && 'text-blue-600',
               )}
             >
               {chapterNumber}
@@ -85,7 +85,7 @@ export default function SubNav({
                     color === 'primary' && isActive && 'border-primary',
                     color === 'secondary' && isActive && 'border-secondary',
                     color === 'tertiary' && isActive && 'border-tertiary',
-                    color === 'default' && isActive && 'border-teal',
+                    color === 'default' && isActive && 'border-blue-600',
                   )}
                 >
                   <span className='pr-1 pl-2 text-xs'>{subsection.id}</span>

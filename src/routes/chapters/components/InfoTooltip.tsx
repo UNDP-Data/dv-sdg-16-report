@@ -6,6 +6,7 @@ import {
   TooltipTrigger,
 } from '@undp/design-system-react/Tooltip';
 import type { ReactNode } from 'react';
+import type { SectionColorType } from '@/types';
 
 export default function InfoTooltip({
   content,
@@ -14,7 +15,7 @@ export default function InfoTooltip({
 }: {
   content: ReactNode;
   trigger?: string;
-  color?: 'primary' | 'secondary' | 'tertiary';
+  color?: SectionColorType;
 }) {
   return (
     <TooltipProvider delayDuration={100} skipDelayDuration={0}>
@@ -26,6 +27,7 @@ export default function InfoTooltip({
               color === 'primary' && 'text-primary decoration-primary',
               color === 'secondary' && 'text-secondary decoration-secondary',
               color === 'tertiary' && 'text-tertiary decoration-tertiary',
+              color === 'default' && 'text-blue-600 decoration-blue-600',
             )}
           >
             {trigger}

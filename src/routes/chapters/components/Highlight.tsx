@@ -18,7 +18,7 @@ export default function Highlight({ color = 'primary', className = '', content }
         color === 'primary' && 'border-primary',
         color === 'secondary' && 'border-secondary',
         color === 'tertiary' && 'border-tertiary',
-        color === 'default' && 'border-accent-teal',
+        color === 'default' && 'text-blue-600',
         className,
       )}
       style={{ borderColor: color }}

@@ -12,7 +12,7 @@ export default function Tag({ color, content }: { color: SectionColorType; conte
         color === 'primary' && 'text-primary',
         color === 'secondary' && 'text-secondary',
         color === 'tertiary' && 'text-tertiary',
-        color === 'default' && 'text-accent-teal',
+        color === 'default' && 'text-blue-600',
       )}
       marginBottom='none'
     >

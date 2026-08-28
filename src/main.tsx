@@ -116,6 +116,9 @@ if (rootElement) {
             400: '#316DA8',
             600: '#316DA8',
           },
+          blue: {
+            600: '#0479b5',
+          },
         }}
       >
         <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>

@@ -39,7 +39,7 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
           color === 'primary' && 'text-primary',
           color === 'secondary' && 'text-secondary',
           color === 'tertiary' && 'text-tertiary',
-          color === 'default' && 'text-accent-teal',
+          color === 'default' && 'text-blue-600',
           'group-hover:translate-x-2',
         )}
       />
