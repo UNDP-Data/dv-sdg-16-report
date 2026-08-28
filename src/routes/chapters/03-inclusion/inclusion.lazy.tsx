@@ -116,13 +116,13 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 Age gaps in representation are even more pronounced. While people aged 18 to 40
                 account for around one third of the world's adult population, they represent only 19
-                per cent of parliamentarians globally. Although this is an important improvement from
-                12.9 per cent in 2014, progress has slowed considerably in recent years, with only
-                minimal gains since 2023. Youth representation is also highest in the Americas, with
-                MPs aged 40 or younger accounting for 23.5 per cent of parliamentarians. The Pacific
-                records the lowest levels of youth representation, with MPs aged 30 or younger
-                accounting for just 2.0 per cent of parliamentarians and those aged 40 or younger
-                only 12.0 per cent.
+                per cent of parliamentarians globally. Although this is an important improvement
+                from 12.9 per cent in 2014, progress has slowed considerably in recent years, with
+                only minimal gains since 2023. Youth representation is also highest in the Americas,
+                with MPs aged 40 or younger accounting for 23.5 per cent of parliamentarians. The
+                Pacific records the lowest levels of youth representation, with MPs aged 30 or
+                younger accounting for just 2.0 per cent of parliamentarians and those aged 40 or
+                younger only 12.0 per cent.
               </P>
               <Highlight
                 color='tertiary'
@@ -415,7 +415,7 @@ export function Inclusion() {
                 decision-making and whether political systems allow them to have an{' '}
                 <InfoTooltip
                   trigger='influence on politics'
-                  content="The extent to which people feel they have a say in what their government does and influence politics is known as “external political efficacy” and reflects perceptions of how inclusive and responsive the political system is to people’s views and demands."
+                  content='The extent to which people feel they have a say in what their government does and influence politics is known as “external political efficacy” and reflects perceptions of how inclusive and responsive the political system is to people’s views and demands.'
                   color='tertiary'
                 />
                 .
@@ -503,9 +503,9 @@ export function Inclusion() {
                   }
                   color='tertiary'
                 />{' '}
-                into the effectiveness of access to information laws. Identical access to information
-                requests were submitted across 76 countries, and fewer than half received full
-                disclosure.
+                into the effectiveness of access to information laws. Identical access to
+                information requests were submitted across 76 countries, and fewer than half
+                received full disclosure.
               </P>
             </TextContainer>
             <GraphContainer>
