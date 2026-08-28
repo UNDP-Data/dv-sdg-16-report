@@ -1,18 +1,18 @@
 import { createLazyRoute } from '@tanstack/react-router';
-import { Badge } from '@undp/design-system-react/Badge';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
-import PlaceholderBlock from '@/components/PlaceholderBlock';
-import { CHART_PADDING } from '@/constants';
-import standards from '@/data/sdg16-progress/standards.json';
+import BigNumber from '@/components/BigNumber';
 import ChapterEndNav from '@/routes/chapters/components/ChapterFooter';
 import { GraphContainer, TextContainer } from '@/routes/chapters/components/Containers';
 import ChapterHero from '@/routes/chapters/components/HeroBanner';
+import InfoTooltip from '@/routes/chapters/components/InfoTooltip';
 import Section from '@/routes/chapters/components/Section';
 import ChapterSubNav from '@/routes/chapters/components/SubNav';
 import WaveDivider from '../chapters/components/WaveDivider';
+import DataAvailabilityTable from './DataAvailabilityTable';
 import DisaggregationTable from './DisaggregationTable';
+import StandardsTable from './StandardsTable';
 
 export function SDG16Progress() {
   const sections = useMemo(
@@ -54,13 +54,21 @@ export function SDG16Progress() {
                 require substantial financial resources and are often conducted infrequently.
               </P>
               <P marginBottom='none' size='lg'>
-                Recognizing the important challenges around household surveys, the SDG 16 Survey
-                Initiative, jointly developed by UNDP, UNODC and OHCHR, was designed to support
-                countries in collecting comparable survey data across multiple SDG 16 indicators
-                through a single integrated survey instrument. By reducing the need for separate
-                data collection exercises, the initiative helps lower costs, improve international
-                comparability and support the regular production of data on governance, justice,
-                security and human rights.
+                Recognizing the important challenges around household surveys, the{' '}
+                <a
+                  href='https://www.undp.org/publications/sdg16-survey-initiative'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='text-accent-teal underline decoration-dotted underline-offset-4'
+                >
+                  SDG 16 Survey Initiative
+                </a>
+                , jointly developed by UNDP, UNODC and OHCHR, was designed to support countries in
+                collecting comparable survey data across multiple SDG 16 indicators through a single
+                integrated survey instrument. By reducing the need for separate data collection
+                exercises, the initiative helps lower costs, improve international comparability and
+                support the regular production of data on governance, justice, security and human
+                rights.
               </P>
               <P marginBottom='none' size='lg'>
                 Despite considerable progress over the past decade, data availability continues to
@@ -72,68 +80,11 @@ export function SDG16Progress() {
                 indicators into national statistical programmes.
               </P>
             </TextContainer>
-            <GraphContainer>
-              <PlaceholderBlock label='Figure' />
+            <GraphContainer size='lg'>
+              <DataAvailabilityTable />
             </GraphContainer>
             <GraphContainer size='lg'>
-              <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
-                <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-                  Standards, classification and methodological products
-                </P>
-                <div className='grid gap-x-6 md:grid-cols-[5rem_1fr_18rem]'>
-                  <div className='hidden pb-3 md:contents'>
-                    <P
-                      size='xs'
-                      marginBottom='none'
-                      weight='semibold'
-                      className='pb-3 text-content-secondary uppercase tracking-wider'
-                    >
-                      Year
-                    </P>
-                    <P
-                      size='xs'
-                      marginBottom='none'
-                      weight='semibold'
-                      className='pb-3 text-content-secondary uppercase tracking-wider'
-                    >
-                      Publication
-                    </P>
-                    <P
-                      size='xs'
-                      marginBottom='none'
-                      weight='semibold'
-                      className='pb-3 text-content-secondary uppercase tracking-wider'
-                    >
-                      Related targets
-                    </P>
-                  </div>
-                  {standards.map((standard) => (
-                    <div key={standard.publication} className='contents'>
-                      <P
-                        size='sm'
-                        marginBottom='none'
-                        className='border-content-reverse border-t py-4 text-content-secondary'
-                      >
-                        {standard.year}
-                      </P>
-                      <P
-                        size='sm'
-                        marginBottom='none'
-                        className='border-content-reverse border-t py-4'
-                      >
-                        {standard.publication}
-                      </P>
-                      <div className='flex flex-wrap content-start items-start gap-2 border-content-reverse border-t py-4'>
-                        {standard.targets.map((target) => (
-                          <Badge key={target} variant='outline' size='sm' rounded='md'>
-                            {target}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <StandardsTable />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-01.webp' />
           </>
@@ -291,11 +242,16 @@ export function SDG16Progress() {
         </P>
         <P marginBottom='none' size='lg'>
           This challenge was reflected in the initial classification of the SDG indicator framework.
-          In 2016, 8 of the 23 indicators under Goal 16 were classified as Tier III, meaning that no
-          internationally established methodology or standards were available to support regular
-          data production and international comparability. The expansion of the framework also
-          brought new measurement challenges. In 2020, indicator 16.3.3 was added to the global
-          indicator framework, and at the time of its adoption, an internationally agreed
+          In 2016, 8 of the 23 indicators under Goal 16 were classified as{' '}
+          <InfoTooltip
+            trigger='Tier III'
+            content='Indicators which were classified as Tier III were: 16.1.2, 16.2.1, 16.3.3, 16.4.1, 16.4.2, 16.6.2, 16.7.1b, 16.7.1c, 16.7.2, 16.10.1, and 16.b.1.'
+            color='default'
+          />
+          , meaning that no internationally established methodology or standards were available to
+          support regular data production and international comparability. The expansion of the
+          framework also brought new measurement challenges. In 2020, indicator 16.3.3 was added to
+          the global indicator framework, and at the time of its adoption, an internationally agreed
           methodology had not yet been established.
         </P>
         <P marginBottom='none' size='lg'>
@@ -324,11 +280,25 @@ export function SDG16Progress() {
           evidence-based policies that advance peaceful, just and inclusive societies.
         </P>
       </TextContainer>
-      <GraphContainer size='lg'>
-        <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
-          <PlaceholderBlock label='Figure' />
+      <GraphContainer className='bg-background'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+          <BigNumber
+            className='bg-background-soft p-6'
+            value={58.9}
+            suffix=' %'
+            color='blue-600'
+            label='of countries have reported at least one indicator under every SDG 16 target since 2015, up from 40 per cent in 2023 and 22.4 per cent in 2019'
+          />
+          <BigNumber
+            className='bg-background-soft p-6'
+            value={4.3}
+            suffix=''
+            color='blue-600'
+            label='years of SDG 16 data available for the median country, averaged across indicators'
+          />
         </div>
       </GraphContainer>
+      <WaveDivider src='/imgs/dividers/peace-03.webp' align='right' />
       <Spacer size='8xl' />
       <div className='flex flex-col'>
         {sections.map((section) => (
