@@ -7,7 +7,7 @@ import { showNavigation } from './Utils/showNavigation';
 function App() {
   return (
     <Container
-      backgroundColor='foreground'
+      backgroundColor='foreground-soft'
       width='full'
       padding='none'
       className='flex h-auto min-h-[calc(100vh-65px)] flex-col bg-center bg-cover px-6 md:h-[calc(100vh-65px)] md:px-20'
@@ -15,13 +15,6 @@ function App() {
     >
       <div className='flex grow items-center'>
         <Container className='md:w-1/2 lg:w-1/3'>
-          <P
-            size='sm'
-            marginBottom='lg'
-            className='text-content-quaternary uppercase tracking-wider'
-          >
-            SDG 16 Report 2026
-          </P>
           <H1
             marginBottom='sm'
             weight='medium'
@@ -55,7 +48,7 @@ function App() {
                   arrow={false}
                   className='w-fit gap-1.5 border border-primary px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-background/10'
                 >
-                  Sign up here to attend the report launch
+                  Sign up to attend the report launch
                 </Button>
               </a>
             </>
@@ -65,7 +58,7 @@ function App() {
 
       <div className='flex flex-wrap items-center gap-x-10 border-content-reverse/20 border-t py-4'>
         <P size='sm' marginBottom='none' className='text-content-quaternary'>
-          In partnership with
+          Produced by
         </P>
         <img
           src='/imgs/logos/ohchr_w.svg'
