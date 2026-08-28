@@ -100,10 +100,12 @@ export default function NHRIComplianceChoroplethMap() {
         footNote={
           <>
             <P marginBottom='none' size='sm' className='text-content-secondary'>
-              The designations employed and the presentation of material on this map do not imply
-              the expression of any opinion whatsoever on the part of the Secretariat of the United
-              Nations or UNDP concerning the legal status of any country, territory, city or area or
-              its authorities, or concerning the delimitation of its frontiers or boundaries.
+              The designations employed and the presentation of material in this website do not
+              imply the expression of any opinion whatsoever on the part of the Secretariat of the
+              United Nations, UNDP, UNICEF and the other partnering UN entities, concerning the
+              legal status of any country, territory, city or area or of its authorities, or
+              concerning the delimitation of its frontiers or boundaries. The term “country” as used
+              in this material also refers, as appropriate, to territories or areas.
             </P>
             <ChartNote content='Accreditation status is awarded by the Global Alliance of National Human Rights Institutions (GANHRI). “A” status means an institution is fully compliant with the Paris Principles, “B” status means partial compliance. “No status” covers countries whose institution has not been accredited as well as those without a National Human Rights Institution. Data are available for 2000, 2005, 2010 and annually from 2015 to 2025.' />
           </>

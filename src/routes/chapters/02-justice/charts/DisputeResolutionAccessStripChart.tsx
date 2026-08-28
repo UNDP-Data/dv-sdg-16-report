@@ -13,8 +13,8 @@ export default function DisputeResolutionAccessStripChart() {
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Proportion of the population who have experienced a dispute in the past two years who
-          accessed a formal or informal dispute resolution mechanism, across different countries
+          Proportion of the population who have experienced a civil dispute in the past two years,
+          and who accessed a formal or informal dispute resolution mechanism
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           2025 or latest available year

@@ -13,6 +13,7 @@ import { P } from '@undp/design-system-react/Typography';
 import { Info } from 'lucide-react';
 import { CHART_PADDING } from '@/constants';
 import businessBriberyTrendByIncome from '@/data/chapters/02-justice/16-5-2/business-bribery-trend-by-income.json';
+import ChartNote from '../../components/ChartNote';
 
 const INCOME_GROUPS = ['High income', 'Upper-middle income', 'Lower-middle income', 'Low income'];
 
@@ -27,6 +28,9 @@ export default function BusinessBriberyTrendStripChart() {
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' weight='semibold' className='font-heading leading-sm'>
           Proportion of businesses that experienced bribery by income level
+        </P>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          2010–2016 and 2017–2024
         </P>
       </div>
 
@@ -150,9 +154,12 @@ export default function BusinessBriberyTrendStripChart() {
         ))}
       </div>
 
-      <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: World Development Indicators (WDI)
-      </P>
+      <div className='flex flex-col gap-1'>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Source: World Bank Enterprise Surveys
+        </P>
+        <ChartNote content='Each dot represents a country. Data based on the earliest available year between 2010 and 2016 and latest available year between 2017 and 2024. Countries are classified by income level as of 2024. The estimates show the median prevalence. The median represents the middle value, with half of observations above and half below it.' />
+      </div>
     </div>
   );
 }
