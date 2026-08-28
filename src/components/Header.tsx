@@ -47,15 +47,15 @@ export default function HeaderEl() {
               <Link to='/' className={navLinkClass}>
                 Home
               </Link>
-              <Link to='/foreword' className={navLinkClass}>
-                Foreword
-              </Link>
               <DropdownMenu>
                 <DropdownMenuTrigger className={`flex items-center gap-1 ${navLinkClass}`}>
-                  Chapters
+                  Report
                   <ChevronDown size={14} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
+                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                    <Link to='/foreword'>Foreword</Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
                     <Link to='/chapters/peace'>Peace</Link>
                   </DropdownMenuItem>
@@ -65,11 +65,11 @@ export default function HeaderEl() {
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
                     <Link to='/chapters/inclusion'>Inclusion</Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                    <Link to='/sdg16-progress'>SDG 16 Progress</Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Link to='/sdg16-progress' className={navLinkClass}>
-                SDG 16 Progress
-              </Link>
               <Link to='/impact-stories' className={navLinkClass}>
                 Data to impact stories
               </Link>
