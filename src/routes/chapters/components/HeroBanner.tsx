@@ -41,7 +41,7 @@ export default function HeroBanner({
   return (
     <section
       ref={containerRef}
-      className='relative h-auto bg-foreground-soft bg-center bg-cover md:min-h-[calc(100vh-102px)]'
+      className='relative h-auto bg-center bg-cover bg-foreground-soft md:min-h-[calc(100vh-102px)]'
       style={{ backgroundImage: `url('${bg}')` }}
     >
       <div className='mx-auto flex w-full max-w-300 flex-col items-start gap-4 px-6 py-20 md:px-12 md:py-28'>
