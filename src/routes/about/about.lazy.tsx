@@ -10,9 +10,10 @@ export function About() {
           <P
             marginBottom='none'
             size='sm'
-            className='font-semibold text-content-reverse uppercase tracking-widest'
+            weight='semibold'
+            className='text-content-secondary uppercase tracking-widest'
           >
-            SDG 16 Report
+            Global Progress Report on SDG 16
           </P>
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             About

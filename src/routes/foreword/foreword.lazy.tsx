@@ -13,9 +13,10 @@ export function Foreword() {
           <P
             marginBottom='none'
             size='sm'
-            className='font-semibold text-content-reverse uppercase tracking-widest'
+            weight='semibold'
+            className='text-content-secondary uppercase tracking-widest'
           >
-            Global Progress Report 2026
+            Global Progress Report on SDG 16
           </P>
           <H1 marginBottom='sm' weight='normal' className='text-content-reverse normal-case'>
             Foreword
