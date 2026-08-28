@@ -1,6 +1,7 @@
 import { type AnyRootRoute, createRoute } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
 import { Container } from '@undp/design-system-react/Container';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { showNavigation } from './Utils/showNavigation';
 
@@ -29,14 +30,19 @@ function App() {
             </P>
           ) : (
             <>
-              <P size='xl' className='text-content-reverse'>
+              <P size='xl' className='text-content-reverse' marginBottom='none'>
                 This is the official page for the 2026 Global Progress Report on SDG 16, jointly
                 produced by OHCHR, UNDP, UNICEF, and UNODC.
                 <br />
                 <br />
                 Discover what the latest data reveal about global progress toward peace, justice,
                 and inclusion, and the role of effective institutions in driving sustained change.
+                <br />
+                <br />
+                Join us for the official launch on{' '}
+                <strong>23 September 2026, 05:00PM at UNDP 304 E 45th St, New York</strong>
               </P>
+              <Spacer size='3xl' />
               <a
                 target='_blank'
                 rel='noreferrer'
@@ -44,9 +50,9 @@ function App() {
               >
                 <Button
                   type='button'
-                  variant='outline'
+                  variant='primary'
                   arrow={false}
-                  className='w-fit gap-1.5 border border-primary px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-background/10'
+                  className='w-fit gap-1.5 bg-secondary px-5 py-3 text-sm transition-colors hover:bg-secondary/90'
                 >
                   Sign up to attend the report launch
                 </Button>
