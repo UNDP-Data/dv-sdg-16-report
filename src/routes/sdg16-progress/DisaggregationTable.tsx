@@ -10,9 +10,7 @@ import { CHART_PADDING } from '@/constants';
 import disaggregation from '@/data/sdg16-progress/disaggregation.json';
 import ChartNote from '@/routes/chapters/components/ChartNote';
 
-const COLUMNS = [
-  'Indicator',
-  'Countries',
+const CATEGORIES = [
   'Sex',
   'Age',
   'Disability',
@@ -21,6 +19,8 @@ const COLUMNS = [
   'Education',
   'Income',
 ];
+
+const COLUMNS = ['Indicator', 'Countries'];
 
 const STATES = {
   good: { color: 'var(--tertiary)', label: 'Good — recommended & reported' },
@@ -34,7 +34,7 @@ type StateKey = keyof typeof STATES;
 export default function DisaggregationTable() {
   return (
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
-      <div className='flex flex-col'>
+      <div>
         <P marginBottom='2xs' className='font-heading font-semibold leading-sm'>
           Number of countries reporting at least one year with disaggregated data
         </P>
@@ -51,17 +51,14 @@ export default function DisaggregationTable() {
       />
 
       <div className='overflow-x-auto'>
-        <table className='w-full min-w-160 table-fixed border-collapse text-left text-sm'>
+        <table className='w-full min-w-160 table-fixed text-left text-sm'>
           <colgroup>
             <col className='w-32' />
             <col className='w-32' />
-            {COLUMNS.slice(2).map((column) => (
-              <col key={column} />
-            ))}
           </colgroup>
           <thead>
             <tr className='text-content-secondary text-xs uppercase tracking-wider'>
-              {COLUMNS.map((column) => (
+              {[...COLUMNS, ...CATEGORIES].map((column) => (
                 <th key={column} scope='col' className='pb-3 pl-2 font-semibold'>
                   {column}
                 </th>
@@ -82,17 +79,22 @@ export default function DisaggregationTable() {
                   </TooltipProvider>
                 </th>
                 <td className='py-2 pl-2 text-content-secondary'>{row.countries}</td>
-                {row.cells.map((cell, index) => (
-                  <td
-                    key={COLUMNS[index + 2]}
-                    className={cell.state === 'none' ? 'text-content-quaternary' : 'text-white'}
-                    style={{ backgroundColor: STATES[cell.state as StateKey].color }}
-                  >
-                    <P marginBottom='none' size='sm' className='py-2 pl-2'>
-                      {cell.value}
-                    </P>
-                  </td>
-                ))}
+                {CATEGORIES.map((category) => {
+                  const cell = row.cells.find((entry) => entry.category === category);
+                  return (
+                    <td
+                      key={category}
+                      className={cell?.state === 'none' ? 'text-content-quaternary' : 'text-white'}
+                      style={{
+                        backgroundColor: cell ? STATES[cell.state as StateKey].color : undefined,
+                      }}
+                    >
+                      <P marginBottom='none' size='sm' className='py-2 pl-2'>
+                        {cell?.value}
+                      </P>
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
