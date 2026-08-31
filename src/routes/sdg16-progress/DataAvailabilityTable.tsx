@@ -16,14 +16,18 @@ import dataAvailability from '@/data/sdg16-progress/data-availability.json';
 const CHAPTER_ORDER = ['peace', 'justice', 'inclusion'];
 
 export default function DataAvailabilityTable() {
-  const [sortBy, setSortBy] = useState<'value' | 'chapter'>('value');
+  const [sortBy, setSortBy] = useState<'value' | 'chapter' | 'indicator'>('indicator');
 
-  const rows = [...dataAvailability].sort(
-    (a, b) =>
-      (sortBy === 'chapter'
-        ? CHAPTER_ORDER.indexOf(a.chapter) - CHAPTER_ORDER.indexOf(b.chapter)
-        : 0) || b.value - a.value,
-  );
+  const rows =
+    sortBy === 'indicator'
+      ? dataAvailability
+      : [...dataAvailability].sort((a, b) => {
+          const chapterDiff =
+            sortBy === 'chapter'
+              ? CHAPTER_ORDER.indexOf(a.chapter) - CHAPTER_ORDER.indexOf(b.chapter)
+              : 0;
+          return chapterDiff || b.value - a.value;
+        });
   return (
     <div className='flex flex-col gap-6' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-8'>
@@ -32,7 +36,7 @@ export default function DataAvailabilityTable() {
             Countries with Goal 16 data for at least one year since 2015, by indicator
           </P>
           <ColorLegend
-            colors={['bg-primary', 'bg-secondary', 'bg-tertiary']}
+            colors={['var(--primary)', 'var(--secondary)', 'var(--tertiary)']}
             colorDomain={['Peace', 'Justice', 'Inclusion']}
             showNAColor={false}
             className='pb-0'
@@ -40,13 +44,16 @@ export default function DataAvailabilityTable() {
         </div>
         <RadioGroup
           value={sortBy}
-          onValueChange={(value) => setSortBy(value as 'value' | 'chapter')}
+          onValueChange={(value) => setSortBy(value as 'value' | 'chapter' | 'indicator')}
           color='primary'
           className='flex shrink-0 flex-row items-center gap-4'
           aria-label='Sort indicators'
         >
-          <RadioGroupItem value='value' id='sort-by-value' label='By value' />
-          <RadioGroupItem value='chapter' id='sort-by-chapter' label='By dimension' />
+          {' '}
+          Sort
+          <RadioGroupItem value='indicator' id='sort-by-indicator' label='by indicator number' />
+          <RadioGroupItem value='value' id='sort-by-value' label='by value' />
+          <RadioGroupItem value='chapter' id='sort-by-chapter' label='by dimension' />
         </RadioGroup>
       </div>
 
@@ -62,7 +69,7 @@ export default function DataAvailabilityTable() {
                   'rounded-full',
                   row.chapter === 'peace' && 'bg-primary',
                   row.chapter === 'justice' && 'bg-secondary',
-                  row.chapter === 'inclusion' && 'bg-tertiary',
+                  row.chapter === 'inclusion' && 'bg-accent-teal-hover',
                 )}
                 style={{
                   width: `${Math.sqrt(row.value / 100) * 100}%`,
