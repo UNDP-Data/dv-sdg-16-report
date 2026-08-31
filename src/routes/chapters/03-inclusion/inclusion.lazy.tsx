@@ -663,11 +663,11 @@ export function Inclusion() {
         ))}
       </div>
 
-      <ChapterEndNav label='Back to' title='Home' to='/' color='tertiary' />
+      <ChapterEndNav label='Next' title='SDG 16 Progress' to='/report/sdg16-progress' color='tertiary' />
     </>
   );
 }
 
-export const Route = createLazyRoute('/chapters/inclusion')({
+export const Route = createLazyRoute('/report/inclusion')({
   component: Inclusion,
 });

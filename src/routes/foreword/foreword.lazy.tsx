@@ -152,6 +152,6 @@ export function Foreword() {
   );
 }
 
-export const Route = createLazyRoute('/foreword')({
+export const Route = createLazyRoute('/report/foreword')({
   component: Foreword,
 });

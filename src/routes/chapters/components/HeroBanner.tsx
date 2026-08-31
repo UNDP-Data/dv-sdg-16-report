@@ -4,19 +4,21 @@ import { H1, P } from '@undp/design-system-react/Typography';
 import { useInView } from 'motion/react';
 import { useEffect, useRef } from 'react';
 import { useActions, useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterSectionDataType } from '@/types';
+import type { ChapterSectionDataType, SectionColorType } from '@/types';
 
 interface HeroBannerProps {
-  chapterNumber: number;
+  chapterNumber?: number;
+  label?: string;
   title: string;
   intro: React.ReactNode;
   bg: string;
-  color?: 'primary' | 'secondary' | 'tertiary';
+  color?: SectionColorType;
   subsections: ChapterSectionDataType[];
 }
 
 export default function HeroBanner({
   chapterNumber,
+  label,
   title,
   intro,
   bg,
@@ -55,9 +57,10 @@ export default function HeroBanner({
               color === 'primary' && 'text-primary',
               color === 'secondary' && 'text-secondary',
               color === 'tertiary' && 'text-tertiary',
+              color === 'default' && 'text-blue-600',
             )}
           >
-            Chapter {chapterNumber}
+            {label ?? `Chapter ${chapterNumber}`}
           </P>
           {isGenderLensActive ? (
             <P
@@ -81,7 +84,7 @@ export default function HeroBanner({
           size='sm'
           className='text-content-secondary uppercase tracking-widest'
         >
-          Chapter at a glance
+          {label ? 'At a glance' : 'Chapter at a glance'}
         </P>
         <Grid noOfCol={{ base: 1, sm: 2, md: 3, lg: 4 }} gap='12px'>
           {subsections.map((subsection) => (
@@ -105,6 +108,7 @@ export default function HeroBanner({
                     color === 'primary' && 'text-primary',
                     color === 'secondary' && 'text-secondary',
                     color === 'tertiary' && 'text-tertiary',
+                    color === 'default' && 'text-blue-600',
                   )}
                 >
                   {subsection.indicatorCode ? `${subsection.indicatorCode} – ` : null}

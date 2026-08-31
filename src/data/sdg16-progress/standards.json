@@ -1,0 +1,134 @@
+[
+  {
+    "year": "2010",
+    "publication": "Manual on Victimization Surveys",
+    "targets": [
+      "16.1.3",
+      "16.3.1"
+    ]
+  },
+  {
+    "year": "2012",
+    "publication": "Human Rights Indicators: A Guide to Measurement and Implementation",
+    "targets": [
+      "16.1.3",
+      "16.3.1"
+    ]
+  },
+  {
+    "year": "2015",
+    "publication": "International Classification of Crime for Statistical Purposes",
+    "targets": [
+      "16.1.2",
+      "16.2.2",
+      "16.1.3",
+      "16.3.1",
+      "16.5.1",
+      "16.b.1",
+      "10.3.1"
+    ]
+  },
+  {
+    "year": "2018",
+    "publication": "A Human Rights Based Approach to Data",
+    "targets": [
+      "Cross-cutting"
+    ]
+  },
+  {
+    "year": "2018",
+    "publication": "Manual on Corruption Surveys",
+    "targets": [
+      "16.5.1",
+      "16.5.2"
+    ]
+  },
+  {
+    "year": "2020",
+    "publication": "Conceptual Framework for the Statistical Measurement of Illicit Financial Flows",
+    "targets": [
+      "16.4.1"
+    ]
+  },
+  {
+    "year": "2020",
+    "publication": "Handbook of Governance Statistics",
+    "targets": [
+      "Cross-cutting"
+    ]
+  },
+  {
+    "year": "2022",
+    "publication": "Statistical Framework for the Measurement of Gender-Related Killings",
+    "targets": [
+      "16.1.1"
+    ]
+  },
+  {
+    "year": "2022",
+    "publication": "SDG16 Survey Initiative",
+    "targets": [
+      "16.1.3",
+      "16.3.1",
+      "16.3.3",
+      "16.5.1",
+      "16.b.1",
+      "10.3.1",
+      "16.7.2",
+      "16.6.2",
+      "16.a.1",
+      "16.1.4"
+    ]
+  },
+  {
+    "year": "2023",
+    "publication": "Statistical Framework to Measure Corruption",
+    "targets": [
+      "16.5.1",
+      "16.5.2"
+    ]
+  },
+  {
+    "year": "2023",
+    "publication": "International Classification of Violence Against Children",
+    "targets": [
+      "16.2.1",
+      "16.2.3"
+    ]
+  },
+  {
+    "year": "2025",
+    "publication": "International Classification for Administrative Data on Trafficking in Persons",
+    "targets": [
+      "16.2.2"
+    ]
+  },
+  {
+    "year": "2026",
+    "publication": "Using administrative data to measure non-discrimination and equality: guidance for national statistical offices",
+    "targets": [
+      "16.b.1"
+    ]
+  },
+  {
+    "year": "2026",
+    "publication": "Survey on discrimination",
+    "targets": [
+      "16.b.1"
+    ]
+  },
+  {
+    "year": "2026",
+    "publication": "Guidance on utilizing electoral administrative data to produce statistics on inclusive political participation",
+    "targets": [
+      "16.7.2"
+    ]
+  },
+  {
+    "year": "2026",
+    "publication": "Survey on participation in political and public affairs",
+    "targets": [
+      "16.7.2"
+    ]
+  }
+]

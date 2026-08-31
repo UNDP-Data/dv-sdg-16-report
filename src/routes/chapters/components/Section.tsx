@@ -3,13 +3,14 @@ import { useInView } from 'motion/react';
 import { type ReactNode, useEffect, useRef } from 'react';
 import Tag from '@/components/Tag';
 import { useActions } from '@/stores/chapterStore';
+import type { SectionColorType } from '@/types';
 import { TextContainer } from './Containers';
 
 interface SectionProps {
   id?: string;
   tag: string;
   heading: string;
-  color: 'primary' | 'secondary' | 'tertiary';
+  color: SectionColorType;
   children?: ReactNode;
 }
 

@@ -15,7 +15,7 @@ function App() {
       style={{ backgroundImage: `url('imgs/hero-bg.webp')` }}
     >
       <div className='flex grow items-center'>
-        <Container className='md:w-1/2 lg:w-1/3'>
+        <Container className='w-full md:w-1/2'>
           <H1
             marginBottom='sm'
             weight='medium'

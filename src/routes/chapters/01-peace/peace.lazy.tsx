@@ -526,11 +526,11 @@ export function Peace() {
           </Section>
         ))}
       </div>
-      <ChapterEndNav label='Next chapter' title='Justice' to='/chapters/justice' color='primary' />
+      <ChapterEndNav label='Next chapter' title='Justice' to='/report/justice' color='primary' />
     </>
   );
 }
 
-export const Route = createLazyRoute('/chapters/peace')({
+export const Route = createLazyRoute('/report/peace')({
   component: Peace,
 });

@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 
 export type ChapterKey = 'peace' | 'justice' | 'inclusion';
 
+export type SectionColorType = 'primary' | 'secondary' | 'tertiary' | 'default';
+
 export interface ChapterMetaDataType {
   number: string;
   title: string;

@@ -3,12 +3,13 @@ import { cn } from '@undp/design-system-react/cn';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { H2, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
+import type { SectionColorType } from '@/types';
 
 interface ChapterFooterProps {
   label: string;
   title: string;
   to: string;
-  color: 'primary' | 'secondary' | 'tertiary';
+  color: SectionColorType;
 }
 
 export default function ChapterFooter({ label, title, to, color }: ChapterFooterProps) {
@@ -38,6 +39,7 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
           color === 'primary' && 'text-primary',
           color === 'secondary' && 'text-secondary',
           color === 'tertiary' && 'text-tertiary',
+          color === 'default' && 'text-blue-600',
           'group-hover:translate-x-2',
         )}
       />

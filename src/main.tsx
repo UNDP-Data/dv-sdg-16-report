@@ -13,6 +13,7 @@ import createInclusionRoute from './routes/chapters/03-inclusion/inclusion.route
 import createForewordRoute from './routes/foreword/foreword.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
 import createResourcesRoute from './routes/resources/resources.route';
+import createSDG16ProgressRoute from './routes/sdg16-progress/SDG16Progress.route';
 
 import './styles/fonts.css';
 import './styles/style.css';
@@ -39,6 +40,7 @@ const routeTree = rootRoute.addChildren([
   createPeaceRoute(rootRoute),
   createJusticeRoute(rootRoute),
   createInclusionRoute(rootRoute),
+  createSDG16ProgressRoute(rootRoute),
   createImpactStoriesRoute(rootRoute),
   createResourcesRoute(rootRoute),
   createAboutRoute(rootRoute),
@@ -83,9 +85,9 @@ if (rootElement) {
             light: '#42A1D8',
           },
           secondary: {
-            base: '#E2501F',
-            hover: '#E2501F',
-            light: '#E2501F',
+            base: '#E56842',
+            hover: '#E56842',
+            light: '#E56842',
           },
           tertiary: {
             base: '#05AA8E',
@@ -97,6 +99,7 @@ if (rootElement) {
             hover: '#7b6fe8',
             light: '#7b6fe8',
           },
+          foreground: '#141d25',
           foregroundSoft: '#142338',
           backgroundSoft: '#f5f9fc',
           content: {
@@ -106,13 +109,16 @@ if (rootElement) {
           },
           teal: {
             200: '#AED1D0',
-            400: '#5BB5B4',
+            400: '#00AAA3',
             600: '#05AA8E',
           },
           violet: {
             200: '#C4DAEF',
             400: '#316DA8',
             600: '#316DA8',
+          },
+          blue: {
+            600: '#0479b5',
           },
         }}
       >
