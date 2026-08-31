@@ -54,19 +54,19 @@ export default function HeaderEl() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                    <Link to='/foreword'>Foreword</Link>
+                    <Link to='/report/foreword'>Foreword</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                    <Link to='/chapters/peace'>Peace</Link>
+                    <Link to='/report/peace'>Peace</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                    <Link to='/chapters/justice'>Justice</Link>
+                    <Link to='/report/justice'>Justice</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                    <Link to='/chapters/inclusion'>Inclusion</Link>
+                    <Link to='/report/inclusion'>Inclusion</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
-                    <Link to='/sdg16-progress'>SDG 16 Progress</Link>
+                    <Link to='/report/sdg16-progress'>SDG 16 Progress</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -100,32 +100,32 @@ export default function HeaderEl() {
           <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Home
           </Link>
-          <Link to='/foreword' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+          <Link to='/report/foreword' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Foreword
           </Link>
           <Link
-            to='/chapters/peace'
+            to='/report/peace'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Peace
           </Link>
           <Link
-            to='/chapters/justice'
+            to='/report/justice'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Justice
           </Link>
           <Link
-            to='/chapters/inclusion'
+            to='/report/inclusion'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >
             Inclusion
           </Link>
           <Link
-            to='/sdg16-progress'
+            to='/report/sdg16-progress'
             className={mobileNavLinkClass}
             onClick={() => setMobileOpen(false)}
           >

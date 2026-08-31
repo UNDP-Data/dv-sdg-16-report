@@ -3,7 +3,7 @@ import { createRoute } from '@tanstack/react-router';
 
 export default function createForewordRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/foreword',
+    path: '/report/foreword',
     getParentRoute: () => parentRoute,
   }).lazy(() => import('./foreword.lazy').then((d) => d.Route));
 }

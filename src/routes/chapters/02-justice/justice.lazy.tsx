@@ -562,13 +562,13 @@ export function Justice() {
       <ChapterEndNav
         label='Next chapter'
         title='Inclusion'
-        to='/chapters/inclusion'
+        to='/report/inclusion'
         color='secondary'
       />
     </>
   );
 }
 
-export const Route = createLazyRoute('/chapters/justice')({
+export const Route = createLazyRoute('/report/justice')({
   component: Justice,
 });

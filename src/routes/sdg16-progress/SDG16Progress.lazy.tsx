@@ -319,6 +319,6 @@ export function SDG16Progress() {
   );
 }
 
-export const Route = createLazyRoute('/sdg16-progress')({
+export const Route = createLazyRoute('/report/sdg16-progress')({
   component: SDG16Progress,
 });

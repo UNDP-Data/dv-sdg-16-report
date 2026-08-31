@@ -3,7 +3,7 @@ import { createRoute } from '@tanstack/react-router';
 
 export default function createJusticeRoute(parentRoute: AnyRootRoute) {
   return createRoute({
-    path: '/chapters/justice',
+    path: '/report/justice',
     getParentRoute: () => parentRoute,
   }).lazy(() => import('./justice.lazy').then((d) => d.Route));
 }
