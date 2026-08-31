@@ -1,3 +1,7 @@
+import { ColorLegend } from '@undp/data-viz/ColorLegend';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
+import { cn } from '@undp/design-system-react/cn';
+import { RadioGroup, RadioGroupItem } from '@undp/design-system-react/RadioGroup';
 import {
   Tooltip,
   TooltipContent,
@@ -5,85 +9,82 @@ import {
   TooltipTrigger,
 } from '@undp/design-system-react/Tooltip';
 import { P } from '@undp/design-system-react/Typography';
+import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
 import dataAvailability from '@/data/sdg16-progress/data-availability.json';
 
-interface ChapterColumnProps {
-  label: string;
-  color: string;
-  chapter: string;
-}
-
-function ChapterColumn({ label, color, chapter }: ChapterColumnProps) {
-  const rows = dataAvailability.filter((row) => row.chapter === chapter);
-
-  return (
-    <div className='flex flex-col gap-2'>
-      <P
-        marginBottom='none'
-        size='sm'
-        weight='semibold'
-        className='uppercase tracking-wider'
-        style={{ color }}
-      >
-        {label}
-      </P>
-      <table className='w-full table-fixed border-collapse text-sm'>
-        <colgroup>
-          <col className='w-20' />
-          <col />
-          <col className='w-14' />
-        </colgroup>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.indicator} className='border-content-reverse border-t'>
-              <th scope='row' className='py-2 pr-3 font-semibold'>
-                <TooltipProvider delayDuration={100} skipDelayDuration={0}>
-                  <Tooltip>
-                    <TooltipTrigger className='cursor-help underline decoration-dotted underline-offset-4'>
-                      {row.indicator}
-                    </TooltipTrigger>
-                    <TooltipContent className='max-w-xs'>{row.description}</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </th>
-              <td className='py-2 pr-3'>
-                <div
-                  aria-hidden='true'
-                  className='h-3 w-full overflow-hidden bg-stroke-sm'
-                  title={`${row.value}%`}
-                >
-                  <div
-                    className='h-full'
-                    style={{ width: `${row.value}%`, backgroundColor: color }}
-                  />
-                </div>
-              </td>
-              <td className='py-2 text-right'>{row.value}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+const CHAPTER_ORDER = ['peace', 'justice', 'inclusion'];
 
 export default function DataAvailabilityTable() {
+  const [sortBy, setSortBy] = useState<'value' | 'chapter'>('value');
+
+  const rows = [...dataAvailability].sort(
+    (a, b) =>
+      (sortBy === 'chapter'
+        ? CHAPTER_ORDER.indexOf(a.chapter) - CHAPTER_ORDER.indexOf(b.chapter)
+        : 0) || b.value - a.value,
+  );
   return (
-    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
-      <div className='flex flex-col'>
-        <P marginBottom='2xs' className='font-heading font-semibold leading-sm'>
-          Countries with Goal 16 data for at least one year since 2015, by indicator
-        </P>
-        <P marginBottom='none' size='sm' className='text-content-secondary'>
-          Average across countries, per cent
-        </P>
+    <div className='flex flex-col gap-6' style={{ padding: CHART_PADDING }}>
+      <div className='flex flex-col gap-4 md:flex-row md:items-start md:justify-between md:gap-8'>
+        <div className='flex flex-col gap-3'>
+          <P marginBottom='none' className='font-heading font-semibold leading-sm'>
+            Countries with Goal 16 data for at least one year since 2015, by indicator
+          </P>
+          <ColorLegend
+            colors={['bg-primary', 'bg-secondary', 'bg-tertiary']}
+            colorDomain={['Peace', 'Justice', 'Inclusion']}
+            showNAColor={false}
+            className='pb-0'
+          />
+        </div>
+        <RadioGroup
+          value={sortBy}
+          onValueChange={(value) => setSortBy(value as 'value' | 'chapter')}
+          color='primary'
+          className='flex shrink-0 flex-row items-center gap-4'
+          aria-label='Sort indicators'
+        >
+          <RadioGroupItem value='value' id='sort-by-value' label='By value' />
+          <RadioGroupItem value='chapter' id='sort-by-chapter' label='By dimension' />
+        </RadioGroup>
       </div>
 
-      <div className='grid grid-cols-1 gap-x-16 md:grid-cols-3'>
-        <ChapterColumn label='Peace' chapter='peace' color='var(--primary)' />
-        <ChapterColumn label='Justice' chapter='justice' color='var(--secondary)' />
-        <ChapterColumn label='Inclusion' chapter='inclusion' color='var(--tertiary)' />
+      <div className='grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8'>
+        {rows.map((row) => (
+          <div key={row.indicator} className='flex flex-col items-center gap-3'>
+            <div
+              className='mx-auto flex aspect-square w-full max-w-24 items-center justify-center rounded-full border border-stroke'
+              aria-hidden='true'
+            >
+              <div
+                className={cn(
+                  'rounded-full',
+                  row.chapter === 'peace' && 'bg-primary',
+                  row.chapter === 'justice' && 'bg-secondary',
+                  row.chapter === 'inclusion' && 'bg-tertiary',
+                )}
+                style={{
+                  width: `${Math.sqrt(row.value / 100) * 100}%`,
+                  height: `${Math.sqrt(row.value / 100) * 100}%`,
+                }}
+              />
+            </div>
+            <div className='flex flex-col items-center gap-1'>
+              <TooltipProvider delayDuration={100} skipDelayDuration={0}>
+                <Tooltip>
+                  <TooltipTrigger className='cursor-help text-content-secondary text-xs underline decoration-dotted underline-offset-4'>
+                    {row.indicator}
+                  </TooltipTrigger>
+                  <TooltipContent className='max-w-xs'>{row.description}</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <P marginBottom='none' size='sm' className='text-foreground'>
+                {numberFormattingFunction(row.value, undefined, 2, undefined, '%')}
+              </P>
+            </div>
+          </div>
+        ))}
       </div>
 
       <P marginBottom='none' size='sm' className='text-content-secondary'>
