@@ -55,3 +55,13 @@ export interface ChapterTargetDataType {
   description: string;
   indicators: ChapterTargetIndicatorType[];
 }
+
+export interface PublicationRow {
+  'Publication title': string;
+  Agency: string;
+  'Publication year': number;
+  Indicators: string | null;
+  Link: string;
+  Type: string;
+  Chapter: string | null;
+}
