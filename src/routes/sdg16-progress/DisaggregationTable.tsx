@@ -22,15 +22,6 @@ const CATEGORIES = [
 
 const COLUMNS = ['Indicator', 'Countries'];
 
-const STATES = {
-  good: { color: 'var(--tertiary)', label: 'Good — recommended & reported' },
-  gap: { color: 'var(--secondary)', label: 'Gap — recommended but not reported' },
-  beyond: { color: 'var(--primary)', label: 'Beyond — reported though not recommended' },
-  none: { color: 'transparent', label: 'Not recommended, not reported' },
-} as const;
-
-type StateKey = keyof typeof STATES;
-
 export default function DisaggregationTable() {
   return (
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
@@ -44,8 +35,13 @@ export default function DisaggregationTable() {
       </div>
 
       <ColorLegend
-        colors={Object.values(STATES).map((state) => state.color)}
-        colorDomain={Object.values(STATES).map((state) => state.label)}
+        colors={['var(--tertiary)', 'var(--secondary)', 'var(--primary)', 'transparent']}
+        colorDomain={[
+          'Good — recommended & reported',
+          'Gap — recommended but not reported',
+          'Beyond — reported though not recommended',
+          'Not recommended, not reported',
+        ]}
         showNAColor={false}
         className='[&_div.rounded-full]:border [&_div.rounded-full]:border-gray-500'
       />
@@ -84,10 +80,15 @@ export default function DisaggregationTable() {
                   return (
                     <td
                       key={category}
-                      className={cell?.state === 'none' ? 'text-content-quaternary' : 'text-white'}
-                      style={{
-                        backgroundColor: cell ? STATES[cell.state as StateKey].color : undefined,
-                      }}
+                      className={
+                        cell?.state === 'good'
+                          ? 'bg-tertiary text-white'
+                          : cell?.state === 'gap'
+                            ? 'bg-secondary text-white'
+                            : cell?.state === 'beyond'
+                              ? 'bg-primary text-white'
+                              : 'text-content-quaternary'
+                      }
                     >
                       <P marginBottom='none' size='sm' className='py-2 pl-2'>
                         {cell?.value}
