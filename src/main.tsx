@@ -85,9 +85,9 @@ if (rootElement) {
             light: '#42A1D8',
           },
           secondary: {
-            base: '#E2501F',
-            hover: '#E2501F',
-            light: '#E2501F',
+            base: '#E56842',
+            hover: '#E56842',
+            light: '#E56842',
           },
           tertiary: {
             base: '#05AA8E',
@@ -108,7 +108,7 @@ if (rootElement) {
           },
           teal: {
             200: '#AED1D0',
-            400: '#5BB5B4',
+            400: '#00AAA3',
             600: '#05AA8E',
           },
           violet: {
