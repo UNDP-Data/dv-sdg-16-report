@@ -99,6 +99,7 @@ if (rootElement) {
             hover: '#7b6fe8',
             light: '#7b6fe8',
           },
+          foreground: '#141d25',
           foregroundSoft: '#142338',
           backgroundSoft: '#f5f9fc',
           content: {
