@@ -57,7 +57,7 @@ export default function HeroBanner({
               color === 'primary' && 'text-primary',
               color === 'secondary' && 'text-secondary',
               color === 'tertiary' && 'text-tertiary',
-              color === 'default' && 'text-blue-600',
+              color === 'default' && 'text-blue-500',
             )}
           >
             {label ?? `Chapter ${chapterNumber}`}
@@ -108,7 +108,7 @@ export default function HeroBanner({
                     color === 'primary' && 'text-primary',
                     color === 'secondary' && 'text-secondary',
                     color === 'tertiary' && 'text-tertiary',
-                    color === 'default' && 'text-blue-600',
+                    color === 'default' && 'text-blue-500',
                   )}
                 >
                   {subsection.indicatorCode ? `${subsection.indicatorCode} – ` : null}

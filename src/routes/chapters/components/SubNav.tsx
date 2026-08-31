@@ -54,7 +54,7 @@ export default function SubNav({
                 color === 'primary' && 'text-primary',
                 color === 'secondary' && 'text-secondary',
                 color === 'tertiary' && 'text-tertiary',
-                color === 'default' && 'text-blue-600',
+                color === 'default' && 'text-blue-500',
               )}
             >
               {chapterNumber}
@@ -85,7 +85,7 @@ export default function SubNav({
                     color === 'primary' && isActive && 'border-primary',
                     color === 'secondary' && isActive && 'border-secondary',
                     color === 'tertiary' && isActive && 'border-tertiary',
-                    color === 'default' && isActive && 'border-blue-600',
+                    color === 'default' && isActive && 'border-blue-500',
                   )}
                 >
                   <span className='pr-1 pl-2 text-xs'>{subsection.id}</span>
