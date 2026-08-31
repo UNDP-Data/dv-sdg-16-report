@@ -37,3 +37,7 @@ html {
     transform: translate(-50%, 0) scale(1);
   }
 }
+
+.undp-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
