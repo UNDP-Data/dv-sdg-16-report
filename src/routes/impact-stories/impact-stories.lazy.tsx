@@ -6,21 +6,22 @@ import {
   CardTag,
   CardTitle,
 } from '@undp/design-system-react/Card';
-import { cn } from '@undp/design-system-react/cn';
 import { Grid } from '@undp/design-system-react/Grid';
 import { H1, P } from '@undp/design-system-react/Typography';
+import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
-import Tag from '@/components/Tag';
 import impactStories from '@/data/impactStories.json';
 import type { ImpactStoryDataType } from '@/types';
-import { getChapterColor } from '@/Utils/getChapterColor';
 
 export function ImpactStories() {
   const [selectedStory, setSelectedStory] = useState<ImpactStoryDataType | undefined>(undefined);
   return (
     <>
-      <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
+      <section
+        className='bg-bottom-right bg-cover bg-foreground-soft px-6 py-16 md:px-12 md:py-24'
+        style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
+      >
         <div className='mx-auto flex max-w-300 flex-col gap-4'>
           <P
             marginBottom='none'
@@ -33,10 +34,6 @@ export function ImpactStories() {
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             Data to impact stories
           </H1>
-          <P size='lg' className='max-w-2xl text-content-reverse'>
-            How data on peace, justice and inclusion is translating into real institutional and
-            policy change around the world.
-          </P>
         </div>
       </section>
 
@@ -53,8 +50,9 @@ export function ImpactStories() {
             {(impactStories as ImpactStoryDataType[]).map((entry) => (
               <Card
                 key={entry.id}
+                border={false}
                 variant='without-image'
-                backgroundColor='background'
+                backgroundColor='transparent'
                 role='button'
                 tabIndex={0}
                 onClick={() => setSelectedStory(entry)}
@@ -64,31 +62,23 @@ export function ImpactStories() {
                     setSelectedStory(entry);
                   }
                 }}
-                className='h-full cursor-pointer text-left'
+                className='group h-full min-h-80 cursor-pointer justify-start gap-4 border border-stroke-sm p-8 text-left transition-colors hover:border-stroke'
               >
-                <CardTag>
-                  <Tag color={getChapterColor(entry.chapter)} content={entry.chapter} />
+                <CardTag className='p-0! font-semibold text-content-secondary tracking-wider'>
+                  {entry.chapter} &middot; Indicator {entry.indicatorCode}
                 </CardTag>
-                <CardTitle className='font-heading font-semibold text-2xl!'>
+                <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
                   {entry.title}
                 </CardTitle>
-                <CardDescription>
-                  <div className='line-clamp-3'>{entry.story}</div>
+                <CardDescription className='line-clamp-2 p-0! text-base! text-content-secondary'>
+                  {entry.story}
                 </CardDescription>
-                <CardFooter>
-                  <P
-                    weight='semibold'
-                    size='sm'
-                    marginBottom='none'
-                    className={cn(
-                      'group-hover:underline',
-                      entry.chapter === 'peace' && 'text-primary',
-                      entry.chapter === 'justice' && 'text-secondary',
-                      entry.chapter === 'inclusion' && 'text-tertiary',
-                    )}
-                  >
-                    Read full story
-                  </P>
+                <CardFooter className='mt-auto gap-1 p-0! font-semibold text-secondary text-sm uppercase tracking-wider'>
+                  Read story
+                  <ArrowRight
+                    size={18}
+                    className='shrink-0 transition-transform group-hover:translate-x-1'
+                  />
                 </CardFooter>
               </Card>
             ))}
