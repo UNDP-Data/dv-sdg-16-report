@@ -45,8 +45,8 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
               { label: 'Girls', value: GIRLS },
             ]}
             colors={FEMALE_COLORS}
-            size={500}
-            gridSize={25}
+            size={innerWidth < 720 ? 280 : 500}
+            gridSize={10}
             numberDisplayOptions={{ suffix: '%' }}
             ariaLabel={`Unit chart showing the age breakdown of female trafficking victims. Women make up ${WOMEN} per cent and girls ${GIRLS} per cent, together ${FEMALE_TOTAL} per cent of all detected victims.`}
           />
@@ -71,8 +71,8 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
               { label: 'Boys', value: BOYS },
             ]}
             colors={MALE_COLORS}
-            size={500}
-            gridSize={25}
+            size={innerWidth < 720 ? 280 : 500}
+            gridSize={10}
             numberDisplayOptions={{ suffix: '%' }}
             ariaLabel={`Unit chart showing the age breakdown of male trafficking victims. Men make up ${MEN} per cent and boys ${BOYS} per cent, together ${MALE_TOTAL} per cent of all detected victims.`}
           />

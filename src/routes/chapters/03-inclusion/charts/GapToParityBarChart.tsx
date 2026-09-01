@@ -192,7 +192,7 @@ export default function GapToParityBarChart() {
           valueColor='var(--content-primary)'
           numberDisplayOptions={{ precision: 2, padZeros: true }}
           showTicks={false}
-          truncateBy={100}
+          truncateBy={innerWidth < 720 ? 24 : 100}
           leftMargin={10}
           rightMargin={10}
           topMargin={30}

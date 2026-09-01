@@ -47,10 +47,13 @@ export default function DisaggregationTable() {
       />
 
       <div className='overflow-x-auto'>
-        <table className='w-full min-w-160 table-fixed text-left text-sm'>
+        <table className='w-full min-w-280 table-fixed text-left text-sm'>
           <colgroup>
             <col className='w-32' />
-            <col className='w-32' />
+            <col className='w-24' />
+            {CATEGORIES.map((category) => (
+              <col key={category} className='w-28' />
+            ))}
           </colgroup>
           <thead>
             <tr className='text-content-secondary text-xs uppercase tracking-wider'>

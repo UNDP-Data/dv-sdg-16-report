@@ -19,8 +19,8 @@ export default function PoliticalEfficacyByRegionBarChart() {
       numberDisplayOptions={{ precision: 1, suffix: '%' }}
       height={450}
       maxBarThickness={32}
-      leftMargin={200}
-      truncateBy={innerWidth < 720 ? 10 : undefined}
+      leftMargin={innerWidth < 720 ? 135 : 200}
+      truncateBy={innerWidth < 720 ? 16 : undefined}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
       backgroundColor='var(--background-soft)'

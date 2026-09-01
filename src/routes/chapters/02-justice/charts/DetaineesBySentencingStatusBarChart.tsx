@@ -50,7 +50,8 @@ export default function DetaineesBySentencingStatusBarChart() {
         showTicks={false}
         maxBarThickness={32}
         height={360}
-        leftMargin={220}
+        leftMargin={innerWidth < 720 ? 135 : 220}
+        truncateBy={innerWidth < 720 ? 16 : undefined}
         topMargin={0}
         padding='0'
         numberDisplayOptions={{ precision: 1 }}

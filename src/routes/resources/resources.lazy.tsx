@@ -90,10 +90,16 @@ export function Resources() {
               />
 
               <TabsList className='mb-0 flex-wrap pl-0'>
-                <TabsTrigger value='Flagship publication' className='cursor-pointer'>
+                <TabsTrigger
+                  value='Flagship publication'
+                  className='cursor-pointer text-sm normal-case md:text-base'
+                >
                   Flagship publications
                 </TabsTrigger>
-                <TabsTrigger value='Statistical product' className='cursor-pointer'>
+                <TabsTrigger
+                  value='Statistical product'
+                  className='cursor-pointer text-sm normal-case md:text-base'
+                >
                   Statistical products
                 </TabsTrigger>
               </TabsList>
@@ -143,7 +149,7 @@ export function Resources() {
                           target='_blank'
                           rel='noreferrer'
                           aria-label={`View "${d['Publication title']}" (opens in a new tab)`}
-                          className='group mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-600 text-sm uppercase tracking-wider'
+                          className='group mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                         >
                           View resource
                           <ArrowRight

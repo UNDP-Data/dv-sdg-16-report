@@ -1,3 +1,4 @@
+import { P } from '@undp/design-system-react/Typography';
 import { AnimatePresence, animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getArc } from '@/Utils/getArc';
@@ -219,7 +220,7 @@ export default function ScrollyTellingViz() {
         />
       </div>
       <div
-        className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
+        className='sticky top-11 -z-10 flex h-[calc(100dvh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
       >
         <motion.svg
@@ -236,13 +237,13 @@ export default function ScrollyTellingViz() {
                 cx={0}
                 cy={0}
                 r={graphRadius}
-                className='fill-none stroke-[1px] stroke-gray-400'
+                className='fill-none stroke-1 stroke-gray-400'
               />
               <circle
                 cx={0}
                 cy={0}
                 r={graphRadius - TRACK_GAP}
-                className='fill-none stroke-[1px] stroke-gray-400'
+                className='fill-none stroke-1 stroke-gray-400'
               />
             </g>
             <motion.circle
@@ -318,7 +319,7 @@ export default function ScrollyTellingViz() {
                 width={(graphRadius - TRACK_GAP) * 2}
                 height={(graphRadius - TRACK_GAP) * 2}
               >
-                <div className='flex h-full w-full flex-col justify-center gap-1'>
+                <div className='flex h-full w-full flex-col justify-center gap-2'>
                   <AnimatePresence mode='wait'>
                     {activeSlide.vizContent.time && (
                       <motion.div
@@ -326,7 +327,7 @@ export default function ScrollyTellingViz() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className='mb-2 fill-content-placeholder text-center text-base text-foreground leading-sm md:text-xl lg:text-2xl'
+                        className='fill-content-placeholder text-center text-base text-foreground leading-sm md:text-xl lg:text-2xl'
                       >
                         {activeSlide.vizContent.time}
                       </motion.div>
@@ -341,14 +342,18 @@ export default function ScrollyTellingViz() {
                     transition={{
                       duration: 1,
                     }}
-                    className='mt-1 text-center font-heading font-semibold text-[32px] leading-sm md:text-[64px] lg:text-[104px]'
+                    className='mt-4 text-center font-heading font-medium text-5xl leading-xs md:font-semibold md:text-7xl lg:text-8xl'
                   >
                     {rounded}
                   </motion.div>
                   {activeSlide.vizContent.category && (
-                    <div className='mx-auto flex min-h-[2lh] w-[50%] items-center justify-center fill-content-placeholder text-center text-base text-foreground leading-sm md:text-2xl'>
+                    <P
+                      marginBottom='none'
+                      size='xl'
+                      className='mx-auto flex w-[70%] items-start justify-center fill-content-placeholder text-center text-foreground leading-sm'
+                    >
                       {activeSlide.vizContent.category}
-                    </div>
+                    </P>
                   )}
                 </div>
               </foreignObject>

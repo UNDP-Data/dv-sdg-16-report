@@ -56,7 +56,8 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         valueColor='var(--content-primary)'
         showTicks={false}
         numberDisplayOptions={{ suffix: '%', precision: 1 }}
-        leftMargin={220}
+        leftMargin={innerWidth < 720 ? 135 : 220}
+        truncateBy={innerWidth < 720 ? 16 : undefined}
         padding='0'
         topMargin={0}
         sources={[{ source: 'UNDP, Gallup World Poll' }]}

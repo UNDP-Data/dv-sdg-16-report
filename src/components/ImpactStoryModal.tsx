@@ -26,6 +26,8 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
       titleClassName='sr-only'
       open={!!story}
       onClose={onClose}
+      inPortal
+      className='p-6 pt-16 md:p-16'
       overlayClassName='bg-surface/95 backdrop-blur-[32px]'
     >
       {story ? (
@@ -34,7 +36,11 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
             color={color}
             content={`Data to impact stories · SDG ${story.indicatorCode} · ${story.indicatorTitle}`}
           />
-          <H3 weight='semibold' marginBottom='none' className='w-[75%] font-heading leading-tight'>
+          <H3
+            weight='semibold'
+            marginBottom='none'
+            className='w-full font-heading leading-tight md:w-[75%]'
+          >
             {story.title}
           </H3>
           <div className='flex flex-col gap-10 md:flex-row md:items-start md:gap-14'>

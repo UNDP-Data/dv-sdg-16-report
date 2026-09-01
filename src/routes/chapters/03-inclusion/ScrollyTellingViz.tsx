@@ -1,3 +1,4 @@
+import { P } from '@undp/design-system-react/Typography';
 import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { generateUniqueRandomPointsArray } from '../../../Utils/generateUniqueRandomPointsArray';
@@ -39,6 +40,8 @@ const NO_OF_REGISTERED_BIRTHS = NO_OF_BIRTHS - NO_OF_UNREGISTERED_BIRTHS;
 const DOT_RADIUS = 6;
 const CIRCLE_PADDING = 36;
 const CIRCLE_OFFSET_Y = 60;
+// Vertical room kept below the circle for the value, its caption and the footnote.
+const LABEL_BAND = 96;
 
 const SLIDES = [
   {
@@ -153,11 +156,9 @@ export default function ScrollyTellingViz() {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
-      const width = entries[0].target.clientWidth || 620;
-      const height = entries[0].target.clientHeight || 480;
-      setGraphRadius(
-        Math.max(0, Math.min(width / 2 - CIRCLE_PADDING, height / 2 - CIRCLE_PADDING)),
-      );
+      const width = entries[0].contentRect.width || 620;
+      const height = entries[0].contentRect.height || 480;
+      setGraphRadius(Math.max(0, Math.min(width / 2 - CIRCLE_PADDING, height / 2 - LABEL_BAND)));
       setGraphWidth(width);
       setGraphHeight(height);
     });
@@ -220,7 +221,7 @@ export default function ScrollyTellingViz() {
         />
       </div>
       <div
-        className='sticky top-11 -z-10 flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-14'
+        className='sticky top-11 -z-10 flex h-[calc(100dvh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
       >
         <motion.svg
@@ -291,7 +292,7 @@ export default function ScrollyTellingViz() {
             // Shift left by half the leading "~" so the numeral itself reads as centred on the
             // circle. Em-based so it tracks the responsive font size.
             style={{ transform: 'translateX(-0.27em)' }}
-            className='font-bold font-heading text-[32px] leading-0 md:text-[56px]'
+            className='font-heading font-medium text-5xl leading-0 md:font-bold md:text-6xl'
           >
             {rounded}
           </motion.text>
@@ -319,18 +320,26 @@ export default function ScrollyTellingViz() {
               </foreignObject>
             ))}
           </motion.g>
-          <text
-            x={graphWidth / 2}
+          <foreignObject
+            x={0}
             y={
-              graphHeight / 2 + graphRadius + CIRCLE_PADDING - activeSlide.vizContent.circleOffsetY
+              graphHeight / 2 +
+              graphRadius +
+              CIRCLE_PADDING -
+              activeSlide.vizContent.circleOffsetY +
+              50
             }
-            dominantBaseline='central'
-            textAnchor='middle'
-            className='fill-foreground text-2xl leading-0 md:text-lg'
-            dy={62}
+            width={graphWidth}
+            height={60}
           >
-            {activeSlide.vizContent.category}
-          </text>
+            <P
+              marginBottom='none'
+              size='xl'
+              className='px-4 text-center text-foreground leading-tight'
+            >
+              {activeSlide.vizContent.category}
+            </P>
+          </foreignObject>
           <text
             x={graphWidth / 2}
             y={graphHeight}

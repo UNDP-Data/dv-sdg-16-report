@@ -10,8 +10,8 @@ export default function StandardsTable() {
         Standards, classification and methodological products
       </P>
 
-      <div className='undp-scrollbar max-h-100 overflow-y-auto'>
-        <table className='w-full table-fixed text-left text-sm'>
+      <div className='undp-scrollbar max-h-100 overflow-auto'>
+        <table className='w-full min-w-160 table-fixed text-left text-sm'>
           <colgroup>
             <col className='w-20' />
             <col />

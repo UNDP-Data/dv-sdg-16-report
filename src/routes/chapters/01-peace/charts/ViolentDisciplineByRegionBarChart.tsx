@@ -28,8 +28,8 @@ export default function ViolentDisciplineByRegionBarChart() {
       height={500}
       dimmedOpacity={1}
       padding={CHART_PADDING}
-      leftMargin={innerWidth < 720 ? 80 : 220}
-      truncateBy={innerWidth < 720 ? 8 : undefined}
+      leftMargin={innerWidth < 720 ? 135 : 220}
+      truncateBy={innerWidth < 720 ? 16 : undefined}
       refValues={[
         {
           value: WORLD_VIOLENT_DISCIPLINE_SHARE,

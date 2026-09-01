@@ -133,7 +133,7 @@ function App() {
               <Spacer size='xl' />
               <Link
                 to='/report/foreword'
-                className='group mt-4 flex w-fit shrink-0 items-center gap-1 font-semibold text-blue-600 text-sm uppercase tracking-wider'
+                className='group mt-4 flex w-fit shrink-0 items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
               >
                 Read the full foreword
                 <ArrowRight
@@ -279,7 +279,7 @@ function App() {
                   <Spacer size='lg' />
                   <Link
                     to='/report/sdg16-progress'
-                    className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-600 text-sm uppercase tracking-wider'
+                    className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                   >
                     Learn more
                     <ArrowRight
@@ -324,7 +324,7 @@ function App() {
                 </H4>
                 <Link
                   to='/impact-stories'
-                  className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-600 text-sm uppercase tracking-wider'
+                  className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                 >
                   Explore all stories
                   <ArrowRight
@@ -350,7 +350,7 @@ function App() {
                       <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
                         {story.story}
                       </CardDescription>
-                      <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-600 text-sm uppercase tracking-wider'>
+                      <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
                         Read story
                         <ArrowRight
                           size={18}

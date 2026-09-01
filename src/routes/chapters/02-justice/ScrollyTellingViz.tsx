@@ -179,7 +179,7 @@ export default function ScrollyTellingViz() {
         />
       </div>
       <div
-        className='sticky top-11 -z-10 mx-auto flex h-[calc(100vh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
+        className='sticky top-11 -z-10 mx-auto flex h-[calc(100dvh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
         ref={graphDiv}
       >
         <motion.svg
@@ -218,7 +218,7 @@ export default function ScrollyTellingViz() {
             cx={layout.centerX}
             cy={layout.centerY}
             r={layout.targetRadius}
-            className='fill-none stroke-[2px] stroke-gray-500'
+            className='fill-none stroke-2 stroke-gray-500'
             strokeDasharray='2 8'
             strokeLinecap='round'
           />
@@ -272,7 +272,7 @@ export default function ScrollyTellingViz() {
                 y1={annotatedDot.cloud.y - layout.dotRadius - 2}
                 x2={annotatedDot.cloud.x}
                 y2={annotatedDot.cloud.y - layout.dotRadius - LINE_LENGTH}
-                className='stroke-[1px] stroke-gray-400'
+                className='stroke-1 stroke-gray-400'
               />
               <text
                 x={annotatedDot.cloud.x}

@@ -44,7 +44,7 @@ export default function FirearmsTracingBeeSwarmChart() {
       minValue={0}
       maxValue={100}
       noOfTicks={5}
-      height={400}
+      height={innerWidth < 720 ? 560 : 400}
       rightMargin={32}
       padding={CHART_PADDING}
       numberDisplayOptions={{ suffix: '%' }}
