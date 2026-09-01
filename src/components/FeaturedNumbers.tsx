@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router';
 import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import BigNumber from '@/components/BigNumber';
@@ -22,10 +21,7 @@ export default function FeaturedNumbers() {
           content: null,
           viz: (
             <div className='grid gap-4 md:grid-cols-3'>
-              <Link
-                to='/report/peace'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={23}
                   suffix='%'
@@ -39,11 +35,8 @@ export default function FeaturedNumbers() {
                 >
                   Peace – Conflict-related deaths (16.1.2)
                 </P>
-              </Link>
-              <Link
-                to='/report/justice'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={1.5}
                   suffix='bn'
@@ -57,11 +50,8 @@ export default function FeaturedNumbers() {
                 >
                   Justice – Access to civil justice (16.3.3)
                 </P>
-              </Link>
-              <Link
-                to='/report/inclusion'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={27.5}
                   suffix='%'
@@ -75,7 +65,7 @@ export default function FeaturedNumbers() {
                 >
                   Inclusion – Representation in the legislature (16.7.1 (a))
                 </P>
-              </Link>
+              </div>
             </div>
           ),
         },
@@ -83,10 +73,7 @@ export default function FeaturedNumbers() {
           content: null,
           viz: (
             <div className='grid gap-4 md:grid-cols-3'>
-              <Link
-                to='/report/peace'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={13.2}
                   suffix='%'
@@ -100,11 +87,8 @@ export default function FeaturedNumbers() {
                 >
                   Peace – Homicide (16.1.1)
                 </P>
-              </Link>
-              <Link
-                to='/report/justice'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={46}
                   suffix='%'
@@ -118,11 +102,8 @@ export default function FeaturedNumbers() {
                 >
                   Justice – Illicit firearms flows (16.4.2)
                 </P>
-              </Link>
-              <Link
-                to='/report/inclusion'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={150}
                   suffix='m'
@@ -136,7 +117,7 @@ export default function FeaturedNumbers() {
                 >
                   Inclusion – Legal identity (16.9.1)
                 </P>
-              </Link>
+              </div>
             </div>
           ),
         },
@@ -144,10 +125,7 @@ export default function FeaturedNumbers() {
           content: null,
           viz: (
             <div className='grid gap-4 md:grid-cols-3'>
-              <Link
-                to='/report/peace'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={37}
                   suffix='%'
@@ -161,11 +139,8 @@ export default function FeaturedNumbers() {
                 >
                   Peace – Trafficking in persons (16.2.2)
                 </P>
-              </Link>
-              <Link
-                to='/report/justice'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={17}
                   suffix='%'
@@ -179,11 +154,8 @@ export default function FeaturedNumbers() {
                 >
                   Justice – Bribery among the population (16.5.1)
                 </P>
-              </Link>
-              <Link
-                to='/report/inclusion'
-                className='flex flex-col bg-background-soft p-6 transition-colors hover:bg-stroke-sm'
-              >
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value='1 in 5'
                   barPercent={20}
@@ -197,7 +169,7 @@ export default function FeaturedNumbers() {
                 >
                   Inclusion – Experience of discrimination (16.b.1)
                 </P>
-              </Link>
+              </div>
             </div>
           ),
         },
