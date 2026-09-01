@@ -1,14 +1,18 @@
 import { type AnyRootRoute, createRoute, Link } from '@tanstack/react-router';
 import { Button } from '@undp/design-system-react/Button';
+import { CardDescription, CardFooter, CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { Container } from '@undp/design-system-react/Container';
+import { Grid } from '@undp/design-system-react/Grid';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { H1, H2, H4, H5, P } from '@undp/design-system-react/Typography';
+import { H1, H2, H4, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import FeaturedNumbers from '@/components/FeaturedNumbers';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
 import impactStories from '@/data/impactStories.json';
 import type { ChapterKey, ImpactStoryDataType } from '@/types';
+import ContentCard from './components/ContentCard';
+import { FEATURED_STORY_IDS } from './constants';
 import { BannerContainer, SectionContainer } from './routes/chapters/components/Containers';
 import { showNavigation } from './Utils/showNavigation';
 
@@ -245,9 +249,8 @@ function App() {
               </H4>
               <Spacer size='base' />
               <P size='xl' marginBottom='none' className='max-w-2xl text-content-secondary'>
-                A selection of the indicators that shape this year&rsquo;s assessment of progress on
-                peace, justice and inclusion. Each figure links to the chapter where the data is
-                examined in full.
+                Key numbers from selected SDG 16 indicators across the peace, justice and inclusion
+                dimensions of the 2026 Global Progress Report.
               </P>
               <FeaturedNumbers />
             </SectionContainer>
@@ -331,100 +334,32 @@ function App() {
                 </Link>
               </div>
 
-              <Spacer size='xl' />
+              <Spacer size='3xl' />
 
-              <div>
-                <button
-                  type='button'
-                  onClick={() =>
-                    setSelectedStory(
-                      stories.find((story) => story.id === 'peace-panama-victimization-surveys'),
-                    )
-                  }
-                  className='group grid w-full gap-3 border-stroke-sm border-t py-8 text-left lg:grid-cols-[2fr_1fr] lg:gap-16'
-                >
-                  <div>
-                    <H5
-                      weight='medium'
-                      marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
-                    >
-                      How victimization surveys are shaping citizen security policies in Panama
-                    </H5>
-                    <P
-                      marginBottom='none'
-                      size='sm'
-                      className='mt-3 text-content-quaternary uppercase tracking-wider'
-                    >
-                      Peace – Indicator 16.1.3
-                    </P>
-                  </div>
-                  <P size='lg' marginBottom='none' className='text-content-secondary'>
-                    Findings from the 2017 survey fed into a redrawn national citizen security
-                    strategy, and a second round is now under way.
-                  </P>
-                </button>
-
-                <button
-                  type='button'
-                  onClick={() =>
-                    setSelectedStory(stories.find((story) => story.id === 'justice-ghana-iffs'))
-                  }
-                  className='group grid w-full gap-3 border-stroke-sm border-y py-8 text-left lg:grid-cols-[2fr_1fr] lg:gap-16'
-                >
-                  <div>
-                    <H5
-                      weight='medium'
-                      marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
-                    >
-                      Ghana turns illicit financial flows data into policy action
-                    </H5>
-                    <P
-                      marginBottom='none'
-                      size='sm'
-                      className='mt-3 text-content-quaternary uppercase tracking-wider'
-                    >
-                      Justice – Indicator 16.4.1
-                    </P>
-                  </div>
-                  <P size='lg' marginBottom='none' className='text-content-secondary'>
-                    Measuring illicit flows led the revenue authority to tighten transfer pricing
-                    enforcement and customs valuation controls.
-                  </P>
-                </button>
-
-                <button
-                  type='button'
-                  onClick={() =>
-                    setSelectedStory(
-                      stories.find((story) => story.id === 'inclusion-benin-womens-representation'),
-                    )
-                  }
-                  className='group grid w-full gap-3 border-stroke-sm border-b py-8 text-left lg:grid-cols-[2fr_1fr] lg:gap-16'
-                >
-                  <div>
-                    <H5
-                      weight='medium'
-                      marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
-                    >
-                      Advancing women&rsquo;s representation in Benin&rsquo;s National Assembly
-                    </H5>
-                    <P
-                      marginBottom='none'
-                      size='sm'
-                      className='mt-3 text-content-quaternary uppercase tracking-wider'
-                    >
-                      Inclusion – Indicator 16.7.1 (a)
-                    </P>
-                  </div>
-                  <P size='lg' marginBottom='none' className='text-content-secondary'>
-                    Evidence on the gender gap in parliament informed 2019 electoral reforms that
-                    reserved 24 seats for women.
-                  </P>
-                </button>
-              </div>
+              <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
+                {FEATURED_STORY_IDS.map((id) => stories.find((story) => story.id === id))
+                  .filter((story): story is ImpactStoryDataType => story !== undefined)
+                  .map((story) => (
+                    <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
+                      <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                        {story.chapter} &ndash; {story.indicatorCode} &ndash; {story.indicatorTitle}
+                      </CardTag>
+                      <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
+                        {story.title}
+                      </CardTitle>
+                      <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
+                        {story.story}
+                      </CardDescription>
+                      <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
+                        Read story
+                        <ArrowRight
+                          size={18}
+                          className='shrink-0 transition-transform group-hover:translate-x-1'
+                        />
+                      </CardFooter>
+                    </ContentCard>
+                  ))}
+              </Grid>
             </SectionContainer>
           </section>
 

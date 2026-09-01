@@ -1,15 +1,10 @@
 import { createLazyRoute } from '@tanstack/react-router';
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardTag,
-  CardTitle,
-} from '@undp/design-system-react/Card';
+import { CardDescription, CardFooter, CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { Grid } from '@undp/design-system-react/Grid';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import ContentCard from '@/components/ContentCard';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
 import impactStories from '@/data/impactStories.json';
 import type { ImpactStoryDataType } from '@/types';
@@ -48,29 +43,14 @@ export function ImpactStories() {
             }}
           >
             {(impactStories as ImpactStoryDataType[]).map((entry) => (
-              <Card
-                key={entry.id}
-                border={false}
-                variant='without-image'
-                backgroundColor='transparent'
-                role='button'
-                tabIndex={0}
-                onClick={() => setSelectedStory(entry)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedStory(entry);
-                  }
-                }}
-                className='group h-full min-h-80 cursor-pointer justify-start gap-4 border border-stroke-sm p-8 text-left transition-colors hover:border-stroke'
-              >
-                <CardTag className='p-0! font-semibold text-content-secondary tracking-wider'>
-                  {entry.chapter} &middot; Indicator {entry.indicatorCode}
+              <ContentCard key={entry.id} onSelect={() => setSelectedStory(entry)}>
+                <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                  {entry.chapter} &ndash; {entry.indicatorCode} &ndash; {entry.indicatorTitle}
                 </CardTag>
                 <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
                   {entry.title}
                 </CardTitle>
-                <CardDescription className='line-clamp-2 p-0! text-base! text-content-secondary'>
+                <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
                   {entry.story}
                 </CardDescription>
                 <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
@@ -80,7 +60,7 @@ export function ImpactStories() {
                     className='shrink-0 transition-transform group-hover:translate-x-1'
                   />
                 </CardFooter>
-              </Card>
+              </ContentCard>
             ))}
           </Grid>
         </div>

@@ -126,6 +126,7 @@ export default function GapToParityBarChart() {
     <div className='flex flex-col items-center gap-4 bg-white'>
       <SegmentedControl
         className='w-fit'
+        classNames={{ items: 'cursor-pointer' }}
         value={selectedGrouping}
         onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
         color='tertiary'
