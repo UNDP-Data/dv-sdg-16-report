@@ -39,7 +39,7 @@ export default function FeaturedNumbers() {
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={1.5}
-                  suffix='bn'
+                  suffix='billion'
                   color='secondary'
                   label='People estimated to have unmet justice needs worldwide.'
                 />
@@ -106,7 +106,7 @@ export default function FeaturedNumbers() {
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={150}
-                  suffix='m'
+                  suffix='million'
                   color='tertiary'
                   label='Children who still have no legal identity, even as birth registration continues to expand.'
                 />
@@ -158,7 +158,6 @@ export default function FeaturedNumbers() {
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value='1 in 5'
-                  barPercent={20}
                   color='tertiary'
                   label='People report having personally experienced discrimination in the previous 12 months.'
                 />
