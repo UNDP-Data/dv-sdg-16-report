@@ -21,7 +21,7 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
       minValue={0}
       maxValue={80}
       rightMargin={130}
-      showValues
+      showValues={innerWidth >= 720}
       valueColor='var(--content-primary)'
       showTicks={false}
       numberDisplayOptions={{ suffix: '%' }}

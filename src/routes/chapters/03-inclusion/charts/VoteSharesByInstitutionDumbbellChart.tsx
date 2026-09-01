@@ -17,8 +17,11 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       minValue={0}
       maxValue={100}
       showTicks={false}
+      showValues={innerWidth >= 720}
       connectorStrokeWidth={1}
-      leftMargin={130}
+      leftMargin={innerWidth < 720 ? 135 : 130}
+      truncateBy={innerWidth < 720 ? 16 : undefined}
+      minHeight={innerWidth < 720 ? 620 : 480}
       relativeHeight={0.85}
       numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}

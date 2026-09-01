@@ -32,7 +32,8 @@ export default function DiscriminationRatesByGroupBarChart() {
             showColorScale={false}
             animate
             minValue={0}
-            leftMargin={120}
+            leftMargin={innerWidth < 720 ? 115 : 120}
+            truncateBy={innerWidth < 720 ? 20 : undefined}
             maxValue={60}
             height={90}
             maxBarThickness={32}
@@ -101,7 +102,8 @@ export default function DiscriminationRatesByGroupBarChart() {
             showColorScale={false}
             animate
             minValue={0}
-            leftMargin={120}
+            leftMargin={innerWidth < 720 ? 115 : 120}
+            truncateBy={innerWidth < 720 ? 20 : undefined}
             maxValue={60}
             height={90}
             maxBarThickness={32}

@@ -663,7 +663,12 @@ export function Inclusion() {
         ))}
       </div>
 
-      <ChapterEndNav label='Next' title='SDG 16 Progress' to='/report/sdg16-progress' color='tertiary' />
+      <ChapterEndNav
+        label='Next'
+        title='SDG 16 Progress'
+        to='/report/sdg16-progress'
+        color='tertiary'
+      />
     </>
   );
 }

@@ -19,9 +19,10 @@ export default function UnsentencedShareBySexDumbbellChart() {
       minValue={0}
       maxValue={100}
       showTicks={false}
-      leftMargin={innerWidth < 720 ? 100 : 220}
-      truncateBy={innerWidth < 720 ? 12 : undefined}
-      minHeight={440}
+      showValues={innerWidth >= 720}
+      leftMargin={innerWidth < 720 ? 135 : 220}
+      truncateBy={innerWidth < 720 ? 16 : undefined}
+      minHeight={580}
       relativeHeight={0.8}
       numberDisplayOptions={{ suffix: '%' }}
       padding={CHART_PADDING}

@@ -19,8 +19,8 @@ export default function HomicideRateByRegionBarChart() {
       numberDisplayOptions={{ precision: 1 }}
       barPadding={0.4}
       height={500}
-      truncateBy={innerWidth < 720 ? 10 : undefined}
-      leftMargin={innerWidth < 720 ? 100 : 220}
+      leftMargin={innerWidth < 720 ? 135 : 220}
+      truncateBy={innerWidth < 720 ? 16 : undefined}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
       refValues={[{ value: WORLD_HOMICIDE_RATE, text: `World ${WORLD_HOMICIDE_RATE}` }]}

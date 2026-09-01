@@ -100,7 +100,8 @@ export default function BusinessBriberyStripChart() {
           orientation='horizontal'
           stripType='dot'
           colors={['var(--secondary)']}
-          leftMargin={220}
+          leftMargin={innerWidth < 720 ? 135 : 220}
+          truncateBy={innerWidth < 720 ? 16 : undefined}
           topMargin={10}
           noOfTicks={5}
           animate
