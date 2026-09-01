@@ -29,10 +29,7 @@ export default function TargetsDrawer({ chapterTitle, bg, color, targets }: Targ
         </button>
       </DrawerTrigger>
 
-      <DrawerContent
-        className='w-full max-w-xl'
-        overlayClassName='bg-surface/95 backdrop-blur-[32px]'
-      >
+      <DrawerContent className='w-full max-w-xl' overlayClassName='bg-surface/95 backdrop-blur-2xl'>
         <div className='flex flex-col gap-6 px-2 py-8 md:py-12'>
           <Tag color={color} content={chapterTitle} />
           <div>
