@@ -33,7 +33,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Peace – Conflict-related deaths (16.1.2)
+                  Peace – 16.1.2 – Conflict-related deaths
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -48,7 +48,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Justice – Access to civil justice (16.3.3)
+                  Justice – 16.3.3 – Access to civil justice
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -63,7 +63,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Inclusion – Representation in the legislature (16.7.1 (a))
+                  Inclusion – 16.7.1 (a) – Representation in the legislature
                 </P>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Peace – Homicide (16.1.1)
+                  Peace – 16.1.1 – Homicide
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -100,7 +100,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Justice – Illicit firearms flows (16.4.2)
+                  Justice – 16.4.2 – Illicit firearms flows
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -115,7 +115,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Inclusion – Legal identity (16.9.1)
+                  Inclusion – 16.9.1 – Legal identity
                 </P>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Peace – Trafficking in persons (16.2.2)
+                  Peace – 16.2.2 – Trafficking in persons
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -152,7 +152,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Justice – Bribery among the population (16.5.1)
+                  Justice – 16.5.1 – Bribery among the population
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
@@ -166,7 +166,7 @@ export default function FeaturedNumbers() {
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Inclusion – Experience of discrimination (16.b.1)
+                  Inclusion – 16.b.1 – Experience of discrimination
                 </P>
               </div>
             </div>
