@@ -86,11 +86,16 @@ export function Resources() {
                 size='sm'
                 color='foreground'
                 className='mb-4 w-fit'
+                classNames={{ items: 'cursor-pointer' }}
               />
 
               <TabsList className='mb-0 flex-wrap pl-0'>
-                <TabsTrigger value='Flagship publication'>Flagship publications</TabsTrigger>
-                <TabsTrigger value='Statistical product'>Statistical products</TabsTrigger>
+                <TabsTrigger value='Flagship publication' className='cursor-pointer'>
+                  Flagship publications
+                </TabsTrigger>
+                <TabsTrigger value='Statistical product' className='cursor-pointer'>
+                  Statistical products
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedType}>
