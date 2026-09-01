@@ -73,7 +73,7 @@ export function ImpactStories() {
                 <CardDescription className='line-clamp-2 p-0! text-base! text-content-secondary'>
                   {entry.story}
                 </CardDescription>
-                <CardFooter className='mt-auto gap-1 p-0! font-semibold text-secondary text-sm uppercase tracking-wider'>
+                <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
                   Read story
                   <ArrowRight
                     size={18}

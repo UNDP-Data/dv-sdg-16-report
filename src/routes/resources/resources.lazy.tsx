@@ -141,7 +141,7 @@ export function Resources() {
                           target='_blank'
                           rel='noreferrer'
                           aria-label={`View "${d['Publication title']}" (opens in a new tab)`}
-                          className='group mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-600 text-sm uppercase tracking-wider'
+                          className='group mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                         >
                           View resource
                           <ArrowRight

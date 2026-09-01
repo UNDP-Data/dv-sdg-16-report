@@ -129,7 +129,7 @@ function App() {
               <Spacer size='xl' />
               <Link
                 to='/report/foreword'
-                className='group mt-4 flex w-fit shrink-0 items-center gap-1 font-semibold text-secondary text-sm uppercase tracking-wider'
+                className='group mt-4 flex w-fit shrink-0 items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
               >
                 Read the full foreword
                 <ArrowRight
@@ -276,7 +276,7 @@ function App() {
                   <Spacer size='lg' />
                   <Link
                     to='/report/sdg16-progress'
-                    className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-secondary text-sm uppercase tracking-wider'
+                    className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                   >
                     Learn more
                     <ArrowRight
@@ -321,7 +321,7 @@ function App() {
                 </H4>
                 <Link
                   to='/impact-stories'
-                  className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-secondary text-sm uppercase tracking-wider'
+                  className='group mt-4 flex w-fit shrink-0 items-center gap-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
                 >
                   Explore all stories
                   <ArrowRight
@@ -347,7 +347,7 @@ function App() {
                     <H5
                       weight='medium'
                       marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-secondary'
+                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
                     >
                       How victimization surveys are shaping citizen security policies in Panama
                     </H5>
@@ -376,7 +376,7 @@ function App() {
                     <H5
                       weight='medium'
                       marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-secondary'
+                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
                     >
                       Ghana turns illicit financial flows data into policy action
                     </H5>
@@ -407,7 +407,7 @@ function App() {
                     <H5
                       weight='medium'
                       marginBottom='none'
-                      className='font-heading text-foreground-soft transition-colors group-hover:text-secondary'
+                      className='font-heading text-foreground-soft transition-colors group-hover:text-blue-500'
                     >
                       Advancing women&rsquo;s representation in Benin&rsquo;s National Assembly
                     </H5>
