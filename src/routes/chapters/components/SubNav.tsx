@@ -44,7 +44,7 @@ export default function SubNav({
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <DropdownMenu>
-        <DropdownMenuTrigger className='flex items-center gap-2 text-content-reverse text-sm'>
+        <DropdownMenuTrigger className='flex min-w-0 items-center gap-2 text-content-reverse text-sm'>
           {chapterNumber ? (
             <P
               weight='semibold'
@@ -60,18 +60,19 @@ export default function SubNav({
               {chapterNumber}
             </P>
           ) : null}
-          {chapterTitle}
+          <span className='shrink-0'>{chapterTitle}</span>
           {activeSubsection ? (
-            <>
+            <span className='hidden min-w-0 items-center gap-2 md:flex'>
               <span className='text-content-tertiary'>–</span>
-              <span className='text-content-tertiary'>{activeSubsection.title}</span>
-            </>
+              <span className='truncate text-content-tertiary'>{activeSubsection.title}</span>
+            </span>
           ) : null}
-          <ChevronDown size={14} className='text-content-reverse' />
+          <ChevronDown size={14} className='shrink-0 text-content-reverse' />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align='start'
-          className='w-100 border-background/30 bg-foreground-soft text-content-reverse'
+          collisionPadding={16}
+          className='w-[calc(100vw-3rem)] max-w-100 border-background/30 bg-foreground-soft text-content-reverse'
         >
           {subsections.map((subsection) => {
             const isActive = subsection.anchor === activeSection;
