@@ -14,6 +14,7 @@ import createForewordRoute from './routes/foreword/foreword.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
 import createResourcesRoute from './routes/resources/resources.route';
 import createSDG16ProgressRoute from './routes/sdg16-progress/SDG16Progress.route';
+import createTempChartsRoute from './routes/temp-charts/temp-charts.route';
 
 import './styles/fonts.css';
 import './styles/style.css';
@@ -44,6 +45,7 @@ const routeTree = rootRoute.addChildren([
   createImpactStoriesRoute(rootRoute),
   createResourcesRoute(rootRoute),
   createAboutRoute(rootRoute),
+  createTempChartsRoute(rootRoute),
 ]);
 
 const TanStackQueryProviderContext = TanStackQueryProvider.getContext();
@@ -118,7 +120,11 @@ if (rootElement) {
             600: '#316DA8',
           },
           blue: {
-            600: '#0479b5',
+            100: '#EEF3F8',
+            200: '#E1EAF2',
+            500: '#2B73B6',
+            600: '#2F5E8F',
+            700: '#274F79',
           },
         }}
       >

@@ -5,7 +5,10 @@ import PlaceholderBlock from '@/components/PlaceholderBlock';
 export function About() {
   return (
     <>
-      <section className='bg-foreground-soft px-6 py-16 md:px-12 md:py-24'>
+      <section
+        className='bg-bottom-right bg-cover bg-foreground-soft px-6 py-16 md:px-12 md:py-24'
+        style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
+      >
         <div className='mx-auto flex max-w-300 flex-col gap-4'>
           <P
             marginBottom='none'
@@ -18,9 +21,6 @@ export function About() {
           <H1 marginBottom='sm' className='font-normal text-content-reverse normal-case'>
             About
           </H1>
-          <P size='lg' className='max-w-2xl text-content-reverse'>
-            The story behind this report — who produced it, and why it matters.
-          </P>
         </div>
       </section>
 

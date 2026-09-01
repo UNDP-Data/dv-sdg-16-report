@@ -3,12 +3,14 @@ import { createLazyRoute } from '@tanstack/react-router';
 import { DataCards } from '@undp/data-viz/DataCards';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { Badge } from '@undp/design-system-react/Badge';
+import { CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { SegmentedControl } from '@undp/design-system-react/SegmentedControl';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import ContentCard from '@/components/ContentCard';
 import type { PublicationRow } from '@/types';
 
 export function Resources() {
@@ -84,11 +86,16 @@ export function Resources() {
                 size='sm'
                 color='foreground'
                 className='mb-4 w-fit'
+                classNames={{ items: 'cursor-pointer' }}
               />
 
               <TabsList className='mb-0 flex-wrap pl-0'>
-                <TabsTrigger value='Flagship publication'>Flagship publications</TabsTrigger>
-                <TabsTrigger value='Statistical product'>Statistical products</TabsTrigger>
+                <TabsTrigger value='Flagship publication' className='cursor-pointer'>
+                  Flagship publications
+                </TabsTrigger>
+                <TabsTrigger value='Statistical product' className='cursor-pointer'>
+                  Statistical products
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedType}>
@@ -99,10 +106,15 @@ export function Resources() {
                   cardBackgroundColor='transparent'
                   ariaLabel={`${selectedType} on Goal 16`}
                   cardTemplate={(d: PublicationRow) => (
-                    <div className='flex h-full min-h-80 flex-col gap-4 border border-content-reverse bg-background p-8'>
-                      <P marginBottom='none' className='font-heading text-2xl leading-sm'>
+                    <ContentCard>
+                      {d.Chapter ? (
+                        <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                          {d.Chapter.split('; ').join(' · ')}
+                        </CardTag>
+                      ) : null}
+                      <CardTitle className='p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
                         {d['Publication title']}
-                      </P>
+                      </CardTitle>
                       <P marginBottom='none' size='base' className='text-content-secondary'>
                         {d.Agency} · {d['Publication year']}
                       </P>
@@ -140,7 +152,7 @@ export function Resources() {
                           />
                         </a>
                       ) : null}
-                    </div>
+                    </ContentCard>
                   )}
                 />
               </TabsContent>

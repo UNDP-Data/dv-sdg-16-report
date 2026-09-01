@@ -1,3 +1,5 @@
+import { cn } from '@undp/design-system-react/cn';
+
 export default function WaveDivider({
   src,
   align = 'left',
@@ -8,7 +10,10 @@ export default function WaveDivider({
   return (
     <div
       aria-hidden='true'
-      className={`flex h-55 w-full overflow-hidden ${align === 'right' ? 'justify-end' : 'justify-start'}`}
+      className={cn(
+        'mx-auto flex h-55 w-full max-w-360 overflow-hidden',
+        align === 'right' ? 'justify-end' : 'justify-start',
+      )}
     >
       <img
         src={src}

@@ -27,7 +27,7 @@ export default function InfoTooltip({
               color === 'primary' && 'text-primary decoration-primary',
               color === 'secondary' && 'text-secondary decoration-secondary',
               color === 'tertiary' && 'text-tertiary decoration-tertiary',
-              color === 'default' && 'text-blue-600 decoration-blue-600',
+              color === 'default' && 'text-blue-500 decoration-blue-600',
             )}
           >
             {trigger}

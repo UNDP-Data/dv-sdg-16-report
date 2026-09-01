@@ -52,3 +52,19 @@ export const ImpactStoriesContainer = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return <div className={cn('px-4 md:px-8 lg:px-16', className)} ref={ref} {...props} />;
 });
+
+export const SectionContainer = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  return <div className={cn('mx-auto w-full max-w-300', className)} ref={ref} {...props} />;
+});
+
+export const BannerContainer = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  return (
+    <div className={cn('relative mx-auto w-full max-w-200', className)} ref={ref} {...props} />
+  );
+});

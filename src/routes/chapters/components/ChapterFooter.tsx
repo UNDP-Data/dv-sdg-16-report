@@ -16,7 +16,7 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
   return (
     <Link
       to={to}
-      className='group flex items-center justify-between bg-foreground-soft px-6 py-8 md:px-12 md:py-16'
+      className='group flex items-center justify-between bg-foreground px-6 py-8 md:px-12 md:py-16'
     >
       <div>
         <P
@@ -39,7 +39,7 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
           color === 'primary' && 'text-primary',
           color === 'secondary' && 'text-secondary',
           color === 'tertiary' && 'text-tertiary',
-          color === 'default' && 'text-blue-600',
+          color === 'default' && 'text-blue-500',
           'group-hover:translate-x-2',
         )}
       />

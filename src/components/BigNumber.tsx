@@ -20,31 +20,35 @@ export default function BigNumber({
   className,
 }: BigNumberProps) {
   const percent = barPercent ?? (suffix === '%' && typeof value === 'number' ? value : undefined);
-  const resolvedColor = `var(--${color})`;
+  const colorValue = `var(--${color})`;
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
-      {percent !== undefined ? (
-        <div className='h-[0.2rem] w-full overflow-hidden bg-stroke-sm'>
-          <div
-            className='h-full'
-            style={{
-              width: `${Math.min(100, Math.max(0, percent))}%`,
-              backgroundColor: resolvedColor,
-            }}
-          />
-        </div>
-      ) : null}
+      <div
+        aria-hidden
+        className={cn(
+          'h-1 w-full overflow-hidden bg-content-reverse',
+          percent === undefined && 'invisible',
+        )}
+      >
+        <div
+          className='h-full'
+          style={{
+            width: `${Math.min(100, Math.max(0, percent ?? 0))}%`,
+            backgroundColor: colorValue,
+          }}
+        />
+      </div>
       <H2
         weight='medium'
         marginBottom='none'
-        className='pt-12 font-heading leading-none'
-        style={{ color: resolvedColor }}
+        className='pt-6 font-heading leading-xs'
+        style={{ color: colorValue }}
       >
         {value}
-        {suffix ? <span className='ml-0.5 text-2xl md:text-3xl'>{suffix}</span> : null}
+        {suffix ? <span className='ml-0.5 text-2xl leading-xs md:text-3xl'>{suffix}</span> : null}
       </H2>
-      <P marginBottom='xs' size='xl' className={cn(suffix ? 'mt-0.5' : 'mt-5', 'text-foreground')}>
+      <P marginBottom='xs' size='xl' className='mt-0.5 text-foreground'>
         {label}
       </P>
     </div>
