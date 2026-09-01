@@ -87,8 +87,18 @@ export function Resources() {
               />
 
               <TabsList className='mb-0 flex-wrap pl-0'>
-                <TabsTrigger value='Flagship publication'>Flagship publications</TabsTrigger>
-                <TabsTrigger value='Statistical product'>Statistical products</TabsTrigger>
+                <TabsTrigger
+                  value='Flagship publication'
+                  className='text-sm normal-case md:text-base'
+                >
+                  Flagship publications
+                </TabsTrigger>
+                <TabsTrigger
+                  value='Statistical product'
+                  className='text-sm normal-case md:text-base'
+                >
+                  Statistical products
+                </TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedType}>
