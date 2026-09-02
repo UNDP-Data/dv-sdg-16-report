@@ -71,25 +71,25 @@ export default function BriberyPrevalenceStripChart() {
         colors={['var(--secondary)']}
         leftMargin={innerWidth < 720 ? 135 : 220}
         truncateBy={innerWidth < 720 ? 16 : undefined}
-        topMargin={10}
+        topMargin={32}
         noOfTicks={5}
         animate
         showGroups
         distributionMarkers={[
-          {
-            type: 'median',
-            color: 'black',
-            strokeWidth: 1.5,
-          },
+          { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.3 },
         ]}
         radius={5}
         dotOpacity={0.4}
         minValue={0}
         maxValue={100}
-        height={400}
+        height={450}
+        dimmedOpacity={0.1}
         padding='0'
         numberDisplayOptions={{ suffix: '%' }}
-        styles={{ tooltip: { padding: 0 }, xAxis: { labels: { transform: 'translateY(-10px)' } } }}
+        styles={{
+          tooltip: { padding: 0 },
+          xAxis: { labels: { transform: 'translateY(-32px)' } },
+        }}
         tooltip={(d) => (
           <div className='flex flex-col gap-1 bg-white px-2 py-1'>
             <div className='flex gap-1'>

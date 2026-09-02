@@ -101,18 +101,15 @@ export default function BusinessBriberyStripChart() {
           orientation='horizontal'
           stripType='dot'
           colors={['var(--secondary)']}
+          dimmedOpacity={0.1}
           leftMargin={innerWidth < 720 ? 135 : 220}
           truncateBy={innerWidth < 720 ? 16 : undefined}
-          topMargin={10}
+          topMargin={32}
           noOfTicks={5}
           animate
           showGroups
           distributionMarkers={[
-            {
-              type: 'median',
-              color: 'black',
-              strokeWidth: 1.5,
-            },
+            { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
           ]}
           radius={5}
           dotOpacity={0.4}
@@ -123,7 +120,7 @@ export default function BusinessBriberyStripChart() {
           numberDisplayOptions={{ suffix: '%' }}
           styles={{
             tooltip: { padding: 0 },
-            xAxis: { labels: { transform: 'translateY(-10px)' } },
+            xAxis: { labels: { transform: 'translateY(-32px)' } },
           }}
           tooltip={(d) => (
             <div className='flex flex-col gap-1 bg-white px-2 py-1'>
