@@ -4,6 +4,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@undp/design-system-react/DropdownMenu';
 import { H5, P } from '@undp/design-system-react/Typography';
@@ -52,20 +54,45 @@ export default function HeaderEl() {
                   Report
                   <ChevronDown size={14} />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className='border-background/10 bg-surface-4xl text-content-reverse'>
-                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                <DropdownMenuContent
+                  align='end'
+                  sideOffset={12}
+                  collisionPadding={16}
+                  className='w-[calc(100vw-3rem)] max-w-72 border border-background/15 bg-foreground-soft p-3 text-content-reverse shadow-xl'
+                >
+                  <DropdownMenuItem
+                    asChild
+                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+                  >
                     <Link to='/report/foreword'>Foreword</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                  <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
+                  <DropdownMenuLabel className='px-3 pt-3 pb-2 font-semibold text-content-reverse/50 text-xs tracking-[0.12em]'>
+                    CHAPTERS
+                  </DropdownMenuLabel>
+                  <DropdownMenuItem
+                    asChild
+                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+                  >
                     <Link to='/report/peace'>Peace</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                  <DropdownMenuItem
+                    asChild
+                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+                  >
                     <Link to='/report/justice'>Justice</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                  <DropdownMenuItem
+                    asChild
+                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+                  >
                     <Link to='/report/inclusion'>Inclusion</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild className='focus:bg-white/10 focus:font-normal'>
+                  <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
+                  <DropdownMenuItem
+                    asChild
+                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+                  >
                     <Link to='/report/sdg16-progress'>SDG 16 Progress</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -100,7 +127,11 @@ export default function HeaderEl() {
           <Link to='/' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
             Home
           </Link>
-          <Link to='/report/foreword' className={mobileNavLinkClass} onClick={() => setMobileOpen(false)}>
+          <Link
+            to='/report/foreword'
+            className={mobileNavLinkClass}
+            onClick={() => setMobileOpen(false)}
+          >
             Foreword
           </Link>
           <Link

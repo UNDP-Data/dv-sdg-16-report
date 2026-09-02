@@ -19,11 +19,11 @@ import AccessToInformationChoroplethMap from './charts/AccessToInformationChorop
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
 import DiscriminationRatesByGroupBarChart from './charts/DiscriminationRatesByGroupBarChart';
-import GapToParityBarChart from './charts/GapToParityBarChart';
 import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import RepresentationByInstitutionalLevelBarChart from './charts/RepresentationByInstitutionalLevelBarChart';
+import RepresentationByRegionAndIncomeGroupsBarChart from './charts/RepresentationByRegionAndIncomeGroupsBarChart';
 import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
@@ -146,7 +146,7 @@ export function Inclusion() {
       },
       {
         id: '03',
-        title: 'Representation in public service institutions and the judiciary',
+        title: 'Representation in public service and the judiciary',
         indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
@@ -179,7 +179,7 @@ export function Inclusion() {
               </P>
             </TextContainer>
             <GraphContainer>
-              <GapToParityBarChart />
+              <RepresentationByRegionAndIncomeGroupsBarChart />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
@@ -213,11 +213,14 @@ export function Inclusion() {
             <ImpactStoriesContainer>
               <VizCarousel
                 vizWidth='full'
+                autoScroll={3000}
                 classNames={{
                   arrowButton:
                     'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:pointer-events-none [&.opacity-disabled]:bg-transparent [&.opacity-disabled]:opacity-30',
                   arrows: 'text-foreground',
                   content: '[&_p]:hidden!',
+                  progressBar: 'hidden!',
+                  progressBarBg: 'hidden!',
                 }}
                 styles={{ arrows: { strokeWidth: 1.5 } }}
                 slides={[
@@ -615,12 +618,7 @@ export function Inclusion() {
 
   return (
     <>
-      <ChapterSubNav
-        chapterNumber={3}
-        chapterTitle='Inclusion'
-        color='tertiary'
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='Inclusion' label='Chapter' subsections={sections} />
 
       <ChapterHero
         chapterNumber={3}

@@ -82,7 +82,7 @@ export default function BusinessBriberyTrendStripChart() {
           <div
             key={incomeGroup}
             className={cn(
-              'flex flex-col gap-1 py-2',
+              'flex flex-col gap-1 py-0',
               groupIndex > 0 && 'border-stroke-xs border-t',
             )}
           >
@@ -107,15 +107,17 @@ export default function BusinessBriberyTrendStripChart() {
               showColorScale={false}
               stripType='dot'
               animate
-              distributionMarkers={[{ type: 'median', color: 'black', strokeWidth: 1.5 }]}
+              distributionMarkers={[
+                { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.3 },
+              ]}
               radius={5}
               dotOpacity={0.4}
               minValue={0}
               maxValue={70}
               noOfTicks={5}
-              height={80}
+              height={90}
               topMargin={8}
-              leftMargin={4}
+              leftMargin={12}
               bottomMargin={20}
               padding='0'
               numberDisplayOptions={{ suffix: '%' }}

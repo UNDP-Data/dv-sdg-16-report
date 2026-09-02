@@ -205,12 +205,7 @@ export function SDG16Progress() {
 
   return (
     <>
-      <ChapterSubNav
-        chapterTitle='SDG 16 Progress'
-        color='default'
-        showGenderLens={false}
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='SDG 16 Progress' showGenderLens={false} subsections={sections} />
 
       <ChapterHero
         label='Global Progress Report 2026'

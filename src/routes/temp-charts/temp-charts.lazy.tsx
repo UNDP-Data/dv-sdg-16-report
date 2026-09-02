@@ -30,11 +30,11 @@ import AccessToInformationChoroplethMap from '@/routes/chapters/03-inclusion/cha
 import AccessToInformationDisclosureBigNumbers from '@/routes/chapters/03-inclusion/charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from '@/routes/chapters/03-inclusion/charts/BudgetDeviationByIncomeGroupLineChart';
 import DiscriminationRatesByGroupBarChart from '@/routes/chapters/03-inclusion/charts/DiscriminationRatesByGroupBarChart';
-import GapToParityBarChart from '@/routes/chapters/03-inclusion/charts/GapToParityBarChart';
 import HealthcareSatisfactionByRegionBarChart from '@/routes/chapters/03-inclusion/charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from '@/routes/chapters/03-inclusion/charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from '@/routes/chapters/03-inclusion/charts/PoliticalEfficacyByRegionBarChart';
 import RepresentationByInstitutionalLevelBarChart from '@/routes/chapters/03-inclusion/charts/RepresentationByInstitutionalLevelBarChart';
+import GapToParityBarChart from '@/routes/chapters/03-inclusion/charts/RepresentationByRegionAndIncomeGroupsBarChart';
 import SatisfactionWithPublicServicesStripChart from '@/routes/chapters/03-inclusion/charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from '@/routes/chapters/03-inclusion/charts/VoteSharesByInstitutionDumbbellChart';
 import { GraphContainer } from '@/routes/chapters/components/Containers';

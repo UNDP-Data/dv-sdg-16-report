@@ -70,7 +70,7 @@ export function Justice() {
         id: '02',
         title: 'Access to civil justice',
         indicatorCode: '16.3.3',
-        heading: 'More than 1.5 billion people are estimated to have unmet justice needs',
+        heading: 'More than 5 billion people are estimated to have unmet justice needs',
         anchor: 'access-to-civil-justice',
         content: (
           <>
@@ -80,7 +80,7 @@ export function Justice() {
                 land, inheritance, or family matters can have profound consequences for{' '}
                 <InfoTooltip
                   trigger='millions of people every day'
-                  content='1.5 billion people cannot obtain justice for everyday civil, administrative, or criminal justice problems, cannot access the opportunities and protections provided by the law, or live in extreme conditions of injustice. Source: Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
+                  content='An estimated 5 billion peoplecannot obtain justice for everyday civil, administrative, or criminal justice problems, cannot access the opportunities and protections provided by the law, or live in extreme conditions of injustice. Source: Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
                   color='secondary'
                 />
                 . Whether these disputes can be resolved fairly and effectively is fundamental to
@@ -511,12 +511,7 @@ export function Justice() {
   );
   return (
     <>
-      <ChapterSubNav
-        chapterNumber={2}
-        chapterTitle='Justice'
-        color='secondary'
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='Justice' label='Chapter' subsections={sections} />
 
       <ChapterHero
         chapterNumber={2}
