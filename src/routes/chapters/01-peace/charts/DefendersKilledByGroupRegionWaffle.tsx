@@ -6,18 +6,16 @@ import { CHART_PADDING } from '@/constants';
 import defendersKilledByGroupRegion from '@/data/chapters/01-peace/16-10-1/defenders-killed-by-group-region.json';
 import ChartNote from '../../components/ChartNote';
 
-const GROUPS = ['Women', 'Youth', 'Indigenous & minority', 'Environmental & Land'] as const;
-type GroupKey = (typeof GROUPS)[number];
+type GroupKey = 'Women' | 'Youth' | 'Indigenous & minority' | 'Environmental & Land';
 
 export default function DefendersKilledByGroupRegionWaffle() {
-  const [selectedGroup, setSelectedGroup] = useState<GroupKey>(GROUPS[0]);
+  const [selectedGroup, setSelectedGroup] = useState<GroupKey>('Women');
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Share of Killed or Disappeared Human Rights Defenders Belonging to Selected Group, by
-          region
+          Share of killed or disappeared human rights defenders belonging to selected group
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           2025
@@ -31,11 +29,12 @@ export default function DefendersKilledByGroupRegionWaffle() {
           value={selectedGroup}
           className='pb-3'
           onValueChange={(value) => setSelectedGroup(value as GroupKey)}
-          color='primary'
+          color='blue'
         >
-          {GROUPS.map((group) => (
-            <RadioGroupItem key={group} value={group} label={group} />
-          ))}
+          <RadioGroupItem value='Women' label='Women' />
+          <RadioGroupItem value='Youth' label='Youth' />
+          <RadioGroupItem value='Indigenous & minority' label='Indigenous & minority' />
+          <RadioGroupItem value='Environmental & Land' label='Environmental & Land' />
         </RadioGroup>
       </div>
 
@@ -47,7 +46,18 @@ export default function DefendersKilledByGroupRegionWaffle() {
               <P marginBottom='none' size='base' className='text-foreground'>
                 {d.region}
               </P>
-              <P marginBottom='none' className='font-heading font-semibold text-2xl text-primary'>
+              <P
+                marginBottom='none'
+                className='font-heading font-semibold text-2xl'
+                style={{
+                  color: {
+                    Women: 'var(--quaternary)',
+                    Youth: 'var(--primary)',
+                    'Indigenous & minority': 'var(--secondary)',
+                    'Environmental & Land': 'var(--tertiary)',
+                  }[selectedGroup],
+                }}
+              >
                 {share}%
               </P>
               <UnitChart
@@ -55,7 +65,15 @@ export default function DefendersKilledByGroupRegionWaffle() {
                   { label: 'Share', value: share },
                   { label: 'Remaining', value: 100 - share },
                 ]}
-                colors={['var(--primary)', '#ffffff']}
+                colors={[
+                  {
+                    Women: 'var(--quaternary)',
+                    Youth: 'var(--primary)',
+                    'Indigenous & minority': 'var(--secondary)',
+                    'Environmental & Land': 'var(--tertiary)',
+                  }[selectedGroup],
+                  '#ffffff',
+                ]}
                 totalNoOfDots={100}
                 gridSize={20}
                 unitPadding={2}

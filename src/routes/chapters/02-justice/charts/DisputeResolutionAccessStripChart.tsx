@@ -6,8 +6,6 @@ import { CHART_PADDING } from '@/constants';
 import disputeResolutionAccess from '@/data/chapters/02-justice/16-3-3/dispute-resolution-access.json';
 import ChartNote from '../../components/ChartNote';
 
-const DOT_COLOR = 'var(--secondary)';
-
 export default function DisputeResolutionAccessStripChart() {
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
@@ -22,7 +20,7 @@ export default function DisputeResolutionAccessStripChart() {
       </div>
 
       <div className='flex items-center gap-2'>
-        <span aria-hidden='true' className='h-4 w-4 rounded-full bg-secondary opacity-40' />
+        <span aria-hidden='true' className='h-4 w-4 rounded-full bg-blue-500 opacity-40' />
         <P marginBottom='none' size='sm'>
           Each dot is a country
         </P>
@@ -35,7 +33,7 @@ export default function DisputeResolutionAccessStripChart() {
         ])}
         orientation='horizontal'
         stripType='dot'
-        colors={[DOT_COLOR]}
+        colors='var(--blue-500)'
         animate
         radius={7}
         dotOpacity={0.4}
@@ -56,7 +54,7 @@ export default function DisputeResolutionAccessStripChart() {
               >
                 {d.label} ({d.data.year})
               </P>
-              <P size='sm' marginBottom='none' weight='bold' className='text-secondary'>
+              <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
                 {numberFormattingFunction(d.position)}%
               </P>
             </div>

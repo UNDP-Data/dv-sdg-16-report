@@ -15,13 +15,22 @@ export default function AccessToInformationDisclosureBigNumbers() {
       </div>
 
       <div className='grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-3 md:gap-x-10'>
-        <BigNumber color='tertiary' value={38} suffix='%' label='no substantive response' />
-        <BigNumber color='tertiary' value={54} suffix='%' label='at least some information' />
-        <BigNumber color='tertiary' value={42} suffix='%' label='full disclosure' />
+        <BigNumber color='blue-500' value={38} suffix='%' label='no substantive response' />
+        <BigNumber color='blue-500' value={54} suffix='%' label='at least some information' />
+        <BigNumber color='blue-500' value={42} suffix='%' label='full disclosure' />
       </div>
 
       <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: TBA
+        Source: Mendel, T. and Vagliano, R. (2025) Global Comparative Testing of Responses to
+        Requests for Information. Halifax, NS: Centre for Law and Democracy. Available at:{' '}
+        <a
+          href='https://www.law-democracy.org/wp-content/uploads/2026/02/IDUAI.report.25-09-26.pdf'
+          target='_blank'
+          className='underline'
+          rel='noopener noreferrer'
+        >
+          https://www.law-democracy.org/wp-content/uploads/2026/02/IDUAI.report.25-09-26.pdf
+        </a>
       </P>
     </div>
   );

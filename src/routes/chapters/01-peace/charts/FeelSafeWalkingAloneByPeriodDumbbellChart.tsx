@@ -15,10 +15,10 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       ])}
       orientation='horizontal'
       colorDomain={['2016–2020', '2021–2025']}
-      colors={[Colors.gray, 'var(--primary)']}
+      colors={[Colors.gray, 'var(--blue-500)']}
       minValue={0}
       showTicks={false}
-      showValues={innerWidth >= 720}
+      showValues={false}
       leftMargin={innerWidth < 720 ? 135 : 220}
       minHeight={640}
       truncateBy={innerWidth < 720 ? 16 : undefined}
@@ -36,7 +36,7 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
         const [period20162020, period20212025] = d.x as (number | null)[];
         const rows = [
           { label: '2016–2020', value: period20162020, color: Colors.gray },
-          { label: '2021–2025', value: period20212025, color: 'var(--primary)' },
+          { label: '2021–2025', value: period20212025, color: 'var(--blue-500)' },
         ];
         return (
           <div className='flex flex-col gap-1 bg-white px-3 py-2'>

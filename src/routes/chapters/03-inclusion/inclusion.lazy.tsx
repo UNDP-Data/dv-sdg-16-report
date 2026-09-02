@@ -472,7 +472,7 @@ export function Inclusion() {
                 As of 2026, 141 UN Member States have adopted statutory guarantees for public access
                 to information, compared with just 14 countries in 1990, reflecting a remarkable
                 increase in the right to information. The most recent adopters include Senegal and
-                Cuba adopting access to information laws in 2005 and in 2006, respectively.
+                Cuba adopting access to information laws in 2025 and in 2026, respectively.
               </P>
             </TextContainer>
             <GraphContainer size='lg'>
@@ -561,8 +561,7 @@ export function Inclusion() {
         id: '10',
         title: 'The role of institutions',
         indicatorCode: '',
-        heading:
-          'Inclusive societies are ensured through substantive representation and transparency',
+        heading: 'The role of institutions in building inclusive societies',
         anchor: 'role-of-institutions',
         content: (
           <>

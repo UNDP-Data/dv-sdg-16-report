@@ -1,57 +1,22 @@
 import { SimpleBarGraph } from '@undp/data-viz/BarGraph';
+import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { RadioGroup, RadioGroupItem } from '@undp/design-system-react/RadioGroup';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import { CHART_PADDING } from '@/constants';
+import representationByInstitutionalLevel from '@/data/chapters/03-inclusion/16-7-1-b-c/representation-by-institutional-level.json';
 import ChartNote from '../../components/ChartNote';
-
-const SECTORS = [
-  {
-    label: 'Public service',
-    categoryNoun: 'occupational level',
-    color: 'var(--accent-blue)',
-    height: 260,
-    rows: [
-      { level: 'Senior government officials', ratio: 0.78, parityGap: -0.22 },
-      { level: 'Other managers', ratio: 0.98, parityGap: -0.02 },
-      { level: 'Business, administration and associate professionals', ratio: 1.1, parityGap: 0.1 },
-      { level: 'Administration professionals', ratio: 1.27, parityGap: 0.27 },
-      { level: 'General and keyboard clerks', ratio: 1.4, parityGap: 0.4 },
-    ],
-  },
-  {
-    label: 'Judiciary',
-    categoryNoun: 'court level',
-    color: 'var(--accent-teal)',
-    height: 180,
-    rows: [
-      { level: 'Constitutional and supreme courts', ratio: 0.76, parityGap: -0.24 },
-      { level: 'High-level courts', ratio: 0.91, parityGap: -0.09 },
-      { level: 'Low-level courts', ratio: 1.12, parityGap: 0.12 },
-    ],
-  },
-];
-
-const MAX_RATIO = 1.5;
 
 export default function RepresentationByInstitutionalLevelBarChart() {
   const [selectedSector, setSelectedSector] = useState<'Public service' | 'Judiciary'>(
     'Public service',
   );
-  const { label, categoryNoun, color, height, rows } =
-    SECTORS.find((d) => d.label === selectedSector) || SECTORS[0];
-
-  const data = rows.map((d) => ({
-    label: d.level,
-    size: d.ratio,
-    data: { ...d },
-  }));
 
   return (
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Women's representation within the {label.toLowerCase()}
+          Women's representation within the {selectedSector.toLowerCase()}
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           2025 or latest year available
@@ -65,22 +30,31 @@ export default function RepresentationByInstitutionalLevelBarChart() {
         <RadioGroup
           value={selectedSector}
           onValueChange={(value) => setSelectedSector(value as 'Public service' | 'Judiciary')}
-          color='tertiary'
+          color='blue'
         >
-          {SECTORS.map((sector) => (
-            <RadioGroupItem key={sector.label} value={sector.label} label={sector.label} />
+          {['Public service', 'Judiciary'].map((sector) => (
+            <RadioGroupItem key={sector} value={sector} label={sector} />
           ))}
         </RadioGroup>
       </div>
       <SimpleBarGraph
-        data={data}
-        labelOrder={data.map((d) => d.label)}
+        data={transformDataForGraph(
+          representationByInstitutionalLevel.filter((d) => d.sector === selectedSector),
+          'barChart',
+          [
+            { columnId: 'level', chartConfigId: 'label' },
+            { columnId: 'ratio', chartConfigId: 'size' },
+          ],
+        )}
+        labelOrder={representationByInstitutionalLevel
+          .filter((d) => d.sector === selectedSector)
+          .map((d) => d.level)}
         orientation='horizontal'
-        colors={color}
+        colors={selectedSector === 'Public service' ? 'var(--accent-blue)' : 'var(--primary)'}
         animate
         minValue={0}
-        maxValue={MAX_RATIO}
-        height={height}
+        maxValue={1.5}
+        height={selectedSector === 'Public service' ? 260 : 180}
         maxBarThickness={32}
         showValues
         valueColor='var(--content-primary)'
@@ -118,9 +92,9 @@ export default function RepresentationByInstitutionalLevelBarChart() {
             <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
               <span>Gap to parity</span>
               <span className='font-bold'>
-                {d.data.parityGap === 0
+                {d.data.ratio === 1
                   ? 'At parity'
-                  : `${Math.abs(d.data.parityGap).toFixed(2)} ${d.data.parityGap < 0 ? 'below' : 'above'}`}
+                  : `${Math.abs(d.data.ratio - 1).toFixed(2)} ${d.data.ratio < 1 ? 'below' : 'above'}`}
               </span>
             </P>
           </div>
@@ -150,7 +124,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
             }
           />
         }
-        ariaLabel={`Bar chart showing women's representation ratio within the ${label.toLowerCase()} by ${categoryNoun}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Levels run from the most junior to the most senior, and representation falls as seniority rises.`}
+        ariaLabel={`Bar chart showing women's representation ratio within the ${selectedSector.toLowerCase()} by ${selectedSector === 'Public service' ? 'occupational level' : 'court level'}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Levels run from the most junior to the most senior, and representation falls as seniority rises.`}
       />
     </div>
   );

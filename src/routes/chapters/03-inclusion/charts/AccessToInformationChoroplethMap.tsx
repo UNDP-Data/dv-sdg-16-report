@@ -60,7 +60,7 @@ export default function AccessToInformationChoroplethMap() {
 
       <ChoroplethMap
         data={accessToInformation.map((d) => ({ id: d.id, x: d.x, data: { country: d.country } }))}
-        colors={['var(--tertiary)']}
+        colors={['var(--blue-500)']}
         colorDomain={[1]}
         showColorScale={false}
         scaleType='categorical'

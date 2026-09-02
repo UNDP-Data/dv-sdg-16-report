@@ -45,7 +45,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
         <RadioGroup
           value={selectedCategory}
           onValueChange={(value: 'Women' | 'Youth') => setSelectedCategory(value)}
-          color='tertiary'
+          color='blue'
         >
           {CATEGORY_SETTINGS.map((config) => (
             <RadioGroupItem key={config.label} value={config.label} label={config.label} />

@@ -1,5 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { ImageDownloadButton } from '@undp/data-viz/ImageDownloadButton';
+import { SVGDownloadButton } from '@undp/data-viz/SVGDownloadButton';
 import { cn } from '@undp/design-system-react/cn';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
 import { H1 } from '@undp/design-system-react/Typography';
@@ -67,6 +68,13 @@ function ChartFrame({
           nodeID={nodeId}
           filename={file}
           buttonContent='PNG'
+          buttonSmall
+          className={buttonClass}
+        />
+        <SVGDownloadButton
+          nodeID={nodeId}
+          filename={file}
+          buttonContent='SVG'
           buttonSmall
           className={buttonClass}
         />

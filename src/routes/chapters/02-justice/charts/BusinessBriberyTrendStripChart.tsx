@@ -19,7 +19,7 @@ const INCOME_GROUPS = ['High income', 'Upper-middle income', 'Lower-middle incom
 
 const PERIODS = [
   { label: '2010–2016', color: 'var(--content-quaternary)' },
-  { label: '2017–2024', color: 'var(--secondary)' },
+  { label: '2017–2024', color: 'var(--blue-500)' },
 ];
 
 export default function BusinessBriberyTrendStripChart() {
