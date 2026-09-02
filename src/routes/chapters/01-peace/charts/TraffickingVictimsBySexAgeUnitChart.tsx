@@ -46,7 +46,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             ]}
             colors={FEMALE_COLORS}
             size={innerWidth < 720 ? 280 : 500}
-            gridSize={10}
+            gridSize={innerWidth < 720 ? 10 : 20}
             numberDisplayOptions={{ suffix: '%' }}
             ariaLabel={`Unit chart showing the age breakdown of female trafficking victims. Women make up ${WOMEN} per cent and girls ${GIRLS} per cent, together ${FEMALE_TOTAL} per cent of all detected victims.`}
           />
@@ -54,7 +54,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             <H2
               weight='medium'
               marginBottom='sm'
-              className='m-0 pt-12 font-heading text-categorical-female leading-none'
+              className='m-0 font-heading text-categorical-female leading-none'
             >
               {FEMALE_TOTAL}
               <span className='ml-0.5 text-2xl md:text-3xl'>%</span>
@@ -72,15 +72,15 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             ]}
             colors={MALE_COLORS}
             size={innerWidth < 720 ? 280 : 500}
-            gridSize={10}
+            gridSize={innerWidth < 720 ? 10 : 20}
             numberDisplayOptions={{ suffix: '%' }}
             ariaLabel={`Unit chart showing the age breakdown of male trafficking victims. Men make up ${MEN} per cent and boys ${BOYS} per cent, together ${MALE_TOTAL} per cent of all detected victims.`}
           />
-          <div className='w-full shrink-0 sm:w-32'>
+          <div className='flex h-full w-full shrink-0 flex-col justify-center sm:w-32'>
             <H2
               weight='medium'
               marginBottom='sm'
-              className='m-0 pt-12 font-heading text-categorical-male leading-none'
+              className='m-0 font-heading text-categorical-male leading-none'
             >
               {MALE_TOTAL}
               <span className='ml-0.5 text-2xl md:text-3xl'>%</span>
