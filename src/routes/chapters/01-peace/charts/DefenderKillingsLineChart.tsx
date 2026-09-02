@@ -79,7 +79,7 @@ export default function DefenderKillingsLineChart() {
       )}
       ariaLabel='Line chart showing the number of verified killings of human rights defenders, journalists and trade unionists worldwide from 2015 to 2025, rising from 426 in 2015 to a projected 743 in 2025. 2024 and 2025 figures are projected, highlighted as a shaded area.'
       strokeWidth={2}
-      lineColor='var(--primary)'
+      lineColor='var(--blue-500)'
       showDots={false}
       curveType='linear'
       noOfXTicks='showAvailableOnly'

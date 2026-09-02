@@ -13,7 +13,7 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       ])}
       orientation='horizontal'
       colorDomain={['Vote or seat share', 'Member share']}
-      colors={['var(--secondary)', 'var(--tertiary)']}
+      colors={['var(--blue-500)', 'var(--primary)']}
       minValue={0}
       maxValue={100}
       showTicks={false}
@@ -34,8 +34,8 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       tooltip={(d) => {
         const [voteShare, memberShare] = d.x as (number | null)[];
         const rows = [
-          { label: 'Vote or seat share', value: voteShare, color: 'var(--secondary)' },
-          { label: 'Member share', value: memberShare, color: 'var(--tertiary)' },
+          { label: 'Vote or seat share', value: voteShare, color: 'var(--blue-500)' },
+          { label: 'Member share', value: memberShare, color: 'var(--primary)' },
         ];
         return (
           <div className='flex flex-col gap-1 bg-white px-3 py-2'>

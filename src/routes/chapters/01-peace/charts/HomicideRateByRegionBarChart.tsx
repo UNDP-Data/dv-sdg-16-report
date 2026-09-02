@@ -10,7 +10,7 @@ export default function HomicideRateByRegionBarChart() {
     <SimpleBarGraph
       data={homicideRateByRegion.map((d) => ({ label: d.region, size: d.value }))}
       orientation='horizontal'
-      colors='var(--primary)'
+      colors='var(--blue-500)'
       minValue={0}
       maxValue={20}
       showValues

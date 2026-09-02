@@ -25,7 +25,7 @@ export default function BusinessBriberyStripChart() {
         classNames={{ items: 'cursor-pointer' }}
         value={selectedGrouping}
         onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-        color='secondary'
+        color='foreground'
         variant='light'
         size='sm'
         options={[
@@ -46,7 +46,7 @@ export default function BusinessBriberyStripChart() {
         </div>
 
         <div className='flex items-center gap-4'>
-          <span aria-hidden='true' className='h-4 w-4 rounded-full bg-secondary opacity-40' />
+          <span aria-hidden='true' className='h-4 w-4 rounded-full bg-blue-500 opacity-40' />
           <P marginBottom='none' size='sm'>
             Each dot is a country
           </P>
@@ -100,7 +100,7 @@ export default function BusinessBriberyStripChart() {
           }
           orientation='horizontal'
           stripType='dot'
-          colors={['var(--secondary)']}
+          colors={['var(--blue-400)']}
           dimmedOpacity={0.1}
           leftMargin={innerWidth < 720 ? 135 : 220}
           truncateBy={innerWidth < 720 ? 16 : undefined}
@@ -132,7 +132,7 @@ export default function BusinessBriberyStripChart() {
                 >
                   {d.label} ({d.data.year})
                 </P>
-                <P size='sm' marginBottom='none' weight='bold' className='text-secondary'>
+                <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
                   {numberFormattingFunction(d.position)}%
                 </P>
               </div>

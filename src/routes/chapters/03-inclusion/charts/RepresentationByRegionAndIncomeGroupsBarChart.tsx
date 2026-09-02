@@ -11,8 +11,8 @@ import ChartNote from '../../components/ChartNote';
 
 export default function RepresentationByRegionAndIncomeGroupsBarChart() {
   const [selectedGrouping, setSelectedGrouping] = useState<'region' | 'incomeGroup'>('region');
-  const [selectedSector, setSelectedSector] = useState<'publicService' | 'judiciary'>(
-    'publicService',
+  const [selectedSector, setSelectedSector] = useState<'Public service' | 'Judiciary'>(
+    'Public service',
   );
 
   return (
@@ -36,8 +36,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
       >
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Women's representation within the{' '}
-            {selectedSector === 'publicService' ? 'public service' : 'judiciary'}
+            Women's representation within the {selectedSector.toLocaleLowerCase()}
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2025 or latest year available
@@ -50,15 +49,11 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           </P>
           <RadioGroup
             value={selectedSector}
-            onValueChange={(value) => setSelectedSector(value as 'publicService' | 'judiciary')}
-            color='tertiary'
+            onValueChange={(value) => setSelectedSector(value as 'Public service' | 'Judiciary')}
+            color='blue'
           >
-            {[
-              { value: 'publicService', label: 'Public service' },
-              { value: 'judiciary', label: 'Judiciary' },
-            ].map((g) => (
-              <RadioGroupItem key={g.value} value={g.value} label={g.label} />
-            ))}
+            <RadioGroupItem value='Public service' label='Public service' />
+            <RadioGroupItem value='Judiciary' label='Judiciary' />
           </RadioGroup>
         </div>
 
@@ -69,7 +64,10 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
             [
               { columnId: 'label', chartConfigId: 'label' },
               { columnId: 'groupType', chartConfigId: 'color' },
-              { columnId: selectedSector, chartConfigId: 'size' },
+              {
+                columnId: selectedSector === 'Public service' ? 'publicService' : 'judiciary',
+                chartConfigId: 'size',
+              },
             ],
           )}
           labelOrder={(selectedGrouping === 'region'
@@ -79,9 +77,9 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           orientation='horizontal'
           colorDomain={['global', selectedGrouping]}
           colors={
-            selectedSector === 'publicService'
+            selectedSector === 'Public service'
               ? ['color-mix(in srgb, var(--blue-600) 70%, black)', 'var(--blue-600)']
-              : ['color-mix(in srgb, var(--teal-600) 70%, black)', 'var(--teal-600)']
+              : ['color-mix(in srgb, var(--primary) 70%, black)', 'var(--primary)']
           }
           showColorScale={false}
           animate
@@ -122,7 +120,9 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
             },
           }}
           tooltip={(d) => {
-            const value = d.data[selectedSector] as number;
+            const value = d.data[
+              selectedSector === 'Public service' ? 'publicService' : 'judiciary'
+            ] as number;
             const gap = value - 1;
             return (
               <div className='flex flex-col gap-1 bg-white px-3 py-2'>
@@ -181,7 +181,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
               }
             />
           }
-          ariaLabel={`Bar chart showing women's representation ratio in the ${selectedSector === 'publicService' ? 'public service' : 'judiciary'} by ${selectedGrouping === 'region' ? 'region' : 'income group'}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Bars falling short of the line indicate underrepresentation and bars passing it indicate overrepresentation. The world average is shown as the first bar in a darker shade.`}
+          ariaLabel={`Bar chart showing women's representation ratio in the ${selectedSector === 'Public service' ? 'public service' : 'judiciary'} by ${selectedGrouping === 'region' ? 'region' : 'income group'}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Bars falling short of the line indicate underrepresentation and bars passing it indicate overrepresentation. The world average is shown as the first bar in a darker shade.`}
         />
       </div>
     </div>

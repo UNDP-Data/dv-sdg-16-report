@@ -25,7 +25,7 @@ export default function DetaineesBySentencingStatusBarChart() {
         <RadioGroup
           value={selectedYear}
           onValueChange={(value) => setSelectedYear(value)}
-          color='secondary'
+          color='blue'
         >
           <RadioGroupItem value='2024' label='2024' />
           <RadioGroupItem value='2015' label='2015' />
@@ -42,7 +42,7 @@ export default function DetaineesBySentencingStatusBarChart() {
           ],
         )}
         colorDomain={['Unsentenced detainees', 'Sentenced detainees']}
-        colors={['var(--secondary)', 'var(--content-quaternary)']}
+        colors={['var(--blue-500)', 'var(--gray-400)']}
         orientation='horizontal'
         animate
         showTotalValue
@@ -63,10 +63,10 @@ export default function DetaineesBySentencingStatusBarChart() {
             </P>
             <P size='sm' marginBottom='none'>
               Unsentenced:{' '}
-              <span className='font-bold text-secondary'>
+              <span className='font-bold text-blue-500'>
                 {numberFormattingFunction(d.data.unsentenced)}
               </span>{' '}
-              <span className='font-bold text-secondary'>
+              <span className='font-bold text-blue-500'>
                 (
                 {numberFormattingFunction(
                   (d.data.unsentenced / (d.data.unsentenced + d.data.sentenced)) * 100,

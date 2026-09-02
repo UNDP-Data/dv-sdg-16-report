@@ -17,7 +17,7 @@ export default function ViolentDisciplineByRegionBarChart() {
         data: { childrenMillions: d.childrenMillions },
       }))}
       orientation='horizontal'
-      colors='var(--primary)'
+      colors='var(--blue-500)'
       minValue={0}
       maxValue={100}
       showValues

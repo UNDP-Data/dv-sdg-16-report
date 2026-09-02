@@ -28,7 +28,7 @@ export default function DiscriminationRatesByGroupBarChart() {
               },
             ]}
             orientation='horizontal'
-            colors={['var(--content-quaternary)', 'var(--categorical-child)']}
+            colors={['var(--content-quaternary)', 'var(--blue-500)']}
             showColorScale={false}
             animate
             minValue={0}
@@ -72,7 +72,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--categorical-child)' }}
+                      style={{ backgroundColor: 'var(--blue-500)' }}
                     />
                     Sexual minority
                   </span>
@@ -98,7 +98,7 @@ export default function DiscriminationRatesByGroupBarChart() {
             ]}
             orientation='horizontal'
             colorDomain={['Reference group', 'Group reporting higher discrimination']}
-            colors={['var(--content-quaternary)', 'var(--categorical-child)']}
+            colors={['var(--content-quaternary)', 'var(--blue-500)']}
             showColorScale={false}
             animate
             minValue={0}
@@ -142,7 +142,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                   <span className='flex items-center gap-1.5'>
                     <span
                       className='h-2.5 w-2.5 rounded-full'
-                      style={{ backgroundColor: 'var(--categorical-child)' }}
+                      style={{ backgroundColor: 'var(--blue-500)' }}
                     />
                     Transgender
                   </span>

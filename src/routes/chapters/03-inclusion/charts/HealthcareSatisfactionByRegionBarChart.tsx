@@ -33,7 +33,7 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         <P size='sm' marginBottom='none'>
           Select year
         </P>
-        <RadioGroup value={year} onValueChange={(value) => setYear(value)} color='tertiary'>
+        <RadioGroup value={year} onValueChange={(value) => setYear(value)} color='blue'>
           {['2025', '2015'].map((y) => (
             <RadioGroupItem key={y} value={y} label={y} />
           ))}
@@ -47,7 +47,7 @@ export default function HealthcareSatisfactionByRegionBarChart() {
         }))}
         labelOrder={REGIONS.map((r) => r.label)}
         orientation='horizontal'
-        colors='var(--tertiary)'
+        colors='var(--blue-500)'
         minValue={0}
         animate
         maxValue={100}
