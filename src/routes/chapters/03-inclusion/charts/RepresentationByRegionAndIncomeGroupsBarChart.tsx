@@ -14,12 +14,6 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
   const [selectedSector, setSelectedSector] = useState<'publicService' | 'judiciary'>(
     'publicService',
   );
-  const rows = selectedGrouping === 'region' ? representationByRegion : representationByIncomeGroup;
-  // Income group names are far shorter than region names, so they need less of a gutter.
-  const leftMargin = {
-    region: innerWidth < 720 ? 135 : 240,
-    incomeGroup: innerWidth < 720 ? 110 : 150,
-  }[selectedGrouping];
 
   return (
     <div className='flex flex-col items-center gap-4 bg-white'>
@@ -36,10 +30,14 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
         ]}
       />
 
-      <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+      <div
+        className='flex w-full flex-col gap-4 bg-background-soft'
+        style={{ padding: CHART_PADDING }}
+      >
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Women's representation in public institutions, relative to parity
+            Women's representation within the{' '}
+            {selectedSector === 'publicService' ? 'public service' : 'judiciary'}
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2025 or latest year available
@@ -65,12 +63,19 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
         </div>
 
         <SimpleBarGraph
-          data={transformDataForGraph(rows, 'barChart', [
-            { columnId: 'label', chartConfigId: 'label' },
-            { columnId: 'groupType', chartConfigId: 'color' },
-            { columnId: selectedSector, chartConfigId: 'size' },
-          ])}
-          labelOrder={rows.map((d) => d.label)}
+          data={transformDataForGraph(
+            selectedGrouping === 'region' ? representationByRegion : representationByIncomeGroup,
+            'barChart',
+            [
+              { columnId: 'label', chartConfigId: 'label' },
+              { columnId: 'groupType', chartConfigId: 'color' },
+              { columnId: selectedSector, chartConfigId: 'size' },
+            ],
+          )}
+          labelOrder={(selectedGrouping === 'region'
+            ? representationByRegion
+            : representationByIncomeGroup
+          ).map((d) => d.label)}
           orientation='horizontal'
           colorDomain={['global', selectedGrouping]}
           colors={
@@ -89,7 +94,15 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           numberDisplayOptions={{ precision: 2, padZeros: true }}
           showTicks={false}
           truncateBy={innerWidth < 720 ? 16 : undefined}
-          leftMargin={leftMargin}
+          leftMargin={
+            selectedGrouping === 'region'
+              ? innerWidth < 720
+                ? 135
+                : 240
+              : innerWidth < 720
+                ? 110
+                : 150
+          }
           rightMargin={10}
           topMargin={30}
           padding='0'
