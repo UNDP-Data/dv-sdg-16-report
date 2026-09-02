@@ -511,12 +511,7 @@ export function Justice() {
   );
   return (
     <>
-      <ChapterSubNav
-        chapterNumber={2}
-        chapterTitle='Justice'
-        color='secondary'
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='Justice' label='Chapter' subsections={sections} />
 
       <ChapterHero
         chapterNumber={2}

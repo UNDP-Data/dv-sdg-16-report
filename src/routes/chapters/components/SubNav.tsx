@@ -16,20 +16,19 @@ import {
 import { P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Info } from 'lucide-react';
 import { useActions, useActiveSection, useIsGenderLensActive } from '@/stores/chapterStore';
-import type { ChapterSectionDataType, SectionColorType } from '@/types';
+import type { ChapterSectionDataType } from '@/types';
 
 interface SubNavProps {
-  chapterNumber?: number;
   chapterTitle: string;
-  color?: SectionColorType;
+  /** Small eyebrow shown before the title, e.g. "Chapter". Omit for pages that are not chapters. */
+  label?: string;
   showGenderLens?: boolean;
   subsections: ChapterSectionDataType[];
 }
 
 export default function SubNav({
-  chapterNumber,
   chapterTitle,
-  color = 'primary',
+  label,
   showGenderLens = true,
   subsections,
 }: SubNavProps) {
@@ -44,57 +43,36 @@ export default function SubNav({
       style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
     >
       <DropdownMenu>
-        <DropdownMenuTrigger className='flex min-w-0 items-center gap-2 text-content-reverse text-sm'>
-          {chapterNumber ? (
-            <P
-              weight='semibold'
-              size='xs'
-              marginBottom='none'
-              className={cn(
-                color === 'primary' && 'text-primary',
-                color === 'secondary' && 'text-secondary',
-                color === 'tertiary' && 'text-tertiary',
-                color === 'default' && 'text-blue-500',
-              )}
-            >
-              {chapterNumber}
-            </P>
+        <DropdownMenuTrigger className='flex min-w-0 items-baseline gap-2 text-content-reverse text-sm'>
+          {label ? (
+            <span className='shrink-0 text-content-reverse/50 text-xs uppercase tracking-[0.12em]'>
+              {label}
+            </span>
           ) : null}
           <span className='shrink-0'>{chapterTitle}</span>
           {activeSubsection ? (
-            <span className='hidden min-w-0 items-center gap-2 md:flex'>
+            <span className='hidden min-w-0 items-baseline gap-2 md:flex'>
               <span className='text-content-tertiary'>–</span>
               <span className='truncate text-content-tertiary'>{activeSubsection.title}</span>
             </span>
           ) : null}
-          <ChevronDown size={14} className='shrink-0 text-content-reverse' />
+          <ChevronDown size={14} className='shrink-0 self-center text-content-reverse' />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align='start'
+          sideOffset={8}
           collisionPadding={16}
-          className='w-[calc(100vw-3rem)] max-w-100 border-background/30 bg-foreground-soft text-content-reverse'
+          className='undp-scrollbar max-h-[calc(100svh-5rem)] w-[calc(100vw-3rem)] max-w-80 overflow-y-auto border border-background/15 bg-foreground-soft p-3 text-content-reverse shadow-xl'
         >
-          {subsections.map((subsection) => {
-            const isActive = subsection.anchor === activeSection;
-            return (
-              <DropdownMenuItem key={subsection.anchor} asChild className='focus:bg-foreground/30'>
-                <a
-                  href={`#${subsection.anchor}`}
-                  className={cn(
-                    'flex cursor-pointer items-baseline gap-3 border-transparent border-l-2 py-3 pl-2 text-sm transition-colors hover:bg-background/5!',
-                    isActive ? 'text-content-reverse' : 'text-content-reverse/80',
-                    color === 'primary' && isActive && 'border-primary',
-                    color === 'secondary' && isActive && 'border-secondary',
-                    color === 'tertiary' && isActive && 'border-tertiary',
-                    color === 'default' && isActive && 'border-blue-500',
-                  )}
-                >
-                  <span className='pr-1 pl-2 text-xs'>{subsection.id}</span>
-                  {subsection.title}
-                </a>
-              </DropdownMenuItem>
-            );
-          })}
+          {subsections.map((subsection) => (
+            <DropdownMenuItem
+              key={subsection.anchor}
+              asChild
+              className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+            >
+              <a href={`#${subsection.anchor}`}>{subsection.title}</a>
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuContent>
       </DropdownMenu>
       <TooltipProvider delayDuration={100} skipDelayDuration={0}>

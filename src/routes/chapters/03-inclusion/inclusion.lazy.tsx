@@ -615,12 +615,7 @@ export function Inclusion() {
 
   return (
     <>
-      <ChapterSubNav
-        chapterNumber={3}
-        chapterTitle='Inclusion'
-        color='tertiary'
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='Inclusion' label='Chapter' subsections={sections} />
 
       <ChapterHero
         chapterNumber={3}

@@ -470,12 +470,7 @@ export function Peace() {
   );
   return (
     <>
-      <ChapterSubNav
-        chapterNumber={1}
-        chapterTitle='Peace'
-        color='primary'
-        subsections={sections}
-      />
+      <ChapterSubNav chapterTitle='Peace' label='Chapter' subsections={sections} />
       <ChapterHero
         chapterNumber={1}
         bg='/imgs/chapters/peace-hero.webp'
