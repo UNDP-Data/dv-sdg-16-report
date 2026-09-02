@@ -3,9 +3,9 @@ import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
-import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
+import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Button } from '@undp/design-system-react/Button';
-import { cn } from '@undp/design-system-react/cn';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import {
   Tooltip,
@@ -15,52 +15,34 @@ import {
 } from '@undp/design-system-react/Tooltip';
 import { P } from '@undp/design-system-react/Typography';
 import { Info } from 'lucide-react';
-import { useMemo } from 'react';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
-interface NonLethalViolenceRow {
-  iso3: string;
+interface ViolencePrevalenceRow {
   country: string;
+  violenceType: string;
+  sex: string;
+  value: number;
   year: number;
-  variable: string;
-  source_name: string;
-  count: number;
-  sex: 'male' | 'female';
 }
 
-const VIOLENCE_TYPES = [
-  { key: 'Physical', label: 'Physical violence' },
-  { key: 'Sexual', label: 'Sexual violence' },
-  { key: 'Psychological', label: 'Psychological violence' },
-] as const;
-
-const SEXES = [
-  { key: 'male', label: 'Men', color: Colors.genderColors.male },
-  { key: 'female', label: 'Women', color: Colors.genderColors.female },
-] as const;
+const VIOLENCE_TYPES = ['Physical violence', 'Sexual violence', 'Psychological violence'];
 
 function useNonLethalViolenceData() {
   return useQuery({
     queryKey: ['non-lethal-violence-16-1-3'],
     queryFn: () =>
-      fetchAndParseCSV('/data/chapters/01-peace/16-1-3/16-1-3.csv') as Promise<
-        NonLethalViolenceRow[]
+      fetchAndParseCSV('/data/chapters/01-peace/16-1-3/violence-prevalence.csv') as Promise<
+        ViolencePrevalenceRow[]
       >,
   });
 }
 
 export default function NonLethalViolenceByTypeSexStripChart() {
-  const { data, isLoading, isError } = useNonLethalViolenceData();
-
-  const maxValue = useMemo(() => {
-    if (!data || data.length === 0) return undefined;
-    const max = Math.max(...data.map((d) => d.count));
-    return Math.ceil(max / 5) * 5;
-  }, [data]);
+  const { data: rows, isLoading, isError } = useNonLethalViolenceData();
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
-  if (isError || !data) {
+  if (isError) {
     return (
       <P marginBottom='none' size='sm' className='text-content-secondary'>
         Unable to load the underlying data for this chart.
@@ -81,8 +63,8 @@ export default function NonLethalViolenceByTypeSexStripChart() {
 
       <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
         <ColorLegend
-          colors={SEXES.map((s) => s.color)}
-          colorDomain={SEXES.map((s) => s.label)}
+          colors={[Colors.genderColors.male, Colors.genderColors.female]}
+          colorDomain={['Men', 'Women']}
           showNAColor={false}
           className='pb-0'
         />
@@ -116,113 +98,74 @@ export default function NonLethalViolenceByTypeSexStripChart() {
         </div>
       </div>
 
-      <div className='flex flex-col'>
-        {VIOLENCE_TYPES.map((type, typeIndex) => (
-          <div
-            key={type.key}
-            className={cn('flex flex-col gap-1 py-3', typeIndex > 0 && 'border-stroke-xs border-t')}
-          >
-            <P marginBottom='none' size='sm' className='font-heading font-semibold'>
-              {type.label}
-            </P>
-            {SEXES.map((sex, sexIndex) => {
-              const isLastRowOverall =
-                typeIndex === VIOLENCE_TYPES.length - 1 && sexIndex === SEXES.length - 1;
-              const rows = data.filter(
-                (d) => d.sex === sex.key && d.variable.includes(`${type.key} violence`),
-              );
-              const bottomMargin = isLastRowOverall ? 10 : 4;
-              const median = getMedian(rows.map((d) => d.count));
-              const medianPercent =
-                maxValue && Number.isFinite(median)
-                  ? `${Math.min(Math.max(median / maxValue, 0), 1) * 100}%`
-                  : undefined;
-              const customLayers = medianPercent
-                ? [
-                    {
-                      position: 'before' as const,
-                      layer: (
-                        <line
-                          key='median-line'
-                          x1={medianPercent}
-                          x2={medianPercent}
-                          y1={0}
-                          y2={40}
-                          stroke='black'
-                          strokeWidth={1.5}
-                        />
-                      ),
-                    },
-                  ]
-                : [];
-
-              return (
-                <div
-                  key={sex.key}
-                  className='grid grid-cols-[72px_1fr] items-center gap-2 md:grid-cols-[92px_1fr]'
-                >
-                  <P marginBottom='none' size='sm' className='text-content-secondary'>
-                    {sex.label}
+      {VIOLENCE_TYPES.map((violenceType, index) => (
+        <div key={violenceType} className='flex flex-col gap-1'>
+          <P marginBottom='none' size='sm' className='font-heading font-semibold'>
+            {violenceType}
+          </P>
+          <StripChart
+            data={transformDataForGraph(
+              (rows ?? []).filter((d) => d.violenceType === violenceType),
+              'stripChart',
+              [
+                { columnId: 'country', chartConfigId: 'label' },
+                { columnId: 'sex', chartConfigId: 'group' },
+                { columnId: 'value', chartConfigId: 'position' },
+                { columnId: 'sex', chartConfigId: 'color' },
+              ],
+            )}
+            orientation='horizontal'
+            stripType='dot'
+            showGroups
+            groupOrder={['Men', 'Women']}
+            colorDomain={['Men', 'Women']}
+            colors={[Colors.genderColors.male, Colors.genderColors.female]}
+            showColorScale={false}
+            distributionMarkers={[
+              { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
+            ]}
+            animate
+            radius={5}
+            dotOpacity={0.4}
+            minValue={0}
+            maxValue={40}
+            noOfTicks={5}
+            height={120}
+            truncateBy={innerWidth < 720 ? 16 : undefined}
+            leftMargin={innerWidth < 720 ? 80 : 100}
+            rightMargin={10}
+            topMargin={32}
+            bottomMargin={8}
+            dimmedOpacity={0.1}
+            numberDisplayOptions={{ suffix: '%' }}
+            backgroundColor={false}
+            padding='0'
+            classNames={index === 0 ? undefined : { xAxis: { labels: 'hidden' } }}
+            styles={{
+              tooltip: { padding: 0 },
+              xAxis: { labels: { transform: 'translateY(-32px)' } },
+            }}
+            tooltip={(d) => (
+              <div className='flex flex-col gap-1 bg-white px-2 py-1'>
+                <div className='flex gap-1'>
+                  <P
+                    size='sm'
+                    marginBottom='none'
+                    className='mr-1 border-content-reverse border-r pr-2'
+                  >
+                    {d.label}
                   </P>
-                  <div>
-                    <StripChart
-                      data={rows.map((d) => ({
-                        label: d.country,
-                        position: d.count,
-                        data: d,
-                      }))}
-                      orientation='horizontal'
-                      stripType='dot'
-                      colors={[sex.color]}
-                      radius={5}
-                      dotOpacity={0.55}
-                      minValue={0}
-                      maxValue={maxValue}
-                      noOfTicks={6}
-                      height={40}
-                      leftMargin={4}
-                      rightMargin={4}
-                      topMargin={4}
-                      styles={{
-                        xAxis: { labels: { transform: 'translateY(6px)' } },
-                        tooltip: { padding: 0 },
-                      }}
-                      bottomMargin={bottomMargin}
-                      numberDisplayOptions={{ suffix: '%' }}
-                      backgroundColor={false}
-                      padding='0'
-                      classNames={isLastRowOverall ? undefined : { xAxis: { labels: 'hidden' } }}
-                      customLayers={customLayers}
-                      tooltip={(d) => (
-                        <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-                          <div className='flex gap-1'>
-                            <P
-                              size='sm'
-                              marginBottom='none'
-                              className='mr-1 border-content-reverse border-r pr-2'
-                            >
-                              {d.label}
-                            </P>
-                            <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
-                              <span className='font-bold' style={{ color: sex.color }}>
-                                {numberFormattingFunction(d.position)}
-                              </span>
-                              <span className='text-content-secondary text-xs'>
-                                ({d.data.year})
-                              </span>
-                            </P>
-                          </div>
-                        </div>
-                      )}
-                      ariaLabel={`Strip chart showing ${type.label.toLowerCase()} prevalence among ${sex.label.toLowerCase()} respondents, by country. The median is ${numberFormattingFunction(median)}%.`}
-                    />
-                  </div>
+                  <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
+                    <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                    <span className='text-content-secondary text-xs'>({d.data.year})</span>
+                  </P>
                 </div>
-              );
-            })}
-          </div>
-        ))}
-      </div>
+              </div>
+            )}
+            ariaLabel={`Strip chart showing ${violenceType.toLowerCase()} prevalence by country, grouped by sex. Each dot is a country and a line marks the median of each group.`}
+          />
+        </div>
+      ))}
 
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
