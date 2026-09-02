@@ -1,0 +1,10 @@
+[
+  { "sector": "Public service", "level": "Senior government officials", "ratio": 0.78 },
+  { "sector": "Public service", "level": "Other managers", "ratio": 0.98 },
+  { "sector": "Public service", "level": "Business, administration and associate professionals", "ratio": 1.10 },
+  { "sector": "Public service", "level": "Administration professionals", "ratio": 1.27 },
+  { "sector": "Public service", "level": "General and keyboard clerks", "ratio": 1.40 },
+  { "sector": "Judiciary", "level": "Constitutional and supreme courts", "ratio": 0.76 },
+  { "sector": "Judiciary", "level": "High-level courts", "ratio": 0.91 },
+  { "sector": "Judiciary", "level": "Low-level courts", "ratio": 1.12 }
+]
