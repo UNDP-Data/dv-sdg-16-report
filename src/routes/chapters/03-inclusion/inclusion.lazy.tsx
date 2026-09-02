@@ -146,7 +146,7 @@ export function Inclusion() {
       },
       {
         id: '03',
-        title: 'Representation in public service institutions and the judiciary',
+        title: 'Representation in public service and the judiciary',
         indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
@@ -213,11 +213,14 @@ export function Inclusion() {
             <ImpactStoriesContainer>
               <VizCarousel
                 vizWidth='full'
+                autoScroll={3000}
                 classNames={{
                   arrowButton:
                     'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:pointer-events-none [&.opacity-disabled]:bg-transparent [&.opacity-disabled]:opacity-30',
                   arrows: 'text-foreground',
                   content: '[&_p]:hidden!',
+                  progressBar: 'hidden!',
+                  progressBarBg: 'hidden!',
                 }}
                 styles={{ arrows: { strokeWidth: 1.5 } }}
                 slides={[
