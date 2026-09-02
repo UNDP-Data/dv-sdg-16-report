@@ -1,9 +1,9 @@
-import { useQueries } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
-import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
+import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Button } from '@undp/design-system-react/Button';
-import { cn } from '@undp/design-system-react/cn';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import {
   Tooltip,
@@ -16,50 +16,24 @@ import { Info } from 'lucide-react';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
-interface CountryValueRow {
+interface SatisfactionRow {
   GeoAreaName: string;
+  Category: string;
   Value: number;
 }
 
-const CATEGORIES = [
-  {
-    key: 'services',
-    label: 'Government services',
-    file: 'services.csv',
-    color: 'var(--primary)',
-  },
-  { key: 'healthcare', label: 'Healthcare', file: 'healthcare.csv', color: 'var(--tertiary)' },
-  {
-    key: 'primary',
-    label: 'Primary education',
-    file: 'primary.csv',
-    color: 'var(--violet-600)',
-  },
-  {
-    key: 'secondary',
-    label: 'Secondary education',
-    file: 'secondary.csv',
-    color: 'var(--quaternary)',
-  },
-];
-
 function useSatisfactionWithPublicServicesData() {
-  return useQueries({
-    queries: CATEGORIES.map((category) => ({
-      queryKey: ['satisfaction-public-services-16-6-2', category.file],
-      queryFn: () =>
-        fetchAndParseCSV(`/data/chapters/03-inclusion/16-6-2/${category.file}`) as Promise<
-          CountryValueRow[]
-        >,
-    })),
+  return useQuery({
+    queryKey: ['satisfaction-public-services-16-6-2'],
+    queryFn: () =>
+      fetchAndParseCSV(
+        '/data/chapters/03-inclusion/16-6-2/satisfaction-with-public-services.csv',
+      ) as Promise<SatisfactionRow[]>,
   });
 }
 
 export default function SatisfactionWithPublicServicesStripChart() {
-  const queries = useSatisfactionWithPublicServicesData();
-
-  const isLoading = queries.some((q) => q.isLoading);
-  const isError = queries.some((q) => q.isError);
+  const { data: rows, isLoading, isError } = useSatisfactionWithPublicServicesData();
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError) {
@@ -84,13 +58,22 @@ export default function SatisfactionWithPublicServicesStripChart() {
       <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
         <div className='flex items-center gap-1.5'>
           <div className='flex items-center' aria-hidden='true'>
-            {CATEGORIES.map((category, i) => (
-              <span
-                key={category.key}
-                className='h-4 w-4 rounded-full border border-background-soft'
-                style={{ backgroundColor: category.color, marginLeft: i === 0 ? 0 : '-8px' }}
-              />
-            ))}
+            <span
+              className='h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: 'var(--primary)' }}
+            />
+            <span
+              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: 'var(--tertiary)' }}
+            />
+            <span
+              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: 'var(--violet-600)' }}
+            />
+            <span
+              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: 'var(--quaternary)' }}
+            />
           </div>
           <P marginBottom='none' size='sm'>
             Each dot is a country
@@ -126,97 +109,71 @@ export default function SatisfactionWithPublicServicesStripChart() {
         </div>
       </div>
 
-      <div className='flex flex-col'>
-        {CATEGORIES.map((category, index) => {
-          const rows = (queries[index].data ?? []) as CountryValueRow[];
-          const values = rows.map((d) => d.Value);
-          const median = getMedian(values);
-          const medianPercent = Number.isFinite(median)
-            ? `${Math.min(Math.max(median, 0), 100)}%`
-            : undefined;
-          const customLayers = medianPercent
-            ? [
-                {
-                  position: 'before' as const,
-                  layer: (
-                    <g key='median'>
-                      <line
-                        x1={medianPercent}
-                        x2={medianPercent}
-                        y1={0}
-                        y2={24}
-                        stroke='black'
-                        strokeWidth={1.5}
-                      />
-                      <text x={medianPercent} y={-6} textAnchor='middle' fontSize={12} fill='black'>
-                        {numberFormattingFunction(median, undefined, 0)}% satisfied
-                      </text>
-                    </g>
-                  ),
-                },
-              ]
-            : [];
-
-          return (
-            <div
-              key={category.key}
-              className={cn(
-                'grid grid-cols-1 items-center gap-2 py-3 sm:grid-cols-[140px_1fr]',
-                index > 0 && 'border-stroke-xs border-t',
-              )}
-            >
-              <P marginBottom='none' size='sm' className='font-heading font-semibold'>
-                {category.label}
+      <StripChart
+        data={transformDataForGraph(rows ?? [], 'stripChart', [
+          { columnId: 'GeoAreaName', chartConfigId: 'label' },
+          { columnId: 'Category', chartConfigId: 'group' },
+          { columnId: 'Value', chartConfigId: 'position' },
+          { columnId: 'Category', chartConfigId: 'color' },
+        ])}
+        orientation='horizontal'
+        stripType='dot'
+        showGroups
+        groupOrder={[
+          'Government services',
+          'Healthcare',
+          'Primary education',
+          'Secondary education',
+        ]}
+        colorDomain={[
+          'Government services',
+          'Healthcare',
+          'Primary education',
+          'Secondary education',
+        ]}
+        colors={['var(--primary)', 'var(--tertiary)', 'var(--violet-600)', 'var(--quaternary)']}
+        showColorScale={false}
+        distributionMarkers={[
+          { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
+        ]}
+        animate
+        radius={5}
+        dotOpacity={0.4}
+        minValue={0}
+        maxValue={100}
+        noOfTicks={5}
+        height={300}
+        truncateBy={innerWidth < 720 ? 16 : undefined}
+        leftMargin={innerWidth < 720 ? 120 : 160}
+        rightMargin={10}
+        topMargin={32}
+        bottomMargin={20}
+        dimmedOpacity={0.1}
+        numberDisplayOptions={{ suffix: '%' }}
+        backgroundColor={false}
+        padding='0'
+        styles={{
+          tooltip: { padding: 0 },
+          xAxis: { labels: { transform: 'translateY(-32px)' } },
+        }}
+        tooltip={(d) => (
+          <div className='flex flex-col gap-1 bg-white px-2 py-1'>
+            <div className='flex gap-1'>
+              <P
+                size='sm'
+                marginBottom='none'
+                className='mr-1 border-content-reverse border-r pr-2'
+              >
+                {d.label}
               </P>
-              <StripChart
-                data={rows.map((d) => ({
-                  label: d.GeoAreaName,
-                  position: d.Value,
-                }))}
-                orientation='horizontal'
-                stripType='dot'
-                colors={[category.color]}
-                animate
-                radius={5}
-                dotOpacity={0.4}
-                minValue={0}
-                maxValue={100}
-                noOfTicks={5}
-                height={64}
-                topMargin={20}
-                leftMargin={4}
-                rightMargin={4}
-                styles={{ tooltip: { padding: 0 } }}
-                bottomMargin={20}
-                numberDisplayOptions={{ suffix: '%' }}
-                backgroundColor={false}
-                padding='0'
-                classNames={
-                  index === CATEGORIES.length - 1 ? undefined : { xAxis: { labels: 'hidden' } }
-                }
-                customLayers={customLayers}
-                tooltip={(d) => (
-                  <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-                    <div className='flex gap-1'>
-                      <P
-                        size='sm'
-                        marginBottom='none'
-                        className='mr-1 border-content-reverse border-r pr-2'
-                      >
-                        {d.label}
-                      </P>
-                      <P size='sm' marginBottom='none' style={{ color: category.color }}>
-                        <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
-                      </P>
-                    </div>
-                  </div>
-                )}
-                ariaLabel={`Strip chart showing the distribution of satisfaction with ${category.label.toLowerCase()} across countries. The median is ${numberFormattingFunction(median, undefined, 0)}%.`}
-              />
+              <P size='sm' marginBottom='none'>
+                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+              </P>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        )}
+        ariaLabel='Strip chart showing the distribution of satisfaction with public services across countries, grouped by service. Each dot is a country and a line marks the median of each group.'
+      />
 
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
