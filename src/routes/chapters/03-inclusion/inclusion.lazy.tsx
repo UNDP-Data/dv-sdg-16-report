@@ -19,11 +19,11 @@ import AccessToInformationChoroplethMap from './charts/AccessToInformationChorop
 import AccessToInformationDisclosureBigNumbers from './charts/AccessToInformationDisclosureBigNumbers';
 import BudgetDeviationByIncomeGroupLineChart from './charts/BudgetDeviationByIncomeGroupLineChart';
 import DiscriminationRatesByGroupBarChart from './charts/DiscriminationRatesByGroupBarChart';
-import GapToParityBarChart from './charts/GapToParityBarChart';
 import HealthcareSatisfactionByRegionBarChart from './charts/HealthcareSatisfactionByRegionBarChart';
 import ParliamentaryLeadershipByCategoryBarChart from './charts/ParliamentaryLeadershipByCategoryBarChart';
 import PoliticalEfficacyByRegionBarChart from './charts/PoliticalEfficacyByRegionBarChart';
 import RepresentationByInstitutionalLevelBarChart from './charts/RepresentationByInstitutionalLevelBarChart';
+import RepresentationByRegionAndIncomeGroupsBarChart from './charts/RepresentationByRegionAndIncomeGroupsBarChart';
 import SatisfactionWithPublicServicesStripChart from './charts/SatisfactionWithPublicServicesStripChart';
 import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstitutionDumbbellChart';
 import ScrollyTellingViz from './ScrollyTellingViz';
@@ -179,7 +179,7 @@ export function Inclusion() {
               </P>
             </TextContainer>
             <GraphContainer>
-              <GapToParityBarChart />
+              <RepresentationByRegionAndIncomeGroupsBarChart />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>

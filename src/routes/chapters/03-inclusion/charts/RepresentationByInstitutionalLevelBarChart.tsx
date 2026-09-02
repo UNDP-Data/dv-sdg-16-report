@@ -9,7 +9,7 @@ const SECTORS = [
   {
     label: 'Public service',
     categoryNoun: 'occupational level',
-    color: 'var(--accent-orange)',
+    color: 'var(--accent-blue)',
     height: 260,
     rows: [
       { level: 'Senior government officials', ratio: 0.78, parityGap: -0.22 },
@@ -22,7 +22,7 @@ const SECTORS = [
   {
     label: 'Judiciary',
     categoryNoun: 'court level',
-    color: 'var(--accent-violet)',
+    color: 'var(--accent-teal)',
     height: 180,
     rows: [
       { level: 'Constitutional and supreme courts', ratio: 0.76, parityGap: -0.24 },
@@ -32,7 +32,7 @@ const SECTORS = [
   },
 ];
 
-const DOMAIN_BOUND = 0.7;
+const MAX_RATIO = 1.5;
 
 export default function RepresentationByInstitutionalLevelBarChart() {
   const [selectedSector, setSelectedSector] = useState<'Public service' | 'Judiciary'>(
@@ -43,7 +43,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
 
   const data = rows.map((d) => ({
     label: d.level,
-    size: d.parityGap,
+    size: d.ratio,
     data: { ...d },
   }));
 
@@ -51,7 +51,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
     <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          The gap to parity in women's representation within the {label.toLowerCase()}, by{' '}
+          Women's representation within the {label.toLowerCase()} relative to parity, by{' '}
           {categoryNoun}
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
@@ -79,16 +79,16 @@ export default function RepresentationByInstitutionalLevelBarChart() {
         orientation='horizontal'
         colors={color}
         animate
-        minValue={-DOMAIN_BOUND}
-        maxValue={DOMAIN_BOUND}
+        minValue={0}
+        maxValue={MAX_RATIO}
         height={height}
         maxBarThickness={32}
         showValues
         valueColor='var(--content-primary)'
         numberDisplayOptions={{ precision: 2, padZeros: true }}
         showTicks={false}
-        truncateBy={100}
-        leftMargin={10}
+        truncateBy={innerWidth < 720 ? 16 : 35}
+        leftMargin={innerWidth < 720 ? 135 : 220}
         rightMargin={10}
         topMargin={30}
         padding='0'
@@ -96,7 +96,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
         hideAxisLine
         refValues={[
           {
-            value: 0,
+            value: 1,
             text: 'Parity (1.00)',
             color: 'var(--content-primary)',
             styles: { line: { strokeDasharray: 'none', strokeWidth: 1 } },
@@ -151,7 +151,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
             }
           />
         }
-        ariaLabel={`Diverging bar chart showing women's representation ratio within the ${label.toLowerCase()} by ${categoryNoun}, measured as the distance from parity at 1.00. Levels run from the most junior to the most senior, and representation falls as seniority rises.`}
+        ariaLabel={`Bar chart showing women's representation ratio within the ${label.toLowerCase()} by ${categoryNoun}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Levels run from the most junior to the most senior, and representation falls as seniority rises.`}
       />
     </div>
   );
