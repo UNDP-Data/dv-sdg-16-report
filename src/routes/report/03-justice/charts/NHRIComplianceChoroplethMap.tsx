@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
@@ -47,12 +48,6 @@ export default function NHRIComplianceChoroplethMap() {
         height={700}
         scale={1.3}
         padding='0'
-        sources={[
-          {
-            source:
-              'Office of the United Nations High Commissioner for Human Rights (OHCHR) in collaboration with Global Alliance of National Human Rights Institutions (GANHRI)',
-          },
-        ]}
         styles={{
           tooltip: {
             padding: 0,
@@ -83,6 +78,12 @@ export default function NHRIComplianceChoroplethMap() {
               concerning the delimitation of its frontiers or boundaries. The term “country” as used
               in this material also refers, as appropriate, to territories or areas.
             </P>
+            <Spacer size='lg' />
+            <P marginBottom='none' size='sm' className='text-content-secondary'>
+              Source: Office of the United Nations High Commissioner for Human Rights (OHCHR) in
+              collaboration with Global Alliance of National Human Rights Institutions (GANHRI)
+            </P>
+            <Spacer size='lg' />
             <ChartNote content='Accreditation status is awarded by the Global Alliance of National Human Rights Institutions (GANHRI). “A” status means an institution is fully compliant with the Paris Principles, “B” status means partial compliance. “No status” covers countries whose institution has not been accredited as well as those without a National Human Rights Institution. Data are available for 2000, 2005, 2010 and annually from 2015 to 2025.' />
           </>
         }

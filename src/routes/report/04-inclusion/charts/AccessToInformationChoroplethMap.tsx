@@ -3,6 +3,7 @@ import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
+import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import { useMemo, useState } from 'react';
@@ -93,16 +94,21 @@ export default function AccessToInformationChoroplethMap() {
         height={600}
         scale={1.3}
         padding='0'
-        sources={[{ source: 'Global SDG Database' }]}
         footNote={
-          <P marginBottom='none' size='sm' className='text-content-secondary'>
-            The designations employed and the presentation of material in this website do not imply
-            the expression of any opinion whatsoever on the part of the Secretariat of the United
-            Nations, UNDP, UNICEF and the other partnering UN entities, concerning the legal status
-            of any country, territory, city or area or of its authorities, or concerning the
-            delimitation of its frontiers or boundaries. The term “country” as used in this material
-            also refers, as appropriate, to territories or areas.
-          </P>
+          <>
+            <P marginBottom='none' size='sm' className='text-content-secondary'>
+              The designations employed and the presentation of material in this website do not
+              imply the expression of any opinion whatsoever on the part of the Secretariat of the
+              United Nations, UNDP, UNICEF and the other partnering UN entities, concerning the
+              legal status of any country, territory, city or area or of its authorities, or
+              concerning the delimitation of its frontiers or boundaries. The term “country” as used
+              in this material also refers, as appropriate, to territories or areas.
+            </P>
+            <Spacer size='lg' />
+            <P marginBottom='none' size='sm' className='text-content-secondary'>
+              Source: Global SDG Database
+            </P>
+          </>
         }
         tooltip='{{data.country}}'
         ariaLabel='World map showing which countries have adopted constitutional, statutory and/or policy guarantees for public access to information in 2025. Most countries shown have adopted such guarantees.'
