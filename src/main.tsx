@@ -7,17 +7,18 @@ import FooterEl from './components/Footer';
 import HeaderEl from './components/Header';
 import * as TanStackQueryProvider from './integration/tanstack-query';
 import createAboutRoute from './routes/about/about.route';
-import createPeaceRoute from './routes/chapters/01-peace/peace.route';
-import createJusticeRoute from './routes/chapters/02-justice/justice.route';
-import createInclusionRoute from './routes/chapters/03-inclusion/inclusion.route';
-import createForewordRoute from './routes/foreword/foreword.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
+import createForewordRoute from './routes/report/01-foreword/foreword.route';
+import createPeaceRoute from './routes/report/02-peace/peace.route';
+import createJusticeRoute from './routes/report/03-justice/justice.route';
+import createInclusionRoute from './routes/report/04-inclusion/inclusion.route';
+import createSDG16ProgressRoute from './routes/report/05-sdg16-progress/SDG16Progress.route';
 import createResourcesRoute from './routes/resources/resources.route';
-import createSDG16ProgressRoute from './routes/sdg16-progress/SDG16Progress.route';
 import createTempChartsRoute from './routes/temp-charts/temp-charts.route';
 
 import './styles/fonts.css';
 import './styles/style.css';
+import createReportRoute from './routes/report/report.route';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -46,6 +47,7 @@ const routeTree = rootRoute.addChildren([
   createResourcesRoute(rootRoute),
   createAboutRoute(rootRoute),
   createTempChartsRoute(rootRoute),
+  createReportRoute(rootRoute),
 ]);
 
 const TanStackQueryProviderContext = TanStackQueryProvider.getContext();

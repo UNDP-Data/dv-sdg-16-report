@@ -1,0 +1,163 @@
+country,violenceType,sex,value,year
+Argentina,Physical violence,Men,7.1,2016
+Belarus,Physical violence,Men,1.478674889,2019
+Belgium,Physical violence,Men,2.6,2024
+Benin,Physical violence,Men,3.340862513,2021
+Bolivia (Plurinational State of),Physical violence,Men,4.2,2018
+Brazil,Physical violence,Men,4,2019
+Cabo Verde,Physical violence,Men,6.3,2016
+Cameroon,Physical violence,Men,14.1,2018
+Canada,Physical violence,Men,2.5,2019
+Central African Republic,Physical violence,Men,9.656460762,2018
+Chad,Physical violence,Men,4.58704567,2019
+Chile,Physical violence,Men,3.4,2023
+Comoros,Physical violence,Men,6.412486076,2022
+Cuba,Physical violence,Men,0.762807906,2019
+Democratic Republic of the Congo,Physical violence,Men,13.19696903,2017
+Eswatini,Physical violence,Men,6.403796673,2021
+Fiji,Physical violence,Men,7.000496387,2021
+France,Physical violence,Men,2.6,2019
+Georgia,Physical violence,Men,0.596468687,2018
+Germany,Physical violence,Men,3,2020
+Guyana,Physical violence,Men,9.761731148,2019
+Honduras,Physical violence,Men,7.20603466,2019
+Israel,Physical violence,Men,1.7183,2024
+Italy,Physical violence,Men,1.2,2023
+Kiribati,Physical violence,Men,7.502119064,2018
+Latvia,Physical violence,Men,19,2021
+Lesotho,Physical violence,Men,11.47097969,2018
+Luxembourg,Physical violence,Men,4.819914809,2020
+Madagascar,Physical violence,Men,10.69278908,2018
+Malawi,Physical violence,Men,15.10940075,2019
+Mexico,Physical violence,Men,6.8,2024
+Mongolia,Physical violence,Men,7.218921661,2018
+Montenegro,Physical violence,Men,4.422560692,2018
+New Zealand,Physical violence,Men,2.8,2024
+Pakistan,Physical violence,Men,4.108170986,2019
+Portugal,Physical violence,Men,3.2,2022
+Republic of Korea,Physical violence,Men,0.3,2016
+Samoa,Physical violence,Men,5.691603661,2019
+Slovenia,Physical violence,Men,1.22,2020
+Suriname,Physical violence,Men,4.183549881,2018
+Switzerland,Physical violence,Men,1.5,2021
+Thailand,Physical violence,Men,0.40514645,2022
+Tonga,Physical violence,Men,3.310843706,2019
+Tunisia,Physical violence,Men,2.504735708,2023
+Turks and Caicos Islands,Physical violence,Men,2.362068892,2019
+Tuvalu,Physical violence,Men,4.724383354,2019
+Uganda,Physical violence,Men,8.7,2022
+United Kingdom (England and Wales),Physical violence,Men,1.6,2024
+United Kingdom (Scotland),Physical violence,Men,3.4,2023
+Viet Nam,Physical violence,Men,1.203272343,2020
+Zimbabwe,Physical violence,Men,11.14017105,2019
+Argentina,Physical violence,Women,8.4,2016
+Belarus,Physical violence,Women,0.744566619,2019
+Belgium,Physical violence,Women,2.3,2024
+Benin,Physical violence,Women,3.399020433,2021
+Bolivia (Plurinational State of),Physical violence,Women,3.7,2018
+Brazil,Physical violence,Women,4.2,2019
+Cabo Verde,Physical violence,Women,4.5,2016
+Cameroon,Physical violence,Women,18.4,2018
+Canada,Physical violence,Women,2.5,2019
+Central African Republic,Physical violence,Women,4.84393692,2018
+Chad,Physical violence,Women,4.298505306,2019
+Chile,Physical violence,Women,2.7,2023
+Comoros,Physical violence,Women,3.269606113,2022
+Cuba,Physical violence,Women,0.556113303,2019
+Democratic Republic of the Congo,Physical violence,Women,5.547170639,2017
+Eswatini,Physical violence,Women,2.673711777,2021
+Fiji,Physical violence,Women,5.657739639,2021
+France,Physical violence,Women,2.3,2019
+Georgia,Physical violence,Women,0.940480351,2018
+Germany,Physical violence,Women,1.6,2020
+Guyana,Physical violence,Women,5.612082958,2019
+Honduras,Physical violence,Women,5.160964966,2019
+Israel,Physical violence,Women,0.9115,2024
+Italy,Physical violence,Women,0.9,2023
+Kiribati,Physical violence,Women,4.584125042,2018
+Latvia,Physical violence,Women,16,2021
+Lesotho,Physical violence,Women,6.199431419,2018
+Luxembourg,Physical violence,Women,4.44936522,2020
+Madagascar,Physical violence,Women,5.090984344,2018
+Malawi,Physical violence,Women,5.92173624,2019
+Mexico,Physical violence,Women,5.5,2024
+Mongolia,Physical violence,Women,5.880955696,2018
+Montenegro,Physical violence,Women,1.180679679,2018
+New Zealand,Physical violence,Women,2.2,2024
+Pakistan,Physical violence,Women,0.851177812,2019
+Portugal,Physical violence,Women,3.2,2022
+Republic of Korea,Physical violence,Women,0.2,2016
+Samoa,Physical violence,Women,1.064394355,2019
+Slovenia,Physical violence,Women,1.6,2020
+Suriname,Physical violence,Women,3.252818823,2018
+Switzerland,Physical violence,Women,1.1,2021
+Thailand,Physical violence,Women,0.161828354,2022
+Tonga,Physical violence,Women,1.731385469,2019
+Tunisia,Physical violence,Women,1.850251317,2023
+Turks and Caicos Islands,Physical violence,Women,3.212244272,2019
+Tuvalu,Physical violence,Women,5.867453575,2019
+Uganda,Physical violence,Women,24.8,2022
+United Kingdom (England and Wales),Physical violence,Women,1.2,2024
+United Kingdom (Scotland),Physical violence,Women,2.4,2023
+Viet Nam,Physical violence,Women,1.632728934,2020
+Zimbabwe,Physical violence,Women,5.892824173,2019
+Argentina,Sexual violence,Men,0.4,2016
+Australia,Sexual violence,Men,0.3,2024
+Belgium,Sexual violence,Men,0.5,2024
+Brazil,Sexual violence,Men,0.4,2019
+Cameroon,Sexual violence,Men,2.7,2018
+Finland,Sexual violence,Men,0.5,2023
+France,Sexual violence,Men,0.2,2023
+Germany,Sexual violence,Men,0.3,2020
+Guatemala,Sexual violence,Men,0.3,2019
+Latvia,Sexual violence,Men,0.5,2021
+Luxembourg,Sexual violence,Men,0.871103852,2020
+Mexico,Sexual violence,Men,0.4,2024
+New Zealand,Sexual violence,Men,1,2024
+Republic of Korea,Sexual violence,Men,0,2016
+Slovenia,Sexual violence,Men,0.21,2020
+Switzerland,Sexual violence,Men,0.1,2021
+Uganda,Sexual violence,Men,4.3,2022
+United Kingdom (England and Wales),Sexual violence,Men,1.2,2018
+Argentina,Sexual violence,Women,2.7,2016
+Australia,Sexual violence,Women,0.9,2024
+Belgium,Sexual violence,Women,1.5,2024
+Brazil,Sexual violence,Women,1,2019
+Cameroon,Sexual violence,Women,5.2,2018
+Finland,Sexual violence,Women,3,2023
+France,Sexual violence,Women,1,2023
+Germany,Sexual violence,Women,3.6,2020
+Guatemala,Sexual violence,Women,3.9,2019
+Latvia,Sexual violence,Women,9,2021
+Luxembourg,Sexual violence,Women,3.800828203,2020
+Mexico,Sexual violence,Women,2.5,2024
+New Zealand,Sexual violence,Women,3,2024
+Republic of Korea,Sexual violence,Women,0.1,2016
+Slovenia,Sexual violence,Women,0.66,2020
+Switzerland,Sexual violence,Women,0.5,2021
+Uganda,Sexual violence,Women,12.7,2022
+United Kingdom (England and Wales),Sexual violence,Women,4.5,2018
+Brazil,Psychological violence,Men,16,2019
+Croatia,Psychological violence,Men,21.9,2022
+Estonia,Psychological violence,Men,17.8,2024
+Finland,Psychological violence,Men,8.4,2023
+Germany,Psychological violence,Men,7.6,2020
+Italy,Psychological violence,Men,1,2023
+Luxembourg,Psychological violence,Men,14.09745687,2020
+Mexico,Psychological violence,Men,6.5,2024
+New Zealand,Psychological violence,Men,20.6,2024
+Portugal,Psychological violence,Men,1.8,2022
+Slovenia,Psychological violence,Men,3.56,2020
+Uganda,Psychological violence,Men,18.7,2022
+Brazil,Psychological violence,Women,18.6,2019
+Croatia,Psychological violence,Women,26.9,2022
+Estonia,Psychological violence,Women,21,2024
+Finland,Psychological violence,Women,9.1,2023
+Germany,Psychological violence,Women,6,2020
+Italy,Psychological violence,Women,0.5,2023
+Luxembourg,Psychological violence,Women,14.78346601,2020
+Mexico,Psychological violence,Women,8.8,2024
+New Zealand,Psychological violence,Women,22.2,2024
+Portugal,Psychological violence,Women,2,2022
+Slovenia,Psychological violence,Women,4.39,2020
+Uganda,Psychological violence,Women,32.7,2022

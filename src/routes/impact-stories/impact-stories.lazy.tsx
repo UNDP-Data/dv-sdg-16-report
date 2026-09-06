@@ -1,16 +1,30 @@
+import { useQuery } from '@tanstack/react-query';
 import { createLazyRoute } from '@tanstack/react-router';
+import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { CardDescription, CardFooter, CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { Grid } from '@undp/design-system-react/Grid';
+import { Spinner } from '@undp/design-system-react/Spinner';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import ContentCard from '@/components/ContentCard';
+import ErrorEl from '@/components/ErrorEl';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
-import impactStories from '@/data/impactStories.json';
 import type { ImpactStoryDataType } from '@/types';
+
+function useData() {
+  return useQuery({
+    queryKey: ['impact-stories'],
+    queryFn: () => fetchAndParseJSON('/data/impactStories.json') as Promise<ImpactStoryDataType[]>,
+  });
+}
 
 export function ImpactStories() {
   const [selectedStory, setSelectedStory] = useState<ImpactStoryDataType | undefined>(undefined);
+  const { data, isLoading, isError } = useData();
+
+  if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
+  if (isError) return <ErrorEl />;
   return (
     <>
       <section
@@ -42,7 +56,7 @@ export function ImpactStories() {
               lg: 3,
             }}
           >
-            {(impactStories as ImpactStoryDataType[]).map((entry) => (
+            {data?.map((entry) => (
               <ContentCard key={entry.id} onSelect={() => setSelectedStory(entry)}>
                 <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
                   {entry.chapter} &ndash; {entry.indicatorCode} &ndash; {entry.indicatorTitle}

@@ -1,26 +1,36 @@
+import { useQuery } from '@tanstack/react-query';
 import { type AnyRootRoute, createRoute, Link } from '@tanstack/react-router';
+import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { Button } from '@undp/design-system-react/Button';
 import { CardDescription, CardFooter, CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { Container } from '@undp/design-system-react/Container';
 import { Grid } from '@undp/design-system-react/Grid';
 import { Spacer } from '@undp/design-system-react/Spacer';
+import { Spinner } from '@undp/design-system-react/Spinner';
 import { H1, H2, H4, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { BannerContainer, SectionContainer } from '@/components/Containers';
+import ContentCard from '@/components/ContentCard';
+import ErrorEl from '@/components/ErrorEl';
 import FeaturedNumbers from '@/components/FeaturedNumbers';
 import ImpactStoryModal from '@/components/ImpactStoryModal';
-import impactStories from '@/data/impactStories.json';
+import { FEATURED_STORY_IDS } from '@/constants';
 import type { ChapterKey, ImpactStoryDataType } from '@/types';
-import ContentCard from './components/ContentCard';
-import { FEATURED_STORY_IDS } from './constants';
-import { BannerContainer, SectionContainer } from './routes/chapters/components/Containers';
-import { showNavigation } from './Utils/showNavigation';
+import { showNavigation } from '@/Utils/showNavigation';
+
+function useData() {
+  return useQuery({
+    queryKey: ['impact-stories'],
+    queryFn: () => fetchAndParseJSON('/data/impactStories.json') as Promise<ImpactStoryDataType[]>,
+  });
+}
 
 function App() {
   const isLaunched = showNavigation();
   const [hoveredChapter, setHoveredChapter] = useState<ChapterKey | null>(null);
   const [selectedStory, setSelectedStory] = useState<ImpactStoryDataType | undefined>(undefined);
-  const stories = impactStories as ImpactStoryDataType[];
+  const { data, isLoading, isError } = useData();
   return (
     <>
       <Container
@@ -337,28 +347,35 @@ function App() {
               <Spacer size='3xl' />
 
               <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
-                {FEATURED_STORY_IDS.map((id) => stories.find((story) => story.id === id))
-                  .filter((story): story is ImpactStoryDataType => story !== undefined)
-                  .map((story) => (
-                    <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
-                      <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
-                        {story.chapter} &ndash; {story.indicatorCode} &ndash; {story.indicatorTitle}
-                      </CardTag>
-                      <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
-                        {story.title}
-                      </CardTitle>
-                      <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
-                        {story.story}
-                      </CardDescription>
-                      <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
-                        Read story
-                        <ArrowRight
-                          size={18}
-                          className='shrink-0 transition-transform group-hover:translate-x-1'
-                        />
-                      </CardFooter>
-                    </ContentCard>
-                  ))}
+                {isError ? (
+                  <ErrorEl />
+                ) : isLoading || !data ? (
+                  <Spinner size='lg' className='mx-auto my-20' />
+                ) : (
+                  FEATURED_STORY_IDS.map((id) => data?.find((story) => story.id === id))
+                    .filter((story): story is ImpactStoryDataType => story !== undefined)
+                    .map((story) => (
+                      <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
+                        <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                          {story.chapter} &ndash; {story.indicatorCode} &ndash;{' '}
+                          {story.indicatorTitle}
+                        </CardTag>
+                        <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
+                          {story.title}
+                        </CardTitle>
+                        <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
+                          {story.story}
+                        </CardDescription>
+                        <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
+                          Read story
+                          <ArrowRight
+                            size={18}
+                            className='shrink-0 transition-transform group-hover:translate-x-1'
+                          />
+                        </CardFooter>
+                      </ContentCard>
+                    ))
+                )}
               </Grid>
             </SectionContainer>
           </section>

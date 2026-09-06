@@ -1,0 +1,251 @@
+GeoAreaName,Category,Value
+Mali,Government services,7.1
+Brazil,Government services,31.8
+Portugal,Government services,42.7
+Japan,Government services,42.9
+Ecuador,Government services,43
+Spain,Government services,45.3
+Chile,Government services,51.1
+Germany,Government services,51.1
+Ireland,Government services,51.2
+France,Government services,52.4
+Slovakia,Government services,53.9
+Greece,Government services,54.2
+Gambia,Government services,55.3
+Colombia,Government services,59.6
+Czechia,Government services,61.7
+Latvia,Government services,63
+United Kingdom of Great Britain and Northern Ireland,Government services,65.1
+Slovenia,Government services,66.2
+Austria,Government services,66.5
+Costa Rica,Government services,66.5
+Iceland,Government services,66.5
+Australia,Government services,67.8
+Canada,Government services,68.9
+Uganda,Government services,69
+New Zealand,Government services,70.5
+Denmark,Government services,72.4
+Sweden,Government services,73.1
+Belgium,Government services,74.3
+Norway,Government services,75
+Tunisia,Government services,75
+Republic of Korea,Government services,75.9
+Netherlands (Kingdom of the),Government services,78.3
+Switzerland,Government services,81.4
+Thailand,Government services,81.69
+Israel,Government services,82
+Mexico,Government services,82.5
+Finland,Government services,82.7
+Viet Nam,Government services,82.9
+Estonia,Government services,83.2
+Luxembourg,Government services,84.4
+South Africa,Government services,86.9
+State of Palestine,Government services,92
+Belarus,Government services,94
+Lithuania,Government services,95.9
+Cyprus,Government services,98.7
+Azerbaijan,Government services,99.9
+Afghanistan,Healthcare,17
+Albania,Healthcare,63
+Algeria,Healthcare,44
+Azerbaijan,Healthcare,41
+Argentina,Healthcare,49
+Australia,Healthcare,63.8
+Austria,Healthcare,69.5
+Bahrain,Healthcare,88
+Bangladesh,Healthcare,75
+Armenia,Healthcare,91.2
+Belgium,Healthcare,80.7
+Bhutan,Healthcare,86
+Bolivia (Plurinational State of),Healthcare,43
+Bosnia and Herzegovina,Healthcare,53
+Botswana,Healthcare,52
+Brazil,Healthcare,32.7
+Bulgaria,Healthcare,60
+Myanmar,Healthcare,69
+Burundi,Healthcare,62
+Belarus,Healthcare,89
+Cambodia,Healthcare,86
+Cameroon,Healthcare,47
+Canada,Healthcare,49.3
+Central African Republic,Healthcare,28
+Sri Lanka,Healthcare,70
+Chad,Healthcare,38
+Chile,Healthcare,32.9
+China,Healthcare,68
+Colombia,Healthcare,41.6
+Comoros,Healthcare,32
+Democratic Republic of the Congo,Healthcare,36
+Costa Rica,Healthcare,56.2
+Croatia,Healthcare,50
+Cyprus,Healthcare,60
+Czechia,Healthcare,58.7
+Benin,Healthcare,40
+Denmark,Healthcare,64.7
+Dominican Republic,Healthcare,62
+El Salvador,Healthcare,61
+Ethiopia,Healthcare,52
+Estonia,Healthcare,62
+Finland,Healthcare,61
+France,Healthcare,60.7
+Gabon,Healthcare,26
+Georgia,Healthcare,54
+Gambia,Healthcare,77.9
+State of Palestine,Healthcare,92
+Germany,Healthcare,52.6
+Ghana,Healthcare,56
+Greece,Healthcare,30.3
+Guatemala,Healthcare,26.7
+Guinea,Healthcare,48
+Haiti,Healthcare,24
+Honduras,Healthcare,56
+"China, Hong Kong Special Administrative Region",Healthcare,53
+Hungary,Healthcare,41
+Iceland,Healthcare,51.5
+India,Healthcare,76
+Indonesia,Healthcare,83
+Iran (Islamic Republic of),Healthcare,48
+Iraq,Healthcare,48
+Ireland,Healthcare,65
+Italy,Healthcare,48.2
+Côte d'Ivoire,Healthcare,48
+Jamaica,Healthcare,60
+Japan,Healthcare,54
+Kazakhstan,Healthcare,47
+Jordan,Healthcare,62
+Kenya,Healthcare,53
+Republic of Korea,Healthcare,72.1
+Kosovo (as per UNSCR 1244),Healthcare,61
+Kuwait,Healthcare,86
+Kyrgyzstan,Healthcare,70
+Lao People's Democratic Republic,Healthcare,78
+Lebanon,Healthcare,30
+Lesotho,Healthcare,41
+Latvia,Healthcare,54
+Liberia,Healthcare,33
+Libya,Healthcare,58
+Lithuania,Healthcare,53
+Luxembourg,Healthcare,72.6
+Madagascar,Healthcare,39
+Malawi,Healthcare,53
+Malaysia,Healthcare,93
+Maldives,Healthcare,38
+Mali,Healthcare,11.7
+Malta,Healthcare,77
+Mauritania,Healthcare,43
+Mauritius,Healthcare,76
+Mexico,Healthcare,52.2
+Mongolia,Healthcare,40
+Montenegro,Healthcare,64
+Morocco,Healthcare,25
+Mozambique,Healthcare,66
+Oman,Healthcare,85
+Namibia,Healthcare,62
+Nepal,Healthcare,64
+Netherlands (Kingdom of the),Healthcare,67.1
+New Zealand,Healthcare,46.2
+Nicaragua,Healthcare,65
+Niger,Healthcare,63
+Nigeria,Healthcare,51
+Norway,Healthcare,71
+Pakistan,Healthcare,57
+Panama,Healthcare,47
+Paraguay,Healthcare,43
+Peru,Healthcare,37
+Philippines,Healthcare,87
+Poland,Healthcare,51
+Portugal,Healthcare,31.8
+Puerto Rico,Healthcare,58
+Romania,Healthcare,64
+Russian Federation,Healthcare,41
+Rwanda,Healthcare,76
+Saudi Arabia,Healthcare,93
+Senegal,Healthcare,55
+Serbia,Healthcare,47
+Sierra Leone,Healthcare,29
+Singapore,Healthcare,91
+Slovakia,Healthcare,26.3
+Viet Nam,Healthcare,90
+Slovenia,Healthcare,35.2
+Somalia,Healthcare,51
+South Africa,Healthcare,82
+Zimbabwe,Healthcare,58
+Spain,Healthcare,57.5
+South Sudan,Healthcare,24
+Eswatini,Healthcare,52
+Sweden,Healthcare,57.4
+Switzerland,Healthcare,73
+Syrian Arab Republic,Healthcare,38
+Tajikistan,Healthcare,91
+Togo,Healthcare,35
+Trinidad and Tobago,Healthcare,52
+United Arab Emirates,Healthcare,91
+Tunisia,Healthcare,68
+Türkiye,Healthcare,63
+Uganda,Healthcare,48
+Ukraine,Healthcare,51
+Egypt,Healthcare,42
+United Kingdom of Great Britain and Northern Ireland,Healthcare,61
+United States of America,Healthcare,75
+Burkina Faso,Healthcare,49
+Uruguay,Healthcare,62
+Uzbekistan,Healthcare,81
+Venezuela (Bolivarian Republic of),Healthcare,24
+Yemen,Healthcare,32
+Zambia,Healthcare,57
+Armenia,Primary education,93.4
+Belarus,Primary education,93
+Gambia,Primary education,90.3
+State of Palestine,Primary education,89
+Guatemala,Primary education,40.6
+Israel,Primary education,80
+Italy,Primary education,51
+Norway,Primary education,45
+South Africa,Primary education,88.8
+Tunisia,Primary education,72
+Türkiye,Primary education,53
+United Kingdom of Great Britain and Northern Ireland,Primary education,67
+Australia,Secondary education,70.6
+Austria,Secondary education,52.4
+Belgium,Secondary education,63.7
+Brazil,Secondary education,29.7
+Belarus,Secondary education,89
+Canada,Secondary education,68.3
+Chile,Secondary education,41.2
+Colombia,Secondary education,56.1
+Costa Rica,Secondary education,64.4
+Czechia,Secondary education,51.9
+Denmark,Secondary education,74.4
+Estonia,Secondary education,67.8
+Finland,Secondary education,80.8
+France,Secondary education,47.5
+Gambia,Secondary education,88.9
+State of Palestine,Secondary education,91
+Germany,Secondary education,41
+Greece,Secondary education,37.1
+Guatemala,Secondary education,40.6
+Iceland,Secondary education,66.2
+Iraq,Secondary education,71.3
+Ireland,Secondary education,68.1
+Israel,Secondary education,80
+Italy,Secondary education,48.3
+Japan,Secondary education,33.9
+Jordan,Secondary education,24.9
+Republic of Korea,Secondary education,45.4
+Lebanon,Secondary education,68.6
+Latvia,Secondary education,38
+Luxembourg,Secondary education,43.4
+Mali,Secondary education,6.2
+Mexico,Secondary education,64
+Netherlands (Kingdom of the),Secondary education,70.6
+New Zealand,Secondary education,55.4
+Norway,Secondary education,36
+Portugal,Secondary education,49.8
+Slovakia,Secondary education,43.4
+Slovenia,Secondary education,57.4
+South Africa,Secondary education,91
+Spain,Secondary education,50.6
+Sweden,Secondary education,61.8
+Switzerland,Secondary education,76.3
+Tunisia,Secondary education,64
+United Kingdom of Great Britain and Northern Ireland,Secondary education,67

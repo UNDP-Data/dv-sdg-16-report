@@ -40,24 +40,6 @@ export interface ImpactStoryDataType {
   story: string;
 }
 
-export interface ChapterOfficialIndicatorType {
-  code: string;
-  description: string;
-}
-
-export interface ChapterTargetIndicatorType {
-  code: string;
-  label: string;
-  officialIndicators: ChapterOfficialIndicatorType[];
-  dataReporter: string;
-}
-
-export interface ChapterTargetDataType {
-  code: string;
-  description: string;
-  indicators: ChapterTargetIndicatorType[];
-}
-
 export interface PublicationRow {
   'Publication title': string;
   Agency: string;
