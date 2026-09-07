@@ -45,7 +45,7 @@ export default function NHRIComplianceChoroplethMap() {
         scaleType='categorical'
         colorLegendTitle='Accreditation status'
         timeline={{ enabled: true, autoplay: false, showOnlyActiveDate: true }}
-        height={700}
+        height={750}
         scale={1.3}
         padding='0'
         styles={{
@@ -70,13 +70,18 @@ export default function NHRIComplianceChoroplethMap() {
         )}
         footNote={
           <>
-            <P marginBottom='none' size='sm' className='text-content-secondary'>
-              The designations employed and the presentation of material in this website do not
-              imply the expression of any opinion whatsoever on the part of the Secretariat of the
-              United Nations, UNDP, UNICEF and the other partnering UN entities, concerning the
-              legal status of any country, territory, city or area or of its authorities, or
-              concerning the delimitation of its frontiers or boundaries. The term “country” as used
-              in this material also refers, as appropriate, to territories or areas.
+            <P marginBottom='none' size='xs' className='text-content-secondary'>
+              The boundaries and names shown and the designations used on this map do not imply
+              official endorsement or acceptance by the United Nations. <br />
+              The final boundary between the Republic of Sudan and the Republic of South Sudan has
+              not yet been determined.
+              <br />
+              Dotted line represents approximately the Line of Control in Jammu and Kashmir agreed
+              upon by India and Pakistan. The final status of Jammu and Kashmir has not yet been
+              agreed upon by the parties.
+              <br />A dispute exists between the Governments of Argentina and the United Kingdom of
+              Great Britain and Northern Ireland concerning sovereignty over the Falkland Islands
+              (Malvinas).
             </P>
             <Spacer size='lg' />
             <P marginBottom='none' size='sm' className='text-content-secondary'>
