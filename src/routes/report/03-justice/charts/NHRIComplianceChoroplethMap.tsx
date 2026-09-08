@@ -24,7 +24,7 @@ export default function NHRIComplianceChoroplethMap() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           National Human Rights Institutions compliant with the Paris Principles

@@ -42,7 +42,7 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
       relativeHeight={0.8}
       maxValue={100}
       numberDisplayOptions={{ suffix: '%' }}
-      backgroundColor='background-soft'
+      backgroundColor={false}
       padding={CHART_PADDING}
       styles={{
         tooltip: {

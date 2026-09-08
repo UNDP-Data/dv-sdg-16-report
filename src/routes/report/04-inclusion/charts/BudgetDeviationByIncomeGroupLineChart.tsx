@@ -44,7 +44,6 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
       numberDisplayOptions={{ suffix: '%', precision: 1 }}
       relativeHeight={0.6}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       styles={{
         tooltip: {
           padding: 0,

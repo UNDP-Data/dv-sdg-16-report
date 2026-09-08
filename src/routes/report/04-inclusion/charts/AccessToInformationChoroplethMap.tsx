@@ -37,7 +37,7 @@ export default function AccessToInformationChoroplethMap() {
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data) return <ErrorEl />;
   return (
-    <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-wrap items-start justify-between gap-4'>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>

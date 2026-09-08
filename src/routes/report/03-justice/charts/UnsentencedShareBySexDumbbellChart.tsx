@@ -29,7 +29,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
       orientation='horizontal'
       colorDomain={['Women', 'Men']}
       colors={['var(--categorical-female)', 'var(--categorical-male)']}
-      backgroundColor='background-soft'
+      backgroundColor={false}
       animate
       minValue={0}
       maxValue={100}

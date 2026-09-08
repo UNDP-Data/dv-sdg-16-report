@@ -30,7 +30,7 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
       ])}
       orientation='horizontal'
       colorDomain={['Women', 'Men']}
-      backgroundColor='background-soft'
+      backgroundColor={false}
       colors={[Colors.genderColors.female, Colors.genderColors.male]}
       minValue={0}
       showTicks={false}

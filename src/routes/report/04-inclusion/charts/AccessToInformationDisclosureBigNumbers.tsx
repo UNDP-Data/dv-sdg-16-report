@@ -4,7 +4,7 @@ import { CHART_PADDING } from '@/constants';
 
 export default function AccessToInformationDisclosureBigNumbers() {
   return (
-    <div className='flex flex-col gap-6 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-6' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           How do access to information laws function in practice?
