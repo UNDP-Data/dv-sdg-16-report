@@ -91,7 +91,6 @@ export default function RepresentationByInstitutionalLevelBarChart() {
             value: 1,
             text: 'Parity (1.00)',
             color: 'var(--content-primary)',
-            styles: { line: { strokeDasharray: 'none', strokeWidth: 1 } },
           },
         ]}
         styles={{
@@ -121,6 +120,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
         sources={[
           {
             source: 'UNDP, Women in the Judiciary Global Dashboard',
+            link: 'https://womeninjudiciary.undp.org/',
           },
         ]}
         footNote={

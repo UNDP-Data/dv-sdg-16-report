@@ -41,3 +41,12 @@ html {
 .undp-scrollbar::-webkit-scrollbar-button {
   display: none;
 }
+
+[aria-label="Data sources"] a,
+[aria-label="Data sources"] a:hover {
+  animation: none;
+  background-image: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

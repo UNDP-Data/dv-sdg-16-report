@@ -17,7 +17,7 @@ export default function ChartNote({ content }: { content: ReactNode }) {
             type='button'
             aria-label='More information about this data'
             className={cn(
-              'cursor-help border-none p-0 text-left',
+              'cursor-help border-none p-0 text-left text-content-secondary',
               'underline decoration-dotted underline-offset-4',
             )}
           >
