@@ -23,8 +23,8 @@ export default function HeaderEl() {
 
   return (
     <header
-      className='relative border-background/30 border-b bg-cover bg-foreground-soft px-6 py-4 md:px-12'
-      style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
+      className='relative border-background/10 border-b bg-foreground-soft bg-repeat px-6 py-4 md:px-12'
+      style={{ backgroundImage: "url('/imgs/texture-dark.webp')" }}
     >
       <div className='mx-auto flex items-center justify-between'>
         <Link to='/' className='flex items-center gap-3'>
