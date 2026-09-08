@@ -29,7 +29,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data) return <ErrorEl />;
   return (
-    <div className='flex flex-col gap-6 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-6' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P size='xl' marginBottom='none' className='font-heading font-semibold leading-sm'>
           Share of detected victims of trafficking, by victim sex and age

@@ -32,6 +32,7 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       minValue={0}
       maxValue={100}
       showTicks={false}
+      backgroundColor={false}
       showValues={innerWidth >= 720}
       connectorStrokeWidth={1}
       leftMargin={innerWidth < 720 ? 135 : 130}
@@ -40,7 +41,6 @@ export default function VoteSharesByInstitutionDumbbellChart() {
       relativeHeight={0.85}
       numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       styles={{
         tooltip: {
           padding: 0,

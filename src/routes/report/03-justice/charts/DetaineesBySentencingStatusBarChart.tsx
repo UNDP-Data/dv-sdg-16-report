@@ -26,7 +26,7 @@ export default function DetaineesBySentencingStatusBarChart() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' weight='semibold' className='font-heading leading-sm'>
           Number of sentenced and unsentenced detainees, by region

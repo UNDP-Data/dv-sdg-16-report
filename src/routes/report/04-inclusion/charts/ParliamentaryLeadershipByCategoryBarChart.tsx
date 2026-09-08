@@ -44,7 +44,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data) return <ErrorEl />;
   return (
-    <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Women and young MPs remain underrepresented in parliamentary leadership

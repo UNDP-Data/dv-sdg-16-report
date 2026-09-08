@@ -47,7 +47,6 @@ export default function PoliticalEfficacyByRegionBarChart() {
       truncateBy={innerWidth < 720 ? 16 : undefined}
       dimmedOpacity={0.4}
       padding={CHART_PADDING}
-      backgroundColor='var(--background-soft)'
       refValues={[{ value: WORLD_POLITICAL_EFFICACY, text: `World ${WORLD_POLITICAL_EFFICACY}%` }]}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>

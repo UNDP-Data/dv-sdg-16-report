@@ -46,7 +46,7 @@ export default function NonLethalViolenceByTypeSexStripChart() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col gap-4 bg-background-soft' style={{ padding: CHART_PADDING }}>
+    <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
           Proportion of the population subjected to violence in the previous twelve months, by sex
