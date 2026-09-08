@@ -5,7 +5,6 @@ import { cn } from '@undp/design-system-react/cn';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
 import { H1 } from '@undp/design-system-react/Typography';
 import { type ReactNode, useState } from 'react';
-import { GraphContainer } from '@/components/Containers';
 import DefenderKillingsLineChart from '@/routes/report/02-peace/charts/DefenderKillingsLineChart';
 import DefendersKilledByGroupRegionWaffle from '@/routes/report/02-peace/charts/DefendersKilledByGroupRegionWaffle';
 import FeelSafeWalkingAloneByPeriodDumbbellChart from '@/routes/report/02-peace/charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
@@ -21,12 +20,10 @@ import ViolentDisciplineByRegionBarChart from '@/routes/report/02-peace/charts/V
 import BriberyPrevalenceStripChart from '@/routes/report/03-justice/charts/BriberyPrevalenceStripChart';
 import BusinessBriberyStripChart from '@/routes/report/03-justice/charts/BusinessBriberyStripChart';
 import BusinessBriberyTrendStripChart from '@/routes/report/03-justice/charts/BusinessBriberyTrendStripChart';
-import CrimeRelatedIFFsCards from '@/routes/report/03-justice/charts/CrimeRelatedIFFsCards';
 import DetaineesBySentencingStatusBarChart from '@/routes/report/03-justice/charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from '@/routes/report/03-justice/charts/DisputeResolutionAccessStripChart';
 import FirearmsTracingBeeSwarmChart from '@/routes/report/03-justice/charts/FirearmsTracingBeeSwarmChart';
 import NHRIComplianceChoroplethMap from '@/routes/report/03-justice/charts/NHRIComplianceChoroplethMap';
-import TaxCommercialIFFsCards from '@/routes/report/03-justice/charts/TaxCommercialIFFsCards';
 import UnsentencedShareBySexDumbbellChart from '@/routes/report/03-justice/charts/UnsentencedShareBySexDumbbellChart';
 import AccessToInformationChoroplethMap from '@/routes/report/04-inclusion/charts/AccessToInformationChoroplethMap';
 import AccessToInformationDisclosureBigNumbers from '@/routes/report/04-inclusion/charts/AccessToInformationDisclosureBigNumbers';
@@ -79,9 +76,17 @@ function ChartFrame({
           className={buttonClass}
         />
       </div>
-      <GraphContainer id={nodeId} size={size}>
+      <div
+        id={nodeId}
+        className={cn(
+          'mx-auto my-4 w-full',
+          size === 'base'
+            ? 'max-w-2xl md:max-w-176 lg:max-w-180'
+            : 'max-w-2xl md:max-w-240 lg:max-w-7xl',
+        )}
+      >
         {children}
-      </GraphContainer>
+      </div>
     </section>
   );
 }
@@ -160,9 +165,6 @@ export function TempCharts() {
             <ChartFrame file='BusinessBriberyTrendStripChart'>
               <BusinessBriberyTrendStripChart />
             </ChartFrame>
-            <ChartFrame file='CrimeRelatedIFFsCards'>
-              <CrimeRelatedIFFsCards />
-            </ChartFrame>
             <ChartFrame file='DetaineesBySentencingStatusBarChart'>
               <DetaineesBySentencingStatusBarChart />
             </ChartFrame>
@@ -174,9 +176,6 @@ export function TempCharts() {
             </ChartFrame>
             <ChartFrame file='NHRIComplianceChoroplethMap' size='lg'>
               <NHRIComplianceChoroplethMap />
-            </ChartFrame>
-            <ChartFrame file='TaxCommercialIFFsCards'>
-              <TaxCommercialIFFsCards />
             </ChartFrame>
             <ChartFrame file='UnsentencedShareBySexDumbbellChart'>
               <UnsentencedShareBySexDumbbellChart />
