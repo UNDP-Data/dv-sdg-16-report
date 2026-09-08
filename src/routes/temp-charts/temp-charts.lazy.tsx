@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-re
 import { H1 } from '@undp/design-system-react/Typography';
 import { type ReactNode, useState } from 'react';
 import DefenderKillingsLineChart from '@/routes/report/02-peace/charts/DefenderKillingsLineChart';
-import DefendersKilledByGroupRegionWaffle from '@/routes/report/02-peace/charts/DefendersKilledByGroupRegionWaffle';
+import DefendersKilledByGroupRegionDumbbellChart from '@/routes/report/02-peace/charts/DefendersKilledByGroupRegionDumbbellChart';
 import FeelSafeWalkingAloneByPeriodDumbbellChart from '@/routes/report/02-peace/charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from '@/routes/report/02-peace/charts/FeelSafeWalkingAloneBySexDumbbellChart';
 import HomicideRateByRegionBarChart from '@/routes/report/02-peace/charts/HomicideRateByRegionBarChart';
@@ -118,8 +118,8 @@ export function TempCharts() {
             <ChartFrame file='DefenderKillingsLineChart'>
               <DefenderKillingsLineChart />
             </ChartFrame>
-            <ChartFrame file='DefendersKilledByGroupRegionWaffle'>
-              <DefendersKilledByGroupRegionWaffle />
+            <ChartFrame file='DefendersKilledByGroupRegionDumbbellChart'>
+              <DefendersKilledByGroupRegionDumbbellChart />
             </ChartFrame>
             <ChartFrame file='FeelSafeWalkingAloneByPeriodDumbbellChart'>
               <FeelSafeWalkingAloneByPeriodDumbbellChart />

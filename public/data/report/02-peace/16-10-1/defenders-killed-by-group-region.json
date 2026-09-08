@@ -1,56 +1,38 @@
 [
   {
-    "region": "World",
-    "values": {
-      "Women": 14,
-      "Youth": 12,
-      "Indigenous & minority": 22,
-      "Environmental & Land": 25
-    }
+    "group": "Women",
+    "Central Asia and Southern Asia": 10.6,
+    "Eastern Asia and South-Eastern Asia": 18.4,
+    "Latin America and the Caribbean": 15.8,
+    "Sub-Saharan Africa": 8.3,
+    "Northern Africa and Western Asia": 10.9,
+    "World": 13.6
   },
   {
-    "region": "Central Asia and Southern Asia",
-    "values": {
-      "Women": 11,
-      "Youth": 14,
-      "Indigenous & minority": 27,
-      "Environmental & Land": 7
-    }
+    "group": "Youth",
+    "Central Asia and Southern Asia": 14.4,
+    "Eastern Asia and South-Eastern Asia": 13.5,
+    "Latin America and the Caribbean": 9.2,
+    "Sub-Saharan Africa": 6.6,
+    "Northern Africa and Western Asia": 16.2,
+    "World": 11.7
   },
   {
-    "region": "Eastern Asia and South-Eastern Asia",
-    "values": {
-      "Women": 18,
-      "Youth": 13,
-      "Indigenous & minority": 10,
-      "Environmental & Land": 13
-    }
+    "group": "Indigenous & minority",
+    "Central Asia and Southern Asia": 26.6,
+    "Eastern Asia and South-Eastern Asia": 9.9,
+    "Latin America and the Caribbean": 36.4,
+    "Sub-Saharan Africa": 7.9,
+    "Northern Africa and Western Asia": 6.3,
+    "World": 21.9
   },
   {
-    "region": "Latin America and the Caribbean",
-    "values": {
-      "Women": 16,
-      "Youth": 9,
-      "Indigenous & minority": 36,
-      "Environmental & Land": 48
-    }
-  },
-  {
-    "region": "Sub-Saharan Africa",
-    "values": {
-      "Women": 8,
-      "Youth": 7,
-      "Indigenous & minority": 8,
-      "Environmental & Land": 12
-    }
-  },
-  {
-    "region": "Northern Africa and Western Asia",
-    "values": {
-      "Women": 11,
-      "Youth": 16,
-      "Indigenous & minority": 6,
-      "Environmental & Land": 2
-    }
+    "group": "Environmental & Land",
+    "Central Asia and Southern Asia": 6.9,
+    "Eastern Asia and South-Eastern Asia": 13.0,
+    "Latin America and the Caribbean": 48.3,
+    "Sub-Saharan Africa": 11.6,
+    "Northern Africa and Western Asia": 1.7,
+    "World": 25.0
   }
 ]
