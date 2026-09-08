@@ -16,7 +16,6 @@ import { P } from '@undp/design-system-react/Typography';
 import { Info } from 'lucide-react';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
 function useData() {
@@ -35,20 +34,6 @@ export default function BusinessBriberyStripChart() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col items-center gap-4 bg-white'>
-      <SegmentedControl
-        className='w-fit'
-        classNames={{ items: 'cursor-pointer' }}
-        value={selectedGrouping}
-        onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-        color='foreground'
-        variant='light'
-        size='sm'
-        options={[
-          { value: 'region', label: 'Regions' },
-          { value: 'incomeGroup', label: 'Income groups' },
-        ]}
-      />
     <div className='flex flex-col items-center gap-4'>
       <div className='flex w-full justify-center bg-white p-4'>
         <SegmentedControl
@@ -66,7 +51,6 @@ export default function BusinessBriberyStripChart() {
         />
       </div>
 
-      <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
