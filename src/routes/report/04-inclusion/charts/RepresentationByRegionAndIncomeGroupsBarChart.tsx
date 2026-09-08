@@ -8,7 +8,6 @@ import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
 interface DataType {
@@ -36,21 +35,22 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data) return <ErrorEl />;
   return (
-    <div className='flex flex-col items-center gap-4 bg-white'>
-      <SegmentedControl
-        className='w-fit'
-        classNames={{ items: 'cursor-pointer' }}
-        value={selectedGrouping}
-        onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-        color='tertiary'
-        variant='light'
-        options={[
-          { value: 'region', label: 'Regions' },
-          { value: 'incomeGroup', label: 'Income groups' },
-        ]}
-      />
+    <div className='flex flex-col items-center gap-4'>
+      <div className='flex w-full justify-center bg-white p-4'>
+        <SegmentedControl
+          className='w-fit'
+          classNames={{ items: 'cursor-pointer' }}
+          value={selectedGrouping}
+          onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
+          color='tertiary'
+          variant='light'
+          options={[
+            { value: 'region', label: 'Regions' },
+            { value: 'incomeGroup', label: 'Income groups' },
+          ]}
+        />
 
-      <div className='flex w-full flex-col gap-4' style={{ padding: CHART_PADDING }}>
+      <div className='flex w-full flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
             Women's representation within the{' '}
@@ -167,6 +167,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           sources={[
             {
               source: 'UNDP, Women in the Judiciary Global Dashboard',
+              link: 'https://womeninjudiciary.undp.org/',
             },
           ]}
           footNote={

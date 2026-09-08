@@ -48,8 +48,25 @@ export default function BusinessBriberyStripChart() {
           { value: 'incomeGroup', label: 'Income groups' },
         ]}
       />
+    <div className='flex flex-col items-center gap-4'>
+      <div className='flex w-full justify-center bg-white p-4'>
+        <SegmentedControl
+          className='w-fit'
+          classNames={{ items: 'cursor-pointer' }}
+          value={selectedGrouping}
+          onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
+          color='foreground'
+          variant='light'
+          size='sm'
+          options={[
+            { value: 'region', label: 'Regions' },
+            { value: 'incomeGroup', label: 'Income groups' },
+          ]}
+        />
+      </div>
 
       <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
+      <div className='flex flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
             Bribery incidence, the proportion of firms experiencing at least one bribe payment
