@@ -24,7 +24,7 @@ const rootRoute = createRootRoute({
   component: () => (
     <div className='flex min-h-screen flex-col gap-0 antialiased'>
       <div
-        className="mix-blend-multiply! pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture.png')] bg-repeat opacity-[0.05]"
+        className="mix-blend-multiply! pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture-dark.webp')] bg-repeat opacity-[0.05]"
         style={{ backgroundSize: '120px 120px' }}
       />
       <HeaderEl />

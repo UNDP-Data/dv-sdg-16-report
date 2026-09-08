@@ -20,7 +20,6 @@ import type { ChapterSectionDataType } from '@/types';
 
 interface SubNavProps {
   chapterTitle: string;
-  /** Small eyebrow shown before the title, e.g. "Chapter". Omit for pages that are not chapters. */
   label?: string;
   showGenderLens?: boolean;
   subsections: ChapterSectionDataType[];
@@ -39,8 +38,8 @@ export default function SubNav({
 
   return (
     <div
-      className='sticky top-0 z-30 flex h-11 items-center justify-between border-background/30 border-b bg-cover bg-foreground-soft px-6 py-3 md:px-12'
-      style={{ backgroundImage: "url('/imgs/paper-texture.webp')" }}
+      className='sticky top-0 z-30 flex h-11 items-center justify-between border-background/10 border-b bg-foreground-soft bg-repeat px-6 py-3 md:px-12'
+      style={{ backgroundImage: "url('/imgs/texture-dark.webp')" }}
     >
       <DropdownMenu>
         <DropdownMenuTrigger className='flex min-w-0 items-baseline gap-2 text-content-reverse text-sm'>
