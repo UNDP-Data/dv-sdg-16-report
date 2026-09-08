@@ -6,7 +6,6 @@ import { Spinner } from '@undp/design-system-react/Spinner';
 import { H2, P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
 import { CHART_PADDING } from '@/constants';
-import ChartNote from '../../components/ChartNote';
 
 interface DataType {
   group: string;
@@ -106,7 +105,6 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           Source: UNODC
         </P>
-        <ChartNote content='Female victims account for 56 per cent of the total, made up of 36 per cent women and 20 per cent girls. Male victims account for 44 per cent, made up of 27 per cent men and 17 per cent boys.' />
       </div>
     </div>
   );

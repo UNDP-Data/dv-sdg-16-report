@@ -17,6 +17,7 @@ import { Info } from 'lucide-react';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
 import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 function useData() {
   return useQuery({
@@ -171,6 +172,9 @@ export default function BusinessBriberyStripChart() {
             </div>
           )}
           sources={[{ source: 'World Bank Enterprise Surveys' }]}
+          footNote={
+            <ChartNote content='For this analysis, countries are classified according to the income group they belonged to at the time of their latest available data point.' />
+          }
           ariaLabel='Strip chart showing the proportion of firms experiencing at least one bribe payment request, with each dot representing a country and a black bar marking the median. Sub-Saharan Africa and Eastern and South-Eastern Asia record the highest median levels and Europe and Northern America the lowest.'
         />
       </div>
