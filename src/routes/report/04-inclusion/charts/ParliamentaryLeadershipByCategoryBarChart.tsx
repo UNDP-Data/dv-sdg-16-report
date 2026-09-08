@@ -47,7 +47,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Women and young MPs remain underrepresented in parliamentary leadership
+          Share of women and young MPs in parliamentary leadership
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           As of 1 January 2026

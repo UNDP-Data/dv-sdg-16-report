@@ -42,13 +42,14 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           classNames={{ items: 'cursor-pointer' }}
           value={selectedGrouping}
           onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-          color='tertiary'
+          color='foreground'
           variant='light'
           options={[
             { value: 'region', label: 'Regions' },
             { value: 'incomeGroup', label: 'Income groups' },
           ]}
         />
+      </div>
 
       <div className='flex w-full flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
@@ -125,7 +126,6 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
               value: 1,
               text: 'Parity (1.00)',
               color: 'var(--content-primary)',
-              styles: { line: { strokeDasharray: 'none', strokeWidth: 1 } },
             },
           ]}
           styles={{
