@@ -59,7 +59,9 @@ export function Peace() {
                 estimate of civilian deaths.
               </P>
             </TextContainer>
-            <ScrollyTellingViz />
+            <div className='w-full'>
+              <ScrollyTellingViz />
+            </div>
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 While a downward trend in the total number of conflict-related deaths was recorded

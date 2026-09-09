@@ -50,7 +50,9 @@ export function Justice() {
                 remains largely invisible to the justice system.
               </P>
             </TextContainer>
-            <ScrollyTellingViz />
+            <div className='w-full'>
+              <ScrollyTellingViz />
+            </div>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Sex-disaggregated data remain limited globally, but available evidence suggests that

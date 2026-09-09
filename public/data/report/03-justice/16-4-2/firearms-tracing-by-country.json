@@ -1,402 +1,316 @@
-[
-  {
-    "iso3": "ESP",
-    "country": "Spain",
-    "region": "Europe and Northern America",
-    "seizures": 8107,
-    "sdgValue": 60.13,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "BEL",
-    "country": "Belgium",
-    "region": "Europe and Northern America",
-    "seizures": 6811,
-    "sdgValue": 34.22,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "GRC",
-    "country": "Greece",
-    "region": "Europe and Northern America",
-    "seizures": 3234,
-    "sdgValue": 13.3,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "ROU",
-    "country": "Romania",
-    "region": "Europe and Northern America",
-    "seizures": 1319,
-    "sdgValue": 3.91,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "POL",
-    "country": "Poland",
-    "region": "Europe and Northern America",
-    "seizures": 1266,
-    "sdgValue": 71.76,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "GBR",
-    "country": "United Kingdom of Great Britain and Northern Ireland",
-    "region": "Europe and Northern America",
-    "seizures": 870,
-    "sdgValue": 17.48,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "ALB",
-    "country": "Albania",
-    "region": "Europe and Northern America",
-    "seizures": 540,
-    "sdgValue": 5.36,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "LUX",
-    "country": "Luxembourg",
-    "region": "Europe and Northern America",
-    "seizures": 399,
-    "sdgValue": 57.25,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "LVA",
-    "country": "Latvia",
-    "region": "Europe and Northern America",
-    "seizures": 250,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "LTU",
-    "country": "Lithuania",
-    "region": "Europe and Northern America",
-    "seizures": 208,
-    "sdgValue": 1.41,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "MDA",
-    "country": "Republic of Moldova",
-    "region": "Europe and Northern America",
-    "seizures": 172,
-    "sdgValue": 13.68,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "HUN",
-    "country": "Hungary",
-    "region": "Europe and Northern America",
-    "seizures": 109,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "BGR",
-    "country": "Bulgaria",
-    "region": "Europe and Northern America",
-    "seizures": 56,
-    "sdgValue": 67.19,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "EST",
-    "country": "Estonia",
-    "region": "Europe and Northern America",
-    "seizures": 28,
-    "sdgValue": 74.29,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "AND",
-    "country": "Andorra",
-    "region": "Europe and Northern America",
-    "seizures": 14,
-    "sdgValue": 33.33,
-    "regionAvgSdgValue": 43.6,
-    "regionAvgSeizures": 1559,
-    "regionCountryCount": 15
-  },
-  {
-    "iso3": "BRA",
-    "country": "Brazil",
-    "region": "Latin America and the Caribbean",
-    "seizures": 53798,
-    "sdgValue": 5.26,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "MEX",
-    "country": "Mexico",
-    "region": "Latin America and the Caribbean",
-    "seizures": 22061,
-    "sdgValue": 83.27,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "ARG",
-    "country": "Argentina",
-    "region": "Latin America and the Caribbean",
-    "seizures": 21660,
-    "sdgValue": 18.31,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "COL",
-    "country": "Colombia",
-    "region": "Latin America and the Caribbean",
-    "seizures": 19761,
-    "sdgValue": 24.01,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "NIC",
-    "country": "Nicaragua",
-    "region": "Latin America and the Caribbean",
-    "seizures": 8433,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "PER",
-    "country": "Peru",
-    "region": "Latin America and the Caribbean",
-    "seizures": 4282,
-    "sdgValue": 69.75,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "SLV",
-    "country": "El Salvador",
-    "region": "Latin America and the Caribbean",
-    "seizures": 1908,
-    "sdgValue": 42.03,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "JAM",
-    "country": "Jamaica",
-    "region": "Latin America and the Caribbean",
-    "seizures": 772,
-    "sdgValue": 75.31,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "BHS",
-    "country": "Bahamas",
-    "region": "Latin America and the Caribbean",
-    "seizures": 375,
-    "sdgValue": 98.22,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "BOL",
-    "country": "Bolivia (Plurinational State of)",
-    "region": "Latin America and the Caribbean",
-    "seizures": 314,
-    "sdgValue": 20.98,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "GUY",
-    "country": "Guyana",
-    "region": "Latin America and the Caribbean",
-    "seizures": 124,
-    "sdgValue": 15.24,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "LCA",
-    "country": "Saint Lucia",
-    "region": "Latin America and the Caribbean",
-    "seizures": 35,
-    "sdgValue": 0.0,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "ATG",
-    "country": "Antigua and Barbuda",
-    "region": "Latin America and the Caribbean",
-    "seizures": 14,
-    "sdgValue": 7.69,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "GRD",
-    "country": "Grenada",
-    "region": "Latin America and the Caribbean",
-    "seizures": 8,
-    "sdgValue": 64.71,
-    "regionAvgSdgValue": 44.6,
-    "regionAvgSeizures": 9539,
-    "regionCountryCount": 14
-  },
-  {
-    "iso3": "TUN",
-    "country": "Tunisia",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 785,
-    "sdgValue": 0.0,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "MAR",
-    "country": "Morocco",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 611,
-    "sdgValue": 4.13,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "AZE",
-    "country": "Azerbaijan",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 410,
-    "sdgValue": 67.43,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "QAT",
-    "country": "Qatar",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 28,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "CYP",
-    "country": "Cyprus",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 15,
-    "sdgValue": 53.16,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "ARM",
-    "country": "Armenia",
-    "region": "Northern Africa and Western Asia",
-    "seizures": 3,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 54.1,
-    "regionAvgSeizures": 309,
-    "regionCountryCount": 6
-  },
-  {
-    "iso3": "AUS",
-    "country": "Australia",
-    "region": "Oceania",
-    "seizures": 26660,
-    "sdgValue": 0.96,
-    "regionAvgSdgValue": 1.0,
-    "regionAvgSeizures": 266660,
-    "regionCountryCount": 1
-  },
-  {
-    "iso3": "KEN",
-    "country": "Kenya",
-    "region": "Sub-Saharan Africa",
-    "seizures": 3269,
-    "sdgValue": 50.33,
-    "regionAvgSdgValue": 57.4,
-    "regionAvgSeizures": 860,
-    "regionCountryCount": 4
-  },
-  {
-    "iso3": "TGO",
-    "country": "Togo",
-    "region": "Sub-Saharan Africa",
-    "seizures": 83,
-    "sdgValue": 0.0,
-    "regionAvgSdgValue": 57.4,
-    "regionAvgSeizures": 860,
-    "regionCountryCount": 4
-  },
-  {
-    "iso3": "ZWE",
-    "country": "Zimbabwe",
-    "region": "Sub-Saharan Africa",
-    "seizures": 76,
-    "sdgValue": 79.25,
-    "regionAvgSdgValue": 57.4,
-    "regionAvgSeizures": 860,
-    "regionCountryCount": 4
-  },
-  {
-    "iso3": "MUS",
-    "country": "Mauritius",
-    "region": "Sub-Saharan Africa",
-    "seizures": 11,
-    "sdgValue": 100.0,
-    "regionAvgSdgValue": 57.4,
-    "regionAvgSeizures": 860,
-    "regionCountryCount": 4
-  }
-]
+{
+  "countryData": [
+    {
+      "iso3": "ESP",
+      "country": "Spain",
+      "region": "Europe and Northern America",
+      "seizures": 8107,
+      "sdgValue": 60.13
+    },
+    {
+      "iso3": "BEL",
+      "country": "Belgium",
+      "region": "Europe and Northern America",
+      "seizures": 6811,
+      "sdgValue": 34.22
+    },
+    {
+      "iso3": "GRC",
+      "country": "Greece",
+      "region": "Europe and Northern America",
+      "seizures": 3234,
+      "sdgValue": 13.3
+    },
+    {
+      "iso3": "ROU",
+      "country": "Romania",
+      "region": "Europe and Northern America",
+      "seizures": 1319,
+      "sdgValue": 3.91
+    },
+    {
+      "iso3": "POL",
+      "country": "Poland",
+      "region": "Europe and Northern America",
+      "seizures": 1266,
+      "sdgValue": 71.76
+    },
+    {
+      "iso3": "GBR",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "region": "Europe and Northern America",
+      "seizures": 870,
+      "sdgValue": 17.48
+    },
+    {
+      "iso3": "ALB",
+      "country": "Albania",
+      "region": "Europe and Northern America",
+      "seizures": 540,
+      "sdgValue": 5.36
+    },
+    {
+      "iso3": "LUX",
+      "country": "Luxembourg",
+      "region": "Europe and Northern America",
+      "seizures": 399,
+      "sdgValue": 57.25
+    },
+    {
+      "iso3": "LVA",
+      "country": "Latvia",
+      "region": "Europe and Northern America",
+      "seizures": 250,
+      "sdgValue": 100.0
+    },
+    {
+      "iso3": "LTU",
+      "country": "Lithuania",
+      "region": "Europe and Northern America",
+      "seizures": 208,
+      "sdgValue": 1.41
+    },
+    {
+      "iso3": "MDA",
+      "country": "Republic of Moldova",
+      "region": "Europe and Northern America",
+      "seizures": 172,
+      "sdgValue": 13.68
+    },
+    {
+      "iso3": "HUN",
+      "country": "Hungary",
+      "region": "Europe and Northern America",
+      "seizures": 109,
+      "sdgValue": 100.0
+    },
+    {
+      "iso3": "BGR",
+      "country": "Bulgaria",
+      "region": "Europe and Northern America",
+      "seizures": 56,
+      "sdgValue": 67.19
+    },
+    {
+      "iso3": "EST",
+      "country": "Estonia",
+      "region": "Europe and Northern America",
+      "seizures": 28,
+      "sdgValue": 74.29
+    },
+    {
+      "iso3": "AND",
+      "country": "Andorra",
+      "region": "Europe and Northern America",
+      "seizures": 14,
+      "sdgValue": 33.33
+    },
+    {
+      "iso3": "BRA",
+      "country": "Brazil",
+      "region": "Latin America and the Caribbean",
+      "seizures": 53798,
+      "sdgValue": 5.26
+    },
+    {
+      "iso3": "MEX",
+      "country": "Mexico",
+      "region": "Latin America and the Caribbean",
+      "seizures": 22061,
+      "sdgValue": 83.27
+    },
+    {
+      "iso3": "ARG",
+      "country": "Argentina",
+      "region": "Latin America and the Caribbean",
+      "seizures": 21660,
+      "sdgValue": 18.31
+    },
+    {
+      "iso3": "COL",
+      "country": "Colombia",
+      "region": "Latin America and the Caribbean",
+      "seizures": 19761,
+      "sdgValue": 24.01
+    },
+    {
+      "iso3": "NIC",
+      "country": "Nicaragua",
+      "region": "Latin America and the Caribbean",
+      "seizures": 8433,
+      "sdgValue": 100.0
+    },
+    {
+      "iso3": "PER",
+      "country": "Peru",
+      "region": "Latin America and the Caribbean",
+      "seizures": 4282,
+      "sdgValue": 69.75
+    },
+    {
+      "iso3": "SLV",
+      "country": "El Salvador",
+      "region": "Latin America and the Caribbean",
+      "seizures": 1908,
+      "sdgValue": 42.03
+    },
+    {
+      "iso3": "JAM",
+      "country": "Jamaica",
+      "region": "Latin America and the Caribbean",
+      "seizures": 772,
+      "sdgValue": 75.31
+    },
+    {
+      "iso3": "BHS",
+      "country": "Bahamas",
+      "region": "Latin America and the Caribbean",
+      "seizures": 375,
+      "sdgValue": 98.22
+    },
+    {
+      "iso3": "BOL",
+      "country": "Bolivia (Plurinational State of)",
+      "region": "Latin America and the Caribbean",
+      "seizures": 314,
+      "sdgValue": 20.98
+    },
+    {
+      "iso3": "GUY",
+      "country": "Guyana",
+      "region": "Latin America and the Caribbean",
+      "seizures": 124,
+      "sdgValue": 15.24
+    },
+    {
+      "iso3": "LCA",
+      "country": "Saint Lucia",
+      "region": "Latin America and the Caribbean",
+      "seizures": 35,
+      "sdgValue": 0.0
+    },
+    {
+      "iso3": "ATG",
+      "country": "Antigua and Barbuda",
+      "region": "Latin America and the Caribbean",
+      "seizures": 14,
+      "sdgValue": 7.69
+    },
+    {
+      "iso3": "GRD",
+      "country": "Grenada",
+      "region": "Latin America and the Caribbean",
+      "seizures": 8,
+      "sdgValue": 64.71
+    },
+    {
+      "iso3": "TUN",
+      "country": "Tunisia",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 785,
+      "sdgValue": 0.0
+    },
+    {
+      "iso3": "MAR",
+      "country": "Morocco",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 611,
+      "sdgValue": 4.13
+    },
+    {
+      "iso3": "AZE",
+      "country": "Azerbaijan",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 410,
+      "sdgValue": 67.43
+    },
+    {
+      "iso3": "QAT",
+      "country": "Qatar",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 28,
+      "sdgValue": 100.0
+    },
+    {
+      "iso3": "CYP",
+      "country": "Cyprus",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 15,
+      "sdgValue": 53.16
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "region": "Northern Africa and Western Asia",
+      "seizures": 3,
+      "sdgValue": 100.0
+    },
+    {
+      "iso3": "AUS",
+      "country": "Australia",
+      "region": "Oceania",
+      "seizures": 26660,
+      "sdgValue": 0.96
+    },
+    {
+      "iso3": "KEN",
+      "country": "Kenya",
+      "region": "Sub-Saharan Africa",
+      "seizures": 3269,
+      "sdgValue": 50.33
+    },
+    {
+      "iso3": "TGO",
+      "country": "Togo",
+      "region": "Sub-Saharan Africa",
+      "seizures": 83,
+      "sdgValue": 0.0
+    },
+    {
+      "iso3": "ZWE",
+      "country": "Zimbabwe",
+      "region": "Sub-Saharan Africa",
+      "seizures": 76,
+      "sdgValue": 79.25
+    },
+    {
+      "iso3": "MUS",
+      "country": "Mauritius",
+      "region": "Sub-Saharan Africa",
+      "seizures": 11,
+      "sdgValue": 100.0
+    }
+  ],
+  "regionData":[
+    {
+      "region": "Europe and Northern America",
+      "sdgValue": 43.6,
+      "seizures": 1559,
+      "countryCount": 15
+    },
+    {
+      "region": "Latin America and the Caribbean",
+      "sdgValue": 44.6,
+      "seizures": 9539,
+      "countryCount": 14
+    },
+    {
+      "region": "Northern Africa and Western Asia",
+      "sdgValue": 54.1,
+      "seizures": 309,
+      "countryCount": 6
+    },
+    {
+      "region": "Oceania",
+      "sdgValue": 1.0,
+      "seizures": 266660,
+      "countryCount": 1
+    },
+    {
+      "region": "Sub-Saharan Africa",
+      "sdgValue": 57.4,
+      "seizures": 860,
+      "countryCount": 4
+    }
+  ]
+}

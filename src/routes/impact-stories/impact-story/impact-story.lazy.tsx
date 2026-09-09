@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { createLazyRoute, Link } from '@tanstack/react-router';
+import { createLazyRoute, Link, useNavigate } from '@tanstack/react-router';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { CardDescription, CardFooter, CardTag, CardTitle } from '@undp/design-system-react/Card';
 import { Grid } from '@undp/design-system-react/Grid';
@@ -8,6 +8,7 @@ import { H1, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
 import ContentCard from '@/components/ContentCard';
 import ErrorEl from '@/components/ErrorEl';
+import ImpactStoryModal from '@/components/ImpactStoryModal';
 import type { ImpactStoryDataType } from '@/types';
 
 function useData() {
@@ -17,7 +18,9 @@ function useData() {
   });
 }
 
-export function ImpactStories() {
+export function ImpactStory() {
+  const { storyId } = Route.useParams();
+  const navigate = useNavigate();
   const { data, isLoading, isError } = useData();
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
@@ -42,7 +45,6 @@ export function ImpactStories() {
           </H1>
         </div>
       </section>
-
       <section className='mx-auto px-6 py-12 md:px-12 md:py-16'>
         <div className='max-w-300'>
           <Grid
@@ -78,10 +80,18 @@ export function ImpactStories() {
           </Grid>
         </div>
       </section>
+      <ImpactStoryModal
+        story={data?.find((story) => story.id === storyId) as ImpactStoryDataType}
+        onClose={() => {
+          navigate({
+            to: '/impact-stories',
+          });
+        }}
+      />
     </>
   );
 }
 
-export const Route = createLazyRoute('/impact-stories')({
-  component: ImpactStories,
+export const Route = createLazyRoute('/impact-stories/$storyId')({
+  component: ImpactStory,
 });

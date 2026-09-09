@@ -13,19 +13,7 @@ import ErrorEl from '@/components/ErrorEl';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../components/ChartNote';
 
-const CATEGORIES = [
-  'Sex',
-  'Age',
-  'Disability',
-  'Population group',
-  'Location',
-  'Education',
-  'Income',
-];
-
-const COLUMNS = ['Indicator', 'Countries'];
-
-type DataType = {
+interface DataType {
   indicator: string;
   countries: number | string;
   description: string;
@@ -34,7 +22,7 @@ type DataType = {
     state: string;
     value: string;
   }[];
-};
+}
 
 function useData() {
   return useQuery({
@@ -47,6 +35,17 @@ function useData() {
 }
 
 export default function DisaggregationTable() {
+  const categories = [
+    'Sex',
+    'Age',
+    'Disability',
+    'Population group',
+    'Location',
+    'Education',
+    'Income',
+  ];
+
+  const columns = ['Indicator', 'Countries'];
   const { data, isLoading, isError } = useData();
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
@@ -79,13 +78,13 @@ export default function DisaggregationTable() {
           <colgroup>
             <col className='w-32' />
             <col className='w-24' />
-            {CATEGORIES.map((category) => (
+            {categories.map((category) => (
               <col key={category} className='w-28' />
             ))}
           </colgroup>
           <thead>
             <tr className='text-content-secondary text-xs uppercase tracking-wider'>
-              {[...COLUMNS, ...CATEGORIES].map((column) => (
+              {[...columns, ...categories].map((column) => (
                 <th key={column} scope='col' className='pb-3 pl-2 font-semibold'>
                   {column}
                 </th>
@@ -106,7 +105,7 @@ export default function DisaggregationTable() {
                   </TooltipProvider>
                 </th>
                 <td className='py-2 pl-2 text-content-secondary'>{row.countries}</td>
-                {CATEGORIES.map((category) => {
+                {categories.map((category) => {
                   const cell = row.cells.find((entry) => entry.category === category);
                   return (
                     <td

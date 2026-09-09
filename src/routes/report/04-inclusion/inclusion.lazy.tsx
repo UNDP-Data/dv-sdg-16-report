@@ -52,7 +52,9 @@ export function Inclusion() {
                 essential services such as healthcare, education and social protection.
               </P>
             </TextContainer>
-            <ScrollyTellingViz />
+            <div className='w-full'>
+              <ScrollyTellingViz />
+            </div>
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 There is little evidence of gender inequality in birth registration. Across almost

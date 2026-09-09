@@ -24,7 +24,7 @@ export default function FirearmsTracingScatterPlot() {
   if (isError) return <ErrorEl />;
   return (
     <ScatterPlot
-      data={transformDataForGraph(data, 'scatterPlot', [
+      data={transformDataForGraph(data.countryData, 'scatterPlot', [
         { columnId: 'country', chartConfigId: 'label' },
         { columnId: 'sdgValue', chartConfigId: 'x' },
         { columnId: 'seizures', chartConfigId: 'y' },

@@ -8,23 +8,24 @@ import HeaderEl from './components/Header';
 import * as TanStackQueryProvider from './integration/tanstack-query';
 import createAboutRoute from './routes/about/about.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
+import createImpactStoryRoute from './routes/impact-stories/impact-story/impact-story.route';
 import createForewordRoute from './routes/report/01-foreword/foreword.route';
 import createPeaceRoute from './routes/report/02-peace/peace.route';
 import createJusticeRoute from './routes/report/03-justice/justice.route';
 import createInclusionRoute from './routes/report/04-inclusion/inclusion.route';
 import createSDG16ProgressRoute from './routes/report/05-sdg16-progress/SDG16Progress.route';
+import createReportRoute from './routes/report/report.route';
 import createResourcesRoute from './routes/resources/resources.route';
 import createTempChartsRoute from './routes/temp-charts/temp-charts.route';
 
 import './styles/fonts.css';
 import './styles/style.css';
-import createReportRoute from './routes/report/report.route';
 
 const rootRoute = createRootRoute({
   component: () => (
     <div className='flex min-h-screen flex-col gap-0 antialiased'>
       <div
-        className="mix-blend-multiply! pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture-dark.webp')] bg-repeat opacity-[0.05]"
+        className="pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture-dark.webp')] bg-repeat opacity-[0.05] mix-blend-multiply"
         style={{ backgroundSize: '120px 120px' }}
       />
       <HeaderEl />
@@ -44,6 +45,7 @@ const routeTree = rootRoute.addChildren([
   createInclusionRoute(rootRoute),
   createSDG16ProgressRoute(rootRoute),
   createImpactStoriesRoute(rootRoute),
+  createImpactStoryRoute(rootRoute),
   createResourcesRoute(rootRoute),
   createAboutRoute(rootRoute),
   createTempChartsRoute(rootRoute),

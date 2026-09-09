@@ -20,7 +20,7 @@ const generateRandomPoint = (circleRadius: number, innerRadius: number) => {
 const checkCollision = (
   newPoint: { x: number; y: number; distanceFromCenter: number },
   pointRadius: number,
-  points: CoordinatesProps[],
+  points: { x: number; y: number }[],
 ) => {
   for (const point of points) {
     const dx = newPoint.x - point.x;
@@ -64,7 +64,7 @@ const findRegionCoordinate = (
 
 export const generateUniqueRandomPointsArray = (
   noOfPoints: number,
-  areaRadius: number,
+  outerRadius: number,
   width: number,
   height: number,
   threshold: number,
@@ -74,7 +74,7 @@ export const generateUniqueRandomPointsArray = (
   const points: CoordinatesProps[] = [];
   let counter = 0;
   while (points.length < noOfPoints) {
-    const newPoint = generateRandomPoint(areaRadius, 0);
+    const newPoint = generateRandomPoint(outerRadius, 0);
     if (!checkCollision(newPoint, pointRadius, points) || counter > 1000) {
       points.push({
         id: points.length,
@@ -104,4 +104,66 @@ export const generateUniqueRandomPointsArray = (
     regionX: i < threshold ? d.regionX : d.regionX + width / 2,
     regionY: i < threshold ? d.regionY : d.regionY + height / 2,
   }));
+};
+const getSpiralPosition = (index: number, radius: number, padding: number, noOfPoints = 100) => {
+  const spiralRadius = (radius - padding) * Math.sqrt((index + 0.5) / noOfPoints);
+
+  const angle = index * 2.4;
+
+  return {
+    x: spiralRadius * Math.cos(angle),
+    y: spiralRadius * Math.sin(angle),
+  };
+};
+
+export const generateUniqueRandomPointsArrayWithSpiralInCenter = (
+  noOfPoints: number,
+  outerRadius: number,
+  innerRadius: number,
+  maxNumberOfPointsForSpiral: number,
+  width: number,
+  height: number,
+  pointRadius = 6,
+) => {
+  const points: { id: number; x: number; y: number; xSpiral: number; ySpiral: number }[] = [
+    {
+      id: 0,
+      x: 0,
+      y: -outerRadius + pointRadius,
+      xSpiral: 0,
+      ySpiral: 0,
+    },
+  ];
+  let counter = 0;
+  while (points.length < noOfPoints) {
+    const newPoint = generateRandomPoint(outerRadius, innerRadius + 2 * pointRadius);
+    if (!checkCollision(newPoint, pointRadius, points) || counter > 1000) {
+      points.push({
+        id: points.length,
+        x: newPoint.x,
+        y: newPoint.y,
+        xSpiral: 0,
+        ySpiral: 0,
+      });
+      counter = 0;
+    } else {
+      counter += 1;
+    }
+  }
+  return points.reverse().map((d, i) => {
+    const spiralPosition = getSpiralPosition(
+      i,
+      innerRadius,
+      pointRadius * 2,
+      maxNumberOfPointsForSpiral,
+    );
+    return {
+      ...d,
+      id: i,
+      x: d.x + width / 2,
+      y: d.y + height / 2,
+      xSpiral: spiralPosition.x + width / 2,
+      ySpiral: spiralPosition.y + height / 2,
+    };
+  });
 };

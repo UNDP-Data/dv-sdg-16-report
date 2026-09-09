@@ -12,3 +12,5 @@ export const FEATURED_STORY_IDS = [
   'justice-ghana-iffs',
   'inclusion-benin-womens-representation',
 ];
+export const SCROLLY_GRAPH_PADDING = 24;
+export const SCROLLY_NUMBER_AREA_HEIGHT = 144;

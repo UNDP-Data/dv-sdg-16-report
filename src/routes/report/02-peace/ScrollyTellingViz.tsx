@@ -1,4 +1,4 @@
-import { P } from '@undp/design-system-react/Typography';
+import { H2, P } from '@undp/design-system-react/Typography';
 import { AnimatePresence, animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getArc } from '@/Utils/getArc';
@@ -203,10 +203,10 @@ export default function ScrollyTellingViz() {
   }, [graphRadius]);
 
   return (
-    <div className='relative mx-auto flex w-screen max-w-7xl flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
+    <div className='relative mx-auto flex w-full flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
       <div
         aria-hidden
-        className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-screen -translate-x-1/2'
+        className='pointer-events-none absolute top-0 bottom-0 left-1/2 -z-20 w-full -translate-x-1/2'
       >
         <div
           className='sticky top-0 h-screen w-full bg-cover bg-top-right bg-no-repeat'
@@ -219,161 +219,176 @@ export default function ScrollyTellingViz() {
           }}
         />
       </div>
-      <div
-        className='sticky top-11 -z-10 flex h-[calc(100dvh-2.75rem)] w-full max-w-180 flex-col items-center justify-center'
-        ref={graphDiv}
-      >
-        <motion.svg
-          width={`${(graphRadius + CIRCLE_PADDING) * 2}px`}
-          height={`${(graphRadius + CIRCLE_PADDING) * 2}px`}
-          viewBox={`0 0 ${(graphRadius + CIRCLE_PADDING) * 2} ${(graphRadius + CIRCLE_PADDING) * 2}`}
-          className='mx-auto'
+      <div className='mx-auto flex w-full max-w-7xl flex-col justify-between gap-x-10 gap-y-0 px-4 lg:flex-row'>
+        <div
+          className='sticky top-11 -z-10 flex h-[calc(100dvh-2.75rem)] w-full max-w-180 flex-col items-center justify-center py-6'
+          ref={graphDiv}
         >
-          <motion.g
-            transform={`translate(${graphRadius + CIRCLE_PADDING}, ${graphRadius + CIRCLE_PADDING})`}
+          <motion.svg
+            width={`${(graphRadius + CIRCLE_PADDING) * 2}px`}
+            height={`${(graphRadius + CIRCLE_PADDING) * 2}px`}
+            viewBox={`0 0 ${(graphRadius + CIRCLE_PADDING) * 2} ${(graphRadius + CIRCLE_PADDING) * 2}`}
+            className='mx-auto'
           >
-            <g id='track-outline'>
-              <circle
-                cx={0}
-                cy={0}
-                r={graphRadius}
-                className='fill-none stroke-1 stroke-gray-400'
-              />
-              <circle
-                cx={0}
-                cy={0}
-                r={graphRadius - TRACK_GAP}
-                className='fill-none stroke-1 stroke-gray-400'
-              />
-            </g>
-            <motion.circle
-              id='light-track'
-              cx={0}
-              cy={0}
-              r={graphRadius - TRACK_GAP / 2}
-              className='fill-none stroke-gray-200'
-              strokeWidth={TRACK_GAP}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: activeSlide.vizContent.backgroundTrackPathLength }}
-              transition={{ duration: 1 }}
-            />
-            <g id='individual-dots'>
-              {individualCircleDefinition.map((dot) => (
-                <motion.circle
-                  key={dot.id}
-                  cx={dot.x}
-                  cy={dot.y}
-                  r={DOT_RADIUS}
-                  className='fill-primary'
-                  animate={{
-                    opacity:
-                      activeSlide.vizContent.showIndividualDots ||
-                      (activeSlide.vizContent.showFirstDot && dot.id === 0)
-                        ? 1
-                        : 0,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    delay: activeSlide.vizContent.showIndividualDots ? dot.animationDelay : 0,
-                  }}
-                />
-              ))}
-            </g>
-            <motion.path
-              id='animated-track'
-              initial={{
-                pathLength: 0,
-                stroke: 'var(--primary)',
-                opacity: 0,
-              }}
-              animate={{
-                pathLength: activeSlide.vizContent.animatedTrackPathLength,
-                stroke: `var(--${activeSlide.color})`,
-                opacity: activeSlide.vizContent.animatedTrackPathLength > 0 ? 1 : 0,
-              }}
-              transition={{
-                pathLength: {
-                  duration: 1,
-                },
-                stroke: {
-                  duration: 1,
-                },
-                opacity: {
-                  duration: 0.3,
-                },
-              }}
-              strokeWidth={TRACK_GAP * TRACK_THICKNESS_SCALING_FACTOR}
-              strokeLinecap='round'
-              d={arcDefinition}
-              style={{
-                fill: 'none',
-              }}
-            />
             <motion.g
-              transform={`translate(-${graphRadius - TRACK_GAP},-${graphRadius - TRACK_GAP})`}
-              id='center-text'
+              transform={`translate(${graphRadius + CIRCLE_PADDING}, ${graphRadius + CIRCLE_PADDING})`}
             >
-              <foreignObject
-                x={0}
-                y={0}
-                width={(graphRadius - TRACK_GAP) * 2}
-                height={(graphRadius - TRACK_GAP) * 2}
-              >
-                <div className='flex h-full w-full flex-col justify-center gap-2'>
-                  <AnimatePresence mode='wait'>
-                    {activeSlide.vizContent.time && (
-                      <motion.div
-                        key={activeSlide.vizContent.time}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className='fill-content-placeholder text-center text-base text-foreground leading-sm md:text-xl lg:text-2xl'
-                      >
-                        {activeSlide.vizContent.time}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                  <motion.div
-                    initial={{ color: 'var(--primary)' }}
+              <g id='track-outline'>
+                <circle
+                  cx={0}
+                  cy={0}
+                  r={graphRadius}
+                  className='fill-none stroke-1 stroke-gray-400'
+                />
+                <circle
+                  cx={0}
+                  cy={0}
+                  r={graphRadius - TRACK_GAP}
+                  className='fill-none stroke-1 stroke-gray-400'
+                />
+              </g>
+              <motion.circle
+                id='light-track'
+                cx={0}
+                cy={0}
+                r={graphRadius - TRACK_GAP / 2}
+                className='fill-none stroke-gray-200'
+                strokeWidth={TRACK_GAP}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: activeSlide.vizContent.backgroundTrackPathLength }}
+                transition={{ duration: 1 }}
+              />
+              <g id='individual-dots'>
+                {individualCircleDefinition.map((dot) => (
+                  <motion.circle
+                    key={dot.id}
+                    cx={dot.x}
+                    cy={dot.y}
+                    r={DOT_RADIUS}
+                    className='fill-primary'
                     animate={{
-                      color: `var(--${activeSlide.color})`,
+                      opacity:
+                        activeSlide.vizContent.showIndividualDots ||
+                        (activeSlide.vizContent.showFirstDot && dot.id === 0)
+                          ? 1
+                          : 0,
                     }}
-                    exit={{ color: 'var(--primary)' }}
                     transition={{
-                      duration: 1,
+                      duration: 0.3,
+                      delay: activeSlide.vizContent.showIndividualDots ? dot.animationDelay : 0,
                     }}
-                    className='mt-4 text-center font-heading font-medium text-5xl leading-xs md:font-semibold md:text-7xl lg:text-8xl'
-                  >
-                    {rounded}
-                  </motion.div>
-                  {activeSlide.vizContent.category && (
-                    <P
-                      marginBottom='none'
-                      size='xl'
-                      className='mx-auto flex w-[70%] items-start justify-center fill-content-placeholder text-center text-foreground leading-sm'
-                    >
-                      {activeSlide.vizContent.category}
-                    </P>
-                  )}
-                </div>
-              </foreignObject>
+                  />
+                ))}
+              </g>
+              <motion.path
+                id='animated-track'
+                initial={{
+                  pathLength: 0,
+                  stroke: 'var(--primary)',
+                  opacity: 0,
+                }}
+                animate={{
+                  pathLength: activeSlide.vizContent.animatedTrackPathLength,
+                  stroke: `var(--${activeSlide.color})`,
+                  opacity: activeSlide.vizContent.animatedTrackPathLength > 0 ? 1 : 0,
+                }}
+                transition={{
+                  pathLength: {
+                    duration: 1,
+                  },
+                  stroke: {
+                    duration: 1,
+                  },
+                  opacity: {
+                    duration: 0.3,
+                  },
+                }}
+                strokeWidth={TRACK_GAP * TRACK_THICKNESS_SCALING_FACTOR}
+                strokeLinecap='round'
+                d={arcDefinition}
+                style={{
+                  fill: 'none',
+                }}
+              />
+              <motion.g
+                transform={`translate(-${graphRadius - TRACK_GAP},-${graphRadius - TRACK_GAP})`}
+                id='center-text'
+              >
+                <foreignObject
+                  x={0}
+                  y={0}
+                  width={(graphRadius - TRACK_GAP) * 2}
+                  height={(graphRadius - TRACK_GAP) * 2}
+                >
+                  <div className='flex h-full w-full flex-col justify-center gap-2'>
+                    <AnimatePresence mode='wait'>
+                      {activeSlide.vizContent.time && (
+                        <motion.div
+                          key={activeSlide.vizContent.time}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className='fill-content-placeholder text-center text-base text-foreground leading-sm md:text-xl lg:text-2xl'
+                        >
+                          <P
+                            marginBottom='xs'
+                            size='xl'
+                            className='mx-auto flex w-[70%] items-start justify-center text-center text-foreground leading-sm'
+                          >
+                            {activeSlide.vizContent.time}
+                          </P>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                    <motion.div>
+                      <H2
+                        weight='medium'
+                        marginBottom='none'
+                        className='text-center font-heading leading-xs'
+                      >
+                        <motion.span
+                          initial={{ color: 'var(--primary)' }}
+                          animate={{
+                            color: `var(--${activeSlide.color})`,
+                          }}
+                          exit={{ color: 'var(--primary)' }}
+                          transition={{
+                            duration: 1,
+                          }}
+                        >
+                          {rounded}
+                        </motion.span>
+                      </H2>
+                    </motion.div>
+                    {activeSlide.vizContent.category && (
+                      <P
+                        marginBottom='none'
+                        size='xl'
+                        className='mx-auto flex w-[70%] items-start justify-center text-center text-foreground leading-sm'
+                      >
+                        {activeSlide.vizContent.category}
+                      </P>
+                    )}
+                  </div>
+                </foreignObject>
+              </motion.g>
             </motion.g>
-          </motion.g>
-        </motion.svg>
-      </div>
-      <div className='mx-auto w-full max-w-100 shrink-0'>
-        {SLIDES.map((slide, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
-          <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
-            <motion.div
-              className='my-6 w-full bg-background/80 px-6 py-4 text-xl md:text-3xl lg:bg-transparent'
-              onViewportEnter={() => setActiveSlideIndex(index)}
-              viewport={{ amount: 0.5 }}
-            >
-              {slide.slideContent}
-            </motion.div>
-          </div>
-        ))}
+          </motion.svg>
+        </div>
+        <div className='mx-auto w-full max-w-100 shrink-0'>
+          {SLIDES.map((slide, index) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey:index can be used because key is static
+            <div className='flex min-h-screen items-center px-4 md:px-0' key={index}>
+              <motion.div
+                className='my-6 w-full bg-background/80 px-6 py-4 text-xl md:text-3xl lg:bg-transparent'
+                onViewportEnter={() => setActiveSlideIndex(index)}
+                viewport={{ amount: 0.5 }}
+              >
+                {slide.slideContent}
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

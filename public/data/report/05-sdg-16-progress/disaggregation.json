@@ -6,37 +6,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "146",
+        "value": 146,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -48,37 +48,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "20",
+        "value": 20,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "20",
+        "value": 20,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -90,37 +90,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "87",
+        "value": 87,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       }
     ]
@@ -132,37 +132,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "81",
+        "value": 81,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -174,37 +174,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "0",
+        "value": 0,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -216,37 +216,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Age",
-        "value": "93",
+        "value": 93,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -258,37 +258,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "158",
+        "value": 158,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "169",
+        "value": 169,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -300,37 +300,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "66",
+        "value": 66,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "66**",
+        "value": 66,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "",
+        "value": null,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -342,37 +342,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "65",
+        "value": 65,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -384,37 +384,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "117",
+        "value": 117,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -426,37 +426,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "8",
+        "value": 8,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Disability",
-        "value": "1",
+        "value": 1,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Location",
-        "value": "2",
+        "value": 2,
         "state": "beyond"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -468,37 +468,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "13",
+        "value": 13,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -510,37 +510,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "147",
+        "value": 147,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "11",
+        "value": 11,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "4",
+        "value": 4,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "5",
+        "value": 5,
         "state": "good"
       },
       {
         "category": "Location",
-        "value": "9",
+        "value": 9,
         "state": "good"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "beyond"
       },
       {
         "category": "Income",
-        "value": "2",
+        "value": 2,
         "state": "good"
       }
     ]
@@ -552,37 +552,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "193",
+        "value": 193,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "193",
+        "value": 193,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -594,37 +594,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "157",
+        "value": 157,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "41",
+        "value": 41,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "11",
+        "value": 11,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "6",
+        "value": 6,
         "state": "good"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -636,37 +636,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "131",
+        "value": 131,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "44",
+        "value": 44,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "5",
+        "value": 5,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "5",
+        "value": 5,
         "state": "gap"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -678,37 +678,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "46",
+        "value": 46,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "8",
+        "value": 8,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "2",
+        "value": 2,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "5",
+        "value": 5,
         "state": "good"
       },
       {
         "category": "Location",
-        "value": "7",
+        "value": 7,
         "state": "good"
       },
       {
         "category": "Education",
-        "value": "6",
+        "value": 6,
         "state": "good"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       }
     ]
@@ -720,37 +720,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Age",
-        "value": "166",
+        "value": 166,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Location",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Education",
-        "value": "0",
+        "value": 0,
         "state": "none"
       },
       {
         "category": "Income",
-        "value": "0",
+        "value": 0,
         "state": "none"
       }
     ]
@@ -762,37 +762,37 @@
     "cells": [
       {
         "category": "Sex",
-        "value": "99",
+        "value": 99,
         "state": "good"
       },
       {
         "category": "Age",
-        "value": "17",
+        "value": 17,
         "state": "good"
       },
       {
         "category": "Disability",
-        "value": "47",
+        "value": 47,
         "state": "good"
       },
       {
         "category": "Population group",
-        "value": "0",
+        "value": 0,
         "state": "gap"
       },
       {
         "category": "Location",
-        "value": "66",
+        "value": 66,
         "state": "good"
       },
       {
         "category": "Education",
-        "value": "10",
+        "value": 10,
         "state": "beyond"
       },
       {
         "category": "Income",
-        "value": "9",
+        "value": 9,
         "state": "beyond"
       }
     ]
