@@ -22,7 +22,7 @@ import BusinessBriberyStripChart from '@/routes/report/03-justice/charts/Busines
 import BusinessBriberyTrendStripChart from '@/routes/report/03-justice/charts/BusinessBriberyTrendStripChart';
 import DetaineesBySentencingStatusBarChart from '@/routes/report/03-justice/charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from '@/routes/report/03-justice/charts/DisputeResolutionAccessStripChart';
-import FirearmsTracingBeeSwarmChart from '@/routes/report/03-justice/charts/FirearmsTracingBeeSwarmChart';
+import FirearmsTracingScatterPlot from '@/routes/report/03-justice/charts/FirearmsTracingScatterPlot';
 import NHRIComplianceChoroplethMap from '@/routes/report/03-justice/charts/NHRIComplianceChoroplethMap';
 import UnsentencedShareBySexDumbbellChart from '@/routes/report/03-justice/charts/UnsentencedShareBySexDumbbellChart';
 import AccessToInformationChoroplethMap from '@/routes/report/04-inclusion/charts/AccessToInformationChoroplethMap';
@@ -171,8 +171,8 @@ export function TempCharts() {
             <ChartFrame file='DisputeResolutionAccessStripChart'>
               <DisputeResolutionAccessStripChart />
             </ChartFrame>
-            <ChartFrame file='FirearmsTracingBeeSwarmChart'>
-              <FirearmsTracingBeeSwarmChart />
+            <ChartFrame file='FirearmsTracingScatterPlot'>
+              <FirearmsTracingScatterPlot />
             </ChartFrame>
             <ChartFrame file='NHRIComplianceChoroplethMap' size='lg'>
               <NHRIComplianceChoroplethMap />
