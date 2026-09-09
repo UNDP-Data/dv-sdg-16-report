@@ -14,7 +14,7 @@ import ChapterSubNav from '../components/SubNav';
 import TargetsDrawer from '../components/TargetDrawer';
 import WaveDivider from '../components/WaveDivider';
 import DefenderKillingsLineChart from './charts/DefenderKillingsLineChart';
-import DefendersKilledByGroupRegionWaffle from './charts/DefendersKilledByGroupRegionWaffle';
+import DefendersKilledByGroupRegionDumbbellChart from './charts/DefendersKilledByGroupRegionDumbbellChart';
 import FeelSafeWalkingAloneByPeriodDumbbellChart from './charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from './charts/FeelSafeWalkingAloneBySexDumbbellChart';
 import HomicideRateByRegionBarChart from './charts/HomicideRateByRegionBarChart';
@@ -200,7 +200,7 @@ export function Peace() {
               </P>
             </TextContainer>
             <GraphContainer>
-              <DefendersKilledByGroupRegionWaffle />
+              <DefendersKilledByGroupRegionDumbbellChart />
             </GraphContainer>
             <Spacer size='2xl' />
             <ImpactStoryEl id='peace-detained-hrd-release' />

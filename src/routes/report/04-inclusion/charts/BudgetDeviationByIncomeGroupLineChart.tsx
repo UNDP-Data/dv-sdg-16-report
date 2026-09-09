@@ -24,13 +24,19 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
     <MultiLineChart
       data={transformDataForGraph(data, 'multiLineChart', [
         {
-          columnId: ['lowIncome', 'lowerMiddleIncome', 'upperMiddleIncome', 'highIncome'],
+          columnId: ['world', 'lowIncome', 'lowerMiddleIncome', 'upperMiddleIncome', 'highIncome'],
           chartConfigId: 'y',
         },
         { columnId: 'year', chartConfigId: 'date' },
       ])}
-      labels={['Low-Income', 'Lower-Middle Income', 'Upper-Middle Income', 'High-Income']}
-      lineColors={['var(--secondary)', 'var(--quaternary)', 'var(--tertiary)', 'var(--primary)']}
+      labels={['World', 'Low-Income', 'Lower-Middle Income', 'Upper-Middle Income', 'High-Income']}
+      lineColors={[
+        'var(--gray-700)',
+        'var(--secondary)',
+        'var(--quaternary)',
+        'var(--tertiary)',
+        'var(--primary)',
+      ]}
       showColorScale
       animate
       showDots={false}
@@ -54,11 +60,12 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
       }}
       tooltip={(d) => {
         const year = d.date.getFullYear();
-        const [lowIncome, lowerMiddleIncome, upperMiddleIncome, highIncome] = d.y as (
+        const [world, lowIncome, lowerMiddleIncome, upperMiddleIncome, highIncome] = d.y as (
           | number
           | null
         )[];
         const rows = [
+          { label: 'World', value: world, color: 'var(--gray-700)' },
           { label: 'Low-Income', value: lowIncome, color: 'var(--secondary)' },
           { label: 'Lower-Middle Income', value: lowerMiddleIncome, color: 'var(--quaternary)' },
           { label: 'Upper-Middle Income', value: upperMiddleIncome, color: 'var(--tertiary)' },

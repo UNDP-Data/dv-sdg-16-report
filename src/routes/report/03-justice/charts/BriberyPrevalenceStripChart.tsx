@@ -16,7 +16,7 @@ import { P } from '@undp/design-system-react/Typography';
 import { Info } from 'lucide-react';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 function useData() {
   return useQuery({
@@ -33,22 +33,24 @@ export default function BriberyPrevalenceStripChart() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col items-center gap-4 bg-white'>
-      <SegmentedControl
-        className='w-fit'
-        classNames={{ items: 'cursor-pointer' }}
-        value={selectedGrouping}
-        onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-        color='foreground'
-        variant='light'
-        size='sm'
-        options={[
-          { value: 'region', label: 'Regions' },
-          { value: 'incomeGroup', label: 'Income groups' },
-        ]}
-      />
+    <div className='flex flex-col items-center gap-4'>
+      <div className='flex w-full justify-center bg-white p-4'>
+        <SegmentedControl
+          className='w-fit'
+          classNames={{ items: 'cursor-pointer' }}
+          value={selectedGrouping}
+          onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
+          color='foreground'
+          variant='light'
+          size='sm'
+          options={[
+            { value: 'region', label: 'Regions' },
+            { value: 'incomeGroup', label: 'Income groups' },
+          ]}
+        />
+      </div>
 
-      <div className='flex w-full flex-col gap-4' style={{ padding: CHART_PADDING }}>
+      <div className='flex w-full flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
             Proportion of population that experienced bribery when in contact with public officials
@@ -158,6 +160,9 @@ export default function BriberyPrevalenceStripChart() {
                 'UNODC, based on responses to the UNODC United Nations Survey of Crime Trends and Operations of Criminal Justice Systems (UN-CTS) and Global Corruption Barometer.',
             },
           ]}
+          footNote={
+            <ChartNote content='For this analysis, countries are classified according to the income group they belonged to at the time of their latest available data point.' />
+          }
           ariaLabel='Strip chart showing the proportion of the population that experienced bribery when in contact with public officials in the previous 12 months, with each dot representing a country and a black bar marking the median. The highest median prevalence is in Sub-Saharan Africa at 24 per cent and Central and Southern Asia at 22.5 per cent, and the lowest is in Europe and Northern America at 9 per cent.'
         />
       </div>

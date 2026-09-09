@@ -27,7 +27,7 @@ const COLUMNS = ['Indicator', 'Countries'];
 
 type DataType = {
   indicator: string;
-  countries: number;
+  countries: number | string;
   description: string;
   cells: {
     category: string;
@@ -65,9 +65,9 @@ export default function DisaggregationTable() {
       <ColorLegend
         colors={['var(--tertiary)', 'var(--secondary)', 'var(--primary)', 'transparent']}
         colorDomain={[
-          'Good — recommended & reported',
-          'Gap — recommended but not reported',
-          'Beyond — reported though not recommended',
+          'Recommended and reported',
+          'Recommended but not reported',
+          'Reported though not recommended',
           'Not recommended, not reported',
         ]}
         showNAColor={false}
@@ -132,41 +132,37 @@ export default function DisaggregationTable() {
           </tbody>
         </table>
       </div>
+      <div>
+        <P marginBottom='none' size='sm' className='text-content-secondary'>
+          Source: UNSD, Global SDG Indicator Database
+        </P>
 
-      <P marginBottom='none' size='sm' className='text-content-secondary'>
-        Source: UNSD, Global SDG Indicator Database
-      </P>
-
-      <ChartNote
-        content={
-          <P marginBottom='none' size='sm'>
-            The table reports the number of countries and territories providing at least one
-            observation with each type of disaggregation for each SDG 16 indicator, based on data
-            from the SDG database. Countries are counted once per indicator regardless of years
-            reported.
-            <br />
-            <br />
-            Age excludes aggregate ("ALLAGE") and unspecified ("_U") values. Disability includes
-            "PD" and "PWD". Population group includes "POP_A", "POP_B", "POP_C". Location includes
-            "URBAN" and "RURAL". Education includes "AGG_5T8", "SECOND", "PRIMARY".
-            <br />
-            <br />
-            Some indicators combine multiple SeriesCodes from the SDG database into one figure,
-            where series measure components of the same indicator or share a reporting mechanism:
-            VC_VAW_MTUHRA/VC_VOC_ENFDIS → 16.10.1; six violence prevalence series → 16.1.3; six
-            violence reporting rate series → 16.3.1; four service satisfaction series → 16.6.2. A
-            country counts as disaggregated for a combined indicator if any constituent series
-            reports it — so combined-indicator counts aren't directly comparable to single-series
-            counts.
-            <br />
-            <br />
-            Indicators 16.4.1, 16.4.2, 16.5.2, 16.6.1, 16.8.1, 16.10.2, 16.a.1 were excluded as it
-            aggregates financial/administrative/institutional measures, not applicable to
-            demographic disaggregation. Indicator 16.7.1a was excluded due to being populated by a
-            cluster of distinct series in the SDG database, not one raw disaggregable dataset.
-          </P>
-        }
-      />
+        <ChartNote
+          content={
+            <P marginBottom='none' size='sm'>
+              The table reports the number of countries and territories providing at least one
+              observation with each type of disaggregation for each SDG 16 indicator, based on data
+              available in the Global SDG database. Countries are counted only once per indicator,
+              regardless of the number of years for which data are reported. It is important to note
+              that the absence of disaggregated data in the Global SDG Database does not necessarily
+              imply that such data do not exist. For some indicators, counts are calculated by
+              aggregating multiple series into a single measure. This approach is used where
+              different series capture different components of the same indicator. Examples include
+              indicators 16.10.1, 16.1.3, 16.3.1, and 16.6.2. A country is counted as reporting
+              disaggregated data on that indicator if any of its underlying series includes the
+              relevant disaggregation. Indicators 16.4.1, 16.4.2, 16.5.2, 16.6.1, 16.8.1, 16.10.2,
+              16.a.1 were excluded as they are aggregated across financial, administrative or
+              institutional measures, and therefore not applicable to demographic disaggregation.
+              <br />
+              <br />* Metadata recommends reporting on ethnicity/migration background, used as proxy
+              for Population Group.
+              <br />
+              ** Indicator implicitly reports by sex or age (not separately recommended), but as a
+              prerequisite for the value.
+            </P>
+          }
+        />
+      </div>
     </div>
   );
 }

@@ -19,7 +19,7 @@ import BusinessBriberyTrendStripChart from './charts/BusinessBriberyTrendStripCh
 import CrimeRelatedIFFsCards from './charts/CrimeRelatedIFFsCards';
 import DetaineesBySentencingStatusBarChart from './charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from './charts/DisputeResolutionAccessStripChart';
-import FirearmsTracingBeeSwarmChart from './charts/FirearmsTracingBeeSwarmChart';
+import FirearmsTracingScatterPlot from './charts/FirearmsTracingScatterPlot';
 import NHRIComplianceChoroplethMap from './charts/NHRIComplianceChoroplethMap';
 import TaxCommercialIFFsCards from './charts/TaxCommercialIFFsCards';
 import UnsentencedShareBySexDumbbellChart from './charts/UnsentencedShareBySexDumbbellChart';
@@ -296,7 +296,7 @@ export function Justice() {
               </P>
             </TextContainer>
             <GraphContainer>
-              <FirearmsTracingBeeSwarmChart />
+              <FirearmsTracingScatterPlot />
             </GraphContainer>
             <TextContainer>
               <Highlight color='secondary' content='Tracing has become increasingly challenging' />

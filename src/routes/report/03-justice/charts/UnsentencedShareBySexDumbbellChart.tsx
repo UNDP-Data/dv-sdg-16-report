@@ -65,7 +65,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
       )}
       graphTitle={
         <P marginBottom='none' weight='semibold' className='font-heading leading-sm'>
-          Unsentenced prisoners as a proportion of the overall prison population, by sex and region
+          Unsentenced detainees as a proportion of the overall prison population, by sex and region
         </P>
       }
       graphDescription='2024'

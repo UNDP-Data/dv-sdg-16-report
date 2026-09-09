@@ -12,7 +12,6 @@ import ChapterSubNav from '../components/SubNav';
 import WaveDivider from '../components/WaveDivider';
 import DataAvailabilityTable from './DataAvailabilityTable';
 import DisaggregationTable from './DisaggregationTable';
-import StandardsTable from './StandardsTable';
 
 export function SDG16Progress() {
   const sections = useMemo(
@@ -82,9 +81,6 @@ export function SDG16Progress() {
             </TextContainer>
             <GraphContainer size='lg'>
               <DataAvailabilityTable />
-            </GraphContainer>
-            <GraphContainer size='lg'>
-              <StandardsTable />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-01.webp' />
           </>

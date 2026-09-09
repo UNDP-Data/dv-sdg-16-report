@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-re
 import { H1 } from '@undp/design-system-react/Typography';
 import { type ReactNode, useState } from 'react';
 import DefenderKillingsLineChart from '@/routes/report/02-peace/charts/DefenderKillingsLineChart';
-import DefendersKilledByGroupRegionWaffle from '@/routes/report/02-peace/charts/DefendersKilledByGroupRegionWaffle';
+import DefendersKilledByGroupRegionDumbbellChart from '@/routes/report/02-peace/charts/DefendersKilledByGroupRegionDumbbellChart';
 import FeelSafeWalkingAloneByPeriodDumbbellChart from '@/routes/report/02-peace/charts/FeelSafeWalkingAloneByPeriodDumbbellChart';
 import FeelSafeWalkingAloneBySexDumbbellChart from '@/routes/report/02-peace/charts/FeelSafeWalkingAloneBySexDumbbellChart';
 import HomicideRateByRegionBarChart from '@/routes/report/02-peace/charts/HomicideRateByRegionBarChart';
@@ -22,7 +22,7 @@ import BusinessBriberyStripChart from '@/routes/report/03-justice/charts/Busines
 import BusinessBriberyTrendStripChart from '@/routes/report/03-justice/charts/BusinessBriberyTrendStripChart';
 import DetaineesBySentencingStatusBarChart from '@/routes/report/03-justice/charts/DetaineesBySentencingStatusBarChart';
 import DisputeResolutionAccessStripChart from '@/routes/report/03-justice/charts/DisputeResolutionAccessStripChart';
-import FirearmsTracingBeeSwarmChart from '@/routes/report/03-justice/charts/FirearmsTracingBeeSwarmChart';
+import FirearmsTracingScatterPlot from '@/routes/report/03-justice/charts/FirearmsTracingScatterPlot';
 import NHRIComplianceChoroplethMap from '@/routes/report/03-justice/charts/NHRIComplianceChoroplethMap';
 import UnsentencedShareBySexDumbbellChart from '@/routes/report/03-justice/charts/UnsentencedShareBySexDumbbellChart';
 import AccessToInformationChoroplethMap from '@/routes/report/04-inclusion/charts/AccessToInformationChoroplethMap';
@@ -118,8 +118,8 @@ export function TempCharts() {
             <ChartFrame file='DefenderKillingsLineChart'>
               <DefenderKillingsLineChart />
             </ChartFrame>
-            <ChartFrame file='DefendersKilledByGroupRegionWaffle'>
-              <DefendersKilledByGroupRegionWaffle />
+            <ChartFrame file='DefendersKilledByGroupRegionDumbbellChart'>
+              <DefendersKilledByGroupRegionDumbbellChart />
             </ChartFrame>
             <ChartFrame file='FeelSafeWalkingAloneByPeriodDumbbellChart'>
               <FeelSafeWalkingAloneByPeriodDumbbellChart />
@@ -171,8 +171,8 @@ export function TempCharts() {
             <ChartFrame file='DisputeResolutionAccessStripChart'>
               <DisputeResolutionAccessStripChart />
             </ChartFrame>
-            <ChartFrame file='FirearmsTracingBeeSwarmChart'>
-              <FirearmsTracingBeeSwarmChart />
+            <ChartFrame file='FirearmsTracingScatterPlot'>
+              <FirearmsTracingScatterPlot />
             </ChartFrame>
             <ChartFrame file='NHRIComplianceChoroplethMap' size='lg'>
               <NHRIComplianceChoroplethMap />

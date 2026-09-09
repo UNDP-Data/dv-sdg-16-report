@@ -56,7 +56,7 @@ export default function PoliticalEfficacyByRegionBarChart() {
       graphDescription='2025 or latest year available'
       sources={[{ source: 'UNDP' }]}
       footNote={
-        <ChartNote content='These estimates are derived from data covering 83 countries, using the latest available information from 2015 to 2025. The question asked is: “How much would you say the political system in your country allows people like you to have a say in what the government does?”.' />
+        <ChartNote content='These estimates are derived from data covering 83 countries, using the latest available information from 2015 to 2025. The question asked is: “How much would you say the political system in your country allows people like you to have a say in what the government does?”. Data availability per region is as follows: Central and Southern Asia (9 countries), Eastern and South-Eastern Asia (11), Sub-Saharan Africa (4), Latin America and the Caribbean (11), Northern Africa and Western Asia (11), Oceania (2), Europe and Northern America (35).' />
       }
       ariaLabel='Horizontal bar chart showing the proportion of the population who believe decision-making is inclusive, by region, with a reference line for the global estimate of 44.4%. Europe and Northern America has the lowest share, at 30.3%, while Central and Southern Asia has the highest, at 70%.'
     />

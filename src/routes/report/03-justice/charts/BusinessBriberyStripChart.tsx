@@ -16,7 +16,7 @@ import { P } from '@undp/design-system-react/Typography';
 import { Info } from 'lucide-react';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_PADDING } from '@/constants';
+import ChartNote from '../../components/ChartNote';
 
 function useData() {
   return useQuery({
@@ -34,22 +34,24 @@ export default function BusinessBriberyStripChart() {
   if (isError) return <ErrorEl />;
 
   return (
-    <div className='flex flex-col items-center gap-4 bg-white'>
-      <SegmentedControl
-        className='w-fit'
-        classNames={{ items: 'cursor-pointer' }}
-        value={selectedGrouping}
-        onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
-        color='foreground'
-        variant='light'
-        size='sm'
-        options={[
-          { value: 'region', label: 'Regions' },
-          { value: 'incomeGroup', label: 'Income groups' },
-        ]}
-      />
+    <div className='flex flex-col items-center gap-4'>
+      <div className='flex w-full justify-center bg-white p-4'>
+        <SegmentedControl
+          className='w-fit'
+          classNames={{ items: 'cursor-pointer' }}
+          value={selectedGrouping}
+          onValueChange={(value) => setSelectedGrouping(value as 'region' | 'incomeGroup')}
+          color='foreground'
+          variant='light'
+          size='sm'
+          options={[
+            { value: 'region', label: 'Regions' },
+            { value: 'incomeGroup', label: 'Income groups' },
+          ]}
+        />
+      </div>
 
-      <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
+      <div className='flex flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
             Bribery incidence, the proportion of firms experiencing at least one bribe payment
@@ -154,6 +156,9 @@ export default function BusinessBriberyStripChart() {
             </div>
           )}
           sources={[{ source: 'World Bank Enterprise Surveys' }]}
+          footNote={
+            <ChartNote content='For this analysis, countries are classified according to the income group they belonged to at the time of their latest available data point.' />
+          }
           ariaLabel='Strip chart showing the proportion of firms experiencing at least one bribe payment request, with each dot representing a country and a black bar marking the median. Sub-Saharan Africa and Eastern and South-Eastern Asia record the highest median levels and Europe and Northern America the lowest.'
         />
       </div>
