@@ -327,7 +327,7 @@ export function About() {
                   weight='semibold'
                   className='text-content-secondary uppercase tracking-wider'
                 >
-                  Regional Snapshot Series · 1
+                  2026
                 </P>
                 <H5
                   weight='medium'
