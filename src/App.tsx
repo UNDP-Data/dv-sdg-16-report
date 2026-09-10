@@ -179,11 +179,7 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('peace')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Peace</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>Peace</span>
                 </Link>
                 ,{' '}
                 <Link
@@ -192,11 +188,7 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('justice')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Justice</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>Justice</span>
                 </Link>{' '}
                 and{' '}
                 <Link
@@ -205,11 +197,9 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('inclusion')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Inclusion</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>
+                    Inclusion
+                  </span>
                 </Link>
               </H2>
             </BannerContainer>
