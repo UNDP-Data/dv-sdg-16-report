@@ -516,7 +516,7 @@ export function Justice() {
 
       <ChapterHero
         chapterNumber={2}
-        bg='/imgs/chapters/justice-hero.webp'
+        bg='/imgs/report/justice-hero.webp'
         title='Justice'
         intro={
           <>
@@ -532,7 +532,7 @@ export function Justice() {
       />
       <TargetsDrawer
         chapterTitle='Justice'
-        bg='/imgs/chapters/justice-texture.webp'
+        bg='/imgs/report/justice-texture.webp'
         color='secondary'
       />
       <Spacer size='8xl' />

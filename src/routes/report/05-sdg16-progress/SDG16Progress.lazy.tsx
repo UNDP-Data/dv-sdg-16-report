@@ -205,7 +205,7 @@ export function SDG16Progress() {
 
       <ChapterHero
         label='Global Progress Report 2026'
-        bg='/imgs/chapters/peace-hero.webp'
+        bg='/imgs/report/peace-hero.webp'
         title='Measuring SDG 16 Progress: Remaining challenges'
         intro={
           <>

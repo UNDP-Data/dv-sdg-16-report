@@ -626,7 +626,7 @@ export function Inclusion() {
 
       <ChapterHero
         chapterNumber={3}
-        bg='/imgs/chapters/inclusion-hero.webp'
+        bg='/imgs/report/inclusion-hero.webp'
         title='Inclusion'
         intro={
           <>
@@ -642,7 +642,7 @@ export function Inclusion() {
       />
       <TargetsDrawer
         chapterTitle='Inclusion'
-        bg='/imgs/chapters/inclusion-texture.webp'
+        bg='/imgs/report/inclusion-texture.webp'
         color='tertiary'
       />
       <Spacer size='8xl' />

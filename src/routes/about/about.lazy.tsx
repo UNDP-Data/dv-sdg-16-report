@@ -10,7 +10,7 @@ export function About() {
     <>
       <section
         className='bg-bottom-right bg-cover bg-foreground-soft px-6 py-16 md:px-12 md:py-24'
-        style={{ backgroundImage: `url('/imgs/chapters/default-hero.webp')` }}
+        style={{ backgroundImage: `url('/imgs/report/default-hero.webp')` }}
       >
         <div className='mx-auto flex max-w-300 flex-col gap-4'>
           <P
