@@ -59,9 +59,9 @@ export function Justice() {
                 Sex-disaggregated data remain limited globally, but available evidence suggests that
                 reporting behaviour may differ between women and men in some regions. Across 12
                 countries in Latin America and the Caribbean with available data, the median
-                reporting rate for physical assault was 56 per cent for women compared with 30 per
-                cent for men. Such clear differences are not observed in the limited data available
-                for other regions.
+                reporting rate for physical assault was 56% for women compared with 30% for men.
+                Such clear differences are not observed in the limited data available for other
+                regions.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/justice-01.webp' />
@@ -151,13 +151,12 @@ export function Justice() {
                 Despite efforts to strengthen access to justice and improve the efficiency of
                 criminal justice systems, little progress has been made in reducing pre-trial
                 detention globally. The share of unsentenced detainees has remained virtually
-                unchanged over the past decade, at around 30 per cent, equivalent to approximately
-                3.6 million people, with an estimated 3.4 million men and 0.2 million women.
-                Regional trends, however, varied considerably. Latin America and the Caribbean
-                reduced the proportion of prisoners awaiting trial or sentencing from 41 per cent in
-                2015 to 31 per cent in 2024. By contrast, the situation deteriorated in Central and
-                Southern Asia, where almost six in ten prisoners were unsentenced in 2024, up from
-                five in ten in 2015.
+                unchanged over the past decade, at around 30%, equivalent to approximately 3.6
+                million people, with an estimated 3.4 million men and 0.2 million women. Regional
+                trends, however, varied considerably. Latin America and the Caribbean reduced the
+                proportion of prisoners awaiting trial or sentencing from 41% in 2015 to 31% in
+                2024. By contrast, the situation deteriorated in Central and Southern Asia, where
+                almost six in ten prisoners were unsentenced in 2024, up from five in ten in 2015.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -170,9 +169,9 @@ export function Justice() {
                 around one third of detainees in both groups awaiting trial or sentencing. This
                 share has remained largely unchanged since 2015. However, beneath this global
                 average, important regional differences emerge. In Northern Africa and Western Asia,
-                35 per cent of women detainees were held unsentenced, compared with 23 per cent of
-                men. A similar pattern was observed in Oceania, where nearly half of women detainees
-                (49 per cent) were unsentenced, compared with 38 per cent of men.
+                35% of women detainees were held unsentenced, compared with 23% of men. A similar
+                pattern was observed in Oceania, where nearly half of women detainees (49%) were
+                unsentenced, compared with 38% of men.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -231,8 +230,8 @@ export function Justice() {
                   content='Pilot studies were undertaken for 23 countries globally.'
                   color='secondary'
                 />{' '}
-                indicate that trade-related IFFs account for between 5 and 30 per cent of the
-                official value of goods trade. Examples of tax and commercial IFFs:
+                indicate that trade-related IFFs account for between 5 and 30% of the official value
+                of goods trade. Examples of tax and commercial IFFs:
               </P>
             </TextContainer>
             <GraphContainer>
@@ -273,7 +272,7 @@ export function Justice() {
               </P>
               <Highlight
                 color='secondary'
-                content='Only 46 per cent of seized firearms were successfully traced between 2016 and 2024'
+                content='Only 46% of seized firearms were successfully traced between 2016 and 2024'
               />
               <P marginBottom='none' size='lg'>
                 Tracing rates varied considerably across countries, regions and reporting years,
@@ -299,8 +298,8 @@ export function Justice() {
                 As a result, tracing rates remain low in many parts of the world. Even in regions
                 with relatively strong reporting systems, such as Europe and Northern America, and
                 Latin America and the Caribbean, more than half of reporting countries recorded
-                tracing rates below the global average of 46 per cent. Continued investment in
-                marking, record-keeping and tracing systems, together with stronger national and
+                tracing rates below the global average of 46%. Continued investment in marking,
+                record-keeping and tracing systems, together with stronger national and
                 international information-sharing mechanisms, will be essential for improving
                 tracing outcomes, identifying diversion patterns and reducing illicit arms flows.
               </P>
@@ -329,15 +328,14 @@ export function Justice() {
                   content='The share of the population that had at least one contact with a public official in the past 12 months and paid or was asked to pay a bribe'
                   color='secondary'
                 />{' '}
-                was approximately 17 per cent. A subset of 63 countries with available trend data
-                reveals a relatively stable global trend between the periods 2010–2017 and
-                2018–2025.
+                was approximately 17%. A subset of 63 countries with available trend data reveals a
+                relatively stable global trend between the periods 2010–2017 and 2018–2025.
               </P>
               <P marginBottom='none' size='lg'>
                 This global picture masks large differences across regions. The highest median
-                prevalence was recorded in Sub-Saharan Africa at 24 per cent and Central and
-                Southern Asia at 22.5 per cent. In contrast, Europe and Northern America recorded
-                the lowest median prevalence with only 9 per cent.
+                prevalence was recorded in Sub-Saharan Africa at 24% and Central and Southern Asia
+                at 22.5%. In contrast, Europe and Northern America recorded the lowest median
+                prevalence with only 9%.
               </P>
               <Highlight
                 color='secondary'
@@ -345,11 +343,11 @@ export function Justice() {
               />
               <P marginBottom='none' size='lg'>
                 Bribery was most prevalent in low-income countries, where the median prevalence
-                reached 27 per cent, compared with 9 per cent in high-income countries.
-                Nevertheless, substantial variation exists within each income group, suggesting that
-                economic development alone does not determine corruption risks. The quality of
-                governance, institutional integrity and the effectiveness of anti-corruption
-                measures also play an important role.
+                reached 27%, compared with 9% in high-income countries. Nevertheless, substantial
+                variation exists within each income group, suggesting that economic development
+                alone does not determine corruption risks. The quality of governance, institutional
+                integrity and the effectiveness of anti-corruption measures also play an important
+                role.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -382,8 +380,8 @@ export function Justice() {
                 income groups. Sub-Saharan Africa and Eastern and South-Eastern Asia recorded the
                 highest median levels of business bribery, while Europe and Northern America
                 recorded the lowest. Businesses operating in low-income countries reported the
-                highest median prevalence of bribery at 18.6 per cent, compared with 2.4 per cent in
-                high-income countries.
+                highest median prevalence of bribery at 18.6%, compared with 2.4% in high-income
+                countries.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -395,8 +393,8 @@ export function Justice() {
                 Available trend data in a more limited set of countries suggest a moderate decline
                 in business bribery across all income groups between 2010–2016 and 2017–2024. The
                 largest improvements were observed in low-income countries, where the median
-                prevalence fell from 21.0 per cent to 12.3 per cent, and in lower-middle-income
-                countries, where it declined from 21.8 per cent to 13.9 per cent.
+                prevalence fell from 21.0% to 12.3%, and in lower-middle-income countries, where it
+                declined from 21.8% to 13.9%.
               </P>
             </TextContainer>
             <GraphContainer>

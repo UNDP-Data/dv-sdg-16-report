@@ -15,7 +15,7 @@ export default function CrimeRelatedIFFsCards() {
             content='UNODC, Myanmar Opium Survey 2025: Cultivation, Production and Implications (United Nations publication, 2025).'
             color='secondary'
           />{' '}
-          in potential inward IFFs in 2025, equivalent to 0.8 to 1.3 per cent of GDP.
+          in potential inward IFFs in 2025, equivalent to 0.8 to 1.3% of GDP.
         </P>
         <div className='mt-auto flex flex-col gap-2'>
           <P

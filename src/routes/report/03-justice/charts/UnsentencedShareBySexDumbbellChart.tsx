@@ -80,7 +80,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
             'UNODC estimates, based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems, data from the World Prison Brief (Institute for Crime & Justice Policy Research) and national sources reviewed by Member States',
         },
       ]}
-      ariaLabel='Dumbbell chart showing unsentenced prisoners as a proportion of the overall prison population by region and sex in 2024. Globally the share is around 31 per cent for both women and men, but women are more likely to be unsentenced in Northern Africa and Western Asia and in Oceania, while men are more likely to be unsentenced in Central and Southern Asia.'
+      ariaLabel='Dumbbell chart showing unsentenced prisoners as a proportion of the overall prison population by region and sex in 2024. Globally the share is around 31% for both women and men, but women are more likely to be unsentenced in Northern Africa and Western Asia and in Oceania, while men are more likely to be unsentenced in Central and Southern Asia.'
     />
   );
 }

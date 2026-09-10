@@ -114,7 +114,7 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
       footNote={
         <ChartNote content='Data on the share of intimate partner/family member homicide out of all homicides is not available for SDG regions. World reference lines show the global share for each sex.' />
       }
-      ariaLabel='Grouped bar chart showing the share of victims of intimate partner or family member homicide among all homicide victims, by region and sex, with reference lines for the world average. Women are disproportionately affected in every region, ranging from 45 per cent in the Americas to 74 per cent in Africa, compared with 8 to 26 per cent for men. The world average is 60 per cent for women and 11 per cent for men.'
+      ariaLabel='Grouped bar chart showing the share of victims of intimate partner or family member homicide among all homicide victims, by region and sex, with reference lines for the world average. Women are disproportionately affected in every region, ranging from 45% in the Americas to 74% in Africa, compared with 8 to 26% for men. The world average is 60% for women and 11% for men.'
     />
   );
 }

@@ -163,7 +163,7 @@ export default function BriberyPrevalenceStripChart() {
           footNote={
             <ChartNote content='For this analysis, countries are classified according to the income group they belonged to at the time of their latest available data point.' />
           }
-          ariaLabel='Strip chart showing the proportion of the population that experienced bribery when in contact with public officials in the previous 12 months, with each dot representing a country and a black bar marking the median. The highest median prevalence is in Sub-Saharan Africa at 24 per cent and Central and Southern Asia at 22.5 per cent, and the lowest is in Europe and Northern America at 9 per cent.'
+          ariaLabel='Strip chart showing the proportion of the population that experienced bribery when in contact with public officials in the previous 12 months, with each dot representing a country and a black bar marking the median. The highest median prevalence is in Sub-Saharan Africa at 24% and Central and Southern Asia at 22.5%, and the lowest is in Europe and Northern America at 9%.'
         />
       </div>
     </div>

@@ -103,14 +103,13 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Despite steady progress over the past decade, parliaments remain far from reflecting
-                the populations they represent. As of 2026, women held 27.5 per cent of
-                parliamentary seats globally, a modest increase from 27.2 per cent in 2025.
-                Representation remains even lower in parliamentary leadership, where women accounted
-                for 19.9 per cent of Speakers of Parliament in 2026, a decline of 3.8 percentage
-                points from the previous year. There are pronounced regional differences. Women's
-                representation is highest in the Americas, where women hold 35.6 per cent of
-                parliamentary seats. By contrast, women hold only 16.2 per cent of seats in the
-                Middle East and North Africa.
+                the populations they represent. As of 2026, women held 27.5% of parliamentary seats
+                globally, a modest increase from 27.2% in 2025. Representation remains even lower in
+                parliamentary leadership, where women accounted for 19.9% of Speakers of Parliament
+                in 2026, a decline of 3.8 percentage points from the previous year. There are
+                pronounced regional differences. Women's representation is highest in the Americas,
+                where women hold 35.6% of parliamentary seats. By contrast, women hold only 16.2% of
+                seats in the Middle East and North Africa.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -123,14 +122,13 @@ export function Inclusion() {
               />
               <P marginBottom='none' size='lg'>
                 Age gaps in representation are even more pronounced. While people aged 18 to 40
-                account for around one third of the world's adult population, they represent only 19
-                per cent of parliamentarians globally. Although this is an important improvement
-                from 12.9 per cent in 2014, progress has slowed considerably in recent years, with
-                only minimal gains since 2023. Youth representation is also highest in the Americas,
-                with MPs aged 40 or younger accounting for 23.5 per cent of parliamentarians. The
-                Pacific records the lowest levels of youth representation, with MPs aged 30 or
-                younger accounting for just 2.0 per cent of parliamentarians and those aged 40 or
-                younger only 12.0 per cent.
+                account for around one third of the world's adult population, they represent only
+                19% of parliamentarians globally. Although this is an important improvement from
+                12.9% in 2014, progress has slowed considerably in recent years, with only minimal
+                gains since 2023. Youth representation is also highest in the Americas, with MPs
+                aged 40 or younger accounting for 23.5% of parliamentarians. The Pacific records the
+                lowest levels of youth representation, with MPs aged 30 or younger accounting for
+                just 2.0% of parliamentarians and those aged 40 or younger only 12.0%.
               </P>
               <Highlight
                 color='tertiary'
@@ -140,10 +138,10 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Younger generations of parliamentarians are, however, considerably more gender
-                balanced than older ones. Women account for 43.5 per cent of all MPs aged 30 years
-                or younger and 36.2 per cent of those aged 40 years or younger. These patterns
-                suggest that gender balance in parliaments may continue to improve as younger
-                cohorts enter political office.
+                balanced than older ones. Women account for 43.5% of all MPs aged 30 years or
+                younger and 36.2% of those aged 40 years or younger. These patterns suggest that
+                gender balance in parliaments may continue to improve as younger cohorts enter
+                political office.
               </P>
             </TextContainer>
             <Spacer size='2xl' />
@@ -176,7 +174,7 @@ export function Inclusion() {
                   content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
                   color='tertiary'
                 />
-                . Put simply, a ratio of 0.80 means that women have achieved only 80 per cent of the
+                . Put simply, a ratio of 0.80 means that women have achieved only 80% of the
                 representation they would have if their share in public institutions matched their
                 share of the population.
               </P>
@@ -296,8 +294,8 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 Across countries where such data are available, transgender and gender-diverse
                 individuals frequently report the highest levels of discrimination, often exceeding
-                60 per cent, while people identifying as sexual minorities report discrimination
-                rates 2.2 times higher than the population average.
+                60%, while people identifying as sexual minorities report discrimination rates 2.2
+                times higher than the population average.
               </P>
             </TextContainer>
             <TextContainer>
@@ -340,12 +338,12 @@ export function Inclusion() {
                 steady progress in improving budget reliability and expenditure forecasts. The
                 global average absolute deviation between approved and actual government
                 expenditure, which captures both overspending and underspending relative to the
-                approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
-                Moreover, budget reliability remains weaker in lower-income countries. Between 2021
-                and 2024, low-income countries recorded the largest budget deviations between
-                approved and actual expenditure, with median deviations of around 11.8 per cent. By
-                contrast, most high-income and upper-middle-income countries generally maintained
-                deviations below 7 per cent.
+                approved budget, declined from 12.6% in 2020 to 10.2% in 2024. Moreover, budget
+                reliability remains weaker in lower-income countries. Between 2021 and 2024,
+                low-income countries recorded the largest budget deviations between approved and
+                actual expenditure, with median deviations of around 11.8%. By contrast, most
+                high-income and upper-middle-income countries generally maintained deviations below
+                7%.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -383,10 +381,10 @@ export function Inclusion() {
                 experience and interact with their governments.
               </P>
               <P marginBottom='none' size='lg'>
-                Among countries with available data, satisfaction ranges from less than 10 per cent
-                in some countries to over 90 per cent in others. These wide gaps suggest that access
-                to quality public services remains highly uneven and that many people continue to
-                face barriers to services that are essential for well-being and inclusion.
+                Among countries with available data, satisfaction ranges from less than 10% in some
+                countries to over 90% in others. These wide gaps suggest that access to quality
+                public services remains highly uneven and that many people continue to face barriers
+                to services that are essential for well-being and inclusion.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -403,9 +401,9 @@ export function Inclusion() {
               />
               <P marginBottom='none' size='lg'>
                 Countries in Eastern and South-Eastern Asia report the highest average satisfaction
-                with 88.2 per cent, while Sub-Saharan Africa records the lowest with 46.4 per cent.
-                These persistent differences show that, while progress has been made, access to
-                quality public services remains highly unequal across countries.
+                with 88.2%, while Sub-Saharan Africa records the lowest with 46.4%. These persistent
+                differences show that, while progress has been made, access to quality public
+                services remains highly unequal across countries.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -459,9 +457,8 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Women are less likely than men to feel that they have a say in government decisions.
-                Across 37 high-income countries with sex-disaggregated data, 27.3 per cent of women
-                believe they have a say in what their government does, compared with 32.6 per cent
-                of men.
+                Across 37 high-income countries with sex-disaggregated data, 27.3% of women believe
+                they have a say in what their government does, compared with 32.6% of men.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-03.webp' />
@@ -512,11 +509,11 @@ export function Inclusion() {
                 first large-scale global assessment of how access to information laws function in
                 practice. Identical ATI requests submitted across 76 countries found that 38 per
                 cent of requests received no substantive response (“mute refusals”), effectively
-                leaving the right to information existing only on paper. Although 54 per cent of
-                requests resulted in some information being provided, only 42 per cent received full
-                disclosure. These findings demonstrate that, while legal recognition of the right to
-                information has become widespread, ensuring that this right can be effectively
-                exercised remains a significant challenge.
+                leaving the right to information existing only on paper. Although 54% of requests
+                resulted in some information being provided, only 42% received full disclosure.
+                These findings demonstrate that, while legal recognition of the right to information
+                has become widespread, ensuring that this right can be effectively exercised remains
+                a significant challenge.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -551,12 +548,12 @@ export function Inclusion() {
                 been limited.
               </P>
               <P marginBottom='none' size='lg'>
-                Today, developing countries hold 37 per cent of the voting rights in the
-                International Monetary Fund and 39 per cent in the World Bank, despite accounting
-                for 75 per cent of the membership of both institutions. Recent reviews of voting
-                rights at both organizations concluded without agreement on further realignment,
-                highlighting the growing difficulty of reforming global governance in an
-                increasingly fragmented geopolitical environment.
+                Today, developing countries hold 37% of the voting rights in the International
+                Monetary Fund and 39% in the World Bank, despite accounting for 75% of the
+                membership of both institutions. Recent reviews of voting rights at both
+                organizations concluded without agreement on further realignment, highlighting the
+                growing difficulty of reforming global governance in an increasingly fragmented
+                geopolitical environment.
               </P>
             </TextContainer>
             <GraphContainer>

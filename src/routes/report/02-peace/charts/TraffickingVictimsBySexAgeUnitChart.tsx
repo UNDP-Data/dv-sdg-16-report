@@ -52,7 +52,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             size={innerWidth < 720 ? 280 : 500}
             gridSize={innerWidth < 720 ? 10 : 20}
             numberDisplayOptions={{ suffix: '%' }}
-            ariaLabel={`Unit chart showing the age breakdown of female trafficking victims. Women make up ${data.find((d) => d.group === 'Women')?.value} per cent and girls ${data.find((d) => d.group === 'Girls')?.value} per cent, together ${(data.find((d) => d.group === 'Women')?.value ?? 0) + (data.find((d) => d.group === 'Girls')?.value ?? 0)} per cent of all detected victims.`}
+            ariaLabel={`Unit chart showing the age breakdown of female trafficking victims. Women make up ${data.find((d) => d.group === 'Women')?.value}% and girls ${data.find((d) => d.group === 'Girls')?.value}%, together ${(data.find((d) => d.group === 'Women')?.value ?? 0) + (data.find((d) => d.group === 'Girls')?.value ?? 0)}% of all detected victims.`}
           />
           <div className='w-full shrink-0 sm:w-32'>
             <H2
@@ -82,7 +82,7 @@ export default function TraffickingVictimsBySexAgeStackedBar() {
             size={innerWidth < 720 ? 280 : 500}
             gridSize={innerWidth < 720 ? 10 : 20}
             numberDisplayOptions={{ suffix: '%' }}
-            ariaLabel={`Unit chart showing the age breakdown of male trafficking victims. Men make up ${data.find((d) => d.group === 'Men')?.value} per cent and boys ${data.find((d) => d.group === 'Boys')?.value} per cent, together ${(data.find((d) => d.group === 'Men')?.value ?? 0) + (data.find((d) => d.group === 'Boys')?.value ?? 0)} per cent of all detected victims.`}
+            ariaLabel={`Unit chart showing the age breakdown of male trafficking victims. Men make up ${data.find((d) => d.group === 'Men')?.value}% and boys ${data.find((d) => d.group === 'Boys')?.value}%, together ${(data.find((d) => d.group === 'Men')?.value ?? 0) + (data.find((d) => d.group === 'Boys')?.value ?? 0)}% of all detected victims.`}
           />
           <div className='flex h-full w-full shrink-0 flex-col justify-center sm:w-32'>
             <H2

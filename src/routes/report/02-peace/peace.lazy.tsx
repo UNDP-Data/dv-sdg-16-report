@@ -44,9 +44,8 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Following three consecutive years of rising conflict-related deaths, documented
-                civilian fatalities declined by 23 per cent in 2025. Nevertheless, the human cost of
-                armed conflict remained severe: at least 37,163 civilian deaths were documented
-                across{' '}
+                civilian fatalities declined by 23% in 2025. Nevertheless, the human cost of armed
+                conflict remained severe: at least 37,163 civilian deaths were documented across{' '}
                 <InfoTooltip
                   trigger='20 situations of armed conflict'
                   content='For the 2015–2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
@@ -95,10 +94,10 @@ export function Peace() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Between 2015 and 2024, the global homicide rate declined by 13 per cent, from 5.9 to
-                5.1 victims per 100,000 population. If current trends continue, the rate is
-                projected to fall to around 4.5 victims per 100,000 population by 2030. While this
-                would represent important progress, it would fall short of the ambition of SDG 16 to{' '}
+                Between 2015 and 2024, the global homicide rate declined by 13%, from 5.9 to 5.1
+                victims per 100,000 population. If current trends continue, the rate is projected to
+                fall to around 4.5 victims per 100,000 population by 2030. While this would
+                represent important progress, it would fall short of the ambition of SDG 16 to{' '}
                 <InfoTooltip
                   trigger='significantly reduce'
                   content='For SDG target 16.1, significant reduction is interpreted as 50% reduction in the intentional homicide rate from its 2015 baseline by 2030.'
@@ -119,7 +118,7 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 In 2024, Latin America and the Caribbean recorded the highest homicide rate
                 globally, at 19.3 victims per 100,000 population, almost four times the global
-                average, and accounted for just above 30 per cent of all estimated homicide victims
+                average, and accounted for just above 30% of all estimated homicide victims
                 worldwide. The region continues to be disproportionately affected by organized crime
                 and gang-related violence. Sub-Saharan Africa recorded the second highest homicide
                 rate, at an estimated 11.7 victims per 100,000 population, although estimates remain
@@ -132,12 +131,12 @@ export function Peace() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='primary'
-                content='Nearly 60 per cent of all women killed in 2024 were victims of an intimate partner or family member'
+                content='Nearly 60% of all women killed in 2024 were victims of an intimate partner or family member'
               />
               <P marginBottom='none' size='lg'>
-                Although men accounted for an estimated 80 per cent of homicide victims in 2024,
-                women continue to face the greatest risk of lethal violence within their own homes.
-                The share of women victims of an intimate partner or family member was highest in
+                Although men accounted for an estimated 80% of homicide victims in 2024, women
+                continue to face the greatest risk of lethal violence within their own homes. The
+                share of women victims of an intimate partner or family member was highest in
                 Africa, followed by Oceania, and lowest in the Americas.
               </P>
             </TextContainer>
@@ -191,9 +190,9 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 Violence against defenders is a global phenomenon, but the burden remains highly
                 concentrated. Over the last decade, Latin America and the Caribbean accounted for
-                roughly 60 per cent of all verified killings recorded. In the same period, Northern
-                Africa and Western Asia experienced a rapid escalation, with their share of global
-                killings nearly doubling to 27 per cent in 2025.
+                roughly 60% of all verified killings recorded. In the same period, Northern Africa
+                and Western Asia experienced a rapid escalation, with their share of global killings
+                nearly doubling to 27% in 2025.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -242,10 +241,9 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 The available evidence suggest that levels of experience of physical assault are
                 relatively similar across regions, with the median prevalence rates ranging from 0.9
-                to 1.5 per cent of the population. Robbery shows a different pattern. In Latin
-                America and the Caribbean, the median prevalence rate reached 3.1 per cent, more
-                than three times the levels recorded in other regions, where median prevalence rates
-                remained below 1 per cent.
+                to 1.5% of the population. Robbery shows a different pattern. In Latin America and
+                the Caribbean, the median prevalence rate reached 3.1%, more than three times the
+                levels recorded in other regions, where median prevalence rates remained below 1%.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -255,12 +253,12 @@ export function Peace() {
                 sexual violence.'
               />
               <P marginBottom='none' size='lg'>
-                The median prevalence of sexual violence among women was 2.9 per cent, compared with
-                0.4 per cent among men. By contrast, men experienced slightly higher levels of
-                physical violence, with a median prevalence of 4.2 per cent compared with 3.2 per
-                cent among women in the 51 countries with data globally. Data on psychological
-                violence remain too limited for global analysis. Available evidence, however,
-                suggests relatively similar prevalence levels among women and men.
+                The median prevalence of sexual violence among women was 2.9%, compared with 0.4%
+                among men. By contrast, men experienced slightly higher levels of physical violence,
+                with a median prevalence of 4.2% compared with 3.2% among women in the 51 countries
+                with data globally. Data on psychological violence remain too limited for global
+                analysis. Available evidence, however, suggests relatively similar prevalence levels
+                among women and men.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -351,10 +349,10 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 Following a temporary decline during the first year of the Covid-19 pandemic, the
                 number of detected victims of trafficking has continued to increase globally.
-                Children accounted for 37 per cent of all detected victims in 2024, nearly three
-                times the share recorded two decades earlier (13 per cent in 2004). Among child
-                victims, girls represented a slightly larger share than boys. Among adults, women
-                continued to account for a significantly larger share of victims than men.
+                Children accounted for 37% of all detected victims in 2024, nearly three times the
+                share recorded two decades earlier (13% in 2004). Among child victims, girls
+                represented a slightly larger share than boys. Among adults, women continued to
+                account for a significantly larger share of victims than men.
               </P>
             </TextContainer>
             <GraphContainer
@@ -366,10 +364,9 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Sexual exploitation and forced labour remained the two most commonly detected forms
-                of trafficking, accounting for roughly 39 per cent and 38 per cent of detected
-                victims, respectively. The remaining victims were trafficked for other forms of
-                exploitation, including organ removal, forced criminality, forced marriage, forced
-                begging, etc.
+                of trafficking, accounting for roughly 39% and 38% of detected victims,
+                respectively. The remaining victims were trafficked for other forms of exploitation,
+                including organ removal, forced criminality, forced marriage, forced begging, etc.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -419,10 +416,9 @@ export function Peace() {
                 content='Women consistently indicate feeling less safe than men'
               />
               <P marginBottom='none' size='lg'>
-                Across 74 countries with sex-disaggregated data, 59 per cent of women reported
-                feeling safe walking alone after dark, compared with 72 per cent of men. The gender
-                gap was evident in every region and was particularly pronounced in Northern Africa
-                and Western Asia.
+                Across 74 countries with sex-disaggregated data, 59% of women reported feeling safe
+                walking alone after dark, compared with 72% of men. The gender gap was evident in
+                every region and was particularly pronounced in Northern Africa and Western Asia.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>

@@ -75,7 +75,7 @@ export default function DisputeResolutionAccessStripChart() {
             </div>
           </div>
         )}
-        ariaLabel={`Strip chart showing, for ${data.length} countries, the proportion of people who experienced a dispute in the past two years and accessed a formal or informal dispute resolution mechanism. Values range from 21 per cent in South Africa to 94 per cent in Tunisia.`}
+        ariaLabel={`Strip chart showing, for ${data.length} countries, the proportion of people who experienced a dispute in the past two years and accessed a formal or informal dispute resolution mechanism. Values range from 21% in South Africa to 94% in Tunisia.`}
       />
 
       <div className='flex flex-col gap-1'>

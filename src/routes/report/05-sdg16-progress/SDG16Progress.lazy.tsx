@@ -75,9 +75,9 @@ export function SDG16Progress() {
         </P>
         <P marginBottom='none' size='lg'>
           These collective efforts and investments have translated into substantial improvements in
-          data availability. In the 2026 reporting cycle, 58.9 per cent of countries had reported
-          data for at least one indicator under each SDG 16 target since 2015, up from 40 per cent
-          in 2023 and 22.4 per cent in 2019.
+          data availability. In the 2026 reporting cycle, 58.9% of countries had reported data for
+          at least one indicator under each SDG 16 target since 2015, up from 40% in 2023 and 22.4%
+          in 2019.
         </P>
       </TextContainer>
       <GraphContainer className='my-8'>
