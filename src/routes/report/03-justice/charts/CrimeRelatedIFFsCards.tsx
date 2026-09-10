@@ -36,7 +36,7 @@ export default function CrimeRelatedIFFsCards() {
 
       <div className='flex flex-col gap-3 bg-background-soft p-6'>
         <P marginBottom='none' size='xl' weight='semibold' className='font-heading leading-sm'>
-          Balkan route
+          Balkan drug trafficking route
         </P>
         <P marginBottom='none' size='sm'>
           <InfoTooltip

@@ -81,7 +81,7 @@ export function Justice() {
                 land, inheritance, or family matters can have profound consequences for{' '}
                 <InfoTooltip
                   trigger='millions of people every day'
-                  content='An estimated 5 billion peoplecannot obtain justice for everyday civil, administrative, or criminal justice problems, cannot access the opportunities and protections provided by the law, or live in extreme conditions of injustice. Source: Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
+                  content='An estimated 5 billion people cannot obtain justice for everyday civil, administrative, or criminal justice problems, cannot access the opportunities and protections provided by the law, or live in extreme conditions of injustice. Source: Measuring the Justice Gap: A People-Centered Assessment of Unmet Justice Needs Around the World, World Justice Project, 2023.'
                   color='secondary'
                 />
                 . Whether these disputes can be resolved fairly and effectively is fundamental to
@@ -184,7 +184,7 @@ export function Justice() {
         title: 'Illicit financial flows',
         indicatorCode: '16.4.1',
         heading:
-          'Corruption and illicit financial flows continue to erode the rule of law and divert billions of dollars away from sustainable development',
+          'Illicit financial flows continue to erode the rule of law and divert billions of dollars away from sustainable development',
         anchor: 'illicit-financial-flows',
         content: (
           <>
@@ -195,45 +195,24 @@ export function Justice() {
                   trigger='Illicit financial flows (IFFs)'
                   color='secondary'
                 />{' '}
-                are a global phenomenon that drain national resources that could otherwise be
-                invested in public services, institutions and development. They deplete critical
-                resources both when they exit a country (outflows) and when they enter (inflows),
-                fuelling corruption, organized crime and terrorism.
+                have significant economic and institutional impacts. IFFs can be detrimental both
+                when they leave a country and when they enter one. By facilitating organized crime,
+                terrorism and corruption, they weaken state institutions and undermine justice, the
+                rule of law, investment and sustainable development.
               </P>
               <Highlight
                 color='secondary'
                 content={
                   <>
-                    If redirected to the formal economy, illicit flows could serve as a vital source
-                    of funding for sustainable development initiatives and help bridge the financing
-                    gap.{' '}
-                    <span className='align-middle text-sm'>
-                      <InfoTooltip
-                        trigger='Source'
-                        content='Financing for Sustainable Development Report 2021, Inter-agency Task Force on Financing for Development (United Nations publication, 2021).'
-                        color='secondary'
-                      />
-                    </span>
+                    Curbing IFFs could help preserve domestic resources, strengthen public revenues
+                    and serve as a vital source of funding for sustainable development initiatives
+                    and help bridge the financing gap.
                   </>
                 }
               />
               <P marginBottom='none' size='lg'>
-                To date,{' '}
-                <InfoTooltip
-                  trigger='official estimates'
-                  content={
-                    <span>
-                      UNODC, Crime-related illicit financial flows: latest progress (United Nations
-                      publication, 2023). Available at:{' '}
-                      <span className='break-all'>
-                        https://www.unodc.org/documents/data-and-analysis/IFF/2023/IFFs_Estimates_Report_2023-final-11dec2023.pdf
-                      </span>
-                    </span>
-                  }
-                  color='secondary'
-                />{' '}
-                of crime-related IFFs have been produced for nine countries. Examples of
-                crime-related IFFs:
+                To date, official estimates of crime-related IFFs have been produced for nine
+                countries. Examples of crime-related IFFs:
               </P>
             </TextContainer>
             <GraphContainer>
@@ -274,7 +253,7 @@ export function Justice() {
         title: 'Illicit firearms flows',
         indicatorCode: '16.4.2',
         heading:
-          'Less than half of seized firearms are traced, limiting efforts to reduce illicit arms flows globally',
+          'Less than half of seized firearms are successfully traced, limiting efforts to reduce illicit arms flows globally',
         anchor: 'illicit-firearms-flows',
         content: (
           <>
@@ -293,7 +272,7 @@ export function Justice() {
               <P marginBottom='none' size='lg'>
                 Tracing rates varied considerably across countries, regions and reporting years,
                 reflecting differences in national tracing capacities, the volume of firearms
-                seized, and the complexity of establishing the illicit origin of individual
+                seized, and the complexity of establishing the illicit origin or context of seized
                 firearms.
               </P>
             </TextContainer>
@@ -303,19 +282,21 @@ export function Justice() {
             <TextContainer>
               <Highlight color='secondary' content='Tracing has become increasingly challenging' />
               <P marginBottom='none' size='lg'>
-                To conceal the origin of firearms, criminal groups increasingly rely on illicit
-                manufacturing methods, including counterfeit production, 3D printing and artisanal
-                manufacture as well as the modification of non-lethal/less-lethal weapons (e.g. gas
-                and blank firing, alarm or signal weapons) into firearms, often accompanied by the
-                alteration and falsification of original markings. In conflict settings, the
-                diversion of weapons through battlefield capture further complicates tracing
-                efforts.
+                To avoid detection, criminal groups increasingly rely on illicit manufacturing
+                methods, including counterfeit production, 3D printing and artisanal manufacture as
+                well as the modification of non-lethal/less-lethal weapons (e.g. gas and blank
+                firing, alarm or signal weapons) into firearms, often accompanied by the alteration
+                and falsification of original markings. In conflict settings, the diversion of
+                weapons through battlefield capture further complicates tracing efforts.
               </P>
               <P marginBottom='none' size='lg'>
-                Progress in tracing depends heavily on robust marking and record-keeping systems.
-                However, even in regions with relatively strong reporting systems, such as Europe
-                and Northern America, and Latin America and the Caribbean, more than half of
-                reporting countries recorded tracing rates below the global average of 46 per cent.
+                As a result, tracing rates remain low in many parts of the world. Even in regions
+                with relatively strong reporting systems, such as Europe and Northern America, and
+                Latin America and the Caribbean, more than half of reporting countries recorded
+                tracing rates below the global average of 46 per cent. Continued investment in
+                marking, record-keeping and tracing systems, together with stronger national and
+                international information-sharing mechanisms, will be essential for improving
+                tracing outcomes, identifying diversion patterns and reducing illicit arms flows.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/justice-04.webp' align='right' />
@@ -352,8 +333,7 @@ export function Justice() {
               </P>
               <Highlight
                 color='secondary'
-                content='Considerable variation within region and income group suggests that economic development
-          alone does not determine corruption risks'
+                content='Considerable variation within region and income groups suggests that economic development alone does not determine corruption risks'
               />
               <P marginBottom='none' size='lg'>
                 Bribery was most prevalent in low-income countries, where the median prevalence
@@ -432,7 +412,22 @@ export function Justice() {
                 compliant (A status) with the{' '}
                 <InfoTooltip
                   trigger='Paris Principles'
-                  content='The Paris Principles are a set of core minimum recommendations adopted by the United Nations General Assembly relating to the status and functioning of national institutions for the protection and promotion of human rights.'
+                  content={
+                    <>
+                      The Paris Principles are a set of core minimum recommendations adopted by the
+                      United Nations General Assembly relating to the status and functioning of
+                      national institutions for the protection and promotion of human rights.{' '}
+                      <a
+                        href='https://www.ohchr.org/en/instruments-mechanisms/instruments/principles-relating-status-national-institutions-paris'
+                        target='_blank'
+                        rel='noreferrer'
+                        className='underline underline-offset-4 hover:no-underline'
+                      >
+                        Read the Paris Principles
+                      </a>
+                      .
+                    </>
+                  }
                   color='secondary'
                 />
                 . The number of fully compliant institutions has increased from 70 countries in

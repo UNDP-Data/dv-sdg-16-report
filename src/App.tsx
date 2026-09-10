@@ -135,7 +135,8 @@ function App() {
               <Spacer size='2xl' />
               <P size='xl' marginBottom='none' className='max-w-4xl text-content-secondary'>
                 More than a decade after Member States adopted the 2030 Agenda, growing insecurity,
-                deepening polarization and declining trust are making hard-won development gains
+                deepening polarization and declining trust, alongside violent conflicts, economic
+                uncertainty and geopolitical fragmentation, are making hard-won development gains
                 increasingly fragile. The challenge of our time is not only identifying solutions
                 but ensuring that institutions are capable and resilient enough to turn those
                 solutions into life-changing results.

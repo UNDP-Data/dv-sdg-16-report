@@ -55,8 +55,8 @@ export function Peace() {
                 conflict-related deaths has improved significantly over the past decade, important
                 challenges remain, particularly in determining civilian status during active
                 hostilities. In 2025, the status of more than 13,000 conflict-related deaths could
-                not be established, so the reported figures should be interpreted as a minimum
-                estimate of civilian deaths.
+                not be established, so the reported figures should be interpreted as a minimum count
+                of civilian deaths.
               </P>
             </TextContainer>
             <div className='w-full'>
@@ -93,8 +93,8 @@ export function Peace() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9
-                to 5.1 victims per 100,000 population. If current trends continue, the rate is
+                Between 2015 and 2024, the global homicide rate declined by 13 per cent, from 5.9 to
+                5.1 victims per 100,000 population. If current trends continue, the rate is
                 projected to fall to around 4.5 victims per 100,000 population by 2030. While this
                 would represent important progress, it would fall short of the ambition of SDG 16 to{' '}
                 <InfoTooltip
@@ -335,7 +335,7 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Human trafficking continues to affect women, men and children in every region of the
-                world. Yet it remains one of the most hidden forms of crime, making it inherently
+                world. Yet, it remains one of the most hidden forms of crime, making it inherently
                 difficult to measure. Many victims never come to the attention of authorities, and
                 official statistics capture only detected cases. The figures presented here should
                 therefore be interpreted as a minimum estimate of the true scale of trafficking.

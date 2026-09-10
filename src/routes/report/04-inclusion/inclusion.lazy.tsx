@@ -151,7 +151,7 @@ export function Inclusion() {
       },
       {
         id: '03',
-        title: 'Representation in public service and the judiciary',
+        title: 'Representation in the public service and the judiciary',
         indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
@@ -496,24 +496,15 @@ export function Inclusion() {
                 bodies and designated institutional roles.
               </P>
               <P marginBottom='none' size='lg'>
-                These implementation gaps are also reflected in the{' '}
-                <InfoTooltip
-                  trigger='first large-scale global assessment'
-                  content={
-                    <span>
-                      Mendel, T. and Vagliano, R. (2025) Global Comparative Testing of Responses to
-                      Requests for Information. Halifax, NS: Centre for Law and Democracy. Available
-                      at:{' '}
-                      <span className='break-all'>
-                        https://www.law-democracy.org/wp-content/uploads/2025/09/IDUAI.report.25-09-26.pdf
-                      </span>
-                    </span>
-                  }
-                  color='tertiary'
-                />{' '}
-                into the effectiveness of access to information laws. Identical access to
-                information requests were submitted across 76 countries, and fewer than half
-                received full disclosure.
+                Implementation gaps in access to information (ATI) laws are also reflected in the
+                first large-scale global assessment of how access to information laws function in
+                practice. Identical ATI requests submitted across 76 countries found that 38 per
+                cent of requests received no substantive response (“mute refusals”), effectively
+                leaving the right to information existing only on paper. Although 54 per cent of
+                requests resulted in some information being provided, only 42 per cent received full
+                disclosure. These findings demonstrate that, while legal recognition of the right to
+                information has become widespread, ensuring that this right can be effectively
+                exercised remains a significant challenge.
               </P>
             </TextContainer>
             <GraphContainer>

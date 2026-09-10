@@ -71,7 +71,7 @@ const SLIDES = [
       <>
         In 2025, a total of <span className='font-bold text-primary'>37,163 civilian deaths</span>{' '}
         were documented. The status of <strong>more than 13,000 deaths</strong> in 2025 remained
-        unverified.
+        undetermined.
       </>
     ),
     color: 'primary',

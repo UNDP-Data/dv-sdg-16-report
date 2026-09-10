@@ -24,10 +24,9 @@ const SLIDES = [
   {
     vizContent: {
       reportedCount: 46,
-      caption: 'victims of violence report their experiences',
+      caption: null,
       color: 'gray-500',
       nonReportedDotOpacity: 0.4,
-      noOfCountriesReported: 81,
     },
     slideContent: (
       <>
@@ -37,7 +36,14 @@ const SLIDES = [
           content='As of early 2026, 81 countries had produced at least one data point on reporting of physical, sexual or psychological violence since 2015. Data availability remains uneven across forms of violence. Comparable information is available for 39 countries for robbery and 36 countries for physical assault. Only 19 countries have collected comparable data on sexual assault.'
           color='secondary'
         />
-        , <span className='font-bold'>fewer than half of victims of violence report</span> their
+        , the{' '}
+        <InfoTooltip
+          trigger='median'
+          content='The median is the middle value in a set of numbers. It divides the data into two equal halves, with half of observations above it and half below it.'
+          color='secondary'
+        />{' '}
+        reporting rate is below 50%.{' '}
+        <span className='font-bold'>Fewer than half of victims of violence report</span> their
         experiences to the police or other competent authorities.
       </>
     ),
@@ -68,6 +74,7 @@ const SLIDES = [
     },
     slideContent: (
       <>
+        …followed by physical assault.{' '}
         <span className='font-bold text-accent-teal-hover'>
           Four in ten victims of physical assault
         </span>{' '}
@@ -88,8 +95,8 @@ const SLIDES = [
         <span className='font-bold text-secondary'>
           Sexual assault is the most underreported form of violence.
         </span>{' '}
-        Stigma, fear of retaliation, and limited trust in the justice system continue to prevent
-        many victims from coming forward.
+        Stigma, fear of retaliation, and limited trust in the justice system continue to deter
+        victims from seeking justice.
       </>
     ),
   },
