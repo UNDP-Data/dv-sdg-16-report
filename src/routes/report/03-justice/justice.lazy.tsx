@@ -34,6 +34,7 @@ export function Justice() {
         title: 'Access to criminal justice',
         indicatorCode: '16.3.1',
         heading: 'More than half of violent crimes remain hidden from the justice system',
+        heroHeading: 'More than half of violent crimes remain hidden from the justice system',
         anchor: 'access-to-criminal-justice',
         isGenderLens: true,
         content: (
@@ -72,6 +73,7 @@ export function Justice() {
         title: 'Access to civil justice',
         indicatorCode: '16.3.3',
         heading: 'More than 5 billion people are estimated to have unmet justice needs',
+        heroHeading: 'Access to civil justice remains one of the least measured areas in Goal 16',
         anchor: 'access-to-civil-justice',
         content: (
           <>
@@ -123,6 +125,7 @@ export function Justice() {
         indicatorCode: '16.3.2',
         heading:
           'One in three prisoners globally is held in detention without a sentence, with little progress over the past decade',
+        heroHeading: '1 in 3 prisoners globally are held in pre-trial detention',
         anchor: 'unsentenced-detention',
         isGenderLens: true,
         content: (
@@ -185,6 +188,7 @@ export function Justice() {
         indicatorCode: '16.4.1',
         heading:
           'Illicit financial flows continue to erode the rule of law and divert billions of dollars away from sustainable development',
+        heroHeading: 'IFFs divert billions of dollars away from sustainable development',
         anchor: 'illicit-financial-flows',
         content: (
           <>
@@ -254,6 +258,8 @@ export function Justice() {
         indicatorCode: '16.4.2',
         heading:
           'Less than half of seized firearms are successfully traced, limiting efforts to reduce illicit arms flows globally',
+        heroHeading:
+          'Less than half of seized firearms are traced, limiting efforts to reduce illicit arms flows globally',
         anchor: 'illicit-firearms-flows',
         content: (
           <>
@@ -308,6 +314,8 @@ export function Justice() {
         title: 'Bribery among the population',
         indicatorCode: '16.5.1',
         heading: 'Bribery remains widespread, with large differences across regions',
+        heroHeading:
+          'Bribery among the population remains widespread with large differences across countries',
         anchor: 'bribery-among-the-population',
         content: (
           <>
@@ -356,6 +364,7 @@ export function Justice() {
         title: 'Bribery of businesses',
         indicatorCode: '16.5.2',
         heading: 'Businesses also continue to face bribery when interacting with public officials',
+        heroHeading: 'Moderate improvement in business bribery',
         anchor: 'bribery-of-businesses',
         content: (
           <>
@@ -403,6 +412,8 @@ export function Justice() {
         indicatorCode: '16.a.1',
         heading:
           'Progress had stalled in establishing National Human Rights Institutions compliant with the Paris Principles',
+        heroHeading:
+          '89 countries have National Human Rights Institutions fully compliant with the Paris Principles',
         anchor: 'national-human-rights-institutions',
         content: (
           <>

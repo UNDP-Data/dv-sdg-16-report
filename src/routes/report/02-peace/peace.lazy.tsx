@@ -36,6 +36,7 @@ export function Peace() {
         title: 'Conflict-related deaths',
         indicatorCode: '16.1.2',
         heading: 'A civilian dies every 14 minutes in armed conflict',
+        heroHeading: '1 civilian dies every 14 minutes in armed conflict',
         anchor: 'conflict-related-deaths',
         isGenderLens: true,
         content: (
@@ -87,6 +88,7 @@ export function Peace() {
         indicatorCode: '16.1.1',
         heading:
           'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
+        heroHeading: '400,000+ people die of intentional homicide every year',
         anchor: 'homicide',
         isGenderLens: true,
         content: (
@@ -152,6 +154,7 @@ export function Peace() {
         indicatorCode: '16.10.1',
         heading:
           'One human rights defender, journalist or trade unionist is killed or disappeared every 10 hours',
+        heroHeading: '1 human rights defender is killed or disappeared every 10 hours',
         anchor: 'attacks-on-defenders',
         isGenderLens: true,
         content: (
@@ -216,6 +219,7 @@ export function Peace() {
         indicatorCode: '16.1.3',
         heading:
           'Millions of people experience non-lethal violence, with distinct regional and gendered patterns of victimization',
+        heroHeading: 'Millions of people experience non-lethal violence',
         anchor: 'non-lethal-violence',
         isGenderLens: true,
         content: (
@@ -274,6 +278,7 @@ export function Peace() {
         indicatorCode: '16.2.1 & 16.2.3',
         heading:
           'Violence begins early in life, with 1.6 billion children experiencing violent discipline at home',
+        heroHeading: '1.6 billion children experience violent discipline at home',
         anchor: 'violence-against-children',
         isGenderLens: true,
         content: (
@@ -328,6 +333,7 @@ export function Peace() {
         title: 'Trafficking in persons',
         indicatorCode: '16.2.2',
         heading: 'More than one in three detected victims of human trafficking is a child',
+        heroHeading: 'More than 1 in 3 detected trafficking victims is a child',
         anchor: 'trafficking-in-persons',
         isGenderLens: true,
         content: (
@@ -389,6 +395,7 @@ export function Peace() {
         title: 'Perception of safety',
         indicatorCode: '16.1.4',
         heading: 'One in three people globally do not feel safe walking alone at night',
+        heroHeading: '1 in 3 people globally do not feel safe walking alone at night',
         anchor: 'perception-of-safety',
         isGenderLens: true,
         content: (

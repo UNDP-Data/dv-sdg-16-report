@@ -41,6 +41,8 @@ export function Inclusion() {
         indicatorCode: '16.9.1',
         heading:
           'Birth registration continues to expand, but 150 million children remain without a legal identity',
+        heroHeading:
+          'Birth registration continues to expand, but 150 million children remain without a legal identity',
         anchor: 'legal-identity',
         isGenderLens: true,
         content: (
@@ -73,6 +75,7 @@ export function Inclusion() {
         indicatorCode: '16.7.1 (a)',
         heading:
           'Women hold only one in four parliamentary seats, and continue to face persistent barriers in accessing the highest levels of political leadership',
+        heroHeading: 'Women continue to hold only 1 in 4 parliamentary seats',
         anchor: 'representation-in-the-legislature',
         isGenderLens: true,
         content: (
@@ -155,6 +158,8 @@ export function Inclusion() {
         indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
+        heroHeading:
+          'Women remain absent from decision-making roles in the public service and judiciary',
         anchor: 'representation-in-public-service-and-judiciary',
         isGenderLens: true,
         content: (
@@ -249,6 +254,7 @@ export function Inclusion() {
         title: 'Experience of discrimination',
         indicatorCode: '16.b.1',
         heading: 'Nearly one in five people worldwide report experiencing discrimination',
+        heroHeading: 'Nearly 1 in 5 people worldwide experience discrimination',
         anchor: 'experience-of-discrimination',
         isGenderLens: true,
         content: (
@@ -318,6 +324,7 @@ export function Inclusion() {
         title: 'Government expenditures',
         indicatorCode: '16.6.1',
         heading: 'Governments are improving their ability to deliver approved budgets',
+        heroHeading: 'Governments are improving their ability to deliver approved budgets',
         anchor: 'government-expenditures',
         content: (
           <>
@@ -360,6 +367,7 @@ export function Inclusion() {
         title: 'Satisfaction with public services',
         indicatorCode: '16.6.2',
         heading: 'Quality public services remain out of reach for many people',
+        heroHeading: 'Quality public services remain out of reach for many people',
         anchor: 'satisfaction-with-public-services',
         content: (
           <>
@@ -412,6 +420,8 @@ export function Inclusion() {
         title: 'Political voice and responsiveness',
         indicatorCode: '16.7.2',
         heading: 'Fewer than half of people feel they have a say in government decisions',
+        heroHeading:
+          'Fewer than half of people globally feel they have a say in government decisions',
         anchor: 'political-efficacy',
         isGenderLens: true,
         content: (
@@ -464,6 +474,8 @@ export function Inclusion() {
         indicatorCode: '16.10.2',
         heading:
           'Legal guarantees for access to information are widespread, but implementation remains uneven',
+        heroHeading:
+          'Legal guarantees for access to information are widespread but implementation remains uneven',
         anchor: 'access-to-information',
         content: (
           <>
@@ -526,6 +538,7 @@ export function Inclusion() {
         title: 'Representation of developing countries in international organizations',
         indicatorCode: '16.8.1',
         heading: 'Global economic governance has not kept pace with a changing world',
+        heroHeading: 'Global economic governance has not kept pace with a changing world',
         anchor: 'global-governance',
         content: (
           <>

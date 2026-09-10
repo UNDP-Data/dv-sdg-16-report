@@ -116,7 +116,7 @@ export default function HeroBanner({
                 </P>
               ) : null}
               <P marginBottom='none' size='base' className='line-clamp-3 text-content-reverse'>
-                {subsection.heading}
+                {subsection.heroHeading ?? subsection.heading}
               </P>
             </a>
           ))}
