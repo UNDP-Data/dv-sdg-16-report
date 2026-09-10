@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
@@ -432,40 +432,6 @@ export function Peace() {
                 factors, may also influence how women perceive safety in everyday life.
               </P>
             </TextContainer>
-            <WaveDivider src='/imgs/dividers/peace-02.webp' />
-          </>
-        ),
-      },
-      {
-        id: '08',
-        title: 'The role of institutions',
-        indicatorCode: '',
-        heading: 'The role of institutions in promoting peace',
-        anchor: 'role-of-institutions',
-        content: (
-          <>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                The evidence presented across these indicators underscore the important role of
-                institutions in preventing conflict and violence. While the forms of violence
-                differ, from conflict-related deaths and homicide to violence against children,
-                human trafficking and attacks on those defending human rights, outcomes are shaped
-                by the ability of institutions to prevent violence, protect victims, enforce the
-                rule of law and uphold fundamental rights.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Disagreements and competing interests are an inevitable feature of any society.
-                Violence and armed conflict are not. Whether societies experience violence,
-                insecurity and fear depends in large part on the ability of institutions to manage
-                grievances peacefully, deliver justice fairly, provide security and safeguard
-                fundamental freedoms. Effective institutions create peaceful pathways for resolving
-                disputes, seeking justice and holding power to account without resorting to
-                violence. When institutions are weak, inaccessible or non-inclusive, grievances are
-                more likely to go unresolved, trust erodes and the risk of violence becomes more
-                difficult to prevent.
-              </P>
-            </TextContainer>
-            <Spacer size='6xl' />
           </>
         ),
       },
@@ -519,6 +485,39 @@ export function Peace() {
             {section.content}
           </Section>
         ))}
+      </div>
+      <div
+        id='role-of-institutions'
+        className='flex scroll-mt-16 flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
+      >
+        <TextContainer>
+          <div className='h-1 w-16 bg-primary' />
+          <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
+            The role of institutions in promoting peace
+          </H4>
+        </TextContainer>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
+            The evidence presented across these indicators underscore the important role of
+            institutions in preventing conflict and violence. While the forms of violence differ,
+            from conflict-related deaths and homicide to violence against children, human
+            trafficking and attacks on those defending human rights, outcomes are shaped by the
+            ability of institutions to prevent violence, protect victims, enforce the rule of law
+            and uphold fundamental rights.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Disagreements and competing interests are an inevitable feature of any society. Violence
+            and armed conflict are not. Whether societies experience violence, insecurity and fear
+            depends in large part on the ability of institutions to manage grievances peacefully,
+            deliver justice fairly, provide security and safeguard fundamental freedoms. Effective
+            institutions create peaceful pathways for resolving disputes, seeking justice and
+            holding power to account without resorting to violence. When institutions are weak,
+            inaccessible or non-inclusive, grievances are more likely to go unresolved, trust erodes
+            and the risk of violence becomes more difficult to prevent.
+          </P>
+        </TextContainer>
+        <Spacer size='6xl' />
       </div>
       <ChapterEndNav label='Next chapter' title='Justice' to='/report/justice' color='primary' />
     </>

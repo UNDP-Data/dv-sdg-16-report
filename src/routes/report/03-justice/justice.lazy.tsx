@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
@@ -461,53 +461,6 @@ export function Justice() {
                 accessibility, and long-term sustainability of all NHRIs.
               </P>
             </TextContainer>
-            <WaveDivider src='/imgs/dividers/justice-01.webp' />
-          </>
-        ),
-      },
-      {
-        id: '09',
-        title: 'The role of institutions',
-        indicatorCode: '',
-        heading: 'The role of institutions in ensuring access to justice for all',
-        anchor: 'role-of-institutions',
-        content: (
-          <>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                Taken together, the justice indicators point to a common institutional challenge:
-                ensuring that people can access justice, exercise their rights and receive a fair
-                and equal treatment under the law. Disputes are an inevitable part of any society.
-                Injustice is not.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Whether people can obtain redress when their rights are violated depends on
-                institutions that are accessible, impartial and capable of administering justice,
-                upholding the rule of law, protecting human rights and ensuring accountability.
-                Effective institutions provide mechanisms through which people can report crimes,
-                resolve disputes and seek remedies, while safeguarding due process and ensuring that
-                decisions are guided by law rather than by money, influence or status.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Justice also depends on trust. People are more likely to report crimes, seek redress
-                for grievances and comply with laws when they believe institutions will treat them
-                fairly and equally. Independent National Human Rights Institutions play a vital role
-                in this institutional ecosystem by monitoring human rights, promoting accountability
-                and helping ensure that governments fulfil their obligations under international
-                human rights law. Equally important are institutions that combat corruption and
-                organized crime, investigate financial crime, safeguard due process and ensure equal
-                access to justice for all.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Building just societies therefore requires more than laws and formal institutions on
-                paper. It requires institutions that people can access, that apply the law fairly,
-                protect rights and hold both individuals and public authorities accountable. Where
-                these conditions are weak, grievances can remain unresolved, rights unprotected and
-                trust undermined. Where they are strong, institutions provide the mechanisms through
-                which justice can be realized in practice.
-              </P>
-              <Spacer size='6xl' />
-            </TextContainer>
           </>
         ),
       },
@@ -556,6 +509,53 @@ export function Justice() {
             {section.content}
           </Section>
         ))}
+      </div>
+      <div
+        id='role-of-institutions'
+        className='flex scroll-mt-16 flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
+      >
+        <TextContainer>
+          <div className='h-1 w-16 bg-secondary' />
+          <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
+            The role of institutions in ensuring access to justice for all
+          </H4>
+        </TextContainer>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
+            Taken together, the justice indicators point to a common institutional challenge:
+            ensuring that people can access justice, exercise their rights and receive a fair and
+            equal treatment under the law. Disputes are an inevitable part of any society. Injustice
+            is not.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Whether people can obtain redress when their rights are violated depends on institutions
+            that are accessible, impartial and capable of administering justice, upholding the rule
+            of law, protecting human rights and ensuring accountability. Effective institutions
+            provide mechanisms through which people can report crimes, resolve disputes and seek
+            remedies, while safeguarding due process and ensuring that decisions are guided by law
+            rather than by money, influence or status.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Justice also depends on trust. People are more likely to report crimes, seek redress for
+            grievances and comply with laws when they believe institutions will treat them fairly
+            and equally. Independent National Human Rights Institutions play a vital role in this
+            institutional ecosystem by monitoring human rights, promoting accountability and helping
+            ensure that governments fulfil their obligations under international human rights law.
+            Equally important are institutions that combat corruption and organized crime,
+            investigate financial crime, safeguard due process and ensure equal access to justice
+            for all.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Building just societies therefore requires more than laws and formal institutions on
+            paper. It requires institutions that people can access, that apply the law fairly,
+            protect rights and hold both individuals and public authorities accountable. Where these
+            conditions are weak, grievances can remain unresolved, rights unprotected and trust
+            undermined. Where they are strong, institutions provide the mechanisms through which
+            justice can be realized in practice.
+          </P>
+          <Spacer size='6xl' />
+        </TextContainer>
       </div>
 
       <ChapterEndNav

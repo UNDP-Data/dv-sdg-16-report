@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -559,61 +559,6 @@ export function Inclusion() {
             <GraphContainer>
               <VoteSharesByInstitutionDumbbellChart />
             </GraphContainer>
-            <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
-          </>
-        ),
-      },
-      {
-        id: '10',
-        title: 'The role of institutions',
-        indicatorCode: '',
-        heading: 'The role of institutions in building inclusive societies',
-        anchor: 'role-of-institutions',
-        content: (
-          <>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                Institutions play a crucial role in ensuring that all people are recognized,
-                represented and able to participate meaningfully in public life. The evidence
-                presented across these indicators highlights the many ways in which institutions
-                shape inclusion, equal participation and equitable access to opportunities and
-                services. Whether people feel included depends heavily on the ability of
-                institutions to recognize individuals, protect their rights and respond to their
-                needs.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Inclusive institutions ensure that every person is legally recognized through a
-                legal identity, protected from discrimination, represented in public
-                decision-making, able to access information and public services on equal terms, and
-                empowered to participate in decisions that shape their lives. They also ensure that
-                governments respond fairly and effectively to the needs of all people by delivering
-                quality public services that are accessible, responsive and equitable, regardless of
-                gender, age, disability, ethnicity, income or other characteristics. In doing so,
-                inclusive institutions strengthen the relationship between people and the state by
-                demonstrating that public institutions serve everyone fairly rather than a
-                privileged few.
-              </P>
-              <P marginBottom='none' size='lg'>
-                The indicators presented in this chapter illustrate both areas of progress and
-                persistent gaps in achieving these objectives. They show the extent to which people
-                are legally recognized, represented in public institutions, protected from
-                discrimination and able to access public services and information. Together, they
-                provide a picture of how effectively institutions promote inclusion and support
-                meaningful participation in society.
-              </P>
-              <P marginBottom='none' size='lg'>
-                When institutions function effectively, they help reduce barriers, expand
-                opportunities and strengthen social cohesion. When institutions fail to share power
-                equitably, exclusion deepens, discrimination persists, public services become less
-                responsive, and decisions become less representative of the societies they serve.
-                Trust in public institutions erodes as people lose confidence that they are
-                recognized, treated equally and able to influence public decisions. Building
-                inclusive societies therefore requires institutions that not only serve people, but
-                also ensure that everyone has a place, a voice and an equal opportunity to
-                participate in shaping their future.
-              </P>
-            </TextContainer>
-            <Spacer size='6xl' />
           </>
         ),
       },
@@ -663,6 +608,58 @@ export function Inclusion() {
             {section.content}
           </Section>
         ))}
+      </div>
+      <div
+        id='role-of-institutions'
+        className='flex flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
+      >
+        <TextContainer>
+          <div className='h-1 w-16 bg-tertiary' />
+          <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
+            The role of institutions in building inclusive societies
+          </H4>
+        </TextContainer>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
+            Institutions play a crucial role in ensuring that all people are recognized, represented
+            and able to participate meaningfully in public life. The evidence presented across these
+            indicators highlights the many ways in which institutions shape inclusion, equal
+            participation and equitable access to opportunities and services. Whether people feel
+            included depends heavily on the ability of institutions to recognize individuals,
+            protect their rights and respond to their needs.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Inclusive institutions ensure that every person is legally recognized through a legal
+            identity, protected from discrimination, represented in public decision-making, able to
+            access information and public services on equal terms, and empowered to participate in
+            decisions that shape their lives. They also ensure that governments respond fairly and
+            effectively to the needs of all people by delivering quality public services that are
+            accessible, responsive and equitable, regardless of gender, age, disability, ethnicity,
+            income or other characteristics. In doing so, inclusive institutions strengthen the
+            relationship between people and the state by demonstrating that public institutions
+            serve everyone fairly rather than a privileged few.
+          </P>
+          <P marginBottom='none' size='lg'>
+            The indicators presented in this chapter illustrate both areas of progress and
+            persistent gaps in achieving these objectives. They show the extent to which people are
+            legally recognized, represented in public institutions, protected from discrimination
+            and able to access public services and information. Together, they provide a picture of
+            how effectively institutions promote inclusion and support meaningful participation in
+            society.
+          </P>
+          <P marginBottom='none' size='lg'>
+            When institutions function effectively, they help reduce barriers, expand opportunities
+            and strengthen social cohesion. When institutions fail to share power equitably,
+            exclusion deepens, discrimination persists, public services become less responsive, and
+            decisions become less representative of the societies they serve. Trust in public
+            institutions erodes as people lose confidence that they are recognized, treated equally
+            and able to influence public decisions. Building inclusive societies therefore requires
+            institutions that not only serve people, but also ensure that everyone has a place, a
+            voice and an equal opportunity to participate in shaping their future.
+          </P>
+        </TextContainer>
+        <Spacer size='6xl' />
       </div>
 
       <ChapterEndNav
