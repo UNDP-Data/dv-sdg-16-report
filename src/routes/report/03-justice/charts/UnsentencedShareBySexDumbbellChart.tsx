@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DumbbellChart } from '@undp/data-viz/DumbbellChart';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
@@ -34,12 +35,12 @@ export default function UnsentencedShareBySexDumbbellChart() {
       minValue={0}
       maxValue={100}
       showTicks={false}
-      showValues={innerWidth >= 720}
+      showValues={false}
       leftMargin={innerWidth < 720 ? 135 : 220}
       truncateBy={innerWidth < 720 ? 16 : undefined}
       minHeight={580}
       relativeHeight={0.8}
-      numberDisplayOptions={{ suffix: '%' }}
+      numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}
       styles={{ tooltip: { padding: 0 } }}
       tooltip={(d) => (
@@ -52,14 +53,18 @@ export default function UnsentencedShareBySexDumbbellChart() {
               <span className='h-2 w-2 rounded-full bg-categorical-female' />
               Women
             </span>
-            <span className='font-bold text-categorical-female'>{d.x[0]}%</span>
+            <span className='font-bold text-categorical-female'>
+              {numberFormattingFunction(d.x[0], 'N/A', 1, undefined, '%')}
+            </span>
           </P>
           <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
             <span className='flex items-center gap-1'>
               <span className='h-2 w-2 rounded-full bg-categorical-male' />
               Men
             </span>
-            <span className='font-bold text-categorical-male'>{d.x[1]}%</span>
+            <span className='font-bold text-categorical-male'>
+              {numberFormattingFunction(d.x[1], 'N/A', 1, undefined, '%')}
+            </span>
           </P>
         </div>
       )}

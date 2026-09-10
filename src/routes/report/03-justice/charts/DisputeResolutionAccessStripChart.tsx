@@ -56,7 +56,7 @@ export default function DisputeResolutionAccessStripChart() {
         maxValue={100}
         noOfTicks={5}
         height={80}
-        numberDisplayOptions={{ suffix: '%' }}
+        numberDisplayOptions={{ suffix: '%', precision: 1 }}
         padding='0'
         styles={{ tooltip: { padding: 0 } }}
         tooltip={(d) => (
@@ -70,7 +70,7 @@ export default function DisputeResolutionAccessStripChart() {
                 {d.label} ({d.data.year})
               </P>
               <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
-                {numberFormattingFunction(d.position)}%
+                {numberFormattingFunction(d.position, undefined, 1)}%
               </P>
             </div>
           </div>

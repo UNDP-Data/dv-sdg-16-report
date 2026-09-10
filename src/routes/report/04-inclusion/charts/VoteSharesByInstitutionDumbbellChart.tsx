@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DumbbellChart } from '@undp/data-viz/DumbbellChart';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
@@ -71,7 +72,7 @@ export default function VoteSharesByInstitutionDumbbellChart() {
                   />
                   {row.label}
                 </span>
-                <span>{row.value !== null ? `${row.value}%` : 'N/A'}</span>
+                <span>{numberFormattingFunction(row.value, 'N/A', 1, undefined, '%')}</span>
               </P>
             ))}
           </div>

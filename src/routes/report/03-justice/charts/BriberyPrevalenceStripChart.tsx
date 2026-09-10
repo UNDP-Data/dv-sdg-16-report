@@ -133,7 +133,7 @@ export default function BriberyPrevalenceStripChart() {
           height={selectedGrouping === 'region' ? 450 : 280}
           dimmedOpacity={0.1}
           padding='0'
-          numberDisplayOptions={{ suffix: '%' }}
+          numberDisplayOptions={{ suffix: '%', precision: 1 }}
           styles={{
             tooltip: { padding: 0 },
             xAxis: { labels: { transform: 'translateY(-32px)' } },

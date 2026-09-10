@@ -132,7 +132,7 @@ export default function NonLethalViolenceByTypeSexStripChart() {
             topMargin={32}
             bottomMargin={8}
             dimmedOpacity={0.1}
-            numberDisplayOptions={{ suffix: '%' }}
+            numberDisplayOptions={{ suffix: '%', precision: 1 }}
             backgroundColor={false}
             padding='0'
             classNames={index === 0 ? undefined : { xAxis: { labels: 'hidden' } }}
@@ -151,7 +151,9 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                     {d.label}
                   </P>
                   <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
-                    <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                    <span className='font-bold'>
+                      {numberFormattingFunction(d.position, undefined, 1)}%
+                    </span>
                     <span className='text-content-secondary text-xs'>({d.data.year})</span>
                   </P>
                 </div>

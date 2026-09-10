@@ -144,7 +144,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
         topMargin={32}
         bottomMargin={20}
         dimmedOpacity={0.1}
-        numberDisplayOptions={{ suffix: '%' }}
+        numberDisplayOptions={{ suffix: '%', precision: 1 }}
         backgroundColor={false}
         padding='0'
         styles={{
@@ -162,7 +162,9 @@ export default function SatisfactionWithPublicServicesStripChart() {
                 {d.label}
               </P>
               <P size='sm' marginBottom='none'>
-                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                <span className='font-bold'>
+                  {numberFormattingFunction(d.position, undefined, 1)}%
+                </span>
               </P>
             </div>
           </div>

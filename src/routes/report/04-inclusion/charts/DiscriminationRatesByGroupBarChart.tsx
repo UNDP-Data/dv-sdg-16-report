@@ -20,10 +20,10 @@ export default function DiscriminationRatesByGroupBarChart() {
           </P>
           <SimpleBarGraph
             data={[
-              { label: 'Heterosexual', size: 18, color: 'Reference group' },
+              { label: 'Heterosexual', size: 18.9, color: 'Reference group' },
               {
                 label: 'Sexual minority',
-                size: 41,
+                size: 41.75,
                 color: 'Group reporting higher discrimination',
               },
             ]}
@@ -40,7 +40,7 @@ export default function DiscriminationRatesByGroupBarChart() {
             showValues
             valueColor='var(--content-primary)'
             showTicks={false}
-            numberDisplayOptions={{ suffix: '%', precision: 0 }}
+            numberDisplayOptions={{ suffix: '%', precision: 1 }}
             padding='0'
             backgroundColor={false}
             styles={{
@@ -62,7 +62,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                     />
                     Heterosexual
                   </span>
-                  <span>18%</span>
+                  <span>18.9%</span>
                 </P>
                 <P
                   size='sm'
@@ -76,14 +76,14 @@ export default function DiscriminationRatesByGroupBarChart() {
                     />
                     Sexual minority
                   </span>
-                  <span>41%</span>
+                  <span>41.8%</span>
                 </P>
                 <P size='sm' marginBottom='none' className='text-content-secondary'>
-                  Difference: +23 percentage points
+                  Difference: +22.9 percentage points
                 </P>
               </div>
             )}
-            ariaLabel='Bar chart comparing discrimination rates for heterosexual people (18%) and non-heterosexual people (41%), a difference of 23 percentage points.'
+            ariaLabel='Bar chart comparing discrimination rates for heterosexual people (18.9%) and non-heterosexual people (41.8%), a difference of 22.9 percentage points.'
           />
         </div>
 
@@ -93,8 +93,12 @@ export default function DiscriminationRatesByGroupBarChart() {
           </P>
           <SimpleBarGraph
             data={[
-              { label: 'Total population', size: 20, color: 'Reference group' },
-              { label: 'Transgender', size: 53, color: 'Group reporting higher discrimination' },
+              { label: 'Total population', size: 20.28, color: 'Reference group' },
+              {
+                label: 'Transgender',
+                size: 53.2,
+                color: 'Group reporting higher discrimination',
+              },
             ]}
             orientation='horizontal'
             colorDomain={['Reference group', 'Group reporting higher discrimination']}
@@ -110,7 +114,7 @@ export default function DiscriminationRatesByGroupBarChart() {
             showValues
             valueColor='var(--content-primary)'
             showTicks={false}
-            numberDisplayOptions={{ suffix: '%', precision: 0 }}
+            numberDisplayOptions={{ suffix: '%', precision: 1 }}
             padding='0'
             backgroundColor={false}
             styles={{
@@ -132,7 +136,7 @@ export default function DiscriminationRatesByGroupBarChart() {
                     />
                     Total population
                   </span>
-                  <span>20%</span>
+                  <span>20.3%</span>
                 </P>
                 <P
                   size='sm'
@@ -146,14 +150,14 @@ export default function DiscriminationRatesByGroupBarChart() {
                     />
                     Transgender
                   </span>
-                  <span>53%</span>
+                  <span>53.2%</span>
                 </P>
                 <P size='sm' marginBottom='none' className='text-content-secondary'>
-                  Difference: +33 percentage points
+                  Difference: +32.9 percentage points
                 </P>
               </div>
             )}
-            ariaLabel='Bar chart comparing discrimination rates for the total population (20%) and transgender people (53%), a difference of 33 percentage points.'
+            ariaLabel='Bar chart comparing discrimination rates for the total population (20.3%) and transgender people (53.2%), a difference of 32.9 percentage points.'
           />
         </div>
       </div>
