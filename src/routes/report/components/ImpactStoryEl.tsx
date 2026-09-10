@@ -39,7 +39,7 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
       <Comp className='w-full'>
         <div
           className='h-full w-full bg-bottom-right bg-cover'
-          style={{ backgroundImage: `url('/imgs/chapters/default-hero.webp')` }}
+          style={{ backgroundImage: `url('/imgs/report/default-hero.webp')` }}
         >
           <div className='mx-auto flex max-w-300 flex-col gap-4 px-6 py-14 md:px-12 md:py-20'>
             <div className='flex max-w-xl flex-col gap-6'>

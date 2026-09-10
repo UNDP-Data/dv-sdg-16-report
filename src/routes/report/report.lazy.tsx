@@ -11,7 +11,7 @@ export function Report() {
     <>
       <section
         className='bg-bottom-right bg-cover bg-foreground-soft px-6 py-16 md:px-12 md:py-24'
-        style={{ backgroundImage: `url('/imgs/chapters/impact-story-bg.webp')` }}
+        style={{ backgroundImage: `url('/imgs/report/impact-story-bg.webp')` }}
       >
         <div className='mx-auto flex max-w-300 flex-col gap-4'>
           <P

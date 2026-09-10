@@ -474,7 +474,7 @@ export function Peace() {
       <ChapterSubNav chapterTitle='Peace' label='Chapter' subsections={sections} />
       <ChapterHero
         chapterNumber={1}
-        bg='/imgs/chapters/peace-hero.webp'
+        bg='/imgs/report/peace-hero.webp'
         title='Peace'
         intro={
           <>
@@ -489,7 +489,7 @@ export function Peace() {
         color='primary'
         subsections={sections}
       />
-      <TargetsDrawer chapterTitle='Peace' bg='/imgs/chapters/peace-texture.webp' color='primary' />
+      <TargetsDrawer chapterTitle='Peace' bg='/imgs/report/peace-texture.webp' color='primary' />
       <Spacer size='8xl' />
       <TextContainer>
         <P marginBottom='none' size='lg'>
