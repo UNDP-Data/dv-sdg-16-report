@@ -172,7 +172,7 @@ export function SDG16Progress() {
               href='https://www.undp.org/publications/sdg16-survey-initiative'
               target='_blank'
               rel='noreferrer'
-              className='text-accent-teal underline decoration-dotted underline-offset-4'
+              className='text-blue-500 underline underline-offset-4 hover:no-underline'
             >
               SDG 16 Survey Initiative
             </a>
