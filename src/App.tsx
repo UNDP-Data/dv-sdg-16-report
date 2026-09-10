@@ -156,7 +156,7 @@ function App() {
 
           <section
             className='relative mx-6 my-8 flex flex-col justify-center bg-bottom-right bg-cover bg-foreground-soft px-6 py-24 md:mx-12 md:my-12 md:px-12 md:py-28 lg:min-h-144'
-            style={{ backgroundImage: `url('/imgs/banner-bg.webp')` }}
+            style={{ backgroundImage: `url('/imgs/chapters/default-hero.webp')` }}
           >
             <BannerContainer>
               <P
