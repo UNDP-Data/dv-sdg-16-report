@@ -84,11 +84,12 @@ export function Foreword() {
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
-                  Name Surname
+                  Volker Türk
                 </P>
                 <P marginBottom='none' size='sm' className='text-content-secondary'>
-                  Position <br />
-                  Organization
+                  High Commissioner for Human Rights
+                  <br />
+                  OHCHR
                 </P>
               </div>
             </div>
@@ -103,11 +104,12 @@ export function Foreword() {
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
-                  Name Surname
+                  Alexander De Croo
                 </P>
                 <P marginBottom='none' size='sm' className='text-content-secondary'>
-                  Position <br />
-                  Organization
+                  Administrator
+                  <br />
+                  UNDP
                 </P>
               </div>
             </div>
@@ -118,11 +120,12 @@ export function Foreword() {
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
-                  Name Surname
+                  Catherine Russell
                 </P>
                 <P marginBottom='none' size='sm' className='text-content-secondary'>
-                  Position <br />
-                  Organization
+                  Executive Director
+                  <br />
+                  UNICEF
                 </P>
               </div>
             </div>
@@ -137,11 +140,12 @@ export function Foreword() {
               <PlaceholderBlock label='Signature' />
               <div>
                 <P marginBottom='none' weight='semibold' size='base'>
-                  Name Surname
+                  Monica Juma
                 </P>
                 <P marginBottom='none' size='sm' className='text-content-secondary'>
-                  Position <br />
-                  Organization
+                  Executive Director
+                  <br />
+                  UNODC
                 </P>
               </div>
             </div>
