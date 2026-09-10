@@ -14,6 +14,8 @@ const NUM_OF_VICTIMS_ONE_DAY = 102;
 const NUM_OF_VICTIMS_ONE_YEAR = 37163;
 const NUM_OF_CHILDREN_VICTIMS_ONE_YEAR = 7377;
 const NUM_OF_FEMALE_VICTIMS_ONE_YEAR = 6657;
+const NUM_OF_WOMEN_AND_CHILDREN_VICTIMS_ONE_YEAR =
+  NUM_OF_CHILDREN_VICTIMS_ONE_YEAR + NUM_OF_FEMALE_VICTIMS_ONE_YEAR;
 
 const NUM_OF_VICTIMS_WA_NA = 24156;
 const NUM_OF_VICTIMS_SSA = 8919;
@@ -90,7 +92,7 @@ const SLIDES = [
       <>
         Children accounted for{' '}
         <span className='py-3 font-bold text-categorical-child leading-none'>
-          1 in 5 recorded civilian deaths (20%).
+          one in five recorded civilian deaths (20%).
         </span>{' '}
         Among child victims, <strong>three boys were killed for every two girls</strong>.
       </>
@@ -99,27 +101,24 @@ const SLIDES = [
   },
   {
     vizContent: {
-      keyNumber: NUM_OF_FEMALE_VICTIMS_ONE_YEAR,
+      keyNumber: NUM_OF_WOMEN_AND_CHILDREN_VICTIMS_ONE_YEAR,
       time: '2025',
-      category: 'female victims',
+      category: 'women and children victims',
       backgroundTrackPathLength: 1,
-      animatedTrackPathLength: NUM_OF_FEMALE_VICTIMS_ONE_YEAR / NUM_OF_VICTIMS_ONE_YEAR,
+      animatedTrackPathLength: NUM_OF_WOMEN_AND_CHILDREN_VICTIMS_ONE_YEAR / NUM_OF_VICTIMS_ONE_YEAR,
       showFirstDot: false,
       showIndividualDots: false,
     },
     slideContent: (
       <>
-        Women made up{' '}
-        <span className='font-bold text-categorical-female'>
-          18% of documented civilian deaths.
+        Women made up 18% of documented civilian deaths. Combined,{' '}
+        <span className='font-bold text-quaternary'>
+          women and children accounted for more than a third (38%)
         </span>{' '}
-        <br />
-        <br />
-        Combined, <strong>women and children accounted for more than a third (38%)</strong> of all
-        civilian fatalities.
+        of all civilian fatalities.
       </>
     ),
-    color: 'categorical-female',
+    color: 'quaternary',
   },
   {
     vizContent: {
