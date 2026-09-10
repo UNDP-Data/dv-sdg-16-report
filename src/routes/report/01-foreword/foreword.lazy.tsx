@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
-import PlaceholderBlock from '@/components/PlaceholderBlock';
+import { UserRound } from 'lucide-react';
 
 export function Foreword() {
   return (
@@ -38,7 +38,7 @@ export function Foreword() {
           </P>
           <P marginBottom='xs' size='lg'>
             This report examines global progress towards Sustainable Development Goal (SDG) 16. The
-            evidence presented here demonstrates that Goal 16 is not simply one of 17 goals. Peace,
+            evidence presented here reminds us that Goal 16 is not simply one of 17 goals. Peace,
             justice and inclusive institutions are the foundations on which progress across the
             entire 2030 Agenda depends.
           </P>
@@ -46,19 +46,20 @@ export function Foreword() {
             Drawing on the latest global evidence, the report presents a mixed picture of progress.
             Important gains have been achieved in several areas, from expanding legal identity and
             women’s representation in public institutions to the establishment of independent human
-            rights institutions and access to information laws. Yet progress remains uneven.
-            Violence and discrimination continue to affect millions of people, barriers to justice
-            persist, and progress across several indicators has stalled or remains too slow to meet
-            the ambitions of the 2030 Agenda.
+            rights institutions and access to information laws. Yet progress remains uneven. Large
+            shares of the population continue to experience violence and discrimination, barriers to
+            justice persist, and progress across several indicators has stalled or remains too slow
+            to meet the ambitions of the 2030 Agenda.
           </P>
           <P marginBottom='xs' size='lg'>
             The findings of this report point to a clear lesson: lasting progress depends on
             sustained political commitment, long-term investment, strong partnerships and
             institutions that earn and maintain public trust. They also reinforce the importance of
-            prevention. Investing early in children, families and communities, while strengthening
-            justice systems, accountable governance, public integrity, human rights protection and
-            effective public services is far less costly — and far more effective — than responding
-            after violence, conflict, corruption or exclusion have already taken hold.
+            prevention. Investing early in children, women, and those at risk of being left behind,
+            while strengthening justice systems, human rights protection, accountable governance,
+            public integrity and effective public services is far less costly — and far more
+            effective — than responding after violence, conflict, corruption or exclusion have
+            already taken hold.
           </P>
           <P marginBottom='xs' size='lg'>
             As we enter the final years of the 2030 Agenda, the message is both urgent and hopeful.
@@ -73,81 +74,103 @@ export function Foreword() {
       <section className='px-6 pb-16 md:px-12 md:pb-24'>
         <div className='mx-auto max-w-300'>
           <div className='grid lg:grid-cols-4'>
-            <div className='flex flex-col gap-4 border-stroke-sm border-b pb-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
-              <div className='flex h-36 items-center justify-center'>
+            <div className='flex flex-col items-center gap-4 border-stroke-sm border-b pb-8 text-center lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div className='aspect-square w-28 overflow-hidden rounded-full'>
                 <img
-                  src='/imgs/logos/ohchr.svg'
-                  alt='United Nations Human Rights, Office of the High Commissioner'
-                  className='h-30'
+                  src='/imgs/portraits/volker-turk.webp'
+                  alt='Volker Türk'
+                  className='h-full w-full object-cover'
+                  style={{ objectPosition: '50% 10%', transform: 'scale(1.2)' }}
                 />
               </div>
-              <PlaceholderBlock label='Signature' />
-              <div>
-                <P marginBottom='none' weight='semibold' size='base'>
+              <div className='text-center'>
+                <P marginBottom='none' weight='semibold' size='base' className='text-center'>
                   Volker Türk
                 </P>
-                <P marginBottom='none' size='sm' className='text-content-secondary'>
+                <P marginBottom='none' size='sm' className='text-center text-content-secondary'>
                   High Commissioner for Human Rights
                   <br />
                   OHCHR
                 </P>
               </div>
+              <img
+                src='/imgs/logos/ohchr.svg'
+                alt='United Nations Human Rights, Office of the High Commissioner'
+                className='h-30'
+              />
             </div>
-            <div className='flex flex-col gap-4 border-stroke-sm border-b py-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
-              <div className='flex h-36 items-center justify-center'>
+            <div className='flex flex-col items-center gap-4 border-stroke-sm border-b py-8 text-center lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div className='aspect-square w-28 overflow-hidden rounded-full'>
                 <img
-                  src='/imgs/logos/undp.svg'
-                  alt='United Nations Development Programme'
-                  className='h-35'
+                  src='/imgs/portraits/alexander-de-croo.webp'
+                  alt='Alexander De Croo'
+                  className='h-full w-full object-cover'
+                  style={{
+                    objectPosition: '50% 18%',
+                    transform: 'scale(1.4)',
+                    transformOrigin: '55% 20%',
+                  }}
                 />
               </div>
-              <PlaceholderBlock label='Signature' />
-              <div>
-                <P marginBottom='none' weight='semibold' size='base'>
+              <div className='text-center'>
+                <P marginBottom='none' weight='semibold' size='base' className='text-center'>
                   Alexander De Croo
                 </P>
-                <P marginBottom='none' size='sm' className='text-content-secondary'>
+                <P marginBottom='none' size='sm' className='text-center text-content-secondary'>
                   Administrator
                   <br />
                   UNDP
                 </P>
               </div>
+              <img
+                src='/imgs/logos/undp.svg'
+                alt='United Nations Development Programme'
+                className='h-35'
+              />
             </div>
-            <div className='flex flex-col gap-4 border-stroke-sm border-b py-6 lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
-              <div className='flex h-36 items-center justify-center'>
-                <img src='/imgs/logos/unicef.svg' alt='UNICEF, for every child' className='h-33' />
+            <div className='flex flex-col items-center gap-4 border-stroke-sm border-b py-8 text-center lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
+              <div
+                className='flex aspect-square w-28 items-center justify-center rounded-full bg-gray-100'
+                aria-hidden='true'
+              >
+                <UserRound className='h-12 w-12 text-gray-300' strokeWidth={1.5} />
               </div>
-              <PlaceholderBlock label='Signature' />
-              <div>
-                <P marginBottom='none' weight='semibold' size='base'>
+              <div className='text-center'>
+                <P marginBottom='none' weight='semibold' size='base' className='text-center'>
                   Catherine Russell
                 </P>
-                <P marginBottom='none' size='sm' className='text-content-secondary'>
+                <P marginBottom='none' size='sm' className='text-center text-content-secondary'>
                   Executive Director
                   <br />
                   UNICEF
                 </P>
               </div>
+              <img src='/imgs/logos/unicef.svg' alt='UNICEF, for every child' className='h-33' />
             </div>
-            <div className='flex flex-col gap-4 pt-6 lg:px-6 lg:py-0'>
-              <div className='flex h-36 items-center justify-center'>
+            <div className='flex flex-col items-center gap-4 pt-8 text-center lg:px-6 lg:py-0'>
+              <div className='aspect-square w-28 overflow-hidden rounded-full'>
                 <img
-                  src='/imgs/logos/unodc.svg'
-                  alt='United Nations Office on Drugs and Crime'
-                  className='h-30'
+                  src='/imgs/portraits/monica-juma.webp'
+                  alt='Monica Juma'
+                  className='h-full w-full object-cover'
+                  style={{ objectPosition: '50% 0%', transform: 'scale(1.1) translateX(-4%)' }}
                 />
               </div>
-              <PlaceholderBlock label='Signature' />
-              <div>
-                <P marginBottom='none' weight='semibold' size='base'>
+              <div className='text-center'>
+                <P marginBottom='none' weight='semibold' size='base' className='text-center'>
                   Monica Juma
                 </P>
-                <P marginBottom='none' size='sm' className='text-content-secondary'>
+                <P marginBottom='none' size='sm' className='text-center text-content-secondary'>
                   Executive Director
                   <br />
                   UNODC
                 </P>
               </div>
+              <img
+                src='/imgs/logos/unodc.svg'
+                alt='United Nations Office on Drugs and Crime'
+                className='h-30'
+              />
             </div>
           </div>
         </div>
