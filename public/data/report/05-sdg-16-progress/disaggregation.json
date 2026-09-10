@@ -175,7 +175,7 @@
       {
         "category": "Sex",
         "value": 0,
-        "state": "good"
+        "state": "gap"
       },
       {
         "category": "Age",
@@ -536,7 +536,7 @@
       {
         "category": "Education",
         "value": 0,
-        "state": "beyond"
+        "state": "none"
       },
       {
         "category": "Income",
@@ -652,7 +652,7 @@
       {
         "category": "Population group",
         "value": 5,
-        "state": "gap"
+        "state": "good"
       },
       {
         "category": "Location",
