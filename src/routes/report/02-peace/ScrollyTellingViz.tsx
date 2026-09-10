@@ -211,7 +211,7 @@ export default function ScrollyTellingViz() {
         <div
           className='sticky top-0 h-screen w-full bg-cover bg-top-right bg-no-repeat'
           style={{
-            backgroundImage: "url('/imgs/scrolly-bg.webp')",
+            backgroundImage: "url('/imgs/report/scrolly-bg.webp')",
             maskImage:
               'linear-gradient(to bottom, transparent 0, black 25vh, black 75vh, transparent 100vh)',
             WebkitMaskImage:
