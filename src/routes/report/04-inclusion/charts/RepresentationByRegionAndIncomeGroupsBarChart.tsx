@@ -54,8 +54,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
       <div className='flex w-full flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-            Women's representation within the{' '}
-            {selectedSector === 'publicService' ? 'public service' : 'judiciary'}
+            Women's representation within the public service and the judiciary
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
             2025 or latest year available
@@ -82,7 +81,6 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
             'barChart',
             [
               { columnId: 'label', chartConfigId: 'label' },
-              { columnId: 'groupType', chartConfigId: 'color' },
               {
                 columnId: selectedSector,
                 chartConfigId: 'size',
@@ -90,12 +88,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
             ],
           )}
           orientation='horizontal'
-          colorDomain={['global', selectedGrouping]}
-          colors={
-            selectedSector === 'publicService'
-              ? ['color-mix(in srgb, var(--blue-600) 70%, black)', 'var(--blue-600)']
-              : ['color-mix(in srgb, var(--primary) 70%, black)', 'var(--primary)']
-          }
+          colors={selectedSector === 'publicService' ? 'var(--blue-600)' : 'var(--primary)'}
           showColorScale={false}
           animate
           minValue={0}
@@ -194,7 +187,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
               }
             />
           }
-          ariaLabel={`Bar chart showing women's representation ratio in the ${selectedSector === 'publicService' ? 'public service' : 'judiciary'} by ${selectedGrouping === 'region' ? 'region' : 'income group'}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Bars falling short of the line indicate underrepresentation and bars passing it indicate overrepresentation. The world average is shown as the first bar in a darker shade.`}
+          ariaLabel={`Bar chart showing women's representation ratio in the ${selectedSector === 'publicService' ? 'public service' : 'judiciary'} by ${selectedGrouping === 'region' ? 'region' : 'income group'}. Each bar runs from zero to the representation ratio, and a reference line marks parity at 1.00. Bars falling short of the line indicate underrepresentation and bars passing it indicate overrepresentation. The world average is shown as the first bar.`}
         />
       </div>
     </div>
