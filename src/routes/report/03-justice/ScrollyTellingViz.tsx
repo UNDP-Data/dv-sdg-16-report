@@ -24,7 +24,7 @@ const SLIDES = [
   {
     vizContent: {
       reportedCount: 46,
-      caption: null,
+      caption: 'of violence is reported',
       color: 'gray-500',
       nonReportedDotOpacity: 0.4,
     },
@@ -207,30 +207,34 @@ export default function ScrollyTellingViz() {
               })}
             </g>
 
-            <circle
-              cx={graphWidth / 2}
-              cy={graphHeight / 2}
-              r={Math.max(60, graphRadius / 3)}
-              className='fill-none stroke-2 stroke-gray-500'
-              strokeDasharray='2 8'
-              strokeLinecap='round'
-            />
-            <motion.g
-              animate={{ opacity: activeSlideIndex === 0 ? 1 : 0 }}
-              transition={{ duration: 0.5 }}
+            <g
+              transform={`translate(${graphWidth / 2}, ${graphHeight / 2 - SCROLLY_NUMBER_AREA_HEIGHT / 2})
+              `}
             >
-              <foreignObject
-                x={graphWidth / 2 - Math.max(60, graphRadius / 3)}
-                y={graphHeight / 2 - Math.max(60, graphRadius / 3)}
-                width={Math.max(60, graphRadius / 3) * 2}
-                height={Math.max(60, graphRadius / 3) * 2}
+              <circle
+                cx={0}
+                cy={0}
+                r={Math.max(60, graphRadius / 3)}
+                className='fill-none stroke-2 stroke-gray-500'
+                strokeDasharray='2 8'
+                strokeLinecap='round'
+              />
+              <motion.g
+                animate={{ opacity: activeSlideIndex === 0 ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
               >
-                <div className='flex h-full w-full items-center justify-center px-4 text-center text-gray-500 text-sm leading-sm'>
-                  only reported cases enter here
-                </div>
-              </foreignObject>
-            </motion.g>
-
+                <foreignObject
+                  x={-Math.max(60, graphRadius / 3)}
+                  y={-Math.max(60, graphRadius / 3)}
+                  width={Math.max(60, graphRadius / 3) * 2}
+                  height={Math.max(60, graphRadius / 3) * 2}
+                >
+                  <div className='flex h-full w-full items-center justify-center px-4 text-center text-gray-500 text-sm leading-sm'>
+                    only reported cases enter here
+                  </div>
+                </foreignObject>
+              </motion.g>
+            </g>
             <motion.g
               animate={{ opacity: activeSlide.vizContent.caption ? 1 : 0 }}
               transition={{ duration: 0.5 }}
