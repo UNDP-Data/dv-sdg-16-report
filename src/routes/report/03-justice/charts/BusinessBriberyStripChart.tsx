@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
+import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
 import { Button } from '@undp/design-system-react/Button';
 import { SegmentedControl } from '@undp/design-system-react/SegmentedControl';
 import { Spinner } from '@undp/design-system-react/Spinner';
@@ -18,17 +18,29 @@ import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
 import ChartNote from '../../components/ChartNote';
 
+interface DataType {
+  country: string;
+  iso3: string;
+  region: string;
+  incomeGroup: string;
+  value: number;
+  year: number;
+}
+
 function useData() {
   return useQuery({
     queryKey: ['business-bribery-by-country'],
     queryFn: () =>
-      fetchAndParseJSON('/data/report/03-justice/16-5-2/business-bribery-by-country.json'),
+      fetchAndParseJSON(
+        '/data/report/03-justice/16-5-2/business-bribery-by-country.json',
+      ) as Promise<DataType[]>,
   });
 }
 
 export default function BusinessBriberyStripChart() {
   const [selectedGrouping, setSelectedGrouping] = useState<'region' | 'incomeGroup'>('region');
   const { data, isLoading, isError } = useData();
+  const leftMargin = innerWidth < 720 ? 135 : 220;
 
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError) return <ErrorEl />;
@@ -96,8 +108,30 @@ export default function BusinessBriberyStripChart() {
             </TooltipProvider>
           </div>
         </div>
+
+        <div
+          className='flex justify-between pr-2.5 *:flex *:w-0 *:justify-center *:whitespace-nowrap *:text-content-quaternary'
+          style={{ paddingLeft: leftMargin }}
+        >
+          <P marginBottom='none' size='xs'>
+            0%
+          </P>
+          <P marginBottom='none' size='xs'>
+            15%
+          </P>
+          <P marginBottom='none' size='xs'>
+            30%
+          </P>
+          <P marginBottom='none' size='xs'>
+            45%
+          </P>
+          <P marginBottom='none' size='xs'>
+            60%
+          </P>
+        </div>
+
         <StripChart
-          data={transformDataForGraph(data, 'stripChart', [
+          data={transformDataForGraph(data ?? [], 'stripChart', [
             { columnId: 'country', chartConfigId: 'label' },
             { columnId: 'value', chartConfigId: 'position' },
             { columnId: selectedGrouping, chartConfigId: 'group' },
@@ -119,40 +153,65 @@ export default function BusinessBriberyStripChart() {
           stripType='dot'
           colors={['var(--blue-400)']}
           dimmedOpacity={0.1}
-          leftMargin={innerWidth < 720 ? 135 : 220}
+          leftMargin={leftMargin}
+          rightMargin={10}
           truncateBy={innerWidth < 720 ? 16 : undefined}
-          topMargin={32}
-          noOfTicks={5}
+          topMargin={0}
           animate
           showGroups
           distributionMarkers={[
-            { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
+            {
+              type: 'median',
+              color: 'black',
+              strokeWidth: 1.5,
+              relativeMarkerLength: 0.5,
+              markerLabel: { style: { display: 'none' } },
+            },
           ]}
           radius={5}
           dotOpacity={0.4}
           minValue={0}
           maxValue={60}
-          height={selectedGrouping === 'region' ? 400 : 260}
+          height={selectedGrouping === 'region' ? 360 : 260}
           padding='0'
           numberDisplayOptions={{ suffix: '%' }}
           styles={{
             tooltip: { padding: 0 },
-            xAxis: { labels: { transform: 'translateY(-32px)' } },
+            xAxis: { labels: { display: 'none' } },
           }}
           tooltip={(d) => (
-            <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-              <div className='flex gap-1'>
-                <P
-                  size='sm'
-                  marginBottom='none'
-                  className='mr-1 border-content-reverse border-r pr-2'
-                >
+            <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+              <P
+                size='sm'
+                weight='semibold'
+                marginBottom='none'
+                className='flex items-center justify-between gap-4'
+              >
+                <span>
                   {d.label} ({d.data.year})
-                </P>
-                <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
-                  {numberFormattingFunction(d.position)}%
-                </P>
-              </div>
+                </span>
+              </P>
+              <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
+                <span className='flex items-center gap-1.5'>{d.data[selectedGrouping]}</span>
+                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+              </P>
+              <P
+                size='sm'
+                marginBottom='none'
+                className='flex items-center justify-between gap-4 text-content-secondary'
+              >
+                <span className='flex items-center gap-1.5'>Median</span>
+                <span>
+                  {numberFormattingFunction(
+                    getMedian(
+                      (data ?? [])
+                        .filter((r) => r[selectedGrouping] === d.data[selectedGrouping])
+                        .map((r) => r.value),
+                    ),
+                  )}
+                  %
+                </span>
+              </P>
             </div>
           )}
           sources={[{ source: 'World Bank Enterprise Surveys' }]}

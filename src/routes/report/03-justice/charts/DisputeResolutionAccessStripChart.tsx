@@ -41,6 +41,24 @@ export default function DisputeResolutionAccessStripChart() {
         </P>
       </div>
 
+      <div className='flex justify-between px-2.5 *:flex *:w-0 *:justify-center *:whitespace-nowrap *:text-content-quaternary'>
+        <P marginBottom='none' size='xs'>
+          0%
+        </P>
+        <P marginBottom='none' size='xs'>
+          25%
+        </P>
+        <P marginBottom='none' size='xs'>
+          50%
+        </P>
+        <P marginBottom='none' size='xs'>
+          75%
+        </P>
+        <P marginBottom='none' size='xs'>
+          100%
+        </P>
+      </div>
+
       <StripChart
         data={transformDataForGraph(data, 'stripChart', [
           { columnId: 'country', chartConfigId: 'label' },
@@ -52,13 +70,15 @@ export default function DisputeResolutionAccessStripChart() {
         animate
         radius={7}
         dotOpacity={0.4}
+        topMargin={0}
         minValue={0}
         maxValue={100}
-        noOfTicks={5}
-        height={80}
+        height={70}
+        leftMargin={10}
+        rightMargin={10}
         numberDisplayOptions={{ suffix: '%' }}
         padding='0'
-        styles={{ tooltip: { padding: 0 } }}
+        styles={{ tooltip: { padding: 0 }, xAxis: { labels: { display: 'none' } } }}
         tooltip={(d) => (
           <div className='flex flex-col gap-1 bg-white px-2 py-1'>
             <div className='flex gap-1'>

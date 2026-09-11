@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
+import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
 import { Button } from '@undp/design-system-react/Button';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import {
@@ -104,6 +104,27 @@ export default function SatisfactionWithPublicServicesStripChart() {
         </div>
       </div>
 
+      <div
+        className='flex justify-between pr-2.5 *:flex *:w-0 *:justify-center *:whitespace-nowrap *:text-content-quaternary'
+        style={{ paddingLeft: innerWidth < 720 ? 120 : 160 }}
+      >
+        <P marginBottom='none' size='xs'>
+          0%
+        </P>
+        <P marginBottom='none' size='xs'>
+          25%
+        </P>
+        <P marginBottom='none' size='xs'>
+          50%
+        </P>
+        <P marginBottom='none' size='xs'>
+          75%
+        </P>
+        <P marginBottom='none' size='xs'>
+          100%
+        </P>
+      </div>
+
       <StripChart
         data={transformDataForGraph(data ?? [], 'stripChart', [
           { columnId: 'GeoAreaName', chartConfigId: 'label' },
@@ -129,19 +150,24 @@ export default function SatisfactionWithPublicServicesStripChart() {
         colors={['var(--primary)', 'var(--tertiary)', 'var(--violet-600)', 'var(--quaternary)']}
         showColorScale={false}
         distributionMarkers={[
-          { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
+          {
+            type: 'median',
+            color: 'black',
+            strokeWidth: 1.5,
+            relativeMarkerLength: 0.5,
+            markerLabel: { style: { display: 'none' } },
+          },
         ]}
         animate
         radius={5}
         dotOpacity={0.4}
         minValue={0}
         maxValue={100}
-        noOfTicks={5}
-        height={300}
+        height={200}
         truncateBy={innerWidth < 720 ? 16 : undefined}
         leftMargin={innerWidth < 720 ? 120 : 160}
         rightMargin={10}
-        topMargin={32}
+        topMargin={0}
         bottomMargin={20}
         dimmedOpacity={0.1}
         numberDisplayOptions={{ suffix: '%' }}
@@ -149,22 +175,37 @@ export default function SatisfactionWithPublicServicesStripChart() {
         padding='0'
         styles={{
           tooltip: { padding: 0 },
-          xAxis: { labels: { transform: 'translateY(-32px)' } },
+          xAxis: { labels: { display: 'none' } },
         }}
         tooltip={(d) => (
-          <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-            <div className='flex gap-1'>
-              <P
-                size='sm'
-                marginBottom='none'
-                className='mr-1 border-content-reverse border-r pr-2'
-              >
-                {d.label}
-              </P>
-              <P size='sm' marginBottom='none'>
-                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
-              </P>
-            </div>
+          <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+            <P
+              size='sm'
+              weight='semibold'
+              marginBottom='none'
+              className='flex items-center justify-between gap-4'
+            >
+              <span>{d.label}</span>
+            </P>
+            <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
+              <span className='flex items-center gap-1.5'>{d.data.Category}</span>
+              <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+            </P>
+            <P
+              size='sm'
+              marginBottom='none'
+              className='flex items-center justify-between gap-4 text-content-secondary'
+            >
+              <span className='flex items-center gap-1.5'>Median</span>
+              <span>
+                {numberFormattingFunction(
+                  getMedian(
+                    (data ?? []).filter((r) => r.Category === d.data.Category).map((r) => r.Value),
+                  ),
+                )}
+                %
+              </span>
+            </P>
           </div>
         )}
         ariaLabel='Strip chart showing the distribution of satisfaction with public services across countries, grouped by service. Each dot is a country and a line marks the median of each group.'
