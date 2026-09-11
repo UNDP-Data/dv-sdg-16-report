@@ -1,3 +1,5 @@
+import { SCROLLY_NUMBER_AREA_HEIGHT } from '@/constants';
+
 interface CoordinatesProps {
   id: number;
   x: number;
@@ -100,9 +102,9 @@ export const generateUniqueRandomPointsArray = (
   return points.map((d, i) => ({
     ...d,
     x: d.x + width / 2,
-    y: d.y + height / 2,
+    y: d.y + height / 2 - SCROLLY_NUMBER_AREA_HEIGHT / 2,
     regionX: i < threshold ? d.regionX : d.regionX + width / 2,
-    regionY: i < threshold ? d.regionY : d.regionY + height / 2,
+    regionY: i < threshold ? d.regionY : d.regionY + height / 2 - SCROLLY_NUMBER_AREA_HEIGHT / 2,
   }));
 };
 const getSpiralPosition = (index: number, radius: number, padding: number, noOfPoints = 100) => {
@@ -161,9 +163,9 @@ export const generateUniqueRandomPointsArrayWithSpiralInCenter = (
       ...d,
       id: i,
       x: d.x + width / 2,
-      y: d.y + height / 2,
+      y: d.y + height / 2 - SCROLLY_NUMBER_AREA_HEIGHT / 2,
       xSpiral: spiralPosition.x + width / 2,
-      ySpiral: spiralPosition.y + height / 2,
+      ySpiral: spiralPosition.y + height / 2 - SCROLLY_NUMBER_AREA_HEIGHT / 2,
     };
   });
 };

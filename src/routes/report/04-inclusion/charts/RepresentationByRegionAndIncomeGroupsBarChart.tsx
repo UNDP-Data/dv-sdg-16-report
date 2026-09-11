@@ -104,7 +104,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           maxBarThickness={32}
           showValues
           valueColor='var(--content-primary)'
-          numberDisplayOptions={{ precision: 2, padZeros: true }}
+          numberDisplayOptions={{ precision: 2, padZeros: 'all' }}
           showTicks={false}
           truncateBy={innerWidth < 720 ? 16 : undefined}
           leftMargin={

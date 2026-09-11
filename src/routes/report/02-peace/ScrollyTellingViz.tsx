@@ -1,4 +1,4 @@
-import { H2, P } from '@undp/design-system-react/Typography';
+import { H1, P } from '@undp/design-system-react/Typography';
 import { AnimatePresence, animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getArc } from '@/Utils/getArc';
@@ -340,7 +340,7 @@ export default function ScrollyTellingViz() {
                       )}
                     </AnimatePresence>
                     <motion.div>
-                      <H2
+                      <H1
                         weight='medium'
                         marginBottom='none'
                         className='text-center font-heading leading-xs'
@@ -357,7 +357,7 @@ export default function ScrollyTellingViz() {
                         >
                           {rounded}
                         </motion.span>
-                      </H2>
+                      </H1>
                     </motion.div>
                     {activeSlide.vizContent.category && (
                       <P
