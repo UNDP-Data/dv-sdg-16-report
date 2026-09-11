@@ -17,7 +17,7 @@ interface DataType {
 
 function useData() {
   return useQuery({
-    queryKey: ['feel-safe-walking-alone-by-region-sex'],
+    queryKey: ['intimate-partner-homicide-share-by-region-sex'],
     queryFn: () =>
       fetchAndParseJSON(
         '/data/report/02-peace/16-1-1/intimate-partner-homicide-share-by-region-sex.json',
