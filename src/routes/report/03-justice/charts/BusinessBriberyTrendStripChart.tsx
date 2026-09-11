@@ -148,7 +148,7 @@ export default function BusinessBriberyTrendStripChart() {
               leftMargin={12}
               bottomMargin={20}
               padding='0'
-              numberDisplayOptions={{ suffix: '%' }}
+              numberDisplayOptions={{ suffix: '%', precision: 1 }}
               backgroundColor={false}
               styles={{
                 tooltip: { padding: 0 },
@@ -173,7 +173,7 @@ export default function BusinessBriberyTrendStripChart() {
                         color: PERIODS.find((period) => period.label === d.data.period)?.color,
                       }}
                     >
-                      {numberFormattingFunction(d.position)}%
+                      {numberFormattingFunction(d.position, undefined, 1)}%
                     </P>
                   </div>
                 </div>

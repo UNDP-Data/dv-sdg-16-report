@@ -134,7 +134,7 @@ export default function BusinessBriberyStripChart() {
           maxValue={60}
           height={selectedGrouping === 'region' ? 400 : 260}
           padding='0'
-          numberDisplayOptions={{ suffix: '%' }}
+          numberDisplayOptions={{ suffix: '%', precision: 1 }}
           styles={{
             tooltip: { padding: 0 },
             xAxis: { labels: { transform: 'translateY(-32px)' } },
@@ -150,7 +150,7 @@ export default function BusinessBriberyStripChart() {
                   {d.label} ({d.data.year})
                 </P>
                 <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
-                  {numberFormattingFunction(d.position)}%
+                  {numberFormattingFunction(d.position, undefined, 1)}%
                 </P>
               </div>
             </div>

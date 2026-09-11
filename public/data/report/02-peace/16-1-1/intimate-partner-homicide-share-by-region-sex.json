@@ -1,8 +1,8 @@
 [
-  { "region": "Africa", "male": 8, "female": 74 },
-  { "region": "Americas", "male": 13, "female": 45 },
-  { "region": "Asia", "male": 14, "female": 55 },
-  { "region": "Europe", "male": 10, "female": 52 },
-  { "region": "Oceania", "male": 26, "female": 67 },
-  { "region": "World", "male": 11, "female": 60 }
+  { "region": "Africa", "male": 8.0, "female": 74.3 },
+  { "region": "Americas", "male": 12.9, "female": 44.8 },
+  { "region": "Asia", "male": 14.2, "female": 55.4 },
+  { "region": "Europe", "male": 10.3, "female": 52.4 },
+  { "region": "Oceania", "male": 25.8, "female": 67.0 },
+  { "region": "World", "male": 11.2, "female": 60.0 }
 ]

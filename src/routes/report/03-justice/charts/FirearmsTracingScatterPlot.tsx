@@ -59,14 +59,14 @@ export default function FirearmsTracingScatterPlot() {
       height={innerWidth < 720 ? 480 : 700}
       backgroundColor={false}
       padding={CHART_PADDING}
-      xNumberDisplayOptions={{ suffix: '%' }}
+      xNumberDisplayOptions={{ suffix: '%', precision: 1 }}
       graphTitle={
         <>
           <P marginBottom='none' weight='semibold' className='font-heading leading-sm'>
             Tracing success relative to average seizure volumes, by country
           </P>
           <P marginBottom='none' size='sm' className='text-content-secondary'>
-            2016 – 2024
+            2016–2024
           </P>
         </>
       }
@@ -87,7 +87,7 @@ export default function FirearmsTracingScatterPlot() {
             </P>
             <div className='flex items-center gap-2'>
               <P marginBottom='none' size='sm' weight='bold'>
-                {numberFormattingFunction(d.data.sdgValue, undefined, 0)}%
+                {numberFormattingFunction(d.data.sdgValue, undefined, 1)}%
               </P>
               <div className='h-3 flex-1 bg-content-secondary/10'>
                 <div

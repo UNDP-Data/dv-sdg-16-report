@@ -56,7 +56,7 @@ export default function DisputeResolutionAccessStripChart() {
         maxValue={100}
         noOfTicks={5}
         height={80}
-        numberDisplayOptions={{ suffix: '%' }}
+        numberDisplayOptions={{ suffix: '%', precision: 1 }}
         padding='0'
         styles={{ tooltip: { padding: 0 } }}
         tooltip={(d) => (
@@ -70,12 +70,12 @@ export default function DisputeResolutionAccessStripChart() {
                 {d.label} ({d.data.year})
               </P>
               <P size='sm' marginBottom='none' weight='bold' className='text-blue-500'>
-                {numberFormattingFunction(d.position)}%
+                {numberFormattingFunction(d.position, undefined, 1)}%
               </P>
             </div>
           </div>
         )}
-        ariaLabel={`Strip chart showing, for ${data.length} countries, the proportion of people who experienced a dispute in the past two years and accessed a formal or informal dispute resolution mechanism. Values range from 21 per cent in South Africa to 94 per cent in Tunisia.`}
+        ariaLabel={`Strip chart showing, for ${data.length} countries, the proportion of people who experienced a dispute in the past two years and accessed a formal or informal dispute resolution mechanism. Values range from 21% in South Africa to 94% in Tunisia.`}
       />
 
       <div className='flex flex-col gap-1'>

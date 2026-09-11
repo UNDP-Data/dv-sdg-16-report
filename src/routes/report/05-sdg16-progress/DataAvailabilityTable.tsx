@@ -88,7 +88,7 @@ export default function DataAvailabilityTable() {
                 </Tooltip>
               </TooltipProvider>
               <P marginBottom='none' size='sm' className='text-foreground'>
-                {numberFormattingFunction(row.value, undefined, 2, undefined, '%')}
+                {numberFormattingFunction(row.value, undefined, 1, undefined, '%')}
               </P>
             </div>
           </div>

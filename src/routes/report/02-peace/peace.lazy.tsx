@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
@@ -36,6 +36,7 @@ export function Peace() {
         title: 'Conflict-related deaths',
         indicatorCode: '16.1.2',
         heading: 'A civilian dies every 14 minutes in armed conflict',
+        heroHeading: '1 civilian dies every 14 minutes in armed conflict',
         anchor: 'conflict-related-deaths',
         isGenderLens: true,
         content: (
@@ -43,9 +44,8 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Following three consecutive years of rising conflict-related deaths, documented
-                civilian fatalities declined by 23 per cent in 2025. Nevertheless, the human cost of
-                armed conflict remained severe: at least 37,163 civilian deaths were documented
-                across{' '}
+                civilian fatalities declined by 23% in 2025. Nevertheless, the human cost of armed
+                conflict remained severe: at least 37,163 civilian deaths were documented across{' '}
                 <InfoTooltip
                   trigger='20 situations of armed conflict'
                   content='For the 2015–2025 period, UN Human Rights could document conflict-related deaths, with a focus on civilian deaths, for 20 armed conflicts: Afghanistan, Burkina Faso, Cameroon, Central African Republic, Colombia, Democratic Republic of the Congo, Ethiopia, Iraq, Lebanon, Libya, Mali, Myanmar, Philippines, the Occupied Palestinian Territory and Israel, Somalia, South Sudan, Sudan, Syrian Arab Republic, Ukraine and Yemen. This list is compiled solely for reporting on SDG indicator 16.1.2 (Conflict-related deaths) and is based on the methodology established for that indicator. Inclusion or exclusion of a context from this list does not constitute a legal determination or official position regarding its classification as an armed conflict or the applicability of international humanitarian law.'
@@ -55,8 +55,8 @@ export function Peace() {
                 conflict-related deaths has improved significantly over the past decade, important
                 challenges remain, particularly in determining civilian status during active
                 hostilities. In 2025, the status of more than 13,000 conflict-related deaths could
-                not be established, so the reported figures should be interpreted as a minimum
-                estimate of civilian deaths.
+                not be established, so the reported figures should be interpreted as a minimum count
+                of civilian deaths.
               </P>
             </TextContainer>
             <div className='w-full'>
@@ -87,16 +87,17 @@ export function Peace() {
         indicatorCode: '16.1.1',
         heading:
           'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
+        heroHeading: '400,000+ people die of intentional homicide every year',
         anchor: 'homicide',
         isGenderLens: true,
         content: (
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Between 2015 and 2024, the global homicide rate declined by 13.2 per cent, from 5.9
-                to 5.1 victims per 100,000 population. If current trends continue, the rate is
-                projected to fall to around 4.5 victims per 100,000 population by 2030. While this
-                would represent important progress, it would fall short of the ambition of SDG 16 to{' '}
+                Between 2015 and 2024, the global homicide rate declined by 13%, from 5.9 to 5.1
+                victims per 100,000 population. If current trends continue, the rate is projected to
+                fall to around 4.5 victims per 100,000 population by 2030. While this would
+                represent important progress, it would fall short of the ambition of SDG 16 to{' '}
                 <InfoTooltip
                   trigger='significantly reduce'
                   content='For SDG target 16.1, significant reduction is interpreted as 50% reduction in the intentional homicide rate from its 2015 baseline by 2030.'
@@ -117,7 +118,7 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 In 2024, Latin America and the Caribbean recorded the highest homicide rate
                 globally, at 19.3 victims per 100,000 population, almost four times the global
-                average, and accounted for just above 30 per cent of all estimated homicide victims
+                average, and accounted for just above 30% of all estimated homicide victims
                 worldwide. The region continues to be disproportionately affected by organized crime
                 and gang-related violence. Sub-Saharan Africa recorded the second highest homicide
                 rate, at an estimated 11.7 victims per 100,000 population, although estimates remain
@@ -130,12 +131,12 @@ export function Peace() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <Highlight
                 color='primary'
-                content='Nearly 60 per cent of all women killed in 2024 were victims of an intimate partner or family member'
+                content='Nearly 60% of all women killed in 2024 were victims of an intimate partner or family member'
               />
               <P marginBottom='none' size='lg'>
-                Although men accounted for an estimated 80 per cent of homicide victims in 2024,
-                women continue to face the greatest risk of lethal violence within their own homes.
-                The share of women victims of an intimate partner or family member was highest in
+                Although men accounted for an estimated 80% of homicide victims in 2024, women
+                continue to face the greatest risk of lethal violence within their own homes. The
+                share of women victims of an intimate partner or family member was highest in
                 Africa, followed by Oceania, and lowest in the Americas.
               </P>
             </TextContainer>
@@ -152,6 +153,7 @@ export function Peace() {
         indicatorCode: '16.10.1',
         heading:
           'One human rights defender, journalist or trade unionist is killed or disappeared every 10 hours',
+        heroHeading: '1 human rights defender is killed or disappeared every 10 hours',
         anchor: 'attacks-on-defenders',
         isGenderLens: true,
         content: (
@@ -188,9 +190,9 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 Violence against defenders is a global phenomenon, but the burden remains highly
                 concentrated. Over the last decade, Latin America and the Caribbean accounted for
-                roughly 60 per cent of all verified killings recorded. In the same period, Northern
-                Africa and Western Asia experienced a rapid escalation, with their share of global
-                killings nearly doubling to 27 per cent in 2025.
+                roughly 60% of all verified killings recorded. In the same period, Northern Africa
+                and Western Asia experienced a rapid escalation, with their share of global killings
+                nearly doubling to 27% in 2025.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -216,6 +218,7 @@ export function Peace() {
         indicatorCode: '16.1.3',
         heading:
           'Millions of people experience non-lethal violence, with distinct regional and gendered patterns of victimization',
+        heroHeading: 'Millions of people experience non-lethal violence',
         anchor: 'non-lethal-violence',
         isGenderLens: true,
         content: (
@@ -238,10 +241,9 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 The available evidence suggest that levels of experience of physical assault are
                 relatively similar across regions, with the median prevalence rates ranging from 0.9
-                to 1.5 per cent of the population. Robbery shows a different pattern. In Latin
-                America and the Caribbean, the median prevalence rate reached 3.1 per cent, more
-                than three times the levels recorded in other regions, where median prevalence rates
-                remained below 1 per cent.
+                to 1.5% of the population. Robbery shows a different pattern. In Latin America and
+                the Caribbean, the median prevalence rate reached 3.1%, more than three times the
+                levels recorded in other regions, where median prevalence rates remained below 1%.
               </P>
             </TextContainer>
             <TextContainer isGenderLensActive={isGenderLensActive}>
@@ -251,12 +253,12 @@ export function Peace() {
                 sexual violence.'
               />
               <P marginBottom='none' size='lg'>
-                The median prevalence of sexual violence among women was 2.9 per cent, compared with
-                0.4 per cent among men. By contrast, men experienced slightly higher levels of
-                physical violence, with a median prevalence of 4.2 per cent compared with 3.2 per
-                cent among women in the 51 countries with data globally. Data on psychological
-                violence remain too limited for global analysis. Available evidence, however,
-                suggests relatively similar prevalence levels among women and men.
+                The median prevalence of sexual violence among women was 2.9%, compared with 0.4%
+                among men. By contrast, men experienced slightly higher levels of physical violence,
+                with a median prevalence of 4.2% compared with 3.2% among women in the 51 countries
+                with data globally. Data on psychological violence remain too limited for global
+                analysis. Available evidence, however, suggests relatively similar prevalence levels
+                among women and men.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -274,6 +276,7 @@ export function Peace() {
         indicatorCode: '16.2.1 & 16.2.3',
         heading:
           'Violence begins early in life, with 1.6 billion children experiencing violent discipline at home',
+        heroHeading: '1.6 billion children experience violent discipline at home',
         anchor: 'violence-against-children',
         isGenderLens: true,
         content: (
@@ -328,6 +331,7 @@ export function Peace() {
         title: 'Trafficking in persons',
         indicatorCode: '16.2.2',
         heading: 'More than one in three detected victims of human trafficking is a child',
+        heroHeading: 'More than 1 in 3 detected trafficking victims is a child',
         anchor: 'trafficking-in-persons',
         isGenderLens: true,
         content: (
@@ -335,7 +339,7 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Human trafficking continues to affect women, men and children in every region of the
-                world. Yet it remains one of the most hidden forms of crime, making it inherently
+                world. Yet, it remains one of the most hidden forms of crime, making it inherently
                 difficult to measure. Many victims never come to the attention of authorities, and
                 official statistics capture only detected cases. The figures presented here should
                 therefore be interpreted as a minimum estimate of the true scale of trafficking.
@@ -345,10 +349,10 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 Following a temporary decline during the first year of the Covid-19 pandemic, the
                 number of detected victims of trafficking has continued to increase globally.
-                Children accounted for 37 per cent of all detected victims in 2024, nearly three
-                times the share recorded two decades earlier (13 per cent in 2004). Among child
-                victims, girls represented a slightly larger share than boys. Among adults, women
-                continued to account for a significantly larger share of victims than men.
+                Children accounted for 37% of all detected victims in 2024, nearly three times the
+                share recorded two decades earlier (13% in 2004). Among child victims, girls
+                represented a slightly larger share than boys. Among adults, women continued to
+                account for a significantly larger share of victims than men.
               </P>
             </TextContainer>
             <GraphContainer
@@ -360,10 +364,9 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Sexual exploitation and forced labour remained the two most commonly detected forms
-                of trafficking, accounting for roughly 39 per cent and 38 per cent of detected
-                victims, respectively. The remaining victims were trafficked for other forms of
-                exploitation, including organ removal, forced criminality, forced marriage, forced
-                begging, etc.
+                of trafficking, accounting for roughly 39% and 38% of detected victims,
+                respectively. The remaining victims were trafficked for other forms of exploitation,
+                including organ removal, forced criminality, forced marriage, forced begging, etc.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -389,6 +392,7 @@ export function Peace() {
         title: 'Perception of safety',
         indicatorCode: '16.1.4',
         heading: 'One in three people globally do not feel safe walking alone at night',
+        heroHeading: '1 in 3 people globally do not feel safe walking alone at night',
         anchor: 'perception-of-safety',
         isGenderLens: true,
         content: (
@@ -412,10 +416,9 @@ export function Peace() {
                 content='Women consistently indicate feeling less safe than men'
               />
               <P marginBottom='none' size='lg'>
-                Across 74 countries with sex-disaggregated data, 59 per cent of women reported
-                feeling safe walking alone after dark, compared with 72 per cent of men. The gender
-                gap was evident in every region and was particularly pronounced in Northern Africa
-                and Western Asia.
+                Across 74 countries with sex-disaggregated data, 59% of women reported feeling safe
+                walking alone after dark, compared with 72% of men. The gender gap was evident in
+                every region and was particularly pronounced in Northern Africa and Western Asia.
               </P>
             </TextContainer>
             <GraphContainer isGenderLensActive={isGenderLensActive}>
@@ -429,40 +432,6 @@ export function Peace() {
                 factors, may also influence how women perceive safety in everyday life.
               </P>
             </TextContainer>
-            <WaveDivider src='/imgs/dividers/peace-02.webp' />
-          </>
-        ),
-      },
-      {
-        id: '08',
-        title: 'The role of institutions',
-        indicatorCode: '',
-        heading: 'The role of institutions in promoting peace',
-        anchor: 'role-of-institutions',
-        content: (
-          <>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                The evidence presented across these indicators underscore the important role of
-                institutions in preventing conflict and violence. While the forms of violence
-                differ, from conflict-related deaths and homicide to violence against children,
-                human trafficking and attacks on those defending human rights, outcomes are shaped
-                by the ability of institutions to prevent violence, protect victims, enforce the
-                rule of law and uphold fundamental rights.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Disagreements and competing interests are an inevitable feature of any society.
-                Violence and armed conflict are not. Whether societies experience violence,
-                insecurity and fear depends in large part on the ability of institutions to manage
-                grievances peacefully, deliver justice fairly, provide security and safeguard
-                fundamental freedoms. Effective institutions create peaceful pathways for resolving
-                disputes, seeking justice and holding power to account without resorting to
-                violence. When institutions are weak, inaccessible or non-inclusive, grievances are
-                more likely to go unresolved, trust erodes and the risk of violence becomes more
-                difficult to prevent.
-              </P>
-            </TextContainer>
-            <Spacer size='6xl' />
           </>
         ),
       },
@@ -516,6 +485,39 @@ export function Peace() {
             {section.content}
           </Section>
         ))}
+      </div>
+      <div
+        id='role-of-institutions'
+        className='flex scroll-mt-16 flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
+      >
+        <TextContainer>
+          <div className='h-1 w-16 bg-primary' />
+          <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
+            The role of institutions in promoting peace
+          </H4>
+        </TextContainer>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
+            The evidence presented across these indicators underscore the important role of
+            institutions in preventing conflict and violence. While the forms of violence differ,
+            from conflict-related deaths and homicide to violence against children, human
+            trafficking and attacks on those defending human rights, outcomes are shaped by the
+            ability of institutions to prevent violence, protect victims, enforce the rule of law
+            and uphold fundamental rights.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Disagreements and competing interests are an inevitable feature of any society. Violence
+            and armed conflict are not. Whether societies experience violence, insecurity and fear
+            depends in large part on the ability of institutions to manage grievances peacefully,
+            deliver justice fairly, provide security and safeguard fundamental freedoms. Effective
+            institutions create peaceful pathways for resolving disputes, seeking justice and
+            holding power to account without resorting to violence. When institutions are weak,
+            inaccessible or non-inclusive, grievances are more likely to go unresolved, trust erodes
+            and the risk of violence becomes more difficult to prevent.
+          </P>
+        </TextContainer>
+        <Spacer size='6xl' />
       </div>
       <ChapterEndNav label='Next chapter' title='Justice' to='/report/justice' color='primary' />
     </>

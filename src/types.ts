@@ -18,6 +18,7 @@ export interface ChapterSectionDataType {
   title: string;
   indicatorCode?: string;
   heading: string;
+  heroHeading?: string;
   anchor: string;
   image?: string;
   icon?: LucideIcon;

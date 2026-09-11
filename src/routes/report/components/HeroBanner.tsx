@@ -84,7 +84,7 @@ export default function HeroBanner({
           size='sm'
           className='text-content-secondary uppercase tracking-widest'
         >
-          {label ? 'At a glance' : 'Chapter at a glance'}
+          SDG 16 indicators covered in this chapter
         </P>
         <Grid noOfCol={{ base: 1, sm: 2, md: 3, lg: 4 }} gap='12px'>
           {subsections.map((subsection) => (
@@ -116,7 +116,7 @@ export default function HeroBanner({
                 </P>
               ) : null}
               <P marginBottom='none' size='base' className='line-clamp-3 text-content-reverse'>
-                {subsection.heading}
+                {subsection.heroHeading ?? subsection.heading}
               </P>
             </a>
           ))}

@@ -95,7 +95,8 @@ export default function BudgetDeviationByIncomeGroupLineChart() {
       }}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Change in absolute deviation in government expenditures, by income group
+          Average absolute deviation between approved and actual government expenditure, by income
+          group
         </P>
       }
       graphDescription='2020 and 2024'

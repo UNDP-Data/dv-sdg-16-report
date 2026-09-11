@@ -16,7 +16,7 @@ export function SDG16Progress() {
     <>
       <section
         className='bg-bottom-right bg-cover bg-foreground-soft px-6 py-16 md:px-12 md:py-24'
-        style={{ backgroundImage: `url('/imgs/chapters/default-hero.webp')` }}
+        style={{ backgroundImage: `url('/imgs/report/default-hero.webp')` }}
       >
         <div className='mx-auto flex max-w-300 flex-col gap-4'>
           <P
@@ -75,9 +75,9 @@ export function SDG16Progress() {
         </P>
         <P marginBottom='none' size='lg'>
           These collective efforts and investments have translated into substantial improvements in
-          data availability. In the 2026 reporting cycle, 58.9 per cent of countries had reported
-          data for at least one indicator under each SDG 16 target since 2015, up from 40 per cent
-          in 2023 and 22.4 per cent in 2019.
+          data availability. In the 2026 reporting cycle, 58.9% of countries had reported data for
+          at least one indicator under each SDG 16 target since 2015, up from 40% in 2023 and 22.4%
+          in 2019.
         </P>
       </TextContainer>
       <GraphContainer className='my-8'>
@@ -172,7 +172,7 @@ export function SDG16Progress() {
               href='https://www.undp.org/publications/sdg16-survey-initiative'
               target='_blank'
               rel='noreferrer'
-              className='text-accent-teal underline decoration-dotted underline-offset-4'
+              className='text-blue-500 underline underline-offset-4 hover:no-underline'
             >
               SDG 16 Survey Initiative
             </a>
