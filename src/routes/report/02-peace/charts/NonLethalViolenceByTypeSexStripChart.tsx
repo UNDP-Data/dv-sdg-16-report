@@ -164,7 +164,7 @@ export default function NonLethalViolenceByTypeSexStripChart() {
             topMargin={8}
             bottomMargin={8}
             dimmedOpacity={0.1}
-            numberDisplayOptions={{ suffix: '%' }}
+            numberDisplayOptions={{ suffix: '%', precision: 1 }}
             backgroundColor={false}
             padding='0'
             styles={{
@@ -190,7 +190,9 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                   className='flex items-center justify-between gap-4'
                 >
                   <span className='flex items-center gap-1.5'>{d.data.sex}</span>
-                  <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                  <span className='font-bold'>
+                    {numberFormattingFunction(d.position, undefined, 1)}%
+                  </span>
                 </P>
                 <P
                   size='sm'
@@ -205,6 +207,8 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                           .filter((r) => r.violenceType === violenceType && r.sex === d.data.sex)
                           .map((r) => r.value),
                       ),
+                      undefined,
+                      1,
                     )}
                     %
                   </span>

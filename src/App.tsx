@@ -135,7 +135,8 @@ function App() {
               <Spacer size='2xl' />
               <P size='xl' marginBottom='none' className='max-w-4xl text-content-secondary'>
                 More than a decade after Member States adopted the 2030 Agenda, growing insecurity,
-                deepening polarization and declining trust are making hard-won development gains
+                deepening polarization and declining trust, alongside violent conflicts, economic
+                uncertainty and geopolitical fragmentation, are making hard-won development gains
                 increasingly fragile. The challenge of our time is not only identifying solutions
                 but ensuring that institutions are capable and resilient enough to turn those
                 solutions into life-changing results.
@@ -178,11 +179,7 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('peace')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Peace</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>Peace</span>
                 </Link>
                 ,{' '}
                 <Link
@@ -191,11 +188,7 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('justice')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Justice</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>Justice</span>
                 </Link>{' '}
                 and{' '}
                 <Link
@@ -204,11 +197,9 @@ function App() {
                   onMouseEnter={() => setHoveredChapter('inclusion')}
                   onMouseLeave={() => setHoveredChapter(null)}
                 >
-                  <span className='underline decoration-1 underline-offset-8'>Inclusion</span>
-                  <ArrowRight
-                    className='inline size-[0.6em] stroke-1 transition-transform group-hover:translate-x-1'
-                    aria-hidden='true'
-                  />
+                  <span className='underline decoration-[0.5px] underline-offset-10'>
+                    Inclusion
+                  </span>
                 </Link>
               </H2>
             </BannerContainer>
@@ -245,38 +236,21 @@ function App() {
 
           <section className='px-6 py-12 md:px-12 md:py-10'>
             <SectionContainer>
-              <P
-                marginBottom='none'
-                size='sm'
-                weight='semibold'
-                className='text-content-quaternary uppercase tracking-wider'
-              >
-                Featured numbers
-              </P>
-              <Spacer size='lg' />
               <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
-                Key figures from the report
+                Key findings from the report
               </H4>
               <Spacer size='base' />
               <P size='xl' marginBottom='none' className='max-w-2xl text-content-secondary'>
-                Key numbers from selected SDG 16 indicators across the peace, justice and inclusion
-                dimensions of the 2026 Global Progress Report.
+                Explore some of the key findings from SDG 16 indicators on peace, justice and
+                inclusion.
               </P>
               <FeaturedNumbers />
             </SectionContainer>
           </section>
 
-          <section className='mx-6 my-8 bg-background-soft px-6 py-14 md:mx-12 md:my-12 md:px-12 md:py-10'>
+          <section className='mx-6 my-8 bg-background-soft px-6 py-14 md:mx-12 md:my-14 md:px-12 md:py-10'>
             <SectionContainer>
-              <P
-                marginBottom='none'
-                size='sm'
-                weight='semibold'
-                className='text-content-quaternary uppercase tracking-wider'
-              >
-                SDG 16 progress
-              </P>
-              <Spacer size='lg' />
+              <Spacer size='xl' />
               <div className='grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:gap-16'>
                 <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
                   Measuring SDG 16 Progress: Remaining challenges
@@ -325,12 +299,12 @@ function App() {
                 weight='semibold'
                 className='text-content-quaternary uppercase tracking-wider'
               >
-                data to impact stories
+                Data to impact stories
               </P>
               <Spacer size='lg' />
               <div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
                 <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
-                  How countries use data for impact
+                  How countries turn data into impact
                 </H4>
                 <Link
                   to='/impact-stories'

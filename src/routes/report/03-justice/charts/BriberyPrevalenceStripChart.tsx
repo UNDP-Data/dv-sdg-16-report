@@ -173,7 +173,7 @@ export default function BriberyPrevalenceStripChart() {
           height={selectedGrouping === 'region' ? 450 : 280}
           dimmedOpacity={0.1}
           padding='0'
-          numberDisplayOptions={{ suffix: '%' }}
+          numberDisplayOptions={{ suffix: '%', precision: 1 }}
           styles={{
             tooltip: { padding: 0 },
             xAxis: { labels: { display: 'none' } },
@@ -192,7 +192,9 @@ export default function BriberyPrevalenceStripChart() {
               </P>
               <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
                 <span className='flex items-center gap-1.5'>{d.data[selectedGrouping]}</span>
-                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                <span className='font-bold'>
+                  {numberFormattingFunction(d.position, undefined, 1)}%
+                </span>
               </P>
               <P
                 size='sm'
@@ -207,6 +209,8 @@ export default function BriberyPrevalenceStripChart() {
                         .filter((r) => r[selectedGrouping] === d.data[selectedGrouping])
                         .map((r) => r.value),
                     ),
+                    undefined,
+                    1,
                   )}
                   %
                 </span>
@@ -222,7 +226,7 @@ export default function BriberyPrevalenceStripChart() {
           footNote={
             <ChartNote content='For this analysis, countries are classified according to the income group they belonged to at the time of their latest available data point.' />
           }
-          ariaLabel='Strip chart showing the proportion of the population that experienced bribery when in contact with public officials in the previous 12 months, with each dot representing a country and a black bar marking the median. The highest median prevalence is in Sub-Saharan Africa at 24 per cent and Central and Southern Asia at 22.5 per cent, and the lowest is in Europe and Northern America at 9 per cent.'
+          ariaLabel='Strip chart showing the proportion of the population that experienced bribery when in contact with public officials in the previous 12 months, with each dot representing a country and a black bar marking the median. The highest median prevalence is in Sub-Saharan Africa at 24% and Central and Southern Asia at 22.5%, and the lowest is in Europe and Northern America at 9%.'
         />
       </div>
     </div>

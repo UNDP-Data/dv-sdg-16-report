@@ -23,10 +23,10 @@ export default function FeaturedNumbers() {
             <div className='grid gap-4 md:grid-cols-3'>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={23}
-                  suffix='%'
+                  value={14}
+                  suffix=' min'
                   color='primary'
-                  label='Decline in documented civilian fatalities in 2025, after three consecutive years of rising conflict-related deaths.'
+                  label='Estimated interval between civilian deaths recorded in armed conflict.'
                 />
                 <P
                   marginBottom='none'
@@ -38,75 +38,22 @@ export default function FeaturedNumbers() {
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={1.5}
-                  suffix='billion'
+                  value='1 in 3'
                   color='secondary'
-                  label='People estimated to have unmet justice needs worldwide.'
+                  label='Prisoners globally held in detention without having been sentenced.'
                 />
                 <P
                   marginBottom='none'
                   size='xs'
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
-                  Justice – 16.3.3 – Access to civil justice
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value={27.5}
-                  suffix='%'
-                  color='tertiary'
-                  label='Share of parliamentary seats held by women globally in 2026, up from 27.2 per cent in 2025.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Inclusion – 16.7.1 (a) – Representation in the legislature
-                </P>
-              </div>
-            </div>
-          ),
-        },
-        {
-          content: null,
-          viz: (
-            <div className='grid gap-4 md:grid-cols-3'>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value={13.2}
-                  suffix='%'
-                  color='primary'
-                  label='Fall in the global homicide rate between 2015 and 2024.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Peace – 16.1.1 – Homicide
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value={46}
-                  suffix='%'
-                  color='secondary'
-                  label='Global average tracing rate for seized firearms between 2016 and 2024.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Justice – 16.4.2 – Illicit firearms flows
+                  Justice – 16.3.2 – Unsentenced detention
                 </P>
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
                   value={150}
-                  suffix='million'
+                  suffix=' million'
                   color='tertiary'
                   label='Children who still have no legal identity, even as birth registration continues to expand.'
                 />
@@ -127,10 +74,59 @@ export default function FeaturedNumbers() {
             <div className='grid gap-4 md:grid-cols-3'>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={37}
-                  suffix='%'
+                  value='400,000+'
                   color='primary'
-                  label='Share of all detected trafficking victims who were children in 2024, nearly three times the 2004 share.'
+                  label='People who die of intentional homicide worldwide every year.'
+                />
+                <P
+                  marginBottom='none'
+                  size='xs'
+                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                >
+                  Peace – 16.1.1 – Homicide
+                </P>
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
+                <BigNumber
+                  value={1.6}
+                  suffix=' billion'
+                  color='primary'
+                  label='Children who experience violent discipline at home.'
+                />
+                <P
+                  marginBottom='none'
+                  size='xs'
+                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                >
+                  Peace – 16.2.1 & 16.2.3 – Violence against children
+                </P>
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
+                <BigNumber
+                  value='1 in 4'
+                  color='tertiary'
+                  label='Parliamentary seats worldwide held by women.'
+                />
+                <P
+                  marginBottom='none'
+                  size='xs'
+                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                >
+                  Inclusion – 16.7.1 (a) – Representation in the legislature
+                </P>
+              </div>
+            </div>
+          ),
+        },
+        {
+          content: null,
+          viz: (
+            <div className='grid gap-4 md:grid-cols-3'>
+              <div className='flex flex-col bg-background-soft p-6'>
+                <BigNumber
+                  value='1 in 3'
+                  color='primary'
+                  label='Detected trafficking victims who are children.'
                 />
                 <P
                   marginBottom='none'
@@ -142,24 +138,9 @@ export default function FeaturedNumbers() {
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={17}
-                  suffix='%'
-                  color='secondary'
-                  label='Median bribery prevalence across the 139 countries and territories with available data.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Justice – 16.5.1 – Bribery among the population
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
                   value='1 in 5'
                   color='tertiary'
-                  label='People report having personally experienced discrimination in the previous 12 months.'
+                  label='People worldwide who report personally experiencing discrimination.'
                 />
                 <P
                   marginBottom='none'
@@ -167,6 +148,21 @@ export default function FeaturedNumbers() {
                   className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
                 >
                   Inclusion – 16.b.1 – Experience of discrimination
+                </P>
+              </div>
+              <div className='flex flex-col bg-background-soft p-6'>
+                <BigNumber
+                  value={0.8}
+                  color='tertiary'
+                  label='Representation ratio for women in the public service, against parity at 1.00.'
+                />
+                <P
+                  marginBottom='none'
+                  size='xs'
+                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                >
+                  Inclusion – 16.7.1 (b) and (c) – Representation in the public service and the
+                  judiciary
                 </P>
               </div>
             </div>

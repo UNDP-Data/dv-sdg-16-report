@@ -170,7 +170,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
         topMargin={0}
         bottomMargin={20}
         dimmedOpacity={0.1}
-        numberDisplayOptions={{ suffix: '%' }}
+        numberDisplayOptions={{ suffix: '%', precision: 1 }}
         backgroundColor={false}
         padding='0'
         styles={{
@@ -189,7 +189,9 @@ export default function SatisfactionWithPublicServicesStripChart() {
             </P>
             <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
               <span className='flex items-center gap-1.5'>{d.data.Category}</span>
-              <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+              <span className='font-bold'>
+                {numberFormattingFunction(d.position, undefined, 1)}%
+              </span>
             </P>
             <P
               size='sm'
@@ -202,6 +204,8 @@ export default function SatisfactionWithPublicServicesStripChart() {
                   getMedian(
                     (data ?? []).filter((r) => r.Category === d.data.Category).map((r) => r.Value),
                   ),
+                  undefined,
+                  1,
                 )}
                 %
               </span>
@@ -215,7 +219,7 @@ export default function SatisfactionWithPublicServicesStripChart() {
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           Source: UNDP, Gallup World Poll
         </P>
-        <ChartNote content='Estimates are based on the latest available survey data between 2015 and 2025 for 148 countries (health services), 12 countries (primary education services), 44 countries (secondary education services) and 46 countries (government services). Education and government services are primarily based on data from high and middle-income countries. The line within each box indicates the median level of satisfaction, the X indicates the average, while the box shows the values for the middle 50 per cent of countries. Whiskers extend to the lowest and highest values observed with circles showing outliers. The spread of each boxplot highlights the extent of variation across countries, with wider ranges reflecting more uneven service delivery outcomes.' />
+        <ChartNote content='Estimates are based on the latest available survey data between 2015 and 2025 for 148 countries (health services), 12 countries (primary education services), 44 countries (secondary education services) and 46 countries (government services). Education and government services are primarily based on data from high and middle-income countries. The line within each box indicates the median level of satisfaction, the X indicates the average, while the box shows the values for the middle 50% of countries. Whiskers extend to the lowest and highest values observed with circles showing outliers. The spread of each boxplot highlights the extent of variation across countries, with wider ranges reflecting more uneven service delivery outcomes.' />
       </div>
     </div>
   );

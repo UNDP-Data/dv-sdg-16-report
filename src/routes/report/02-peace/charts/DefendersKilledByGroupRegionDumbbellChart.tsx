@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DumbbellChart } from '@undp/data-viz/DumbbellChart';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
@@ -65,7 +66,7 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
       minHeight={600}
       height={innerWidth < 720 ? 560 : 660}
       truncateBy={innerWidth < 720 ? 10 : 24}
-      numberDisplayOptions={{ suffix: '%' }}
+      numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}
       styles={{
         tooltip: {
@@ -96,7 +97,7 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
                   />
                   {region}
                 </span>
-                <span>{value !== null ? `${value}%` : 'N/A'}</span>
+                <span>{numberFormattingFunction(value, 'N/A', 1, undefined, '%')}</span>
               </P>
             );
           })}

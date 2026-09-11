@@ -174,7 +174,7 @@ export default function BusinessBriberyStripChart() {
           maxValue={60}
           height={selectedGrouping === 'region' ? 360 : 260}
           padding='0'
-          numberDisplayOptions={{ suffix: '%' }}
+          numberDisplayOptions={{ suffix: '%', precision: 1 }}
           styles={{
             tooltip: { padding: 0 },
             xAxis: { labels: { display: 'none' } },
@@ -193,7 +193,9 @@ export default function BusinessBriberyStripChart() {
               </P>
               <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
                 <span className='flex items-center gap-1.5'>{d.data[selectedGrouping]}</span>
-                <span className='font-bold'>{numberFormattingFunction(d.position)}%</span>
+                <span className='font-bold'>
+                  {numberFormattingFunction(d.position, undefined, 1)}%
+                </span>
               </P>
               <P
                 size='sm'
@@ -208,6 +210,8 @@ export default function BusinessBriberyStripChart() {
                         .filter((r) => r[selectedGrouping] === d.data[selectedGrouping])
                         .map((r) => r.value),
                     ),
+                    undefined,
+                    1,
                   )}
                   %
                 </span>

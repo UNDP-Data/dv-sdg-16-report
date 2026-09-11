@@ -21,13 +21,31 @@ import createTempChartsRoute from './routes/temp-charts/temp-charts.route';
 import './styles/fonts.css';
 import './styles/style.css';
 
+function GrainOverlay() {
+  return (
+    <svg
+      className='pointer-events-none fixed inset-0 z-10 h-full w-full opacity-[0.08] mix-blend-multiply'
+      aria-hidden='true'
+    >
+      <filter id='grain'>
+        <feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' />
+        <feColorMatrix
+          type='matrix'
+          values='0.64 2.15 0.22 0 -1
+                  0.64 2.15 0.22 0 -1
+                  0.64 2.15 0.22 0 -1
+                  0    0    0    1  0'
+        />
+      </filter>
+      <rect width='100%' height='100%' filter='url(#grain)' />
+    </svg>
+  );
+}
+
 const rootRoute = createRootRoute({
   component: () => (
     <div className='flex min-h-screen flex-col gap-0 antialiased'>
-      <div
-        className="pointer-events-none fixed inset-0 z-10 bg-[url('/imgs/texture-dark.webp')] bg-repeat opacity-[0.05] mix-blend-multiply"
-        style={{ backgroundSize: '120px 120px' }}
-      />
+      <GrainOverlay />
       <HeaderEl />
       <main className='flex grow flex-col justify-start'>
         <Outlet />

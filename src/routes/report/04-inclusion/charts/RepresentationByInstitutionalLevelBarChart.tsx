@@ -37,7 +37,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-col gap-1'>
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
-          Women's representation within the {selectedSector.toLowerCase()}
+          Women’s representation within the public service and the judiciary, by occupation level
         </P>
         <P marginBottom='none' size='sm' className='text-content-secondary'>
           2025 or latest year available

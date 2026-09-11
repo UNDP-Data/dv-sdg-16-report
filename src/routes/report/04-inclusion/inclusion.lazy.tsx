@@ -1,6 +1,6 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
-import { P } from '@undp/design-system-react/Typography';
+import { H4, P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
@@ -41,6 +41,8 @@ export function Inclusion() {
         indicatorCode: '16.9.1',
         heading:
           'Birth registration continues to expand, but 150 million children remain without a legal identity',
+        heroHeading:
+          'Birth registration continues to expand, but 150 million children remain without a legal identity',
         anchor: 'legal-identity',
         isGenderLens: true,
         content: (
@@ -73,6 +75,7 @@ export function Inclusion() {
         indicatorCode: '16.7.1 (a)',
         heading:
           'Women hold only one in four parliamentary seats, and continue to face persistent barriers in accessing the highest levels of political leadership',
+        heroHeading: 'Women continue to hold only 1 in 4 parliamentary seats',
         anchor: 'representation-in-the-legislature',
         isGenderLens: true,
         content: (
@@ -100,14 +103,13 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Despite steady progress over the past decade, parliaments remain far from reflecting
-                the populations they represent. As of 2026, women held 27.5 per cent of
-                parliamentary seats globally, a modest increase from 27.2 per cent in 2025.
-                Representation remains even lower in parliamentary leadership, where women accounted
-                for 19.9 per cent of Speakers of Parliament in 2026, a decline of 3.8 percentage
-                points from the previous year. There are pronounced regional differences. Women's
-                representation is highest in the Americas, where women hold 35.6 per cent of
-                parliamentary seats. By contrast, women hold only 16.2 per cent of seats in the
-                Middle East and North Africa.
+                the populations they represent. As of 2026, women held 27.5% of parliamentary seats
+                globally, a modest increase from 27.2% in 2025. Representation remains even lower in
+                parliamentary leadership, where women accounted for 19.9% of Speakers of Parliament
+                in 2026, a decline of 3.8 percentage points from the previous year. There are
+                pronounced regional differences. Women's representation is highest in the Americas,
+                where women hold 35.6% of parliamentary seats. By contrast, women hold only 16.2% of
+                seats in the Middle East and North Africa.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -120,14 +122,13 @@ export function Inclusion() {
               />
               <P marginBottom='none' size='lg'>
                 Age gaps in representation are even more pronounced. While people aged 18 to 40
-                account for around one third of the world's adult population, they represent only 19
-                per cent of parliamentarians globally. Although this is an important improvement
-                from 12.9 per cent in 2014, progress has slowed considerably in recent years, with
-                only minimal gains since 2023. Youth representation is also highest in the Americas,
-                with MPs aged 40 or younger accounting for 23.5 per cent of parliamentarians. The
-                Pacific records the lowest levels of youth representation, with MPs aged 30 or
-                younger accounting for just 2.0 per cent of parliamentarians and those aged 40 or
-                younger only 12.0 per cent.
+                account for around one third of the world's adult population, they represent only
+                19% of parliamentarians globally. Although this is an important improvement from
+                12.9% in 2014, progress has slowed considerably in recent years, with only minimal
+                gains since 2023. Youth representation is also highest in the Americas, with MPs
+                aged 40 or younger accounting for 23.5% of parliamentarians. The Pacific records the
+                lowest levels of youth representation, with MPs aged 30 or younger accounting for
+                just 2.0% of parliamentarians and those aged 40 or younger only 12.0%.
               </P>
               <Highlight
                 color='tertiary'
@@ -137,10 +138,10 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Younger generations of parliamentarians are, however, considerably more gender
-                balanced than older ones. Women account for 43.5 per cent of all MPs aged 30 years
-                or younger and 36.2 per cent of those aged 40 years or younger. These patterns
-                suggest that gender balance in parliaments may continue to improve as younger
-                cohorts enter political office.
+                balanced than older ones. Women account for 43.5% of all MPs aged 30 years or
+                younger and 36.2% of those aged 40 years or younger. These patterns suggest that
+                gender balance in parliaments may continue to improve as younger cohorts enter
+                political office.
               </P>
             </TextContainer>
             <Spacer size='2xl' />
@@ -151,10 +152,12 @@ export function Inclusion() {
       },
       {
         id: '03',
-        title: 'Representation in public service and the judiciary',
+        title: 'Representation in the public service and the judiciary',
         indicatorCode: '16.7.1 (b) and (c)',
         heading:
           'Women also remain underrepresented in the public service and judiciary despite broader gains in representation',
+        heroHeading:
+          'Women remain absent from decision-making roles in the public service and judiciary',
         anchor: 'representation-in-public-service-and-judiciary',
         isGenderLens: true,
         content: (
@@ -171,7 +174,7 @@ export function Inclusion() {
                   content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
                   color='tertiary'
                 />
-                . Put simply, a ratio of 0.80 means that women have achieved only 80 per cent of the
+                . Put simply, a ratio of 0.80 means that women have achieved only 80% of the
                 representation they would have if their share in public institutions matched their
                 share of the population.
               </P>
@@ -249,6 +252,7 @@ export function Inclusion() {
         title: 'Experience of discrimination',
         indicatorCode: '16.b.1',
         heading: 'Nearly one in five people worldwide report experiencing discrimination',
+        heroHeading: 'Nearly 1 in 5 people worldwide experience discrimination',
         anchor: 'experience-of-discrimination',
         isGenderLens: true,
         content: (
@@ -290,8 +294,8 @@ export function Inclusion() {
               <P marginBottom='none' size='lg'>
                 Across countries where such data are available, transgender and gender-diverse
                 individuals frequently report the highest levels of discrimination, often exceeding
-                60 per cent, while people identifying as sexual minorities report discrimination
-                rates 2.2 times higher than the population average.
+                60%, while people identifying as sexual minorities report discrimination rates 2.2
+                times higher than the population average.
               </P>
             </TextContainer>
             <TextContainer>
@@ -318,6 +322,7 @@ export function Inclusion() {
         title: 'Government expenditures',
         indicatorCode: '16.6.1',
         heading: 'Governments are improving their ability to deliver approved budgets',
+        heroHeading: 'Governments are improving their ability to deliver approved budgets',
         anchor: 'government-expenditures',
         content: (
           <>
@@ -333,12 +338,12 @@ export function Inclusion() {
                 steady progress in improving budget reliability and expenditure forecasts. The
                 global average absolute deviation between approved and actual government
                 expenditure, which captures both overspending and underspending relative to the
-                approved budget, declined from 12.6 per cent in 2020 to 10.2 per cent in 2024.
-                Moreover, budget reliability remains weaker in lower-income countries. Between 2021
-                and 2024, low-income countries recorded the largest budget deviations between
-                approved and actual expenditure, with median deviations of around 11.8 per cent. By
-                contrast, most high-income and upper-middle-income countries generally maintained
-                deviations below 7 per cent.
+                approved budget, declined from 12.6% in 2020 to 10.2% in 2024. Moreover, budget
+                reliability remains weaker in lower-income countries. Between 2021 and 2024,
+                low-income countries recorded the largest budget deviations between approved and
+                actual expenditure, with median deviations of around 11.8%. By contrast, most
+                high-income and upper-middle-income countries generally maintained deviations below
+                7%.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -360,6 +365,7 @@ export function Inclusion() {
         title: 'Satisfaction with public services',
         indicatorCode: '16.6.2',
         heading: 'Quality public services remain out of reach for many people',
+        heroHeading: 'Quality public services remain out of reach for many people',
         anchor: 'satisfaction-with-public-services',
         content: (
           <>
@@ -375,10 +381,10 @@ export function Inclusion() {
                 experience and interact with their governments.
               </P>
               <P marginBottom='none' size='lg'>
-                Among countries with available data, satisfaction ranges from less than 10 per cent
-                in some countries to over 90 per cent in others. These wide gaps suggest that access
-                to quality public services remains highly uneven and that many people continue to
-                face barriers to services that are essential for well-being and inclusion.
+                Among countries with available data, satisfaction ranges from less than 10% in some
+                countries to over 90% in others. These wide gaps suggest that access to quality
+                public services remains highly uneven and that many people continue to face barriers
+                to services that are essential for well-being and inclusion.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -395,9 +401,9 @@ export function Inclusion() {
               />
               <P marginBottom='none' size='lg'>
                 Countries in Eastern and South-Eastern Asia report the highest average satisfaction
-                with 88.2 per cent, while Sub-Saharan Africa records the lowest with 46.4 per cent.
-                These persistent differences show that, while progress has been made, access to
-                quality public services remains highly unequal across countries.
+                with 88.2%, while Sub-Saharan Africa records the lowest with 46.4%. These persistent
+                differences show that, while progress has been made, access to quality public
+                services remains highly unequal across countries.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -412,6 +418,8 @@ export function Inclusion() {
         title: 'Political voice and responsiveness',
         indicatorCode: '16.7.2',
         heading: 'Fewer than half of people feel they have a say in government decisions',
+        heroHeading:
+          'Fewer than half of people globally feel they have a say in government decisions',
         anchor: 'political-efficacy',
         isGenderLens: true,
         content: (
@@ -449,9 +457,8 @@ export function Inclusion() {
             <TextContainer isGenderLensActive={isGenderLensActive}>
               <P marginBottom='none' size='lg'>
                 Women are less likely than men to feel that they have a say in government decisions.
-                Across 37 high-income countries with sex-disaggregated data, 27.3 per cent of women
-                believe they have a say in what their government does, compared with 32.6 per cent
-                of men.
+                Across 37 high-income countries with sex-disaggregated data, 27.3% of women believe
+                they have a say in what their government does, compared with 32.6% of men.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-03.webp' />
@@ -464,6 +471,8 @@ export function Inclusion() {
         indicatorCode: '16.10.2',
         heading:
           'Legal guarantees for access to information are widespread, but implementation remains uneven',
+        heroHeading:
+          'Legal guarantees for access to information are widespread but implementation remains uneven',
         anchor: 'access-to-information',
         content: (
           <>
@@ -496,24 +505,15 @@ export function Inclusion() {
                 bodies and designated institutional roles.
               </P>
               <P marginBottom='none' size='lg'>
-                These implementation gaps are also reflected in the{' '}
-                <InfoTooltip
-                  trigger='first large-scale global assessment'
-                  content={
-                    <span>
-                      Mendel, T. and Vagliano, R. (2025) Global Comparative Testing of Responses to
-                      Requests for Information. Halifax, NS: Centre for Law and Democracy. Available
-                      at:{' '}
-                      <span className='break-all'>
-                        https://www.law-democracy.org/wp-content/uploads/2025/09/IDUAI.report.25-09-26.pdf
-                      </span>
-                    </span>
-                  }
-                  color='tertiary'
-                />{' '}
-                into the effectiveness of access to information laws. Identical access to
-                information requests were submitted across 76 countries, and fewer than half
-                received full disclosure.
+                Implementation gaps in access to information (ATI) laws are also reflected in the
+                first large-scale global assessment of how access to information laws function in
+                practice. Identical ATI requests submitted across 76 countries found that 38 per
+                cent of requests received no substantive response (“mute refusals”), effectively
+                leaving the right to information existing only on paper. Although 54% of requests
+                resulted in some information being provided, only 42% received full disclosure.
+                These findings demonstrate that, while legal recognition of the right to information
+                has become widespread, ensuring that this right can be effectively exercised remains
+                a significant challenge.
               </P>
             </TextContainer>
             <GraphContainer>
@@ -535,6 +535,7 @@ export function Inclusion() {
         title: 'Representation of developing countries in international organizations',
         indicatorCode: '16.8.1',
         heading: 'Global economic governance has not kept pace with a changing world',
+        heroHeading: 'Global economic governance has not kept pace with a changing world',
         anchor: 'global-governance',
         content: (
           <>
@@ -547,72 +548,17 @@ export function Inclusion() {
                 been limited.
               </P>
               <P marginBottom='none' size='lg'>
-                Today, developing countries hold 37 per cent of the voting rights in the
-                International Monetary Fund and 39 per cent in the World Bank, despite accounting
-                for 75 per cent of the membership of both institutions. Recent reviews of voting
-                rights at both organizations concluded without agreement on further realignment,
-                highlighting the growing difficulty of reforming global governance in an
-                increasingly fragmented geopolitical environment.
+                Today, developing countries hold 37% of the voting rights in the International
+                Monetary Fund and 39% in the World Bank, despite accounting for 75% of the
+                membership of both institutions. Recent reviews of voting rights at both
+                organizations concluded without agreement on further realignment, highlighting the
+                growing difficulty of reforming global governance in an increasingly fragmented
+                geopolitical environment.
               </P>
             </TextContainer>
             <GraphContainer>
               <VoteSharesByInstitutionDumbbellChart />
             </GraphContainer>
-            <WaveDivider src='/imgs/dividers/inclusion-02.webp' align='right' />
-          </>
-        ),
-      },
-      {
-        id: '10',
-        title: 'The role of institutions',
-        indicatorCode: '',
-        heading: 'The role of institutions in building inclusive societies',
-        anchor: 'role-of-institutions',
-        content: (
-          <>
-            <TextContainer>
-              <P marginBottom='none' size='lg'>
-                Institutions play a crucial role in ensuring that all people are recognized,
-                represented and able to participate meaningfully in public life. The evidence
-                presented across these indicators highlights the many ways in which institutions
-                shape inclusion, equal participation and equitable access to opportunities and
-                services. Whether people feel included depends heavily on the ability of
-                institutions to recognize individuals, protect their rights and respond to their
-                needs.
-              </P>
-              <P marginBottom='none' size='lg'>
-                Inclusive institutions ensure that every person is legally recognized through a
-                legal identity, protected from discrimination, represented in public
-                decision-making, able to access information and public services on equal terms, and
-                empowered to participate in decisions that shape their lives. They also ensure that
-                governments respond fairly and effectively to the needs of all people by delivering
-                quality public services that are accessible, responsive and equitable, regardless of
-                gender, age, disability, ethnicity, income or other characteristics. In doing so,
-                inclusive institutions strengthen the relationship between people and the state by
-                demonstrating that public institutions serve everyone fairly rather than a
-                privileged few.
-              </P>
-              <P marginBottom='none' size='lg'>
-                The indicators presented in this chapter illustrate both areas of progress and
-                persistent gaps in achieving these objectives. They show the extent to which people
-                are legally recognized, represented in public institutions, protected from
-                discrimination and able to access public services and information. Together, they
-                provide a picture of how effectively institutions promote inclusion and support
-                meaningful participation in society.
-              </P>
-              <P marginBottom='none' size='lg'>
-                When institutions function effectively, they help reduce barriers, expand
-                opportunities and strengthen social cohesion. When institutions fail to share power
-                equitably, exclusion deepens, discrimination persists, public services become less
-                responsive, and decisions become less representative of the societies they serve.
-                Trust in public institutions erodes as people lose confidence that they are
-                recognized, treated equally and able to influence public decisions. Building
-                inclusive societies therefore requires institutions that not only serve people, but
-                also ensure that everyone has a place, a voice and an equal opportunity to
-                participate in shaping their future.
-              </P>
-            </TextContainer>
-            <Spacer size='6xl' />
           </>
         ),
       },
@@ -662,6 +608,58 @@ export function Inclusion() {
             {section.content}
           </Section>
         ))}
+      </div>
+      <div
+        id='role-of-institutions'
+        className='flex flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
+      >
+        <TextContainer>
+          <div className='h-1 w-16 bg-tertiary' />
+          <H4 weight='semibold' marginBottom='none' className='font-heading text-foreground'>
+            The role of institutions in building inclusive societies
+          </H4>
+        </TextContainer>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
+            Institutions play a crucial role in ensuring that all people are recognized, represented
+            and able to participate meaningfully in public life. The evidence presented across these
+            indicators highlights the many ways in which institutions shape inclusion, equal
+            participation and equitable access to opportunities and services. Whether people feel
+            included depends heavily on the ability of institutions to recognize individuals,
+            protect their rights and respond to their needs.
+          </P>
+          <P marginBottom='none' size='lg'>
+            Inclusive institutions ensure that every person is legally recognized through a legal
+            identity, protected from discrimination, represented in public decision-making, able to
+            access information and public services on equal terms, and empowered to participate in
+            decisions that shape their lives. They also ensure that governments respond fairly and
+            effectively to the needs of all people by delivering quality public services that are
+            accessible, responsive and equitable, regardless of gender, age, disability, ethnicity,
+            income or other characteristics. In doing so, inclusive institutions strengthen the
+            relationship between people and the state by demonstrating that public institutions
+            serve everyone fairly rather than a privileged few.
+          </P>
+          <P marginBottom='none' size='lg'>
+            The indicators presented in this chapter illustrate both areas of progress and
+            persistent gaps in achieving these objectives. They show the extent to which people are
+            legally recognized, represented in public institutions, protected from discrimination
+            and able to access public services and information. Together, they provide a picture of
+            how effectively institutions promote inclusion and support meaningful participation in
+            society.
+          </P>
+          <P marginBottom='none' size='lg'>
+            When institutions function effectively, they help reduce barriers, expand opportunities
+            and strengthen social cohesion. When institutions fail to share power equitably,
+            exclusion deepens, discrimination persists, public services become less responsive, and
+            decisions become less representative of the societies they serve. Trust in public
+            institutions erodes as people lose confidence that they are recognized, treated equally
+            and able to influence public decisions. Building inclusive societies therefore requires
+            institutions that not only serve people, but also ensure that everyone has a place, a
+            voice and an equal opportunity to participate in shaping their future.
+          </P>
+        </TextContainer>
+        <Spacer size='6xl' />
       </div>
 
       <ChapterEndNav

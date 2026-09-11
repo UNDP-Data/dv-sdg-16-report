@@ -1,42 +1,42 @@
 [
   {
     "region": "World",
-    "female": 31,
-    "male": 31
+    "female": 30.66,
+    "male": 30.90
   },
   {
     "region": "Northern Africa and Western Asia",
-    "female": 35,
-    "male": 23
+    "female": 35.18,
+    "male": 23.35
   },
   {
     "region": "Oceania",
-    "female": 49,
-    "male": 38
+    "female": 48.86,
+    "male": 38.40
   },
   {
     "region": "Sub-Saharan Africa",
-    "female": 49,
-    "male": 41
+    "female": 48.64,
+    "male": 40.72
   },
   {
     "region": "Latin America and the Caribbean",
-    "female": 37,
-    "male": 30
+    "female": 37.49,
+    "male": 30.36
   },
   {
     "region": "Europe and Northern America",
-    "female": 29,
-    "male": 24
+    "female": 28.55,
+    "male": 24.20
   },
   {
     "region": "Eastern and South-Eastern Asia",
-    "female": 24,
-    "male": 27
+    "female": 24.26,
+    "male": 27.27
   },
   {
     "region": "Central and Southern Asia",
-    "female": 54,
-    "male": 58
+    "female": 54.12,
+    "male": 57.91
   }
 ]

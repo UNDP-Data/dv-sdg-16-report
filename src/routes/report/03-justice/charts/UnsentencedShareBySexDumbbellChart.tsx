@@ -3,6 +3,7 @@ import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { DumbbellChart } from '@undp/data-viz/DumbbellChart';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { numberFormattingFunction } from '@undp/data-viz/utils';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
@@ -58,7 +59,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
         truncateBy={innerWidth < 720 ? 16 : undefined}
         minHeight={440}
         relativeHeight={0.6}
-        numberDisplayOptions={{ suffix: '%' }}
+        numberDisplayOptions={{ suffix: '%', precision: 1 }}
         padding='0'
         styles={{
           tooltip: {
@@ -83,14 +84,18 @@ export default function UnsentencedShareBySexDumbbellChart() {
                 <span className='h-2 w-2 rounded-full bg-categorical-female' />
                 Women
               </span>
-              <span className='font-bold text-categorical-female'>{d.x[0]}%</span>
+              <span className='font-bold text-categorical-female'>
+                {numberFormattingFunction(d.x[0], 'N/A', 1, undefined, '%')}
+              </span>
             </P>
             <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
               <span className='flex items-center gap-1'>
                 <span className='h-2 w-2 rounded-full bg-categorical-male' />
                 Men
               </span>
-              <span className='font-bold text-categorical-male'>{d.x[1]}%</span>
+              <span className='font-bold text-categorical-male'>
+                {numberFormattingFunction(d.x[1], 'N/A', 1, undefined, '%')}
+              </span>
             </P>
           </div>
         )}
@@ -100,7 +105,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
               'UNODC estimates, based on responses to the United Nations Survey of Crime Trends and Operations of Criminal Justice Systems, data from the World Prison Brief (Institute for Crime & Justice Policy Research) and national sources reviewed by Member States',
           },
         ]}
-        ariaLabel='Dumbbell chart showing unsentenced prisoners as a proportion of the overall prison population by region and sex in 2024. Globally the share is around 31 per cent for both women and men, but women are more likely to be unsentenced in Northern Africa and Western Asia and in Oceania, while men are more likely to be unsentenced in Central and Southern Asia.'
+        ariaLabel='Dumbbell chart showing unsentenced prisoners as a proportion of the overall prison population by region and sex in 2024. Globally the share is around 31% for both women and men, but women are more likely to be unsentenced in Northern Africa and Western Asia and in Oceania, while men are more likely to be unsentenced in Central and Southern Asia.'
       />
     </div>
   );

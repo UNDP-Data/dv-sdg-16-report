@@ -23,7 +23,13 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
           marginBottom='none'
           size='xs'
           weight='semibold'
-          className='text-primary uppercase tracking-widest'
+          className={cn(
+            color === 'primary' && 'text-primary',
+            color === 'secondary' && 'text-secondary',
+            color === 'tertiary' && 'text-tertiary',
+            color === 'default' && 'text-blue-500',
+            'uppercase tracking-wider',
+          )}
         >
           {label}
         </P>

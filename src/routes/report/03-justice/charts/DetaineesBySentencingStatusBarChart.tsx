@@ -79,7 +79,7 @@ export default function DetaineesBySentencingStatusBarChart() {
             <P size='sm' marginBottom='none'>
               Unsentenced:{' '}
               <span className='font-bold text-blue-500'>
-                {numberFormattingFunction(d.data.unsentenced)}
+                {numberFormattingFunction(d.data.unsentenced, undefined, 1)}
               </span>{' '}
               <span className='font-bold text-blue-500'>
                 (
@@ -94,11 +94,11 @@ export default function DetaineesBySentencingStatusBarChart() {
             <P size='sm' marginBottom='none'>
               Sentenced:{' '}
               <span className='font-bold text-content-quaternary'>
-                {numberFormattingFunction(d.data.sentenced)}
+                {numberFormattingFunction(d.data.sentenced, undefined, 1)}
               </span>
             </P>
             <P size='sm' marginBottom='none' className='text-content-secondary'>
-              Total: {numberFormattingFunction(d.data.unsentenced + d.data.sentenced)}
+              Total: {numberFormattingFunction(d.data.unsentenced + d.data.sentenced, undefined, 1)}
             </P>
           </div>
         )}
