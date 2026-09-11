@@ -4,7 +4,7 @@ import { cn } from '@undp/design-system-react/cn';
 import { Drawer, DrawerContent, DrawerTrigger } from '@undp/design-system-react/Drawer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { H3, P } from '@undp/design-system-react/Typography';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import ErrorEl from '@/components/ErrorEl';
 import Tag from '@/components/Tag';
 
@@ -23,6 +23,7 @@ interface ChapterTargetDataType {
     officialIndicators: {
       code: string;
       description: string;
+      link: string;
     }[];
     dataReporter: string;
   }[];
@@ -133,7 +134,20 @@ export default function TargetsDrawer({ chapterTitle, bg, color }: TargetsDrawer
                                   size='base'
                                   className='text-foreground'
                                 >
-                                  {officialIndicator.code} – {officialIndicator.description}
+                                  {officialIndicator.code} –{' '}
+                                  <a
+                                    href={officialIndicator.link}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    className='text-blue-500 underline decoration-1 underline-offset-4'
+                                  >
+                                    {officialIndicator.description}
+                                    <ExternalLink
+                                      size={14}
+                                      aria-hidden='true'
+                                      className='ml-1 inline align-[-0.125em]'
+                                    />
+                                  </a>
                                 </P>
                               ))}
                             </div>
