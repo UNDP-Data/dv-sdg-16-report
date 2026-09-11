@@ -52,6 +52,7 @@ export default function FirearmsTracingScatterPlot() {
       bottomMargin={0}
       maxXValue={100}
       minYValue={0}
+      minHeight={600}
       noOfXTicks={5}
       xAxisTitle='Average SDG value'
       yAxisTitle='Seized firearms'

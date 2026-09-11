@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { ColorLegend } from '@undp/data-viz/ColorLegend';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
 import { StripChart } from '@undp/data-viz/StripChart';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
-import { numberFormattingFunction } from '@undp/data-viz/utils';
+import { getMedian, numberFormattingFunction } from '@undp/data-viz/utils';
 import { Button } from '@undp/design-system-react/Button';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import {
@@ -57,12 +56,21 @@ export default function NonLethalViolenceByTypeSexStripChart() {
       </div>
 
       <div className='flex flex-wrap items-center gap-x-4 gap-y-2'>
-        <ColorLegend
-          colors={[Colors.genderColors.male, Colors.genderColors.female]}
-          colorDomain={['Men', 'Women']}
-          showNAColor={false}
-          className='pb-0'
-        />
+        <div className='flex items-center gap-2'>
+          <div className='flex items-center' aria-hidden='true'>
+            <span
+              className='h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: Colors.genderColors.male }}
+            />
+            <span
+              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              style={{ backgroundColor: Colors.genderColors.female }}
+            />
+          </div>
+          <P marginBottom='none' size='sm'>
+            Each dot is a country
+          </P>
+        </div>
         <div className='flex items-center gap-1.5'>
           <span
             aria-hidden='true'
@@ -93,8 +101,26 @@ export default function NonLethalViolenceByTypeSexStripChart() {
         </div>
       </div>
 
-      {VIOLENCE_TYPES.map((violenceType, index) => (
-        <div key={violenceType} className='flex flex-col gap-1'>
+      <div className='flex justify-between pr-2.5 pl-15 *:flex *:w-0 *:justify-center *:whitespace-nowrap *:text-content-quaternary'>
+        <P marginBottom='none' size='xs'>
+          0%
+        </P>
+        <P marginBottom='none' size='xs'>
+          10%
+        </P>
+        <P marginBottom='none' size='xs'>
+          20%
+        </P>
+        <P marginBottom='none' size='xs'>
+          30%
+        </P>
+        <P marginBottom='none' size='xs'>
+          40%
+        </P>
+      </div>
+
+      {VIOLENCE_TYPES.map((violenceType) => (
+        <div key={violenceType} className='flex flex-col gap-0'>
           <P marginBottom='none' size='sm' className='font-heading font-semibold'>
             {violenceType}
           </P>
@@ -110,14 +136,20 @@ export default function NonLethalViolenceByTypeSexStripChart() {
               ],
             )}
             orientation='horizontal'
-            stripType='dot'
             showGroups
+            stripType='dot'
             groupOrder={['Men', 'Women']}
             colorDomain={['Men', 'Women']}
             colors={[Colors.genderColors.male, Colors.genderColors.female]}
             showColorScale={false}
             distributionMarkers={[
-              { type: 'median', color: 'black', strokeWidth: 1.5, relativeMarkerLength: 0.5 },
+              {
+                type: 'median',
+                color: 'black',
+                strokeWidth: 1.5,
+                relativeMarkerLength: 0.5,
+                markerLabel: { style: { display: 'none' } },
+              },
             ]}
             animate
             radius={5}
@@ -125,38 +157,62 @@ export default function NonLethalViolenceByTypeSexStripChart() {
             minValue={0}
             maxValue={40}
             noOfTicks={5}
-            height={120}
+            height={100}
             truncateBy={innerWidth < 720 ? 16 : undefined}
-            leftMargin={innerWidth < 720 ? 80 : 100}
+            leftMargin={60}
             rightMargin={10}
-            topMargin={32}
+            topMargin={8}
             bottomMargin={8}
             dimmedOpacity={0.1}
             numberDisplayOptions={{ suffix: '%', precision: 1 }}
             backgroundColor={false}
             padding='0'
-            classNames={index === 0 ? undefined : { xAxis: { labels: 'hidden' } }}
             styles={{
               tooltip: { padding: 0 },
-              xAxis: { labels: { transform: 'translateY(-32px)' } },
+              xAxis: { labels: { display: 'none' } },
+              yAxis: { labels: { textAlign: 'left' } },
             }}
             tooltip={(d) => (
-              <div className='flex flex-col gap-1 bg-white px-2 py-1'>
-                <div className='flex gap-1'>
-                  <P
-                    size='sm'
-                    marginBottom='none'
-                    className='mr-1 border-content-reverse border-r pr-2'
-                  >
-                    {d.label}
-                  </P>
-                  <P size='sm' marginBottom='none' className='flex justify-between gap-1'>
-                    <span className='font-bold'>
-                      {numberFormattingFunction(d.position, undefined, 1)}%
-                    </span>
-                    <span className='text-content-secondary text-xs'>({d.data.year})</span>
-                  </P>
-                </div>
+              <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+                <P
+                  size='sm'
+                  weight='semibold'
+                  marginBottom='none'
+                  className='flex items-center justify-between gap-4'
+                >
+                  <span>
+                    {d.label} ({d.data.year})
+                  </span>
+                </P>
+                <P
+                  size='sm'
+                  marginBottom='none'
+                  className='flex items-center justify-between gap-4'
+                >
+                  <span className='flex items-center gap-1.5'>{d.data.sex}</span>
+                  <span className='font-bold'>
+                    {numberFormattingFunction(d.position, undefined, 1)}%
+                  </span>
+                </P>
+                <P
+                  size='sm'
+                  marginBottom='none'
+                  className='flex items-center justify-between gap-4 text-content-secondary'
+                >
+                  <span className='flex items-center gap-1.5'>Median</span>
+                  <span>
+                    {numberFormattingFunction(
+                      getMedian(
+                        (rows ?? [])
+                          .filter((r) => r.violenceType === violenceType && r.sex === d.data.sex)
+                          .map((r) => r.value),
+                      ),
+                      undefined,
+                      1,
+                    )}
+                    %
+                  </span>
+                </P>
               </div>
             )}
             ariaLabel={`Strip chart showing ${violenceType.toLowerCase()} prevalence by country, grouped by sex. Each dot is a country and a line marks the median of each group.`}
