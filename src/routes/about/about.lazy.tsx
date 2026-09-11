@@ -441,9 +441,9 @@ export function About() {
               </P>
               <a
                 href='mailto:OHCHR-SDGindicators@un.org'
-                className='flex items-start gap-2 break-all text-blue-500 text-sm hover:underline'
+                className='flex items-start gap-2 break-all text-base text-blue-500 underline decoration-1 underline-offset-4'
               >
-                <Mail size={16} aria-hidden='true' className='mt-0.5 shrink-0' />
+                <Mail size={16} aria-hidden='true' className='mt-1 shrink-0' />
                 OHCHR-SDGindicators@un.org
               </a>
             </div>
@@ -454,9 +454,9 @@ export function About() {
               </P>
               <a
                 href='mailto:sdg16indicators@undp.org'
-                className='flex items-start gap-2 break-all text-blue-500 text-sm hover:underline'
+                className='flex items-start gap-2 break-all text-base text-blue-500 underline decoration-1 underline-offset-4'
               >
-                <Mail size={16} aria-hidden='true' className='mt-0.5 shrink-0' />
+                <Mail size={16} aria-hidden='true' className='mt-1 shrink-0' />
                 sdg16indicators@undp.org
               </a>
             </div>
@@ -467,9 +467,9 @@ export function About() {
               </P>
               <a
                 href='mailto:data@unicef.org'
-                className='flex items-start gap-2 break-all text-blue-500 text-sm hover:underline'
+                className='flex items-start gap-2 break-all text-base text-blue-500 underline decoration-1 underline-offset-4'
               >
-                <Mail size={16} aria-hidden='true' className='mt-0.5 shrink-0' />
+                <Mail size={16} aria-hidden='true' className='mt-1 shrink-0' />
                 data@unicef.org
               </a>
             </div>
@@ -480,9 +480,9 @@ export function About() {
               </P>
               <a
                 href='mailto:unodc-stats@un.org'
-                className='flex items-start gap-2 break-all text-blue-500 text-sm hover:underline'
+                className='flex items-start gap-2 break-all text-base text-blue-500 underline decoration-1 underline-offset-4'
               >
-                <Mail size={16} aria-hidden='true' className='mt-0.5 shrink-0' />
+                <Mail size={16} aria-hidden='true' className='mt-1 shrink-0' />
                 unodc-stats@un.org
               </a>
             </div>

@@ -1,6 +1,7 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { H1, H4, P } from '@undp/design-system-react/Typography';
+import { ExternalLink } from 'lucide-react';
 import BigNumber from '@/components/BigNumber';
 import { GraphContainer, TextContainer } from '@/components/Containers';
 import { CHART_PADDING } from '@/constants';
@@ -172,9 +173,10 @@ export function SDG16Progress() {
               href='https://www.undp.org/publications/sdg16-survey-initiative'
               target='_blank'
               rel='noreferrer'
-              className='text-blue-500 underline underline-offset-4 hover:no-underline'
+              className='text-blue-500 underline decoration-1 underline-offset-4'
             >
               SDG 16 Survey Initiative
+              <ExternalLink size={14} aria-hidden='true' className='ml-1 inline align-[-0.125em]' />
             </a>
             , jointly developed by UNDP, UNODC and OHCHR, was designed to support countries in
             collecting comparable survey data across multiple SDG 16 indicators through a single

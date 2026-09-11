@@ -46,7 +46,8 @@ html {
 [aria-label="Data sources"] a:hover {
   animation: none;
   background-image: none;
+  color: var(--blue-500);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }

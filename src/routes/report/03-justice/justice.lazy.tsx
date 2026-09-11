@@ -1,6 +1,7 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { H4, P } from '@undp/design-system-react/Typography';
+import { ExternalLink } from 'lucide-react';
 import { useMemo } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
@@ -430,9 +431,14 @@ export function Justice() {
                         href='https://www.ohchr.org/en/instruments-mechanisms/instruments/principles-relating-status-national-institutions-paris'
                         target='_blank'
                         rel='noreferrer'
-                        className='underline underline-offset-4 hover:no-underline'
+                        className='text-blue-500 underline decoration-1 underline-offset-4'
                       >
                         Read the Paris Principles
+                        <ExternalLink
+                          size={14}
+                          aria-hidden='true'
+                          className='ml-1 inline align-[-0.125em]'
+                        />
                       </a>
                       .
                     </>
