@@ -3,7 +3,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { H4, P } from '@undp/design-system-react/Typography';
 import { ExternalLink } from 'lucide-react';
 import { useMemo } from 'react';
-import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
@@ -27,7 +26,6 @@ import UnsentencedShareBySexDumbbellChart from './charts/UnsentencedShareBySexDu
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Justice() {
-  const isGenderLensActive = useIsGenderLensActive();
   const sections = useMemo(
     () => [
       {
@@ -55,14 +53,16 @@ export function Justice() {
             <div className='w-full'>
               <ScrollyTellingViz />
             </div>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Sex-disaggregated data remain limited globally, but available evidence suggests that
-                reporting behaviour may differ between women and men in some regions. Across 12
-                countries in Latin America and the Caribbean with available data, the median
-                reporting rate for physical assault was 56% for women compared with 30% for men.
-                Such clear differences are not observed in the limited data available for other
-                regions.
+                <span className='gender-lens'>
+                  Sex-disaggregated data remain limited globally, but available evidence suggests
+                  that reporting behaviour may differ between women and men in some regions. Across
+                  12 countries in Latin America and the Caribbean with available data, the median
+                  reporting rate for physical assault was 56% for women compared with 30% for men.
+                  Such clear differences are not observed in the limited data available for other
+                  regions.
+                </span>
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/justice-01.webp' />
@@ -153,29 +153,36 @@ export function Justice() {
                 criminal justice systems, little progress has been made in reducing pre-trial
                 detention globally. The share of unsentenced detainees has remained virtually
                 unchanged over the past decade, at around 30%, equivalent to approximately 3.6
-                million people, with an estimated 3.4 million men and 0.2 million women. Regional
+                million people, with an estimated{' '}
+                <span className='gender-lens'>3.4 million men and 0.2 million women</span>. Regional
                 trends, however, varied considerably. Latin America and the Caribbean reduced the
                 proportion of prisoners awaiting trial or sentencing from 41% in 2015 to 31% in
                 2024. By contrast, the situation deteriorated in Central and Southern Asia, where
                 almost six in ten prisoners were unsentenced in 2024, up from five in ten in 2015.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
                 color='secondary'
-                content='Gender gaps in pre-trial detention are regional rather than global'
+                content={
+                  <span className='gender-lens'>
+                    Gender gaps in pre-trial detention are regional rather than global
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Globally, women and men were equally likely to be held in pre-trial detention, with
-                around one third of detainees in both groups awaiting trial or sentencing. This
-                share has remained largely unchanged since 2015. However, beneath this global
-                average, important regional differences emerge. In Northern Africa and Western Asia,
-                35% of women detainees were held unsentenced, compared with 23% of men. A similar
-                pattern was observed in Oceania, where nearly half of women detainees (49%) were
-                unsentenced, compared with 38% of men.
+                <span className='gender-lens'>
+                  Globally, women and men were equally likely to be held in pre-trial detention,
+                  with around one third of detainees in both groups awaiting trial or sentencing.
+                  This share has remained largely unchanged since 2015. However, beneath this global
+                  average, important regional differences emerge. In Northern Africa and Western
+                  Asia, 35% of women detainees were held unsentenced, compared with 23% of men. A
+                  similar pattern was observed in Oceania, where nearly half of women detainees
+                  (49%) were unsentenced, compared with 38% of men.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer className='gender-lens'>
               <UnsentencedShareBySexDumbbellChart />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/justice-03.webp' />
@@ -471,7 +478,7 @@ export function Justice() {
         ),
       },
     ],
-    [isGenderLensActive],
+    [],
   );
   return (
     <>

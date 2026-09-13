@@ -58,9 +58,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        There are an estimated{' '}
-        <span className='font-bold'>652.5 million children under the age of five</span> across the
-        globe.
+        There are an estimated 652.5 million{' '}
+        <span className='font-bold'>children under the age of five</span> across the globe.
       </>
     ),
     color: 'surface-lg',
@@ -81,11 +80,10 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Today, nearly <span className='font-bold text-tertiary'>eight in ten children</span> under
-        the age of five, more than{' '}
-        <span className='font-bold text-tertiary'>500 million children</span>, have had their births
-        registered. This represents significant global progress since 2008, when only six in ten
-        children under five had their births registered.
+        Today, nearly eight in ten children under the age of five, more than 500 million children,
+        have had their <span className='font-bold text-tertiary'>births registered</span>. This
+        represents significant global progress since 2008, when only six in ten children under five
+        had their births registered.
       </>
     ),
     color: 'tertiary',
@@ -106,9 +104,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Yet, progress has slowed over the past decade, and an estimated{' '}
-        <span className='font-bold text-categorical-child'>150 million children</span> remain
-        unregistered.
+        Yet, progress has slowed over the past decade, and an estimated 150 million children remain{' '}
+        <span className='font-bold text-categorical-child'>unregistered</span>.
       </>
     ),
     color: 'categorical-child',
@@ -129,10 +126,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        {' '}
-        <span className='font-bold text-categorical-child'>More than half</span> of the world’s
-        unregistered children live{' '}
-        <span className='font-bold text-categorical-child'>in Sub-Saharan Africa.</span>
+        More than half of the world’s unregistered children live in{' '}
+        <span className='font-bold text-categorical-child'>Sub-Saharan Africa</span>.
       </>
     ),
     color: 'surface-lg',

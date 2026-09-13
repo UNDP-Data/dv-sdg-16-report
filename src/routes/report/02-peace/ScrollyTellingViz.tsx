@@ -34,8 +34,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In 2025, a civilian was killed{' '}
-        <span className='font-bold text-primary'>every 14 minutes</span>
+        In 2025, a <span className='font-bold text-primary'>civilian</span> was killed every 14
+        minutes
       </>
     ),
     color: 'primary',
@@ -52,9 +52,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Over the course of a single day, this amounted to around{' '}
-        <span className='font-bold text-primary'>102 documented civilian deaths</span>, underscoring
-        the staggering human toll of violence.
+        Over the course of a single day, this amounted to around 102 documented{' '}
+        <span className='font-bold text-primary'>civilian deaths</span>, underscoring the staggering
+        human toll of violence.
       </>
     ),
     color: 'primary',
@@ -71,9 +71,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In 2025, a total of <span className='font-bold text-primary'>37,163 civilian deaths</span>{' '}
-        were documented. The status of <strong>more than 13,000 deaths</strong> in 2025 remained
-        undetermined.
+        In 2025, a total of 37,163 <span className='font-bold text-primary'>civilian deaths</span>{' '}
+        were documented. The status of more than 13,000 deaths in 2025 remained undetermined.
       </>
     ),
     color: 'primary',
@@ -90,11 +89,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Children accounted for{' '}
-        <span className='py-3 font-bold text-categorical-child leading-none'>
-          one in five recorded civilian deaths (20%).
-        </span>{' '}
-        Among child victims, <strong>three boys were killed for every two girls</strong>.
+        <span className='font-bold text-categorical-child'>Children</span> accounted for one in five
+        recorded civilian deaths (20%). Among child victims,{' '}
+        <span className='gender-lens'>three boys were killed for every two girls</span>.
       </>
     ),
     color: 'categorical-child',
@@ -111,11 +108,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Women made up 18% of documented civilian deaths. Combined,{' '}
-        <span className='font-bold text-quaternary'>
-          women and children accounted for more than a third (38%)
-        </span>{' '}
-        of all civilian fatalities.
+        <span className='gender-lens'>Women made up 18% of documented civilian deaths</span>.
+        Combined, <span className='font-bold text-quaternary'>women and children</span> accounted
+        for more than a third (38%) of all civilian fatalities.
       </>
     ),
     color: 'quaternary',
@@ -132,13 +127,10 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Northern Africa and Western Asia accounted for{' '}
-        <span className='font-bold text-accent-teal-hover'>
-          65% of all documented civilian deaths
-        </span>
-        , while Sub-Saharan Africa accounted for a{' '}
-        <span className='font-bold text-accent-teal-hover'>further 24%</span> — together, almost 9
-        in 10 documented civilian deaths.
+        <span className='font-bold text-accent-teal-hover'>Northern Africa and Western Asia</span>{' '}
+        accounted for 65% of all documented civilian deaths, while{' '}
+        <span className='font-bold text-accent-teal-hover'>Sub-Saharan Africa</span> accounted for a
+        further 24% — together, almost 9 in 10 documented civilian deaths.
       </>
     ),
     color: 'accent-teal-hover',

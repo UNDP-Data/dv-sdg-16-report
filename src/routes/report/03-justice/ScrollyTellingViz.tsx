@@ -42,9 +42,8 @@ const SLIDES = [
           content='The median is the middle value in a set of numbers. It divides the data into two equal halves, with half of observations above it and half below it.'
           color='secondary'
         />{' '}
-        reporting rate is below 50%.{' '}
-        <span className='font-bold'>Fewer than half of victims of violence report</span> their
-        experiences to the police or other competent authorities.
+        reporting rate is below 50%. Fewer than half of victims of violence report their experiences
+        to the police or other competent authorities.
       </>
     ),
   },
@@ -58,9 +57,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        <span className='font-bold text-categorical-female'>
-          Robbery has the highest median reporting rate
-        </span>
+        <span className='font-bold text-categorical-female'>Robbery</span> has the highest median
+        reporting rate
       </>
     ),
   },
@@ -74,11 +72,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        …followed by physical assault.{' '}
-        <span className='font-bold text-accent-teal-hover'>
-          Four in ten victims of physical assault
-        </span>{' '}
-        report their experience to the police or other competent authority
+        …followed by <span className='font-bold text-accent-teal-hover'>physical assault</span>.
+        Four in ten victims of physical assault report their experience to the police or other
+        competent authority
       </>
     ),
   },
@@ -92,11 +88,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        <span className='font-bold text-secondary'>
-          Sexual assault is the most underreported form of violence.
-        </span>{' '}
-        Stigma, fear of retaliation, and limited trust in the justice system continue to deter
-        victims from seeking justice.
+        <span className='font-bold text-secondary'>Sexual assault</span> is the most underreported
+        form of violence. Stigma, fear of retaliation, and limited trust in the justice system
+        continue to deter victims from seeking justice.
       </>
     ),
   },
