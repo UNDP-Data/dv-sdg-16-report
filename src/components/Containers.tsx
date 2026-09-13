@@ -8,17 +8,13 @@ const GRAPH_CONTAINER_MAX_WIDTH = {
 
 export const GraphContainer = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & {
-    isGenderLensActive?: boolean;
-    size?: keyof typeof GRAPH_CONTAINER_MAX_WIDTH;
-  }
->(({ className, isGenderLensActive = false, size = 'base', ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { size?: keyof typeof GRAPH_CONTAINER_MAX_WIDTH }
+>(({ className, size = 'base', ...props }, ref) => {
   return (
     <div
       className={cn(
-        'mx-auto my-4 w-full',
+        'mx-auto my-4 w-full bg-background-soft',
         GRAPH_CONTAINER_MAX_WIDTH[size],
-        isGenderLensActive ? 'gender-lens' : 'bg-background-soft',
         className,
       )}
       ref={ref}
@@ -27,24 +23,19 @@ export const GraphContainer = React.forwardRef<
   );
 });
 
-export const TextContainer = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { isGenderLensActive?: boolean }
->(({ className, isGenderLensActive = false, ...props }, ref) => {
-  return (
-    <div className='mx-auto w-full max-w-2xl md:max-w-176 lg:max-w-180'>
-      <div
-        className={cn(
-          'mx-4 flex flex-col gap-4 md:mx-8 lg:mx-16',
-          isGenderLensActive ? 'gender-lens' : '',
-          className,
-        )}
-        ref={ref}
-        {...props}
-      />
-    </div>
-  );
-});
+export const TextContainer = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div className='mx-auto w-full max-w-2xl md:max-w-176 lg:max-w-180'>
+        <div
+          className={cn('mx-4 flex flex-col gap-4 md:mx-8 lg:mx-16', className)}
+          ref={ref}
+          {...props}
+        />
+      </div>
+    );
+  },
+);
 
 export const ImpactStoriesContainer = React.forwardRef<
   HTMLDivElement,
