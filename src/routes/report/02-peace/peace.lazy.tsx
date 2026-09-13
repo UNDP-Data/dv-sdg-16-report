@@ -85,7 +85,7 @@ export function Peace() {
         indicatorCode: '16.1.1',
         heading:
           'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
-        heroHeading: '400,000+ people die of intentional homicide every year',
+        heroHeading: 'More than 400,000 people die of intentional homicide every year',
         anchor: 'homicide',
         isGenderLens: true,
         content: (
