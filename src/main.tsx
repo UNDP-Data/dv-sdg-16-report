@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import createHomeRoute from './App';
 import FooterEl from './components/Footer';
 import HeaderEl from './components/Header';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import * as TanStackQueryProvider from './integration/tanstack-query';
 import createAboutRoute from './routes/about/about.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
@@ -51,6 +52,7 @@ const rootRoute = createRootRoute({
         <Outlet />
       </main>
       <FooterEl />
+      <ScrollToTopButton />
     </div>
   ),
 });
