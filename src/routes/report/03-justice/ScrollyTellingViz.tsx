@@ -23,8 +23,9 @@ const SLIDES = [
   },
   {
     vizContent: {
-      reportedCount: 46,
-      caption: 'of violence is reported',
+      reportedCount: 50,
+      label: '',
+      caption: '',
       color: 'gray-500',
       nonReportedDotOpacity: 0.4,
     },
@@ -246,15 +247,18 @@ export default function ScrollyTellingViz() {
                     className='text-center font-heading'
                     style={{ color: `var(--${activeSlide.vizContent.color})` }}
                   >
-                    <motion.span>{rounded}</motion.span>
+                    <motion.span>{activeSlide.vizContent.label ?? rounded}</motion.span>
                     <span className='ml-1 text-2xl md:text-3xl'>%</span>
                   </H2>
                   <P marginBottom='none' size='xl' className='mt-0.5 text-center text-foreground'>
                     {activeSlide.vizContent.caption}
                   </P>
-                  <P marginBottom='none' size='sm' className='text-center text-gray-500'>
-                    median across {activeSlide.vizContent.noOfCountriesReported} countries with data
-                  </P>
+                  {activeSlide.vizContent.noOfCountriesReported && (
+                    <P marginBottom='none' size='sm' className='text-center text-gray-500'>
+                      median across {activeSlide.vizContent.noOfCountriesReported} countries with
+                      data
+                    </P>
+                  )}
                 </div>
               </foreignObject>
             </motion.g>
