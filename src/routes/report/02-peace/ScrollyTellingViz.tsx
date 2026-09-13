@@ -34,8 +34,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In 2025, a <span className='font-bold text-primary'>civilian</span> was killed every 14
-        minutes
+        In 2025, a <span className='font-bold text-primary'>civilian</span> was killed every{' '}
+        <span className='font-bold text-primary'>14 minutes</span>
       </>
     ),
     color: 'primary',
@@ -52,7 +52,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        Over the course of a single day, this amounted to around 102 documented{' '}
+        Over the course of a <span className='font-bold text-primary'>single day</span>, this
+        amounted to around 102 documented{' '}
         <span className='font-bold text-primary'>civilian deaths</span>, underscoring the staggering
         human toll of violence.
       </>
@@ -71,8 +72,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        In 2025, a total of 37,163 <span className='font-bold text-primary'>civilian deaths</span>{' '}
-        were documented. The status of more than 13,000 deaths in 2025 remained undetermined.
+        In <span className='font-bold text-primary'>2025</span>, a total of 37,163{' '}
+        <span className='font-bold text-primary'>civilian deaths</span> were documented. The status
+        of more than 13,000 deaths in 2025 remained undetermined.
       </>
     ),
     color: 'primary',
