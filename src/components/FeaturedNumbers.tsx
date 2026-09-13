@@ -9,11 +9,15 @@ export default function FeaturedNumbers() {
       autoScroll={3000}
       classNames={{
         arrowButton:
+          'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:opacity-30',
         arrows: 'text-foreground',
+        playPauseButton: 'border border-stroke bg-background hover:bg-background-soft',
+        playPauseIcon: 'text-foreground',
         content: '[&_p]:hidden!',
         progressBar: 'hidden!',
         progressBarBg: 'hidden!',
       }}
+      styles={{ arrows: { strokeWidth: 1.5 }, playPauseIcon: { strokeWidth: 1.5 } }}
       slides={[
         {
           content: null,
