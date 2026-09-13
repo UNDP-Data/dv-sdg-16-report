@@ -28,7 +28,7 @@ export default function ImpactStoryModal({ story, onClose }: ImpactStoryModalPro
       onClose={onClose}
       inPortal
       className='p-6 pt-16 md:p-16'
-      overlayClassName='bg-surface/95 backdrop-blur-[32px]'
+      overlayClassName='bg-foreground/80 backdrop-blur-none'
     >
       {story ? (
         <div className='flex flex-col gap-6'>
