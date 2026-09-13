@@ -27,7 +27,7 @@ export function About() {
         </div>
       </section>
 
-      <section className='px-6 py-8 md:px-12 md:py-10'>
+      <section className='px-6 pt-16 pb-8 md:px-12 md:pt-20 md:pb-10'>
         <SectionContainer>
           <div className='flex max-w-180 flex-col'>
             <P marginBottom='xs' size='lg'>
