@@ -151,14 +151,17 @@ export function Justice() {
               <P marginBottom='none' size='lg'>
                 Despite efforts to strengthen access to justice and improve the efficiency of
                 criminal justice systems, little progress has been made in reducing pre-trial
-                detention globally. The share of unsentenced detainees has remained virtually
-                unchanged over the past decade, at around 30%, equivalent to approximately 3.6
-                million people, with an estimated{' '}
-                <span className='gender-lens'>3.4 million men and 0.2 million women</span>. Regional
-                trends, however, varied considerably. Latin America and the Caribbean reduced the
-                proportion of prisoners awaiting trial or sentencing from 41% in 2015 to 31% in
-                2024. By contrast, the situation deteriorated in Central and Southern Asia, where
-                almost six in ten prisoners were unsentenced in 2024, up from five in ten in 2015.
+                detention globally.{' '}
+                <span className='gender-lens'>
+                  The share of unsentenced detainees has remained virtually unchanged over the past
+                  decade, at around 30%, equivalent to approximately 3.6 million people, with an
+                  estimated 3.4 million men and 0.2 million women
+                </span>
+                . Regional trends, however, varied considerably. Latin America and the Caribbean
+                reduced the proportion of prisoners awaiting trial or sentencing from 41% in 2015 to
+                31% in 2024. By contrast, the situation deteriorated in Central and Southern Asia,
+                where almost six in ten prisoners were unsentenced in 2024, up from five in ten in
+                2015.
               </P>
             </TextContainer>
             <TextContainer>
