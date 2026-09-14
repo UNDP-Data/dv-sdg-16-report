@@ -421,8 +421,7 @@ export function Justice() {
         indicatorCode: '16.a.1',
         heading:
           'Progress had stalled in establishing National Human Rights Institutions compliant with the Paris Principles',
-        heroHeading:
-          '89 countries have National Human Rights Institutions fully compliant with the Paris Principles',
+        heroHeading: '89 countries have NHRIs fully compliant with the Paris Principles',
         anchor: 'national-human-rights-institutions',
         content: (
           <>
