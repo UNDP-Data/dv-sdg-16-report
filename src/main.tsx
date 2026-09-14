@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import createHomeRoute from './App';
 import FooterEl from './components/Footer';
 import HeaderEl from './components/Header';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import * as TanStackQueryProvider from './integration/tanstack-query';
 import createAboutRoute from './routes/about/about.route';
 import createImpactStoriesRoute from './routes/impact-stories/impact-stories.route';
@@ -24,7 +25,7 @@ import './styles/style.css';
 function GrainOverlay() {
   return (
     <svg
-      className='pointer-events-none fixed inset-0 z-10 h-full w-full opacity-[0.08] mix-blend-multiply'
+      className='pointer-events-none fixed inset-0 z-[35] h-full w-full opacity-[0.08]'
       aria-hidden='true'
     >
       <filter id='grain'>
@@ -51,6 +52,7 @@ const rootRoute = createRootRoute({
         <Outlet />
       </main>
       <FooterEl />
+      <ScrollToTopButton />
     </div>
   ),
 });
@@ -124,7 +126,7 @@ if (rootElement) {
             light: '#7b6fe8',
           },
           foreground: '#141d25',
-          foregroundSoft: '#142338',
+          foregroundSoft: '#041925',
           backgroundSoft: '#f5f9fc',
           content: {
             reverse: '#DCE6F0',

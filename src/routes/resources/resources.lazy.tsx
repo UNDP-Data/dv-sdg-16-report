@@ -1,39 +1,62 @@
 import { useQuery } from '@tanstack/react-query';
 import { createLazyRoute } from '@tanstack/react-router';
 import { DataCards } from '@undp/data-viz/DataCards';
-import { fetchAndParseCSV } from '@undp/data-viz/fetchAndParseData';
+import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { Badge } from '@undp/design-system-react/Badge';
-import { CardTag, CardTitle } from '@undp/design-system-react/Card';
-import { SegmentedControl } from '@undp/design-system-react/SegmentedControl';
+import { CardTitle } from '@undp/design-system-react/Card';
+import { cn } from '@undp/design-system-react/cn';
+import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
+import { Search } from '@undp/design-system-react/Search';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { ArrowRight } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
+import { SectionContainer } from '@/components/Containers';
 import ContentCard from '@/components/ContentCard';
-import type { PublicationRow } from '@/types';
+
+interface Publication {
+  title: string;
+  agency: string;
+  year: number;
+  type: string;
+  indicators: string[];
+  link: string | null;
+}
+
+interface ChapterTarget {
+  indicators: {
+    code: string;
+    label: string;
+    officialIndicators: { code: string }[];
+  }[];
+}
 
 export function Resources() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['publications'],
-    queryFn: () => fetchAndParseCSV('/data/publications.csv') as Promise<PublicationRow[]>,
+    queryFn: () => fetchAndParseJSON('/data/publications.json') as Promise<Publication[]>,
   });
-  const [selectedChapter, setSelectedChapter] = useState('all');
-  const [selectedType, setSelectedType] = useState('Flagship publication');
+  const { data: targets } = useQuery({
+    queryKey: ['target-list'],
+    queryFn: () =>
+      fetchAndParseJSON('/data/report/targetList.json') as Promise<
+        Record<'Peace' | 'Justice' | 'Inclusion', ChapterTarget[]>
+      >,
+  });
+  const [selectedType, setSelectedType] = useState('Relevant publications');
+  const [selectedIndicator, setSelectedIndicator] = useState<OptionType | null>(null);
+  const [search, setSearch] = useState('');
 
-  const rows = useMemo(() => {
-    if (!data) return [];
-    const filtered = data.filter(
+  const rows = (data ?? [])
+    .filter(
       (d) =>
-        d.Type === selectedType &&
-        (selectedChapter === 'all' || (d.Chapter?.split('; ').includes(selectedChapter) ?? false)),
-    );
-    return filtered.sort(
-      (a, b) =>
-        b['Publication year'] - a['Publication year'] ||
-        a['Publication title'].localeCompare(b['Publication title']),
-    );
-  }, [data, selectedChapter, selectedType]);
+        d.type === selectedType &&
+        (!selectedIndicator ||
+          `${selectedIndicator.value}`.split(',').some((code) => d.indicators.includes(code))) &&
+        `${d.title} ${d.agency}`.toLowerCase().includes(search.toLowerCase()),
+    )
+    .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
 
   return (
     <>
@@ -57,7 +80,7 @@ export function Resources() {
       </section>
 
       <section className='mx-auto w-full px-6 py-12 md:px-12 md:py-16'>
-        <div className='mx-auto flex max-w-300 flex-col gap-6'>
+        <SectionContainer className='flex flex-col gap-6'>
           {isLoading ? <Spinner size='lg' className='mx-auto my-20' /> : null}
 
           {isError || (!isLoading && !data) ? (
@@ -67,42 +90,68 @@ export function Resources() {
           ) : null}
 
           {data ? (
-            <Tabs
-              value={selectedType}
-              onValueChange={setSelectedType}
-              color='blue'
-              className='flex flex-col gap-0'
-            >
-              <SegmentedControl
-                options={[
-                  { value: 'all', label: 'All dimensions' },
-                  { value: 'Peace', label: 'Peace' },
-                  { value: 'Justice', label: 'Justice' },
-                  { value: 'Inclusion', label: 'Inclusion' },
-                ]}
-                value={selectedChapter}
-                onValueChange={setSelectedChapter}
-                variant='light'
-                size='sm'
-                color='foreground'
-                className='mb-4 w-fit'
-                classNames={{ items: 'cursor-pointer' }}
-              />
-
-              <TabsList className='mb-0 flex-wrap pl-0'>
+            <Tabs value={selectedType} onValueChange={setSelectedType} color='blue'>
+              <TabsList className='pl-0'>
                 <TabsTrigger
-                  value='Flagship publication'
+                  value='Relevant publications'
                   className='cursor-pointer text-sm normal-case md:text-base'
                 >
-                  Flagship publications
+                  Relevant publications
                 </TabsTrigger>
                 <TabsTrigger
-                  value='Statistical product'
+                  value='Statistical standards'
                   className='cursor-pointer text-sm normal-case md:text-base'
                 >
-                  Statistical products
+                  Statistical standards
                 </TabsTrigger>
               </TabsList>
+
+              <div className='flex flex-wrap items-center gap-4'>
+                <Search
+                  placeholder='Search publications'
+                  aria-label='Search publications'
+                  inputVariant='light'
+                  inputSize='sm'
+                  inputClassName='h-[42px]'
+                  showSearchButton={false}
+                  onSearch={(value) => setSearch(value ?? '')}
+                  className='min-w-60 flex-1'
+                />
+                <div className='w-full sm:w-60'>
+                  <DropdownSelect
+                    options={[
+                      ...(['Peace', 'Justice', 'Inclusion'] as const).map((chapter) => ({
+                        label: chapter,
+                        options: (targets?.[chapter] ?? [])
+                          .flatMap((target) => target.indicators)
+                          .map((indicator) => ({
+                            label: `${indicator.code} ${indicator.label}`,
+                            value: indicator.officialIndicators.map((o) => o.code).join(','),
+                          }))
+                          .filter((option) =>
+                            data.some((d) =>
+                              option.value.split(',').some((code) => d.indicators.includes(code)),
+                            ),
+                          ),
+                      })),
+                    ].filter((group) => group.options.length > 0)}
+                    value={selectedIndicator}
+                    onChange={(option) => setSelectedIndicator(option as OptionType | null)}
+                    isClearable
+                    isSearchable
+                    placeholder='Filter indicators'
+                    variant='light'
+                    size='sm'
+                    color='primary'
+                    aria-label='Filter publications by indicator'
+                    classNames={{
+                      menu: () => 'sm:w-96!',
+                      groupHeading: () =>
+                        'm-0! px-3! pt-4! pb-1! font-semibold! text-content-secondary! text-xs! uppercase! tracking-wider!',
+                    }}
+                  />
+                </div>
+              </div>
 
               <TabsContent value={selectedType}>
                 <DataCards
@@ -111,54 +160,57 @@ export function Resources() {
                   padding='0'
                   cardBackgroundColor='transparent'
                   ariaLabel={`${selectedType} on Goal 16`}
-                  cardTemplate={(d: PublicationRow) => (
-                    <ContentCard>
-                      {d.Chapter ? (
-                        <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
-                          {d.Chapter.split('; ').join(' · ')}
-                        </CardTag>
-                      ) : null}
-                      <CardTitle className='p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
-                        {d['Publication title']}
-                      </CardTitle>
-                      <P marginBottom='none' size='base' className='text-content-secondary'>
-                        {d.Agency} · {d['Publication year']}
-                      </P>
-                      {d.Indicators && d.Indicators !== 'General' ? (
-                        <div className='mt-auto flex flex-col gap-2 pt-2'>
-                          <P
-                            marginBottom='none'
-                            size='xs'
-                            weight='semibold'
-                            className='text-content-secondary uppercase tracking-wider'
-                          >
-                            Indicators
+                  cardTemplate={(d: Publication) => (
+                    <a
+                      href={d.link ?? undefined}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='block h-full'
+                    >
+                      <ContentCard
+                        className={d.link ? undefined : 'cursor-default hover:bg-transparent'}
+                      >
+                        <div className='flex flex-col gap-2'>
+                          <CardTitle className='p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
+                            {d.title}
+                          </CardTitle>
+                          <P marginBottom='none' size='base' className='text-content-secondary'>
+                            {d.agency} · {d.year}
                           </P>
-                          <div className='flex min-h-15 flex-wrap content-start items-start gap-2'>
-                            {d.Indicators.split(', ').map((indicator) => (
-                              <Badge key={indicator} variant='outline' size='sm' rounded='md'>
-                                {indicator}
-                              </Badge>
-                            ))}
-                          </div>
                         </div>
-                      ) : null}
-                      {d.Link ? (
-                        <a
-                          href={d.Link}
-                          target='_blank'
-                          rel='noreferrer'
-                          aria-label={`View "${d['Publication title']}" (opens in a new tab)`}
-                          className='group mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'
-                        >
-                          View resource
-                          <ArrowRight
-                            size={16}
-                            className='transition-transform group-hover:translate-x-1'
-                          />
-                        </a>
-                      ) : null}
-                    </ContentCard>
+                        <div className='mt-auto flex flex-col gap-4'>
+                          <div className='flex flex-col gap-2'>
+                            <P
+                              marginBottom='none'
+                              size='xs'
+                              weight='semibold'
+                              className='text-content-secondary uppercase tracking-wider'
+                            >
+                              Indicators
+                            </P>
+                            <div className='flex min-h-15 flex-wrap items-start gap-2'>
+                              {d.indicators.map((indicator) => (
+                                <Badge key={indicator} variant='outline' size='sm' rounded='md'>
+                                  {indicator}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          <span
+                            className={cn(
+                              'flex w-fit items-center gap-2 font-semibold text-blue-500 text-sm uppercase tracking-wider',
+                              !d.link && 'invisible',
+                            )}
+                          >
+                            View resource
+                            <ArrowRight
+                              size={16}
+                              className='transition-transform group-hover:translate-x-1'
+                            />
+                          </span>
+                        </div>
+                      </ContentCard>
+                    </a>
                   )}
                 />
               </TabsContent>
@@ -170,7 +222,7 @@ export function Resources() {
               ) : null}
             </Tabs>
           ) : null}
-        </div>
+        </SectionContainer>
       </section>
     </>
   );

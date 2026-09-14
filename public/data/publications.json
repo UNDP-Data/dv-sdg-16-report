@@ -1,0 +1,375 @@
+[
+  {
+    "title": "Human Rights Count",
+    "agency": "OHCHR",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.1.2",
+      "16.10.1",
+      "16.a.1",
+      "16.b.1"
+    ],
+    "link": "https://innovation.ohchr.org/rightscount/"
+  },
+  {
+    "title": "Data Brief on Violence against Children at Home",
+    "agency": "UNICEF",
+    "year": 2025,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.2.1",
+      "16.2.3"
+    ],
+    "link": "https://data.unicef.org/resources/violence-against-children-home-2025/"
+  },
+  {
+    "title": "When Numbers Demand Action: Confronting the Global Scale of Sexual Violence against Children",
+    "agency": "UNICEF",
+    "year": 2024,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.2.1",
+      "16.2.3"
+    ],
+    "link": "https://data.unicef.org/resources/when-numbers-demand-action/"
+  },
+  {
+    "title": "Global Study on Homicide 2023",
+    "agency": "UNODC",
+    "year": 2023,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.1.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/gsh/2023/Global_study_on_homicide_2023_web.pdf"
+  },
+  {
+    "title": "Global Report on Trafficking in Persons 2024",
+    "agency": "UNODC",
+    "year": 2024,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.2.2"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/glotip/2024/GLOTIP2024_BOOK.pdf"
+  },
+  {
+    "title": "Prison Matters 2026: Global Prison Population and Trends – A Focus on Prison-Community Engagement",
+    "agency": "UNODC",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.3.2"
+    ],
+    "link": "https://www.unodc.org/unodc/en/data-and-analysis/prison-matters.html"
+  },
+  {
+    "title": "Research Brief on Transnational Organized Crime",
+    "agency": "UNODC",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1",
+      "16.4.2"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/tocta/Brief_2026/Transnational_Organized_Crime_Brief_2026.pdf"
+  },
+  {
+    "title": "A Review of Existing Research on Smuggling of Migrants",
+    "agency": "UNODC",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.2.2"
+    ],
+    "link": "https://www.unodc.org/unodc/en/data-and-analysis/som-related-publications.html"
+  },
+  {
+    "title": "Femicides in 2024: Global Estimates of Intimate Partner/Family Member Femicides",
+    "agency": "UNODC and UN Women",
+    "year": 2025,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.1.1"
+    ],
+    "link": null
+  },
+  {
+    "title": "Global Study on Firearms Trafficking 2020",
+    "agency": "UNODC",
+    "year": 2020,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.2"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/Firearms/2020_REPORT_Global_Study_on_Firearms_Trafficking_2020_web.pdf"
+  },
+  {
+    "title": "Crime-related Illicit Financial Flows: Latest Progress",
+    "agency": "UNODC",
+    "year": 2023,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/IFF/2023/IFFs_Estimates_Report_2023-final-11dec2023.pdf"
+  },
+  {
+    "title": "Regional Study on Illicit Financial Flows from Drug Trafficking along the Northern Route",
+    "agency": "UNODC",
+    "year": 2022,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/IFF/IFF_Afghanistan_2022.pdf"
+  },
+  {
+    "title": "Regional Study on Illicit Financial Flows from Smuggling of Migrants and Trafficking in Persons from Selected Countries under GLO.ACT",
+    "agency": "UNODC",
+    "year": 2023,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/IFF/GLOACT_Study_on_Illicit_Financial_Flows.pdf"
+  },
+  {
+    "title": "Opiates and Methamphetamine Trafficking on the Balkan Route: Drug Flows, Illicit Incomes and Illicit Financial Flows",
+    "agency": "UNODC",
+    "year": 2025,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/IFF/2025/Balkan_Route.pdf"
+  },
+  {
+    "title": "Study on Value Chains and Illicit Financial Flows from Trafficking in Ivory and Rhino Horn,  in World Wildlife Crime Report",
+    "agency": "UNODC",
+    "year": 2020,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/wildlife/2020/World_Wildlife_Report_2020_9July.pdf"
+  },
+  {
+    "title": "Women in Parliament in 2025",
+    "agency": "IPU",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.7.1 (a)"
+    ],
+    "link": "https://www.ipu.org/resources/publications/reports/2026-02/women-in-parliament-in-2025"
+  },
+  {
+    "title": "Youth Participation in National Parliaments: 2025",
+    "agency": "IPU",
+    "year": 2026,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.7.1 (a)"
+    ],
+    "link": "https://www.ipu.org/resources/publications/reports/2026-04/youth-participation-in-national-parliaments-2025"
+  },
+  {
+    "title": "The Right Start in Life: Global Levels and Trends in Birth Registration – 2024 Update",
+    "agency": "UNICEF",
+    "year": 2024,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.9.1"
+    ],
+    "link": "https://data.unicef.org/resources/the-right-start-in-life-2024-update/"
+  },
+  {
+    "title": "Birth Registration in Sub-Saharan Africa: Current Levels and Trends",
+    "agency": "UNICEF",
+    "year": 2025,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.9.1"
+    ],
+    "link": "https://data.unicef.org/resources/birth-registration-in-sub-saharan-africa-current-levels-and-trends/"
+  },
+  {
+    "title": "Statistical Framework to Measure Corruption",
+    "agency": "UNODC",
+    "year": 2023,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.5.1",
+      "16.5.2"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/statistics/corruption/2024/CAC_COSP_2023_CRP_Corruption_UPDATED.pdf"
+  },
+  {
+    "title": "Working Guidelines for Measuring Crime-related Illicit Financial Flows",
+    "agency": "UNODC",
+    "year": 2026,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/statistics/IFF/Working_guidelines_for_measuring_crime-related_IFFs.pdf"
+  },
+  {
+    "title": "Manual on Victimization Surveys",
+    "agency": "UNODC and UNECE",
+    "year": 2010,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.1.3",
+      "16.3.1"
+    ],
+    "link": "https://unece.org/info/publications/pub/21854"
+  },
+  {
+    "title": "Human Rights Indicators: A Guide to Measurement and Implementation",
+    "agency": "OHCHR",
+    "year": 2012,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.1.3",
+      "16.3.2"
+    ],
+    "link": "https://www.ohchr.org/en/publications/policy-and-methodological-publications/human-rights-indicators-guide-measurement-and"
+  },
+  {
+    "title": "International Classification of Crime for Statistical Purposes",
+    "agency": "UNODC",
+    "year": 2015,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.1.2",
+      "16.2.2",
+      "16.1.3",
+      "16.3.1",
+      "16.5.1",
+      "16.b.1"
+    ],
+    "link": "https://www.unodc.org/unodc/en/data-and-analysis/statistics/iccs.html"
+  },
+  {
+    "title": "A Human Rights Based Approach to Data",
+    "agency": "OHCHR",
+    "year": 2018,
+    "type": "Statistical standards",
+    "indicators": [
+      "Cross-cutting"
+    ],
+    "link": "https://www.ohchr.org/en/documents/tools-and-resources/human-rights-based-approach-data-leaving-no-one-behind-2030-agenda"
+  },
+  {
+    "title": "Manual on Corruption Surveys",
+    "agency": "UNODC",
+    "year": 2018,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.5.1",
+      "16.5.2"
+    ],
+    "link": "https://www.unodc.org/unodc/en/data-and-analysis/corruption-manuals.html"
+  },
+  {
+    "title": "Handbook of Governance Statistics",
+    "agency": "PRAIA CITY GROUP",
+    "year": 2020,
+    "type": "Statistical standards",
+    "indicators": [
+      "Cross-cutting"
+    ],
+    "link": "https://www.ohchr.org/sites/default/files/Documents/Issues/HRIndicators/handbook_governance_statistics.pdf"
+  },
+  {
+    "title": "Statistical Framework for the Measurement of Gender-Related Killings",
+    "agency": "UNODC and UN Women",
+    "year": 2022,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.1.1"
+    ],
+    "link": "https://www.unodc.org/documents/data-and-analysis/statistics/Statistical_framework_femicide_2022.pdf"
+  },
+  {
+    "title": "SDG16 Survey Initiative",
+    "agency": "UNDP, UNODC, OHCHR",
+    "year": 2022,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.1.3",
+      "16.3.1",
+      "16.3.3",
+      "16.5.1",
+      "16.b.1",
+      "16.7.2",
+      "16.6.2",
+      "16.a.1",
+      "16.1.4"
+    ],
+    "link": "https://www.undp.org/publications/sdg16-survey-initiative"
+  },
+  {
+    "title": "Conceptual Framework for the Statistical Measurement of Illicit Financial Flows",
+    "agency": "UNCTAD and UNODC",
+    "year": 2020,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.4.1"
+    ],
+    "link": "https://unctad.org/publication/conceptual-framework-statistical-measurement-illicit-financial-flows"
+  },
+  {
+    "title": "From Data to Action Strengthening Civil Justice with SDG 16.3.3",
+    "agency": "UNDP, UNODC and OECD",
+    "year": 2025,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.3.3"
+    ],
+    "link": "https://www.undp.org/sites/g/files/zskgke326/files/2025-02/undp-oecd-unodc-from-data-to-action-strengthening-civil-justice-with-sdg-16-3-3.pdf"
+  },
+  {
+    "title": "Improving the monitoring of SDG 16.3.3: Towards better access to justice",
+    "agency": "OECD/Pathfinders for Peaceful Just and Inclusive Societies",
+    "year": 2023,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.3.3"
+    ],
+    "link": "https://www.oecd.org/en/publications/improving-the-monitoring-of-sdg-16-3-3_c5fbed7e-en.html"
+  },
+  {
+    "title": "Global Report on Gender Equality in Public Administration",
+    "agency": "UNDP and University of Pittsburgh",
+    "year": 2021,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.7.1 (b)"
+    ],
+    "link": "https://www.undp.org/publications/global-report-gender-equality-public-administration"
+  },
+  {
+    "title": "Measuring Peace, Justice and Inclusion: SDG 16.6.2 – Understanding satisfaction with public services for more effective, accountable and inclusive public institutions",
+    "agency": "UNDP",
+    "year": 2023,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.6.2"
+    ],
+    "link": "https://www.undp.org/publications/measuring-peace-justice-and-inclusion-sdg-1662-understanding-satisfaction-public-services-more-effective-accountable-and-inclusive"
+  },
+  {
+    "title": "Advancing Inclusive Decision-Making for Sustainable Development: Representation in the Public Service through SDG 16.7.1b",
+    "agency": "UNDP",
+    "year": 2024,
+    "type": "Relevant publications",
+    "indicators": [
+      "16.7.1 (b)"
+    ],
+    "link": "https://www.undp.org/policy-centre/governance/publications/advancing-inclusive-decision-making-sustainable-development-representation-public-service-through-sdg-1671b"
+  }
+]

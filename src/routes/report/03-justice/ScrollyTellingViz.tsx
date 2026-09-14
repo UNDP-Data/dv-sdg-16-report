@@ -23,8 +23,9 @@ const SLIDES = [
   },
   {
     vizContent: {
-      reportedCount: 46,
-      caption: 'of violence is reported',
+      reportedCount: 50,
+      label: '',
+      caption: '',
       color: 'gray-500',
       nonReportedDotOpacity: 0.4,
     },
@@ -42,9 +43,8 @@ const SLIDES = [
           content='The median is the middle value in a set of numbers. It divides the data into two equal halves, with half of observations above it and half below it.'
           color='secondary'
         />{' '}
-        reporting rate is below 50%.{' '}
-        <span className='font-bold'>Fewer than half of victims of violence report</span> their
-        experiences to the police or other competent authorities.
+        reporting rate is below 50%. Fewer than half of victims of violence report their experiences
+        to the police or other competent authorities.
       </>
     ),
   },
@@ -58,9 +58,8 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        <span className='font-bold text-categorical-female'>
-          Robbery has the highest median reporting rate
-        </span>
+        <span className='font-bold text-categorical-female'>Robbery</span> has the highest median
+        reporting rate
       </>
     ),
   },
@@ -74,11 +73,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        …followed by physical assault.{' '}
-        <span className='font-bold text-accent-teal-hover'>
-          Four in ten victims of physical assault
-        </span>{' '}
-        report their experience to the police or other competent authority
+        …followed by <span className='font-bold text-accent-teal-hover'>physical assault</span>.
+        Four in ten victims of physical assault report their experience to the police or other
+        competent authority
       </>
     ),
   },
@@ -92,11 +89,9 @@ const SLIDES = [
     },
     slideContent: (
       <>
-        <span className='font-bold text-secondary'>
-          Sexual assault is the most underreported form of violence.
-        </span>{' '}
-        Stigma, fear of retaliation, and limited trust in the justice system continue to deter
-        victims from seeking justice.
+        <span className='font-bold text-secondary'>Sexual assault</span> is the most underreported
+        form of violence. Stigma, fear of retaliation, and limited trust in the justice system
+        continue to deter victims from seeking justice.
       </>
     ),
   },
@@ -252,15 +247,18 @@ export default function ScrollyTellingViz() {
                     className='text-center font-heading'
                     style={{ color: `var(--${activeSlide.vizContent.color})` }}
                   >
-                    <motion.span>{rounded}</motion.span>
+                    <motion.span>{activeSlide.vizContent.label ?? rounded}</motion.span>
                     <span className='ml-1 text-2xl md:text-3xl'>%</span>
                   </H2>
                   <P marginBottom='none' size='xl' className='mt-0.5 text-center text-foreground'>
                     {activeSlide.vizContent.caption}
                   </P>
-                  <P marginBottom='none' size='sm' className='text-center text-gray-500'>
-                    median across {activeSlide.vizContent.noOfCountriesReported} countries with data
-                  </P>
+                  {activeSlide.vizContent.noOfCountriesReported && (
+                    <P marginBottom='none' size='sm' className='text-center text-gray-500'>
+                      median across {activeSlide.vizContent.noOfCountriesReported} countries with
+                      data
+                    </P>
+                  )}
                 </div>
               </foreignObject>
             </motion.g>

@@ -2,7 +2,6 @@ import { createLazyRoute } from '@tanstack/react-router';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { H4, P } from '@undp/design-system-react/Typography';
 import { useMemo } from 'react';
-import { useIsGenderLensActive } from '@/stores/chapterStore';
 import { GraphContainer, TextContainer } from '../../../components/Containers';
 import ChapterEndNav from '../components/ChapterFooter';
 import ChapterHero from '../components/HeroBanner';
@@ -28,7 +27,6 @@ import ViolentDisciplineByRegionBarChart from './charts/ViolentDisciplineByRegio
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Peace() {
-  const isGenderLensActive = useIsGenderLensActive();
   const sections = useMemo(
     () => [
       {
@@ -87,7 +85,7 @@ export function Peace() {
         indicatorCode: '16.1.1',
         heading:
           'Global homicide rates continue to decline, but the world remains off track to significantly reduce violence by 2030',
-        heroHeading: '400,000+ people die of intentional homicide every year',
+        heroHeading: 'More than 400,000 people die of intentional homicide every year',
         anchor: 'homicide',
         isGenderLens: true,
         content: (
@@ -107,7 +105,7 @@ export function Peace() {
                 homicide rate to fall below 3 victims per 100,000 population.
               </P>
             </TextContainer>
-            <GraphContainer>
+            <GraphContainer className='gender-lens'>
               <HomicideRateBySexLineChart />
             </GraphContainer>
             <TextContainer>
@@ -128,19 +126,26 @@ export function Peace() {
             <GraphContainer>
               <HomicideRateByRegionBarChart />
             </GraphContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
                 color='primary'
-                content='Nearly 60% of all women killed in 2024 were victims of an intimate partner or family member'
+                content={
+                  <span className='gender-lens'>
+                    Nearly 60% of all women killed in 2024 were victims of an intimate partner or
+                    family member
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Although men accounted for an estimated 80% of homicide victims in 2024, women
-                continue to face the greatest risk of lethal violence within their own homes. The
-                share of women victims of an intimate partner or family member was highest in
-                Africa, followed by Oceania, and lowest in the Americas.
+                <span className='gender-lens'>
+                  Although men accounted for an estimated 80% of homicide victims in 2024, women
+                  continue to face the greatest risk of lethal violence within their own homes. The
+                  share of women victims of an intimate partner or family member was highest in
+                  Africa, followed by Oceania, and lowest in the Americas.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer className='gender-lens'>
               <IntimatePartnerHomicideByRegionSexBarChart />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-02.webp' />
@@ -195,12 +200,14 @@ export function Peace() {
                 nearly doubling to 27% in 2025.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Over the 2023–2025 period, one in ten defenders killed or disappeared worldwide was
-                a woman. Defenders working on environmental and land issues accounted for nearly
-                three in ten recorded cases, while one in five victims belonged to indigenous or
-                minority groups.
+                <span className='gender-lens'>
+                  Over the 2023–2025 period, one in ten defenders killed or disappeared worldwide
+                  was a woman. Defenders working on environmental and land issues accounted for
+                  nearly three in ten recorded cases, while one in five victims belonged to
+                  indigenous or minority groups.
+                </span>
               </P>
             </TextContainer>
             <GraphContainer>
@@ -246,22 +253,28 @@ export function Peace() {
                 levels recorded in other regions, where median prevalence rates remained below 1%.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
-                content='Patterns of victimization differ markedly between women and men. Across 18 countries
-                with available data, women were consistently more likely than men to experience
-                sexual violence.'
+                content={
+                  <span className='gender-lens'>
+                    Patterns of victimization differ markedly between women and men. Across 18
+                    countries with available data, women were consistently more likely than men to
+                    experience sexual violence.
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                The median prevalence of sexual violence among women was 2.9%, compared with 0.4%
-                among men. By contrast, men experienced slightly higher levels of physical violence,
-                with a median prevalence of 4.2% compared with 3.2% among women in the 51 countries
-                with data globally. Data on psychological violence remain too limited for global
-                analysis. Available evidence, however, suggests relatively similar prevalence levels
-                among women and men.
+                <span className='gender-lens'>
+                  The median prevalence of sexual violence among women was 2.9%, compared with 0.4%
+                  among men. By contrast, men experienced slightly higher levels of physical
+                  violence, with a median prevalence of 4.2% compared with 3.2% among women in the
+                  51 countries with data globally. Data on psychological violence remain too limited
+                  for global analysis. Available evidence, however, suggests relatively similar
+                  prevalence levels among women and men.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer className='gender-lens'>
               <NonLethalViolenceByTypeSexStripChart />
             </GraphContainer>
             <Spacer size='2xl' />
@@ -288,17 +301,19 @@ export function Peace() {
                 forms and occurs in any setting where children spend time.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                An estimated 1.6 billion children, around two in three globally, experience violent
-                punishment by caregivers at home. While physical punishment or psychological
-                aggression in the context of discipline at home is widespread across all regions,
-                Central and Southern Asia and Sub-Saharan Africa together account for more than half
-                of all affected children worldwide. In most countries, boys and girls are equally
-                likely to experience violent discipline at home.
+                <span className='gender-lens'>
+                  An estimated 1.6 billion children, around two in three globally, experience
+                  violent punishment by caregivers at home. While physical punishment or
+                  psychological aggression in the context of discipline at home is widespread across
+                  all regions, Central and Southern Asia and Sub-Saharan Africa together account for
+                  more than half of all affected children worldwide. In most countries, boys and
+                  girls are equally likely to experience violent discipline at home.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer>
               <ViolentDisciplineByRegionBarChart />
             </GraphContainer>
             <TextContainer>
@@ -306,20 +321,26 @@ export function Peace() {
                 Violence experienced during childhood extends beyond violent discipline in the home.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
                 color='primary'
-                content='Globally, more than 370 million women and girls, around one in eight alive today,
-              experienced rape or sexual assault as children.'
+                content={
+                  <span className='gender-lens'>
+                    Globally, more than 370 million women and girls, around one in eight alive
+                    today, experienced rape or sexual assault as children.
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Among men and boys, an estimated 240 to 310 million (or around one in eleven)
-                experienced rape or sexual assault in childhood. The risks are even greater in
-                fragile settings, where more than one in four girls has experienced rape or sexual
-                assault in childhood.
+                <span className='gender-lens'>
+                  Among men and boys, an estimated 240 to 310 million (or around one in eleven)
+                  experienced rape or sexual assault in childhood. The risks are even greater in
+                  fragile settings, where more than one in four girls has experienced rape or sexual
+                  assault in childhood.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer className='gender-lens'>
               <SexualViolenceInChildhoodUnitChart />
             </GraphContainer>
             <WaveDivider src='/imgs/dividers/peace-03.webp' />
@@ -345,20 +366,19 @@ export function Peace() {
                 therefore be interpreted as a minimum estimate of the true scale of trafficking.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Following a temporary decline during the first year of the Covid-19 pandemic, the
-                number of detected victims of trafficking has continued to increase globally.
-                Children accounted for 37% of all detected victims in 2024, nearly three times the
-                share recorded two decades earlier (13% in 2004). Among child victims, girls
-                represented a slightly larger share than boys. Among adults, women continued to
-                account for a significantly larger share of victims than men.
+                <span className='gender-lens'>
+                  Following a temporary decline during the first year of the Covid-19 pandemic, the
+                  number of detected victims of trafficking has continued to increase globally.
+                  Children accounted for 37% of all detected victims in 2024, nearly three times the
+                  share recorded two decades earlier (13% in 2004). Among child victims, girls
+                  represented a slightly larger share than boys. Among adults, women continued to
+                  account for a significantly larger share of victims than men.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer
-              isGenderLensActive={isGenderLensActive}
-              id='TraffickingVictimsBySexAgeUnitChart'
-            >
+            <GraphContainer className='gender-lens' id='TraffickingVictimsBySexAgeUnitChart'>
               <TraffickingVictimsBySexAgeUnitChart />
             </GraphContainer>
             <TextContainer>
@@ -410,33 +430,42 @@ export function Peace() {
             <GraphContainer>
               <FeelSafeWalkingAloneByPeriodDumbbellChart />
             </GraphContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
                 color='primary'
-                content='Women consistently indicate feeling less safe than men'
+                content={
+                  <span className='gender-lens'>
+                    Women consistently indicate feeling less safe than men
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Across 74 countries with sex-disaggregated data, 59% of women reported feeling safe
-                walking alone after dark, compared with 72% of men. The gender gap was evident in
-                every region and was particularly pronounced in Northern Africa and Western Asia.
+                <span className='gender-lens'>
+                  Across 74 countries with sex-disaggregated data, 59% of women reported feeling
+                  safe walking alone after dark, compared with 72% of men. The gender gap was
+                  evident in every region and was particularly pronounced in Northern Africa and
+                  Western Asia.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer isGenderLensActive={isGenderLensActive}>
+            <GraphContainer className='gender-lens'>
               <FeelSafeWalkingAloneBySexDumbbellChart />
             </GraphContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                These findings suggest that perceptions of safety reflect more than exposure to
-                lethal violence. Experiences and risks of non-lethal violence, including sexual
-                violence, harassment and robbery, as well as broader social and environmental
-                factors, may also influence how women perceive safety in everyday life.
+                <span className='gender-lens'>
+                  These findings suggest that perceptions of safety reflect more than exposure to
+                  lethal violence. Experiences and risks of non-lethal violence, including sexual
+                  violence, harassment and robbery, as well as broader social and environmental
+                  factors, may also influence how women perceive safety in everyday life.
+                </span>
               </P>
             </TextContainer>
           </>
         ),
       },
     ],
-    [isGenderLensActive],
+    [],
   );
   return (
     <>

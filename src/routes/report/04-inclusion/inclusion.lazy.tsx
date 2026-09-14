@@ -3,7 +3,6 @@ import { Spacer } from '@undp/design-system-react/Spacer';
 import { H4, P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { useMemo } from 'react';
-import { useIsGenderLensActive } from '@/stores/chapterStore';
 import {
   GraphContainer,
   ImpactStoriesContainer,
@@ -32,7 +31,6 @@ import VoteSharesByInstitutionDumbbellChart from './charts/VoteSharesByInstituti
 import ScrollyTellingViz from './ScrollyTellingViz';
 
 export function Inclusion() {
-  const isGenderLensActive = useIsGenderLensActive();
   const sections = useMemo(
     () => [
       {
@@ -57,12 +55,14 @@ export function Inclusion() {
             <div className='w-full'>
               <ScrollyTellingViz />
             </div>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                There is little evidence of gender inequality in birth registration. Across almost
-                all countries with available data, boys and girls are registered at similar rates.
-                This suggests that the remaining gaps primarily reflect inequalities in access to
-                registration systems rather than differences between girls and boys.
+                <span className='gender-lens'>
+                  There is little evidence of gender inequality in birth registration. Across almost
+                  all countries with available data, boys and girls are registered at similar rates.
+                  This suggests that the remaining gaps primarily reflect inequalities in access to
+                  registration systems rather than differences between girls and boys.
+                </span>
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-04.webp' align='right' />
@@ -80,39 +80,42 @@ export function Inclusion() {
         isGenderLens: true,
         content: (
           <>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                As societies confront increasingly complex challenges from climate change and
-                conflict to economic insecurity and technological change, it is important that
-                political decision-making reflects the diversity{' '}
-                <InfoTooltip
-                  trigger='of the populations it serves'
-                  content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect other diversity including persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
-                  color='tertiary'
-                />
-                . Women and younger representatives bring{' '}
-                <InfoTooltip
-                  trigger='different lived experiences and policy priorities'
-                  content="Young leaders tend to have different priorities from their counterparts, typically leaning towards social spending related to their cohort's long-term future, such as climate change, and women leaders often favour investments in education and childcare, and influence gender-sensitive policy discussions in parliaments."
-                  color='tertiary'
-                />
-                , helping to broaden parliamentary debate and strengthen the responsiveness of
-                public policy.
+                <span className='gender-lens'>
+                  As societies confront increasingly complex challenges from climate change and
+                  conflict to economic insecurity and technological change, it is important that
+                  political decision-making reflects the diversity{' '}
+                  <InfoTooltip
+                    trigger='of the populations it serves'
+                    content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect other diversity including persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
+                    color='tertiary'
+                  />
+                  . Women and younger representatives bring{' '}
+                  <InfoTooltip
+                    trigger='different lived experiences and policy priorities'
+                    content="Young leaders tend to have different priorities from their counterparts, typically leaning towards social spending related to their cohort's long-term future, such as climate change, and women leaders often favour investments in education and childcare, and influence gender-sensitive policy discussions in parliaments."
+                    color='tertiary'
+                  />
+                  , helping to broaden parliamentary debate and strengthen the responsiveness of
+                  public policy.
+                </span>
+              </P>
+
+              <P marginBottom='none' size='lg'>
+                <span className='gender-lens'>
+                  Despite steady progress over the past decade, parliaments remain far from
+                  reflecting the populations they represent. As of 2026, women held 27.5% of
+                  parliamentary seats globally, a modest increase from 27.2% in 2025. Representation
+                  remains even lower in parliamentary leadership, where women accounted for 19.9% of
+                  Speakers of Parliament in 2026, a decline of 3.8 percentage points from the
+                  previous year. There are pronounced regional differences. Women's representation
+                  is highest in the Americas, where women hold 35.6% of parliamentary seats. By
+                  contrast, women hold only 16.2% of seats in the Middle East and North Africa.
+                </span>
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
-              <P marginBottom='none' size='lg'>
-                Despite steady progress over the past decade, parliaments remain far from reflecting
-                the populations they represent. As of 2026, women held 27.5% of parliamentary seats
-                globally, a modest increase from 27.2% in 2025. Representation remains even lower in
-                parliamentary leadership, where women accounted for 19.9% of Speakers of Parliament
-                in 2026, a decline of 3.8 percentage points from the previous year. There are
-                pronounced regional differences. Women's representation is highest in the Americas,
-                where women hold 35.6% of parliamentary seats. By contrast, women hold only 16.2% of
-                seats in the Middle East and North Africa.
-              </P>
-            </TextContainer>
-            <GraphContainer>
+            <GraphContainer className='gender-lens'>
               <ParliamentaryLeadershipByCategoryBarChart />
             </GraphContainer>
             <TextContainer>
@@ -135,13 +138,15 @@ export function Inclusion() {
                 content='Progress among younger generations offers some grounds for optimism'
               />
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Younger generations of parliamentarians are, however, considerably more gender
-                balanced than older ones. Women account for 43.5% of all MPs aged 30 years or
-                younger and 36.2% of those aged 40 years or younger. These patterns suggest that
-                gender balance in parliaments may continue to improve as younger cohorts enter
-                political office.
+                <span className='gender-lens'>
+                  Younger generations of parliamentarians are, however, considerably more gender
+                  balanced than older ones. Women account for 43.5% of all MPs aged 30 years or
+                  younger and 36.2% of those aged 40 years or younger. These patterns suggest that
+                  gender balance in parliaments may continue to improve as younger cohorts enter
+                  political office.
+                </span>
               </P>
             </TextContainer>
             <Spacer size='2xl' />
@@ -162,59 +167,71 @@ export function Inclusion() {
         isGenderLens: true,
         content: (
           <>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
-              <P marginBottom='none' size='lg'>
-                Women's representation in the public service and the judiciary has improved across
-                many countries, yet this progress has not consistently translated into equal
-                representation. Globally, women remain underrepresented relative to their share of
-                the population in both the public service and the judiciary, with representation
-                ratios of 0.80 and 0.88, respectively, compared with{' '}
-                <InfoTooltip
-                  trigger='parity at 1.00'
-                  content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
-                  color='tertiary'
-                />
-                . Put simply, a ratio of 0.80 means that women have achieved only 80% of the
-                representation they would have if their share in public institutions matched their
-                share of the population.
-              </P>
-            </TextContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Progress also remains uneven across regions and income groups. Countries that have
-                achieved or approached parity are concentrated primarily among high-income
-                countries, while many middle- and low-income countries continue to lag behind.
+                <span className='gender-lens'>
+                  Women's representation in the public service and the judiciary has improved across
+                  many countries, yet this progress has not consistently translated into equal
+                  representation. Globally, women remain underrepresented relative to their share of
+                  the population in both the public service and the judiciary, with representation
+                  ratios of 0.80 and 0.88, respectively, compared with{' '}
+                  <InfoTooltip
+                    trigger='parity at 1.00'
+                    content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
+                    color='tertiary'
+                  />
+                  . Put simply, a ratio of 0.80 means that women have achieved only 80% of the
+                  representation they would have if their share in public institutions matched their
+                  share of the population.
+                </span>
+              </P>
+
+              <P marginBottom='none' size='lg'>
+                <span className='gender-lens'>
+                  Progress also remains uneven across regions and income groups. Countries that have
+                  achieved or approached parity are concentrated primarily among high-income
+                  countries, while many middle- and low-income countries continue to lag behind.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer>
+            <GraphContainer className='gender-lens'>
               <RepresentationByRegionAndIncomeGroupsBarChart />
             </GraphContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Recent advances in data collection provide new evidence on how representation is
-                distributed within institutions.
+                <span className='gender-lens'>
+                  Recent advances in data collection provide new evidence on how representation is
+                  distributed within institutions.
+                </span>
               </P>
               <Highlight
                 color='tertiary'
-                className={isGenderLensActive ? 'gender-lens' : undefined}
-                content='Women are often well represented, and in some cases
-                overrepresented, in entry-level and administrative roles within the public service.
-                Their representation, however, declines at higher levels of decision-making.'
+                content={
+                  <span className='gender-lens'>
+                    Women are often well represented, and in some cases overrepresented, in
+                    entry-level and administrative roles within the public service. Their
+                    representation, however, declines at higher levels of decision-making.
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Similar patterns are observed across judicial systems, where women tend to be better
-                represented in lower courts than in constitutional and supreme courts.
+                <span className='gender-lens'>
+                  Similar patterns are observed across judicial systems, where women tend to be
+                  better represented in lower courts than in constitutional and supreme courts.
+                </span>
               </P>
             </TextContainer>
-            <GraphContainer>
+            <GraphContainer className='gender-lens'>
               <RepresentationByInstitutionalLevelBarChart />
             </GraphContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                The evidence suggests that achieving inclusive governance requires more than
-                improving overall representation. It requires ensuring that women have equal
-                opportunities to advance into leadership and decision-making roles across public
-                institutions.
+                <span className='gender-lens'>
+                  The evidence suggests that achieving inclusive governance requires more than
+                  improving overall representation. It requires ensuring that women have equal
+                  opportunities to advance into leadership and decision-making roles across public
+                  institutions.
+                </span>
               </P>
             </TextContainer>
             <Spacer size='2xl' />
@@ -224,13 +241,15 @@ export function Inclusion() {
                 autoScroll={3000}
                 classNames={{
                   arrowButton:
-                    'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:pointer-events-none [&.opacity-disabled]:bg-transparent [&.opacity-disabled]:opacity-30',
+                    'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:opacity-30',
                   arrows: 'text-foreground',
+                  playPauseButton: 'border border-stroke bg-background hover:bg-background-soft',
+                  playPauseIcon: 'text-foreground',
                   content: '[&_p]:hidden!',
                   progressBar: 'hidden!',
                   progressBarBg: 'hidden!',
                 }}
-                styles={{ arrows: { strokeWidth: 1.5 } }}
+                styles={{ arrows: { strokeWidth: 1.5 }, playPauseIcon: { strokeWidth: 1.5 } }}
                 slides={[
                   'inclusion-armenia-representation-data',
                   'inclusion-bosnia-herzegovina-institutional-change',
@@ -265,12 +284,14 @@ export function Inclusion() {
                 personally experienced discrimination during the previous 12 months.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Women and men self-report similar overall levels of discrimination. However, women
-                are more likely to report discrimination based on gender, reflecting persistent
-                inequalities that often intersect with disability, income, education and minority
-                status.
+                <span className='gender-lens'>
+                  Women and men self-report similar overall levels of discrimination. However, women
+                  are more likely to report discrimination based on gender, reflecting persistent
+                  inequalities that often intersect with disability, income, education and minority
+                  status.
+                </span>
               </P>
             </TextContainer>
             <TextContainer>
@@ -285,17 +306,24 @@ export function Inclusion() {
                 higher among people with lower levels of income and education.
               </P>
             </TextContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <Highlight
                 color='tertiary'
-                className={isGenderLensActive ? 'gender-lens' : undefined}
-                content='Newly collected data on sexual orientation and gender identity provide additional insights into forms of exclusion that have historically been difficult to measure'
+                content={
+                  <span className='gender-lens'>
+                    Newly collected data on sexual orientation and gender identity provide
+                    additional insights into forms of exclusion that have historically been
+                    difficult to measure
+                  </span>
+                }
               />
               <P marginBottom='none' size='lg'>
-                Across countries where such data are available, transgender and gender-diverse
-                individuals frequently report the highest levels of discrimination, often exceeding
-                60%, while people identifying as sexual minorities report discrimination rates 2.2
-                times higher than the population average.
+                <span className='gender-lens'>
+                  Across countries where such data are available, transgender and gender-diverse
+                  individuals frequently report the highest levels of discrimination, often
+                  exceeding 60%, while people identifying as sexual minorities report discrimination
+                  rates 2.2 times higher than the population average.
+                </span>
               </P>
             </TextContainer>
             <TextContainer>
@@ -454,11 +482,14 @@ export function Inclusion() {
             <GraphContainer>
               <PoliticalEfficacyByRegionBarChart />
             </GraphContainer>
-            <TextContainer isGenderLensActive={isGenderLensActive}>
+            <TextContainer>
               <P marginBottom='none' size='lg'>
-                Women are less likely than men to feel that they have a say in government decisions.
-                Across 37 high-income countries with sex-disaggregated data, 27.3% of women believe
-                they have a say in what their government does, compared with 32.6% of men.
+                <span className='gender-lens'>
+                  Women are less likely than men to feel that they have a say in government
+                  decisions. Across 37 high-income countries with sex-disaggregated data, 27.3% of
+                  women believe they have a say in what their government does, compared with 32.6%
+                  of men.
+                </span>
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/inclusion-03.webp' />
@@ -563,7 +594,7 @@ export function Inclusion() {
         ),
       },
     ],
-    [isGenderLensActive],
+    [],
   );
 
   return (

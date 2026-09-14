@@ -1,6 +1,7 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { UserRound } from 'lucide-react';
+import { TextContainer } from '@/components/Containers';
 
 export function Foreword() {
   return (
@@ -24,9 +25,9 @@ export function Foreword() {
         </div>
       </section>
 
-      <section className='px-6 py-12 md:px-12 md:py-16'>
-        <div className='mx-auto flex max-w-180 flex-col'>
-          <P marginBottom='xs' size='lg'>
+      <section className='py-12 md:py-16'>
+        <TextContainer>
+          <P marginBottom='none' size='lg'>
             More than a decade after Member States adopted the 2030 Agenda, the conditions for
             sustainable development have changed profoundly. Humanity possesses greater
             technological, scientific and economic capabilities than at any point in history. Yet
@@ -36,13 +37,13 @@ export function Foreword() {
             not only identifying solutions but ensuring that institutions are capable and resilient
             enough to turn those solutions into life-changing results.
           </P>
-          <P marginBottom='xs' size='lg'>
+          <P marginBottom='none' size='lg'>
             This report examines global progress towards Sustainable Development Goal (SDG) 16. The
             evidence presented here reminds us that Goal 16 is not simply one of 17 goals. Peace,
             justice and inclusive institutions are the foundations on which progress across the
             entire 2030 Agenda depends.
           </P>
-          <P marginBottom='xs' size='lg'>
+          <P marginBottom='none' size='lg'>
             Drawing on the latest global evidence, the report presents a mixed picture of progress.
             Important gains have been achieved in several areas, from expanding legal identity and
             women’s representation in public institutions to the establishment of independent human
@@ -51,7 +52,7 @@ export function Foreword() {
             justice persist, and progress across several indicators has stalled or remains too slow
             to meet the ambitions of the 2030 Agenda.
           </P>
-          <P marginBottom='xs' size='lg'>
+          <P marginBottom='none' size='lg'>
             The findings of this report point to a clear lesson: lasting progress depends on
             sustained political commitment, long-term investment, strong partnerships and
             institutions that earn and maintain public trust. They also reinforce the importance of
@@ -61,14 +62,14 @@ export function Foreword() {
             effective — than responding after violence, conflict, corruption or exclusion have
             already taken hold.
           </P>
-          <P marginBottom='xs' size='lg'>
+          <P marginBottom='none' size='lg'>
             As we enter the final years of the 2030 Agenda, the message is both urgent and hopeful.
             Progress is possible. But it does not happen by itself. It requires deliberate choices
             and sustained effort. The vision of the SDGs is clear: a world where peace, justice and
             strong institutions are not privileges enjoyed by some. They are the foundations of a
             future that works for all.
           </P>
-        </div>
+        </TextContainer>
       </section>
 
       <section className='px-6 pb-16 md:px-12 md:pb-24'>

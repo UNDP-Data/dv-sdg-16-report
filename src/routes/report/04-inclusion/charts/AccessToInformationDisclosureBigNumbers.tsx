@@ -1,4 +1,5 @@
 import { P } from '@undp/design-system-react/Typography';
+import { ExternalLink } from 'lucide-react';
 import BigNumber from '@/components/BigNumber';
 import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
@@ -36,11 +37,12 @@ export default function AccessToInformationDisclosureBigNumbers() {
           <a
             href='https://www.law-democracy.org/wp-content/uploads/2026/02/IDUAI.report.25-09-26.pdf'
             target='_blank'
-            className='underline'
+            className='text-blue-500 underline decoration-1 underline-offset-4'
             rel='noopener noreferrer'
           >
             Mendel, T. and Vagliano, R. (2025) Global Comparative Testing of Responses to Requests
             for Information. Halifax, NS: Centre for Law and Democracy.
+            <ExternalLink size={14} aria-hidden='true' className='ml-1 inline align-[-0.125em]' />
           </a>
         </P>
         <ChartNote content='The remaining 8% of outcomes comprised cases where an information request could not be submitted (5 cases), requests that were denied (3 cases), and other outcomes that did not fall within the categories described above (4 cases). ' />

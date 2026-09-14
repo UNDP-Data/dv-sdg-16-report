@@ -9,13 +9,15 @@ export default function FeaturedNumbers() {
       autoScroll={3000}
       classNames={{
         arrowButton:
-          'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:pointer-events-none [&.opacity-disabled]:bg-transparent [&.opacity-disabled]:opacity-30',
+          'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:opacity-30',
         arrows: 'text-foreground',
+        playPauseButton: 'border border-stroke bg-background hover:bg-background-soft',
+        playPauseIcon: 'text-foreground',
         content: '[&_p]:hidden!',
         progressBar: 'hidden!',
         progressBarBg: 'hidden!',
       }}
-      styles={{ arrows: { strokeWidth: 1.5 } }}
+      styles={{ arrows: { strokeWidth: 1.5 }, playPauseIcon: { strokeWidth: 1.5 } }}
       slides={[
         {
           content: null,
@@ -73,8 +75,11 @@ export default function FeaturedNumbers() {
           viz: (
             <div className='grid gap-4 md:grid-cols-3'>
               <div className='flex flex-col bg-background-soft p-6'>
+                <span className='h-0 translate-y-1.5 font-heading font-semibold text-lg text-primary leading-6'>
+                  More than
+                </span>
                 <BigNumber
-                  value='400,000+'
+                  value='400,000'
                   color='primary'
                   label='People who die of intentional homicide worldwide every year.'
                 />
@@ -152,9 +157,10 @@ export default function FeaturedNumbers() {
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={0.8}
+                  value='20'
+                  suffix='%'
                   color='tertiary'
-                  label='Representation ratio for women in the public service, against parity at 1.00.'
+                  label='Short of parity in women’s representation in the public service, and 12% short in the judiciary.'
                 />
                 <P
                   marginBottom='none'

@@ -4,7 +4,7 @@ import { cn } from '@undp/design-system-react/cn';
 import { Drawer, DrawerContent, DrawerTrigger } from '@undp/design-system-react/Drawer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { H3, P } from '@undp/design-system-react/Typography';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import ErrorEl from '@/components/ErrorEl';
 import Tag from '@/components/Tag';
 
@@ -23,6 +23,7 @@ interface ChapterTargetDataType {
     officialIndicators: {
       code: string;
       description: string;
+      link: string;
     }[];
     dataReporter: string;
   }[];
@@ -47,18 +48,23 @@ export default function TargetsDrawer({ chapterTitle, bg, color }: TargetsDrawer
       <DrawerTrigger asChild>
         <button
           type='button'
-          className='fixed right-0 bottom-8 z-20 rounded-l-lg bg-center bg-cover px-5 py-3 shadow-lg transition-[padding-right] duration-300 ease-out hover:pr-12'
+          className='fixed right-6 bottom-6 z-20 rounded-full bg-center bg-cover px-5 py-2.5 shadow-lg md:right-0 md:rounded-r-none md:rounded-l-lg md:py-3 md:transition-[padding-right] md:duration-200 md:ease-out md:hover:pr-8'
           style={{ backgroundImage: `url('${bg}')` }}
         >
           <P size='base' marginBottom='none' weight='bold' className='text-content-reverse'>
             Discover targets
-            <br />
-            behind this chapter
+            <span className='hidden md:inline'>
+              <br />
+              behind this chapter
+            </span>
           </P>
         </button>
       </DrawerTrigger>
 
-      <DrawerContent className='w-full max-w-xl' overlayClassName='bg-surface/95 backdrop-blur-2xl'>
+      <DrawerContent
+        className='w-full max-w-xl'
+        overlayClassName='bg-foreground/80 backdrop-blur-none'
+      >
         <div className='flex flex-col gap-6 px-2 py-8 md:py-12'>
           <Tag color={color} content={chapterTitle} />
           <div>
@@ -133,7 +139,20 @@ export default function TargetsDrawer({ chapterTitle, bg, color }: TargetsDrawer
                                   size='base'
                                   className='text-foreground'
                                 >
-                                  {officialIndicator.code} – {officialIndicator.description}
+                                  {officialIndicator.code} –{' '}
+                                  <a
+                                    href={officialIndicator.link}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    className='text-blue-500 underline decoration-1 underline-offset-4'
+                                  >
+                                    {officialIndicator.description}
+                                    <ExternalLink
+                                      size={14}
+                                      aria-hidden='true'
+                                      className='ml-1 inline align-[-0.125em]'
+                                    />
+                                  </a>
                                 </P>
                               ))}
                             </div>

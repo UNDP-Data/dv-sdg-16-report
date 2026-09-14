@@ -10,32 +10,13 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-:root {
-  --gender-lens-rgb: 123, 111, 232;
+.gender-lens-mode .gender-lens {
+  background-color: #dfdcf9;
 }
 
-.gender-lens {
-  transition: background-color 0.2s ease;
-  background-color: rgba(var(--gender-lens-rgb), 0.15);
-  box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.35);
-  padding: 1rem;
-}
-
-.gender-lens-current {
-  transition: background-color 0.2s ease;
-  background-color: rgba(var(--gender-lens-rgb), 0.2);
-  box-shadow: 0 0 0 2px rgba(var(--gender-lens-rgb), 0.65);
-}
-
-@keyframes gender-nav-in {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 24px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-  }
+.gender-lens-mode div.gender-lens {
+  background-color: #f1effd;
+  outline: 1px solid #c3bdf5;
 }
 
 .undp-scrollbar::-webkit-scrollbar-button {
@@ -46,7 +27,8 @@ html {
 [aria-label="Data sources"] a:hover {
   animation: none;
   background-image: none;
+  color: var(--blue-500);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
 }

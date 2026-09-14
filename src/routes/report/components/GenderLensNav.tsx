@@ -1,82 +1,102 @@
-import { Button } from '@undp/design-system-react/Button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@undp/design-system-react/Tooltip';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useIsGenderLensActive } from '@/stores/chapterStore';
 
+const getInsightTops = () => {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const blocks = new Set(
+    Array.from(document.querySelectorAll<HTMLElement>('.gender-lens'), (el) =>
+      el.tagName === 'DIV' ? el : (el.closest('div') ?? el),
+    ),
+  );
+  return Array.from(blocks, (block) =>
+    Math.min(maxScroll, Math.max(0, window.scrollY + block.getBoundingClientRect().top - 140)),
+  );
+};
+
+const readCanGo = () => {
+  const tops = getInsightTops();
+  return {
+    up: tops.some((top) => top < window.scrollY - 10),
+    down: tops.some((top) => top > window.scrollY + 10),
+  };
+};
+
 export default function GenderLensNav() {
   const active = useIsGenderLensActive();
-  const [elements, setElements] = useState<HTMLElement[]>([]);
-  const [index, setIndex] = useState(-1);
+  const [canGo, setCanGo] = useState({ up: false, down: false });
 
   useEffect(() => {
     document.body.classList.toggle('gender-lens-mode', active);
-  }, [active]);
-
-  useEffect(() => {
     if (!active) return undefined;
-    const found = Array.from(document.querySelectorAll<HTMLElement>('.gender-lens'));
-    setElements(found);
-    setIndex(-1);
+    const update = () => setCanGo(readCanGo());
+    update();
+    window.addEventListener('scroll', update, { passive: true });
     return () => {
-      for (const el of found) el.classList.remove('gender-lens-current');
+      window.removeEventListener('scroll', update);
+      document.body.classList.remove('gender-lens-mode');
     };
   }, [active]);
 
-  useEffect(() => {
-    if (elements.length === 0) return undefined;
-    for (const el of elements) el.classList.remove('gender-lens-current');
-    if (index !== -1) elements[index]?.classList.add('gender-lens-current');
-    return () => {
-      elements[index]?.classList.remove('gender-lens-current');
-    };
-  }, [elements, index]);
+  if (!active) return null;
 
-  if (!active || elements.length === 0) return null;
-
-  const goTo = (nextIndex: number) => {
-    setIndex(nextIndex);
-    elements[nextIndex]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
-
-  const hasStarted = index !== -1;
-  const isFirst = !hasStarted;
-  const isLast = hasStarted && index === elements.length - 1;
-
-  const goPrev = () => {
-    if (!isFirst) goTo(index - 1);
-  };
-  const goNext = () => {
-    if (!hasStarted) goTo(0);
-    else if (!isLast) goTo(index + 1);
+  const goTo = (direction: 'up' | 'down') => {
+    const tops = getInsightTops();
+    const top =
+      direction === 'down'
+        ? tops.find((t) => t > window.scrollY + 10)
+        : [...tops].reverse().find((t) => t < window.scrollY - 10);
+    if (top === undefined) return;
+    window.scrollTo({ top });
+    window.setTimeout(() => setCanGo(readCanGo()), 700);
   };
 
   return (
-    <div className='fixed bottom-8 left-1/2 z-20 flex items-center gap-4 rounded-full border border-background/20 bg-foreground-soft px-3 py-2 text-foreground'>
-      <Button
-        type='button'
-        variant='icon'
-        onClick={goPrev}
-        disabled={isFirst}
-        aria-label='Previous gender insight'
-        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 p-0 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
-      >
-        <ChevronLeft size={16} />
-      </Button>
-      <span className='text-content-reverse text-sm'>
-        {hasStarted
-          ? `Gender insight ${index + 1} of ${elements.length}`
-          : `${elements.length} gender insight${elements.length === 1 ? '' : 's'} available`}
-      </span>
-      <Button
-        type='button'
-        variant='icon'
-        onClick={goNext}
-        disabled={isLast}
-        aria-label='Next gender insight'
-        className='flex h-8 w-8 items-center justify-center rounded-full border border-background/30 p-0 text-content-reverse transition-colors hover:bg-background/10 disabled:cursor-not-allowed disabled:border-background/10 disabled:opacity-disabled disabled:hover:bg-transparent'
-      >
-        <ChevronRight size={16} />
-      </Button>
-    </div>
+    <TooltipProvider delayDuration={100} skipDelayDuration={0}>
+      <Tooltip disableHoverableContent>
+        <TooltipTrigger asChild>
+          <div className='fixed top-1/2 right-6 z-20 flex flex-col items-center gap-2 rounded-full border border-[#c3bdf5] bg-[#ece9fc] px-3 py-4 shadow-[0_2px_8px_#7b6fe82e,0_1px_3px_#7b6fe81a] transition-shadow hover:shadow-[0_4px_12px_#7b6fe842,0_2px_4px_#7b6fe824] md:right-12'>
+            <button
+              type='button'
+              onClick={() => goTo('up')}
+              disabled={!canGo.up}
+              aria-label='Previous gender insight'
+              className='cursor-pointer text-quaternary disabled:cursor-default disabled:opacity-30'
+            >
+              <ChevronUp size={20} aria-hidden='true' />
+            </button>
+            <span className='h-px w-5 bg-quaternary/40' />
+            <button
+              type='button'
+              onClick={() => goTo('down')}
+              disabled={!canGo.down}
+              aria-label='Next gender insight'
+              className='cursor-pointer text-quaternary disabled:cursor-default disabled:opacity-30'
+            >
+              <ChevronDown size={20} aria-hidden='true' />
+            </button>
+          </div>
+        </TooltipTrigger>
+        <TooltipContent
+          side='left'
+          sideOffset={16}
+          className='z-5 border-0 bg-transparent p-0 text-right font-semibold text-quaternary [@media(hover:none)]:hidden'
+        >
+          <span className='rounded-sm bg-white box-decoration-clone px-1'>
+            Browse
+            <br />
+            gender-lens
+            <br />
+            insights
+          </span>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
