@@ -50,7 +50,7 @@ function App() {
               Peace, Justice, Inclusion
             </H1>
             {isLaunched ? (
-              <P size='xl' className='font-light text-2xl text-content-reverse'>
+              <P size='xl' className='text-2xl text-content-reverse'>
                 A global look at where the world stands on building peaceful, just, and inclusive
                 societies — and how far there is left to go.
               </P>
