@@ -40,7 +40,7 @@ export default function SubNav({
   return (
     <>
       <div
-        className='sticky top-0 z-30 flex h-11 items-center justify-between border-background/10 border-b bg-foreground-soft bg-repeat px-6 py-3 md:px-12'
+        className='sticky top-0 z-30 flex h-11 items-center justify-between border-background/10 border-b bg-[#041925] bg-repeat px-6 py-3 md:px-12'
         style={{ backgroundImage: "url('/imgs/texture-dark.webp')" }}
       >
         <DropdownMenu>

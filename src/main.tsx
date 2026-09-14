@@ -25,7 +25,7 @@ import './styles/style.css';
 function GrainOverlay() {
   return (
     <svg
-      className='pointer-events-none fixed inset-0 z-10 h-full w-full opacity-[0.08] mix-blend-multiply'
+      className='pointer-events-none fixed inset-0 z-[35] h-full w-full opacity-[0.08]'
       aria-hidden='true'
     >
       <filter id='grain'>
@@ -126,7 +126,7 @@ if (rootElement) {
             light: '#7b6fe8',
           },
           foreground: '#141d25',
-          foregroundSoft: '#142338',
+          foregroundSoft: '#041925',
           backgroundSoft: '#f5f9fc',
           content: {
             reverse: '#DCE6F0',

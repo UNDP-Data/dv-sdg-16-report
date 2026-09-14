@@ -16,7 +16,8 @@ export default function ChapterFooter({ label, title, to, color }: ChapterFooter
   return (
     <Link
       to={to}
-      className='group flex items-center justify-between bg-foreground px-6 py-8 md:px-12 md:py-16'
+      className='group flex items-center justify-between bg-foreground-soft bg-repeat px-6 py-8 md:px-12 md:py-16'
+      style={{ backgroundImage: "url('/imgs/texture-dark.webp')" }}
     >
       <div>
         <P
