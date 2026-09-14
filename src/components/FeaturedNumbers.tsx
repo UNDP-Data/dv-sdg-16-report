@@ -157,9 +157,10 @@ export default function FeaturedNumbers() {
               </div>
               <div className='flex flex-col bg-background-soft p-6'>
                 <BigNumber
-                  value={0.8}
+                  value='20'
+                  suffix='%'
                   color='tertiary'
-                  label='Representation ratio for women in the public service, against parity at 1.00.'
+                  label='Short of parity in women’s representation in the public service, and 12% short in the judiciary.'
                 />
                 <P
                   marginBottom='none'
