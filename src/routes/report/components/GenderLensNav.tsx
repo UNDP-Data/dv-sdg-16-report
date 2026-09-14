@@ -86,7 +86,7 @@ export default function GenderLensNav() {
         <TooltipContent
           side='left'
           sideOffset={16}
-          className='z-5 border-0 bg-transparent p-0 text-right font-semibold text-quaternary'
+          className='z-5 border-0 bg-transparent p-0 text-right font-semibold text-quaternary [@media(hover:none)]:hidden'
         >
           <span className='rounded-sm bg-white box-decoration-clone px-1'>
             Browse
