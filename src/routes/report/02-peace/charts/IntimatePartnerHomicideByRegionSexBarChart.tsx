@@ -41,8 +41,8 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
         ],
       )}
       orientation='vertical'
-      colorDomain={['Men', 'Women']}
-      colors={[Colors.genderColors.male, Colors.genderColors.female]}
+      colorDomain={['Women', 'Men']}
+      colors={[Colors.genderColors.female, Colors.genderColors.male]}
       minValue={0}
       maxValue={80}
       rightMargin={130}
@@ -79,7 +79,7 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
           <P size='sm' weight='semibold' marginBottom='none'>
             {d.label}
           </P>
-          {(['Men', 'Women'] as const).map((sex, i) => (
+          {(['Women', 'Men'] as const).map((sex, i) => (
             <div key={sex} className='flex items-center justify-between gap-4'>
               <P size='sm' marginBottom='none' className='flex items-center gap-1.5'>
                 <span

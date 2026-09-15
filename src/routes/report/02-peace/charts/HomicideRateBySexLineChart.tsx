@@ -120,7 +120,7 @@ export default function HomicideRateBySexLineChart() {
             label: 'Women',
             value: female,
             target: femaleTarget,
-            className: Colors.genderColors.female,
+            color: Colors.genderColors.female,
           },
         ];
         return (
