@@ -156,7 +156,7 @@ export default function BusinessBriberyStripChart() {
           leftMargin={leftMargin}
           rightMargin={10}
           truncateBy={innerWidth < 720 ? 16 : undefined}
-          topMargin={0}
+          topMargin={20}
           animate
           showGroups
           distributionMarkers={[
@@ -165,14 +165,13 @@ export default function BusinessBriberyStripChart() {
               color: 'black',
               strokeWidth: 1.5,
               relativeMarkerLength: 0.5,
-              markerLabel: { style: { display: 'none' } },
             },
           ]}
           radius={5}
           dotOpacity={0.4}
           minValue={0}
           maxValue={60}
-          height={selectedGrouping === 'region' ? 360 : 260}
+          height={selectedGrouping === 'region' ? 470 : 300}
           padding='0'
           numberDisplayOptions={{ suffix: '%', precision: 1 }}
           styles={{

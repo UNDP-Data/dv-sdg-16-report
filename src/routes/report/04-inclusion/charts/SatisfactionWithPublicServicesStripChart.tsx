@@ -155,7 +155,6 @@ export default function SatisfactionWithPublicServicesStripChart() {
             color: 'black',
             strokeWidth: 1.5,
             relativeMarkerLength: 0.5,
-            markerLabel: { style: { display: 'none' } },
           },
         ]}
         animate
@@ -163,11 +162,11 @@ export default function SatisfactionWithPublicServicesStripChart() {
         dotOpacity={0.4}
         minValue={0}
         maxValue={100}
-        height={200}
+        height={220}
         truncateBy={innerWidth < 720 ? 16 : undefined}
         leftMargin={innerWidth < 720 ? 120 : 160}
         rightMargin={10}
-        topMargin={0}
+        topMargin={20}
         bottomMargin={20}
         dimmedOpacity={0.1}
         numberDisplayOptions={{ suffix: '%', precision: 1 }}
