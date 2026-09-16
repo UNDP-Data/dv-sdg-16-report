@@ -153,7 +153,7 @@ export default function BriberyPrevalenceStripChart() {
           leftMargin={innerWidth < 720 ? 135 : 220}
           rightMargin={10}
           truncateBy={innerWidth < 720 ? 16 : undefined}
-          topMargin={0}
+          topMargin={20}
           noOfTicks={5}
           animate
           showGroups
@@ -163,14 +163,13 @@ export default function BriberyPrevalenceStripChart() {
               color: 'black',
               strokeWidth: 1.5,
               relativeMarkerLength: 0.3,
-              markerLabel: { style: { display: 'none' } },
             },
           ]}
           radius={5}
           dotOpacity={0.4}
           minValue={0}
           maxValue={100}
-          height={selectedGrouping === 'region' ? 450 : 280}
+          height={selectedGrouping === 'region' ? 470 : 300}
           dimmedOpacity={0.1}
           padding='0'
           numberDisplayOptions={{ suffix: '%', precision: 1 }}

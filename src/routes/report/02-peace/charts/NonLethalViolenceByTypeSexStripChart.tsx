@@ -148,7 +148,6 @@ export default function NonLethalViolenceByTypeSexStripChart() {
                 color: 'black',
                 strokeWidth: 1.5,
                 relativeMarkerLength: 0.5,
-                markerLabel: { style: { display: 'none' } },
               },
             ]}
             animate
