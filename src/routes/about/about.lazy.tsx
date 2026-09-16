@@ -75,22 +75,26 @@ export function About() {
             >
               Produced by
             </P>
-            <div className='flex min-h-24 flex-wrap items-center gap-x-10 gap-y-4'>
+            <div className='flex flex-wrap items-center gap-x-10 gap-y-6 lg:gap-x-20'>
               <img
                 src='/imgs/logos/ohchr.svg'
                 alt='United Nations Human Rights, Office of the High Commissioner'
-                className='h-20'
+                className='h-18 lg:h-24'
               />
               <img
                 src='/imgs/logos/undp.svg'
                 alt='United Nations Development Programme'
-                className='h-24'
+                className='h-16 lg:h-21'
               />
-              <img src='/imgs/logos/unicef.svg' alt='UNICEF, for every child' className='h-22' />
+              <img
+                src='/imgs/logos/unicef.svg'
+                alt='UNICEF, for every child'
+                className='h-18 lg:h-24'
+              />
               <img
                 src='/imgs/logos/unodc.svg'
                 alt='United Nations Office on Drugs and Crime'
-                className='h-23'
+                className='h-20 lg:h-26'
               />
             </div>
           </div>
@@ -103,16 +107,46 @@ export function About() {
             >
               In collaboration with
             </P>
-            <div className='flex min-h-24 flex-wrap items-center gap-x-10 gap-y-4'>
+            <div className='grid grow grid-cols-2 items-center gap-x-4 lg:grid-cols-4'>
               <img
-                src='/imgs/logos/unesco.svg'
-                alt='United Nations Educational, Scientific and Cultural Organization'
-                className='h-12'
+                src='/imgs/logos/ipu.png'
+                alt='Inter-Parliamentary Union'
+                className='h-20 w-full object-contain pt-2 pr-2 pl-4'
               />
               <img
                 src='/imgs/logos/pefa.png'
                 alt='Public Expenditure and Financial Accountability Program'
-                className='h-16'
+                className='h-25 w-full translate-x-0.5 -translate-y-0.5 object-contain px-3 py-6 lg:px-6'
+              />
+              <img
+                src='/imgs/logos/unesco.svg'
+                alt='United Nations Educational, Scientific and Cultural Organization'
+                className='h-24 w-full object-contain px-3 py-7 lg:px-6'
+              />
+              <img
+                src='/imgs/logos/un_desa.png'
+                alt='United Nations Department of Economic and Social Affairs'
+                className='h-24 w-full object-contain px-3 py-6 lg:px-8'
+              />
+              <img
+                src='/imgs/logos/unoda.png'
+                alt='United Nations Office for Disarmament Affairs'
+                className='h-24 w-full object-contain px-3 py-7 lg:px-6'
+              />
+              <img
+                src='/imgs/logos/unctad.svg'
+                alt='United Nations Conference on Trade and Development'
+                className='h-24 w-full object-contain px-3 py-8 lg:px-6'
+              />
+              <img
+                src='/imgs/logos/world-bank.svg'
+                alt='World Bank Group'
+                className='h-24 w-full object-contain px-3 py-7 lg:px-6'
+              />
+              <img
+                src='/imgs/logos/who.png'
+                alt='World Health Organization'
+                className='h-24 w-full object-contain px-3 py-7 lg:px-8'
               />
             </div>
           </div>
