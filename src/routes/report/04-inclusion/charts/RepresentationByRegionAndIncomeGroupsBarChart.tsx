@@ -8,6 +8,7 @@ import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import { useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
+import { CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
 interface DataType {
@@ -35,7 +36,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
   if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data) return <ErrorEl />;
   return (
-    <div className='flex flex-col items-center gap-4'>
+    <div className='flex flex-col items-center'>
       <div className='flex w-full justify-center bg-white p-4'>
         <SegmentedControl
           className='w-fit'
@@ -51,7 +52,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
         />
       </div>
 
-      <div className='flex w-full flex-col gap-4' style={{ padding: '20px 40px 36px 40px' }}>
+      <div className='gender-lens flex w-full flex-col gap-4' style={{ padding: CHART_PADDING }}>
         <div className='flex flex-col gap-1'>
           <P marginBottom='none' className='font-heading font-semibold leading-sm'>
             Women's representation within the public service and the judiciary

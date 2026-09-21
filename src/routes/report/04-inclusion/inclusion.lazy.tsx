@@ -194,7 +194,7 @@ export function Inclusion() {
                 </span>
               </P>
             </TextContainer>
-            <GraphContainer className='gender-lens'>
+            <GraphContainer>
               <RepresentationByRegionAndIncomeGroupsBarChart />
             </GraphContainer>
             <TextContainer>
