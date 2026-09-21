@@ -79,6 +79,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/volker-turk.webp'
                   alt='Volker Türk'
+                  className='h-full w-full object-cover object-top'
                 />
               </div>
               <div className='text-center'>
@@ -102,6 +103,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/alexander-de-croo.webp'
                   alt='Alexander De Croo'
+                  className='h-full w-full origin-[70%_20%] scale-120 object-cover object-top'
                 />
               </div>
               <div className='text-center'>
@@ -145,6 +147,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/monica-juma.webp'
                   alt='Monica Juma'
+                  className='h-full w-full origin-top scale-120 object-cover object-top'
                 />
               </div>
               <div className='text-center'>
