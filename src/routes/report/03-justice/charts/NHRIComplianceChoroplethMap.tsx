@@ -46,6 +46,7 @@ export default function NHRIComplianceChoroplethMap() {
         colorLegendTitle='Accreditation status'
         timeline={{ enabled: true, autoplay: false, showOnlyActiveDate: true }}
         height={750}
+        showCostalBorder
         scale={1.3}
         padding='0'
         styles={{
