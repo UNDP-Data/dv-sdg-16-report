@@ -1,6 +1,5 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
-import { UserRound } from 'lucide-react';
 import { TextContainer } from '@/components/Containers';
 
 export function Foreword() {
@@ -80,8 +79,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/volker-turk.webp'
                   alt='Volker Türk'
-                  className='h-full w-full object-cover'
-                  style={{ objectPosition: '50% 10%', transform: 'scale(1.2)' }}
+                  className='h-full w-full object-cover object-top'
                 />
               </div>
               <div className='text-center'>
@@ -105,12 +103,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/alexander-de-croo.webp'
                   alt='Alexander De Croo'
-                  className='h-full w-full object-cover'
-                  style={{
-                    objectPosition: '50% 18%',
-                    transform: 'scale(1.4)',
-                    transformOrigin: '55% 20%',
-                  }}
+                  className='h-full w-full origin-[70%_20%] scale-120 object-cover object-top'
                 />
               </div>
               <div className='text-center'>
@@ -130,11 +123,12 @@ export function Foreword() {
               />
             </div>
             <div className='flex flex-col items-center gap-4 border-stroke-sm border-b py-8 text-center lg:border-r lg:border-b-0 lg:px-6 lg:py-0'>
-              <div
-                className='flex aspect-square w-28 items-center justify-center rounded-full bg-gray-100'
-                aria-hidden='true'
-              >
-                <UserRound className='h-12 w-12 text-gray-300' strokeWidth={1.5} />
+              <div className='aspect-square w-28 overflow-hidden rounded-full'>
+                <img
+                  src='/imgs/portraits/catherine-russell.webp'
+                  alt='Catherine Russell'
+                  className='h-full w-full origin-[48%_40%] scale-310 object-cover'
+                />
               </div>
               <div className='text-center'>
                 <P marginBottom='none' weight='semibold' size='base' className='text-center'>
@@ -153,8 +147,7 @@ export function Foreword() {
                 <img
                   src='/imgs/portraits/monica-juma.webp'
                   alt='Monica Juma'
-                  className='h-full w-full object-cover'
-                  style={{ objectPosition: '50% 0%', transform: 'scale(1.1) translateX(-4%)' }}
+                  className='h-full w-full origin-top scale-120 object-cover object-top'
                 />
               </div>
               <div className='text-center'>
