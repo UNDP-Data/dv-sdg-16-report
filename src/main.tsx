@@ -25,7 +25,7 @@ import './styles/style.css';
 function GrainOverlay() {
   return (
     <svg
-      className='pointer-events-none fixed inset-0 z-[35] h-full w-full opacity-[0.08]'
+      className='pointer-events-none fixed inset-0 z-35 h-full w-full opacity-[0.08]'
       aria-hidden='true'
     >
       <filter id='grain'>

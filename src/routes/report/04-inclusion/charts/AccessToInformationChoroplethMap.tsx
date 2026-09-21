@@ -48,7 +48,7 @@ export default function AccessToInformationChoroplethMap() {
             2025
           </P>
         </div>
-        <div className='w-56'>
+        <div className='w-75'>
           {data && (
             <DropdownSelect
               options={data
@@ -58,11 +58,11 @@ export default function AccessToInformationChoroplethMap() {
               onChange={(option) => setHighlightedCountry(option as OptionType | null)}
               isClearable
               isSearchable
-              placeholder='Highlight a country...'
+              placeholder='Highlight a country or territory'
               variant='light'
               size='sm'
               color='primary'
-              aria-label='Search and select a country to highlight on the map'
+              aria-label='Search and select a country or territory to highlight on the map'
             />
           )}
         </div>
@@ -93,6 +93,7 @@ export default function AccessToInformationChoroplethMap() {
         zoomInteraction='button'
         showCostalBorder
         height={650}
+        projectionRotate={[-10, 0]}
         scale={1.3}
         padding='0'
         footNote={
