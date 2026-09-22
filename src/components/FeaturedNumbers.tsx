@@ -112,7 +112,7 @@ export default function FeaturedNumbers() {
                 <P
                   marginBottom='none'
                   size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                  className='mt-auto pt-6 text-content-secondary uppercase tracking-wider md:truncate'
                 >
                   {card.tag}
                 </P>
