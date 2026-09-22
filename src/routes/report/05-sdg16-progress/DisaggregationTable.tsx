@@ -73,7 +73,7 @@ export default function DisaggregationTable() {
         className='[&_div.rounded-full]:border [&_div.rounded-full]:border-gray-500'
       />
 
-      <div className='overflow-x-auto'>
+      <div className='undp-scrollbar overflow-x-auto pb-2'>
         <table className='w-full min-w-280 table-fixed text-left text-sm'>
           <colgroup>
             <col className='w-32' />
