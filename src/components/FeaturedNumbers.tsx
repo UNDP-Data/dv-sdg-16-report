@@ -2,7 +2,14 @@ import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import BigNumber from '@/components/BigNumber';
 
-const FEATURED_NUMBERS = [
+const FEATURED_NUMBERS: {
+  prefix?: string;
+  value: string | number;
+  suffix?: string;
+  color: string;
+  label: string;
+  tag: string;
+}[] = [
   {
     value: 14,
     suffix: ' min',
@@ -64,7 +71,7 @@ const FEATURED_NUMBERS = [
       'Short of parity in women’s representation in the public service, and 12% short in the judiciary.',
     tag: 'Inclusion – 16.7.1 (b) and (c) – Representation in the public service and the judiciary',
   },
-] as const;
+];
 
 export default function FeaturedNumbers() {
   return (
@@ -91,14 +98,14 @@ export default function FeaturedNumbers() {
           <div className='grid gap-4 md:grid-cols-3'>
             {cards.map((card) => (
               <div key={card.tag} className='flex flex-col bg-background-soft p-6'>
-                {'prefix' in card ? (
+                {card.prefix && (
                   <span className='h-0 translate-y-1.5 font-heading font-semibold text-lg text-primary leading-6'>
                     {card.prefix}
                   </span>
-                ) : null}
+                )}
                 <BigNumber
                   value={card.value}
-                  suffix={'suffix' in card ? card.suffix : undefined}
+                  suffix={card.suffix}
                   color={card.color}
                   label={card.label}
                 />
