@@ -8,6 +8,7 @@ import { Grid } from '@undp/design-system-react/Grid';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { H1, H2, H4, P } from '@undp/design-system-react/Typography';
+import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { BannerContainer, SectionContainer } from '@/components/Containers';
@@ -31,6 +32,7 @@ function App() {
   const [hoveredChapter, setHoveredChapter] = useState<ChapterKey | null>(null);
   const [selectedStory, setSelectedStory] = useState<ImpactStoryDataType | undefined>(undefined);
   const { data, isLoading, isError } = useData();
+
   return (
     <>
       <Container
@@ -323,37 +325,78 @@ function App() {
 
               <Spacer size='3xl' />
 
-              <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
-                {isError ? (
-                  <ErrorEl />
-                ) : isLoading || !data ? (
-                  <Spinner size='lg' className='mx-auto my-20' />
-                ) : (
-                  FEATURED_STORY_IDS.map((id) => data?.find((story) => story.id === id))
-                    .filter((story): story is ImpactStoryDataType => story !== undefined)
-                    .map((story) => (
-                      <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
-                        <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
-                          {story.chapter} &ndash; {story.indicatorCode} &ndash;{' '}
-                          {story.indicatorTitle}
-                        </CardTag>
-                        <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
-                          {story.title}
-                        </CardTitle>
-                        <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
-                          {story.story}
-                        </CardDescription>
-                        <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
-                          Read story
-                          <ArrowRight
-                            size={18}
-                            className='shrink-0 transition-transform group-hover:translate-x-1'
-                          />
-                        </CardFooter>
-                      </ContentCard>
-                    ))
-                )}
-              </Grid>
+              {isError ? (
+                <ErrorEl />
+              ) : isLoading || !data ? (
+                <Spinner size='lg' className='mx-auto my-20' />
+              ) : (
+                <>
+                  <div className='md:hidden'>
+                    <VizCarousel
+                      vizWidth='full'
+                      classNames={{
+                        arrowButton:
+                          'border border-stroke bg-background hover:bg-background-soft [&.opacity-disabled]:opacity-30',
+                        arrows: 'text-foreground',
+                      }}
+                      styles={{ arrows: { strokeWidth: 1.5 } }}
+                      slides={FEATURED_STORY_IDS.map((id) => data.find((story) => story.id === id))
+                        .filter((story): story is ImpactStoryDataType => story !== undefined)
+                        .map((story) => ({
+                          content: null,
+                          viz: (
+                            <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
+                              <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                                {story.chapter} &ndash; {story.indicatorCode} &ndash;{' '}
+                                {story.indicatorTitle}
+                              </CardTag>
+                              <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
+                                {story.title}
+                              </CardTitle>
+                              <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
+                                {story.story}
+                              </CardDescription>
+                              <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
+                                Read story
+                                <ArrowRight
+                                  size={18}
+                                  className='shrink-0 transition-transform group-hover:translate-x-1'
+                                />
+                              </CardFooter>
+                            </ContentCard>
+                          ),
+                        }))}
+                    />
+                  </div>
+                  <div className='hidden md:block'>
+                    <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
+                      {FEATURED_STORY_IDS.map((id) => data.find((story) => story.id === id))
+                        .filter((story): story is ImpactStoryDataType => story !== undefined)
+                        .map((story) => (
+                          <ContentCard key={story.id} onSelect={() => setSelectedStory(story)}>
+                            <CardTag className='block truncate p-0! font-semibold text-content-secondary tracking-wider'>
+                              {story.chapter} &ndash; {story.indicatorCode} &ndash;{' '}
+                              {story.indicatorTitle}
+                            </CardTag>
+                            <CardTitle className='line-clamp-3 p-0! font-heading font-medium text-2xl! text-foreground leading-[130%]'>
+                              {story.title}
+                            </CardTitle>
+                            <CardDescription className='line-clamp-2 p-0! text-content-secondary text-lg!'>
+                              {story.story}
+                            </CardDescription>
+                            <CardFooter className='mt-auto gap-1 p-0! font-semibold text-blue-500 text-sm uppercase tracking-wider'>
+                              Read story
+                              <ArrowRight
+                                size={18}
+                                className='shrink-0 transition-transform group-hover:translate-x-1'
+                              />
+                            </CardFooter>
+                          </ContentCard>
+                        ))}
+                    </Grid>
+                  </div>
+                </>
+              )}
             </SectionContainer>
           </section>
 
