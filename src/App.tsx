@@ -132,14 +132,14 @@ function App() {
                 marginBottom='none'
                 className='max-w-4xl font-heading text-foreground'
               >
-                Peace, justice and inclusive institutions are the foundations on which progress
+                Peace, justice, and inclusive institutions are the foundations on which progress
                 across the entire 2030 Agenda depends
               </H4>
               <Spacer size='2xl' />
               <P size='xl' marginBottom='none' className='max-w-4xl text-content-secondary'>
                 More than a decade after Member States adopted the 2030 Agenda, growing insecurity,
-                deepening polarization and declining trust, alongside violent conflicts, economic
-                uncertainty and geopolitical fragmentation, are making hard-won development gains
+                deepening polarization, and declining trust, alongside violent conflicts, economic
+                uncertainty, and geopolitical fragmentation, are making hard-won development gains
                 increasingly fragile. The challenge of our time is not only identifying solutions
                 but ensuring that institutions are capable and resilient enough to turn those
                 solutions into life-changing results.
@@ -213,7 +213,7 @@ function App() {
             >
               {hoveredChapter === 'peace' ? (
                 <P marginBottom='none' className='text-center text-content-quaternary/70'>
-                  Conflict-related deaths · Homicide · Attacks on defenders · Physical, sexual and
+                  Conflict-related deaths · Homicide · Attacks on defenders · Physical, sexual, and
                   psychological violence · Violence against children · Trafficking in persons ·
                   Perception of safety
                 </P>
@@ -244,7 +244,7 @@ function App() {
               </H4>
               <Spacer size='base' />
               <P size='xl' marginBottom='none' className='max-w-2xl text-content-secondary'>
-                Explore some of the key findings from SDG 16 indicators on peace, justice and
+                Explore some of the key findings from SDG 16 indicators on peace, justice, and
                 inclusion.
               </P>
               <FeaturedNumbers />

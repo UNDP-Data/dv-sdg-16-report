@@ -49,6 +49,7 @@ export default function NHRIComplianceChoroplethMap() {
         showCostalBorder
         scale={1.3}
         projectionRotate={[-10, 0]}
+        mapNoDataColor='var(--gray-300)'
         padding='0'
         styles={{
           tooltip: {

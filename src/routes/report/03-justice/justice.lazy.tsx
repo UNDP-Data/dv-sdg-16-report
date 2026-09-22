@@ -211,14 +211,14 @@ export function Justice() {
                 />{' '}
                 have significant economic and institutional impacts. IFFs can be detrimental both
                 when they leave a country and when they enter one. By facilitating organized crime,
-                terrorism and corruption, they weaken state institutions and undermine justice, the
-                rule of law, investment and sustainable development.
+                terrorism, and corruption, they weaken state institutions and undermine justice, the
+                rule of law, investment, and sustainable development.
               </P>
               <Highlight
                 color='secondary'
                 content={
                   <>
-                    Curbing IFFs could help preserve domestic resources, strengthen public revenues
+                    Curbing IFFs could help preserve domestic resources, strengthen public revenues,
                     and serve as a vital source of funding for sustainable development initiatives
                     and help bridge the financing gap.
                   </>
@@ -278,7 +278,7 @@ export function Justice() {
                 Tracing firearms, the process of identifying the illicit origin of seized, found,
                 and surrendered arms, is a critical tool for combating illicit arms trafficking.
                 Successful tracing helps authorities identify trafficking routes, detect diversion
-                points, uncover criminal networks and prevent firearms from being used in future
+                points, uncover criminal networks, and prevent firearms from being used in future
                 crimes.
               </P>
               <Highlight
@@ -286,7 +286,7 @@ export function Justice() {
                 content='Only 46% of seized firearms were successfully traced between 2016 and 2024'
               />
               <P marginBottom='none' size='lg'>
-                Tracing rates varied considerably across countries, regions and reporting years,
+                Tracing rates varied considerably across countries, regions, and reporting years,
                 reflecting differences in national tracing capacities, the volume of firearms
                 seized, and the complexity of establishing the illicit origin or context of seized
                 firearms.
@@ -299,9 +299,9 @@ export function Justice() {
               <Highlight color='secondary' content='Tracing has become increasingly challenging' />
               <P marginBottom='none' size='lg'>
                 To avoid detection, criminal groups increasingly rely on illicit manufacturing
-                methods, including counterfeit production, 3D printing and artisanal manufacture as
+                methods, including counterfeit production, 3D printing, and artisanal manufacture as
                 well as the modification of non-lethal/less-lethal weapons (e.g. gas and blank
-                firing, alarm or signal weapons) into firearms, often accompanied by the alteration
+                firing, alarm, or signal weapons) into firearms, often accompanied by the alteration
                 and falsification of original markings. In conflict settings, the diversion of
                 weapons through battlefield capture further complicates tracing efforts.
               </P>
@@ -312,7 +312,7 @@ export function Justice() {
                 tracing rates below the global average of 46%. Continued investment in marking,
                 record-keeping and tracing systems, together with stronger national and
                 international information-sharing mechanisms, will be essential for improving
-                tracing outcomes, identifying diversion patterns and reducing illicit arms flows.
+                tracing outcomes, identifying diversion patterns, and reducing illicit arms flows.
               </P>
             </TextContainer>
             <WaveDivider src='/imgs/dividers/justice-04.webp' align='right' />
@@ -357,7 +357,7 @@ export function Justice() {
                 reached 27%, compared with 9% in high-income countries. Nevertheless, substantial
                 variation exists within each income group, suggesting that economic development
                 alone does not determine corruption risks. The quality of governance, institutional
-                integrity and the effectiveness of anti-corruption measures also play an important
+                integrity, and the effectiveness of anti-corruption measures also play an important
                 role.
               </P>
             </TextContainer>
@@ -492,8 +492,8 @@ export function Justice() {
         title='Justice'
         intro={
           <>
-            Justice is a cornerstone of peaceful, inclusive and resilient societies. It ensures that
-            people are treated equally under the law, that their rights are protected, and that
+            Justice is a cornerstone of peaceful, inclusive, and resilient societies. It ensures
+            that people are treated equally under the law, that their rights are protected, and that
             disputes can be resolved fairly and peacefully. Under Goal 16, justice is measured
             through people's ability to access justice institutions, the extent to which laws are
             applied equally, and whether public institutions are accountable for their actions.
@@ -539,35 +539,35 @@ export function Justice() {
         <TextContainer>
           <P marginBottom='none' size='lg'>
             Taken together, the justice indicators point to a common institutional challenge:
-            ensuring that people can access justice, exercise their rights and receive a fair and
+            ensuring that people can access justice, exercise their rights, and receive fair and
             equal treatment under the law. Disputes are an inevitable part of any society. Injustice
             is not.
           </P>
           <P marginBottom='none' size='lg'>
             Whether people can obtain redress when their rights are violated depends on institutions
-            that are accessible, impartial and capable of administering justice, upholding the rule
-            of law, protecting human rights and ensuring accountability. Effective institutions
-            provide mechanisms through which people can report crimes, resolve disputes and seek
+            that are accessible, impartial, and capable of administering justice, upholding the rule
+            of law, protecting human rights, and ensuring accountability. Effective institutions
+            provide mechanisms through which people can report crimes, resolve disputes, and seek
             remedies, while safeguarding due process and ensuring that decisions are guided by law
-            rather than by money, influence or status.
+            rather than by money, influence, or status.
           </P>
           <P marginBottom='none' size='lg'>
             Justice also depends on trust. People are more likely to report crimes, seek redress for
-            grievances and comply with laws when they believe institutions will treat them fairly
+            grievances, and comply with laws when they believe institutions will treat them fairly
             and equally. Independent National Human Rights Institutions play a vital role in this
-            institutional ecosystem by monitoring human rights, promoting accountability and helping
-            ensure that governments fulfil their obligations under international human rights law.
-            Equally important are institutions that combat corruption and organized crime,
-            investigate financial crime, safeguard due process and ensure equal access to justice
-            for all.
+            institutional ecosystem by monitoring human rights, promoting accountability, and
+            helping ensure that governments fulfil their obligations under international human
+            rights law. Equally important are institutions that combat corruption and organized
+            crime, investigate financial crime, safeguard due process, and ensure equal access to
+            justice for all.
           </P>
           <P marginBottom='none' size='lg'>
             Building just societies therefore requires more than laws and formal institutions on
             paper. It requires institutions that people can access, that apply the law fairly,
-            protect rights and hold both individuals and public authorities accountable. Where these
-            conditions are weak, grievances can remain unresolved, rights unprotected and trust
-            undermined. Where they are strong, institutions provide the mechanisms through which
-            justice can be realized in practice.
+            protect rights, and hold both individuals and public authorities accountable. Where
+            these conditions are weak, grievances can remain unresolved, rights unprotected, and
+            trust undermined. Where they are strong, institutions provide the mechanisms through
+            which justice can be realized in practice.
           </P>
           <Spacer size='6xl' />
         </TextContainer>

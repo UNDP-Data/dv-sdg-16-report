@@ -47,9 +47,9 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Birth registration is the first step towards inclusion in society. By establishing a
-                child's legal identity, it helps protect fundamental rights and enables access to
-                essential services such as healthcare, education and social protection.
+                Birth registration is the first step towards inclusion in society. Establishing a
+                child’s legal identity helps protect fundamental rights and enables access to
+                essential services such as health care, education, and social protection.
               </P>
             </TextContainer>
             <div className='w-full'>
@@ -83,12 +83,12 @@ export function Inclusion() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 <span className='gender-lens'>
-                  As societies confront increasingly complex challenges from climate change and
+                  As societies confront increasingly complex challenges, from climate change and
                   conflict to economic insecurity and technological change, it is important that
                   political decision-making reflects the diversity{' '}
                   <InfoTooltip
                     trigger='of the populations it serves'
-                    content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect other diversity including persons with disabilities, Indigenous Peoples, ethnic minorities and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices and parliamentary reporting systems.'
+                    content='This indicator measures the representation of women and young people in national parliaments. However, inclusive representation extends beyond age and sex. Legislatures should also reflect other diversity including persons with disabilities, Indigenous Peoples, ethnic minorities, and other population groups. Data on these dimensions remain limited because of differences in legal frameworks, privacy protections, self-identification practices, and parliamentary reporting systems.'
                     color='tertiary'
                   />
                   . Women and younger representatives bring{' '}
@@ -177,7 +177,7 @@ export function Inclusion() {
                   ratios of 0.80 and 0.88, respectively, compared with{' '}
                   <InfoTooltip
                     trigger='parity at 1.00'
-                    content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation and over 1 indicates overrepresentation.'
+                    content='SDG indicator 16.7.1 is based on the ratio between the share of a specific population group in parliament (a), public service (b), and judiciary (c), and the share of the same group in the population. A value of 1 indicates parity, while a value under 1 indicates underrepresentation, and over 1 indicates overrepresentation.'
                     color='tertiary'
                   />
                   . Put simply, a ratio of 0.80 means that women have achieved only 80% of the
@@ -279,7 +279,7 @@ export function Inclusion() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Discrimination remains a significant barrier to inclusive societies. It continues to
-                affect millions of people worldwide, limiting access to opportunities, services and
+                affect millions of people worldwide, limiting access to opportunities, services, and
                 participation in public life. Globally, nearly one in five people report having
                 personally experienced discrimination during the previous 12 months.
               </P>
@@ -289,7 +289,7 @@ export function Inclusion() {
                 <span className='gender-lens'>
                   Women and men self-report similar overall levels of discrimination. However, women
                   are more likely to report discrimination based on gender, reflecting persistent
-                  inequalities that often intersect with disability, income, education and minority
+                  inequalities that often intersect with disability, income, education, and minority
                   status.
                 </span>
               </P>
@@ -425,7 +425,7 @@ export function Inclusion() {
               </P>
               <Highlight
                 color='tertiary'
-                content='Satisfaction with accessibility of healthcare has improved modestly over the past decade, but regional disparities remain pronounced.'
+                content='Satisfaction with the accessibility of healthcare has improved modestly over the past decade, but regional disparities remain pronounced.'
               />
               <P marginBottom='none' size='lg'>
                 Countries in Eastern and South-Eastern Asia report the highest average satisfaction
@@ -509,15 +509,15 @@ export function Inclusion() {
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Access to information is a cornerstone of inclusive and transparent governance. It
-                enables people to understand how public decisions are made, scrutinize government
-                action and participate more effectively in public life.
+                Access to information is a cornerstone of inclusive, accountable, and transparent
+                governance. It enables people to understand how public decisions are made,
+                scrutinize government action, and participate more effectively in public life
               </P>
               <P marginBottom='none' size='lg'>
                 As of 2026, 141 UN Member States have adopted statutory guarantees for public access
                 to information, compared with just 14 countries in 1990, reflecting a remarkable
                 increase in the right to information. The most recent adopters include Senegal and
-                Cuba adopting access to information laws in 2025 and in 2026, respectively.
+                Cuba, adopting access to information laws in 2025 and in 2026, respectively.
               </P>
             </TextContainer>
             <GraphContainer size='lg'>
@@ -533,7 +533,7 @@ export function Inclusion() {
                 almost 5.9 million access to information requests, demonstrating the growing use of
                 these laws. Yet implementation remains challenging due to the absence of
                 record-keeping systems, limited legal enforcement, lack of independent oversight
-                bodies and designated institutional roles.
+                bodies, and designated institutional roles.
               </P>
               <P marginBottom='none' size='lg'>
                 Implementation gaps in access to information (ATI) laws are also reflected in the
@@ -607,9 +607,9 @@ export function Inclusion() {
         title='Inclusion'
         intro={
           <>
-            Inclusive societies are built on institutions that recognize, represent and serve all
+            Inclusive societies are built on institutions that recognize, represent, and serve all
             people equally, and that enable everyone to participate meaningfully in public life.
-            Such institutions strengthen trust, social cohesion and the legitimacy of governance.
+            Such institutions strengthen trust, social cohesion, and the legitimacy of governance.
             While inclusion is a broad concept that cannot be fully captured by a single set of
             indicators, Goal 16 measures several of its most fundamental dimensions.
           </>
@@ -653,41 +653,41 @@ export function Inclusion() {
         </TextContainer>
         <TextContainer>
           <P marginBottom='none' size='lg'>
-            Institutions play a crucial role in ensuring that all people are recognized, represented
-            and able to participate meaningfully in public life. The evidence presented across these
-            indicators highlights the many ways in which institutions shape inclusion, equal
-            participation and equitable access to opportunities and services. Whether people feel
-            included depends heavily on the ability of institutions to recognize individuals,
-            protect their rights and respond to their needs.
+            Institutions play a crucial role in ensuring that all people are recognized,
+            represented, and able to participate meaningfully in public life. The evidence presented
+            across these indicators highlights the many ways in which institutions shape inclusion,
+            equal participation, and equitable access to opportunities and services. Whether people
+            feel included depends heavily on the ability of institutions to recognize individuals,
+            protect their rights, and respond to their needs.
           </P>
           <P marginBottom='none' size='lg'>
             Inclusive institutions ensure that every person is legally recognized through a legal
             identity, protected from discrimination, represented in public decision-making, able to
-            access information and public services on equal terms, and empowered to participate in
+            access information, and public services on equal terms, and empowered to participate in
             decisions that shape their lives. They also ensure that governments respond fairly and
             effectively to the needs of all people by delivering quality public services that are
-            accessible, responsive and equitable, regardless of gender, age, disability, ethnicity,
-            income or other characteristics. In doing so, inclusive institutions strengthen the
+            accessible, responsive, and equitable, regardless of gender, age, disability, ethnicity,
+            income, or other characteristics. In doing so, inclusive institutions strengthen the
             relationship between people and the state by demonstrating that public institutions
             serve everyone fairly rather than a privileged few.
           </P>
           <P marginBottom='none' size='lg'>
             The indicators presented in this chapter illustrate both areas of progress and
             persistent gaps in achieving these objectives. They show the extent to which people are
-            legally recognized, represented in public institutions, protected from discrimination
+            legally recognized, represented in public institutions, protected from discrimination,
             and able to access public services and information. Together, they provide a picture of
             how effectively institutions promote inclusion and support meaningful participation in
             society.
           </P>
           <P marginBottom='none' size='lg'>
-            When institutions function effectively, they help reduce barriers, expand opportunities
+            When institutions function effectively, they help reduce barriers, expand opportunities,
             and strengthen social cohesion. When institutions fail to share power equitably,
             exclusion deepens, discrimination persists, public services become less responsive, and
             decisions become less representative of the societies they serve. Trust in public
-            institutions erodes as people lose confidence that they are recognized, treated equally
+            institutions erodes as people lose confidence that they are recognized, treated equally,
             and able to influence public decisions. Building inclusive societies therefore requires
             institutions that not only serve people, but also ensure that everyone has a place, a
-            voice and an equal opportunity to participate in shaping their future.
+            voice, and an equal opportunity to participate in shaping their future.
           </P>
         </TextContainer>
         <Spacer size='6xl' />

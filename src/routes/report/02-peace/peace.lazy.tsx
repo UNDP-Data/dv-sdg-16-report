@@ -69,9 +69,9 @@ export function Peace() {
               <P marginBottom='none' size='lg'>
                 Conflict undermines development far beyond the loss of life. It weakens state
                 capacity, destroys critical infrastructure, undermines economic growth, diverts
-                scarce resources away from development, weakens institutions and erodes human
+                scarce resources away from development, weakens institutions, and erodes human
                 security, often with consequences that last long after conflict ends. The frequency,
-                duration and intensity of armed conflicts also drive displacement and destroy
+                duration, and intensity of armed conflicts also drive displacement and destroy
                 livelihoods.
               </P>
             </TextContainer>
@@ -157,7 +157,7 @@ export function Peace() {
         title: 'Attacks on defenders',
         indicatorCode: '16.10.1',
         heading:
-          'One human rights defender, journalist or trade unionist is killed or disappeared every 10 hours',
+          'One human rights defender, journalist, or trade unionist is killed or disappeared every 10 hours',
         heroHeading: '1 human rights defender is killed or disappeared every 10 hours',
         anchor: 'attacks-on-defenders',
         isGenderLens: true,
@@ -179,13 +179,13 @@ export function Peace() {
                 Since 2015, at least 5,995 defenders have been killed, and more than half of all UN
                 Member States (115 countries) have recorded at least one killing. In 2024, a record
                 686 defenders were killed and 202 disappeared, the equivalent to one defender,
-                journalist or trade unionist being killed or disappeared every 10 hours, compared
+                journalist, or trade unionist being killed or disappeared every 10 hours, compared
                 with every 19 hours in 2015.
               </P>
               <Highlight
                 content='Based on historical patterns in the discovery and
                 recording of human rights violations, the final number of documented cases for 2025
-                is expected to reach estimated 743 killings and 202 disappearances.'
+                is expected to reach an estimated 743 killings and 202 disappearances.'
               />
             </TextContainer>
             <GraphContainer>
@@ -206,7 +206,7 @@ export function Peace() {
                   Over the 2023–2025 period, one in ten defenders killed or disappeared worldwide
                   was a woman. Defenders working on environmental and land issues accounted for
                   nearly three in ten recorded cases, while one in five victims belonged to
-                  indigenous or minority groups.
+                  Indigenous or minority groups.
                 </span>
               </P>
             </TextContainer>
@@ -297,7 +297,7 @@ export function Peace() {
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 Violence remains a pervasive reality for millions of children around the world,
-                cutting across geographical, cultural and economic boundaries. It can take many
+                cutting across geographical, cultural, and economic boundaries. It can take many
                 forms and occurs in any setting where children spend time.
               </P>
             </TextContainer>
@@ -335,8 +335,8 @@ export function Peace() {
                 <span className='gender-lens'>
                   Among men and boys, an estimated 240 to 310 million (or around one in eleven)
                   experienced rape or sexual assault in childhood. The risks are even greater in
-                  fragile settings, where more than one in four girls has experienced rape or sexual
-                  assault in childhood.
+                  fragile settings, where more than one in four girls have experienced rape or
+                  sexual assault in childhood.
                 </span>
               </P>
             </TextContainer>
@@ -351,25 +351,26 @@ export function Peace() {
         id: '06',
         title: 'Trafficking in persons',
         indicatorCode: '16.2.2',
-        heading: 'More than one in three detected victims of human trafficking is a child',
-        heroHeading: 'More than 1 in 3 detected trafficking victims is a child',
+        heading: 'More than one in three detected victims of human trafficking are children',
+        heroHeading: 'More than 1 in 3 detected trafficking victims are children',
         anchor: 'trafficking-in-persons',
         isGenderLens: true,
         content: (
           <>
             <TextContainer>
               <P marginBottom='none' size='lg'>
-                Human trafficking continues to affect women, men and children in every region of the
-                world. Yet, it remains one of the most hidden forms of crime, making it inherently
-                difficult to measure. Many victims never come to the attention of authorities, and
-                official statistics capture only detected cases. The figures presented here should
-                therefore be interpreted as a minimum estimate of the true scale of trafficking.
+                Human trafficking continues to affect women, men, and children in every region of
+                the world. Yet, it remains one of the most hidden forms of crime, making it
+                inherently difficult to measure. Many victims never come to the attention of
+                authorities, and official statistics capture only detected cases. The figures
+                presented here should therefore be interpreted as a minimum estimate of the true
+                scale of trafficking.
               </P>
             </TextContainer>
             <TextContainer>
               <P marginBottom='none' size='lg'>
                 <span className='gender-lens'>
-                  Following a temporary decline during the first year of the Covid-19 pandemic, the
+                  Following a temporary decline during the first year of the COVID-19 pandemic, the
                   number of detected victims of trafficking has continued to increase globally.
                   Children accounted for 37% of all detected victims in 2024, nearly three times the
                   share recorded two decades earlier (13% in 2004). Among child victims, girls
@@ -398,8 +399,8 @@ export function Peace() {
                 alone. Effective responses require national and international cooperation, as well
                 as cross-border data sharing, as trafficking networks often operate across
                 jurisdictions. At the same time, because trafficking remains hidden, continued
-                investment in administrative data systems, statistical methods and victims’ surveys
-                is critical to better understand its scale, identify those at greatest risk and
+                investment in administrative data systems, statistical methods, and victims’ surveys
+                is critical to better understand its scale, identify those at greatest risk, and
                 strengthen evidence-based responses.
               </P>
             </TextContainer>
@@ -529,21 +530,21 @@ export function Peace() {
         <TextContainer>
           <P marginBottom='none' size='lg'>
             The evidence presented across these indicators underscore the important role of
-            institutions in preventing conflict and violence. While the forms of violence differ,
-            from conflict-related deaths and homicide to violence against children, human
-            trafficking and attacks on those defending human rights, outcomes are shaped by the
-            ability of institutions to prevent violence, protect victims, enforce the rule of law
-            and uphold fundamental rights.
+            institutions in preventing conflict and violence. While forms of violence differ, from
+            conflict-related deaths and homicide to violence against children, human trafficking,
+            and attacks on those defending human rights, outcomes are shaped by the ability of
+            institutions to prevent violence, protect victims, enforce the rule of law, and uphold
+            fundamental rights.
           </P>
           <P marginBottom='none' size='lg'>
             Disagreements and competing interests are an inevitable feature of any society. Violence
-            and armed conflict are not. Whether societies experience violence, insecurity and fear
+            and armed conflict are not. Whether societies experience violence, insecurity, and fear
             depends in large part on the ability of institutions to manage grievances peacefully,
-            deliver justice fairly, provide security and safeguard fundamental freedoms. Effective
-            institutions create peaceful pathways for resolving disputes, seeking justice and
+            deliver justice fairly, provide security, and safeguard fundamental freedoms. Effective
+            institutions create peaceful pathways for resolving disputes, seeking justice, and
             holding power to account without resorting to violence. When institutions are weak,
-            inaccessible or non-inclusive, grievances are more likely to go unresolved, trust erodes
-            and the risk of violence becomes more difficult to prevent.
+            inaccessible, or non-inclusive, grievances are more likely to go unresolved, trust
+            erodes, and the risk of violence becomes more difficult to prevent.
           </P>
         </TextContainer>
         <Spacer size='6xl' />

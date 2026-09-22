@@ -41,22 +41,22 @@ export function About() {
             <div className='flex max-w-180 flex-col'>
               <P marginBottom='xs' size='lg'>
                 The Global Progress Report on SDG 16 is an annual United Nations inter-agency
-                publication jointly produced by UNDP, OHCHR, UNICEF and UNODC, with contributions
-                from IPU, UNCTAD, UNESCO, DESA, UNODA, PEFA, the World Bank Group and WHO. The
+                publication jointly produced by UNDP, OHCHR, UNICEF, and UNODC, with contributions
+                from IPU, UNCTAD, UNESCO, DESA, UNODA, PEFA, the World Bank Group, and WHO. The
                 report brings together the latest available data and evidence to provide a global
-                assessment of progress towards peaceful, just and inclusive societies. Drawing on
+                assessment of progress towards peaceful, just, and inclusive societies. Drawing on
                 the global SDG indicator framework, it examines progress and setbacks across Goal
                 16, highlights emerging trends and persistent inequalities, and identifies areas
                 where significant data gaps remain.
               </P>
               <P marginBottom='xs' size='lg'>
                 By bringing evidence from across Goal 16 together in one place, the report provides
-                Member States, United Nations entities, civil society, researchers and other
+                Member States, United Nations entities, civil society, researchers, and other
                 stakeholders with a shared evidence base for understanding where progress is being
                 made, where challenges remain, and where greater attention is needed.
               </P>
               <P marginBottom='xs' size='lg'>
-                At a time when the very foundations of peace, justice and inclusion are under
+                At a time when the very foundations of peace, justice, and inclusion are under
                 strain, the urgency of advancing, and monitoring SDG 16, has never been clearer.
                 Without credible data, injustice remains invisible, exclusion goes unchallenged, and
                 institutions cannot be held to account. Measuring Goal 16 is therefore not only a
@@ -268,7 +268,7 @@ export function About() {
                   href='/downloads/global-progress-report-sdg16-2024.pdf'
                   target='_blank'
                   rel='noreferrer'
-                  aria-label='2024 At the Crossroads: Breakdown or Breakthrough for Peace, Justice and Strong Institutions (opens in a new tab)'
+                  aria-label='2024 At the Crossroads: Breakdown or Breakthrough for Peace, Justice, and Strong Institutions (opens in a new tab)'
                   className='group flex gap-6 border border-stroke-sm p-6 transition-colors hover:bg-background-soft'
                 >
                   <img
@@ -291,7 +291,7 @@ export function About() {
                       className='font-heading text-foreground text-lg! leading-[130%]'
                     >
                       Global Progress Report on Sustainable Development Goal 16 Indicators – At the
-                      Crossroads: Breakdown or Breakthrough for Peace, Justice and Strong
+                      Crossroads: Breakdown or Breakthrough for Peace, Justice, and Strong
                       Institutions
                     </H5>
                     <span className='mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'>
@@ -308,7 +308,7 @@ export function About() {
                   href='/downloads/global-progress-report-sdg16-2023.pdf'
                   target='_blank'
                   rel='noreferrer'
-                  aria-label='2023 Global Progress Report on Sustainable Development Goal 16 Indicators: A Wake-Up Call for Action on Peace, Justice and Inclusion (opens in a new tab)'
+                  aria-label='2023 Global Progress Report on Sustainable Development Goal 16 Indicators: A Wake-Up Call for Action on Peace, Justice, and Inclusion (opens in a new tab)'
                   className='group flex gap-6 border border-stroke-sm p-6 transition-colors hover:bg-background-soft'
                 >
                   <img
@@ -331,7 +331,7 @@ export function About() {
                       className='font-heading text-foreground text-lg! leading-[130%]'
                     >
                       Global Progress Report on Sustainable Development Goal 16 Indicators: A
-                      Wake-Up Call for Action on Peace, Justice and Inclusion
+                      Wake-Up Call for Action on Peace, Justice, and Inclusion
                     </H5>
                     <span className='mt-auto flex w-fit items-center gap-2 pt-2 font-semibold text-blue-500 text-sm uppercase tracking-wider'>
                       Download PDF
@@ -436,7 +436,7 @@ export function About() {
                 Innovation and Analytics Hub in the Office of the United Nations High Commissioner
                 for Human Rights (OHCHR); the Global Policy Centre for Governance (GPCG) of the
                 United Nations Development Programme (UNDP); the Data and Analytics Section of the
-                United Nations Children’s Fund (UNICEF), and the Data, Analytics and Statistics
+                United Nations Children’s Fund (UNICEF), and the Data, Analytics, and Statistics
                 Section (DASS) of the Research and Trend Analysis Branch, the United Nations Office
                 on Drugs and Crime (UNODC).
               </P>

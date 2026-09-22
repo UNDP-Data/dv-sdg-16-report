@@ -64,7 +64,7 @@ export function Foreword() {
           <P marginBottom='none' size='lg'>
             As we enter the final years of the 2030 Agenda, the message is both urgent and hopeful.
             Progress is possible. But it does not happen by itself. It requires deliberate choices
-            and sustained effort. The vision of the SDGs is clear: a world where peace, justice and
+            and sustained effort. The vision of the SDGs is clear: a world where peace, justice, and
             strong institutions are not privileges enjoyed by some. They are the foundations of a
             future that works for all.
           </P>

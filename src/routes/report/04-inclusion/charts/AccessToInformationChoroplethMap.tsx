@@ -91,6 +91,7 @@ export default function AccessToInformationChoroplethMap() {
         dimmedOpacity={highlightedCountry ? 0.3 : 1}
         mapProjection='naturalEarth'
         zoomInteraction='button'
+        mapNoDataColor='var(--gray-300)'
         showCostalBorder
         height={650}
         projectionRotate={[-10, 0]}
