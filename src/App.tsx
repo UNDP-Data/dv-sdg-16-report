@@ -39,7 +39,7 @@ function App() {
         backgroundColor='foreground-soft'
         width='full'
         padding='none'
-        className="flex h-auto min-h-[calc(100vh-65px)] flex-col bg-[linear-gradient(to_bottom,transparent_60vw,#041925_102vw),url('/imgs/hero-bg.webp')] bg-position-[0_0,90%_-18vw] bg-size-[100%_100%,220%_auto] bg-no-repeat px-6 md:h-[calc(100vh-65px)] md:bg-[url('/imgs/hero-bg.webp')] md:bg-center md:bg-cover md:px-20"
+        className="flex h-auto min-h-[calc(100vh-65px)] flex-col bg-[linear-gradient(to_bottom,transparent_60vw,#041925_102vw),url('/imgs/hero-bg.webp')] bg-position-[0_0,90%_-18vw] bg-size-[100%_100%,220%_auto] bg-no-repeat px-6 md:bg-[url('/imgs/hero-bg.webp')] md:bg-center md:bg-cover md:px-20"
       >
         <div className='flex grow items-center pt-[80vw] md:pt-0'>
           <Container className='w-full px-0! md:w-1/2'>
