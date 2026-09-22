@@ -44,7 +44,7 @@ export function Resources() {
         Record<'Peace' | 'Justice' | 'Inclusion', ChapterTarget[]>
       >,
   });
-  const [selectedType, setSelectedType] = useState('Relevant publications');
+  const [selectedType, setSelectedType] = useState('Related publications');
   const [selectedIndicator, setSelectedIndicator] = useState<OptionType | null>(null);
   const [search, setSearch] = useState('');
 
@@ -93,10 +93,10 @@ export function Resources() {
             <Tabs value={selectedType} onValueChange={setSelectedType} color='blue'>
               <TabsList className='pl-0'>
                 <TabsTrigger
-                  value='Relevant publications'
+                  value='Related publications'
                   className='cursor-pointer text-sm normal-case md:text-base'
                 >
-                  Relevant publications
+                  Related publications
                 </TabsTrigger>
                 <TabsTrigger
                   value='Statistical standards'
