@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { createLazyRoute } from '@tanstack/react-router';
-import { DataCards } from '@undp/data-viz/DataCards';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { Badge } from '@undp/design-system-react/Badge';
 import { CardTitle } from '@undp/design-system-react/Card';
 import { cn } from '@undp/design-system-react/cn';
 import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
+import { Grid } from '@undp/design-system-react/Grid';
 import { Search } from '@undp/design-system-react/Search';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
@@ -154,14 +154,10 @@ export function Resources() {
               </div>
 
               <TabsContent value={selectedType}>
-                <DataCards
-                  data={rows}
-                  cardMinWidth={360}
-                  padding='0'
-                  cardBackgroundColor='transparent'
-                  ariaLabel={`${selectedType} on Goal 16`}
-                  cardTemplate={(d: Publication) => (
+                <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
+                  {rows.map((d) => (
                     <a
+                      key={d.title}
                       href={d.link ?? undefined}
                       target='_blank'
                       rel='noreferrer'
@@ -211,8 +207,8 @@ export function Resources() {
                         </div>
                       </ContentCard>
                     </a>
-                  )}
-                />
+                  ))}
+                </Grid>
               </TabsContent>
 
               {rows.length === 0 ? (
