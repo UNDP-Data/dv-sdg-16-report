@@ -54,7 +54,7 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
         colors={[Colors.genderColors.female, Colors.genderColors.male]}
         minValue={0}
         showTicks
-        showValues={!(innerHeight < 720)}
+        showValues={innerHeight >= 720}
         leftMargin={innerWidth < 720 ? 135 : 220}
         minHeight={400}
         truncateBy={innerWidth < 720 ? 16 : undefined}
