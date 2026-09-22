@@ -80,7 +80,7 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
             columnId: selectedCategory,
           },
         ])}
-        orientation='vertical'
+        orientation={innerWidth < 720 ? 'horizontal' : 'vertical'}
         colors={CATEGORY_SETTINGS.find((d) => d.id === selectedCategory)?.color}
         minValue={0}
         maxValue={70}
@@ -89,9 +89,11 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
         valueColor='var(--content-primary)'
         showTicks={false}
         numberDisplayOptions={{ precision: 1, suffix: '%' }}
-        barPadding={0.4}
-        height={450}
-        bottomMargin={60}
+        barPadding={innerWidth < 720 ? 0.2 : 0.4}
+        height={innerWidth < 720 ? 400 : 450}
+        bottomMargin={innerWidth < 720 ? undefined : 60}
+        leftMargin={innerWidth < 720 ? 135 : undefined}
+        truncateBy={innerWidth < 720 ? 16 : undefined}
         dimmedOpacity={0.4}
         padding='0'
         refValues={
@@ -100,12 +102,16 @@ export default function ParliamentaryLeadershipByCategoryBarChart() {
                 {
                   value: CATEGORY_SETTINGS.find((d) => d.id === selectedCategory)?.refValue || null,
                   text: CATEGORY_SETTINGS.find((d) => d.id === selectedCategory)?.refText || '',
+                  styles:
+                    innerWidth < 720
+                      ? { text: { textAnchor: 'end', transform: 'translateX(-8px)' } }
+                      : undefined,
                 },
               ]
             : undefined
         }
         sources={[{ source: 'Inter-Parliamentary Union (IPU)' }]}
-        ariaLabel={`Vertical bar chart showing the share of ${selectedCategory === 'youngMPs' ? 'young MPs aged 40 or younger' : 'women MPs'} across parliamentary positions, with a reference line at ${CATEGORY_SETTINGS.find((d) => d.label === selectedCategory)?.refValue}% for the share of the world's population that is ${selectedCategory === 'youngMPs' ? 'aged between 18 and 40' : 'female'}. Representation is lowest among Speakers and highest among Gender equality chairs.`}
+        ariaLabel={`Bar chart showing the share of ${selectedCategory === 'youngMPs' ? 'young MPs aged 40 or younger' : 'women MPs'} across parliamentary positions, with a reference line at ${CATEGORY_SETTINGS.find((d) => d.label === selectedCategory)?.refValue}% for the share of the world's population that is ${selectedCategory === 'youngMPs' ? 'aged between 18 and 40' : 'female'}. Representation is lowest among Speakers and highest among Gender equality chairs.`}
       />
     </div>
   );
