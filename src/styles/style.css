@@ -32,3 +32,7 @@ html {
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
+
+.mouseover-map-shape-outline {
+  opacity: 0;
+}
