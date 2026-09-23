@@ -44,7 +44,7 @@ export function Resources() {
         Record<'Peace' | 'Justice' | 'Inclusion', ChapterTarget[]>
       >,
   });
-  const [selectedType, setSelectedType] = useState('Relevant publications');
+  const [selectedType, setSelectedType] = useState('Statistical standards');
   const [selectedIndicator, setSelectedIndicator] = useState<OptionType | null>(null);
   const [search, setSearch] = useState('');
 
@@ -93,23 +93,31 @@ export function Resources() {
             <Tabs value={selectedType} onValueChange={setSelectedType} color='blue'>
               <TabsList className='pl-0'>
                 <TabsTrigger
-                  value='Relevant publications'
-                  className='cursor-pointer text-sm normal-case md:text-base'
-                >
-                  Relevant publications
-                </TabsTrigger>
-                <TabsTrigger
                   value='Statistical standards'
                   className='cursor-pointer text-sm normal-case md:text-base'
                 >
                   Statistical standards
                 </TabsTrigger>
+                <TabsTrigger
+                  value='Relevant publications'
+                  className='cursor-pointer text-sm normal-case md:text-base'
+                >
+                  Relevant publications
+                </TabsTrigger>
               </TabsList>
 
               <div className='flex flex-wrap items-center gap-4'>
                 <Search
-                  placeholder='Search publications'
-                  aria-label='Search publications'
+                  placeholder={
+                    selectedType === 'Statistical standards'
+                      ? 'Search statistical standards'
+                      : 'Search related publications'
+                  }
+                  aria-label={
+                    selectedType === 'Statistical standards'
+                      ? 'Search statistical standards'
+                      : 'Search related publications'
+                  }
                   inputVariant='light'
                   inputSize='sm'
                   inputClassName='h-[42px]'
@@ -143,7 +151,7 @@ export function Resources() {
                     variant='light'
                     size='sm'
                     color='primary'
-                    aria-label='Filter publications by indicator'
+                    aria-label='Filter by indicator'
                     classNames={{
                       menu: () => 'sm:w-96!',
                       groupHeading: () =>
@@ -154,7 +162,7 @@ export function Resources() {
               </div>
 
               <TabsContent value={selectedType}>
-                <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }}>
+                <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }} className='pt-2'>
                   {rows.map((d) => (
                     <a
                       key={d.title}
