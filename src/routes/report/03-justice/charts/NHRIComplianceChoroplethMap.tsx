@@ -56,6 +56,7 @@ export default function NHRIComplianceChoroplethMap() {
             padding: 0,
           },
         }}
+        mapProjection='equalEarth'
         tooltip={(d) => (
           <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
             <P size='sm' weight='semibold' marginBottom='none'>

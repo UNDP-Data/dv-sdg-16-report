@@ -171,21 +171,17 @@ export function About() {
               <Spacer size='lg' />
               <Grid gap='16px' noOfCol={{ base: 1, lg: 2 }}>
                 <a
-                  // biome-ignore lint/a11y/useValidAnchor: <TBA>
-                  href='#'
-                  aria-label='Download the 2026 Global Progress Report on SDG 16 (PDF)'
+                  href='/downloads/global-progress-report-sdg16-2026.pdf'
+                  target='_blank'
+                  rel='noreferrer'
+                  aria-label='2026 Global Progress Report on Sustainable Development Goal 16: Indicators on Peaceful, Just and Inclusive Societies (opens in a new tab)'
                   className='group flex gap-6 border border-stroke-sm p-6 transition-colors hover:bg-background-soft'
                 >
-                  <div className='flex aspect-[1/1.414] w-24 shrink-0 items-center justify-center self-start border border-gray-300 border-dashed bg-gray-50'>
-                    <P
-                      marginBottom='none'
-                      size='xs'
-                      weight='semibold'
-                      className='text-gray-400 uppercase tracking-widest'
-                    >
-                      Cover
-                    </P>
-                  </div>
+                  <img
+                    src='/imgs/covers/cover-2026.webp'
+                    alt='Cover of the 2025 Global Progress Report on SDG 16'
+                    className='aspect-[1/1.414] w-24 shrink-0 self-start object-cover'
+                  />
                   <div className='flex flex-col gap-2'>
                     <P
                       marginBottom='none'

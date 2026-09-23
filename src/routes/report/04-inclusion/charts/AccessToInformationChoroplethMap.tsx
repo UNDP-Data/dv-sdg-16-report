@@ -58,11 +58,11 @@ export default function AccessToInformationChoroplethMap() {
               onChange={(option) => setHighlightedCountry(option as OptionType | null)}
               isClearable
               isSearchable
-              placeholder='Highlight a country or territory'
+              placeholder='Highlight a country'
               variant='light'
               size='sm'
               color='primary'
-              aria-label='Search and select a country or territory to highlight on the map'
+              aria-label='Search and select a country to highlight on the map'
             />
           )}
         </div>
@@ -89,14 +89,14 @@ export default function AccessToInformationChoroplethMap() {
         colorLegendTitle='Guarantees for access to information'
         highlightedIds={highlightedCountry ? [highlightedCountry.value as string] : []}
         dimmedOpacity={highlightedCountry ? 0.3 : 1}
-        mapProjection='naturalEarth'
         zoomInteraction='button'
         mapNoDataColor='var(--gray-300)'
         showCostalBorder
         height={650}
         projectionRotate={[-10, 0]}
-        scale={1.3}
+        scale={1.25}
         padding='0'
+        mapProjection='equalEarth'
         footNote={
           <>
             <P marginBottom='none' size='xs' className='text-content-secondary'>

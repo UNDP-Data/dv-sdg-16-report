@@ -418,7 +418,7 @@ function App() {
               </P>
               <Spacer size='2xl' />
               <div className='flex flex-wrap gap-4'>
-                <a href='/downloads/sdg16-global-progress-report-2026.pdf'>
+                <a href='/downloads/global-progress-report-sdg16-2026.pdf'>
                   <Button
                     type='button'
                     variant='primary'
