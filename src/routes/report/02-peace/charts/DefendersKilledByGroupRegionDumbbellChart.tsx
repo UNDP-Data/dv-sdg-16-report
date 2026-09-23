@@ -58,10 +58,10 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
       maxValue={50}
       noOfTicks={5}
       showValues={false}
-      radius={innerWidth < 720 ? 7 : 9}
-      connectorStrokeWidth={innerWidth < 720 ? 14 : 18}
+      radius={innerWidth < 720 ? 5 : 9}
+      connectorStrokeWidth={innerWidth < 720 ? 10 : 18}
       leftMargin={innerWidth < 720 ? 100 : 40}
-      rightMargin={20}
+      rightMargin={innerWidth < 720 ? 32 : 20}
       bottomMargin={48}
       minHeight={600}
       height={innerWidth < 720 ? 560 : 660}
@@ -92,7 +92,7 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
               >
                 <span className='flex items-center gap-1.5'>
                   <span
-                    className='h-2.5 w-2.5 rounded-full'
+                    className='h-2.5 w-2.5 shrink-0 rounded-full'
                     style={{ backgroundColor: COLORS[index] }}
                   />
                   {region}
