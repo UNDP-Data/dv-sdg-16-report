@@ -387,34 +387,36 @@ export function About() {
                       >
                         Download PDF in
                       </P>
-                      <a
-                        href='/downloads/global-progress-report-sdg16-lac.pdf'
-                        target='_blank'
-                        rel='noreferrer'
-                        aria-label='Download the Latin America and the Caribbean regional snapshot in English (PDF)'
-                        className='group flex w-fit items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
-                      >
-                        En
-                        <ArrowDown
-                          size={16}
-                          aria-hidden='true'
-                          className='shrink-0 transition-transform group-hover:translate-x-1'
-                        />
-                      </a>
-                      <a
-                        href='/downloads/global-progress-report-sdg16-lac-es.pdf'
-                        target='_blank'
-                        rel='noreferrer'
-                        aria-label='Descargar el informe regional de América Latina y el Caribe en español (PDF)'
-                        className='group flex w-fit items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
-                      >
-                        Es
-                        <ArrowDown
-                          size={16}
-                          aria-hidden='true'
-                          className='shrink-0 transition-transform group-hover:translate-x-1'
-                        />
-                      </a>
+                      <div className='flex items-center gap-4'>
+                        <a
+                          href='/downloads/global-progress-report-sdg16-lac.pdf'
+                          target='_blank'
+                          rel='noreferrer'
+                          aria-label='Download the Latin America and the Caribbean regional snapshot in English (PDF)'
+                          className='group flex w-fit items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
+                        >
+                          En
+                          <ArrowDown
+                            size={16}
+                            aria-hidden='true'
+                            className='shrink-0 transition-transform group-hover:translate-x-1'
+                          />
+                        </a>
+                        <a
+                          href='/downloads/global-progress-report-sdg16-lac-es.pdf'
+                          target='_blank'
+                          rel='noreferrer'
+                          aria-label='Descargar el informe regional de América Latina y el Caribe en español (PDF)'
+                          className='group flex w-fit items-center gap-1 font-semibold text-blue-500 text-sm uppercase tracking-wider'
+                        >
+                          Es
+                          <ArrowDown
+                            size={16}
+                            aria-hidden='true'
+                            className='shrink-0 transition-transform group-hover:translate-x-1'
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
