@@ -50,7 +50,7 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
           chartConfigId: 'x',
         },
       ])}
-      orientation='vertical'
+      orientation={innerWidth < 720 ? 'horizontal' : 'vertical'}
       colorDomain={REGIONS}
       colors={COLORS}
       backgroundColor={false}
@@ -60,12 +60,12 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
       showValues={false}
       radius={innerWidth < 720 ? 7 : 9}
       connectorStrokeWidth={innerWidth < 720 ? 14 : 18}
-      leftMargin={40}
+      leftMargin={innerWidth < 720 ? 100 : 40}
       rightMargin={20}
       bottomMargin={48}
       minHeight={600}
       height={innerWidth < 720 ? 560 : 660}
-      truncateBy={innerWidth < 720 ? 10 : 24}
+      truncateBy={innerWidth < 720 ? 12 : 24}
       numberDisplayOptions={{ suffix: '%', precision: 1 }}
       padding={CHART_PADDING}
       styles={{
@@ -77,7 +77,6 @@ export default function DefendersKilledByGroupRegionDumbbellChart() {
         },
       }}
       tooltip={(d) => (
-        <div className='flex flex-col gap-1 bg-white px-3 py-2'>
         <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
           <P size='sm' weight='semibold' marginBottom='none'>
             {d.label} HRDs

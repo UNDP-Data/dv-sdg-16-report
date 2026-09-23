@@ -40,31 +40,41 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
           { columnId: ['female', 'male'], chartConfigId: 'size' },
         ],
       )}
-      orientation='vertical'
+      orientation={innerWidth < 720 ? 'horizontal' : 'vertical'}
       colorDomain={['Women', 'Men']}
       colors={[Colors.genderColors.female, Colors.genderColors.male]}
       minValue={0}
       maxValue={80}
-      rightMargin={130}
+      rightMargin={innerWidth < 720 ? 20 : 130}
+      leftMargin={innerWidth < 720 ? 80 : undefined}
       showValues={innerWidth >= 720}
       valueColor='var(--content-primary)'
       showTicks={false}
       numberDisplayOptions={{ suffix: '%' }}
       barPadding={0.3}
-      height={500}
+      height={innerWidth < 720 ? 600 : 500}
+      minHeight={innerWidth < 720 ? 360 : undefined}
       padding={CHART_PADDING}
       refValues={
         data
           ? [
               {
                 value: data.find((d) => d.region === 'World')?.male ?? 0,
-                text: `World (men) ${data.find((d) => d.region === 'World')?.male}%`,
+                text: `World (${data.find((d) => d.region === 'World')?.male}%)`,
                 color: Colors.genderColors.male,
+                styles:
+                  innerWidth < 720
+                    ? { text: { textAnchor: 'end', transform: 'translateX(-8px)' } }
+                    : undefined,
               },
               {
                 value: data.find((d) => d.region === 'World')?.female ?? 0,
-                text: `World (women) ${data.find((d) => d.region === 'World')?.female}%`,
+                text: `World (${data.find((d) => d.region === 'World')?.female}%)`,
                 color: Colors.genderColors.female,
+                styles:
+                  innerWidth < 720
+                    ? { text: { textAnchor: 'end', transform: 'translateX(-8px)' } }
+                    : undefined,
               },
             ]
           : undefined
@@ -75,7 +85,6 @@ export default function IntimatePartnerHomicideByRegionSexBarChart() {
         },
       }}
       tooltip={(d) => (
-        <div className='flex flex-col gap-1 bg-white px-3 py-2'>
         <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
           <P size='sm' weight='semibold' marginBottom='none'>
             {d.label}
