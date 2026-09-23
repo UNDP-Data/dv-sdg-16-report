@@ -444,7 +444,8 @@ export function About() {
                 Analyses of indicators and the corresponding sections of this report were prepared
                 by these four agencies, in collaboration with the other custodian agencies
                 responsible for supporting and coordinating global data collection and reporting for
-                Goal 16 indicators. Special appreciation is extended to the Inter-Parliamentary
+                Goal 16 indicators. The digital report was designed by the Data Team, UNDP Digital,
+                AI and Innovation Hub. Special appreciation is extended to the Inter-Parliamentary
                 Union (IPU); the Public Expenditure and Financial Accountability Program (PEFA); the
                 World Bank Group; the United Nations Educational, Scientific and Cultural
                 Organization Institute for Statistics (UNESCO-UIS); the United Nations Financing for
