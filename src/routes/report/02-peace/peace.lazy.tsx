@@ -221,7 +221,7 @@ export function Peace() {
       },
       {
         id: '04',
-        title: 'Physical, sexual and psychological violence',
+        title: 'Physical, sexual, and psychological violence',
         indicatorCode: '16.1.3',
         heading:
           'Millions of people experience non-lethal violence, with distinct regional and gendered patterns of victimization',

@@ -444,7 +444,8 @@ export function About() {
                 Analyses of indicators and the corresponding sections of this report were prepared
                 by these four agencies, in collaboration with the other custodian agencies
                 responsible for supporting and coordinating global data collection and reporting for
-                Goal 16 indicators. Special appreciation is extended to the Inter-Parliamentary
+                Goal 16 indicators. The digital report was designed by the Data Team, UNDP Digital,
+                AI and Innovation Hub. Special appreciation is extended to the Inter-Parliamentary
                 Union (IPU); the Public Expenditure and Financial Accountability Program (PEFA); the
                 World Bank Group; the United Nations Educational, Scientific and Cultural
                 Organization Institute for Statistics (UNESCO-UIS); the United Nations Financing for
@@ -533,6 +534,12 @@ export function About() {
                 </a>
               </div>
             </div>
+          </div>
+          <div className='border-stroke-sm border-t pt-10 md:pl-54 lg:pl-62'>
+            <P marginBottom='none' size='base' className='max-w-180 text-content-secondary'>
+              Selected visual assets in this report were created with the assistance of generative
+              AI and subsequently edited and refined as part of the design process.
+            </P>
           </div>
         </SectionContainer>
       </section>
