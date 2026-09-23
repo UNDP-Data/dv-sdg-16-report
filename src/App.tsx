@@ -281,9 +281,13 @@ function App() {
               <Spacer size='5xl' />
               <Link to='/report/sdg16-progress' tabIndex={-1} className='block'>
                 <img
-                  src='/imgs/sdg16-progress-viz.svg'
+                  src={
+                    innerWidth < 720
+                      ? '/imgs/sdg16-progress-viz-mobile.svg'
+                      : '/imgs/sdg16-progress-viz.svg'
+                  }
                   alt='Share of countries with Goal 16 data for at least one year since 2015, shown as one circle per indicator.'
-                  className='h-27 w-full object-cover object-left md:h-auto md:object-fill'
+                  className='w-full'
                 />
               </Link>
               <Spacer size='2xl' />
