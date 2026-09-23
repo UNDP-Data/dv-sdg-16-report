@@ -100,6 +100,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           valueColor='var(--content-primary)'
           numberDisplayOptions={{ precision: 2, padZeros: 'all' }}
           showTicks={false}
+          truncateBy={innerWidth < 720 ? 12 : undefined}
           leftMargin={
             selectedGrouping === 'region'
               ? innerWidth < 720
