@@ -35,7 +35,7 @@ export default function DisputeResolutionAccessStripChart() {
       </div>
 
       <div className='flex items-center gap-2'>
-        <span aria-hidden='true' className='h-4 w-4 rounded-full bg-blue-500 opacity-40' />
+        <span aria-hidden='true' className='h-4 w-4 shrink-0 rounded-full bg-blue-500 opacity-40' />
         <P marginBottom='none' size='sm'>
           Each dot is a country
         </P>

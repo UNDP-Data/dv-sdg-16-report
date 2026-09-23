@@ -79,7 +79,7 @@ export default function VoteSharesByInstitutionDumbbellChart() {
             { label: 'Member share', value: memberShare, color: 'var(--primary)' },
           ];
           return (
-            <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+            <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
               <P size='sm' weight='semibold' marginBottom='none'>
                 {(d.data as { fullName?: string })?.fullName ?? d.label}
               </P>
@@ -92,7 +92,7 @@ export default function VoteSharesByInstitutionDumbbellChart() {
                 >
                   <span className='flex items-center gap-1.5'>
                     <span
-                      className='h-2.5 w-2.5 rounded-full'
+                      className='h-2.5 w-2.5 shrink-0 rounded-full'
                       style={{ backgroundColor: row.color }}
                     />
                     {row.label}

@@ -2,6 +2,77 @@ import { P } from '@undp/design-system-react/Typography';
 import { VizCarousel } from '@undp/design-system-react/VizCarousel';
 import BigNumber from '@/components/BigNumber';
 
+const FEATURED_NUMBERS: {
+  prefix?: string;
+  value: string | number;
+  suffix?: string;
+  color: string;
+  label: string;
+  tag: string;
+}[] = [
+  {
+    value: 14,
+    suffix: ' min',
+    color: 'primary',
+    label: 'Estimated interval between civilian deaths recorded in armed conflict.',
+    tag: 'Peace – 16.1.2 – Conflict-related deaths',
+  },
+  {
+    value: '1 in 3',
+    color: 'secondary',
+    label: 'Prisoners globally held in detention without having been sentenced.',
+    tag: 'Justice – 16.3.2 – Unsentenced detention',
+  },
+  {
+    value: 150,
+    suffix: ' million',
+    color: 'tertiary',
+    label:
+      'Children who still have no legal identity, even as birth registration continues to expand.',
+    tag: 'Inclusion – 16.9.1 – Legal identity',
+  },
+  {
+    prefix: 'More than',
+    value: '400,000',
+    color: 'primary',
+    label: 'People who die of intentional homicide worldwide every year.',
+    tag: 'Peace – 16.1.1 – Homicide',
+  },
+  {
+    value: 1.6,
+    suffix: ' billion',
+    color: 'primary',
+    label: 'Children who experience violent discipline at home.',
+    tag: 'Peace – 16.2.1 & 16.2.3 – Violence against children',
+  },
+  {
+    value: '1 in 4',
+    color: 'tertiary',
+    label: 'Parliamentary seats worldwide held by women.',
+    tag: 'Inclusion – 16.7.1 (a) – Representation in the legislature',
+  },
+  {
+    value: '1 in 3',
+    color: 'primary',
+    label: 'Detected trafficking victims who are children.',
+    tag: 'Peace – 16.2.2 – Trafficking in persons',
+  },
+  {
+    value: '1 in 5',
+    color: 'tertiary',
+    label: 'People worldwide who report personally experiencing discrimination.',
+    tag: 'Inclusion – 16.b.1 – Experience of discrimination',
+  },
+  {
+    value: '20',
+    suffix: '%',
+    color: 'tertiary',
+    label:
+      'Short of parity in women’s representation in the public service, and 12% short in the judiciary.',
+    tag: 'Inclusion – 16.7.1 (b) and (c) – Representation in the public service and the judiciary',
+  },
+];
+
 export default function FeaturedNumbers() {
   return (
     <VizCarousel
@@ -18,163 +89,38 @@ export default function FeaturedNumbers() {
         progressBarBg: 'hidden!',
       }}
       styles={{ arrows: { strokeWidth: 1.5 }, playPauseIcon: { strokeWidth: 1.5 } }}
-      slides={[
-        {
-          content: null,
-          viz: (
-            <div className='grid gap-4 md:grid-cols-3'>
-              <div className='flex flex-col bg-background-soft p-6'>
+      slides={(innerWidth < 768
+        ? FEATURED_NUMBERS.map((card) => [card])
+        : [FEATURED_NUMBERS.slice(0, 3), FEATURED_NUMBERS.slice(3, 6), FEATURED_NUMBERS.slice(6, 9)]
+      ).map((cards) => ({
+        content: null,
+        viz: (
+          <div className='grid gap-4 md:grid-cols-3'>
+            {cards.map((card) => (
+              <div key={card.tag} className='flex flex-col bg-background-soft p-6'>
+                {card.prefix && (
+                  <span className='h-0 translate-y-1.5 font-heading font-semibold text-lg text-primary leading-6'>
+                    {card.prefix}
+                  </span>
+                )}
                 <BigNumber
-                  value={14}
-                  suffix=' min'
-                  color='primary'
-                  label='Estimated interval between civilian deaths recorded in armed conflict.'
+                  value={card.value}
+                  suffix={card.suffix}
+                  color={card.color}
+                  label={card.label}
                 />
                 <P
                   marginBottom='none'
                   size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
+                  className='mt-auto pt-6 text-content-secondary uppercase tracking-wider md:truncate'
                 >
-                  Peace – 16.1.2 – Conflict-related deaths
+                  {card.tag}
                 </P>
               </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value='1 in 3'
-                  color='secondary'
-                  label='Prisoners globally held in detention without having been sentenced.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Justice – 16.3.2 – Unsentenced detention
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value={150}
-                  suffix=' million'
-                  color='tertiary'
-                  label='Children who still have no legal identity, even as birth registration continues to expand.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Inclusion – 16.9.1 – Legal identity
-                </P>
-              </div>
-            </div>
-          ),
-        },
-        {
-          content: null,
-          viz: (
-            <div className='grid gap-4 md:grid-cols-3'>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <span className='h-0 translate-y-1.5 font-heading font-semibold text-lg text-primary leading-6'>
-                  More than
-                </span>
-                <BigNumber
-                  value='400,000'
-                  color='primary'
-                  label='People who die of intentional homicide worldwide every year.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Peace – 16.1.1 – Homicide
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value={1.6}
-                  suffix=' billion'
-                  color='primary'
-                  label='Children who experience violent discipline at home.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Peace – 16.2.1 & 16.2.3 – Violence against children
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value='1 in 4'
-                  color='tertiary'
-                  label='Parliamentary seats worldwide held by women.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Inclusion – 16.7.1 (a) – Representation in the legislature
-                </P>
-              </div>
-            </div>
-          ),
-        },
-        {
-          content: null,
-          viz: (
-            <div className='grid gap-4 md:grid-cols-3'>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value='1 in 3'
-                  color='primary'
-                  label='Detected trafficking victims who are children.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Peace – 16.2.2 – Trafficking in persons
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value='1 in 5'
-                  color='tertiary'
-                  label='People worldwide who report personally experiencing discrimination.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Inclusion – 16.b.1 – Experience of discrimination
-                </P>
-              </div>
-              <div className='flex flex-col bg-background-soft p-6'>
-                <BigNumber
-                  value='20'
-                  suffix='%'
-                  color='tertiary'
-                  label='Women’s representation falls short of parity in the public service, and 12% short in the judiciary.'
-                />
-                <P
-                  marginBottom='none'
-                  size='xs'
-                  className='mt-auto truncate pt-6 text-content-secondary uppercase tracking-wider'
-                >
-                  Inclusion – 16.7.1 (b) and (c) – Representation in the public service and the
-                  judiciary
-                </P>
-              </div>
-            </div>
-          ),
-        },
-      ]}
+            ))}
+          </div>
+        ),
+      }))}
     />
   );
 }

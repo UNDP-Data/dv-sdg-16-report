@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { createLazyRoute } from '@tanstack/react-router';
-import { DataCards } from '@undp/data-viz/DataCards';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { Badge } from '@undp/design-system-react/Badge';
 import { CardTitle } from '@undp/design-system-react/Card';
 import { cn } from '@undp/design-system-react/cn';
 import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
+import { Grid } from '@undp/design-system-react/Grid';
 import { Search } from '@undp/design-system-react/Search';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@undp/design-system-react/Tabs';
@@ -44,7 +44,7 @@ export function Resources() {
         Record<'Peace' | 'Justice' | 'Inclusion', ChapterTarget[]>
       >,
   });
-  const [selectedType, setSelectedType] = useState('Related publications');
+  const [selectedType, setSelectedType] = useState('Statistical standards');
   const [selectedIndicator, setSelectedIndicator] = useState<OptionType | null>(null);
   const [search, setSearch] = useState('');
 
@@ -108,8 +108,16 @@ export function Resources() {
 
               <div className='flex flex-wrap items-center gap-4'>
                 <Search
-                  placeholder='Search publications'
-                  aria-label='Search publications'
+                  placeholder={
+                    selectedType === 'Statistical standards'
+                      ? 'Search statistical standards'
+                      : 'Search related publications'
+                  }
+                  aria-label={
+                    selectedType === 'Statistical standards'
+                      ? 'Search statistical standards'
+                      : 'Search related publications'
+                  }
                   inputVariant='light'
                   inputSize='sm'
                   inputClassName='h-[42px]'
@@ -143,7 +151,7 @@ export function Resources() {
                     variant='light'
                     size='sm'
                     color='primary'
-                    aria-label='Filter publications by indicator'
+                    aria-label='Filter by indicator'
                     classNames={{
                       menu: () => 'sm:w-96!',
                       groupHeading: () =>
@@ -154,14 +162,10 @@ export function Resources() {
               </div>
 
               <TabsContent value={selectedType}>
-                <DataCards
-                  data={rows}
-                  cardMinWidth={360}
-                  padding='0'
-                  cardBackgroundColor='transparent'
-                  ariaLabel={`${selectedType} on Goal 16`}
-                  cardTemplate={(d: Publication) => (
+                <Grid gap='16px' noOfCol={{ base: 1, md: 2, lg: 3 }} className='pt-2'>
+                  {rows.map((d) => (
                     <a
+                      key={d.title}
                       href={d.link ?? undefined}
                       target='_blank'
                       rel='noreferrer'
@@ -211,8 +215,8 @@ export function Resources() {
                         </div>
                       </ContentCard>
                     </a>
-                  )}
-                />
+                  ))}
+                </Grid>
               </TabsContent>
 
               {rows.length === 0 ? (

@@ -35,25 +35,30 @@ export default function DefenderKillingsLineChart() {
       annotations={[
         {
           text: 'Projected',
-          xCoordinate: 2023,
+          xCoordinate: 2024,
+          xOffset: innerWidth < 720 ? -28 : 25,
+          maxWidth: 80,
           yCoordinate: 140,
-          xOffset: 25,
           align: 'center',
+          classNames: { text: 'text-xs md:text-sm' },
           fontWeight: 'medium',
           showConnector: false,
           color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
         {
           text: 'period',
-          xCoordinate: 2023,
-          xOffset: 25,
+          xCoordinate: 2024,
+          xOffset: innerWidth < 720 ? -28 : 25,
+          maxWidth: 80,
           yCoordinate: 80,
           align: 'center',
+          classNames: { text: 'text-xs md:text-sm' },
           fontWeight: 'medium',
           showConnector: false,
           color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
       ]}
+      rightMargin={innerWidth < 720 ? 50 : 30}
       minHeight={400}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>

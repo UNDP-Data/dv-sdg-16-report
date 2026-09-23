@@ -54,7 +54,7 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
         colors={[Colors.genderColors.female, Colors.genderColors.male]}
         minValue={0}
         showTicks
-        showValues
+        showValues={innerHeight >= 720}
         leftMargin={innerWidth < 720 ? 135 : 220}
         minHeight={400}
         truncateBy={innerWidth < 720 ? 16 : undefined}
@@ -81,7 +81,7 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
             { label: 'Men', value: male, color: Colors.genderColors.male },
           ];
           return (
-            <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+            <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
               <P size='sm' weight='semibold' marginBottom='none'>
                 {d.label}
               </P>
@@ -94,7 +94,7 @@ export default function FeelSafeWalkingAloneBySexDumbbellChart() {
                 >
                   <span className='flex items-center gap-1.5'>
                     <span
-                      className='h-2.5 w-2.5 rounded-full'
+                      className='h-2.5 w-2.5 shrink-0 rounded-full'
                       style={{ backgroundColor: row.color }}
                     />
                     {row.label}

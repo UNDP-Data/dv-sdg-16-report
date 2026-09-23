@@ -52,18 +52,24 @@ export default function HomicideRateBySexLineChart() {
       annotations={[
         {
           text: 'Projected',
-          xCoordinate: 2022,
+          xCoordinate: 2027,
+          xOffset: innerWidth < 720 ? -34 : 25,
+          maxWidth: 80,
           yCoordinate: 11.5,
           align: 'center',
+          classNames: { text: 'text-xs md:text-sm' },
           fontWeight: 'medium',
           showConnector: false,
           color: CHART_HIGHLIGHT_LABEL_COLOR,
         },
         {
           text: 'period',
-          xCoordinate: 2022,
-          yCoordinate: 10.8,
+          xCoordinate: 2027,
+          xOffset: innerWidth < 720 ? -34 : 25,
+          maxWidth: 80,
+          yCoordinate: 10.6,
           align: 'center',
+          classNames: { text: 'text-xs md:text-sm' },
           fontWeight: 'medium',
           showConnector: false,
           color: CHART_HIGHLIGHT_LABEL_COLOR,
@@ -124,7 +130,7 @@ export default function HomicideRateBySexLineChart() {
           },
         ];
         return (
-          <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+          <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
             <P size='sm' weight='semibold' marginBottom='none'>
               {year}
             </P>

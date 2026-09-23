@@ -75,7 +75,10 @@ export default function BusinessBriberyStripChart() {
         </div>
 
         <div className='flex items-center gap-4'>
-          <span aria-hidden='true' className='h-4 w-4 rounded-full bg-blue-500 opacity-40' />
+          <span
+            aria-hidden='true'
+            className='h-4 w-4 shrink-0 rounded-full bg-blue-500 opacity-40'
+          />
           <P marginBottom='none' size='sm'>
             Each dot is a country
           </P>
@@ -179,7 +182,7 @@ export default function BusinessBriberyStripChart() {
             xAxis: { labels: { display: 'none' } },
           }}
           tooltip={(d) => (
-            <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+            <div className='flex min-w-56 flex-col gap-1.5 bg-white px-3 py-2'>
               <P
                 size='sm'
                 weight='semibold'

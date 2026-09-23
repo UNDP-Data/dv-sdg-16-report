@@ -100,7 +100,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
           valueColor='var(--content-primary)'
           numberDisplayOptions={{ precision: 2, padZeros: 'all' }}
           showTicks={false}
-          truncateBy={innerWidth < 720 ? 16 : undefined}
+          truncateBy={innerWidth < 720 ? 12 : undefined}
           leftMargin={
             selectedGrouping === 'region'
               ? innerWidth < 720
@@ -131,7 +131,7 @@ export default function RepresentationByRegionAndIncomeGroupsBarChart() {
             const value = d.data[selectedSector] as number;
             const gap = value - 1;
             return (
-              <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+              <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
                 <P size='sm' weight='semibold' marginBottom='none'>
                   {d.label}
                 </P>

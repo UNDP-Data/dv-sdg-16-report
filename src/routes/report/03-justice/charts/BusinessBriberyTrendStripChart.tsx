@@ -65,11 +65,11 @@ export default function BusinessBriberyTrendStripChart() {
         <div className='flex items-center gap-2'>
           <div className='flex items-center' aria-hidden='true'>
             <span
-              className='h-4 w-4 rounded-full border border-background-soft'
+              className='h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: PERIODS[0].color }}
             />
             <span
-              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              className='-ml-2 h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: PERIODS[1].color }}
             />
           </div>
@@ -178,7 +178,7 @@ export default function BusinessBriberyTrendStripChart() {
               yAxis: { labels: { textAlign: 'left' } },
             }}
             tooltip={(d) => (
-              <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+              <div className='flex min-w-56 flex-col gap-1.5 bg-white px-3 py-2'>
                 <P
                   size='sm'
                   weight='semibold'

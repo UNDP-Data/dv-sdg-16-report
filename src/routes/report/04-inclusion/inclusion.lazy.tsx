@@ -642,7 +642,7 @@ export function Inclusion() {
       </div>
       <div
         id='role-of-institutions'
-        className='flex flex-col gap-4 bg-cover bg-top px-6 pt-28 pb-10 md:px-12 md:pt-80 md:pb-14'
+        className='flex flex-col gap-4 bg-[#eaf6ff] bg-size-[150%_auto] bg-top bg-no-repeat px-6 pt-32 pb-10 md:bg-cover md:px-12 md:pt-80 md:pb-14'
         style={{ backgroundImage: `url('/imgs/report/role-of-institution.webp')` }}
       >
         <TextContainer>
