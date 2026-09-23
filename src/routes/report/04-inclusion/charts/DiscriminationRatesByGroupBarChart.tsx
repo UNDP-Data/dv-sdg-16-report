@@ -49,7 +49,7 @@ export default function DiscriminationRatesByGroupBarChart() {
               },
             }}
             tooltip={() => (
-              <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+              <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
                 <P
                   size='sm'
                   marginBottom='none'
@@ -123,7 +123,7 @@ export default function DiscriminationRatesByGroupBarChart() {
               },
             }}
             tooltip={() => (
-              <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+              <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
                 <P
                   size='sm'
                   marginBottom='none'

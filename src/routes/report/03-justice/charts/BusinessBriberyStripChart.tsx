@@ -179,7 +179,7 @@ export default function BusinessBriberyStripChart() {
             xAxis: { labels: { display: 'none' } },
           }}
           tooltip={(d) => (
-            <div className='flex flex-col gap-1.5 bg-white px-3 py-2'>
+            <div className='flex min-w-56 flex-col gap-1.5 bg-white px-3 py-2'>
               <P
                 size='sm'
                 weight='semibold'

@@ -81,7 +81,7 @@ export default function FeelSafeWalkingAloneByPeriodDumbbellChart() {
             { label: '2021–2025', value: period20212025, color: 'var(--blue-500)' },
           ];
           return (
-            <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+            <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
               <P size='sm' weight='semibold' marginBottom='none'>
                 {d.label}
               </P>

@@ -99,7 +99,7 @@ export default function RepresentationByInstitutionalLevelBarChart() {
           },
         }}
         tooltip={(d) => (
-          <div className='flex flex-col gap-1 bg-white px-3 py-2'>
+          <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
             <P size='sm' weight='semibold' marginBottom='none'>
               {d.label}
             </P>
