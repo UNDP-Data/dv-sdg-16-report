@@ -663,7 +663,7 @@ export function Inclusion() {
           <P marginBottom='none' size='lg'>
             Inclusive institutions ensure that every person is legally recognized through a legal
             identity, protected from discrimination, represented in public decision-making, able to
-            access information, and public services on equal terms, and empowered to participate in
+            access information and public services on equal terms, and empowered to participate in
             decisions that shape their lives. They also ensure that governments respond fairly and
             effectively to the needs of all people by delivering quality public services that are
             accessible, responsive, and equitable, regardless of gender, age, disability, ethnicity,

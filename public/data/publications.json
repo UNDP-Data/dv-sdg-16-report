@@ -3,7 +3,7 @@
     "title": "Human Rights Count",
     "agency": "OHCHR",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.1.2",
       "16.10.1",
@@ -16,7 +16,7 @@
     "title": "Data Brief on Violence against Children at Home",
     "agency": "UNICEF",
     "year": 2025,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.2.1",
       "16.2.3"
@@ -27,7 +27,7 @@
     "title": "When Numbers Demand Action: Confronting the Global Scale of Sexual Violence against Children",
     "agency": "UNICEF",
     "year": 2024,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.2.1",
       "16.2.3"
@@ -38,7 +38,7 @@
     "title": "Global Study on Homicide 2023",
     "agency": "UNODC",
     "year": 2023,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.1.1"
     ],
@@ -48,7 +48,7 @@
     "title": "Global Report on Trafficking in Persons 2024",
     "agency": "UNODC",
     "year": 2024,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.2.2"
     ],
@@ -58,7 +58,7 @@
     "title": "Prison Matters 2026: Global Prison Population and Trends – A Focus on Prison-Community Engagement",
     "agency": "UNODC",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.3.2"
     ],
@@ -68,7 +68,7 @@
     "title": "Research Brief on Transnational Organized Crime",
     "agency": "UNODC",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1",
       "16.4.2"
@@ -79,7 +79,7 @@
     "title": "A Review of Existing Research on Smuggling of Migrants",
     "agency": "UNODC",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.2.2"
     ],
@@ -89,17 +89,17 @@
     "title": "Femicides in 2024: Global Estimates of Intimate Partner/Family Member Femicides",
     "agency": "UNODC and UN Women",
     "year": 2025,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.1.1"
     ],
-    "link": null
+    "link": "https://www.unodc.org/documents/data-and-analysis/briefs/Femicide_Brief_2025.pdf"
   },
   {
     "title": "Global Study on Firearms Trafficking 2020",
     "agency": "UNODC",
     "year": 2020,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.2"
     ],
@@ -109,7 +109,7 @@
     "title": "Crime-related Illicit Financial Flows: Latest Progress",
     "agency": "UNODC",
     "year": 2023,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1"
     ],
@@ -119,7 +119,7 @@
     "title": "Regional Study on Illicit Financial Flows from Drug Trafficking along the Northern Route",
     "agency": "UNODC",
     "year": 2022,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1"
     ],
@@ -129,7 +129,7 @@
     "title": "Regional Study on Illicit Financial Flows from Smuggling of Migrants and Trafficking in Persons from Selected Countries under GLO.ACT",
     "agency": "UNODC",
     "year": 2023,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1"
     ],
@@ -139,7 +139,7 @@
     "title": "Opiates and Methamphetamine Trafficking on the Balkan Route: Drug Flows, Illicit Incomes and Illicit Financial Flows",
     "agency": "UNODC",
     "year": 2025,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1"
     ],
@@ -149,7 +149,7 @@
     "title": "Study on Value Chains and Illicit Financial Flows from Trafficking in Ivory and Rhino Horn,  in World Wildlife Crime Report",
     "agency": "UNODC",
     "year": 2020,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.4.1"
     ],
@@ -159,7 +159,7 @@
     "title": "Women in Parliament in 2025",
     "agency": "IPU",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.7.1 (a)"
     ],
@@ -169,7 +169,7 @@
     "title": "Youth Participation in National Parliaments: 2025",
     "agency": "IPU",
     "year": 2026,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.7.1 (a)"
     ],
@@ -179,7 +179,7 @@
     "title": "The Right Start in Life: Global Levels and Trends in Birth Registration – 2024 Update",
     "agency": "UNICEF",
     "year": 2024,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.9.1"
     ],
@@ -189,7 +189,7 @@
     "title": "Birth Registration in Sub-Saharan Africa: Current Levels and Trends",
     "agency": "UNICEF",
     "year": 2025,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.9.1"
     ],
@@ -326,7 +326,7 @@
     "title": "From Data to Action Strengthening Civil Justice with SDG 16.3.3",
     "agency": "UNDP, UNODC and OECD",
     "year": 2025,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.3.3"
     ],
@@ -336,7 +336,7 @@
     "title": "Improving the monitoring of SDG 16.3.3: Towards better access to justice",
     "agency": "OECD/Pathfinders for Peaceful Just and Inclusive Societies",
     "year": 2023,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.3.3"
     ],
@@ -346,7 +346,7 @@
     "title": "Global Report on Gender Equality in Public Administration",
     "agency": "UNDP and University of Pittsburgh",
     "year": 2021,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.7.1 (b)"
     ],
@@ -356,7 +356,7 @@
     "title": "Measuring Peace, Justice, and Inclusion: SDG 16.6.2 – Understanding satisfaction with public services for more effective, accountable and inclusive public institutions",
     "agency": "UNDP",
     "year": 2023,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.6.2"
     ],
@@ -366,7 +366,7 @@
     "title": "Advancing Inclusive Decision-Making for Sustainable Development: Representation in the Public Service through SDG 16.7.1b",
     "agency": "UNDP",
     "year": 2024,
-    "type": "Relevant publications",
+    "type": "Related publications",
     "indicators": [
       "16.7.1 (b)"
     ],
