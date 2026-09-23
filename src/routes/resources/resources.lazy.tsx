@@ -93,16 +93,16 @@ export function Resources() {
             <Tabs value={selectedType} onValueChange={setSelectedType} color='blue'>
               <TabsList className='pl-0'>
                 <TabsTrigger
+                  value='Related publications'
+                  className='cursor-pointer text-sm normal-case md:text-base'
+                >
+                  Related publications
+                </TabsTrigger>
+                <TabsTrigger
                   value='Statistical standards'
                   className='cursor-pointer text-sm normal-case md:text-base'
                 >
                   Statistical standards
-                </TabsTrigger>
-                <TabsTrigger
-                  value='Relevant publications'
-                  className='cursor-pointer text-sm normal-case md:text-base'
-                >
-                  Relevant publications
                 </TabsTrigger>
               </TabsList>
 
