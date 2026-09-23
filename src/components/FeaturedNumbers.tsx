@@ -160,7 +160,7 @@ export default function FeaturedNumbers() {
                   value='20'
                   suffix='%'
                   color='tertiary'
-                  label='Short of parity in women’s representation in the public service, and 12% short in the judiciary.'
+                  label='Women’s representation falls short of parity in the public service, and 12% short in the judiciary.'
                 />
                 <P
                   marginBottom='none'
