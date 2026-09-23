@@ -51,7 +51,7 @@ export default function TargetsDrawer({ chapterTitle, bg, color }: TargetsDrawer
           className='fixed right-6 bottom-6 z-20 rounded-full bg-center bg-cover px-5 py-2.5 shadow-lg md:right-0 md:rounded-r-none md:rounded-l-lg md:py-3 md:transition-[padding-right] md:duration-200 md:ease-out md:hover:pr-8'
           style={{ backgroundImage: `url('${bg}')` }}
         >
-          <P size='base' marginBottom='none' weight='bold' className='text-content-reverse'>
+          <P size='base' marginBottom='none' weight='bold' className='text-white'>
             Discover targets
             <span className='hidden md:inline'>
               <br />
