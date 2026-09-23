@@ -59,7 +59,12 @@ export default function NHRIComplianceChoroplethMap() {
         mapProjection='equalEarth'
         tooltip={(d) => (
           <div className='flex min-w-56 flex-col gap-1 bg-white px-3 py-2'>
-            <P size='sm' weight='semibold' marginBottom='none'>
+            <P
+              size='sm'
+              weight='semibold'
+              marginBottom='none'
+              decoration={d.id === 'PSE' ? 'italic' : undefined}
+            >
               {d.data.country}
             </P>
             <div className='flex items-center justify-between gap-4'>
