@@ -535,6 +535,12 @@ export function About() {
               </div>
             </div>
           </div>
+          <div className='border-stroke-sm border-t pt-10 md:pl-54 lg:pl-62'>
+            <P marginBottom='none' size='base' className='max-w-180 text-content-secondary'>
+              Selected visual assets in this report were created with the assistance of generative
+              AI and subsequently edited and refined as part of the design process.
+            </P>
+          </div>
         </SectionContainer>
       </section>
     </>
