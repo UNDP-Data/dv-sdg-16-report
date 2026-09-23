@@ -54,19 +54,19 @@ export default function SatisfactionWithPublicServicesStripChart() {
         <div className='flex items-center gap-1.5'>
           <div className='flex items-center' aria-hidden='true'>
             <span
-              className='h-4 w-4 rounded-full border border-background-soft'
+              className='h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: 'var(--primary)' }}
             />
             <span
-              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              className='-ml-2 h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: 'var(--tertiary)' }}
             />
             <span
-              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              className='-ml-2 h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: 'var(--violet-600)' }}
             />
             <span
-              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              className='-ml-2 h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: 'var(--quaternary)' }}
             />
           </div>

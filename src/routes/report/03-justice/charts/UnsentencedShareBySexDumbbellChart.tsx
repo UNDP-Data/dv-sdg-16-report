@@ -81,7 +81,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
             </P>
             <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
               <span className='flex items-center gap-1'>
-                <span className='h-2 w-2 rounded-full bg-categorical-female' />
+                <span className='h-2.5 w-2.5 shrink-0 rounded-full bg-categorical-female' />
                 Women
               </span>
               <span className='font-bold text-categorical-female'>
@@ -90,7 +90,7 @@ export default function UnsentencedShareBySexDumbbellChart() {
             </P>
             <P size='sm' marginBottom='none' className='flex items-center justify-between gap-4'>
               <span className='flex items-center gap-1'>
-                <span className='h-2 w-2 rounded-full bg-categorical-male' />
+                <span className='h-2.5 w-2.5 shrink-0 rounded-full bg-categorical-male' />
                 Men
               </span>
               <span className='font-bold text-categorical-male'>

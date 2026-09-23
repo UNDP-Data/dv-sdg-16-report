@@ -75,7 +75,10 @@ export default function BusinessBriberyStripChart() {
         </div>
 
         <div className='flex items-center gap-4'>
-          <span aria-hidden='true' className='h-4 w-4 rounded-full bg-blue-500 opacity-40' />
+          <span
+            aria-hidden='true'
+            className='h-4 w-4 shrink-0 rounded-full bg-blue-500 opacity-40'
+          />
           <P marginBottom='none' size='sm'>
             Each dot is a country
           </P>

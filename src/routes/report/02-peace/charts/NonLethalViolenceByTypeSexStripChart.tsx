@@ -59,11 +59,11 @@ export default function NonLethalViolenceByTypeSexStripChart() {
         <div className='flex items-center gap-2'>
           <div className='flex items-center' aria-hidden='true'>
             <span
-              className='h-4 w-4 rounded-full border border-background-soft'
+              className='h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: Colors.genderColors.male }}
             />
             <span
-              className='-ml-2 h-4 w-4 rounded-full border border-background-soft'
+              className='-ml-2 h-4 w-4 shrink-0 rounded-full border border-background-soft'
               style={{ backgroundColor: Colors.genderColors.female }}
             />
           </div>
