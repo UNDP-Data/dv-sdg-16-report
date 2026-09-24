@@ -20790,128 +20790,254 @@
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2000",
     "x": "No status",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2000"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2005",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2005"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2010",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2010"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2015",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2015"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2016",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2016"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2017",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2017"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2018",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2018"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2019",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2019"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2020",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2020"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2021",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2021"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2022",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2022"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2023",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2023"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2024",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
       "date": "2024"
     }
   },
   {
-    "id": "PSE",
+    "id": "WEB",
     "date": "2025",
     "x": "Fully compliant",
     "data": {
-      "country": "Occupied Palestinian Territory",
+      "country": "West Bank",
+      "date": "2025"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2000",
+    "x": "No status",
+    "data": {
+      "country": "Gaza",
+      "date": "2000"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2005",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2005"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2010",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2010"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2015",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2015"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2016",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2016"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2017",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2017"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2018",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2018"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2019",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2019"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2020",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2020"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2021",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2021"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2022",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2022"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2023",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2023"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2024",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
+      "date": "2024"
+    }
+  },
+  {
+    "id": "GAZ",
+    "date": "2025",
+    "x": "Fully compliant",
+    "data": {
+      "country": "Gaza",
       "date": "2025"
     }
   },

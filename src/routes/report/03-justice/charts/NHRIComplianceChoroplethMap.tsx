@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
 import { Colors } from '@undp/data-viz/Colors';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
+import { convertTopoJsonUrlToGeoJson } from '@undp/data-viz/utils';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
@@ -17,11 +18,20 @@ function useData() {
   });
 }
 
+function useMapShapeData() {
+  return useQuery({
+    queryKey: ['map-shape'],
+    queryFn: () =>
+      convertTopoJsonUrlToGeoJson('/data/topojson/country_area.json', 'BNDA_simplified_wgs84'),
+  });
+}
+
 export default function NHRIComplianceChoroplethMap() {
   const { data, isLoading, isError } = useData();
+  const { data: mapData, isLoading: mapIsLoading, isError: mapIsError } = useMapShapeData();
 
-  if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
-  if (isError) return <ErrorEl />;
+  if (isLoading || mapIsLoading) return <Spinner size='lg' className='mx-auto my-20' />;
+  if (isError || !data || mapIsError || !mapData) return <ErrorEl />;
 
   return (
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
@@ -36,6 +46,7 @@ export default function NHRIComplianceChoroplethMap() {
 
       <ChoroplethMap
         data={data}
+        mapData={mapData}
         colors={[
           Colors.primaryColors['blue-100'],
           Colors.primaryColors['blue-300'],
@@ -46,9 +57,9 @@ export default function NHRIComplianceChoroplethMap() {
         colorLegendTitle='Accreditation status'
         timeline={{ enabled: true, autoplay: false, showOnlyActiveDate: true }}
         height={750}
-        showCostalBorder
         scale={1.3}
         projectionRotate={[-10, 0]}
+        showUNBorder
         mapNoDataColor='var(--gray-300)'
         padding='0'
         styles={{

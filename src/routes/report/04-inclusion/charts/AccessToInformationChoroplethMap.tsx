@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
+import { convertTopoJsonUrlToGeoJson } from '@undp/data-viz/utils';
 import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
@@ -26,16 +27,25 @@ function useData() {
   });
 }
 
+function useMapShapeData() {
+  return useQuery({
+    queryKey: ['map-shape'],
+    queryFn: () =>
+      convertTopoJsonUrlToGeoJson('/data/topojson/country_area.json', 'BNDA_simplified_wgs84'),
+  });
+}
+
 export default function AccessToInformationChoroplethMap() {
   const [highlightedCountry, setHighlightedCountry] = useState<OptionType | null>(null);
   const { data, isLoading, isError } = useData();
+  const { data: mapData, isLoading: mapIsLoading, isError: mapIsError } = useMapShapeData();
   const highlightedStatus = useMemo(() => {
     if (!highlightedCountry) return null;
     return data?.find((d) => d.id === highlightedCountry.value) ?? null;
   }, [highlightedCountry, data]);
 
-  if (isLoading) return <Spinner size='lg' className='mx-auto my-20' />;
-  if (isError || !data) return <ErrorEl />;
+  if (isLoading || mapIsLoading) return <Spinner size='lg' className='mx-auto my-20' />;
+  if (isError || !data || mapIsError || !mapData) return <ErrorEl />;
   return (
     <div className='flex flex-col gap-4' style={{ padding: CHART_PADDING }}>
       <div className='flex flex-wrap items-start justify-between gap-4'>
@@ -82,6 +92,7 @@ export default function AccessToInformationChoroplethMap() {
           { columnId: 'id', chartConfigId: 'id' },
           { columnId: 'x', chartConfigId: 'x' },
         ])}
+        mapData={mapData}
         colors={['var(--blue-500)']}
         colorDomain={[1]}
         showColorScale={false}
@@ -91,7 +102,7 @@ export default function AccessToInformationChoroplethMap() {
         dimmedOpacity={highlightedCountry ? 0.3 : 1}
         zoomInteraction='button'
         mapNoDataColor='var(--gray-300)'
-        showCostalBorder
+        showUNBorder
         height={650}
         projectionRotate={[-10, 0]}
         scale={1.25}
