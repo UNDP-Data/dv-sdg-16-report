@@ -285,6 +285,17 @@
     "link": "https://www.ohchr.org/sites/default/files/Documents/Issues/HRIndicators/handbook_governance_statistics.pdf"
   },
   {
+    "title": "International Classification of Violence against Children (ICVAC)",
+    "agency": "UNICEF",
+    "year": 2025,
+    "type": "Statistical standards",
+    "indicators": [
+      "16.2.1",
+      "16.2.3"
+    ],
+    "link": "https://data.unicef.org/resources/international-classification-of-violence-against-children/"
+  },
+  {
     "title": "Statistical Framework for the Measurement of Gender-Related Killings",
     "agency": "UNODC and UN Women",
     "year": 2022,
