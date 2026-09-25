@@ -5,7 +5,7 @@ import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_HIGHLIGHT_AREA_BG, CHART_HIGHLIGHT_LABEL_COLOR, CHART_PADDING } from '@/constants';
+import { CHART_HIGHLIGHT_AREA_BG, CHART_PADDING } from '@/constants';
 
 function useData() {
   return useQuery({
@@ -32,33 +32,21 @@ export default function DefenderKillingsLineChart() {
       relativeHeight={0.7}
       maxValue={800}
       highlightAreaSettings={[{ coordinates: [2024, 2025], color: CHART_HIGHLIGHT_AREA_BG }]}
-      annotations={[
+      customLayers={[
         {
-          text: 'Projected',
-          xCoordinate: 2024,
-          xOffset: innerWidth < 720 ? -28 : 25,
-          maxWidth: 80,
-          yCoordinate: 140,
-          align: 'center',
-          classNames: { text: 'text-xs md:text-sm' },
-          fontWeight: 'medium',
-          showConnector: false,
-          color: CHART_HIGHLIGHT_LABEL_COLOR,
-        },
-        {
-          text: 'period',
-          xCoordinate: 2024,
-          xOffset: innerWidth < 720 ? -28 : 25,
-          maxWidth: 80,
-          yCoordinate: 80,
-          align: 'center',
-          classNames: { text: 'text-xs md:text-sm' },
-          fontWeight: 'medium',
-          showConnector: false,
-          color: CHART_HIGHLIGHT_LABEL_COLOR,
+          position: 'after',
+          layer: (
+            <foreignObject x={0} y={0} width='100%' height='100%'>
+              <div className='relative h-[calc(100%-45px)] w-[calc(100%-80px)]'>
+                <div className='absolute bottom-[5%] left-[95%] w-20 -translate-x-1/2 text-center font-medium text-content-secondary text-xs leading-tight md:text-sm'>
+                  Projected period
+                </div>
+              </div>
+            </foreignObject>
+          ),
         },
       ]}
-      rightMargin={innerWidth < 720 ? 50 : 30}
+      rightMargin={50}
       minHeight={400}
       graphTitle={
         <P marginBottom='none' className='font-heading font-semibold leading-sm'>
