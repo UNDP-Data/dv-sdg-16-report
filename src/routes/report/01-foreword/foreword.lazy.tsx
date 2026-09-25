@@ -1,6 +1,7 @@
 import { createLazyRoute } from '@tanstack/react-router';
 import { H1, P } from '@undp/design-system-react/Typography';
 import { TextContainer } from '@/components/Containers';
+import ChapterEndNav from '../components/ChapterFooter';
 
 export function Foreword() {
   return (
@@ -169,6 +170,7 @@ export function Foreword() {
           </div>
         </div>
       </section>
+      <ChapterEndNav label='First chapter' title='Peace' to='/report/peace' color='default' />
     </>
   );
 }
