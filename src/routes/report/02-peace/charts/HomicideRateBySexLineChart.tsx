@@ -6,7 +6,7 @@ import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
 import ErrorEl from '@/components/ErrorEl';
-import { CHART_HIGHLIGHT_AREA_BG, CHART_HIGHLIGHT_LABEL_COLOR, CHART_PADDING } from '@/constants';
+import { CHART_HIGHLIGHT_AREA_BG, CHART_PADDING } from '@/constants';
 import ChartNote from '../../components/ChartNote';
 
 function useData() {
@@ -49,30 +49,18 @@ export default function HomicideRateBySexLineChart() {
       maxValue={12}
       noOfXTicks={5}
       highlightAreaSettings={[{ coordinates: [2025, 2030], color: CHART_HIGHLIGHT_AREA_BG }]}
-      annotations={[
+      customLayers={[
         {
-          text: 'Projected',
-          xCoordinate: 2027,
-          xOffset: innerWidth < 720 ? -34 : 25,
-          maxWidth: 80,
-          yCoordinate: 11.5,
-          align: 'center',
-          classNames: { text: 'text-xs md:text-sm' },
-          fontWeight: 'medium',
-          showConnector: false,
-          color: CHART_HIGHLIGHT_LABEL_COLOR,
-        },
-        {
-          text: 'period',
-          xCoordinate: 2027,
-          xOffset: innerWidth < 720 ? -34 : 25,
-          maxWidth: 80,
-          yCoordinate: 10.6,
-          align: 'center',
-          classNames: { text: 'text-xs md:text-sm' },
-          fontWeight: 'medium',
-          showConnector: false,
-          color: CHART_HIGHLIGHT_LABEL_COLOR,
+          position: 'after',
+          layer: (
+            <foreignObject x={0} y={0} width='100%' height='100%'>
+              <div className='relative h-[calc(100%-45px)] w-[calc(100%-110px)]'>
+                <div className='absolute top-[4%] left-[91.5%] w-20 -translate-x-1/2 text-center font-medium text-content-secondary text-xs leading-tight md:text-sm'>
+                  Projected period
+                </div>
+              </div>
+            </foreignObject>
+          ),
         },
       ]}
       padding={CHART_PADDING}
