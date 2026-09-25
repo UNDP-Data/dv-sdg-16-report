@@ -74,7 +74,7 @@ export default function NHRIComplianceChoroplethMap() {
               size='sm'
               weight='semibold'
               marginBottom='none'
-              decoration={d.id === 'PSE' ? 'italic' : undefined}
+              decoration={d.id === 'GAZ' || d.id === 'WEB' ? 'italic' : undefined}
             >
               {d.data.country}
             </P>
