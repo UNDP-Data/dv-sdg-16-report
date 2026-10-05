@@ -3,11 +3,9 @@ import { ChoroplethMap } from '@undp/data-viz/ChoroplethMap';
 import { fetchAndParseJSON } from '@undp/data-viz/fetchAndParseData';
 import { transformDataForGraph } from '@undp/data-viz/transformData';
 import { convertTopoJsonUrlToGeoJson } from '@undp/data-viz/utils';
-import { DropdownSelect, type OptionType } from '@undp/design-system-react/DropdownSelect';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { Spinner } from '@undp/design-system-react/Spinner';
 import { P } from '@undp/design-system-react/Typography';
-import { useMemo, useState } from 'react';
 import ErrorEl from '@/components/ErrorEl';
 import { CHART_PADDING } from '@/constants';
 
@@ -36,13 +34,8 @@ function useMapShapeData() {
 }
 
 export default function AccessToInformationChoroplethMap() {
-  const [highlightedCountry, setHighlightedCountry] = useState<OptionType | null>(null);
   const { data, isLoading, isError } = useData();
   const { data: mapData, isLoading: mapIsLoading, isError: mapIsError } = useMapShapeData();
-  const highlightedStatus = useMemo(() => {
-    if (!highlightedCountry) return null;
-    return data?.find((d) => d.id === highlightedCountry.value) ?? null;
-  }, [highlightedCountry, data]);
 
   if (isLoading || mapIsLoading) return <Spinner size='lg' className='mx-auto my-20' />;
   if (isError || !data || mapIsError || !mapData) return <ErrorEl />;
@@ -58,34 +51,7 @@ export default function AccessToInformationChoroplethMap() {
             2025
           </P>
         </div>
-        <div className='w-75'>
-          {data && (
-            <DropdownSelect
-              options={data
-                .sort((a, b) => a.country.localeCompare(b.country))
-                .map((d) => ({ value: d.id, label: d.country }))}
-              value={highlightedCountry}
-              onChange={(option) => setHighlightedCountry(option as OptionType | null)}
-              isClearable
-              isSearchable
-              placeholder='Highlight a country'
-              variant='light'
-              size='sm'
-              color='primary'
-              aria-label='Search and select a country to highlight on the map'
-            />
-          )}
-        </div>
       </div>
-      <P marginBottom='none' size='sm' className={`${highlightedCountry ? '' : 'invisible'}`}>
-        {highlightedCountry
-          ? `${highlightedCountry.label}: ${
-              highlightedStatus
-                ? 'has constitutional, statutory and/or policy guarantees for access to information'
-                : 'no guarantees reported'
-            }`
-          : 'placeholder'}
-      </P>
 
       <ChoroplethMap
         data={transformDataForGraph(data, 'choroplethMap', [
@@ -97,9 +63,7 @@ export default function AccessToInformationChoroplethMap() {
         colorDomain={[1]}
         showColorScale={false}
         scaleType='categorical'
-        colorLegendTitle='Guarantees for access to information'
-        highlightedIds={highlightedCountry ? [highlightedCountry.value as string] : []}
-        dimmedOpacity={highlightedCountry ? 0.3 : 1}
+        dimmedOpacity={1}
         zoomInteraction='button'
         mapNoDataColor='var(--gray-300)'
         showUNBorder
