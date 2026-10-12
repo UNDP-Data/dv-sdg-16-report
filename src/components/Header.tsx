@@ -12,7 +12,6 @@ import {
 import { H5, P } from '@undp/design-system-react/Typography';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { showNavigation } from '@/Utils/showNavigation';
 
 export default function HeaderEl() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,95 +41,92 @@ export default function HeaderEl() {
           </P>
         </Link>
 
-        {showNavigation() && (
-          <>
-            <nav className='hidden items-center gap-10 lg:flex'>
-              <Link
-                to='/'
-                className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
-              >
-                Home
-              </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger className='flex items-center gap-1 font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'>
-                  Report
-                  <ChevronDown size={14} />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  align='end'
-                  sideOffset={12}
-                  collisionPadding={16}
-                  className='w-[calc(100vw-3rem)] max-w-72 border border-background/15 bg-foreground-soft p-3 text-content-reverse shadow-xl'
-                >
-                  <DropdownMenuItem
-                    asChild
-                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
-                  >
-                    <Link to='/report/foreword'>Foreword</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
-                  <DropdownMenuLabel className='px-3 pt-3 pb-2 font-semibold text-content-reverse/50 text-xs tracking-[0.12em]'>
-                    CHAPTERS
-                  </DropdownMenuLabel>
-                  <DropdownMenuItem
-                    asChild
-                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
-                  >
-                    <Link to='/report/peace'>Peace</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
-                  >
-                    <Link to='/report/justice'>Justice</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
-                  >
-                    <Link to='/report/inclusion'>Inclusion</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
-                  <DropdownMenuItem
-                    asChild
-                    className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
-                  >
-                    <Link to='/report/sdg16-progress'>SDG 16 Progress</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Link
-                to='/impact-stories'
-                className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
-              >
-                Data to impact stories
-              </Link>
-              <Link
-                to='/resources'
-                className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
-              >
-                Resources
-              </Link>
-              <Link
-                to='/about'
-                className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
-              >
-                About
-              </Link>
-            </nav>
-
-            <Button
-              type='button'
-              variant='icon'
-              className='p-0 text-content-reverse lg:hidden'
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-              onClick={() => setMobileOpen((open) => !open)}
+        <nav className='hidden items-center gap-10 lg:flex'>
+          <Link
+            to='/'
+            className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
+          >
+            Home
+          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className='flex items-center gap-1 font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'>
+              Report
+              <ChevronDown size={14} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align='end'
+              sideOffset={12}
+              collisionPadding={16}
+              className='w-[calc(100vw-3rem)] max-w-72 border border-background/15 bg-foreground-soft p-3 text-content-reverse shadow-xl'
             >
-              {mobileOpen ? <X size={32} /> : <Menu size={32} />}
-            </Button>
-          </>
-        )}
+              <DropdownMenuItem
+                asChild
+                className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+              >
+                <Link to='/report/foreword'>Foreword</Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
+              <DropdownMenuLabel className='px-3 pt-3 pb-2 font-semibold text-content-reverse/50 text-xs tracking-[0.12em]'>
+                CHAPTERS
+              </DropdownMenuLabel>
+              <DropdownMenuItem
+                asChild
+                className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+              >
+                <Link to='/report/peace'>Peace</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+              >
+                <Link to='/report/justice'>Justice</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                asChild
+                className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+              >
+                <Link to='/report/inclusion'>Inclusion</Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator className='mx-3 my-2 bg-background/15' />
+              <DropdownMenuItem
+                asChild
+                className='cursor-pointer px-3 py-3 text-content-reverse text-sm hover:bg-background/8! focus:bg-background/8'
+              >
+                <Link to='/report/sdg16-progress'>SDG 16 Progress</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link
+            to='/impact-stories'
+            className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
+          >
+            Data to impact stories
+          </Link>
+          <Link
+            to='/resources'
+            className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
+          >
+            Resources
+          </Link>
+          <Link
+            to='/about'
+            className='font-medium text-content-reverse text-sm uppercase tracking-wider transition-colors hover:text-content-secondary'
+          >
+            About
+          </Link>
+        </nav>
+
+        <Button
+          variant='link'
+          endIcon='none'
+          padding='none'
+          className='text-content-reverse lg:hidden'
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? <X size={32} /> : <Menu size={32} />}
+        </Button>
       </div>
 
       {mobileOpen ? (

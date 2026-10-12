@@ -83,7 +83,12 @@ export default function SubNav({
             </P>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant='icon' type='button' className='p-0 text-content-reverse'>
+                <Button
+                  variant='link'
+                  endIcon='none'
+                  padding='none'
+                  className='text-content-reverse'
+                >
                   <Info size={14} />
                 </Button>
               </TooltipTrigger>

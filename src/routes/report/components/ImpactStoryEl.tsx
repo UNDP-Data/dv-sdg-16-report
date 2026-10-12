@@ -53,10 +53,9 @@ export default function ImpactStoryEl({ id, color = 'primary', asChild = true }:
               </H4>
               <P className='line-clamp-3 font-light text-content-reverse'>{impactStory?.story}</P>
               <Button
-                type='button'
                 onClick={() => setOpen(true)}
                 variant='outline'
-                arrow={false}
+                endIcon='none'
                 className={cn(
                   'w-fit gap-1.5 px-5 py-3 text-content-reverse text-sm transition-colors hover:bg-background/10',
                   color === 'primary' && 'border-primary',

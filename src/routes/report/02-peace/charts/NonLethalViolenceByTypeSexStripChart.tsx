@@ -84,9 +84,10 @@ export default function NonLethalViolenceByTypeSexStripChart() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
-                  variant='icon'
-                  type='button'
-                  className='p-0 text-content-secondary'
+                  variant='link'
+                  endIcon='none'
+                  padding='none'
+                  className='text-content-secondary'
                   aria-label='What does the median line show?'
                 >
                   <Info size={14} />
