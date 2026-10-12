@@ -2,7 +2,7 @@ import { createLazyRoute } from '@tanstack/react-router';
 import { Grid } from '@undp/design-system-react/Grid';
 import { Spacer } from '@undp/design-system-react/Spacer';
 import { H1, H5, P } from '@undp/design-system-react/Typography';
-import { ArrowDown, Mail } from 'lucide-react';
+import { ArrowDown, ExternalLink, Mail } from 'lucide-react';
 import { SectionContainer } from '@/components/Containers';
 
 export function About() {
@@ -148,6 +148,27 @@ export function About() {
                 alt='World Health Organization'
                 className='h-24 w-full object-contain px-3 py-7 lg:px-8'
               />
+            </div>
+          </div>
+          <div className='flex flex-col gap-y-4 border-stroke-sm border-t py-10 md:flex-row md:gap-x-10'>
+            <P size='lg' weight='semibold' className='font-heading text-foreground md:w-44 lg:w-52'>
+              Launch event
+            </P>
+            <div className='flex flex-col'>
+              <P marginBottom='base' size='lg'>
+                The 2026 Global Progress Report on SDG 16 was launched in New York on the margins
+                of  UNGA 81.
+              </P>
+              <a
+                href='https://www.youtube.com/watch?v=5pHMgQ78GbQ'
+                target='_blank'
+                aria-label='Watch the recording of the report launch event on YouTube (opens in a new tab)'
+                className='flex items-center font-semibold text-blue-500 text-sm uppercase tracking-wider'
+                rel='noopener'
+              >
+                Watch the launch event on YouTube
+                <ExternalLink size={14} className='ml-1' />
+              </a>
             </div>
           </div>
           <div className='flex flex-col gap-y-4 border-stroke-sm border-t py-10 first:border-t-0 first:pt-0 last:pb-0 md:flex-row md:gap-x-10'>
